@@ -21,7 +21,7 @@ L'ordre de càrrega a `index.html` continua sent contractual i estable:
 16. `js/features/shorts.js`
 17. `js/features/support.js`
 18. `js/features/shared-playlists.js`
-19. `js/features/config-sync.js`
+19. `js/features/config-backup.js`
 20. `js/app.js`
 
 Dependències clau:
@@ -88,3 +88,4 @@ Encara existeixen per compatibilitat:
 - `app.js` és més prim que a l'inici, però **encara no és només bootstrap**.
 - Una part substancial de la lògica funcional segueix en `*LegacyImpl` dins `app.js` i no s'ha mogut físicament a mòduls.
 - Això és deliberat per estabilitat de fase 2 i per no canviar UX/contractes.
+

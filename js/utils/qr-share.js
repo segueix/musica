@@ -31,7 +31,7 @@
         const { type, name, url, count } = options;
         const card = app.utils.shareCard;
 
-        if (!card || typeof QRCodeStyling === 'undefined') {
+        if (!card) {
             alert('La llibreria de QR no està disponible. Comprova la connexió.');
             return;
         }
@@ -132,3 +132,4 @@
         showQrModal,
     };
 })(window);
+

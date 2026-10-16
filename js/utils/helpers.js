@@ -292,7 +292,12 @@ function buildYoutubeEmbedUrl(videoId, { startAt = 0 } = {}) {
 // ==================== LUCIDE HELPER ====================
 function refreshIcons(el) {
     if (typeof lucide === 'undefined') return;
-    el ? lucide.createIcons({ el }) : lucide.createIcons();
+    const scope = el || document;
+    // Lucide usa `root`, no `el`. Només substituïm placeholders pendents:
+    // els SVG ja dibuixats conserven data-lucide i no s’han de recrear.
+    const pending = Array.from(scope.querySelectorAll('i[data-lucide]'));
+    if (!pending.length) return;
+    lucide.createIcons({ root: { querySelectorAll: selector => selector === '[data-lucide]' ? pending : [] } });
 }
 
 // ==================== BATCH RENDERING ====================
@@ -539,3 +544,4 @@ function arrangeMusicList(videos, options = {}) {
         previousArtist: options.previousArtist || '',
     });
 }
+

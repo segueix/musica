@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Segueix Música és la teva plaça musical en català: escolta novetats i directes, retroba artistes, descobreix escenes noves i desa les teves llistes.">
     <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1">
     <link rel="canonical" href="https://segueix.cat/">
@@ -42,9 +42,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap">
-    
+    <link id="robotoTypographyWeights" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=optional" media="print" onload="this.media='all'">
+
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="img/icon-192.png">
@@ -54,13 +53,11 @@
     <link rel="stylesheet" href="css/styles.css?v=20260929-home-playlists-4">
     <link rel="stylesheet" href="css/portada.css?v=20261014-discos">
     
-    <link rel="stylesheet" href="css/google-drive-sync.css">
-    <!-- Icons (Lucide via CDN) -->
-    <script src="https://unpkg.com/lucide@0.563.0"></script>
+    <!-- Llibreries locals generades pel build; mantenen l’ordre sense bloquejar HTML. -->
+    <script defer src="js/vendor/lucide.js"></script>
     <!-- lz-string: compressió per a compartició ràpida per URL (Canal A) -->
-    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
-    <!-- qr-code-styling: generació QR amb branding (Fase 4) -->
-    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.8.4/lib/qr-code-styling.js"></script>
+    <script defer src="js/vendor/lz-string.js"></script>
+    <!-- El QR es carrega quan es demana compartir. -->
 </head>
 <body>
     <a class="pt-skip" href="#mainContent">Salta al contingut</a>
@@ -98,13 +95,6 @@
         </div>
     </div>
 
-    <div id="intro-splash" aria-hidden="true">
-        <div class="intro-splash-content">
-            <h1 class="intro-splash-title">Segueix<span>!</span></h1>
-            <p class="intro-splash-brand">Música</p>
-            <p class="intro-splash-tagline">En català</p>
-        </div>
-    </div>
     <!-- Capçalera compacta: marca, cercador i accessos -->
     <header class="app-header">
         <!-- Plega i desplega la navegació lateral (escriptori i tauleta; initDesktopSidebarPreference) -->
@@ -738,22 +728,21 @@
                         </button>
                     </div>
                 </div>
-                <div class="settings-section" id="googleDriveSection">
-                    <p class="setting-label">Sincronitza amb Google Drive</p>
-                    <p class="google-drive-help">Comparteix l’historial, els m’agrada, els artistes que segueixes, les llistes, les categories i les preferències entre el mòbil i l’ordinador. Connecta el mateix compte de Google a cada aparell. Amb l’autorització activa, els canvis s’envien automàticament i es comproven novetats aproximadament cada minut mentre Música és visible. El botó «Sincronitza» permet fer-ho al moment o renovar l’accés quan calgui.</p>
-                    <p class="google-drive-help">És opcional. Les dades es desen en una carpeta privada de Música al teu Drive. Només s’utilitzen per sincronitzar; Música no accedeix als teus altres documents. Els canvis s’apliquen sense recarregar la pàgina ni interrompre la música. Si Google demana renovar l’autorització, t’ho indicarem aquí.</p>
-                    <p id="googleDriveAccount" class="google-drive-help"></p>
+                <div class="settings-section" id="configBackupSection">
+                    <p class="setting-label">Còpia de seguretat</p>
+                    <p class="modal-description">Descarrega les teves dades de Música en un fitxer JSON i importa’l en un altre aparell: historial, m’agrada, artistes seguits, llistes, categories i preferències. Les dades es desen només al navegador; no hi ha sincronització automàtica.</p>
                     <div class="config-sync-row">
-                        <button class="config-sync-btn" id="googleDriveSync" type="button" disabled>Connecta amb Google Drive</button>
-                        <button class="config-sync-btn" id="googleDriveDisconnect" type="button" hidden>Desconnecta</button>
+                        <button class="config-sync-btn" id="exportConfigManualBtn" type="button">Descarregar .json</button>
+                        <button class="config-sync-btn" id="importConfigManualBtn" type="button">Importar .json</button>
                     </div>
-                    <div id="googleDriveFeedback" class="config-sync-feedback" role="status" aria-live="polite"></div>
-                    <p class="google-drive-help"><a href="privacitat.html" target="_blank" rel="noopener">Privacitat de la sincronització</a></p>
+                    <input type="file" id="configManualFileInput" accept=".json,application/json" hidden>
+                    <p class="modal-description">Importar substitueix les dades d’aquest aparell per les de la còpia. Descarrega’n una abans si les vols conservar.</p>
+                    <div id="configManualFeedback" class="config-sync-feedback hidden" role="status" aria-live="polite"></div>
                 </div>
                 <div class="settings-section">
                     <p class="setting-label">Dades</p>
                     <div class="config-sync-row">
-                        <button class="config-sync-btn config-reset-btn" id="clearAllDataBtn" type="button">Esborrar historial</button>
+                        <button class="config-sync-btn config-reset-btn" id="clearAllDataBtn" type="button">Esborrar dades locals</button>
                     </div>
                     <div class="config-sync-feedback hidden" id="clearDataFeedback"></div>
                 </div>
@@ -836,31 +825,28 @@
             </div>
             <div class="modal-body legal-modal-body">
                 <h3>Política de Privacitat i Avís Legal - Segueix!</h3>
-                <p>Aquesta aplicació està allotjada a Cloudflare Pages. El nostre objectiu és oferir una eina útil per seguir contingut de YouTube en català respectant al màxim la privacitat de l'usuari.</p>
+                <p>Aquesta aplicació es distribueix com a web. El nostre objectiu és oferir una eina útil per seguir contingut de YouTube en català respectant al màxim la privacitat de l'usuari.</p>
 
                 <p><strong>1. Responsable del tractament</strong><br>Per a qualsevol dubte o consulta sobre aquesta aplicació, pots contactar amb nosaltres a través de l'adreça de correu electrònic: info.segueix@gmail.com.</p>
 
                 <p><strong>2. Recollida de dades i Registre</strong><br>Segueix! no requereix la creació de cap compte d'usuari ni registre. No recollim el teu nom, cognoms, telèfon ni cap altra dada d'identificació personal directa.</p>
 
                 <p><strong>3. Emmagatzematge Local (localStorage)</strong><br>L'aplicació utilitza la memòria interna del teu navegador (localStorage) per desar les teves preferències, llistes de reproducció personalitzades i l'historial de vídeos vistos.</p>
-                <p>Aquesta informació es desa al teu dispositiu. Si actives voluntàriament Google Drive, també es copia al teu compte de Google per sincronitzar-la.</p>
-                <p>Si esborres les dades del navegador o la memòria cau, aquesta configuració es perdrà tret que les hagis sincronitzat amb Google Drive.</p>
+                <p>Aquesta informació es desa al navegador del teu dispositiu.</p>
+                <p>Si esborres les dades del lloc al navegador, aquesta configuració es perdrà tret que n’hagis descarregat una còpia JSON.</p>
 
-                <p><strong>4. Sincronització voluntària amb Google Drive</strong><br>Si connectes Google Drive, Música hi desa les dades musicals i les preferències en una carpeta privada de l’aplicació. La transferència es fa directament entre el navegador i Google; no passa per un servidor de Segueix. Música només demana accés a aquesta carpeta. Les dades no tenen xifratge d’extrem a extrem afegit per Música. El compte es mostra en aquest aparell i els permisos de YouTube i analítica continuen sent independents. <a href="privacitat.html">Consulta la política de privacitat de la sincronització</a>.</p>
+                <p><strong>4. Còpies de seguretat en JSON</strong><br>Pots descarregar les teves dades musicals en un fitxer JSON i importar-lo manualment en un altre aparell. Tot el procés es fa al navegador, sense enviar la còpia a cap servidor. <a href="privacitat.html">Més informació sobre les dades locals</a>.</p>
 
                 <p><strong>5. Galetes (Cookies), analítica i rastreig</strong></p>
                 <ul>
                     <li>No utilitzem galetes de tercers per a finalitats publicitàries ni de màrqueting.</li>
-                    <li>No realitzem perfils d'usuari al servidor ni venem dades a cap empresa externa.</li>
-                    <li>Segueix! pot enviar comptadors d'ús agregables de funcions de l'aplicació (per exemple, obrir un vídeo, usar la cerca, iniciar una TV o regenerar-la) per entendre quines parts del producte funcionen millor.</li>
-                    <li>Per calcular usuaris únics, el navegador crea un identificador aleatori que rota cada 90 dies. El servidor no en conserva el valor original: només un hash no reversible per fer el recompte. No utilitzem IP, user-agent ni fingerprinting per identificar usuaris, i no enviem identificadors de vídeos o canals, text de cerca ni historial de reproducció. Els registres es conserven com a màxim 90 dies.</li>
-                    <li>Pots desactivar aquesta analítica en qualsevol moment des de Configuració &gt; Analítica anònima.</li>
+                    <li>No enviem analítiques d’ús de Música. Els gustos que fan servir les recomanacions es calculen i es desen al navegador.</li>
                 </ul>
 
                 <p><strong>6. Drets de l'usuari</strong><br>Pots gestionar les teves dades:</p>
                 <ul>
                     <li>Pots esborrar tota la teva informació en qualsevol moment des de l'apartat de configuració de l'aplicació o des de les opcions del teu navegador.</li>
-                    <li>Pots desconnectar aquest aparell des de Configuració. Això conserva les còpies locals i de Drive. Per eliminar les dades de Drive, ves a Configuració de Google Drive &gt; Gestiona les aplicacions &gt; Música &gt; Suprimeix les dades ocultes de l’aplicació. També pots revocar-ne l’accés des del teu compte de Google.</li>
+                    <li>Pots descarregar una còpia JSON des de Configuració i decidir on la deses o amb qui la comparteixes.</li>
                 </ul>
 
                 <p><strong>7. Enllaços a Tercers (YouTube)</strong><br>Aquesta aplicació mostra contingut allotjat a YouTube. En reproduir els vídeos, se t'aplicaran les Condicions de Servei i la Política de Privacitat de Google/YouTube. L'aplicació "Segueix!" no té control sobre el rastreig que Google pugui fer des del seu reproductor incrustat.</p>
@@ -920,85 +906,78 @@
 
     <!-- Scripts -->
     <!-- Base runtime/config -->
-    <script src="js/config.js"></script>
-    <script src="js/song-title.js?v=20261014-noms"></script>
-    <script src="js/music-categories.js"></script>
-    <script src="js/youtube.js"></script>
-    <script src="js/data.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+    <script defer src="js/config.js"></script>
+    <script defer src="js/song-title.js?v=20261014-noms"></script>
+    <script defer src="js/music-categories.js"></script>
+    <script defer src="js/youtube.js?v=20261016-static-3"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/vendor/sortable.js"></script>
 
     <!-- Core namespace (must load before utils/features/app) -->
-    <script src="js/core/segueix-app.js?v=20261005-carpeta-app-1"></script>
-    <script src="js/core/state.js"></script>
-    <script src="js/core/dom-registry.js"></script>
+    <script defer src="js/core/segueix-app.js?v=20261005-carpeta-app-1"></script>
+    <script defer src="js/core/state.js"></script>
+    <script defer src="js/core/dom-registry.js"></script>
 
     <!-- Shared utils used by features and app.js -->
-    <script src="js/utils/helpers.js"></script>
-    <script src="js/utils/storage.js"></script>
-    <script src="js/utils/id-codecs.js"></script>
-    <script src="js/utils/share-codecs.js?v=20261012-radio-wa-1"></script>
-    <script src="js/google-drive-config.js?v=20261007-oauth-1"></script>
-    <script src="js/utils/music-data.js?v=20261007-space-1"></script>
-    <script src="js/utils/drive-sync-model.js"></script>
-    <script src="js/utils/share-card.js"></script>
-    <script src="js/utils/qr-share.js"></script>
-    <script src="js/utils/config-feedback.js"></script>
+    <script defer src="js/utils/helpers.js"></script>
+    <script defer src="js/utils/storage.js"></script>
+    <script defer src="js/utils/id-codecs.js"></script>
+    <script defer src="js/utils/share-codecs.js?v=20261016-static-2"></script>
+    <script defer src="js/utils/music-data.js?v=20261016-json-1"></script>
+    <script defer src="js/utils/share-card.js"></script>
+    <script defer src="js/utils/qr-share.js"></script>
+    <script defer src="js/utils/config-feedback.js"></script>
 
     <!-- Feature modules consumed by app.js -->
-    <script src="js/features/navigation.js?v=20260919-segueix-tv-label-final-1"></script>
-    <script src="js/features/library.js"></script>
-    <script src="js/features/feed.js"></script>
-    <script src="js/features/search.js"></script>
-    <script src="js/features/search-results.js?v=20260930-cerca-1"></script>
-    <script src="js/features/channel.js"></script>
-    <script src="js/features/player.js?v=20261005-carpeta-app-1"></script>
-    <script src="js/features/shorts.js"></script>
-    <script src="js/features/support.js"></script>
-    <script src="js/features/likes.js?v=20261007-heart-1"></script>
-    <script src="js/features/home-sections.js"></script>
-    <script src="js/features/category-selector.js"></script>
-    <script src="js/features/discovery.js?v=20261012-artistes-unics-1"></script>
-    <script src="js/features/music-affinity-catalog.js?v=20261013-subcategory-1"></script>
-    <script src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
-    <script src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
-    <script src="js/features/music-signals.js?v=20261007-auto-1"></script>
-    <script src="js/features/music-queue.js?v=20261014-radio-artista"></script>
-    <script src="js/features/system-player.js"></script>
-    <script src="js/features/drive-mode.js"></script>
-    <script src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
-    <script src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
-    <script src="js/features/shell-nav.js?v=20260930-portada-1"></script>
-    <script src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
-    <script src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
-    <script src="js/features/portada.js?v=20261015-estils-esquerra"></script>
-    <script src="js/features/artist-page.js?v=20261014-discos"></script>
-    <script src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
-    <script src="js/features/alphabet-index.js?v=20261004-az-1"></script>
-    <script src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
-    <script src="js/features/artist-map.js?v=20261013-mapa-6"></script>
-    <script src="js/features/affinity.js?v=20261012-afinitat-1"></script>
-    <script src="js/features/shared-playlists.js"></script>
-    <script src="js/features/config-sync.js?v=20261007-drive-1"></script>
-    <script src="js/features/google-drive-sync.js?v=20261007-auto-1"></script>
-    <script src="js/features/analytics.js?v=20261006-music-analytics-1"></script>
-    <script src="js/features/analytics-pdf.js?v=20261006-music-analytics-1"></script>
-    <script src="js/features/analytics-admin.js?v=20261006-music-analytics-1"></script>
+    <script defer src="js/features/navigation.js?v=20261016-static-2"></script>
+    <script defer src="js/features/library.js"></script>
+    <script defer src="js/features/feed.js"></script>
+    <script defer src="js/features/search.js"></script>
+    <script defer src="js/features/search-results.js?v=20260930-cerca-1"></script>
+    <script defer src="js/features/channel.js?v=20261016-static-2"></script>
+    <script defer src="js/features/player.js?v=20261016-static-3"></script>
+    <script defer src="js/features/shorts.js"></script>
+    <script defer src="js/features/support.js"></script>
+    <script defer src="js/features/likes.js?v=20261007-heart-1"></script>
+    <script defer src="js/features/home-sections.js"></script>
+    <script defer src="js/features/category-selector.js"></script>
+    <script defer src="js/features/discovery.js?v=20261012-artistes-unics-1"></script>
+    <script defer src="js/features/music-affinity-catalog.js?v=20261013-subcategory-1"></script>
+    <script defer src="js/features/music-affinities.js?v=20261013-subcategory-1"></script>
+    <script defer src="js/features/music-selection.js?v=20261013-subcategory-1"></script>
+    <script defer src="js/features/music-signals.js?v=20261007-auto-1"></script>
+    <script defer src="js/features/music-queue.js?v=20261014-radio-artista"></script>
+    <script defer src="js/features/system-player.js"></script>
+    <script defer src="js/features/drive-mode.js"></script>
+    <script defer src="js/features/home-playlists.js?v=20261005-nomes-inici-1"></script>
+    <script defer src="js/features/my-music.js?v=20260930-la-teva-musica-1"></script>
+    <script defer src="js/features/shell-nav.js?v=20260930-portada-1"></script>
+    <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
+    <script defer src="js/features/nearby-radio.js?v=20261012-mapa-1"></script>
+    <script defer src="js/features/portada.js?v=20261015-estils-esquerra"></script>
+    <script defer src="js/features/artist-page.js?v=20261014-discos"></script>
+    <script defer src="js/features/user-categories.js?v=20261012-artistes-unics-1"></script>
+    <script defer src="js/features/alphabet-index.js?v=20261004-az-1"></script>
+    <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
+    <script defer src="js/features/artist-map.js?v=20261013-mapa-6"></script>
+    <script defer src="js/features/affinity.js?v=20261012-afinitat-1"></script>
+    <script defer src="js/features/shared-playlists.js"></script>
+    <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 
     <!-- Main app entrypoint -->
-    <script src="js/app.js?v=20261014-discos"></script>
-    <script src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
-    <script src="js/features/smart-feed.js?v=20260924-smart-feed-v1"></script>
-    <script src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
-    <script src="js/features/tv-programming.js?v=20260924-ara-continuacio-1"></script>
+    <script defer src="js/app.js?v=20261016-static-2"></script>
+    <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
+    <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
+    <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
+    <script defer src="js/features/tv-programming.js?v=20260924-ara-continuacio-1"></script>
     
     <script>
         // Inicialitzar icons Lucide
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        document.addEventListener('DOMContentLoaded', () => window.refreshIcons?.(), { once: true });
     </script>
     
 
 </body>
 </html>
+
 

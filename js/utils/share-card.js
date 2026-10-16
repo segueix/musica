@@ -278,7 +278,22 @@
 
     // Retorna un Promise<Blob> amb el PNG de la targeta. `url` és l'enllaç que obre el QR (si no hi és o no hi ha la
     // llibreria de QR, la targeta es dibuixa igualment sense QR).
+    let qrPromise;
+    function ensureQrLibrary() {
+        if (typeof root.QRCodeStyling === 'function') return Promise.resolve();
+        if (qrPromise) return qrPromise;
+        qrPromise = new Promise((resolve, reject) => {
+            const script = root.document.createElement('script');
+            script.src = root.appDataUrl?.('js/vendor/qr-code-styling.js') || 'js/vendor/qr-code-styling.js';
+            script.onload = () => typeof root.QRCodeStyling === 'function' ? resolve() : reject(new Error('QR no disponible'));
+            script.onerror = () => { script.remove(); reject(new Error('No s’ha pogut carregar el QR')); };
+            root.document.head.appendChild(script);
+        }).catch(error => { qrPromise = null; throw error; });
+        return qrPromise;
+    }
+
     async function renderCard(model, url, options = {}) {
+        if (canEncode(url)) await ensureQrLibrary();
         const doc = root.document;
         const iconSrc = options.iconSrc || ICON_URL;
 
@@ -474,8 +489,10 @@
         canEncode,
         MAX_QR_URL_LENGTH,
         buildQrConfig,
+        ensureQrLibrary,
         renderCard,
         shareImage,
         downloadBlob,
     };
 });
+

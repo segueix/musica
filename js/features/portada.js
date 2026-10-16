@@ -335,7 +335,7 @@
         return `
             <article class="pt-card${opts.wide ? ' pt-card--wide' : ''}" data-video-id="${id}">
                 <button type="button" class="pt-card__media" data-pt-play="${id}" aria-label="Reprodueix ${title}, de ${artist}">
-                    <img src="${esc(video.thumbnail)}" alt="" loading="lazy" decoding="async" width="320" height="180">
+                    <img src="${esc(cardThumbnail(video.thumbnail))}" alt="" loading="lazy" decoding="async" width="320" height="180">
                     ${opts.badge ? `<span class="pt-card__badge">${esc(opts.badge)}</span>` : ''}
                     ${duration ? `<span class="pt-card__dur">${esc(duration)}</span>` : ''}
                     <span class="pt-card__play" aria-hidden="true">${ICONS.play}</span>
@@ -414,7 +414,7 @@
         const artist = esc(item.subtitle);
         return `
             <button type="button" class="pt-quick__main" data-pt-play="${esc(item.id)}" aria-label="Reprodueix ${title}, de ${artist}">
-                <span class="pt-quick__thumb"><img src="${esc(item.image)}" alt="" loading="lazy" decoding="async" width="96" height="54"></span>
+                <span class="pt-quick__thumb"><img src="${esc(item.image)}" alt="" loading="eager" decoding="async" width="96" height="54"></span>
                 <span class="pt-quick__text"><span class="pt-quick__kicker">${esc(item.reason || 'Cançó')}</span><span class="pt-quick__title">${title}</span><span class="pt-quick__sub">${artist}</span></span>
             </button>`;
     }
@@ -827,16 +827,32 @@
         paint(input);
     }
 
+    let rowControlsFrame = 0;
     function syncRowControls() {
+        if (rowControlsFrame) return;
+        rowControlsFrame = window.requestAnimationFrame(() => {
+            rowControlsFrame = 0;
+            measureRowControls();
+        });
+    }
+
+    function measureRowControls() {
+        const updates = [];
+        // Llegeix totes les mides abans de canviar cap atribut (evita recomposicions per filera).
         state.container?.querySelectorAll?.('.pt-section').forEach(section => {
+            const bounds = section.getBoundingClientRect?.();
+            if (bounds && (bounds.top > window.innerHeight + 200 || bounds.bottom < -200)) return;
             const row = section.querySelector('.pt-row');
             if (!row) return;
             const max = row.scrollWidth - row.clientWidth - 2;
+            const left = row.scrollLeft;
             section.querySelectorAll('.pt-arrow').forEach(button => {
                 const forward = Number(button.dataset.ptScroll) > 0;
-                const disabled = forward ? row.scrollLeft >= max : row.scrollLeft <= 2;
-                button.disabled = disabled;
+                updates.push([button, forward ? left >= max : left <= 2]);
             });
+        });
+        updates.forEach(([button, disabled]) => {
+            if (button.disabled !== disabled) button.disabled = disabled;
         });
     }
 
@@ -889,7 +905,7 @@
         const title = esc(source.title || video?.title || 'Cançó');
         const artist = video ? esc(artistName(video)) : '';
         const image =
-            video?.thumbnail || (now?.id ? `https://i.ytimg.com/vi/${encodeURIComponent(now.id)}/hqdefault.jpg` : '');
+            cardThumbnail(video?.thumbnail) || (now?.id ? `https://i.ytimg.com/vi/${encodeURIComponent(now.id)}/hqdefault.jpg` : '');
         const art = cssUrl(image);
         const next =
             playing && now.next
@@ -932,14 +948,17 @@
         return out;
     }
 
+    function cardThumbnail(value, small = false) {
+        return String(value || '').replace(/(https:\/\/i\.ytimg\.com\/vi\/[^/]+\/)maxresdefault\.jpg(?:\?.*)?$/, `$1${small ? 'mqdefault' : 'hqdefault'}.jpg`);
+    }
+
     function coversHtml(videos) {
         const covers = radioCovers(videos);
         if (!covers.length) return '';
-        const bg = cssUrl(covers[0].thumbnail);
-        return `${bg ? `<span class="pt-radio__bg" style="--pt-art: url('${bg}')"></span>` : ''}<span class="pt-radio__covers">${covers
+        return `<span class="pt-radio__covers">${covers
             .map(
                 video =>
-                    `<img src="${esc(video.thumbnail)}" alt="" loading="lazy" decoding="async" width="96" height="54">`
+                    `<img src="${esc(cardThumbnail(video.thumbnail, true))}" alt="" loading="eager" decoding="async" width="96" height="54">`
             )
             .join('')}</span>`;
     }
@@ -1300,6 +1319,7 @@
         entry?.addEventListener('change', onModeChange);
         state.container.addEventListener('scroll', () => syncRowControls(), { capture: true, passive: true });
         window.addEventListener('resize', () => syncRowControls(), { passive: true });
+        window.addEventListener('scroll', syncRowControls, { passive: true });
         window.addEventListener('segueix:queue-changed', updateEntry);
         window.addEventListener('segueix:discovery-mode-changed', syncModeInputs);
         window.addEventListener('segueix:music-prefs-changed', updateEntry);
@@ -1412,5 +1432,6 @@
         getModel: () => state.model,
     };
 })(window);
+
 
 

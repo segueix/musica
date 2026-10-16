@@ -1659,3 +1659,48 @@ El motor compartit amb el torn del feed aprofita declaracions explícites de dis
 Reconstrucció local: `node scripts/reconstruir_discos_musica.js --evidence=docs/revisions/2026-10-14-discos-evidencies.json`. El fitxer d’evidències conserva només fragments de metadades de vídeos ja existents; no valida idiomes ni afegeix pistes. El generador ordinari reutilitza directament les descripcions que ja rep. Detalls a `docs/DISCOS_AUTOMATICS.md`.
 
 Proves: 35 comprovacions de catàleg, fitxa i llançaments; sintaxi i lint dels JS modificats sense errors. A la còpia local, la suite disponible passa 197 proves i falla en el cas preexistent «UNOFFICIAL RMX»; el lint general manté cinc errors previs. Tots dos s’han reproduït sobre la base. Les URLs dels assets modificats s’han versionat per evitar reutilitzar la interfície antiga.
+
+
+
+## 2026-10-16 — Primera fase de web estàtica: dades locals i còpies JSON
+
+Petició de retirar analítiques i sincronització amb Drive. S’han eliminat OAuth, el model i els temporitzadors de Drive, el client/panell/PDF d’analítica i la còpia de l’API del repositori. `config-backup.js` ofereix només descarregar i importar JSON, amb el model musical explícit de `music-data.js`, validació de producte/versió/estructura, límit de 8 MB i confirmació abans de substituir dades.
+
+Es conserva la recuperació davant falta d’espai i l’aprenentatge local de les ràdios. La vista importada invalida també la memòria d’historial, refresca cors i biblioteca i conserva la cua i el reproductor. Els consentiments i les dades alienes no entren a la còpia. S’han actualitzat les URLs dels scripts, el precache i els textos de privacitat; les instruccions antigues de Drive queden marcades com a històriques.
+
+64 proves dirigides superades. Lint: mateixos cinc errors previs de data.js/home-sections.js, comprovats contra la base. La suite completa no s’ha executat; dues comprovacions antigues de versió SW/ordre de scripts fallen igualment a la base. Aquesta fase no retira encara tot `functions` ni publica a Cloudflare. Fases i criteris a `docs/CONVERSIO_ESTATICA.md`.
+
+## 2026-10-16 — Fase 2: rutes i SEO generats abans de publicar
+
+`npm run build:static` genera `_site/` amb fitxes d’artista, cançons a les URLs existents de `compartir/canco/`, estils, metadades socials, dades estructurades i sitemaps. Reutilitza els slugs del client i el generador de compartició. El domini públic és configurable i el hash SW es calcula sobre la sortida. La generació no consulta APIs ni modifica el catàleg.
+
+Es filtren ocults, canals fora del feed, Shorts i restriccions editorials. Els canals oficial/Topic només s’agrupen mitjançant la identitat editorial; els homònims no es fusionen. El camp `active` de candidats no representa l’estat del catàleg públic. La 404 recupera rutes antigues de vídeo amb el mapa local; manté errors per als IDs desconeguts. El reproductor de les fitxes només carrega YouTube després d’acceptar-lo. El client conserva URLs recarregables en mode estàtic i resol recursos/enllaços a partir de la base de l’app.
+
+89 proves dirigides superades en 12 fitxers. Generació amb el catàleg disponible: 433 artistes, 654 canals, 14.489 cançons, 15 estils i 2.561 ràdios compartides. Lint: mateixos cinc errors previs; cap error nou. No es modifica la ingesta, el calendari ni els workflows. La retirada de Functions i la integració del paquet en la publicació continuen a les fases 3 i 4.
+
+
+## 2026-10-16 — Fase 3: retirada de Functions i administració local
+
+Es retiren les 38 Functions (middleware, SEO, sitemaps i administració). Les seves rutes es generen abans de publicar. El panell deixa de demanar token o escriure a GitHub: desa un esborrany local i descarrega/importa JSON editorial amb `admin-changes.js`. `aplicar_canvis_admin.cjs` valida per defecte i només escriu amb `--apply`. El lot falla complet si una fitxa ha canviat, és ambigua o es repeteix; conserva altres canvis del repositori i marca `genre:manual`. Els esborranys antics es mantenen descarregables.
+
+S’eliminen les consultes i claus de YouTube Data API al client. El nom intern YouTubeAPI continua per compatibilitat: resol des del feed, historial i arxiu publicats. El build genera `data/video-channels.json` per localitzar una cançó només d’arxiu, i copia el panell i les pàgines de revisió. L’app conserva `?v=` també al domini propi, sense escriure rutes que necessitin servidor. No canvien la ingesta, la quota ni els calendaris.
+
+112 proves dirigides superades en 16 fitxers, amb conflictes/homònims, JSON, desat local fallit, consultes exclusivament a fitxers, enllaços i regressions de les fases 1–2. Generació completa del catàleg comprovada. Lint: cinc errors preexistents, cap error nou. Les proves dels handlers retirats s’han substituït per les de generació i runtime estàtics. No s’ha publicat; la integració del paquet al workflow continua a la fase 4. La comprovació visual i la reproducció real de YouTube continuen pendents.
+
+
+## [2026-10-16] - Les fitxes estàtiques podien substituir la portada offline
+
+**Causa:** el Service Worker desava qualsevol navegació HTML sota la clau d’`index.html`. Amb pàgines estàtiques reals d’artista, cançó i administració, visitar-les podia deixar una fitxa com a portada sense connexió.
+
+**Solució:** només l’arrel de l’app i `index.html` comparteixen la clau, ignorant els paràmetres `?v=`. La resta de pàgines té una còpia pel seu propi camí. No es desen errors 404 ni redireccions com a portada. El prefix `static-v2-` retira les còpies antigues en activar-se el SW; es manté l’activació ajornada per no interrompre la reproducció. Els índexs `static-routes.json` i `video-channels.json` utilitzen xarxa primer amb fallback local.
+
+**Verificació:** `tests/static-service-worker.test.js` cobreix arrel/subcarpeta, portada, artista, cançó, panell, errors, dades noves, ús offline i activació. El publicador regenera el hash sobre la sortida i `validar_paquet_estatic.cjs` el comprova abans de pujar l’artefacte. Pendent provar l’actualització real d’una PWA antiga a la fase 5.
+
+
+## 2026-10-16 — Bloqueig de la portada musical en mòbil
+
+Els informes PageSpeed identificaven tasques llargues i recomposicions a `tv-scroll-ui.js`. L’observador de tot el subarbre reaccionava als canvis de targetes i icones, i llegia `scrollY` també fora del mode TV. Ara només observa les classes del body i programa treball quan canvia el mode. `refreshIcons` utilitza `root` (el paràmetre `el` era ignorat) i només transforma placeholders pendents, evitant recrear els SVG. Les dimensions de les fileres es llegeixen en un lot abans de modificar atributs.
+
+La fusió de vídeos feia una cerca lineal dins d’un bucle sobre tot el feed: es substitueix per un Set. La decoració del feed i l’historial cedeix el fil entre lots de 40 cançons. El build minifica recursos, genera la taxonomia inicial compacta i distribueix biblioteques locals fixades; el QR només es carrega quan es demana. Cal provar `_site/`, no el codi font sense construir.
+
+Regressions a `tests/startup-performance.test.js` i `tests/static-site.test.js`. Resultat local controlat: 5.856 → 2.481 ms de bloqueig (−58%); sense atribuir-hi una puntuació PageSpeed pública. Metodologia, comprovacions i pendents a `docs/RENDIMENT_ESTATIC.md`. No s’han afegit calendaris ni feines Actions.

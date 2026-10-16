@@ -1,4 +1,4 @@
-name: Publicar previsualitzacions Música
+name: Publicar web estàtica Música
 
 on:
   push:
@@ -17,6 +17,12 @@ on:
       - 'icons/**'
       - 'fonts/**'
       - 'robots.txt'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/optimitzar_web_estatica.cjs'
+      - 'scripts/generar_web_estatica.cjs'
+      - 'scripts/validar_paquet_estatic.cjs'
+      - 'scripts/lib/filtre_videos_canal.js'
       - 'scripts/generar_pagines_compartir.js'
       - 'scripts/actualitzar_versio_sw.js'
       - '.github/workflows/publicar-comparticio-musica.yml'
@@ -32,7 +38,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -51,21 +57,25 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: main
+          persist-credentials: false
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
-      - name: Genera pàgines i versió del Service Worker en la mateixa feina
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: node node_modules/esbuild/install.js
+      - name: Obté la URL pública de Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Genera i valida un únic paquet del checkout
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
-          git pull --ff-only origin main
-          node scripts/generar_pagines_compartir.js
-          node scripts/actualitzar_versio_sw.js
-          bash scripts/publicar_dades.sh "chore: actualitza previsualitzacions musicals" compartir sw.js
-      - name: Prepara el lloc estàtic
-        run: |
-          mkdir _site
-          git archive HEAD | tar -x -C _site
-          rm -rf _site/.github _site/.agents _site/tests _site/scripts _site/functions _site/docs
-          rm -f _site/AGENTS.md _site/CLAUDE.md
+          test -n "$SITE_URL"
+          export SOURCE_COMMIT="$(git rev-parse HEAD)"
+          npm run build:static
+          npm run validate:static
+          cat _site/static-build.json >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -75,3 +85,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages-${{ github.run_attempt }}
+

@@ -1,4 +1,4 @@
-// Servei YouTube Data API v3
+// Catàleg estàtic de Música. YouTubeAPI conserva el nom per compatibilitat amb el client.
 
 const FEED_URL = 'data/feed.json';
 const HIDDEN_VIDEOS_URL = 'data/hidden-videos.json';
@@ -12,8 +12,21 @@ const STYLE_HISTORY_URL = 'data/historial-musical.json';
 const CHANNELS_FALLBACK_URL = 'js/channels-ca.json';
 const FEED_SNAPSHOT_KEY = 'iutube_feed_snapshot_v1';
 
+// Cedir el fil entre lots permet pintar i respondre als controls mentre es prepara el catàleg.
+async function mapMusicBatch(items, transform) {
+    const result = [];
+    for (let i = 0; i < items.length; i += 40) {
+        const end = Math.min(items.length, i + 40);
+        for (let j = i; j < end; j++) result.push(transform(items[j]));
+        if (end < items.length) {
+            if (window.scheduler?.yield) await window.scheduler.yield();
+            else await new Promise(resolve => setTimeout(resolve, 0));
+        }
+    }
+    return result;
+}
+
 const YouTubeAPI = {
-    BASE_URL: 'https://www.googleapis.com/youtube/v3',
 
     // Configuració de llengua
     language: 'ca',        // Català
@@ -21,9 +34,6 @@ const YouTubeAPI = {
 
     // Configuració de cache
     CACHE_DURATION: 2 * 60 * 60 * 1000, // 2 hores en mil·lisegons
-
-    // Cache de channel IDs resolts (per evitar crides repetides)
-    resolvedChannelIds: {},
 
     // Fallback de canals eliminat: feed.json i channels-ca.json ja cobreixen tots els canals.
     catalanChannels: [],
@@ -50,30 +60,29 @@ const YouTubeAPI = {
         "entrevista", "notícies", "informatiu"
     ],
 
-    userChannels: [],      // Canals afegits per l'usuari
-
     // Inicialitzar dades de canals catalans
     async init() {
-        this.loadUserChannels();
-        this.loadResolvedChannelIds();
-        
-        // Carregar primer la taxonomia d'artistes perquè el feed ja neixi amb estils musicals.
-        await window.SegueixMusicCategories?.init?.();
+        // Retira una credencial antiga sense llegir-la ni fer-la servir.
+        try { localStorage.removeItem('youtube_api_key'); } catch (_) { /* Emmagatzematge no disponible. */ }
 
-        // Intentar carregar el feed calent i després el petit pool històric de ràdio.
-        await this.loadFeed();
-        await this.loadHistoryPool();
+        // Carregar primer la taxonomia d'artistes perquè el feed ja neixi amb estils musicals.
+        const taxonomy = window.SegueixMusicCategories?.init?.();
+
+        // Les descàrregues independents comencen juntes. Els filtres s’apliquen abans de pintar.
+        await this.loadFeed(taxonomy);
+        // La portada no espera la discografia històrica. La ràdio la pot demanar quan calgui.
+        this.loadHistoryPool();
         // L'historial dels estils es demana quan l'app ja és a punt, perquè el primer estil s'obri sense esperar.
         const idle = window.requestIdleCallback || (callback => setTimeout(callback, 1500));
         idle(() => this.ensureStyleHistory(), { timeout: 4000 });
-        
+
         console.log(`iuTube: ${this.getAllChannels().length} canals configurats`);
         console.log(`iuTube: Cache configurat per ${this.CACHE_DURATION / 1000 / 60} minuts`);
     },
 
     // ==================== CARREGAR FEED ====================
 
-    applyFeedPayload(feedData, response = null) {
+    applyFeedPayload(feedData, response = null, preparedItems = null) {
         const feedGeneratedAt = feedData?.generatedAt
             || feedData?.meta?.generatedAt
             || response?.headers?.get?.('last-modified');
@@ -92,7 +101,7 @@ const YouTubeAPI = {
         }
 
         // Categories de la base d'artistes i títol net (l'original queda a `originalTitle`)
-        this.feedVideos = this.filterHiddenVideos(feedItems).map(video =>
+        this.feedVideos = preparedItems || this.filterHiddenVideos(feedItems).map(video =>
             window.SegueixMusicCategories?.decorateVideo?.(video, this.artistNamesOf(feedChannelsMap?.[video.channelId])) || video
         );
 
@@ -292,13 +301,15 @@ const YouTubeAPI = {
     },
 
     // Carregar canals i vídeos des del feed
-    async loadFeed() {
-        await this.loadHiddenVideos();
-        const restoredFromSnapshot = this.restoreFeedSnapshot();
+    async loadFeed(taxonomy) {
+        const filters = Promise.all([this.loadHiddenVideos(), taxonomy]);
+        let restoredFromSnapshot = false;
 
         try {
             const feedUrl = window.appDataUrl?.(FEED_URL) || FEED_URL;
             const response = await fetch(feedUrl, { cache: 'no-store' });
+            await filters;
+            restoredFromSnapshot = this.restoreFeedSnapshot();
             if (!response.ok) {
                 console.log('iuTube: Feed no disponible, usant fallback local');
                 if (!restoredFromSnapshot) {
@@ -308,11 +319,17 @@ const YouTubeAPI = {
             }
 
             const feedData = await response.json();
-            const applied = this.applyFeedPayload(feedData, response);
+            const items = Array.isArray(feedData) ? feedData : (feedData.items || feedData.videos || []);
+            const prepared = await mapMusicBatch(this.filterHiddenVideos(items), video =>
+                window.SegueixMusicCategories?.decorateVideo?.(video, this.artistNamesOf(feedData.channels?.[video.channelId])) || video
+            );
+            const applied = this.applyFeedPayload(feedData, response, prepared);
             if (!applied && !restoredFromSnapshot) {
                 await this.loadChannelsFallback();
             }
         } catch (error) {
+            await filters;
+            if (!restoredFromSnapshot) restoredFromSnapshot = this.restoreFeedSnapshot();
             console.log('iuTube: Error carregant el feed:', error.message);
             if (!restoredFromSnapshot) {
                 await this.loadChannelsFallback();
@@ -373,8 +390,6 @@ const YouTubeAPI = {
         return videos.filter((video) => video?.isShort !== true && !this.isVideoHidden(video));
     },
 
-
-
     hasKnownChannel(channelId) {
         const normalized = String(channelId || '');
         if (!normalized) return false;
@@ -417,8 +432,7 @@ const YouTubeAPI = {
             }
             const data = await response.json();
             const videos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : []);
-            this.historyPoolVideos = videos
-                .map(video => this.hydrateArchiveVideo(video))
+            this.historyPoolVideos = (await mapMusicBatch(videos, video => this.hydrateArchiveVideo(video)))
                 .filter(video => video?.id && !video.isShort && ['song', 'live_song'].includes(video.contentType));
             console.log(`iuTube: ${this.historyPoolVideos.length} clàssics carregats al pool de ràdio`);
             return this.historyPoolVideos;
@@ -441,9 +455,9 @@ const YouTubeAPI = {
                 const data = await response.json();
                 const channels = new Map(this.feedChannels.map(channel => [String(channel?.id || ''), channel]));
                 const feedIds = new Set((this.feedVideos || []).map(video => String(video?.id)));
-                this.styleHistoryVideos = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : [])
-                    .filter(video => video?.id && !feedIds.has(String(video.id)) && channels.has(String(video.channelId)))
-                    .map(video => {
+                const history = this.filterHiddenVideos(Array.isArray(data?.videos) ? data.videos : [])
+                    .filter(video => video?.id && !feedIds.has(String(video.id)) && channels.has(String(video.channelId)));
+                this.styleHistoryVideos = await mapMusicBatch(history, video => {
                         const channel = channels.get(String(video.channelId));
                         const base = {
                             ...video,
@@ -622,6 +636,7 @@ const YouTubeAPI = {
         }
         const prev = localStorage.getItem('iutube_feed_generatedAt');
         if (prev !== feedGeneratedAt) {
+            this.videoChannelIndexPromise = null;
             localStorage.setItem('iutube_feed_generatedAt', feedGeneratedAt);
             localStorage.removeItem('iutube_cache_catalan_videos');
             localStorage.removeItem('iutube_cache_feed_json');
@@ -694,202 +709,13 @@ const YouTubeAPI = {
         });
     },
 
-    // Carregar channel IDs resolts des de localStorage
-    loadResolvedChannelIds() {
-        const stored = localStorage.getItem('iutube_resolved_channel_ids');
-        if (stored) {
-            try {
-                this.resolvedChannelIds = JSON.parse(stored);
-            } catch (e) {
-                this.resolvedChannelIds = {};
-            }
-        }
-    },
-
-    // Guardar channel IDs resolts a localStorage
-    saveResolvedChannelIds() {
-        localStorage.setItem('iutube_resolved_channel_ids', JSON.stringify(this.resolvedChannelIds));
-    },
-
     // ==================== RESOLUCIÓ DE HANDLES ====================
 
     // Resoldre un handle (@username) o channel ID a un channel ID UC...
-    async resolveChannelId(channelIdOrHandle) {
-        // Si ja és un channel ID (comença amb UC), retornar-lo
-        if (channelIdOrHandle && channelIdOrHandle.startsWith('UC')) {
-            return channelIdOrHandle;
-        }
-
-        // Comprovar si ja l'hem resolt abans (cache local)
-        if (channelIdOrHandle && this.resolvedChannelIds[channelIdOrHandle]) {
-            console.log(`iuTube: Channel ID resolt des de cache: ${channelIdOrHandle} -> ${this.resolvedChannelIds[channelIdOrHandle]}`);
-            return this.resolvedChannelIds[channelIdOrHandle];
-        }
-
-        // Si és un handle, buscar el channel ID via API
-        if (channelIdOrHandle && channelIdOrHandle.startsWith('@')) {
-            const result = await this.getChannelByHandle(channelIdOrHandle);
-            if (result.channel) {
-                // Guardar al cache local
-                this.resolvedChannelIds[channelIdOrHandle] = result.channel.id;
-                this.saveResolvedChannelIds();
-                console.log(`iuTube: Resolt ${channelIdOrHandle} -> ${result.channel.id}`);
-                return result.channel.id;
-            }
-        }
-
-        console.warn(`iuTube: No s'ha pogut resoldre: ${channelIdOrHandle}`);
-        return null;
-    },
-
-    // ==================== PLAYLIST (BAIX COST) ====================
-
-    // Convertir channel ID a uploads playlist ID
-    // UC... -> UU...
-    getUploadsPlaylistId(channelId) {
-        if (channelId && channelId.startsWith('UC')) {
-            return 'UU' + channelId.substring(2);
-        }
-        return channelId;
-    },
-
-    // Obtenir vídeos d'una playlist (COSTA 1 UNITAT!)
-    async getPlaylistVideos(playlistId, maxResults = 5) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return [];
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/playlistItems?part=snippet,contentDetails&playlistId=${playlistId}&maxResults=${maxResults}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                console.log(`iuTube: Error ${response.status} per playlist ${playlistId}`);
-                return [];
-            }
-
-            const data = await response.json();
-            if (!data.items) return [];
-
-            return this.filterHiddenVideos(data.items.map(item => ({
-                id: item.contentDetails.videoId,
-                title: item.snippet.title,
-                description: item.snippet.description,
-                thumbnail: item.snippet.thumbnails?.maxres?.url || item.snippet.thumbnails?.standard?.url || item.snippet.thumbnails?.high?.url || item.snippet.thumbnails?.medium?.url || item.snippet.thumbnails?.default?.url,
-                channelId: item.snippet.channelId,
-                channelTitle: item.snippet.channelTitle,
-                publishedAt: item.contentDetails.videoPublishedAt || item.snippet.publishedAt
-            })));
-        } catch (error) {
-            console.error(`iuTube: Error obtenint playlist ${playlistId}:`, error);
-            return [];
-        }
-    },
+    async resolveChannelId(value) { const result = await this.getChannelDetails(value); return result.channel?.id || null; },
 
   // Vídeos per canal (configurable)
   VIDEOS_PER_CHANNEL: 50,
-
-    // Obtenir vídeos de múltiples canals catalans (MOLT EFICIENT!)
-  async getVideosFromCatalanChannelsEfficient(maxResults = 1000) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { items: [], error: 'No API key' };
-
-        // Comprovar cache
-        const cached = this.getFromCache('catalan_videos');
-        if (cached) {
-            return { items: cached, error: null, fromCache: true };
-        }
-
-        const allChannels = this.getAllChannels();
-
-        if (allChannels.length === 0) {
-            return { items: [], error: 'No hi ha canals configurats' };
-        }
-
-        console.log(`iuTube: Obtenint ${this.VIDEOS_PER_CHANNEL} vídeos de ${allChannels.length} canals`);
-
-        try {
-            let allVideos = [];
-
-            // Obtenir vídeos de cada canal en paral·lel
-            const promises = allChannels.map(async (channel) => {
-                // Resoldre handle a channel ID si cal
-                let channelId = channel.id;
-                if (channelId && channelId.startsWith('@')) {
-                    channelId = await this.resolveChannelId(channelId);
-                    if (!channelId) {
-                        console.warn(`iuTube: No s'ha pogut resoldre el canal ${channel.name} (${channel.id})`);
-                        return [];
-                    }
-                }
-
-                if (!channelId) {
-                    console.warn(`iuTube: Canal sense ID: ${channel.name}`);
-                    return [];
-                }
-
-                const playlistId = this.getUploadsPlaylistId(channelId);
-                const videos = await this.getPlaylistVideos(playlistId, this.VIDEOS_PER_CHANNEL);
-
-                if (videos.length > 0) {
-                    console.log(`iuTube: ${videos.length} vídeos de ${channel.name}`);
-                    // Afegir categories del canal als vídeos
-                    videos.forEach(v => {
-                        v.categories = channel.categories || [];
-                    });
-                }
-
-                return videos;
-            });
-
-            const results = await Promise.all(promises);
-            allVideos = this.filterHiddenVideos(results.flat());
-
-            console.log(`iuTube: Total ${allVideos.length} vídeos obtinguts`);
-
-            if (allVideos.length === 0) {
-                return { items: [], error: 'No s\'han trobat vídeos' };
-            }
-
-            // Obtenir detalls (estadístiques) - COSTA 1 UNITAT per fins a 50 vídeos
-            let allDetailedVideos = [];
-            for (let i = 0; i < allVideos.length; i += 50) {
-                const batch = allVideos.slice(i, i + 50);
-                const videoIds = batch.map(v => v.id).join(',');
-
-                const detailsResponse = await fetch(
-                    `${this.BASE_URL}/videos?part=snippet,statistics,contentDetails&id=${videoIds}&key=${apiKey}`
-                );
-
-                if (detailsResponse.ok) {
-                    const detailsData = await detailsResponse.json();
-                    const videos = this.transformVideoResults(detailsData.items);
-                    // Preservar categories
-                    videos.forEach(v => {
-                        const original = batch.find(b => b.id === v.id);
-                        if (original) {
-                            v.categories = original.categories || [];
-                        }
-                    });
-                    allDetailedVideos = allDetailedVideos.concat(videos);
-                }
-            }
-
-            // Ordenar per data de publicació (nou a vell)
-            allDetailedVideos.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-
-            // Intercalar vídeos per evitar repeticions
-            const intercalatedVideos = this.filterHiddenVideos(this.intercalateVideos(allDetailedVideos));
-
-            // Guardar al cache
-            this.saveToCache('catalan_videos', intercalatedVideos);
-
-            return { items: intercalatedVideos.slice(0, maxResults), error: null };
-        } catch (error) {
-            console.error('iuTube: Error obtenint vídeos catalans:', error);
-            return { items: [], error: error.message };
-        }
-    },
 
     // Vídeos inicials per canal (intercalats al principi)
     INITIAL_VIDEOS_PER_CHANNEL: 3,
@@ -989,68 +815,8 @@ const YouTubeAPI = {
         return result;
     },
 
-    // Carregar canals afegits per l'usuari des de localStorage
-    loadUserChannels() {
-        const stored = localStorage.getItem('user_catalan_channels');
-        this.userChannels = stored ? JSON.parse(stored) : [];
-    },
-
-    // Desar canals de l'usuari a localStorage
-    saveUserChannels() {
-        localStorage.setItem('user_catalan_channels', JSON.stringify(this.userChannels));
-    },
-
-    // Afegir un canal de l'usuari
-    async addUserChannel(channelId) {
-        const channelInfo = await this.getChannelDetails(channelId);
-        if (channelInfo.channel) {
-            const newChannel = {
-                id: channelId,
-                name: channelInfo.channel.title,
-                categories: ['usuari'],
-                addedBy: 'user'
-            };
-            if (!this.userChannels.find(c => c.id === channelId) &&
-                !this.feedChannels.find(c => c.id === channelId)) {
-                this.userChannels.push(newChannel);
-                this.saveUserChannels();
-                localStorage.removeItem('iutube_cache_catalan_videos');
-                return { success: true, channel: newChannel };
-            }
-            return { success: false, error: 'El canal ja existeix' };
-        }
-        return { success: false, error: 'Canal no trobat' };
-    },
-
-    // Eliminar un canal de l'usuari
-    removeUserChannel(channelId) {
-        this.userChannels = this.userChannels.filter(c => c.id !== channelId);
-        this.saveUserChannels();
-        localStorage.removeItem('iutube_cache_catalan_videos');
-    },
-
-    // Obtenir tots els canals (feed i canals d'usuari)
-    getAllChannels() {
-        const feed = Array.isArray(this.feedChannels) ? this.feedChannels : [];
-        const users = Array.isArray(this.userChannels) ? this.userChannels : [];
-
-        const merged = new Map();
-        [...feed, ...users].forEach((channel) => {
-            if (!channel?.id) return;
-            const key = String(channel.id);
-            const prev = merged.get(key) || {};
-            merged.set(key, this.withDisplayName({
-                ...prev,
-                ...channel,
-                categories: this.normalizeCategories([
-                    ...(Array.isArray(prev.categories) ? prev.categories : []),
-                    ...(Array.isArray(channel.categories) ? channel.categories : (channel.category ? [channel.category] : []))
-                ])
-            }));
-        });
-
-        return Array.from(merged.values());
-    },
+    // Obtenir els canals del catàleg publicat
+    getAllChannels() { return this.feedChannels.map(channel => this.withDisplayName(channel)); },
 
     // Obtenir vídeos per categoria (suporta múltiples categories per canal)
     getVideosByCategories(videos, categoryId) {
@@ -1088,101 +854,20 @@ const YouTubeAPI = {
         return date.toISOString();
     },
 
-    // Obtenir la clau API des de localStorage
-    getApiKey() {
-        return localStorage.getItem('youtube_api_key') || '';
-    },
-
-    // Desar la clau API a localStorage
-    setApiKey(key) {
-        localStorage.setItem('youtube_api_key', key);
-    },
-
-    // Esborrar la clau API
-    clearApiKey() {
-        localStorage.removeItem('youtube_api_key');
-    },
-
-    // Comprovar si hi ha clau API configurada
-    hasApiKey() {
-        return !!this.getApiKey();
-    },
-
-    // Verificar si la clau API és vàlida
-    async verifyApiKey(key) {
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/videos?part=snippet&chart=mostPopular&maxResults=1&key=${key}`
-            );
-
-            if (response.ok) {
-                console.log('iuTube: Clau API vàlida');
-                return { valid: true, error: null };
-            }
-
-            const errorData = await response.json();
-            const errorMessage = errorData.error?.message || 'Error desconegut';
-            const errorReason = errorData.error?.errors?.[0]?.reason || '';
-
-            console.error('iuTube: Error API:', errorMessage, errorReason);
-
-            let userMessage = 'Clau API invàlida';
-            if (errorReason === 'keyInvalid') {
-                userMessage = 'La clau API no és vàlida. Comprova que l\'has copiat correctament.';
-            } else if (errorReason === 'ipRefererBlocked') {
-                userMessage = 'La clau API té restriccions d\'IP o referrer. Configura-la sense restriccions a Google Cloud Console.';
-            } else if (errorReason === 'accessNotConfigured') {
-                userMessage = 'L\'API de YouTube Data v3 no està activada. Activa-la a Google Cloud Console.';
-            } else if (errorReason === 'quotaExceeded') {
-                userMessage = 'Has superat la quota diària de l\'API. Espera fins demà o crea un altre projecte.';
-            } else if (response.status === 403) {
-                userMessage = 'Accés denegat. Comprova les restriccions de la clau a Google Cloud Console.';
-            }
-
-            return { valid: false, error: userMessage };
-        } catch (error) {
-            console.error('iuTube: Error de xarxa verificant API key:', error);
-            return { valid: false, error: 'Error de connexió. Comprova la teva connexió a internet.' };
-        }
-    },
-
-    // Cercar vídeos
+    // Cerca de compatibilitat: només cançons del feed publicat.
     async searchVideos(query, maxResults = 12) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { items: [], error: 'No API key' };
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/search?part=snippet&type=video&videoDuration=long&q=${encodeURIComponent(query)}&maxResults=${maxResults}&relevanceLanguage=${this.language}&regionCode=${this.regionCode}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                const errorData = await response.json().catch(() => ({}));
-                const errorReason = errorData.error?.errors?.[0]?.reason || '';
-
-                if (response.status === 403) {
-                    if (errorReason === 'quotaExceeded') {
-                        return { items: [], error: 'Quota excedida. L\'API de cerca consumeix molta quota. Espera fins demà.' };
-                    }
-                    return { items: [], error: 'La cerca no està permesa amb la teva clau API.' };
-                }
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            return { items: this.transformSearchResults(data.items), error: null };
-        } catch (error) {
-            console.error('iuTube: Error cercant vídeos:', error);
-            return { items: [], error: error.message };
-        }
+        const words = String(query || '').toLocaleLowerCase('ca').trim().split(/\s+/).filter(Boolean);
+        const items = this.filterHiddenVideos(this.feedVideos).filter(video => words.every(word =>
+            [video.title, video.channelTitle].join(' ').toLocaleLowerCase('ca').includes(word)));
+        return { items: items.slice(0, maxResults), error: null, fromFeed: true };
     },
 
-    // Obtenir vídeos populars (prioritza feed, després API)
-    async getPopularVideos(maxResults = 12) {
+    // Obtenir vídeos del feed publicat
+    async getPopularVideos(_maxResults = 12) {
     // PRIORITAT 1: Usar vídeos del feed si estan disponibles
     if (this.feedLoaded && this.feedVideos.length > 0) {
         console.log(`iuTube: Mostrant ${this.feedVideos.length} vídeos des de ${FEED_URL}`);
-        
+
         // Transformar al format esperat
         // Es conserven TOTS els camps del feed (originalYear, topicTrack, originalTitle…): sense l'any original, una
         // reedició pujada fa poc passava per estrena en aquest camí i no a l'altre (loadVideos), i «Acabades de
@@ -1207,214 +892,68 @@ const YouTubeAPI = {
             musicReason: v.musicReason || '',
             description: v.description || ''
         }));
-        
+
     return { items: videos, error: null, fromFeed: true };
     }
 
-    // PRIORITAT 2: Si hi ha API key, obtenir vídeos frescos
-    const apiKey = this.getApiKey();
-    if (apiKey) {
-        console.log('iuTube: Obtenint vídeos catalans via API...');
-        const result = await this.getVideosFromCatalanChannelsEfficient(maxResults);
-        if (result.items && result.items.length > 0) {
-            return result;
-        }
-    }
-
-    // FALLBACK: Retornar error si no hi ha res
-    return { items: [], error: `No hi ha vídeos disponibles. Comprova ${FEED_URL} o configura una API key.` };
+    return { items: [], error: 'No s’ha pogut carregar el catàleg. Torna-ho a provar quan tinguis connexió.' };
 },
 
     // Obtenir vídeos per categoria
     async getVideosByCategory(categoryId, maxResults = 12) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { items: [], error: 'No API key' };
-
-        // Primer, obtenir vídeos del cache i filtrar per categoria
-        const cached = this.getFromCache('catalan_videos');
-        if (cached) {
-            const filtered = this.getVideosByCategories(cached, categoryId);
-            if (filtered.length > 0) {
-                console.log(`iuTube: ${filtered.length} vídeos trobats per categoria "${categoryId}" (cache)`);
-                return { items: filtered.slice(0, maxResults), error: null };
-            }
-        }
-
-        // Si no hi ha cache, carregar tots els vídeos i filtrar
-        const result = await this.getVideosFromCatalanChannelsEfficient(100);
-        if (result.items && result.items.length > 0) {
-            const filtered = this.getVideosByCategories(result.items, categoryId);
-            if (filtered.length > 0) {
-                console.log(`iuTube: ${filtered.length} vídeos trobats per categoria "${categoryId}"`);
-                return { items: filtered.slice(0, maxResults), error: null };
-            }
-        }
-
-        return { items: [], error: 'No s\'han trobat vídeos per aquesta categoria' };
+        return { items: this.getVideosByCategories(this.filterHiddenVideos(this.feedVideos), categoryId).slice(0, maxResults), error: null, fromFeed: true };
     },
 
     // Obtenir detalls d'un vídeo
     async getVideoDetails(videoId) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { video: null, error: 'No API key' };
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/videos?part=snippet,statistics,contentDetails&id=${videoId}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.items && data.items.length > 0) {
-                const video = this.transformVideoDetails(data.items[0]);
-                if (this.isVideoHidden(video)) {
-                    return { video: null, error: 'Video ocult' };
+        const id = String(videoId || '');
+        const absent = { video: null, error: 'Aquesta cançó no és al catàleg publicat.' };
+        if (!/^[A-Za-z0-9_-]{11}$/.test(id) || this.isVideoHidden(id)) return absent;
+        const publishedChannels = new Set(this.feedChannels.map(channel => channel.id));
+        const find = () => this.filterHiddenVideos([
+            ...this.feedVideos, ...this.styleHistoryVideos, ...this.historyPoolVideos,
+            ...Object.values(this.channelArchiveCache).flat(),
+        ]).find(video => video.id === id && publishedChannels.has(video.channelId));
+        let video = find();
+        if (!video) { await this.ensureStyleHistory(); video = find(); }
+        if (!video) {
+            // Índex generat amb les pàgines estàtiques; no consulta YouTube.
+            try {
+                if (!this.videoChannelIndexPromise) {
+                    this.videoChannelIndexPromise = (async () => {
+                    const file = 'data/video-channels.json';
+                    const response = await fetch(window.appDataUrl?.(file) || file);
+                    if (!response.ok) throw new Error('Índex no disponible');
+                    return response.json();
+                    })();
                 }
-                return { video, error: null };
-            }
-            return { video: null, error: 'Video not found' };
-        } catch (error) {
-            console.error('Error obtenint detalls del vídeo:', error);
-            return { video: null, error: error.message };
+                const channels = await this.videoChannelIndexPromise;
+                const channelId = channels[id];
+                if (typeof channelId === 'string' && publishedChannels.has(channelId)) {
+                    await this.loadChannelArchiveVideos(channelId); video = find();
+                }
+            } catch (_) { this.videoChannelIndexPromise = null; }
         }
+        return video ? { video: this.hydrateArchiveVideo(video), error: null, fromFeed: true } : absent;
     },
 
     // Obtenir informació del canal
     async getChannelDetails(channelId) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { channel: null, error: 'No API key' };
-
-        try {
-            let resolvedId = channelId;
-            if (channelId && channelId.startsWith('@')) {
-                resolvedId = await this.resolveChannelId(channelId);
-                if (!resolvedId) {
-                    return { channel: null, error: 'No s\'ha pogut resoldre el handle' };
-                }
-            }
-
-            const response = await fetch(
-                `${this.BASE_URL}/channels?part=snippet,statistics&id=${resolvedId}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.items && data.items.length > 0) {
-                return { channel: this.transformChannelDetails(data.items[0]), error: null };
-            }
-            return { channel: null, error: 'Channel not found' };
-        } catch (error) {
-            console.error('Error obtenint detalls del canal:', error);
-            return { channel: null, error: error.message };
-        }
+        const value = String(channelId || '').toLocaleLowerCase('ca');
+        const channel = this.feedChannels.find(item => String(item.id).toLocaleLowerCase('ca') === value ||
+            (value.startsWith('@') && String(item.handle || '').toLocaleLowerCase('ca') === value));
+        return channel ? { channel: { ...this.withDisplayName(channel), title: this.withDisplayName(channel).name }, error: null }
+            : { channel: null, error: 'Aquest artista no és al catàleg publicat.' };
     },
 
     // Obtenir informació del canal per handle (@username)
-    async getChannelByHandle(handle) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { channel: null, error: 'No API key' };
-
-        const cleanHandle = handle.startsWith('@') ? handle.substring(1) : handle;
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/channels?part=snippet,statistics&forHandle=${cleanHandle}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (data.items && data.items.length > 0) {
-                return { channel: this.transformChannelDetails(data.items[0]), error: null };
-            }
-            return { channel: null, error: 'Canal no trobat' };
-        } catch (error) {
-            console.error('Error obtenint canal per handle:', error);
-            return { channel: null, error: error.message };
-        }
-    },
+    async getChannelByHandle(handle) { return this.getChannelDetails(String(handle || '').startsWith('@') ? handle : '@' + handle); },
 
     // Obtenir vídeos relacionats
-    async getRelatedVideos(videoId, maxResults = 10) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { items: [], error: 'No API key' };
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/search?part=snippet&type=video&relatedToVideoId=${videoId}&maxResults=${maxResults}&relevanceLanguage=${this.language}&regionCode=${this.regionCode}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            return { items: this.transformSearchResults(data.items), error: null };
-        } catch (error) {
-            console.error('Error obtenint vídeos relacionats:', error);
-            return { items: [], error: error.message };
-        }
-    },
 
     // Obtenir comentaris d'un vídeo
-    async getVideoComments(videoId, maxResults = 20) {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { items: [], error: 'No API key' };
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/commentThreads?part=snippet&videoId=${videoId}&maxResults=${maxResults}&order=relevance&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            return { items: this.transformComments(data.items), error: null };
-        } catch (error) {
-            console.error('Error obtenint comentaris:', error);
-            return { items: [], error: error.message };
-        }
-    },
 
     // Obtenir categories de vídeos
-    async getVideoCategories(regionCode = 'ES') {
-        const apiKey = this.getApiKey();
-        if (!apiKey) return { items: [], error: 'No API key' };
-
-        try {
-            const response = await fetch(
-                `${this.BASE_URL}/videoCategories?part=snippet&regionCode=${regionCode}&key=${apiKey}`
-            );
-
-            if (!response.ok) {
-                throw new Error(`API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            return {
-                items: data.items
-                    .filter(cat => cat.snippet.assignable)
-                    .map(cat => ({
-                        id: cat.id,
-                        name: cat.snippet.title
-                    })),
-                error: null
-            };
-        } catch (error) {
-            console.error('Error obtenint categories:', error);
-            return { items: [], error: error.message };
-        }
-    },
 
     // Transformar resultats de cerca
     transformSearchResults(items) {

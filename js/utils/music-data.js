@@ -1,4 +1,4 @@
-// Dades musicals per a la sincronització: llista explícita, sense credencials ni memòria cau.
+// Dades musicals per a les còpies JSON: llista explícita, sense credencials ni memòria cau.
 (function (window) {
     'use strict';
     const app = window.SegueixApp;
@@ -107,7 +107,7 @@
 
     function validate(raw) {
         if (!raw || raw.product !== 'segueix-musica' || raw.v !== 1 || !raw.data || typeof raw.data !== 'object') {
-            throw new Error('Les dades de sincronització no són compatibles amb Música.');
+            throw new Error('La còpia JSON no és compatible amb Música.');
         }
         const d = raw.data;
         if (arr(d.playlists).length > 500 || arr(d.categories).length > 500) throw new Error('La còpia és massa gran.');
@@ -157,7 +157,7 @@
         try {
             return JSON.parse(storage.getItem(key)) ?? fallback;
         } catch (_) {
-            throw new Error('Hi ha dades locals que no es poden llegir. No s’ha modificat cap còpia de Drive.');
+            throw new Error('Hi ha dades locals que no es poden llegir. No s’han modificat les dades.');
         }
     }
 
@@ -172,7 +172,7 @@
                     ? typeof data[field] !== 'object' || Array.isArray(data[field])
                     : !Array.isArray(data[field]))
             ) {
-                throw new Error('Les dades locals no tenen el format esperat. No s’ha modificat cap còpia de Drive.');
+                throw new Error('Les dades locals no tenen el format esperat. No s’han modificat les dades.');
             }
         }
         // El mode es desa com a text; la resta són estructures JSON.
@@ -191,7 +191,7 @@
         });
     }
 
-    // Només dades regenerables: mai historial, llistes, gustos, consentiments ni diaris de Drive.
+    // Només dades regenerables: mai historial, llistes, gustos, consentiments ni dades personals.
     function releaseCache(storage) {
         const keys = new Set([
             'catube_feed_v1',
@@ -217,7 +217,7 @@
         }
     }
 
-    function apply(data, storage = window.localStorage, metadata = []) {
+    function apply(data, storage = window.localStorage) {
         const clean = validate({ product: 'segueix-musica', v: 1, data }).data;
         const decorate = (list) =>
             list.map((v) => ({ ...v, thumbnail: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`, source: 'api' }));
@@ -243,13 +243,11 @@
             ])
         );
         writes.push(['user_liked_videos', JSON.stringify(clean.likes.map((v) => v.id))]);
-        // El diari i el compte de Drive es confirmen juntament amb les dades aplicades.
-        writes.push(...metadata);
         const old = writes.map(([key]) => [key, storage.getItem(key)]);
         try {
             writes.forEach(([key, value]) => (value === null ? storage.removeItem(key) : writeStorage(key, value, storage)));
         } catch (error) {
-            // Primer allibera totes les escriptures parcials, inclòs el diari: la còpia anterior hi cabia.
+            // Primer allibera totes les escriptures parcials, perquè la còpia anterior hi cabia.
             writes.forEach(([key]) => storage.removeItem(key));
             old.forEach(([key, value]) => (value === null ? storage.removeItem(key) : storage.setItem(key, value)));
             throw error;
@@ -258,3 +256,4 @@
     }
     app.utils.musicData = { KEYS, collect, validate, apply, writeStorage };
 })(window);
+

@@ -10,8 +10,8 @@
     app.utils = app.utils || {};
 
     // Els enllaços de compartició obren Segueix Música, no la web de Segueix youtubers.
-    // De moment, allotjat a GitHub Pages; si canvia el domini, només cal tocar aquesta constant.
-    const SHARE_BASE_URL = 'https://segueix.github.io/musica/';
+    // El paquet estàtic injecta el domini escollit durant la generació.
+    const SHARE_BASE_URL = window.SEGUEIX_PUBLIC_URL || 'https://segueix.github.io/musica/';
     const PAYLOAD_VERSION = 1;
     const MAX_SHARE_START_SECONDS = 24 * 60 * 60;
 
@@ -204,3 +204,4 @@
         MAX_SHARE_START_SECONDS,
     };
 })(window);
+

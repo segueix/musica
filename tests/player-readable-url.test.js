@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 const playerSource = readFileSync(new URL('../js/features/player.js', import.meta.url), 'utf8');
 
-function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', pathname = '/', base = '' } = {}) {
+function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', pathname = '/', base = '', staticSite = false } = {}) {
     const elements = {
         videoTitle: { textContent: title },
         mainContent: { classList: { contains: () => false } },
@@ -45,6 +45,7 @@ function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', 
     };
 
     const window = {
+        SEGUEIX_STATIC_SITE: staticSite,
         SegueixApp: { state: { player: {} }, features: {}, utils: base ? { appBasePath: () => base } : {} },
         document,
         location,
@@ -60,7 +61,7 @@ function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', 
 }
 
 describe('URL llegible del vídeo dins la PWA', () => {
-    it('substitueix ?v= per /video/<slug>-<id> sense crear una entrada extra', () => {
+    it('conserva ?v= al domini propi sense crear una entrada extra', () => {
         const { window, history } = bootPlayer();
         const videoId = 'AbCdEf12345';
 
@@ -74,9 +75,9 @@ describe('URL llegible del vídeo dins la PWA', () => {
         window.SegueixApp.features.player.showVideo(videoId);
 
         expect(history.pushState).toHaveBeenCalledTimes(1);
-        expect(history.replaceState).toHaveBeenCalledTimes(1);
-        expect(window.location.pathname).toBe('/video/a-punt-media-video-de-prova-AbCdEf12345');
-        expect(window.location.search).toBe('');
+        expect(history.replaceState).not.toHaveBeenCalled();
+        expect(window.location.pathname).toBe('/');
+        expect(window.location.search).toBe('?v=AbCdEf12345');
         expect(history.state.videoId).toBe(videoId);
     });
 
@@ -94,8 +95,8 @@ describe('URL llegible del vídeo dins la PWA', () => {
 
         await window.SegueixApp.features.player.showVideoFromAPI(videoId, { startAt: 73 });
 
-        expect(window.location.pathname).toBe('/video/historia-de-catalunya-ZyXwVu98765');
-        expect(window.location.search).toBe('?t=73');
+        expect(window.location.pathname).toBe('/');
+        expect(window.location.search).toBe('?v=ZyXwVu98765&t=73');
         expect(history.state.videoId).toBe(videoId);
     });
 
@@ -121,7 +122,19 @@ describe('URL llegible del vídeo dins la PWA', () => {
         expect(window.location.search).toBe(`?v=${videoId}`);
     });
 
-    it("la ruta llegible parteix de la carpeta de l'app, no de l'arrel del domini", () => {
+    it('en una web estàtica amb domini propi conserva la URL de l’app', () => {
+        const { window, history } = bootPlayer({ hostname: 'musica.example', pathname: '/musica/', base: '/musica/', staticSite: true });
+        window.SegueixApp.features.player.registerRuntime({ showVideoImpl(id) {
+            window.SegueixApp.state.player.currentVideoId = id;
+            history.pushState({ videoId: id }, '', `?v=${id}`);
+        } });
+        window.SegueixApp.features.player.showVideo('song0000001');
+        expect(history.replaceState).not.toHaveBeenCalled();
+        expect(window.location.pathname).toBe('/musica/');
+        expect(window.location.search).toBe('?v=song0000001');
+    });
+
+    it("conserva la carpeta de l'app en reproduir", () => {
         const { window, history } = bootPlayer({ pathname: '/musica/', base: '/musica/' });
         const videoId = 'AbCdEf12345';
 
@@ -134,6 +147,7 @@ describe('URL llegible del vídeo dins la PWA', () => {
 
         window.SegueixApp.features.player.showVideo(videoId);
 
-        expect(window.location.pathname).toBe('/musica/video/a-punt-media-video-de-prova-AbCdEf12345');
+        expect(window.location.pathname).toBe('/musica/');
     });
 });
+

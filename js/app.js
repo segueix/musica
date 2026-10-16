@@ -3068,8 +3068,7 @@ function shouldThrottleBackgroundWork() {
 }
 
 async function bootstrapApp() {
-    const bootstrapProfile = detectBootstrapProgressDeviceProfile();
-    createBootstrapProgressOverlay(bootstrapProfile);
+    // La portada ja és visible; el progrés no ha de tapar-la en un dispositiu mòbil.
     updateBootstrapProgress(10, 'Iniciant aplicació...');
 
     if (typeof SegueixApp.dom?.init === 'function') {
@@ -3077,7 +3076,6 @@ async function bootstrapApp() {
     }
 
     initDefaultSmartCategories();
-    initIntroSplash();
     initElements();
     initDesktopSidebarPreference();
     syncHeaderHeightVar();
@@ -3086,7 +3084,8 @@ async function bootstrapApp() {
     // YouTube: no superposem controls propis damunt de l'iframe oficial.
     // La navegació de cua continua disponible fora del reproductor.
     // initQueueNextOverlay();
-    initAppUpdater();
+    // El precache no competeix amb el catàleg durant la primera pantalla.
+    window.addEventListener('segueix:startup-ready', () => initAppUpdater(), { once: true });
     loadGridLayoutPreference();
     loadWatchGridLayoutPreference();
     applyGridLayoutPreference();
@@ -3263,7 +3262,9 @@ async function restoreSavedViewState() {
 async function handleInitialUrlParams() {
     const urlParams = new URLSearchParams(window.location.search);
     shouldRestoreViewState =
-        !urlParams.get('v') && !urlParams.get('channel') && !urlParams.get('program') && !urlParams.get('cat') && !urlParams.get('add_tag');
+        !urlParams.get('v') && !urlParams.get('channel') && !urlParams.get('program') && !urlParams.get('cat') && !urlParams.get('add_tag') && !urlParams.get('style');
+    const requestedStyle = urlParams.get('style');
+    const initialStyle = ['Novetats', 'Descobreix', ...(window.SegueixMusicCategories?.CATEGORY_GROUPS || []).map(group => group.label)].includes(requestedStyle) ? requestedStyle : '';
     const addTagParam = urlParams.get('add_tag');
     if (addTagParam) {
         const normalizedTag = normalizeCustomTag(addTagParam);
@@ -3365,6 +3366,12 @@ async function handleInitialUrlParams() {
         setTimeout(() => {
             openPendingDeepLinkVideo();
         }, 100);
+    } else if (initialStyle) {
+        showHome();
+        selectedCategory = initialStyle;
+        localStorage.setItem(LAST_CATEGORY_STORAGE_KEY, initialStyle);
+        renderCategories();
+        await renderFeedAfterCategoryChange();
     } else {
         await restoreSavedViewState();
     }
@@ -7353,8 +7360,10 @@ async function loadVideosFromAPILegacyImpl() {
         return;
     }
 
+    const knownVideoIds = new Set(cachedAPIVideos.map(video => video.id));
     result.items.forEach(video => {
-        if (!cachedAPIVideos.find(v => v.id === video.id)) {
+        if (!knownVideoIds.has(video.id)) {
+            knownVideoIds.add(video.id);
             cachedAPIVideos.push(video);
         }
         if (video.channelId) {
@@ -14162,7 +14171,8 @@ var SupportModule = {
     openModal: openSupportModal,
 };
 
-async function refreshSynchronizedMusic(data, previous) {
+async function refreshImportedMusic(data, previous) {
+    invalidateHistoryCache();
     const changed = key => JSON.stringify(data[key]) !== JSON.stringify(previous[key]);
     if (changed('settings')) {
         initBackgroundPicker();
@@ -14180,7 +14190,7 @@ async function refreshSynchronizedMusic(data, previous) {
     });
     for (const event of ['segueix:music-prefs-changed', 'segueix:playlists-changed',
         'segueix:user-categories-changed', 'segueix:discovery-mode-changed']) {
-        window.dispatchEvent(new CustomEvent(event, { detail: { type: 'sync' } }));
+        window.dispatchEvent(new CustomEvent(event, { detail: { type: 'import' } }));
     }
     // Mai es toca la fitxa del reproductor, la cua activa ni un formulari que s’està editant.
     if (document.activeElement?.matches?.('input, textarea, [contenteditable="true"]')) return;
@@ -14200,7 +14210,7 @@ async function refreshSynchronizedMusic(data, previous) {
 }
 
 function configureFeatureRuntimes() {
-    SegueixApp.features.googleDriveSync?.registerRuntime?.({ refreshView: refreshSynchronizedMusic });
+    SegueixApp.features.configBackup?.registerRuntime?.({ refreshView: refreshImportedMusic });
     SegueixApp.features.navigation?.registerRuntime?.({
         handlePlayerVisibilityOnNavigation,
         exitPlaylistMode: exitPlaylistModeForNavigation,
@@ -14308,8 +14318,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 updateBootstrapProgress(66, 'Carregant dades...');
                 await handleInitialUrlParams();
                 await handleSharedPlaylistUrlImport();
-                SegueixApp.features.configSync.register();
-                SegueixApp.features.googleDriveSync.register();
+                SegueixApp.features.configBackup.register();
                 startupCompleted = true;
             })(),
             22000,
@@ -14319,10 +14328,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Startup pipeline error:', error);
         triggerRecovery('startup-pipeline-error');
     } finally {
+        window.dispatchEvent(new Event('segueix:startup-ready'));
         updateBootstrapProgress(100, 'Tot a punt!');
         setTimeout(() => completeBootstrapProgressOverlay(), 180);
     }
 });
+
 
 
 

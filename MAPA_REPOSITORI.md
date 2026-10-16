@@ -240,7 +240,7 @@ Aquest document llista **tot el contingut versionat** del repositori (sortida de
 │   │   └── state.js
 │   ├── features/
 │   │   ├── channel.js
-│   │   ├── config-sync.js
+│   │   ├── config-backup.js
 │   │   ├── feed.js
 │   │   ├── library.js
 │   │   ├── likes.js
@@ -299,3 +299,4 @@ Aquest document llista **tot el contingut versionat** del repositori (sortida de
 ├── sw.js
 └── vitest.config.js
 ```
+

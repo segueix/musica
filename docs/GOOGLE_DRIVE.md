@@ -1,3 +1,5 @@
+> **Retirat el 16/10/2026.** Document històric: aquesta integració ja no forma part de Música. Vegeu `CONVERSIO_ESTATICA.md` i les còpies JSON locals de Configuració.
+
 # Sincronització amb Google Drive
 
 Implementada el 7 d’octubre de 2026. Substitueix la transferència de configuració i historial per fitxer, WhatsApp, QR i codis de vinculació. La compartició pública d’una llista o categoria continua sent independent.
@@ -45,3 +47,4 @@ No hi ha una prova de 24 hores definida a l’app ni un canvi automàtic a produ
 Proves automàtiques de fusió, eliminacions, concurrència, idempotència, dades malmeses, privacitat, error d’escriptura, compte diferent, paginació i flux OAuth amb una API simulada. La verificació real amb Google requereix completar els passos d’activació: no es pot confirmar una autorització real sense un client OAuth configurat.
 
 Fonts oficials: [token model](https://developers.google.com/identity/oauth2/web/guides/use-token-model), [appDataFolder](https://developers.google.com/workspace/drive/api/guides/appdata), [verificació de marca](https://developers.google.com/identity/protocols/oauth2/production-readiness/brand-verification).
+

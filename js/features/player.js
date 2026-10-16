@@ -24,35 +24,8 @@
         return app.utils?.continueWatchingStorage || null;
     }
 
-    function slugifyVideoTitle(value) {
-        return String(value || '')
-            .normalize('NFKD')
-            .replace(/[\u0300-\u036f]/g, '')
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-+|-+$/g, '')
-            .replace(/-{2,}/g, '-')
-            .slice(0, 96)
-            .replace(/-+$/g, '');
-    }
-
-    function getRenderedVideoTitle() {
-        const titleElement = window.document?.getElementById?.('videoTitle');
-        return String(titleElement?.textContent || '').trim();
-    }
-
     function getActiveVideoId() {
         return String(app.state?.player?.currentVideoId || app.state?.currentVideoId || '').trim();
-    }
-
-    function currentStartAt() {
-        try {
-            const params = new window.URLSearchParams(window.location.search || '');
-            const raw = Number(params.get('t'));
-            return Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 0;
-        } catch {
-            return 0;
-        }
     }
 
     function getExplicitUrlStartAt(videoId) {
@@ -109,46 +82,10 @@
         return path.replace(/\/video\/[^/]*$/, '/').replace(/[^/]*$/, '') || '/';
     }
 
-    // La ruta llegible /video/<slug>-<id> necessita un servidor que la serveixi (functions/video a Cloudflare). GitHub
-    // Pages no en té: en recarregar donava 404. Allà la URL es queda amb ?v=<id>, que index.html ja sap obrir.
-    function supportsReadableVideoPaths() {
-        return !/\.github\.io$/i.test(String(window.location?.hostname || ''));
-    }
-
     function isReadableVideoPath(pathname) {
         const base = appBasePath();
         const path = String(pathname || '');
         return path.startsWith(base) && VIDEO_PATH_PATTERN.test(`/${path.slice(base.length)}`);
-    }
-
-    function buildReadableVideoPath(videoId, title, { omitStartAt = false } = {}) {
-        const id = String(videoId || '').trim();
-        if (!VIDEO_ID_PATTERN.test(id)) return '';
-        const slug = slugifyVideoTitle(title) || 'video';
-        const startAt = omitStartAt ? 0 : currentStartAt();
-        return `${appBasePath()}video/${encodeURIComponent(`${slug}-${id}`)}${startAt > 0 ? `?t=${startAt}` : ''}`;
-    }
-
-    function syncReadableVideoUrl(videoId, attempt = 0, settings = {}) {
-        if (!supportsReadableVideoPaths()) return;
-        const id = String(videoId || '').trim();
-        if (!VIDEO_ID_PATTERN.test(id)) return;
-        const activeId = getActiveVideoId();
-        if (activeId && activeId !== id) return;
-        const title = getRenderedVideoTitle();
-        if (!title) {
-            if (attempt < 3 && typeof window.setTimeout === 'function') {
-                window.setTimeout(() => syncReadableVideoUrl(id, attempt + 1, settings), 24 * (attempt + 1));
-            }
-            return;
-        }
-        const target = buildReadableVideoPath(id, title, settings);
-        if (!target) return;
-        const current = `${window.location.pathname || ''}${window.location.search || ''}`;
-        if (current === target) return;
-        try {
-            window.history.replaceState({ ...(window.history.state || {}), videoId: id }, '', target);
-        } catch {}
     }
 
     function isVideoThumbnailImage(img) {
@@ -611,7 +548,6 @@
         const resolved = resolvePlaybackOptions(videoId, options);
         const result = runtime.hooks.showVideoImpl?.(videoId, resolved.options);
         beginProgressTracking(videoId, 'static', resolved);
-        syncReadableVideoUrl(videoId, 0, { omitStartAt: resolved.resumed });
         return result;
     }
     async function showVideoFromAPI(videoId, options = {}) {
@@ -628,7 +564,6 @@
         if (activeProgress !== tracker) return result;
         const activeId = getActiveVideoId();
         if (activeId && activeId !== String(videoId || '').trim()) return result;
-        syncReadableVideoUrl(videoId, 0, { omitStartAt: resolved.resumed });
         return result;
     }
     function playThenNavigate(videoId, source) {
@@ -672,3 +607,4 @@
         renderPlaylistRelatedVideos,
     };
 })(window);
+

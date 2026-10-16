@@ -199,16 +199,19 @@
         const nav = $('ptBottomNav');
         const root = window.document.documentElement;
         if (!nav || !root?.style || typeof window.ResizeObserver !== 'function') return;
-        const measure = () => {
-            const height = nav.offsetHeight;
+        let previousHeight = '';
+        const measure = entries => {
+            const height = entries[0]?.borderBoxSize?.[0]?.blockSize || entries[0]?.contentRect?.height;
             if (!height) return root.style.removeProperty('--pt-nav-h');
             const style = window.getComputedStyle(nav);
             // padding-bottom = 4 px + zona segura (que les fórmules ja sumen amb --safe-bottom)
             const safe = Math.max(0, (parseFloat(style.paddingBottom) || 0) - 4);
-            root.style.setProperty('--pt-nav-h', `${Math.round(height - safe)}px`);
+            const next = `${Math.round(height - safe)}px`;
+            if (next === previousHeight) return;
+            previousHeight = next;
+            root.style.setProperty('--pt-nav-h', next);
         };
         new window.ResizeObserver(measure).observe(nav);
-        measure();
     }
 
     function init() {
@@ -244,3 +247,4 @@
 
     app.features.shellNav = { toast, sync, currentSection, openStyle, ACTIONS };
 })(window);
+

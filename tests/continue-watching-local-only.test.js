@@ -4,7 +4,7 @@ import { loadScript } from './setup.js';
 
 
 describe('Continua mirant és local al dispositiu', () => {
-    it('queda exclòs de la sincronització amb Google Drive', () => {
+    it('queda exclòs de la còpia JSON manual', () => {
         const ctx = loadScript('js/utils/music-data.js');
         ctx.localStorage.setItem('catube_continue_watching_v1', 'PRIVATE_PROGRESS');
         ctx.localStorage.setItem('catube_anonymous_analytics_enabled', 'PRIVATE_CONSENT');
@@ -33,4 +33,5 @@ describe('Continua mirant és local al dispositiu', () => {
         expect(storage.get('Live1234567')).toBeNull();
     });
 });
+
 

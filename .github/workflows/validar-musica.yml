@@ -5,6 +5,11 @@ on:
     branches: [main]
     # Només canvis del sistema. Dades editorials i scripts d'altes puntuals no gasten Actions.
     paths:
+      - '*.html'
+      - 'css/**'
+      - 'sw.js'
+      - 'manifest.json'
+      - 'img/**'
       - 'js/**/*.js'
       - '!js/features/music-affinity-catalog.js'
       - 'scripts/*.js'
@@ -40,11 +45,16 @@ jobs:
         run: node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs
       - name: Comprova la sintaxi dels generadors
         run: |
+          node --check scripts/optimitzar_web_estatica.cjs
+          node --check scripts/generar_web_estatica.cjs
+          node --check scripts/validar_paquet_estatic.cjs
+          node --check sw.js
           node --check scripts/update_music_feed.js
           node --check scripts/archivar_feed_musical.js
           node --check scripts/update_music_history_views.js
           node --check scripts/lib/subtitols_castella.js
       - name: Proves musicals en una sola invocació
-        run: npx vitest run tests/musicbrainz-enrichment.test.js tests/youtube-search-candidates.test.js tests/music-genres.test.js tests/arxiu-musical.test.js tests/music-content-overrides.test.js tests/subtitols-castella.test.js tests/albums-musica.test.js tests/quota-feed.test.js tests/channel-video-allowlist.test.js tests/resoldre-canals-quota.test.js tests/music-affinities-catalog.test.js tests/music-subcategories.test.js
+        run: npx vitest run tests/musicbrainz-enrichment.test.js tests/youtube-search-candidates.test.js tests/music-genres.test.js tests/arxiu-musical.test.js tests/music-content-overrides.test.js tests/subtitols-castella.test.js tests/albums-musica.test.js tests/quota-feed.test.js tests/channel-video-allowlist.test.js tests/resoldre-canals-quota.test.js tests/music-affinities-catalog.test.js tests/music-subcategories.test.js tests/static-site.test.js tests/static-catalog.test.js tests/static-seo-runtime.test.js tests/static-service-worker.test.js tests/admin-musica.test.js tests/music-admin.test.js tests/config-backup.test.js tests/startup-performance.test.js
       - name: Valida la base actual
         run: node scripts/validar_artistes_musica.js
+

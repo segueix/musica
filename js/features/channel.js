@@ -92,7 +92,7 @@
     async function loadCreatorSlugMap() {
         if (creatorSeo.loadPromise) return creatorSeo.loadPromise;
 
-        creatorSeo.loadPromise = fetch('/js/channels-ca.json', {
+        creatorSeo.loadPromise = fetch(window.appDataUrl?.('js/channels-ca.json') || '/js/channels-ca.json', {
             credentials: 'same-origin',
             cache: 'force-cache',
         })
@@ -112,9 +112,10 @@
 
     function creatorHref(channelId) {
         const normalizedId = String(channelId || '').trim();
-        if (!normalizedId) return '/creadors';
+        const base = app.utils?.appBasePath?.() || '/';
+        if (!normalizedId) return `${base}creadors/`;
         const slug = creatorSeo.slugByChannelId.get(normalizedId);
-        return `/creador/${encodeURIComponent(slug || normalizedId)}`;
+        return `${base}creador/${encodeURIComponent(slug || normalizedId)}${window.SEGUEIX_STATIC_SITE ? '/' : ''}`;
     }
 
     function ensureSeoStyles() {
@@ -257,3 +258,4 @@
         enhanceSeoLinks,
     };
 })(window);
+

@@ -1,6 +1,6 @@
 // Service Worker per PWA — dos caches amb cicles de vida separats:
 //
-//   · static-<hash>  Shell de codi (HTML, CSS, JS, manifest, icones). Versionat pel
+//   · static-v2-<hash>  Shell de codi (HTML, CSS, JS, manifest, icones). Versionat pel
 //                    CONTINGUT real dels fitxers via scripts/actualitzar_versio_sw.js.
 //                    Cache-first: resposta instantània, xarxa només quan hi ha versió
 //                    nova de codi.
@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '3c86d895ffb2';
+const CACHE_VERSION = 'dbee589b7705';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -24,7 +24,6 @@ const STATIC_ASSETS = [
     './img/icon-192.png',
     './css/styles.css',
     './css/portada.css',
-    './css/google-drive-sync.css',
     './js/config.js',
     './js/song-title.js',
     './js/music-categories.js',
@@ -37,9 +36,7 @@ const STATIC_ASSETS = [
     './js/utils/storage.js',
     './js/utils/id-codecs.js',
     './js/utils/share-codecs.js',
-    './js/google-drive-config.js',
     './js/utils/music-data.js',
-    './js/utils/drive-sync-model.js',
     './js/utils/share-card.js',
     './js/utils/qr-share.js',
     './js/utils/config-feedback.js',
@@ -76,11 +73,7 @@ const STATIC_ASSETS = [
     './js/features/artist-map.js',
     './js/features/affinity.js',
     './js/features/shared-playlists.js',
-    './js/features/config-sync.js',
-    './js/features/google-drive-sync.js',
-    './js/features/analytics.js',
-    './js/features/analytics-pdf.js',
-    './js/features/analytics-admin.js',
+    './js/features/config-backup.js',
     './js/app.js',
     './js/features/tv-learning.js',
     './js/features/smart-feed.js',
@@ -101,11 +94,13 @@ const STATIC_ASSETS = [
 // Canviar aquest comentari força una nova instal·lació i refresca el mateix cache estàtic.
 // Preview refresh: YouTube sense reproducció en segon pla 2026-10-04.
 
-const STATIC_CACHE = `static-${CACHE_VERSION}`;
+// v2 retira les còpies antigues on una fitxa podia sobreescriure la portada.
+const STATIC_CACHE = `static-v2-${CACHE_VERSION}`;
 const DATA_CACHE = 'data-v1';
 
-// Clau única del shell HTML per a totes les navegacions (amb query o sense).
+// Només l’arrel de l’app i index.html comparteixen la clau, independentment de la query.
 const SHELL_URL = new URL('./index.html', self.location.href).toString();
+const APP_PATH = new URL('./', self.location.href).pathname;
 
 // ==================== INSTALL ====================
 self.addEventListener('install', (event) => {
@@ -166,17 +161,20 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    const isNavigate = request.mode === 'navigate' || path === '/' || path.endsWith('/index.html');
+    const isShell = path === APP_PATH || path === new URL(SHELL_URL).pathname;
+    const isNavigate = request.mode === 'navigate' || isShell;
     const isNetworkFirstData = path.endsWith('/data/feed.json')
         || path.endsWith('/data/hidden-videos.json')
         || path.endsWith('/data/videos-restringits.json')
+        || path.endsWith('/data/static-routes.json')
+        || path.endsWith('/data/video-channels.json')
         || path.includes('/data/search_index_');
     const isSwrData = path.includes('/data/') || path.endsWith('/js/channels-ca.json');
     const isStaticCode = path.endsWith('.js') || path.endsWith('.css');
 
     if (isNavigate) {
-        // El shell HTML: fresc si hi ha xarxa, fallback al precache si no.
-        event.respondWith(navigationNetworkFirst(request));
+        // Cada pàgina conserva la seva còpia; una fitxa no pot substituir la portada.
+        event.respondWith(navigationNetworkFirst(request, isShell));
     } else if (isNetworkFirstData) {
         event.respondWith(networkFirst(request, DATA_CACHE));
     } else if (isSwrData) {
@@ -191,24 +189,22 @@ self.addEventListener('fetch', (event) => {
 
 // ==================== ESTRATÈGIES ====================
 
-// Navegacions (shell HTML): xarxa primer, i tot es guarda/es recupera sota la clau del
-// shell. Els enllaços compartits porten query (?v=ID), i si es cachegessin per URL
-// completa el cache creixeria amb una còpia de l'HTML per enllaç i, sobretot, el
-// fallback offline no trobaria mai res (caches.match respecta la query) i l'enllaç
-// acabaria en error de xarxa en comptes d'obrir l'app.
-async function navigationNetworkFirst(request) {
+// La portada ignora ?v= i altres paràmetres en el fallback offline. Les pàgines
+// generades i el panell es desen per camí propi, mai sota la clau de l’app.
+async function navigationNetworkFirst(request, isShell) {
+    const pageUrl = new URL(request.url);
+    pageUrl.search = '';
+    const key = isShell ? SHELL_URL : pageUrl.href;
+    const cache = await caches.open(STATIC_CACHE);
     try {
         const fetchRequest = new Request(request, { cache: 'reload' });
         const response = await fetch(fetchRequest);
-        if (response && response.status === 200 && response.type === 'basic') {
-            const cache = await caches.open(STATIC_CACHE);
-            cache.put(SHELL_URL, response.clone());
+        if (response && response.status === 200 && response.type === 'basic' && !response.redirected) {
+            await cache.put(key, response.clone());
         }
         return response;
     } catch (error) {
-        const cached =
-            (await caches.match(SHELL_URL)) || (await caches.match(request, { ignoreSearch: true }));
-        return cached || Response.error();
+        return (await cache.match(key)) || Response.error();
     }
 }
 
@@ -267,3 +263,4 @@ async function staleWhileRevalidate(request, cacheName, event) {
     const network = await networkPromise;
     return network || Response.error();
 }
+

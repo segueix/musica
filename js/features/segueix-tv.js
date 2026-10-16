@@ -766,12 +766,6 @@
         activePlaylistId = TV_PLAYLIST_ID;
         activePlaylistName = 'Segueix';
         document.body.classList.add('segueix-tv-playback');
-        try {
-            app.features.analytics?.track?.('tv_start', {
-                surface: 'tv',
-                tvMode: 'segueix',
-            });
-        } catch {}
         loadVideoInSequence({ autoPlay: false });
         return true;
     }
@@ -990,3 +984,4 @@
         boot();
     }
 })(window);
+

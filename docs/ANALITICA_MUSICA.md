@@ -1,3 +1,5 @@
+> **Retirat el 16/10/2026.** Document històric: aquesta integració ja no forma part de Música. Vegeu `CONVERSIO_ESTATICA.md` i les còpies JSON locals de Configuració.
+
 # Analítica exclusiva de Segueix Música
 
 Panell: https://segueix.github.io/musica/?analytics=1
@@ -13,3 +15,4 @@ L’accés requereix MUSIC_ANALYTICS_ADMIN_TOKEN si està configurat; en cas con
 L’identificador anònim del navegador té una clau local pròpia de Música i rota cada 90 dies. El servidor el transforma amb SHA-256. No es recullen IP, user-agent, textos de cerca ni IDs de cançons o artistes. Es conserva la preferència de desactivar l’analítica des de Configuració.
 
 Verificació: tests/analytics.test.js (17 proves, inclosos CORS, autenticació i segregació de dades); al servidor, tests/music-analytics.test.js cobreix els mateixos contractes d’aïllament. No enviar esdeveniments ficticis a producció per provar el panell.
+

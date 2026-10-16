@@ -29,3 +29,8 @@ Consulta `docs/MUSICA_DADES.md` per als criteris i el flux editorial.
 ## Seguretat de quota
 
 Els workflows heretats que consultaven YouTube continuen en mode manual fins que Música tingui claus i pipeline propis. El workflow setmanal de descoberta actual només consulta Wikidata.
+
+
+### Conversió estàtica (fases 1–3)
+
+`npm run build:static` genera el paquet `_site/`. El client i el panell d’artistes funcionen amb JSON locals, sense Functions ni claus de YouTube Data API al navegador. L’administració descarrega canvis editorials per revisar i aplicar amb `node scripts/aplicar_canvis_admin.cjs fitxer.json --dry-run` i després `--apply`; descarregar no publica. La integració del paquet al workflow encara correspon a la fase 4. Vegeu `docs/CONVERSIO_ESTATICA.md`.

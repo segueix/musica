@@ -13,7 +13,7 @@
         const link = document.createElement('link');
         link.id = 'categoryChipStylesheet';
         link.rel = 'stylesheet';
-        link.href = '/css/category-chips.css';
+        link.href = window.appDataUrl?.('css/category-chips.css') || '/css/category-chips.css';
         document.head.appendChild(link);
     }
 
@@ -33,7 +33,7 @@
             const typographyLink = document.createElement('link');
             typographyLink.id = 'typographyPolishStylesheet';
             typographyLink.rel = 'stylesheet';
-            typographyLink.href = '/css/typography-polish.css';
+            typographyLink.href = window.appDataUrl?.('css/typography-polish.css') || '/css/typography-polish.css';
             document.head.appendChild(typographyLink);
         }
     }
@@ -45,7 +45,7 @@
         const spacingLink = document.createElement('link');
         spacingLink.id = 'spacingPolishStylesheet';
         spacingLink.rel = 'stylesheet';
-        spacingLink.href = '/css/spacing-polish.css';
+        spacingLink.href = window.appDataUrl?.('css/spacing-polish.css') || '/css/spacing-polish.css';
         document.head.appendChild(spacingLink);
     }
 
@@ -55,7 +55,7 @@
         if (document.getElementById?.('segueixTVFeatureScript')) return;
         const script = document.createElement('script');
         script.id = 'segueixTVFeatureScript';
-        script.src = '/js/features/segueix-tv.js?v=20260919-segueix-tv-label-final-1';
+        script.src = window.appDataUrl?.('js/features/segueix-tv.js?v=20261016-json-1') || '/js/features/segueix-tv.js?v=20261016-json-1';
         script.defer = true;
         document.head.appendChild(script);
     }
@@ -66,7 +66,7 @@
         if (document.getElementById?.('contextTVFeatureScript')) return;
         const script = document.createElement('script');
         script.id = 'contextTVFeatureScript';
-        script.src = '/js/features/context-tv.js?v=20260919-tv-loop-regenerate-1';
+        script.src = window.appDataUrl?.('js/features/context-tv.js?v=20260919-tv-loop-regenerate-1') || '/js/features/context-tv.js?v=20260919-tv-loop-regenerate-1';
         script.defer = true;
         document.head.appendChild(script);
     }
@@ -77,7 +77,7 @@
         if (document.getElementById?.('tvScrollUIFeatureScript')) return;
         const script = document.createElement('script');
         script.id = 'tvScrollUIFeatureScript';
-        script.src = '/js/features/tv-scroll-ui.js?v=20260919-tv-loop-regenerate-1';
+        script.src = window.appDataUrl?.('js/features/tv-scroll-ui.js?v=20260919-tv-loop-regenerate-1') || '/js/features/tv-scroll-ui.js?v=20260919-tv-loop-regenerate-1';
         script.defer = true;
         document.head.appendChild(script);
     }
@@ -254,3 +254,4 @@
         showFollow
     };
 })(window);
+

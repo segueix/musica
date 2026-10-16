@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>Administració · Segueix Música</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
@@ -31,7 +32,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <body>
 <main>
 <h1>Segueix Música · administració d'artistes</h1>
-<p class="muted">Les decisions es guarden al navegador fins que exportis el JSON. L'automatisme de descoberta no sobreescriu aprovacions ni rebutjos.</p>
+<p class="muted">Edita l’esborrany al navegador i descarrega els canvis en JSON per aplicar-los al repositori. Descarregar no publica els canvis.</p>
 <div class="stats" id="stats"></div>
 <div class="toolbar">
 <input id="q" type="search" placeholder="Cerca artista…">
@@ -49,12 +50,13 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 <option value="">Tots els gèneres</option>
 <option value="__none__">Sense categoria</option>
 </select>
-<input id="adminToken" type="password" autocomplete="current-password" placeholder="Token admin" title="ANALYTICS_ADMIN_TOKEN; només es desa durant la sessió">
-<button id="saveGithub" class="ok">Desa canvis a GitHub</button>
-<button id="exportJson">Descarrega JSON revisat</button>
-<button id="exportCsv">Descarrega CSV</button>
+<button id="exportJson" class="ok">Descarrega canvis .json</button>
+<button id="importJson">Importa canvis .json</button>
+<button id="exportLegacy" hidden>Descarrega esborrany antic .json</button>
+<input id="importFile" type="file" accept=".json,application/json" hidden>
 <button id="reset">Descarta canvis locals</button>
 </div>
+<p id="adminMessage" role="status" aria-live="polite"></p>
 <div style="overflow:auto">
 <table>
 <thead><tr><th>Artista</th><th>Estat</th><th>Gèneres</th><th>YouTube</th><th class="hide-mobile">MusicBrainz</th><th class="hide-mobile">Evidència</th><th>Accions</th></tr></thead>
@@ -76,94 +78,43 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
   </div>
   <div class="modal-actions"><button type="button" id="cancelYoutube">Cancel·la</button><button type="button" class="ok" id="saveYoutube">Desa YouTube ID</button></div>
 </dialog>
+<script src="js/admin-changes.js?v=20261016-static-3"></script>
 <script>
 const DATA_URL='data/artistes-musica.json';
 const GENRES_URL='data/music-genres.json';
-const STORAGE='segueix_musica_admin_draft_v1';
+const STORAGE='segueix_musica_admin_changes_v2';
+const changesModel=window.SegueixAdminChanges;
+let taxonomyData=null;
 let db=null;
 let originalDb=null;
 let genreTaxonomy=[];
 let editingArtistIndex=null;
 let editingYoutubeIndex=null;
-const ADMIN_TOKEN_KEY='segueix_music_admin_token';
-
 function clone(value){return JSON.parse(JSON.stringify(value))}
-function artistKey(a){
- if(a?.wikidataId)return 'wikidata:'+a.wikidataId;
- const channel=(a?.youtube?.channels||[])[0]?.id;
- if(channel)return 'youtube:'+channel;
- return 'name:'+String(a?.name||'').trim().toLocaleLowerCase('ca');
-}
-function sameJson(a,b){return JSON.stringify(a??null)===JSON.stringify(b??null)}
-function artistKeysForAdmin(a){
- const keys=[];
- if(a?.wikidataId)keys.push('wikidata:'+a.wikidataId);
- for(const channel of a?.youtube?.channels||[])if(channel?.id)keys.push('youtube:'+channel.id);
- if(a?.name)keys.push('name:'+String(a.name).trim().toLocaleLowerCase('ca'));
- return keys;
-}
 function validYoutubeId(value){return /^UC[A-Za-z0-9_-]{22}$/.test(String(value||'').trim())}
-function buildChanges(){
- const currentByKey=new Map((db?.artists||[]).flatMap(a=>artistKeysForAdmin(a).map(key=>[key,a])));
- const currentByName=new Map((db?.artists||[]).map(a=>[String(a.name||'').trim().toLocaleLowerCase('ca'),a]));
- const changes=[];
- for(const before of originalDb?.artists||[]){
-  const originalKey=artistKey(before);
-  const current=currentByKey.get(originalKey)||currentByName.get(String(before.name||'').trim().toLocaleLowerCase('ca'));
-  if(!current){
-   changes.push({key:originalKey,name:before.name,delete:true});
-   continue;
-  }
-  const change={key:originalKey,name:before.name};
-  let dirty=false;
-  if(!sameJson(current.genres||[],before.genres||[])){change.genres=current.genres||[];dirty=true}
-  if(current.reviewStatus!==before.reviewStatus){change.reviewStatus=current.reviewStatus;dirty=true}
-  if(Boolean(current.active)!==Boolean(before.active)){change.active=Boolean(current.active);dirty=true}
-  if(!sameJson(current.youtube?.channels||[],before.youtube?.channels||[])){change.youtubeChannels=current.youtube?.channels||[];dirty=true}
-  if(dirty)changes.push(change);
- }
- return changes;
-}
-function setSaveMessage(message,isError=false){
- const button=document.getElementById('saveGithub');
- button.textContent=message||'Desa canvis a GitHub';
- button.classList.toggle('bad',Boolean(isError));
- if(!isError)button.classList.add('ok');
-}
-async function saveGithub(){
- const changes=buildChanges();
- if(!changes.length){setSaveMessage('No hi ha canvis');setTimeout(()=>setSaveMessage('Desa canvis a GitHub'),1600);return}
- const token=String(document.getElementById('adminToken').value||'').trim();
- if(!token){setSaveMessage('Falta el token admin',true);document.getElementById('adminToken').focus();return}
- sessionStorage.setItem(ADMIN_TOKEN_KEY,token);
- setSaveMessage('Desant…');
- document.getElementById('saveGithub').disabled=true;
+function message(text){document.getElementById('adminMessage').textContent=text}
+function exportChanges(){
  try{
-  const response=await fetch('/api/music-admin',{
-   method:'POST',
-   headers:{'content-type':'application/json',authorization:'Bearer '+token},
-   credentials:'same-origin',
-   cache:'no-store',
-   body:JSON.stringify({changes})
-  });
-  const body=await response.json().catch(()=>({}));
-  if(response.status===401)throw new Error('Token admin incorrecte');
-  if(!response.ok)throw new Error(body.error||('HTTP '+response.status));
-  originalDb=clone(db);
-  db.updatedAt=body.updatedAt||db.updatedAt;
-  localStorage.setItem(STORAGE,JSON.stringify(db));
-  setSaveMessage('Desat ✓');
-  setTimeout(()=>setSaveMessage('Desa canvis a GitHub'),2200);
- }catch(error){
-  setSaveMessage('Error en desar',true);
-  alert('No s’han pogut desar els canvis a GitHub: '+error.message);
- }finally{
-  document.getElementById('saveGithub').disabled=false;
- }
+  const patch=changesModel.create(originalDb,db);
+  changesModel.apply(originalDb,patch,taxonomyData);
+  download('canvis-artistes-musica.json',JSON.stringify(patch,null,2)+'\n','application/json');
+  message(patch.changes.length+' canvis descarregats. Encara no s’han aplicat al repositori.');
+ }catch(error){message(error.message)}
+}
+async function importChanges(file){
+ if(!file)return;
+ try{
+  if(file.size>8*1024*1024)throw new Error('El fitxer supera 8 MB.');
+  const patch=JSON.parse(await file.text());
+  const next=changesModel.apply(originalDb,patch,taxonomyData);
+  if(!confirm('Substituir l’esborrany local pels '+patch.changes.length+' canvis del fitxer?'))return;
+  localStorage.setItem(STORAGE,JSON.stringify(patch));
+  db=next;render();message('Esborrany importat. No s’ha publicat cap canvi.');
+ }catch(error){message('No s’ha importat: '+error.message)}
 }
 
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function save(){localStorage.setItem(STORAGE,JSON.stringify(db));render()}
+function save(){try{const patch=changesModel.create(originalDb,db);changesModel.apply(originalDb,patch,taxonomyData);localStorage.setItem(STORAGE,JSON.stringify(patch));message(patch.changes.length+' canvis a l’esborrany local.')}catch(error){message('No s’ha pogut desar l’esborrany: '+error.message+' Descarrega els canvis abans de tancar.')}render()}
 function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function artistAt(index){return Number.isInteger(index)&&index>=0?db.artists[index]:null}
 function setStatus(index,status){const a=artistAt(index);if(!a)return;a.reviewStatus=status;a.active=status==='aprovat';save()}
@@ -214,8 +165,6 @@ function useSearchCandidate(index,channelId){
  const a=artistAt(index);if(!a)return;
  const c=(a.youtube?.searchCandidates||[]).find(x=>x.id===channelId);if(!c)return;
  a.youtube.channels=[{id:c.id,handle:c.handle||null,name:c.title||null,type:c.suggestedType||'official',primary:true}];
- a.sources=[...new Set([...(a.sources||[]),'youtube:search-manual'])];
- a.confidence='mitjana';
  save();
 }
 function editGenres(index){
@@ -303,10 +252,15 @@ async function load(){
  ]);
  genreTaxonomy=(taxonomy.categories||[]).map(x=>x.label).filter(Boolean);
  originalDb=clone(remote);
- const draft=localStorage.getItem(STORAGE);
- if(draft){
-  try{const parsed=JSON.parse(draft);db=parsed.schemaVersion===remote.schemaVersion?parsed:remote}catch{db=remote}
- }else db=remote;
+ taxonomyData=taxonomy;
+ db=changesModel.editor(remote);
+ try{
+  const draft=localStorage.getItem(STORAGE);
+  document.getElementById('exportLegacy').hidden=!localStorage.getItem('segueix_musica_admin_draft_v1');
+  if(draft)db=changesModel.apply(originalDb,JSON.parse(draft),taxonomyData);
+  else if(localStorage.getItem('segueix_musica_admin_draft_v1'))message('Hi ha un esborrany de la versió antiga. S’ha conservat al navegador; no s’aplica automàticament sobre aquesta base.');
+ }catch(error){message('L’esborrany desat no s’ha aplicat: '+error.message+' Es conserva al navegador.');}
+ try{sessionStorage.removeItem('segueix_music_admin_token');sessionStorage.removeItem('segueix_analytics_admin_token')}catch{}
  const genreSelect=document.getElementById('genre');
  const genres=[...genreTaxonomy];
  for(const g of genres){
@@ -314,14 +268,15 @@ async function load(){
  }
  render();
 }
-document.getElementById('adminToken').value=sessionStorage.getItem(ADMIN_TOKEN_KEY)||sessionStorage.getItem('segueix_analytics_admin_token')||'';
-document.getElementById('saveGithub').addEventListener('click',saveGithub);
 document.getElementById('q').addEventListener('input',render);
 document.getElementById('status').addEventListener('change',render);
 document.getElementById('youtube').addEventListener('change',render);
 document.getElementById('genre').addEventListener('change',render);
-document.getElementById('reset').addEventListener('click',()=>{localStorage.removeItem(STORAGE);location.reload()});
-document.getElementById('exportJson').addEventListener('click',()=>{db.updatedAt=new Date().toISOString();download('artistes-musica.json',JSON.stringify(db,null,2)+'\n','application/json')});
+document.getElementById('reset').addEventListener('click',()=>{if(confirm('Descartar l’esborrany local?')){localStorage.removeItem(STORAGE);location.reload()}});
+document.getElementById('exportJson').addEventListener('click',exportChanges);
+document.getElementById('exportLegacy').addEventListener('click',()=>{const old=localStorage.getItem('segueix_musica_admin_draft_v1');if(old)download('esborrany-antic-artistes-musica.json',old,'application/json')});
+document.getElementById('importJson').addEventListener('click',()=>document.getElementById('importFile').click());
+document.getElementById('importFile').addEventListener('change',async e=>{await importChanges(e.target.files[0]);e.target.value=''});
 document.getElementById('closeGenreDialog').addEventListener('click',closeGenreEditor);
 document.getElementById('cancelGenres').addEventListener('click',closeGenreEditor);
 document.getElementById('saveGenres').addEventListener('click',saveGenreEditor);
@@ -331,12 +286,8 @@ document.getElementById('cancelYoutube').addEventListener('click',closeYoutubeEd
 document.getElementById('saveYoutube').addEventListener('click',saveYoutubeEditor);
 document.getElementById('youtubeDialog').addEventListener('cancel',e=>{e.preventDefault();closeYoutubeEditor()});
 document.getElementById('youtubeIdInput').addEventListener('keydown',e=>{if(e.key==='Enter')saveYoutubeEditor()});
-document.getElementById('exportCsv').addEventListener('click',()=>{
- const cols=['name','genres','genresRaw','reviewStatus','active','wikidataId','musicbrainzId','youtubeIds','youtubeCandidates','searchCandidates','confidence'];
- const lines=[cols.join(',')].concat(db.artists.map(a=>[a.name,(a.genres||[]).join('|'),(a.genresRaw||[]).join('|'),a.reviewStatus,a.active,a.wikidataId,a.musicbrainzId||'',(a.youtube?.channels||[]).map(c=>c.id).join('|'),(a.youtube?.candidates||[]).map(c=>c.url).join('|'),(a.youtube?.searchCandidates||[]).map(c=>c.id+':'+c.score).join('|'),a.confidence].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')));
- download('artistes-musica.csv',lines.join('\n')+'\n','text/csv;charset=utf-8');
-});
 load().catch(e=>document.getElementById('rows').innerHTML='<tr><td colspan="7">Error carregant la base: '+esc(e.message)+'</td></tr>');
 </script>
 </body>
 </html>
+

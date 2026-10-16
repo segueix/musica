@@ -161,7 +161,10 @@
     // ---------- Nom de l'artista ----------
 
     // «alfredgarcia» i «Alfred García» són el mateix nom: es compara per paraules i pel text compactat.
+    const preparedNameCache = new Map();
     function prepareNames(list) {
+        const cacheKey = JSON.stringify(list);
+        if (preparedNameCache.has(cacheKey)) return preparedNameCache.get(cacheKey);
         const seen = new Set();
         const prepared = [];
         (Array.isArray(list) ? list : [list]).forEach(value => {
@@ -176,6 +179,8 @@
             seen.add(compact);
             prepared.push({ words: list2, compact });
         });
+        if (preparedNameCache.size >= 2048) preparedNameCache.clear();
+        preparedNameCache.set(cacheKey, prepared);
         return prepared;
     }
 
@@ -327,3 +332,4 @@
 
     return { cleanTitle, cleanVideo, hasNoise, words };
 });
+
