@@ -9,7 +9,7 @@
 // Comprova, a mòbil (390 px) i ordinador (1280 px): el mapa surt a Descobreix i no a Inici, té punts, tocar-ne un
 // mostra els artistes al panell, el zoom canvia el viewBox, la pàgina no es desborda i tocar un artista obre la fitxa.
 // Gestos: mòbil, pessic amb dos dits (CDP), pantalla completa i un dit que mou el mapa, i dibuixar una zona amb el
-// dit engega la ràdio de la zona; ordinador, arrossegar amb el ratolí, roda amunt/avall amb zoom i Ctrl + roda.
+// dit mostra els artistes de la zona i «Escolta la zona» n'engega la ràdio; ordinador, arrossegar amb el ratolí, roda amunt/avall amb zoom i Ctrl + roda.
 
 const http = require('http');
 const fs = require('fs');
@@ -238,13 +238,30 @@ async function mobileGestures(browser) {
     for (const p of ring.slice(1)) await touch(cdp, 'touchMove', [p]);
     if (OUT) await page.screenshot({ path: path.join(OUT, 'mapa-mobil-zona.png') });
     await touch(cdp, 'touchEnd', []);
+    await page.waitForTimeout(800);
+    // Primer surten els artistes de la zona a la dreta; la ràdio no comença fins que es prem «Escolta la zona»
+    const zonePanel = await page.evaluate(() => ({
+        name: window.SegueixApp.features.musicQueue?.playlistName?.() || '',
+        panel: document.querySelector('#artistMap .am-panel')?.innerText || '',
+        artists: document.querySelectorAll('#artistMap .am-panel [data-am-artist]').length,
+        play: Boolean(document.querySelector('#artistMap [data-am-zone-play]')),
+    }));
+    ok(
+        'mòbil: dibuixar una zona mostra els seus artistes i no engega la ràdio',
+        /Barcelona/.test(zonePanel.panel) &&
+            zonePanel.artists > 0 &&
+            zonePanel.play &&
+            !/^Ràdio Barcelona/.test(zonePanel.name),
+        { ...zonePanel, panel: zonePanel.panel.slice(0, 80) }
+    );
+    await page.click('#artistMap [data-am-zone-play]');
     await page.waitForTimeout(1500);
     const radio = await page.evaluate(() => ({
         name: window.SegueixApp.features.musicQueue?.playlistName?.(),
         full: document.getElementById('artistMap').classList.contains('is-full'),
     }));
     ok(
-        'mòbil: dibuixar una zona engega la seva ràdio',
+        'mòbil: «Escolta la zona» engega la seva ràdio',
         /^Ràdio Barcelona/.test(radio.name || '') && !radio.full,
         radio
     );

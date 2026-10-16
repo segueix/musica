@@ -348,7 +348,7 @@
 
     function zonePanelHtml(zone, home = null) {
         if (!zone?.artists.length) return panelHtml(null, home);
-        return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">La teva zona</p><h3>${esc(zone.name)}</h3>
+        return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">Zona dibuixada</p><h3>${esc(zone.name)}</h3>
                 <p>${placesLabel(zone.places.length)} · ${artistsLabel(zone.artists.length)}</p></div>
                 <div class="am-panel__actions"><button type="button" class="am-radio" data-am-zone-play>${ICON.play}<span>Escolta la zona</span></button></div></div>
             <ul class="am-artists">${artistItems(zone.artists, true)}</ul>`;
@@ -781,10 +781,12 @@
                 toast('No hi ha cap artista dins d’aquesta zona. Prova-ho amb una zona més gran.');
                 return true;
             }
+            // Primer els artistes de la zona al panell; la ràdio, quan la persona prem «Escolta la zona»
             showZone(zone);
             setDrawing(false);
-            toast(`Ràdio ${zone.name}: ${artistsLabel(zone.artists.length)}`);
-            startZoneRadio(zone);
+            toast(`${zone.name}: ${artistsLabel(zone.artists.length)}`);
+            if (!state.full && window.innerWidth <= 768)
+                state.container.querySelector('.am-panel')?.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
             return true;
         },
     };
