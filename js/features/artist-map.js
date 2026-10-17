@@ -10,7 +10,7 @@
     if (!app) return;
 
     const URLS = {
-        base: 'data/mapa-base.json',
+        base: 'data/mapa-base.json?v=20261017-sardenya',
         catalog: 'data/origens-artistes.json',
         references: 'data/proximitat-musical.json',
     };
@@ -40,9 +40,11 @@
         }
         const inset = base.inset;
         if (inset && lon >= inset.lonMin && lon <= inset.lonMax && lat >= inset.latMin && lat <= inset.latMax) {
+            // El requadre de Sardenya té la seva escala (x0, y0, scale); un mapa de base antic, la del principal
+            const s = inset.scale || scale;
             return {
-                x: inset.x + (lon - inset.lonMin) * kx * scale,
-                y: inset.y + (inset.latMax - lat) * scale,
+                x: (inset.x0 ?? inset.x) + (lon - inset.lonMin) * kx * s,
+                y: (inset.y0 ?? inset.y) + (inset.latMax - lat) * s,
                 frame: 'inset',
             };
         }

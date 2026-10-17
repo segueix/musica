@@ -9,8 +9,12 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const MAIN = { lonMin: -1.75, lonMax: 4.45, latMin: 37.7, latMax: 43.0, width: 1000 };
-// L'Alguer, en un requadre al mar (sota Mallorca), a la mateixa escala
-const INSET = { lonMin: 7.95, lonMax: 8.95, latMin: 40.3, latMax: 41.0, x: 800, y: 925 };
+// Sardenya sencera (amb l'Alguer), en un requadre al mar a baix a la dreta. L'illa no hi cap a l'escala del mapa
+// principal: va a una escala més petita (factor), amb un marge (pad) i una franja a baix per al nom (label). El
+// requadre acaba a right/bottom de l'SVG (a l'ordinador, els botons de zoom són a la dreta de x ≈ 990).
+const INSET = { lonMin: 8.05, lonMax: 9.9, latMin: 38.8, latMax: 41.33, factor: 0.33, pad: 10, label: 22 };
+const INSET_RIGHT = 975;
+const INSET_BOTTOM = 1112;
 const TERRITORIES = {
     'ES-B': 'Catalunya',
     'ES-GI': 'Catalunya',
@@ -36,9 +40,17 @@ const kx = Math.cos(lat0);
 const scale = MAIN.width / ((MAIN.lonMax - MAIN.lonMin) * kx);
 const height = Math.round((MAIN.latMax - MAIN.latMin) * scale);
 const projectMain = ([lon, lat]) => [(lon - MAIN.lonMin) * kx * scale, (MAIN.latMax - lat) * scale];
+const insetScale = scale * INSET.factor;
+const insetW = Math.round((INSET.lonMax - INSET.lonMin) * kx * insetScale + 2 * INSET.pad);
+const insetH = Math.round((INSET.latMax - INSET.latMin) * insetScale + 2 * INSET.pad + INSET.label);
+const insetX = INSET_RIGHT - insetW;
+const insetY = INSET_BOTTOM - insetH;
+// Origen de les coordenades dins el requadre (cantonada nord-oest de l'àrea geogràfica)
+const insetX0 = insetX + INSET.pad;
+const insetY0 = insetY + INSET.pad;
 const projectInset = ([lon, lat]) => [
-    INSET.x + (lon - INSET.lonMin) * kx * scale,
-    INSET.y + (INSET.latMax - lat) * scale,
+    insetX0 + (lon - INSET.lonMin) * kx * insetScale,
+    insetY0 + (INSET.latMax - lat) * insetScale,
 ];
 
 // Douglas-Peucker sobre punts ja projectats (tolerància en píxels de l'SVG)
@@ -101,20 +113,30 @@ function generate(source) {
                 d: featurePath(feature.geometry, projectMain),
             });
         }
-        // Sardenya del nord-oest: només la part que cau dins el requadre de l'Alguer
-        if (code === 'IT-SS') {
-            alguer = featurePath(feature.geometry, projectInset, ring =>
-                ring.some(([lon, lat]) => lon < INSET.lonMax && lat > INSET.latMin && lat < INSET.latMax)
-            );
+        // Sardenya sencera (totes les províncies de la regió), dins el requadre
+        if (feature.properties.region === 'Sardegna') {
+            alguer += featurePath(feature.geometry, projectInset);
         }
     }
-    const insetW = Math.round((INSET.lonMax - INSET.lonMin) * kx * scale);
-    const insetH = Math.round((INSET.latMax - INSET.latMin) * scale);
     return {
         _ajuda: 'Generat per scripts/generar_mapa_base.js (Natural Earth, domini públic). No l’editis a mà.',
         viewBox: [0, 0, MAIN.width, height],
         projection: { ...MAIN, kx: Math.round(kx * 1e6) / 1e6, scale: Math.round(scale * 1000) / 1000 },
-        inset: { ...INSET, width: insetW, height: insetH, label: "l'Alguer", d: alguer },
+        inset: {
+            lonMin: INSET.lonMin,
+            lonMax: INSET.lonMax,
+            latMin: INSET.latMin,
+            latMax: INSET.latMax,
+            x: insetX,
+            y: insetY,
+            width: insetW,
+            height: insetH,
+            x0: insetX0,
+            y0: insetY0,
+            scale: Math.round(insetScale * 1000) / 1000,
+            label: "l'Alguer",
+            d: alguer,
+        },
         shapes,
     };
 }

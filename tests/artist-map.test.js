@@ -330,11 +330,40 @@ describe('mapa: «Dibuixa una zona» a dalt a l’esquerra (2026-10-17)', () => 
         );
         expect(block).toMatch(/@keyframes am-draw-glow/);
         // al mòbil, més petit (36 px) amb l'àrea de toc de 44 px
-        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 32px;/);
-        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -6px;/);
+        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 28px;/);
+        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -8px;/);
         // al mòbil, «+» i «−» sota la pantalla completa (no tapen l'Alguer) i els botons de la dreta, de 36 px
         expect(block).toMatch(/\.am-zoom \{\s*top: 50px;\s*right: 8px;\s*bottom: auto;/);
         expect(block).toMatch(/\.am-zoom button,\s*\.am-tool--full \{[^}]*width: 36px;/);
         expect(block).toMatch(/prefers-reduced-motion: no-preference/);
+    });
+});
+
+describe('mapa: el requadre conté tota Sardenya (2026-10-17)', () => {
+    const base = JSON.parse(readFileSync('data/mapa-base.json', 'utf8'));
+    const inset = base.inset;
+    const points = [...inset.d.matchAll(/(-?\d+(?:\.\d+)?)[ ,](-?\d+(?:\.\d+)?)/g)].map(m => [+m[1], +m[2]]);
+
+    it('cap punt del contorn de l’illa surt del requadre ni de l’SVG', () => {
+        expect(points.length).toBeGreaterThan(50);
+        for (const [x, y] of points) {
+            expect(x).toBeGreaterThanOrEqual(inset.x);
+            expect(x).toBeLessThanOrEqual(inset.x + inset.width);
+            expect(y).toBeGreaterThanOrEqual(inset.y);
+            expect(y).toBeLessThanOrEqual(inset.y + inset.height);
+        }
+        expect(inset.x + inset.width).toBeLessThanOrEqual(base.viewBox[2]);
+        expect(inset.y + inset.height).toBeLessThanOrEqual(base.viewBox[3]);
+    });
+
+    it('hi és l’illa sencera (del cap nord fins a Càller) i l’Alguer hi cau a dins', () => {
+        expect(inset.latMin).toBeLessThan(38.87);
+        expect(inset.latMax).toBeGreaterThan(41.26);
+        const alguer = feature.project(base, { latitude: 40.558, longitude: 8.319 });
+        expect(alguer.frame).toBe('inset');
+        expect(alguer.x).toBeGreaterThan(inset.x);
+        expect(alguer.x).toBeLessThan(inset.x + inset.width);
+        expect(alguer.y).toBeGreaterThan(inset.y);
+        expect(alguer.y).toBeLessThan(inset.y + inset.height);
     });
 });
