@@ -38,6 +38,7 @@ const ORIGINAL_DATES_FILE = path.join(process.cwd(), 'data', 'musica-dates.json'
 const CLASSIC_FILE = path.join(process.cwd(), 'data', 'musica-classica.json');
 const CATALOG_STATE_FILE = path.join(process.cwd(), 'data', 'music-catalog-state.json');
 const TOPIC_CATALOG_FILE = path.join(process.cwd(), 'data', 'music-topic-catalog.json');
+const SUPERVISION_DECISIONS_FILE = path.join(process.cwd(), 'docs', 'revisions', '2026-10-13-supervisio-idioma-decisions.json');
 // Pàgines (de 50) que es llegeixen de cada canal Tema: la discografia sencera fins a 500 pistes.
 const TOPIC_MAX_PAGES = Math.max(1, Number.parseInt(process.env.MUSIC_TOPIC_MAX_PAGES || '10', 10));
 // Només es consulten els canals vençuts segons la seva activitat. Les lectures completes dels Tema
@@ -948,7 +949,9 @@ async function main(){
   },null,2)+'\n');
   // Discografia dels canals Tema (no la llegeix el client): base per decidir què és cançó si l'API falla un dia.
   // Les baixes de la supervisió d'idioma (2026-10-13) no hi tornen encara que siguin a la primera pàgina del Tema.
-  const supervisedRemovals=require('./revisions/supervisar_idioma_20261013.js').removed;
+  // Es llegeixen del fitxer de decisions (dades), no de l'script de revisió: si no hi és, no es treu res.
+  const supervision=readJsonSafe(SUPERVISION_DECISIONS_FILE,{remove:[]});
+  const supervisedRemovals=new Set((supervision.remove||[]).flatMap(group=>group.ids||[]));
   for(const entry of Object.values(topicCatalog)) entry.tracks=(entry.tracks||[]).filter(([videoId])=>!supervisedRemovals.has(videoId));
   fs.writeFileSync(TOPIC_CATALOG_FILE,`{\n  "updatedAt": ${JSON.stringify(generatedAt)},\n  "channels": {\n${Object.entries(topicCatalog).sort(([a],[b])=>a.localeCompare(b)).map(([id,entry])=>`    ${JSON.stringify(id)}: ${JSON.stringify(entry)}`).join(',\n')}\n  }\n}\n`);
   fs.writeFileSync(CATALOG_STATE_FILE,JSON.stringify({updatedAt:generatedAt,channels:deepState},null,2)+'\n');
