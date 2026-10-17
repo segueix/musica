@@ -10926,8 +10926,8 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
 
 /* ==========================================================================
    «Instal·la l'app» (js/features/app-install.js): botó a dalt a la dreta d'Inici, amb les icones dels aparells, i la
-   finestra amb els passos de cada aparell (penja de <body>: .page té transformació i retalla). El botó no surt si ja
-   s'obre com a app (display-mode: standalone) ni fora de la portada (estils, Descobreix, cerca).
+   finestra amb els passos de cada aparell (penja de <body>: .page té transformació i retalla). Si ja s'obre com a
+   app (display-mode: standalone) només hi queda «Comparteix»; fora de la portada (estils, Descobreix, cerca), res.
    ========================================================================== */
 .pt-install {
     display: flex;
@@ -10942,10 +10942,30 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     display: none;
 }
 
+/* Oberta com a app (instal·lada): només «Comparteix», amb el text (2026-10-17: abans s'amagava tot el bloc i dins
+   l'app no es podia compartir) */
 @media (display-mode: standalone), (display-mode: window-controls-overlay) {
-    .pt-install {
+    .pt-install__btn {
         display: none;
     }
+}
+
+.pt-install__btn[hidden] {
+    display: none;
+}
+
+#ptInstall.is-installed .pt-install__share span {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+}
+
+#ptInstall.is-installed .pt-install__share {
+    width: auto;
+    padding: 0 18px;
 }
 
 .pt-install__btn {
@@ -11550,5 +11570,56 @@ body.ai-open {
     to {
         opacity: 1;
         transform: none;
+    }
+}
+
+/* ==========================================================================
+   «Continua escoltant»: els botons, en una fila pròpia (2026-10-17)
+   Al mòbil, «Continua la ràdio» (193 px) no cabia al costat de la caràtula i quedava tallat a la dreta (a 320 px en
+   sortia). Els botons ja no són dins del text (.pt-feature__actions és fill de .pt-feature): a l'ordinador van a
+   sota del text, a la segona columna, com abans; al mòbil, a sota de tot i amb tota l'amplada de la targeta.
+   ========================================================================== */
+.pt-feature {
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+}
+
+.pt-feature__media {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.pt-feature__body {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+}
+
+.pt-feature__actions {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    min-width: 0;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .pt-feature__media {
+        grid-row: 1;
+    }
+
+    .pt-feature__body {
+        align-self: center;
+    }
+
+    .pt-feature__actions {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .pt-feature__actions .pt-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        min-width: 0;
     }
 }

@@ -1074,8 +1074,8 @@
                     <h3 class="pt-feature__title">${title}</h3>
                     ${artist ? `<button type="button" class="pt-artist" data-pt-artist="${esc(video.channelId)}" aria-label="Obre l’artista: ${artist}">${artist}</button>` : ''}
                     ${next}
-                    <div class="pt-feature__actions">${action}</div>
                 </div>
+                <div class="pt-feature__actions">${action}</div>
             </article>`;
     }
 

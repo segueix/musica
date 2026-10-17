@@ -126,3 +126,36 @@ describe('Instal·la l’app: integració', () => {
         expect(sw).toContain("'./js/features/app-install.js'");
     });
 });
+
+describe('Instal·la l’app: oberta com a app instal·lada', () => {
+    it('amaga només «Instal·la l’app»: «Comparteix» continua visible i amb el text', () => {
+        const src = fs.readFileSync('js/features/app-install.js', 'utf8');
+        const sync = src.slice(src.indexOf('function syncButton()'), src.indexOf('async function promptInstall'));
+        expect(sync).toContain('wrap.hidden = false;');
+        expect(sync).toContain("wrap.classList.toggle('is-installed', installed);");
+        expect(sync).toContain('install.hidden = installed;');
+        // CSS: en mode app s'amaga el botó d'instal·lar, no tot el bloc
+        expect(css).toMatch(
+            /@media \(display-mode: standalone\), \(display-mode: window-controls-overlay\) \{\s*\.pt-install__btn \{\s*display: none;/
+        );
+        expect(css).not.toMatch(
+            /@media \(display-mode: standalone\), \(display-mode: window-controls-overlay\) \{\s*\.pt-install \{/
+        );
+        expect(css).toMatch(/#ptInstall\.is-installed \.pt-install__share span \{[^}]*position: static;/);
+    });
+
+    it('la versió nova del service worker esborra les còpies de codi anteriors', () => {
+        expect(sw).toContain('const STATIC_CACHE = `static-v3-${CACHE_VERSION}`;');
+    });
+});
+
+describe('«Continua escoltant»: el botó no queda tallat al mòbil', () => {
+    it('els botons són fora del text i al mòbil ocupen tota l’amplada de la targeta', () => {
+        const portada = fs.readFileSync('js/features/portada.js', 'utf8');
+        const fn = portada.slice(portada.indexOf('function continueHtml'), portada.indexOf('function radioCovers'));
+        expect(fn).toMatch(/\$\{next\}\s*<\/div>\s*<div class="pt-feature__actions">/);
+        const block = css.slice(css.indexOf('«Continua escoltant»: els botons, en una fila pròpia'));
+        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.pt-feature__actions \{\s*grid-column: 1 \/ -1;/);
+        expect(block).toMatch(/\.pt-feature__actions \.pt-btn \{\s*flex: 1 1 auto;/);
+    });
+});
