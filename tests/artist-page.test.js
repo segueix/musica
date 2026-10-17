@@ -258,13 +258,13 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/\.channel-profile-description\.is-expandable\s*{[^}]*cursor:\s*pointer/);
     });
 
-    it('de les novetats a les grans cançons: capçaleres i separador', () => {
+    it('de les novetats a les més escoltades: capçaleres i separador', () => {
         const api = page;
         const both = api.sectionsModel({ recent: 3, rest: 20 });
         expect(both.recent).toEqual({ show: true, sub: '3 cançons dels últims 12 mesos' });
-        expect(both.hits).toEqual({ show: true, sub: 'Continuem amb les més escoltades: de la #2 a la #21' });
+        expect(both.hits).toEqual({ show: true, sub: 'De la #2 a la #21, per visualitzacions' });
         expect(api.sectionsModel({ recent: 1, rest: 1 }).recent.sub).toBe('1 cançó dels últims 12 mesos');
-        expect(api.sectionsModel({ recent: 1, rest: 1 }).hits.sub).toBe('Continuem amb les més escoltades: la #2');
+        expect(api.sectionsModel({ recent: 1, rest: 1 }).hits.sub).toBe('La #2, per visualitzacions');
         // Sense novetats no cal separador: la graella continua la #1
         expect(api.sectionsModel({ recent: 0, rest: 20 }).hits.show).toBe(false);
         expect(api.sectionsModel({ recent: 4, rest: 0 }).hits.show).toBe(false);
@@ -276,14 +276,14 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/\.ap-section-head--new \.ap-section-head__icon \{[^}]*background: var\(--pt-accent\)/);
     });
 
-    it('fora de les caràtules només hi ha les capçaleres de Novetats i «Les grans cançons», sense cerca ni ajuda', () => {
+    it('fora de les caràtules només hi ha les capçaleres de Novetats i «Les més escoltades», sense cerca ni ajuda', () => {
         const hero = channelPage.slice(channelPage.indexOf('id="apHero"'), channelPage.indexOf('id="apBest"'));
         expect(hero).toContain('id="apBio"');
         expect(hero).toContain('id="apUserCats"');
         const after = channelPage.slice(channelPage.indexOf('id="apBest"'));
         expect(after.match(/<h2\b/g)).toHaveLength(2);
         expect(after).toContain('id="apRecentTitle">Novetats</h2>');
-        expect(after).toContain('id="apHitsTitle">Les grans cançons</h2>');
+        expect(after).toContain('id="apHitsTitle">Les més escoltades</h2>');
         expect(after).not.toMatch(/<p\b(?![^>]*ap-songs-empty)[^>]*>/);
         expect(channelPage).not.toContain('type="search"');
         expect(channelPage).not.toMatch(/apShelves|apAlbums|>Discos</);

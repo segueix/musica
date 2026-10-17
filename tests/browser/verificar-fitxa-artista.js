@@ -331,14 +331,14 @@ async function check(browser, width, height, label) {
         [info.bestRank, ...info.ranks.slice(0, 5)]
     );
     ok(
-        `${label}: capçaleres: «Novetats» i després «Les grans cançons» (o cap, si no hi ha novetats)`,
+        `${label}: capçaleres: «Novetats» i després «Les més escoltades» (o cap, si no hi ha novetats)`,
         info.headings.length === 0 ||
-            (info.headings[0] === 'Novetats' && info.headings[1] === 'Les grans cançons' && info.headings.length === 2),
+            (info.headings[0] === 'Novetats' && info.headings[1] === 'Les més escoltades' && info.headings.length === 2),
         info.headings
     );
     if (info.headings.length) {
         ok(
-            `${label}: «Les grans cançons» té separador i va just abans de la #2`,
+            `${label}: «Les més escoltades» té separador i va just abans de la #2`,
             info.hitsSeparated,
             info.hitsSeparated
         );
