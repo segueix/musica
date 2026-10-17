@@ -2,22 +2,22 @@
   "generatedAt": "2026-10-17T18:16:22.373Z",
   "rawPublicVideoCount": 7382,
   "feedVideoCount": 6811,
-  "acceptedMusicCount": 6764,
-  "categoryEligibleVideoCount": 6760,
+  "acceptedMusicCount": 6765,
+  "categoryEligibleVideoCount": 6761,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 4,
     "matched": 0,
     "rejected": 4
   },
-  "rejectedOrReviewCount": 618,
-  "reviewCount": 581,
+  "rejectedOrReviewCount": 617,
+  "reviewCount": 580,
   "typeCounts": {
-    "song": 6565,
+    "song": 6566,
     "live_song": 195,
     "album": 4,
     "other": 37,
-    "review": 581
+    "review": 580
   },
   "channelsWithoutAcceptedMusic": [],
   "rejectedSamples": [
@@ -29,6 +29,6 @@
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     }
   ],
-  "publishedFeedVideoCount": 6718,
+  "publishedFeedVideoCount": 6673,
   "publishedShortVideoCount": 0
 }

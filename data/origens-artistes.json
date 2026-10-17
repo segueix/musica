@@ -2561,6 +2561,89 @@
       "territory": "Catalunya Nord",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Llo&count=10&language=ca&format=json&countryCode=FR",
       "checkedOn": "2026-10-17"
+    },
+    "geonames:3035432": {
+      "name": "Bages de Rosselló",
+      "type": "municipality",
+      "geonamesId": 3035432,
+      "coordinates": {
+        "latitude": 42.60603,
+        "longitude": 2.89348,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Bages&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2986204": {
+      "name": "Pontellà",
+      "type": "municipality",
+      "geonamesId": 2986204,
+      "coordinates": {
+        "latitude": 42.62659,
+        "longitude": 2.81427,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Pontella&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2980164": {
+      "name": "Sant Feliu d'Amunt",
+      "type": "municipality",
+      "geonamesId": 2980164,
+      "coordinates": {
+        "latitude": 42.68614,
+        "longitude": 2.72249,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Saint-Feliu-d%27Amont&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2514984": {
+      "name": "Llucmajor",
+      "type": "municipality",
+      "geonamesId": 2514984,
+      "coordinates": {
+        "latitude": 39.49093,
+        "longitude": 2.89108,
+        "precision": "settlement_reference"
+      },
+      "territory": "Illes Balears",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Llucmajor&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2518878": {
+      "name": "Dénia",
+      "type": "municipality",
+      "geonamesId": 2518878,
+      "coordinates": {
+        "latitude": 38.84078,
+        "longitude": 0.10574,
+        "precision": "settlement_reference"
+      },
+      "territory": "País Valencià",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=D%C3%A9nia&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-17"
+    },
+    "territory:l-horta": {
+      "name": "l’Horta",
+      "type": "region",
+      "coordinates": null,
+      "territory": "País Valencià"
+    },
+    "territory:menorca": {
+      "name": "Menorca",
+      "type": "island",
+      "coordinates": null,
+      "territory": "Illes Balears"
+    },
+    "territory:la-marina-alta": {
+      "name": "la Marina Alta",
+      "type": "region",
+      "coordinates": null,
+      "territory": "País Valencià"
     }
   },
   "artists": {
@@ -10897,6 +10980,186 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:joan-pau-gine": {
+      "name": "Joan Pau Giné",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3035432"
+      ],
+      "confidence": "alta",
+      "basis": "Cantautor de Bages de Rosselló, segons la llista de l’editor del catàleg del 17 d’octubre de 2026 i la Viquiràdio.",
+      "sources": [
+        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:pere-figueres": {
+      "name": "Pere Figueres",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2986204"
+      ],
+      "confidence": "alta",
+      "basis": "Nascut el 14 de març de 1950 a Pontellà, segons la descripció del seu canal Tema, la llista de l’editor del catàleg del 17 d’octubre de 2026 i viki.cat.",
+      "sources": [
+        "https://www.viki.cat/wiki/Pere_Figueres"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:gerard-jacquet": {
+      "name": "Gerard Jacquet",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2980164"
+      ],
+      "confidence": "alta",
+      "basis": "Músic, poeta i contaire de Sant Feliu d’Amunt, segons la llista de l’editor del catàleg del 17 d’octubre de 2026.",
+      "sources": [
+        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:ia-batiste": {
+      "name": "Ia & Batiste",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Duet de Barcelona, segons l’editor del catàleg el 17 d’octubre de 2026; la fitxa discogràfica de Guerssen en documenta el disc.",
+      "sources": [
+        "https://guerssen.com/es/producto/un-gran-dia/"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:ernest-crusats": {
+      "name": "Ernest Crusats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3106050"
+      ],
+      "confidence": "alta",
+      "basis": "De Vic, com La Iaia, segons l’editor del catàleg (17/10/2026).",
+      "sources": [
+        "https://www.vic.cat/ajuntament/comunicacio-i-protocol/noticies/el-grup-vigata-201cla-iaia201d-guanya-el-concurs",
+        "https://www.youtube.com/channel/UCuH5h0CPXPIccfyvgZgF09w"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:flakko": {
+      "name": "Flakko",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514984"
+      ],
+      "confidence": "alta",
+      "basis": "De Llucmajor, segons l’editor del catàleg (17/10/2026).",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30395/noves-cancons-catala-son-rosalia-gossa-sorda-sexenni-amb-miki-nunez-gavinamp3"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:guillem-gisbert": {
+      "name": "Guillem Gisbert i Puig",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "De Barcelona, segons l’editor del catàleg (17/10/2026).",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q62020002",
+        "https://www.youtube.com/@GuillemGisbert"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:ki-sap": {
+      "name": "Ki Sap",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:l-horta"
+      ],
+      "confidence": "alta",
+      "basis": "De la comarca de l’Horta, segons l’editor del catàleg (17/10/2026); al mapa, València com a referència.",
+      "sources": [
+        "https://www.valenciaska.net/grup/ki-sap/"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:malanima": {
+      "name": "Malánima",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:menorca"
+      ],
+      "confidence": "alta",
+      "basis": "De Menorca, segons l’editor del catàleg (17/10/2026); al mapa, Maó com a referència.",
+      "sources": [
+        "https://ib-musicat.cat/bandes/malanima/"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:plan-et": {
+      "name": "Plan-ET",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2514216"
+      ],
+      "confidence": "alta",
+      "basis": "De Manacor, segons l’editor del catàleg (17/10/2026).",
+      "sources": [
+        "https://tomeupenya.cat/2025/03/21/nova-collaboracio-de-tomeu-penya/",
+        "https://www.enderrock.cat/noticia/30034/50-cancons-estiu-catala-2025"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:sa-pena": {
+      "name": "Sa Pena",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "territory:la-safor",
+        "territory:la-marina-alta"
+      ],
+      "confidence": "alta",
+      "basis": "De la Safor i la Marina Alta, segons l’editor del catàleg (17/10/2026); al mapa, Gandia i Dénia com a referència.",
+      "sources": [
+        "https://www.youtube.com/channel/UC-IgP47EUNYq687PT6WZ4gQ"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11543,13 +11806,38 @@
     "UCwCawZz1QtCvPzADHbcdvlQ": "artist:glaucs",
     "UCIMUDjFw_0JF--3ijeIFIrA": "artist:agathe-catel",
     "UCprhue6vOAbMuSUEQbzlCZA": "artist:blues-de-picolat",
-    "UCs9uFGVOXA5wSSJrERWEhCw": "artist:jordi-barre"
+    "UCs9uFGVOXA5wSSJrERWEhCw": "artist:jordi-barre",
+    "UCPFO4vAR9pm9cI8RS8f5SLw": "artist:joan-pau-gine",
+    "UC3R_sFdfopHQUwREiqpOuRQ": "artist:pere-figueres",
+    "UCJzTwDykoSI4dHbCAg1XGQQ": "artist:gerard-jacquet",
+    "UCaFFmM8-URvqHCEH2DtRDuQ": "artist:ia-batiste",
+    "UCuH5h0CPXPIccfyvgZgF09w": "artist:ernest-crusats",
+    "UCl3RfIF60BFTx93il4D11nQ": "artist:ernest-crusats",
+    "UCyzX-sJRQkIWqBeyasLk9rw": "artist:flakko",
+    "UCf6zqvW8RqxzfaSda0-nIuA": "artist:flakko",
+    "UCWqkDJA-JbPHz_0WC2wouqg": "artist:guillem-gisbert",
+    "UCnjicJo0XLp_UQYr7QqDZzQ": "artist:ki-sap",
+    "UCo_8QxIsvo49zaYqqeYxsOQ": "artist:ki-sap",
+    "UC8qc9EKB0In0JdqOwu896mQ": "artist:ki-sap",
+    "UCGmho2bwHxnwlsIc11CgNpQ": "artist:malanima",
+    "UCwQqL8LR87I8bPcFNU5zLFw": "artist:malanima",
+    "UCZcdiQvGBNZY2Juk3QEovZA": "artist:malanima",
+    "UC_DpS_aFZdvKqblz0PtYT5Q": "artist:plan-et",
+    "UC-IgP47EUNYq687PT6WZ4gQ": "artist:sa-pena",
+    "UCyNGJutrN-ISgp5qUAGUmiw": "artist:sa-pena"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
       "name": "Club Social Carme",
       "reason": "Cicle de sessions ubicat a Barcelona segons l’editor. No s’assigna origen al cicle ni al seu canal: cada grup participant ha de conservar la seva pròpia procedència. No inferir Barcelona per als intèrprets a partir del local.",
       "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "UCbJBuw-UseR72LHnDUG_9ng": {
+      "name": "Els Miralls de Dylan",
+      "reason": "Projecte de versions de cançons de Bob Dylan (Gerard Quintana i Jordi Batiste), sense un lloc d’origen propi. Per decisió de l’editor (17/10/2026) no se li assigna origen ni surt al mapa; no inferir-lo dels seus membres.",
+      "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
     }

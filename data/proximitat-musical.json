@@ -182,12 +182,31 @@
         "geonames:3109982"
       ],
       "kind": "capital"
+    },
+    "territory:l-horta": {
+      "placeIds": [
+        "geonames:2509954"
+      ],
+      "kind": "capital"
+    },
+    "territory:menorca": {
+      "placeIds": [
+        "geonames:2514301"
+      ],
+      "kind": "capital"
+    },
+    "territory:la-marina-alta": {
+      "placeIds": [
+        "geonames:2518878"
+      ],
+      "kind": "capital"
     }
   },
   "notes": {
     "territory:montseny": "Sant Celoni com a referència del Baix Montseny, no capital oficial del massís.",
     "territory:valles": "Granollers, Sabadell i Terrassa: mínim de distància a les capitals de les dues comarques.",
-    "territory:emporda": "Figueres i la Bisbal d’Empordà: mínim de distància a les capitals de les dues comarques; no atribueix un municipi d’origen al grup."
+    "territory:emporda": "Figueres i la Bisbal d’Empordà: mínim de distància a les capitals de les dues comarques; no atribueix un municipi d’origen al grup.",
+    "territory:l-horta": "València com a referència de la comarca històrica de l’Horta (Horta Nord, Horta Oest, Horta Sud i València)."
   },
   "sources": [
     "https://www.formentera.es/ca/llocs-dinteres/arquitectures-religioses/sant-francesc",
