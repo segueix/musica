@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T09:50:00.000Z",
+  "updatedAt": "2026-10-17T10:34:12Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -1743,13 +1743,7 @@
     },
     "UC5DkIn4ZKBgGKqvpa0JyZlg": {
       "artist": "Xesco Boix",
-      "note": "Només cançons infantils en català revisades. Llista tancada per ID i títol; no importar la resta del canal.",
-      "allowedVideoIds": [
-        "STI0S6EdEC4"
-      ],
-      "allowedTitles": [
-        "Si ens deixéssim de romanços"
-      ],
+      "note": "17/10/2026: l’usuari accepta totes les cançons del canal Tema i indicarà posteriorment quines descartar. Sense llista tancada per ID o títol.",
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song",

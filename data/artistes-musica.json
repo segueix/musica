@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T10:35:00Z",
+  "updatedAt": "2026-10-17T10:34:12Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -38026,10 +38026,11 @@
       "sources": [
         "https://www.contesdelmon.org/mm/file/not%C3%ADcies/canconer_xesco_boix.pdf",
         "manual-user-2026-10-05",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
-      "lastChecked": "2026-10-05T17:33:10.759Z",
-      "notes": "Selecció manual de cançons infantils en català. Només els vídeos de la llista tancada; comprovació a docs/REVISION_INFANTIL_2026-10-05.json.",
+      "lastChecked": "2026-10-17T10:34:12Z",
+      "notes": "17/10/2026: l’usuari accepta totes les cançons del canal Tema i indicarà posteriorment quines descartar. Sense llista tancada per ID o títol.",
       "genresRaw": [],
       "enrichment": {
         "genres": {
