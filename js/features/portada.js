@@ -43,6 +43,8 @@
         lastSignature: '',
         registry: new Map(),
         expanded: { fresh: false, styles: false },
+        // «Acabades de sortir»: cançons de la fila amb el seu «+N» desplegat (id de la cançó que es veu)
+        openGroups: new Set(),
         rendered: false,
         bound: false,
         featured: null,
@@ -68,6 +70,13 @@
     function timestampOf(video) {
         const time = new Date(video?.publishedAt || video?.uploadDate || 0).getTime();
         return Number.isFinite(time) ? time : 0;
+    }
+
+    function dayOf(video) {
+        const time = timestampOf(video);
+        if (!time) return '';
+        const date = new Date(time);
+        return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
     }
 
     // La data de què disposem és la de publicació del vídeo: no es presenta mai com a data de llançament del disc.
@@ -317,9 +326,23 @@
         // surt en una altra fila (es calcula al final perquè les altres files ja han triat les seves).
         if (model.fresh) {
             const rowIds = new Set(freshRow.map(video => String(video.id)));
-            model.fresh.all = newest
-                .filter(video => rowIds.has(String(video.id)) || !taken.has(String(video.id)))
-                .slice(0, FRESH_ALL);
+            const pool = newest.filter(video => rowIds.has(String(video.id)) || !taken.has(String(video.id)));
+            model.fresh.all = pool.slice(0, FRESH_ALL);
+            // La fila porta una cançó per artista: si el mateix dia n'ha publicat més, surten amb el «+N» de la seva
+            // targeta (groups[id] = les altres, de la més nova a la més antiga) i s'hi despleguen en tocar-lo.
+            model.fresh.groups = {};
+            freshRow.forEach(video => {
+                const key = discovery.artistKeyOf(video);
+                const day = dayOf(video);
+                if (!key || !day) return;
+                const others = pool.filter(
+                    other =>
+                        String(other.id) !== String(video.id) &&
+                        discovery.artistKeyOf(other) === key &&
+                        dayOf(other) === day
+                );
+                if (others.length) model.fresh.groups[String(video.id)] = others;
+            });
         }
         return model;
     }
@@ -369,6 +392,7 @@
                     ${duration ? `<span class="pt-card__dur">${esc(duration)}</span>` : ''}
                     <span class="pt-card__play" aria-hidden="true">${ICONS.play}</span>
                 </button>
+                ${opts.group ? groupButtonHtml(id, artist, opts.group) : ''}
                 <div class="pt-card__body">
                     <div class="pt-card__text">
                         <h3 class="pt-card__title" data-pt-play="${id}">${title}</h3>
@@ -382,6 +406,21 @@
                     </div>
                 </div>
             </article>`;
+    }
+
+    // «+N»: altres cançons noves del mateix artista publicades el mateix dia. Desplegat, «Amaga-les».
+    function groupButtonHtml(id, artist, group) {
+        const n = group.count;
+        const label = group.open
+            ? `Amaga les altres ${n === 1 ? 'cançó' : `${n} cançons`} de ${artist} del mateix dia`
+            : n === 1
+              ? `Mostra una altra cançó nova de ${artist}, publicada el mateix dia`
+              : `Mostra ${n} cançons noves més de ${artist}, publicades el mateix dia`;
+        return `
+                <button type="button" class="pt-card__more${group.open ? ' is-open' : ''}" data-pt-group="${id}" aria-expanded="${group.open}" aria-label="${label}" title="${label}">
+                    <span class="pt-card__more-n" aria-hidden="true">${group.open ? '−' : `+${n}`}</span>
+                    <span class="pt-card__more-txt" aria-hidden="true">${group.open ? 'Amaga-les' : `<span>${n === 1 ? 'cançó més' : 'cançons més'}</span><span>del mateix dia</span>`}</span>
+                </button>`;
     }
 
     function portraitHtml(item) {
@@ -478,8 +517,29 @@
             </section>`;
     }
 
-    function freshHtml(fresh, expanded, now, reasons = null) {
+    function freshHtml(fresh, expanded, now, reasons = null, openGroups = state.openGroups) {
         const videos = expanded ? fresh.all : fresh.videos;
+        // Amb «Veure-ho tot» ja hi són totes: sense «+N».
+        const cells = videos
+            .map(video => {
+                const id = String(video.id);
+                const reason = reasons?.get?.(id);
+                const others = expanded ? null : fresh.groups?.[id];
+                if (!others?.length) return `<li class="pt-cell">${cardHtml(video, { now, reason })}</li>`;
+                const open = Boolean(openGroups?.has?.(id));
+                const lead = `<li class="pt-cell pt-cell--group${open ? ' is-open' : ''}">${cardHtml(video, { now, reason, group: { count: others.length, open } })}</li>`;
+                if (!open) return lead;
+                return (
+                    lead +
+                    others
+                        .map(
+                            other =>
+                                `<li class="pt-cell pt-cell--sibling" data-pt-group-of="${esc(id)}">${cardHtml(other, { now, badge: 'Del mateix dia', reason: reasons?.get?.(String(other.id)) })}</li>`
+                        )
+                        .join('')
+                );
+            })
+            .join('');
         const canExpand = fresh.all.length > fresh.videos.length;
         const tools = `
             ${playAllButton('fresh', 'Reprodueix les novetats')}
@@ -489,7 +549,7 @@
             <section class="pt-section pt-section--fresh${expanded ? ' is-expanded' : ''}" aria-labelledby="ptH-fresh" data-pt-section="fresh">
                 ${headHtml({ id: 'ptH-fresh', title: fresh.title, subtitle: fresh.subtitle, tools })}
                 <ul class="pt-row">
-                    ${videos.map(video => `<li class="pt-cell">${cardHtml(video, { now, reason: reasons?.get?.(String(video.id)) })}</li>`).join('')}
+                    ${cells}
                 </ul>
             </section>`;
     }
@@ -753,6 +813,37 @@
     }
 
     // Refà només una secció (p. ex. en desplegar-la) perquè la resta de files no perdin el desplaçament.
+    // «+N» d'«Acabades de sortir»: hi apareixen (o en desapareixen) les altres cançons del dia, just al costat. La
+    // fila conserva la posició i, en desplegar, es desplaça fins que es veu la primera.
+    function toggleGroup(id) {
+        if (!state.model?.fresh || !id) return undefined;
+        if (state.openGroups.has(id)) state.openGroups.delete(id);
+        else state.openGroups.add(id);
+        const open = state.openGroups.has(id);
+        const rowOf = () => state.container?.querySelector?.('[data-pt-section="fresh"] .pt-row');
+        const scrollLeft = rowOf()?.scrollLeft || 0;
+        swapSection('fresh', freshHtml(state.model.fresh, state.expanded.fresh, Date.now(), state.model.reasons));
+        const row = rowOf();
+        if (row) row.scrollLeft = scrollLeft;
+        const sel = value => (window.CSS?.escape ? window.CSS.escape(value) : value);
+        const button = state.container.querySelector(`[data-pt-group="${sel(id)}"]`);
+        button?.focus?.({ preventScroll: true });
+        if (open) {
+            // Si la primera desplegada no hi cap sencera, la fila s'atura on comença (és un punt d'enganxament del
+            // scroll-snap: un desplaçament que la deixés mig tallada el navegador el desfeia).
+            const sibling = state.container.querySelector(`[data-pt-group-of="${sel(id)}"]`);
+            if (row && sibling) {
+                const rowBox = row.getBoundingClientRect();
+                const box = sibling.getBoundingClientRect();
+                if (box.right > rowBox.right) {
+                    const pad = parseFloat(window.getComputedStyle(row).scrollPaddingLeft) || 0;
+                    row.scrollTo({ left: row.scrollLeft + box.left - rowBox.left - pad, behavior: 'smooth' });
+                }
+            }
+        }
+        return undefined;
+    }
+
     function swapSection(key, html) {
         const old = state.container?.querySelector?.(`[data-pt-section="${key}"]`);
         if (!old) return false;
@@ -1266,6 +1357,8 @@
         let el;
         if ((el = pick('[data-pt-queue]'))) return enqueue(el.dataset.ptQueue);
         if ((el = pick('[data-pt-save]'))) return save(el.dataset.ptSave);
+        // El «+N» d'«Acabades de sortir» desplega les cançons del mateix dia (va abans del toc de targeta del mòbil)
+        if ((el = pick('[data-pt-group]'))) return toggleGroup(el.dataset.ptGroup);
         // Al mòbil, tocar qualsevol part d'una targeta de cançó (també el nom de l'artista) la reprodueix.
         if (typeof isMobileView === 'function' && isMobileView() && (el = pick('.pt-card[data-video-id]'))) {
             return playVideo(el.dataset.videoId);
@@ -1474,6 +1567,7 @@
         buildModelAsync,
         renderSections,
         cardHtml,
+        freshHtml,
         publishedLabel,
         avatarUrl,
         esc,
