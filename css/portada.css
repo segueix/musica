@@ -11618,3 +11618,88 @@ body .mq .mq-head,
 #playlistQueueContainer {
     border-radius: var(--pt-radius-player);
 }
+
+/* ==========================================================================
+   Capçalera i barra lateral integrades (ordinador i tauleta, 2026-10-17)
+   Abans anaven en carbó fix (#141615) amb una línia que les separava del contingut, i amb un color de fons triat a la
+   configuració quedaven com una franja d'una altra app. Ara:
+   - fan servir el mateix fons que la pàgina (--color-background; la capçalera, translúcida i desenfocada);
+   - sense línies de separació: la barra és un panell com les targetes (vora fina, --pt-radius-player);
+   - la secció activa va en llima, com el mode triat i «Seguint»; les altres, càpsules de vidre en passar-hi;
+   - la cerca és una càpsula de vidre amb vora blanca, com els botons del contingut.
+   El botó de tres ratlles conserva el seu requadre blanc (vegeu «Navegació lateral plegable»).
+   ========================================================================== */
+@media (min-width: 769px) {
+    body .app-header {
+        background: rgba(20, 22, 21, 0.86);
+        background: color-mix(in srgb, var(--color-background, var(--pt-bg)) 86%, transparent);
+        border-bottom-color: transparent;
+    }
+
+    body .sidebar#sidebar {
+        background: var(--color-background, var(--pt-bg));
+        border-right: 0;
+        padding: 4px 12px 16px;
+    }
+
+    body .sidebar#sidebar .sidebar-nav {
+        padding: 8px;
+        border: 1px solid rgba(244, 240, 232, 0.09);
+        border-radius: var(--pt-radius-player);
+        background: rgba(244, 240, 232, 0.035);
+    }
+
+    body .sidebar#sidebar .pt-nav-item {
+        border-radius: var(--pt-radius-pill);
+        font-weight: 700;
+    }
+
+    /* Tauleta: la barra és de 84 px, amb la icona sobre el nom; una càpsula hi quedava estreta */
+    @media (max-width: 1024px) {
+        body .sidebar#sidebar {
+            padding-inline: 8px;
+        }
+
+        body .sidebar#sidebar .sidebar-nav {
+            padding: 6px 4px;
+        }
+
+        body .sidebar#sidebar .pt-nav-item {
+            border-radius: var(--pt-radius-player);
+        }
+    }
+
+    body .sidebar#sidebar .pt-nav-item:hover {
+        background: rgba(244, 240, 232, 0.08);
+    }
+
+    body .sidebar#sidebar .pt-nav-item.is-current,
+    body .sidebar#sidebar .pt-nav-item.is-current:hover {
+        background: var(--pt-accent);
+        color: var(--pt-on-accent);
+    }
+
+    body .app-header .search-input {
+        padding-left: 20px;
+        border-color: rgba(244, 240, 232, 0.3);
+        border-radius: var(--pt-radius-pill);
+        background: rgba(244, 240, 232, 0.06);
+    }
+
+    body .app-header .search-input:hover,
+    body .app-header .search-input:focus {
+        border-color: rgba(244, 240, 232, 0.6);
+        background: rgba(244, 240, 232, 0.09);
+    }
+
+    body .app-header .search-btn {
+        border-color: rgba(244, 240, 232, 0.3);
+        border-radius: 50%;
+        background: rgba(244, 240, 232, 0.06);
+    }
+
+    body .app-header .search-btn:hover {
+        border-color: rgba(244, 240, 232, 0.6);
+        background: rgba(244, 240, 232, 0.12);
+    }
+}
