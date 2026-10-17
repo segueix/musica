@@ -2561,6 +2561,45 @@
       "territory": "Catalunya Nord",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Llo&count=10&language=ca&format=json&countryCode=FR",
       "checkedOn": "2026-10-17"
+    },
+    "geonames:3035432": {
+      "name": "Bages de Rosselló",
+      "type": "municipality",
+      "geonamesId": 3035432,
+      "coordinates": {
+        "latitude": 42.60603,
+        "longitude": 2.89348,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Bages&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2986204": {
+      "name": "Pontellà",
+      "type": "municipality",
+      "geonamesId": 2986204,
+      "coordinates": {
+        "latitude": 42.62659,
+        "longitude": 2.81427,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Pontella&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2980164": {
+      "name": "Sant Feliu d'Amunt",
+      "type": "municipality",
+      "geonamesId": 2980164,
+      "coordinates": {
+        "latitude": 42.68614,
+        "longitude": 2.72249,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Saint-Feliu-d%27Amont&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
     }
   },
   "artists": {
@@ -10897,6 +10936,54 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:joan-pau-gine": {
+      "name": "Joan Pau Giné",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3035432"
+      ],
+      "confidence": "alta",
+      "basis": "Cantautor de Bages de Rosselló, segons la llista de l’editor del catàleg del 17 d’octubre de 2026 i la Viquiràdio.",
+      "sources": [
+        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:pere-figueres": {
+      "name": "Pere Figueres",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2986204"
+      ],
+      "confidence": "alta",
+      "basis": "Nascut el 14 de març de 1950 a Pontellà, segons la descripció del seu canal Tema, la llista de l’editor del catàleg del 17 d’octubre de 2026 i viki.cat.",
+      "sources": [
+        "https://www.viki.cat/wiki/Pere_Figueres"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:gerard-jacquet": {
+      "name": "Gerard Jacquet",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2980164"
+      ],
+      "confidence": "alta",
+      "basis": "Músic, poeta i contaire de Sant Feliu d’Amunt, segons la llista de l’editor del catàleg del 17 d’octubre de 2026.",
+      "sources": [
+        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11543,7 +11630,10 @@
     "UCwCawZz1QtCvPzADHbcdvlQ": "artist:glaucs",
     "UCIMUDjFw_0JF--3ijeIFIrA": "artist:agathe-catel",
     "UCprhue6vOAbMuSUEQbzlCZA": "artist:blues-de-picolat",
-    "UCs9uFGVOXA5wSSJrERWEhCw": "artist:jordi-barre"
+    "UCs9uFGVOXA5wSSJrERWEhCw": "artist:jordi-barre",
+    "UCPFO4vAR9pm9cI8RS8f5SLw": "artist:joan-pau-gine",
+    "UC3R_sFdfopHQUwREiqpOuRQ": "artist:pere-figueres",
+    "UCJzTwDykoSI4dHbCAg1XGQQ": "artist:gerard-jacquet"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

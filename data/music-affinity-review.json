@@ -262,6 +262,21 @@
       "method": "restored-from-documented-catalog"
     },
     {
+      "artist": "Gerard Jacquet",
+      "genres": [
+        "Rock"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 1,
+      "method": "user-editorial"
+    },
+    {
       "artist": "GUINEU",
       "genres": [
         "Pop",
@@ -343,6 +358,21 @@
       "reviewedAt": "2026-10-17",
       "confidence": 0.7,
       "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Joan Pau Giné",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 1,
+      "method": "user-editorial"
     },
     {
       "artist": "Jordi Barre",
@@ -517,6 +547,21 @@
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
       "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Pere Figueres",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "https://www.viki.cat/wiki/Pere_Figueres"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 1,
+      "method": "user-editorial"
     },
     {
       "artist": "Poor Tràmit",

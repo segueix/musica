@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T18:30:00.000Z",
+  "updatedAt": "2026-10-17T19:30:00.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40390,6 +40390,134 @@
       ],
       "lastChecked": "2026-10-17T18:30:00.000Z",
       "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi verificable: el canal «albert bueno - Tema» (UCTSMM3XHykmcW-f36NVvAiQ) no mostra cap pista i podria ser un homònim, i els seus vídeos són a canals d’arxiu de diversos artistes (Singlantana Sound). Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. La integral de 100 cançons inclou peces en francès i una amb una estrofa en anglès: caldrà vigilar-lo.",
+      "genresRaw": []
+    },
+    {
+      "name": "Joan Pau Giné",
+      "aliases": [
+        "Joan-Pau Giné",
+        "Joan-Pau Giné - Topic"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCPFO4vAR9pm9cI8RS8f5SLw",
+            "handle": null,
+            "name": "Joan-Pau Giné - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCPFO4vAR9pm9cI8RS8f5SLw",
+        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+      ],
+      "lastChecked": "2026-10-17T19:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Joan-Pau Giné - Tema comprovat (Adiu ça va?, L’allioli, Montparnasse…, les mateixes cançons que l’arxiu Singlantana Sound); l’altre canal «Joan Pau Giné - Tema» (UC2izZpLdlBll_IQvwM3rLAA) no té pistes i no s’indexa. Repertori principal en català, però la capsa Records de vida inclou algunes cançons inèdites en francès: artista vigilat; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": []
+    },
+    {
+      "name": "Pere Figueres",
+      "aliases": [
+        "Pere Figueres - Topic"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3R_sFdfopHQUwREiqpOuRQ",
+            "handle": null,
+            "name": "Pere Figueres - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC3R_sFdfopHQUwREiqpOuRQ",
+        "https://www.viki.cat/wiki/Pere_Figueres"
+      ],
+      "lastChecked": "2026-10-17T19:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Pere Figueres - Tema comprovat (la descripció el situa a Pontellà; títols en català: Desperta’t Rosselló, Al Peu de les Alberes…). Discografia pròpia àmpliament en català; als inicis també interpretava cançons de Brel i Brassens: artista vigilat; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": []
+    },
+    {
+      "name": "Gerard Jacquet",
+      "aliases": [
+        "Gérard Jacquet",
+        "Gerard Jacquet - Topic"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCJzTwDykoSI4dHbCAg1XGQQ",
+            "handle": null,
+            "name": "Gerard Jacquet - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCJzTwDykoSI4dHbCAg1XGQQ",
+        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+      ],
+      "lastChecked": "2026-10-17T19:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gerard Jacquet - Tema comprovat (es presenta com a músic, poeta, pintor, actor i contaire nord-català; títols en català i alguna versió com Si Me Quieres Escribir). Ha publicat en català i en francès (la sèrie Les chansons d’aquí barreja totes dues llengües): artista vigilat; la revisió es farà després de l’actualització del feed.",
       "genresRaw": []
     }
   ]

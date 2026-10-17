@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 433,
+  "musicalArtists": 439,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -10,10 +10,11 @@
         "rock-psicodelic",
         "folk-rock"
       ],
-      "artistCount": 2,
+      "artistCount": 3,
       "nucleus": false,
       "artists": [
         "Companyia Elèctrica Dharma",
+        "Ia & Batiste",
         "Moto Clua"
       ]
     },
@@ -105,7 +106,7 @@
       "label": "Rock — pendent d’afinar",
       "category": "Rock",
       "neighbours": [],
-      "artistCount": 38,
+      "artistCount": 39,
       "nucleus": true,
       "artists": [
         "Aspencat",
@@ -145,7 +146,8 @@
         "Umpah-Pah",
         "Whiskyn's",
         "Xucu-pà",
-        "Ypnosi"
+        "Ypnosi",
+        "Blues de Picolat"
       ]
     },
     {
@@ -623,7 +625,7 @@
       "label": "Pop — pendent d’afinar",
       "category": "Pop",
       "neighbours": [],
-      "artistCount": 53,
+      "artistCount": 54,
       "nucleus": true,
       "artists": [
         "Alfred Garcia",
@@ -651,6 +653,7 @@
         "Fades",
         "Ferran Palau",
         "Figa Flawas",
+        "Glaucs",
         "Guillem Gisbert i Puig",
         "Gusset",
         "Joan Dausà",
@@ -951,7 +954,7 @@
         "folk-tradicional",
         "folk-fusio"
       ],
-      "artistCount": 19,
+      "artistCount": 20,
       "nucleus": true,
       "artists": [
         "Alosa",
@@ -960,6 +963,7 @@
         "Ebri Knight",
         "El Diluvi",
         "El Pont d'Arcalís",
+        "Els Miralls de Dylan",
         "Esquirols",
         "Falç de Fetillera",
         "Germà Negre",
@@ -1043,7 +1047,7 @@
         "autor-folk",
         "autor-pop"
       ],
-      "artistCount": 37,
+      "artistCount": 39,
       "nucleus": true,
       "artists": [
         "Adrià Puntí",
@@ -1064,6 +1068,7 @@
         "Hèctor Vila",
         "Isaak Aguilà",
         "Joan Isaac",
+        "Jordi Barre",
         "Josep Tero",
         "L'arannà",
         "Lídia Pujol",
@@ -1082,7 +1087,8 @@
         "Sandra Bautista",
         "Sílvia Comes",
         "Xarim Aresté",
-        "Xavier Baró"
+        "Xavier Baró",
+        "Agathe Catel"
       ]
     },
     {
@@ -2332,6 +2338,17 @@
       ]
     },
     {
+      "artist": "Els Miralls de Dylan",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/@elsmirallsdedylan1592",
+        "https://www.culturajove.cat/f/13427/gerard-quintana-i-jordi-batiste-els-miralls-de-dylan",
+        "manual-user-2026-10-17"
+      ]
+    },
+    {
       "artist": "Els Pets",
       "category": "Pop",
       "subcategory": "pop-general",
@@ -2706,6 +2723,16 @@
       ]
     },
     {
+      "artist": "Glaucs",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://surtdecasa.cat/ebre/musica/entrevista-glaucs-2016-benifallet",
+        "https://surtdecasa.cat/emporda/agenda/2021/concert-de-glaucs/170621"
+      ]
+    },
+    {
       "artist": "Gossos",
       "category": "Rock",
       "subcategory": "rock-general",
@@ -2853,6 +2880,16 @@
       ]
     },
     {
+      "artist": "Ia & Batiste",
+      "category": "Rock",
+      "subcategory": "rock-progressiu",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCaFFmM8-URvqHCEH2DtRDuQ",
+        "https://guerssen.com/es/producto/un-gran-dia/"
+      ]
+    },
+    {
       "artist": "Icestorm",
       "category": "Heavy / Metal",
       "subcategory": "metal-death",
@@ -2978,6 +3015,15 @@
       "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q11928196"
+      ]
+    },
+    {
+      "artist": "Jordi Barre",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/jordi-barre"
       ]
     },
     {
@@ -5375,6 +5421,26 @@
       "sources": [
         "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
         "https://en-llac.cat/cultura/musica/cor-de-flama/"
+      ]
+    },
+    {
+      "artist": "Agathe Catel",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
+        "https://musiqc.ca/artistes/agathe-catel"
+      ]
+    },
+    {
+      "artist": "Blues de Picolat",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Blues_de_picolat",
+        "https://bluespic.blogspot.com/"
       ]
     }
   ]
