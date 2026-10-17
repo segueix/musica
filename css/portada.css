@@ -11770,7 +11770,7 @@ body .mq .mq-head,
     }
 }
 
-/* Mòbil: més petit i discret (36 px, lletra i lluïssor més fines); l'àrea de toc continua fent 44 px (::before) */
+/* Mòbil: més petit i discret (32 px, lletra i lluïssor més fines); l'àrea de toc continua fent 44 px (::before) */
 @media (max-width: 768px) {
     .am-tools--start {
         top: 8px;
@@ -11779,20 +11779,56 @@ body .mq .mq-head,
 
     .am-tool--draw {
         position: relative;
-        gap: 5px;
-        min-height: 36px;
-        padding: 0 12px 0 10px;
+        gap: 4px;
+        min-height: 32px;
+        padding: 0 10px 0 9px;
         border-width: 1px;
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
         font-weight: 600;
     }
 
     .am-tool--draw svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .am-tool--draw::before {
+        content: '';
+        position: absolute;
+        inset: -6px;
+    }
+
+    /* «+» i «−» just sota la pantalla completa (a baix a la dreta tapaven l'Alguer), i els tres botons de la dreta
+       més petits (36 px; l'àrea de toc continua fent 44 px), perquè tapin poc la costa */
+    .am-stage > .am-tools:not(.am-tools--start) {
+        top: 8px;
+        right: 8px;
+    }
+
+    .am-zoom {
+        top: 50px;
+        right: 8px;
+        bottom: auto;
+        gap: 6px;
+    }
+
+    .am-zoom button,
+    .am-tool--full {
+        position: relative;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        min-height: 36px;
+        font-size: 1.0625rem;
+    }
+
+    .am-tool--full svg {
         width: 17px;
         height: 17px;
     }
 
-    .am-tool--draw::before {
+    .am-zoom button::before,
+    .am-tool--full::before {
         content: '';
         position: absolute;
         inset: -4px;
@@ -11812,6 +11848,6 @@ body .mq .mq-head,
 @media (max-width: 360px) {
     .am-tool--draw {
         padding: 0;
-        min-width: 36px;
+        min-width: 32px;
     }
 }
