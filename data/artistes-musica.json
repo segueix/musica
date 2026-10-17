@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T10:34:12Z",
+  "updatedAt": "2026-10-17T14:26:08.250Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -9875,6 +9875,48 @@
       "genresRaw": []
     },
     {
+      "name": "Els Miralls de Dylan",
+      "aliases": [
+        "Miralls de Dylan"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCbJBuw-UseR72LHnDUG_9ng",
+            "handle": "@elsmirallsdedylan1592",
+            "name": "Els Miralls De Dylan",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/@elsmirallsdedylan1592",
+        "https://www.culturajove.cat/f/13427/gerard-quintana-i-jordi-batiste-els-miralls-de-dylan"
+      ],
+      "lastChecked": "2026-10-17T14:26:08.250Z",
+      "notes": "17/10/2026: alta del canal @elsmirallsdedylan1592 i categoria Rock per indicació expressa de l’usuari. Identitat contrastada amb les metadades públiques del canal i el projecte de Gerard Quintana i Jordi Batiste. Confiança editorial del repertori d’adaptacions al català, sense afirmar una verificació individual de les lletres.",
+      "genresRaw": []
+    },
+    {
       "name": "Els Pets",
       "aliases": [],
       "genres": [
@@ -14479,6 +14521,50 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Ia & Batiste",
+      "aliases": [
+        "Ia i Batiste",
+        "Ia-Batiste"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca",
+        "en"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCaFFmM8-URvqHCEH2DtRDuQ",
+            "handle": null,
+            "name": "Ia & batiste - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCaFFmM8-URvqHCEH2DtRDuQ",
+        "https://guerssen.com/es/producto/un-gran-dia/"
+      ],
+      "lastChecked": "2026-10-17T14:26:08.250Z",
+      "notes": "17/10/2026: l’usuari demana indexar totes les cançons d’Ia & Batiste - Tema. S’accepta tot el repertori d’aquest canal per indicació editorial expressa, sense llista tancada per ID o títol ni afirmar una verificació individual de les lletres; la font discogràfica documenta català i anglès. Categoria Rock, amb música progressiva documentada. Es conserva la política general del catàleg públic: 21 populars més novetats dels darrers 12 mesos.",
+      "genresRaw": []
     },
     {
       "name": "Icestorm",
