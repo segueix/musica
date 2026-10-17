@@ -2,14 +2,14 @@
 // desplega), les ràdios i compartir al damunt; al costat (a sota al mòbil), la cançó més escoltada (#1); a sota, la
 // novetats de 12 mesos i les posicions #2–#21 en caràtules quadrades, amb les dades al damunt. Cada
 // caràtula engega una ràdio de l'artista que comença per aquella cançó. Sense discos, files de videoclips/directes,
-// cerca. Novetats porta capçalera i desapareix si és buida (2026-10-17); si n'hi ha, «Les grans cançons» obre la
+// cerca. Novetats porta capçalera i desapareix si és buida (2026-10-17); si n'hi ha, «Les més escoltades» obre la
 // resta amb un separador perquè es vegi que es passa de les novetats a les més escoltades (sectionsModel()).
 // Implementació directa (patró 2); el que no toca el DOM és pur i testable:
 //  - artistStyles(): estils de l'artista (el principal primer) per a la «ràdio de l'estil»;
 //  - radiosModel(): quines ràdios es poden engegar i amb quin text;
 //  - bioModel(): presentació neta (sense text de farciment);
 //  - songsModel(): la més escoltada i la resta, per visualitzacions;
-//  - sectionsModel(): què diuen i quan surten les capçaleres de Novetats i de «Les grans cançons»;
+//  - sectionsModel(): què diuen i quan surten les capçaleres de Novetats i de «Les més escoltades»;
 //  - songTitle(): títol sense el nom del grup;
 //  - bestHtml(), songCardsHtml(): HTML de cada bloc.
 // La fitxa la pinta openChannelProfileLegacyImpl() (app.js), que crida showProfile(), setSongs() i renderSongs().
@@ -197,7 +197,7 @@
         return window.SegueixCatalogPolicy.selectArtist(videos);
     }
 
-    // Capçaleres dels blocs de cançons. Novetats, si n'hi ha; «Les grans cançons», només quan ve després de les
+    // Capçaleres dels blocs de cançons. Novetats, si n'hi ha; «Les més escoltades», només quan ve després de les
     // novetats (sense novetats, la graella continua directament la #1 i no cal cap separador).
     function sectionsModel({ recent = 0, rest = 0 } = {}) {
         const last = rest + 1;
@@ -210,8 +210,8 @@
                 show: recent > 0 && rest > 0,
                 sub:
                     rest === 1
-                        ? 'Continuem amb les més escoltades: la #2'
-                        : `Continuem amb les més escoltades: de la #2 a la #${last}`,
+                        ? 'La #2, per visualitzacions'
+                        : `De la #2 a la #${last}, per visualitzacions`,
             },
         };
     }

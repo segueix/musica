@@ -4042,8 +4042,8 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 /* ---------- Caràtules quadrades amb les dades al damunt, en blanc (2026-10-16) ----------
    La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions: al mòbil una caràtula sota l'altra (una
    columna), a la tauleta (769–1024 px) en tres columnes i a l'ordinador (≥ 1025 px) en quatre, sempre quadrades,
-   iguals i amb el mínim espai; només Novetats i «Les grans cançons» tenen capçalera (bloc «de les novetats a les
-   grans cançons», al final). Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
+   iguals i amb el mínim espai; només Novetats i «Les més escoltades» tenen capçalera (bloc «de les novetats a les
+   més escoltades», al final). Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
    la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada i el play. Un fosc suau a baix
    perquè el text es llegeixi. Res no es mou ni gira. Cada caràtula és un contenidor: la lletra, els marges i el play
    creixen amb la seva amplada (cqi), sigui d'una columna o de tres. */
@@ -9617,7 +9617,7 @@ body :is(#followPage, .search-results) .follow-card .follow-toggle-btn.is-follow
             box-shadow 0.18s ease;
     }
 
-    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :focus-within) {
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :has(:focus-visible)) {
         z-index: 3;
         transform: scale(1.04);
         box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
@@ -9641,7 +9641,7 @@ body :is(#followPage, .search-results) .follow-card .follow-toggle-btn.is-follow
         transition: none;
     }
 
-    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :focus-within) {
+    #homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):is(:hover, :has(:focus-visible)) {
         transform: none;
     }
 }
@@ -10179,14 +10179,16 @@ body .mq .mq-item:not(.is-active) .mq-cover {
         box-shadow 0.18s ease;
 }
 
-/* En enfocar-les amb el teclat (a tots els aparells) */
-#channelPage .ap-grid .ap-card:focus-within .ap-card__art,
-:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:focus-within,
-:is(#followPage, .search-results) .follow-card:is(:focus-visible, :focus-within),
-#homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):focus-within,
+/* En enfocar-les amb el teclat (a tots els aparells). :has(:focus-visible), no :focus-within: un clic amb el ratolí
+   (el «+N», «Afegeix a la cua»…) deixa el focus dins la targeta i el marc i l'ampliació s'hi quedaven fixos
+   (2026-10-17, la primera cançó d'«Acabades de sortir»). */
+#channelPage .ap-grid .ap-card:has(:focus-visible) .ap-card__art,
+:is(#homePage.is-style-view #videosGrid, #homePage .search-results .videos-grid) .video-card:has(:focus-visible),
+:is(#followPage, .search-results) .follow-card:is(:focus-visible, :has(:focus-visible)),
+#homePage.is-portada :is(.pt-card, .pt-portrait, .pt-quick):has(:focus-visible),
 #homePage.is-portada .pt-style:not(.pt-style--add):not(.pt-style--more):focus-visible,
-#homePlaylists .hp-item:focus-within > .hp-card,
-body .mq .mq-item:not(.is-active):focus-within .mq-cover {
+#homePlaylists .hp-item:has(:focus-visible) > .hp-card,
+body .mq .mq-item:not(.is-active):has(:focus-visible) .mq-cover {
     border-color: #fff;
 }
 
@@ -10854,8 +10856,8 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     }
 }
 
-/* Fitxa d'artista: de les novetats a les grans cançons (2026-10-17). Cada bloc té una capçalera amb una icona
-   rodona i una línia que diu què és; «Les grans cançons» (#2–#21) obre amb un separador (línia i més aire) perquè es
+/* Fitxa d'artista: de les novetats a les més escoltades (2026-10-17; el títol era «Les grans cançons»). Cada bloc té una capçalera amb una icona
+   rodona i una línia que diu què és; «Les més escoltades» (#2–#21) obre amb un separador (línia i més aire) perquè es
    vegi clarament que s'acaben les novetats i es continua amb les més escoltades. Les caràtules no canvien. */
 #channelPage .ap-section-head {
     display: flex;
@@ -10909,7 +10911,7 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     color: var(--pt-on-accent);
 }
 
-/* Les grans cançons: separador i icona de vidre amb vora blanca */
+/* Les més escoltades: separador i icona de vidre amb vora blanca */
 #channelPage .ap-section-head--hits {
     margin-top: 34px;
     padding-top: 22px;

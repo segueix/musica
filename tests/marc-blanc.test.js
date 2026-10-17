@@ -25,7 +25,12 @@ describe('marc blanc', () => {
     });
 
     it('apareix en passar-hi el ratolí i en enfocar-les', () => {
-        expect(block).toMatch(/:focus-within[\s\S]*?\{\s*border-color: #fff;/);
+        expect(block).toMatch(/:has\(:focus-visible\)[\s\S]*?\{\s*border-color: #fff;/);
+        // un clic amb el ratolí no deixa el marc fix (el focus es queda dins la targeta)
+        const focusRule = block
+            .slice(block.indexOf('/* En enfocar-les amb el teclat'), block.indexOf('/* En passar-hi el ratolí'))
+            .replace(/\/\*[\s\S]*?\*\//g, '');
+        expect(focusRule).not.toContain(':focus-within');
         expect(block).toMatch(
             /@media \(hover: hover\) and \(pointer: fine\) \{[\s\S]*?:hover[\s\S]*?\{\s*border-color: #fff;/
         );
