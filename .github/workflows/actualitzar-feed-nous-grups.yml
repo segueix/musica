@@ -6,6 +6,7 @@ on:
 
 concurrency:
   group: music-data-writer
+  queue: max
   cancel-in-progress: false
 
 jobs:
@@ -24,7 +25,7 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Sincronitza main
         run: |
@@ -66,21 +67,9 @@ jobs:
             '## Actualització dels grups nous\n\n' + message + '\n');
           NODE
 
-      - name: Instal·la dependències
-        if: steps.scope.outputs.run_api == 'true'
-        run: npm ci
-
       - name: Valida la base d'artistes
         if: steps.scope.outputs.run_api == 'true'
-        run: npm run music:validate
-
-      - name: Prova classificador musical
-        if: steps.scope.outputs.run_api == 'true'
-        run: node scripts/test_music_content_classifier.js
-
-      - name: Prova catàleg, any original i revisions manuals
-        if: steps.scope.outputs.run_api == 'true'
-        run: npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js
+        run: node scripts/validar_artistes_musica.js
 
       - name: Genera feed
         if: steps.scope.outputs.run_api == 'true'
@@ -111,7 +100,7 @@ jobs:
 
       - name: Regenera índex de cerca després del feed
         if: steps.scope.outputs.run_api == 'true'
-        run: npm run search:index:hybrid:rebuild
+        run: node scripts/generar_index_cerca.js
 
       - name: Publica feed i índex en un sol commit
         if: steps.scope.outputs.run_api == 'true'

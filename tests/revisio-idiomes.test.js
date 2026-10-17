@@ -319,7 +319,19 @@ describe('catàleg real', () => {
         expect(first.state.pendents.every((x) => p.resolve(x).mode === 'vigilats')).toBe(true);
         expect(first.discardedIds.size).toBe(0);
         expect(updatePending(first.state, feed.videos, { policy: p, hiddenIds, now }).state).toEqual(first.state);
-        expect(first.state.artistesPendents).toEqual([]);
+        // El catàleg viu pot tenir altes pendents: no són una fallada del sistema ni una aprovació lingüística.
+        // Han de continuar a la cua d'incorporació fins a la revisió editorial.
+        for (const artist of first.state.artistesPendents) {
+            expect(artist.canals.length).toBeGreaterThan(0);
+            for (const channelId of artist.canals) {
+                expect(p.resolve({ channelId, channelTitle: artist.artista }).mode).toBe('nou');
+            }
+        }
+        for (const artist of state.artistesPendents || []) {
+            if (artist.canals.some(channelId => p.resolve({ channelId, channelTitle: artist.artista }).mode === 'nou')) {
+                expect(first.state.artistesPendents.map(item => item.key)).toContain(artist.key);
+            }
+        }
         expect(first.state.revisades).toEqual(state.revisades);
         expect(first.state.pendents.some((x) => ['Tesa', 'Still Ill'].includes(x.artista))).toBe(true);
         expect(first.state.pendents.every((x) => !hiddenIds.has(x.id))).toBe(true);

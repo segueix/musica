@@ -26,7 +26,6 @@ El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. La peti
 | Descobrir artistes de música | Només manual durant l’estalvi d’octubre |
 | Enriquir gèneres musicals | Només manual durant l’estalvi d’octubre |
 | Actualitzar visualitzacions historial musical | Només manual durant l’estalvi d’octubre |
-| Actualitzador feed musical (manual) | Només petició manual expressa |
 | Actualitzar feed només dels grups nous | Només petició manual expressa |
 | Manteniment musical manual | Una tasca triada expressament: arxiu, afinitats, ocults, aprimament o auditoria |
 
@@ -44,7 +43,7 @@ Els workflows puntuals i els duplicats s'han tret de `.github/workflows`. Una c�
 
 ## Comprovacions
 
-`node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs`
+`node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs scripts/test_abast_publicacio.cjs scripts/test_publicacio_estatica.cjs`
 
 Inclou calendari local, filtres per dades i interfície, permisos, absència de cascades, una sola feina CI i continuïtat de la revisió Codex. El test de disparadors utilitza un parser limitat: comprovar també que els YAML siguin vàlids abans de desar-los. Les proves Vitest del pipeline també s'executen en l'únic job de validació del sistema.
 
@@ -52,3 +51,25 @@ No es recupera la quota ja consumida, no s'esborren logs ni execucions anteriors
 
 Referències tècniques oficials: https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows ; https://docs.github.com/en/billing/concepts/product-billing/github-actions
 
+
+## Revisió del 17 d’octubre de 2026
+
+S'han revisat els onze YAML actius, els seus permisos, les cues i les 100 execucions més recents. El 16/10 UTC hi ha 62 execucions: 34 de `pages build and deployment`, 9 publicacions estàtiques per push, 16 validacions de PR (incloses les omeses), una ingesta programada, una manual i una publicació posterior a la manual. Els 34 casos `dynamic` són de la font de Pages, no pas 34 crons del feed. Els últims desplegaments propis passen la comprovació `build_type=workflow`; es conserva aquesta exigència. La lectura de configuració de Pages no està disponible al connector, i no s'ha modificat des d'aquesta revisió.
+
+Organització resultant: **deu workflows, un únic cron**. En un dia sense canvis de codi ni ordres manuals: una ingesta selectiva i la seva publicació. Els grups amb publicacions de menys d'un any es consulten diàriament; la resta conserva els torns de tres/set dies. No s'ha canviat el calendari, ni les dades, ni els límits del catàleg.
+
+- `actualitzador.yml` era una segona entrada manual que no arxivava ni regenerava la cerca i les afinitats. Es conserva a `docs/actions-arxivades/2026-10-17/`; s'ha d'utilitzar «Actualitzar feed musical → Run workflow», amb la mateixa opció de discografia sencera. No restaurar el duplicat.
+- Les escriptures mantenen `music-data-writer`, amb `queue: max` i sense cancel·lació en curs. Així una ordre manual no substitueix un torn diari que ja espera. No augmenta el paral·lelisme: s'executen d'una en una; només hi ha un cron i les altres entrades són manuals.
+- La publicació usa `music-pages`, una cua independent, amb una execució en curs i només la més recent pendent. Ja no pot desplaçar la ingesta. El checkout fixa un estat de main i no hi escriu; una ingesta que acaba després inicia la publicació següent.
+- Abans d'instal·lar dependències, `decidir_publicacio_estatica.cjs` consulta el petit `static-build.json` públic. Si el commit i la URL coincideixen i s'ha construït el mateix dia de Madrid, omet instal·lació, build, artefacte i desplegament. L'endemà es reconstrueix per caducar novetats, encara que main no hagi canviat. Un manifest antic/incorrecte o un error de xarxa fa publicar; les ordres manuals i els reintents explícits forcen la publicació. Aquesta comprovació evita feina dins del runner, no l'existència de l'esdeveniment `workflow_run`.
+- Les proves de codi són a l'únic job de la PR, també en passar d'esborrany a `ready_for_review`. Es conserven totes les proves que abans repetia el feed. La ingesta valida la base real i la cobertura però no instal·la dependències de desenvolupament ni repeteix Vitest. Els scripts de producció només requereixen Node i mòduls locals. Revisar Shorts tampoc necessita `npm ci`.
+- Shorts i comptadors de l'historial queden limitats a main i a 15 minuts, i publiquen amb el helper de reintents existent. Tots els workflows tenen temps límit. L'artefacte Pages es reté un dia; es conserven el build, la validació i la comprovació pública en una única feina.
+
+La revisió d'idiomes conté una prova antiga que exigia una cua d'artistes nous buida. La cua actual inclou Ernest Crusats: ara es comprova que aquests artistes continuïn pendents i que els seus canals tinguin mode `nou`, sense aprovar-los ni alterar cap dada editorial.
+
+Mesura de referència: a l'execució manual 39027436603 (17/10), instal·lar dependències i repetir proves va ocupar 9 segons; la ingesta, 5 min 19 s. El volum principal continua sent la consulta de YouTube. No s'estima un estalvi mensual ni el saldo de quota a partir d'aquesta mostra. No s'ha llançat ni reintentat cap Action per provar aquests canvis.
+
+Fonts de la configuració: [cues i concurrència](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#concurrency), [calendaris i tipus de PR](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows). Consultades el 17/10/2026; `timezone` i `queue: max` són opcions admeses. La cua màxima admet fins a 100 entrades pendents i no es pot combinar amb `cancel-in-progress: true`.
+
+
+Validació local del canvi: 133 proves Node i 256 proves Vitest rellevants superades; les dues proves ajustades es van tornar a executar amb els seus fitxers complets (47/47). Els deu YAML es parsegen correctament, i s'han comprovat permisos, calendaris i límits. Build complet i validador estàtic correctes (12.225 fitxers, 7.160 cançons). `npm run lint` conserva els mateixos 58 errors i 715 avisos del punt de partida; cap fitxer de JS del client ha canviat. Els scripts modificats no tenen errors de lint. No s'ha alterat el catàleg ni el rendiment del client.

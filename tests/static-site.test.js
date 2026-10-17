@@ -48,6 +48,7 @@ describe('generació estàtica de Música', () => {
         put('data/history-pool.json', { videos: [popular[22]] });
         put('data/search_index_2020.json', [{ i: popular[22].id, t: 'Exclosa', c: C2 }]);
         const report = build(root, { now: Date.parse('2026-10-17T12:00:00Z') });
+        expect(report.builtAt).toBe('2026-10-17T12:00:00.000Z');
         expect(report.catalog).toMatchObject({ popular: 21, recent: 1, total: 22, live: 1 });
         const ids = JSON.parse(readFileSync(join(out, 'data/video-channels.json')));
         expect(Object.keys(ids)).toHaveLength(22);

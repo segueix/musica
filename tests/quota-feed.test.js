@@ -175,7 +175,7 @@ describe('què fa el workflow «Actualitzar feed musical»', () => {
     });
 
     it('cap workflow del feed fa un push sense tornar-ho a provar', () => {
-        for (const file of ['actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml', 'actualitzador.yml']) {
+        for (const file of ['actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml', 'actualitzar-visualitzacions-historial.yml', 'revisar_shorts.yml']) {
             const workflow = read('.github/workflows/' + file);
             expect(workflow).toContain('scripts/publicar_dades.sh');
             expect(workflow).not.toContain('git push origin HEAD:main');

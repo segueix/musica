@@ -11,7 +11,7 @@ const root = path.resolve(__dirname, '..');
 const dir = path.join(root, '.github/workflows');
 const read = name => fs.readFileSync(path.join(dir, name), 'utf8');
 const approved = [
-    'actualitzador.yml', 'actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml',
+    'actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml',
     'actualitzar-visualitzacions-historial.yml', 'cercar-canals-youtube.yml', 'descobrir-musica.yml',
     'enriquir-generes.yml', 'manteniment-manual.yml', 'publicar-comparticio-musica.yml',
     'revisar_shorts.yml', 'validar-musica.yml',
@@ -26,11 +26,11 @@ function eventBlock(source, event) {
     const start = block.indexOf(`  ${event}:`);
     if (start < 0) return '';
     const tail = block.slice(start + 2 + event.length + 1);
-    return tail.split(/\n(?=  [a-z_]+:)/)[0];
+    return tail.split(/\n(?= {2}[a-z_]+:)/)[0];
 }
 function patterns(source, event) {
     const block = eventBlock(source, event);
-    const result = [...block.matchAll(/^      - '([^']+)'\s*$/gm)].map(x => x[1]);
+    const result = [...block.matchAll(/^ {6}- '([^']+)'\s*$/gm)].map(x => x[1]);
     assert.ok(result.length, 'No s’han trobat els patrons de camí');
     return result;
 }
@@ -53,14 +53,14 @@ function selected(file, list) {
     return result;
 }
 
-test('només queden els onze workflows del sistema aprovats', () => {
+test('només queden els deu workflows del sistema aprovats', () => {
     assert.deepEqual(fs.readdirSync(dir).filter(n => /\.ya?ml$/.test(n)).sort(), approved);
 });
 for (const name of approved) {
     test(`${name}: no hi ha execucions redundants per branques o commits de dades`, () => {
         const source = read(name), triggers = onBlock(source);
-        if (name !== 'publicar-comparticio-musica.yml') assert.doesNotMatch(triggers, /^  (push|workflow_run):/m);
-        if (name !== 'validar-musica.yml') assert.doesNotMatch(triggers, /^  pull_request:/m);
+        if (name !== 'publicar-comparticio-musica.yml') assert.doesNotMatch(triggers, /^ {2}(push|workflow_run):/m);
+        if (name !== 'validar-musica.yml') assert.doesNotMatch(triggers, /^ {2}pull_request:/m);
         assert.match(source, /workflow_dispatch:/);
         assert.doesNotMatch(source, /OPENAI_API_KEY|api\.openai\.com|pull_request_target:/);
     });
@@ -151,7 +151,7 @@ test('una sola feina CI, cancel·lació de versions antigues i cap comparativa d
     assert.equal((validator.match(/npx vitest run/g) || []).length, 1);
 });
 test('durant l’estalvi només el feed conserva un calendari automàtic', () => {
-    const scheduled = approved.filter(name => /^  schedule:/m.test(onBlock(read(name))));
+    const scheduled = approved.filter(name => /^ {2}schedule:/m.test(onBlock(read(name))));
     assert.deepEqual(scheduled, [
         'actualitzar-feed-musica.yml',
     ]);
@@ -161,7 +161,48 @@ test('durant l’estalvi només el feed conserva un calendari automàtic', () =>
 test('la petició diària per canals substitueix els dies parells, sense activar manteniments', () => {
     assert.equal(generalSchedule(), '0 20 * * *');
     assert.equal(decideScope({ event: 'schedule', schedule: '0 20 2-30/2 * *' }).work, false);
-    assert.match(read('actualitzar-feed-musica.yml'), /scripts\/test_activitat_musica.cjs/);
-    assert.match(read('actualitzador.yml'), /data\/music-channel-polling.json/);
+    assert.match(validator, /scripts\/test_activitat_musica.cjs/);
+    assert.match(read('actualitzar-feed-musica.yml'), /discografia_sencera:/);
+});
+
+test('la cua de publicació no desplaça la ingesta diària ni els manteniments demanats', () => {
+    assert.match(publisher, /group: music-pages\n/);
+    assert.match(publisher, /cancel-in-progress: false/);
+    assert.doesNotMatch(publisher, /queue: max|music-data-writer/);
+    for (const name of approved.filter(name => !['validar-musica.yml', 'publicar-comparticio-musica.yml'].includes(name))) {
+        const source = read(name);
+        assert.match(source, /group: music-data-writer\n\s+queue: max\n\s+cancel-in-progress: false/);
+        assert.match(source, /if: github.ref == 'refs\/heads\/main'/);
+        assert.match(source, /timeout-minutes: (?:10|15|30)/);
+        assert.match(source, /ref: main/);
+    }
+});
+
+test('les proves de codi es concentren a la PR, també en deixar de ser esborrany', () => {
+    assert.match(validator, /types: \[opened, synchronize, reopened, ready_for_review\]/);
+    for (const name of ['actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml', 'revisar_shorts.yml']) {
+        assert.doesNotMatch(read(name), /npm ci|npx vitest|node --test/);
+    }
+    for (const name of ['actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml']) {
+        assert.match(read(name), /node scripts\/validar_artistes_musica.js/);
+    }
+    for (const name of ['cataleg-musical', 'any-original', 'canals-revisats', 'aprimar-feed', 'canal-tema', 'revisio-idiomes', 'llancaments-musicals', 'catalog-policy']) {
+        assert.ok(validator.includes(`tests/${name}.test.js`));
+    }
+});
+
+test('una publicació duplicada evita tots els passos cars dins la mateixa feina', () => {
+    assert.ok(publisher.indexOf('node scripts/decidir_publicacio_estatica.cjs') < publisher.indexOf('npm ci'));
+    assert.match(publisher, /github.event_name == 'workflow_dispatch' \|\| github.run_attempt > 1/);
+    assert.match(publisher, /head_repository.full_name == github.repository/);
+    assert.match(publisher, /retention-days: 1/);
+    for (const step of publisher.split(/\n {6}- /).slice(1)) {
+        if (/npm ci|esbuild\/install|npm run build:static|actions\/(upload-pages-artifact|deploy-pages)|run: node scripts\/comprovar_publicacio_estatica/.test(step)) {
+            assert.match(step, /if: steps.scope.outputs.publish == 'true'/);
+        }
+    }
+    assert.equal(selected('scripts/lib/cataleg_public.js', publishPatterns), true);
+    assert.equal(selected('scripts/decidir_publicacio_estatica.cjs', publishPatterns), true);
+    assert.doesNotMatch(eventBlock(publisher, 'workflow_run'), /Actualitzador feed musical \(manual\)/);
 });
 

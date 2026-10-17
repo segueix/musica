@@ -657,3 +657,8 @@ const likes = ctx2.SegueixApp.features.likes;
 
 
 
+
+
+## Actions: organització vigent del 17/10/2026
+
+Mana `docs/ACCIONS_I_QUOTA.md` sobre les referències històriques d'aquest document. Deu workflows i un únic cron: feed diari a les 20 h Europe/Madrid, canals vençuts segons activitat (1/3/7 dies). L'entrada manual `actualitzador.yml` està arxivada; usar `actualitzar-feed-musica.yml`. La publicació té cua independent i omet reconstruccions del mateix commit el mateix dia; l'endemà renova les novetats. La CI es fa una vegada a la PR, també en marcar-la preparada. No dispatch ni reintents per provar canvis editorials o d'Actions. Pages ha de tenir Source → GitHub Actions; mai publicació paral·lela des d'una branca.

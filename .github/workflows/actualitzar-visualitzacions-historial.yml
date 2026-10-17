@@ -7,19 +7,24 @@ on:
 
 concurrency:
   group: music-data-writer
+  queue: max
   cancel-in-progress: false
 
 jobs:
   estadistiques:
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
       - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Sincronitza main
         run: |
@@ -32,14 +37,6 @@ jobs:
         run: node scripts/update_music_history_views.js
 
       - name: Publica comptadors i vídeos restringits si han canviat
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/archive/channels data/history-pool.json data/historial-musical.json
-          [ -f data/videos-restringits.json ] && git add data/videos-restringits.json
-          if git diff --cached --quiet; then
-            echo "Sense canvis de visualitzacions."
-            exit 0
-          fi
-          git commit -m "data: actualitza visualitzacions de l'historial musical"
-          git push origin HEAD:main
+        run: >-
+          bash scripts/publicar_dades.sh "data: actualitza visualitzacions de l'historial musical"
+          data/archive/channels data/history-pool.json data/historial-musical.json data/videos-restringits.json
