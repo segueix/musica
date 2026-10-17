@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-17T11:12:19.889Z",
+  "generatedAt": "2026-10-17T18:16:22.373Z",
   "polling": {
-    "requested": 537,
-    "deferred": 118,
-    "failed": 7
+    "requested": 6,
+    "deferred": 655,
+    "failed": 0
   },
-  "retainedVideoCount": 957,
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 364,
+  "topicChannelCount": 368,
   "governedChannelCount": 124,
   "topicCoverage": [
     {
@@ -1640,11 +1640,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 210,
-    "song": 21
-  },
-  "topicHiddenCount": 307,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -1945,6 +1942,13 @@
       "name": "Blay Tritono",
       "tracks": 3,
       "selected": 3,
+      "withClip": 0
+    },
+    {
+      "id": "UCprhue6vOAbMuSUEQbzlCZA",
+      "name": "Blues De Picolat",
+      "tracks": 38,
+      "selected": 35,
       "withClip": 0
     },
     {
@@ -2564,6 +2568,13 @@
       "withClip": 29
     },
     {
+      "id": "UCwCawZz1QtCvPzADHbcdvlQ",
+      "name": "Glaucs",
+      "tracks": 170,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCDAuX43C1s8r_fH6-tU3SHQ",
       "name": "Gossos",
       "tracks": 344,
@@ -2655,6 +2666,13 @@
       "withClip": 0
     },
     {
+      "id": "UCaFFmM8-URvqHCEH2DtRDuQ",
+      "name": "Ia & batiste",
+      "tracks": 86,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCby9BHawLhftHyR37pEztHg",
       "name": "Inadaptats",
       "tracks": 15,
@@ -2723,6 +2741,13 @@
       "tracks": 101,
       "selected": 28,
       "withClip": 8
+    },
+    {
+      "id": "UCs9uFGVOXA5wSSJrERWEhCw",
+      "name": "Jordi Barre",
+      "tracks": 13,
+      "selected": 11,
+      "withClip": 0
     },
     {
       "id": "UCw04zTLucny6vY-O5-qE21A",
@@ -4167,56 +4192,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 655,
-  "resolvedChannelCount": 655,
-  "feedChannelCount": 655,
-  "rawPublicVideoCount": 13629,
-  "feedVideoCount": 11662,
-  "acceptedMusicCount": 12026,
-  "categoryEligibleVideoCount": 11959,
+  "indexedChannelCount": 661,
+  "resolvedChannelCount": 661,
+  "feedChannelCount": 661,
+  "rawPublicVideoCount": 7382,
+  "feedVideoCount": 6811,
+  "acceptedMusicCount": 6764,
+  "categoryEligibleVideoCount": 6760,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1204,
+    "before": 4,
     "matched": 0,
-    "rejected": 1204
+    "rejected": 4
   },
-  "contentReviewCount": 572,
+  "contentReviewCount": 581,
   "contentTypeCounts": {
-    "song": 11565,
-    "live_song": 394,
-    "album": 67,
-    "other": 1031,
-    "review": 572
+    "song": 6565,
+    "live_song": 195,
+    "album": 4,
+    "other": 37,
+    "review": 581
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCmwGTBibm2bt9oF-P7ECSmQ",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCRLHVqJybtjS5ODPP5iAv4w",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCFI6QGe27kctP5lGeugsrhA",
-    "UC8hpq3EHqyG09og9xy3qOFg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UCfcp4MZZ3t309KMOLo7JJag",
-    "UC1yaXYiC2Ab3tus3lTDljtw",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCYPbYGqAXm8gaYGVY-ANVXA",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCg6lVNl78-THJI1w8dSy0bA"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6635,
+  "publishedFeedVideoCount": 6718,
   "publishedShortVideoCount": 0
 }

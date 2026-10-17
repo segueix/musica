@@ -4137,14 +4137,54 @@
       "lastCheckedAt": "2026-10-17T11:07:01.474Z",
       "intervalDays": 1,
       "nextCheckOn": "2026-10-18"
+    },
+    "UCbJBuw-UseR72LHnDUG_9ng": {
+      "latestPublishedAt": "2017-02-27T11:43:27.000Z",
+      "lastCheckedAt": "2026-10-17T18:16:14.105Z",
+      "intervalDays": 7,
+      "nextCheckOn": "2026-10-24"
+    },
+    "UCwCawZz1QtCvPzADHbcdvlQ": {
+      "latestPublishedAt": "2026-02-03T21:28:25.000Z",
+      "lastCheckedAt": "2026-10-17T18:16:14.105Z",
+      "intervalDays": 1,
+      "nextCheckOn": "2026-10-18",
+      "lastFullTopicAt": "2026-10-17T18:16:14.105Z"
+    },
+    "UCaFFmM8-URvqHCEH2DtRDuQ": {
+      "latestPublishedAt": "2025-03-31T10:13:00.000Z",
+      "lastCheckedAt": "2026-10-17T18:16:14.105Z",
+      "intervalDays": 3,
+      "nextCheckOn": "2026-10-20",
+      "lastFullTopicAt": "2026-10-17T18:16:14.105Z"
+    },
+    "UCs9uFGVOXA5wSSJrERWEhCw": {
+      "latestPublishedAt": "2025-03-31T10:13:01.000Z",
+      "lastCheckedAt": "2026-10-17T18:16:14.105Z",
+      "intervalDays": 3,
+      "nextCheckOn": "2026-10-20",
+      "lastFullTopicAt": "2026-10-17T18:16:14.105Z"
+    },
+    "UCIMUDjFw_0JF--3ijeIFIrA": {
+      "latestPublishedAt": "2026-09-30T10:08:21.000Z",
+      "lastCheckedAt": "2026-10-17T18:16:14.105Z",
+      "intervalDays": 1,
+      "nextCheckOn": "2026-10-18"
+    },
+    "UCprhue6vOAbMuSUEQbzlCZA": {
+      "latestPublishedAt": "2026-10-01T22:27:32.000Z",
+      "lastCheckedAt": "2026-10-17T18:16:14.105Z",
+      "intervalDays": 1,
+      "nextCheckOn": "2026-10-18",
+      "lastFullTopicAt": "2026-10-17T18:16:14.105Z"
     }
   },
-  "updatedAt": "2026-10-17T11:07:01.474Z",
+  "updatedAt": "2026-10-17T18:16:14.105Z",
   "lastRun": {
-    "indexed": 655,
-    "requested": 537,
-    "checked": 530,
-    "deferred": 118,
-    "failed": 7
+    "indexed": 661,
+    "requested": 6,
+    "checked": 6,
+    "deferred": 655,
+    "failed": 0
   }
 }
