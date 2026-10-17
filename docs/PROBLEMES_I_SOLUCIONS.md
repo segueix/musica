@@ -1974,3 +1974,12 @@ L’informe `ssrfaj7vqi` sobre la PR 149 millora l’LCP (11,8 → 9,0 s) però 
 Es reparteix la preparació del context en lots de 40 i el model de portada en fases, amb cessió real del fil (`scheduler.yield` o temporitzador; una microtasca no seria suficient). Les versions síncrona i cooperativa comparteixen generadors per conservar els resultats. El context preparat es reutilitza per identitat del catàleg, mida, dia i configuració; no es desen cohorts parcials. Un càlcul de portada tardà no pot sobreescriure una vista nova. La comprovació ha de mesurar el contingut pintat, no només `startup-ready`.
 
 En l’assaig local la tasca màxima baixa de 1.069 a 441 ms i el bloqueig acumulat de 1.855 a 1.343 ms; el contingut complet arriba 245 ms més tard. És una millora de capacitat de resposta, no una garantia de puntuació ni d’LCP. Proves d’equivalència de cohorts/files, invalidació, fallback sense scheduler i navegació durant un render pendent; navegador i paquet complet validats. Metodologia i límits a `docs/RENDIMENT_ESTATIC.md`.
+
+
+## 2026-10-17 — Limitar el catàleg per artista sense reintroduir cançons per l’arxiu
+
+**Petició:** 21 cançons més vistes més les novetats dels últims 12 mesos fora del rànquing. La #1 al costat de la foto, després novetats (secció absent si és buida) i #2–#21. Els directes competeixen per visualitzacions i mantenen `live_song` per a la portada i la ràdio de directes.
+
+**Solució:** regla compartida `js/catalog-policy.js`, agrupació editorial oficial/Tema i atribucions de convidats existents. `scripts/lib/cataleg_public.js` aplica la selecció al paquet estàtic: feed, historial, pool, arxius i cerca; el mateix conjunt genera pàgines, rutes i sitemaps. Les dades mestres no es purguen: permeten recalcular popularitat i conservar revisions. El fitxer d’ocults ja descarregat porta IDs populars i caducitats; evita recuperar cançons excloses des de snapshots o memòria cau antiga sense una petició nova. La validació de publicació comprova que selecció, rutes i dades coincideixen.
+
+**Verificació:** promoció d’una novetat al lloc corresponent, caducitat exacta a l’any, 29 de febrer, exclusió de pujades antigues, agrupació de canals, homònims i directes convidats; fitxa amb/sense novetats, fonts públiques, cerca, ràdios i regeneració després de caducar. Recompte i limitacions a `docs/CATALEG_21_NOVETATS.md`.

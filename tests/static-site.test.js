@@ -34,6 +34,42 @@ function fixture() {
 }
 
 describe('generació estàtica de Música', () => {
+    it('el mateix límit arriba al feed, arxiu, cerca, ràdios, pàgines i rutes; no altera les dades mestres', () => {
+        const { root, out, put } = fixture();
+        const popular = Array.from({ length: 23 }, (_, i) => song(`rank${String(i).padStart(7, '0')}`,
+            { channelId: i % 2 ? C1 : C2, viewCount: 1000 - i, publishedAt: '2020-01-01', contentType: i === 0 ? 'live_song' : 'song' }));
+        const recent = song('fresh000001', { publishedAt: '2026-10-10', viewCount: 1 });
+        const expired = song('oldnew00001', { publishedAt: '2025-10-17T12:00:00Z', viewCount: 2 });
+        const feed = { channels: { [C1]: { name: 'Grup' }, [C2]: { name: 'Grup - Topic' }, [C3]: { name: 'Grup' } }, videos: [...popular, recent, expired] };
+        put('data/feed.json', feed);
+        put('data/music-channel-video-allowlist.json', { channels: {} });
+        put('data/historial-musical.json', { videos: [] });
+        put('data/archive/channels/archive.json', { videos: [popular[22], recent] });
+        put('data/history-pool.json', { videos: [popular[22]] });
+        put('data/search_index_2020.json', [{ i: popular[22].id, t: 'Exclosa', c: C2 }]);
+        const report = build(root, { now: Date.parse('2026-10-17T12:00:00Z') });
+        expect(report.catalog).toMatchObject({ popular: 21, recent: 1, total: 22, live: 1 });
+        const ids = JSON.parse(readFileSync(join(out, 'data/video-channels.json')));
+        expect(Object.keys(ids)).toHaveLength(22);
+        expect(ids).not.toHaveProperty(popular[22].id);
+        expect(ids).not.toHaveProperty(expired.id);
+        const selection = JSON.parse(readFileSync(join(out, 'data/hidden-videos.json'))).catalogSelection;
+        expect(selection.popularIds).toHaveLength(21);
+        expect(Object.keys(selection.recentExpiry)).toEqual([recent.id]);
+        for (const file of ['feed.json', 'historial-musical.json', 'history-pool.json', 'archive/channels/archive.json']) {
+            const videos = JSON.parse(readFileSync(join(out, 'data', file))).videos;
+            expect(videos.every(v => Object.hasOwn(ids, v.id))).toBe(true);
+        }
+        expect(JSON.parse(readFileSync(join(root, 'data/feed.json')))).toEqual(feed);
+        expect(existsSync(join(out, `compartir/canco/${popular[22].id}.html`))).toBe(false);
+        const artistPage = JSON.parse(readFileSync(join(out, 'data/static-routes.json'))).artists[C1];
+        const html = readFileSync(join(out, artistPage, 'index.html'), 'utf8');
+        expect(html.indexOf('La més escoltada')).toBeLessThan(html.indexOf('<h2>Novetats'));
+        expect(html.indexOf('<h2>Novetats')).toBeLessThan(html.indexOf('<h2>Més escoltades'));
+        build(root, { now: Date.parse('2027-10-10T00:00:00Z') });
+        expect(JSON.parse(readFileSync(join(out, 'static-build.json'))).songs).toBe(21);
+        expect(readFileSync(join(out, artistPage, 'index.html'), 'utf8')).not.toContain('<h2>Novetats');
+    });
     it('publica feed, historial i arxiu; exclou ocults, retirats i vídeos fora de la llista permesa', () => {
         const { root, out } = fixture();
         const report = build(root);

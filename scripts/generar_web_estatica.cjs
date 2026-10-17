@@ -2,6 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const { selectCatalog, writePublicCatalog } = require('./lib/cataleg_public.js');
 const { cleanTitle } = require('../js/song-title.js');
 const { CATEGORY_GROUPS } = require('../js/music-categories.js');
 const { generate: generateSharing } = require('./generar_pagines_compartir.js');
@@ -35,7 +36,7 @@ function channelRecords(channels) {
     return ctx.window.SegueixApp.features.channel.buildCreatorRecords(channels);
 }
 
-function loadCatalog(root) {
+function loadCatalog(root, options = {}) {
     const feed = read(root, 'data/feed.json');
     const listed = read(root, 'js/channels-ca.json').channels;
     const hiddenData = read(root, 'data/hidden-videos.json');
@@ -47,7 +48,9 @@ function loadCatalog(root) {
         throw new Error('Catàleg incomplet: no es publica una web parcial.');
     }
     const allowlist = loadChannelVideoAllowlist(path.join(root, 'data/music-channel-video-allowlist.json'));
-    const hidden = new Set(hiddenData.videoIds);
+    const restrictedFile = path.join(root, 'data/videos-restringits.json');
+    const restricted = fs.existsSync(restrictedFile) ? read(root, 'data/videos-restringits.json') : {};
+    const hidden = new Set([...hiddenData.videoIds, ...Object.keys(restricted.videos || {})]);
     const records = channelRecords(listed);
     const identityByChannel = new Map();
     identities.forEach((artist, index) => {
@@ -101,7 +104,10 @@ function loadCatalog(root) {
         for (const channel of group) artistByChannel.set(channel.id, artist);
     }
     artists.sort((a, b) => a.name.localeCompare(b.name, 'ca'));
-    return { channels, artists, artistByChannel, songs };
+    const albumFile = path.join(root, 'data/albums-musica.json');
+    return selectCatalog({ channels, artists, artistByChannel, songs }, {
+        now: options.now ?? Date.now(), albums: fs.existsSync(albumFile) ? read(root, 'data/albums-musica.json') : null,
+    });
 }
 
 function build(root, options = {}) {
@@ -115,7 +121,7 @@ function build(root, options = {}) {
         (fs.existsSync(out) && fs.readdirSync(out).length && !fs.existsSync(path.join(out, MARKER)))) {
         throw new Error('La sortida ha de ser una carpeta buida o generada per aquest script.');
     }
-    const catalog = loadCatalog(root);
+    const catalog = loadCatalog(root, options);
     const { channels, artists, artistByChannel, songs } = catalog;
     const staging = `${out}.tmp-${process.pid}`;
     if (fs.existsSync(staging)) throw new Error('Ja existeix una generació temporal.');
@@ -162,22 +168,22 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
         for (const file of ['index.html', 'manifest.json', 'privacitat.html', 'info-youtubers.html', 'admin-musica.html', 'revisio-artistes.html', 'revisio-cancons.html', 'revisio-noms-artistes.html', 'sw.js']) {
             if (fs.existsSync(path.join(root, file))) fs.copyFileSync(path.join(root, file), path.join(staging, file));
         }
+        const publicData = writePublicCatalog(root, staging, catalog);
         let index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
         // Només canvia les metadades del capçal; els enllaços editorials a Segueix es conserven.
         const headEnd = index.indexOf('</head>');
         index = index.slice(0, headEnd).replaceAll('https://segueix.github.io/musica/', base).replaceAll('https://segueix.cat/', base) + index.slice(headEnd);
-        index = index.replace('</head>', `<script>window.SEGUEIX_STATIC_SITE=true;window.SEGUEIX_PUBLIC_URL=${json(base)};</script></head>`);
+        index = index.replace('</head>', `<script>window.SEGUEIX_STATIC_SITE=true;window.SEGUEIX_CATALOG_POLICY=1;window.SEGUEIX_PUBLIC_URL=${json(base)};</script></head>`);
         write('index.html', index);
 
-        const byArtist = new Map(artists.map(artist => [artist.id, []]));
-        for (const song of songs) byArtist.get(artistByChannel.get(song.channelId).id).push(song);
         for (const artist of artists) {
             const relative = artistPath(artist);
-            const selected = byArtist.get(artist.id).slice(0, 60);
+            const model = catalog.models.get(artist.id);
+            const selected = [...(model.best ? [model.best] : []), ...model.recent, ...model.rest];
             const description = `Escolta ${artist.name}: cançons i vídeos a Segueix Música.`;
             write(relative + 'index.html', layout({ title: artist.name, description, canonical: url(relative), type: 'profile',
                 picture: image(artist.avatar, url('img/compartir.png')),
-                body: `<a class="button" href="${basePath}?channel=${encodeURIComponent(artist.id)}">Obre l’artista a Música</a><h2>Cançons</h2>${cards(selected)}`,
+                body: `<a class="button" href="${basePath}?channel=${encodeURIComponent(artist.id)}">Obre l’artista a Música</a>${model.best ? `<h2>La més escoltada</h2>${cards([model.best])}` : ''}${model.recent.length ? `<h2>Novetats</h2>${cards(model.recent)}` : ''}${model.rest.length ? `<h2>Més escoltades</h2>${cards(model.rest)}` : ''}`,
                 schema: collectionSchema(artist.name, url(relative), selected) }));
             pages.push(url(relative));
         }
@@ -215,7 +221,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
             } });
 
         const sections = [
-            { key: 'novetats', label: 'Novetats', title: 'Novetats de música en català', songs: songs.slice(0, 60) },
+            { key: 'novetats', label: 'Novetats', title: 'Novetats de música en català', songs: [...new Map([...catalog.models.values()].flatMap(model => model.recent).map(song => [song.id, song])).values()].sort((a, b) => Date.parse(b.originalDate || b.publishedAt) - Date.parse(a.originalDate || a.publishedAt)).slice(0, 60) },
             { key: 'descobreix', label: 'Descobreix', title: 'Descobreix música en català', songs: songs.slice(0, 24) },
             ...CATEGORY_GROUPS.map((group, i) => ({ key: STYLES[i], label: group.label, title: `${group.label} · música en català`,
                 songs: songs.filter(song => song.categories.some(category => [group.label, ...group.genres].map(normalize).includes(normalize(category)))).slice(0, 60) })),
@@ -268,7 +274,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
         require('node:child_process').execFileSync(process.execPath, [path.join(staging, 'scripts/actualitzar_versio_sw.js')], { stdio: 'pipe' });
         fs.rmSync(path.join(staging, 'scripts'), { recursive: true });
         const report = { artists: artists.length, channels: channels.size, songs: songs.length, styles: CATEGORY_GROUPS.length,
-            pages: pages.length, radios: shared.radios, baseUrl: base, sourceCommit, optimization };
+            pages: pages.length, radios: shared.radios, baseUrl: base, sourceCommit, catalog: catalog.counts, publicData, optimization };
         write(MARKER, 'Generated by generar_web_estatica.cjs\n');
         write('static-build.json', JSON.stringify(report, null, 2) + '\n');
         fs.rmSync(out, { recursive: true, force: true });

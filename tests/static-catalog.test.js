@@ -16,6 +16,22 @@ function boot(files = {}) {
 }
 const song = (id, more = {}) => ({ id, channelId: 'UCknown', title: 'Cançó', categories: ['Rock'], ...more });
 describe('catàleg sense API de servidor', () => {
+    it('el catàleg publicat filtra snapshots i ràdios antics i caduca novetats fora del top', async () => {
+        const { api } = boot({ 'data/hidden-videos.json': { videoIds: [], catalogSelection: {
+            version: 1, popularIds: ['song0000001'], recentExpiry: {
+                song0000002: Date.now() + 86400000, song0000003: Date.now() - 1,
+            },
+        } } });
+        const ctx = { window: { SEGUEIX_CATALOG_POLICY: 1 }, console: { log() {} }, localStorage: {}, setTimeout };
+        vm.runInNewContext(source + '\nthis.api = YouTubeAPI;', ctx);
+        await api.loadHiddenVideos();
+        ctx.api.catalogPopularIds = api.catalogPopularIds;
+        ctx.api.catalogRecentExpiry = api.catalogRecentExpiry;
+        const videos = [1, 2, 3, 4].map(i => song(`song000000${i}`));
+        expect(ctx.api.filterHiddenVideos(videos).map(v => v.id)).toEqual(['song0000001', 'song0000002']);
+        ctx.api.feedVideos = videos;
+        expect(ctx.api.getRadioPoolVideos().map(v => v.id)).toEqual(['song0000001', 'song0000002']);
+    });
     it('no conté Functions ni consultes al servei de dades de YouTube', () => {
         expect(existsSync('functions')).toBe(false);
         expect(source).not.toMatch(/googleapis\.com\/youtube|\bgetApiKey\(|\bverifyApiKey\(/);

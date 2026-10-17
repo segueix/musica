@@ -10855,3 +10855,11 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
         animation: pt-boot-hide 0s linear 5s forwards;
     }
 }
+
+/* Novetats de la fitxa: mateix format de caràtules que les populars. */
+#channelPage .ap-section-title {
+    margin: 20px 0 12px;
+    color: var(--pt-text, #f4f0e8);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
