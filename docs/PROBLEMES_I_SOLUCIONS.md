@@ -2009,3 +2009,8 @@ Resultat **idèntic**: 100 cues (quatre modes, 12 llavors, amb i sense senyals, 
 **Trampes:** no tornis a agrupar ni filtrar totes les candidates dins del bucle de cada cançó. Una restricció nova que depengui de la cua s'ha d'aplicar al camí estàtic (marcant-la en triar o per grup) **i** al camí general (`allowed()`), o els resultats divergiran. Si canvies l'ordre de les candidates o dels grups, canvia el sorteig (l'`rng` es consumeix en l'ordre dels grups).
 
 **Fitxers Afectats:** `js/features/music-selection.js`, `sw.js`.
+
+
+## 2026-10-17 — Guia d’instal·lació sense compartir
+
+El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostrava els sistemes. El botó d’instal·lar podia obrir directament el prompt del navegador i els altres aparells quedaven plegats. Per petició de l’usuari s’eliminen els dos botons de compartir i la instal·lació directa pròpia. «Instal·la l’app» sempre obre una guia amb tots els passos visibles, també dins l’app instal·lada. Proves: tests/app-install.test.js.

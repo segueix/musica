@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "aplicat",
+  "artist": {
+    "name": "Núria Balcells",
+    "category": "Folk i arrel",
+    "origin": "Sant Cugat del Vallès",
+    "requestedChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+    "metadataSource": "Petició expressa de l'usuari del 17 d'octubre de 2026",
+    "profileChannelId": "UCHO5cHnX3GGXitE11VNsAmA",
+    "handle": "@nuriabalcells",
+    "publisherChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+    "channelNote": "L'ID inicial correspon a Rocco Papia. @nuriabalcells correspon al canal De Vellut; la fitxa editorial es presenta com Núria Balcells."
+  },
+  "selection": {
+    "mode": "només-les-cinc-interpretacions-indicades",
+    "allowOtherChannelVideos": false,
+    "allowShorts": false,
+    "keepAlternativeTestamentRecording": true,
+    "recordings": [
+      {
+        "title": "La Dama d'Aragó - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "videoId": "LA0OEoxDieI",
+        "durationFromUser": "3:01",
+        "verifiedTitle": "La Dama d'Aragó - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "sourceChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "durationSeconds": 181,
+        "publishedAt": "2024-02-15T07:38:55-08:00",
+        "evidenceUrl": "https://www.youtube.com/watch?v=LA0OEoxDieI"
+      },
+      {
+        "title": "El Testament D'Amèlia - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "videoId": "-5X376Y3nvI",
+        "durationFromUser": "5:33",
+        "verifiedTitle": "El Testament D'Amèlia - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "sourceChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "durationSeconds": 332,
+        "publishedAt": "2024-02-15T07:38:53-08:00",
+        "evidenceUrl": "https://www.youtube.com/watch?v=-5X376Y3nvI"
+      },
+      {
+        "title": "Cançó del Lladre - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "videoId": "If61yrkwtRw",
+        "durationFromUser": "2:53",
+        "verifiedTitle": "Cançó del Lladre - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "sourceChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "durationSeconds": 173,
+        "publishedAt": "2024-02-15T07:39:03-08:00",
+        "evidenceUrl": "https://www.youtube.com/watch?v=If61yrkwtRw"
+      },
+      {
+        "title": "Soillarda (Sol de Nit) - Recançonem @ Lisboa",
+        "videoId": "zVyD2jgpzr0",
+        "durationFromUser": "2:36",
+        "verifiedTitle": "Soillarda (Sol de Nit) - Recançonem @ Lisboa",
+        "sourceChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "durationSeconds": 156,
+        "publishedAt": "2026-05-14T02:55:22-07:00",
+        "evidenceUrl": "https://www.youtube.com/watch?v=zVyD2jgpzr0"
+      },
+      {
+        "title": "Testament d'Amelia _ Una Corda Més",
+        "videoId": "XD7mk9NaiiE",
+        "durationFromUser": "5:31",
+        "note": "Conservar com a interpretació alternativa, no confondre amb la versió RECANÇONEM.",
+        "verifiedTitle": "Testament d'Amelia _ Una Corda Més",
+        "sourceChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "durationSeconds": 331,
+        "publishedAt": "2022-03-28T04:04:56-07:00",
+        "evidenceUrl": "https://www.youtube.com/watch?v=XD7mk9NaiiE"
+      }
+    ],
+    "explicitlyExcluded": [
+      "Soillarda_Recançonem live at lisbon_Short"
+    ]
+  },
+  "reference": "https://nuriabalcells.com/recanconem/",
+  "application": {
+    "catalogApplied": true,
+    "feedApplied": true,
+    "videoIdsVerified": true,
+    "channelOwnershipVerified": true,
+    "checkedAt": "2026-10-17T20:49:50.325Z",
+    "avatarVideoId": "LA0OEoxDieI",
+    "blockers": [],
+    "notes": [
+      "Metadades públiques de YouTube verificades per als cinc vídeos: publicador, títols, durades i dates.",
+      "Crèdits instrumentals: violí de cinc cordes i guitarra de set cordes; no es declara haver verificat cap lletra cantada.",
+      "Selecció externa tancada al canal propi, amb llista de publicadors per ID. Sense API de YouTube ni execució manual d’Actions."
+    ]
+  }
+}

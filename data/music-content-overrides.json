@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T18:40:00.000Z",
+  "updatedAt": "2026-10-17T20:49:50.325Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -15463,6 +15463,36 @@
       "contentType": "song",
       "title": "La Sort_ (Ile rouge)",
       "note": "cançó d'Agathe Catel en català: senzill del disc Orígens (2026), segons la descripció del vídeo; revisió d'idioma del 17/10/2026"
+    },
+    {
+      "id": "LA0OEoxDieI",
+      "title": "La Dama d'Aragó - RECANÇONEM (Núria Balcells, Rocco Papia)",
+      "contentType": "song",
+      "note": "Selecció expressa de Núria Balcells / Recançonem. Crèdits: violí de 5 cordes i guitarra de 7 cordes. No és verificació d'una lletra cantada. docs/revisions/2026-10-17-nuria-balcells.json"
+    },
+    {
+      "id": "-5X376Y3nvI",
+      "title": "El Testament D'Amèlia - RECANÇONEM (Núria Balcells, Rocco Papia)",
+      "contentType": "song",
+      "note": "Selecció expressa de Núria Balcells / Recançonem. Crèdits: violí de 5 cordes i guitarra de 7 cordes. No és verificació d'una lletra cantada. docs/revisions/2026-10-17-nuria-balcells.json"
+    },
+    {
+      "id": "If61yrkwtRw",
+      "title": "Cançó del Lladre - RECANÇONEM (Núria Balcells, Rocco Papia)",
+      "contentType": "song",
+      "note": "Selecció expressa de Núria Balcells / Recançonem. Crèdits: violí de 5 cordes i guitarra de 7 cordes. No és verificació d'una lletra cantada. docs/revisions/2026-10-17-nuria-balcells.json"
+    },
+    {
+      "id": "zVyD2jgpzr0",
+      "title": "Soillarda (Sol de Nit) - Recançonem @ Lisboa",
+      "contentType": "live_song",
+      "note": "Selecció expressa de Núria Balcells / Recançonem. Crèdits: violí de 5 cordes i guitarra de 7 cordes. No és verificació d'una lletra cantada. docs/revisions/2026-10-17-nuria-balcells.json"
+    },
+    {
+      "id": "XD7mk9NaiiE",
+      "title": "Testament d'Amelia _ Una Corda Més",
+      "contentType": "song",
+      "note": "Selecció expressa de Núria Balcells / Recançonem. Crèdits: violí de 5 cordes i guitarra de 7 cordes. No és verificació d'una lletra cantada. docs/revisions/2026-10-17-nuria-balcells.json"
     }
   ]
 }

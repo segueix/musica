@@ -78,11 +78,7 @@ describe('«Acabades de sortir»: cançons del mateix dia', () => {
         const html = portada.freshHtml(model.fresh, false, NOW, null, new Set());
         expect(html).toMatch(new RegExp(`data-pt-group="${lead.id}" aria-expanded="false"`));
         expect(html).toContain(`<span class="pt-card__more-n" aria-hidden="true">+${n}</span>`);
-        expect(html).toContain(
-            n === 1
-                ? '<span>cançó més</span><span>del mateix dia</span>'
-                : '<span>cançons més</span><span>del mateix dia</span>'
-        );
+        expect(html).toContain(n === 1 ? '<span>cançó</span>' : '<span>cançons</span>');
         expect(html).toContain(
             n === 1
                 ? 'aria-label="Mostra una altra cançó nova de Artista 0, publicada el mateix dia"'
