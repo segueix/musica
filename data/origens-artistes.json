@@ -10984,6 +10984,22 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:ia-batiste": {
+      "name": "Ia & Batiste",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Duet de Barcelona, segons l’editor del catàleg el 17 d’octubre de 2026; la fitxa discogràfica de Guerssen en documenta el disc.",
+      "sources": [
+        "https://guerssen.com/es/producto/un-gran-dia/"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11633,13 +11649,21 @@
     "UCs9uFGVOXA5wSSJrERWEhCw": "artist:jordi-barre",
     "UCPFO4vAR9pm9cI8RS8f5SLw": "artist:joan-pau-gine",
     "UC3R_sFdfopHQUwREiqpOuRQ": "artist:pere-figueres",
-    "UCJzTwDykoSI4dHbCAg1XGQQ": "artist:gerard-jacquet"
+    "UCJzTwDykoSI4dHbCAg1XGQQ": "artist:gerard-jacquet",
+    "UCaFFmM8-URvqHCEH2DtRDuQ": "artist:ia-batiste"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
       "name": "Club Social Carme",
       "reason": "Cicle de sessions ubicat a Barcelona segons l’editor. No s’assigna origen al cicle ni al seu canal: cada grup participant ha de conservar la seva pròpia procedència. No inferir Barcelona per als intèrprets a partir del local.",
       "reviewedOn": "2026-10-11",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "UCbJBuw-UseR72LHnDUG_9ng": {
+      "name": "Els Miralls de Dylan",
+      "reason": "Projecte de versions de cançons de Bob Dylan (Gerard Quintana i Jordi Batiste), sense un lloc d’origen propi. Per decisió de l’editor (17/10/2026) no se li assigna origen ni surt al mapa; no inferir-lo dels seus membres.",
+      "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
     }
