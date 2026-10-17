@@ -925,6 +925,17 @@ for (const canal of ["AlQuadrat","Al Quadrat","AlQuadrat - Topic","Al Quadrat - 
 // pel grup: https://www.youtube.com/watch?v=jCpKVgzWtUI
 afegeix(['Repúblika Ska', 'RepublikaSka', 'República Ska', 'Repúblika Ska - Topic', 'Repúblika Ska - Tema'], ['Mi amigo José', 'Mi amigo Jose']);
 
+// Revisió 2026-10-17: dos discos castellans complets; fonts i IDs al registre editorial.
+afegeix(['Umpah Pah', 'Umpah-Pah', 'Umpah Pah - Topic', 'Umpah-Pah - Topic'], ["El Preludio del Adiós","El Preludio del Adios","Entre Tú y Yo","Entre Tu y Yo","Entre Tu y Tu Yo","El Gitanillo de Tiana","El Dedo en la Llaga","El Dedo de la Llaga","Con Premeditación y Alevosía","Con Premeditacion y Alevosia","Com Premeditación y Alevosía","Sed de Mal","Migajas de Almidón","Migajas de Almidon","Sin Jaleos de Conciencia","Peladilla Amarga","Un Compendio en Mi Menor","Testarudez","La Columna de Simeon","La Columna de Simeón","Barba Azul","Tocayo","Sueño Dormido","Color de Higado","Color de Hígado","En Cuarentena","Circunspección","Circunspeccion","Sonrisita Preñada","Te Odio","Vinculus Corruptus","Después","Despues"]);
+for (const canal of ['Umpah Pah', 'Umpah-Pah', 'Umpah Pah - Topic', 'Umpah-Pah - Topic']) {
+    const anterior = REGLES[canal].titols;
+    REGLES[canal].titols = { test: titol => anterior.test(titol) || /^(?:Umpah[- ]Pah\s*[-–—]\s*)?S[ií](?:\s*\([^)]*\))?$/iu.test(titol.trim()) };
+}
+// Petició explícita: de Malánima només es conserva Ai, Carinyo.
+for (const canal of ['Malánima', 'Malànima', 'MALÁNIMA', 'Malánima - Topic', 'Malànima - Topic']) {
+    REGLES[canal] = { totes: true, excepte: /^(?:Mal[áà]nima\s*[-–—]\s*)?Ai,?\s+Carinyo(?:\s*[-–—]\s*Mal[áà]nima)?(?:\s*\([^)]*\))?$/iu };
+}
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
