@@ -330,11 +330,42 @@ describe('mapa: «Dibuixa una zona» a dalt a l’esquerra (2026-10-17)', () => 
         );
         expect(block).toMatch(/@keyframes am-draw-glow/);
         // al mòbil, més petit (36 px) amb l'àrea de toc de 44 px
-        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 32px;/);
-        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -6px;/);
+        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 28px;/);
+        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -8px;/);
         // al mòbil, «+» i «−» sota la pantalla completa (no tapen l'Alguer) i els botons de la dreta, de 36 px
         expect(block).toMatch(/\.am-zoom \{\s*top: 50px;\s*right: 8px;\s*bottom: auto;/);
         expect(block).toMatch(/\.am-zoom button,\s*\.am-tool--full \{[^}]*width: 36px;/);
         expect(block).toMatch(/prefers-reduced-motion: no-preference/);
+    });
+});
+
+describe('mapa: el requadre de l’Alguer a la cantonada (2026-10-17)', () => {
+    const base = JSON.parse(readFileSync('data/mapa-base.json', 'utf8'));
+    const inset = base.inset;
+    const src = readFileSync('js/features/artist-map.js', 'utf8');
+    const points = [...inset.d.matchAll(/(-?\d+(?:\.\d+)?)[ ,](-?\d+(?:\.\d+)?)/g)].map(m => [+m[1], +m[2]]);
+
+    it('arriba a la vora dreta i a la de baix del mapa', () => {
+        expect(inset.x + inset.width).toBe(base.viewBox[2]);
+        expect(inset.y + inset.height).toBe(base.viewBox[3]);
+    });
+
+    it('les línies de dalt i de l’esquerra no toquen l’illa (com a mínim 15 unitats de marge)', () => {
+        const inside = points.filter(([x, y]) => x >= inset.x - 15 && y >= inset.y - 15);
+        expect(inside.length).toBeGreaterThan(30);
+        for (const [x, y] of inside) {
+            expect(x).toBeGreaterThanOrEqual(inset.x + 15);
+            expect(y).toBeGreaterThanOrEqual(inset.y + 15);
+        }
+    });
+
+    it('l’Alguer hi cau a dins, i només es dibuixen les línies de dalt i de l’esquerra', () => {
+        const alguer = feature.project(base, { latitude: 40.558, longitude: 8.319 });
+        expect(alguer.frame).toBe('inset');
+        expect(alguer.x).toBeGreaterThan(inset.x);
+        expect(alguer.y).toBeGreaterThan(inset.y);
+        expect(alguer.y).toBeLessThan(inset.y + inset.height);
+        expect(src).toContain('class="am-inset__edge" d="M${inset.x} ${insetBottom}V${inset.y}H${insetRight}"');
+        expect(src).toContain('clip-path="url(#amInsetClip)"');
     });
 });

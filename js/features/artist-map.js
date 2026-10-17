@@ -10,7 +10,7 @@
     if (!app) return;
 
     const URLS = {
-        base: 'data/mapa-base.json',
+        base: 'data/mapa-base.json?v=20261017-alguer-cantonada',
         catalog: 'data/origens-artistes.json',
         references: 'data/proximitat-musical.json',
     };
@@ -40,9 +40,11 @@
         }
         const inset = base.inset;
         if (inset && lon >= inset.lonMin && lon <= inset.lonMax && lat >= inset.latMin && lat <= inset.latMax) {
+            // Si el requadre porta escala i origen propis (x0, y0, scale), es fan servir; si no, la del mapa principal
+            const s = inset.scale || scale;
             return {
-                x: inset.x + (lon - inset.lonMin) * kx * scale,
-                y: inset.y + (inset.latMax - lat) * scale,
+                x: (inset.x0 ?? inset.x) + (lon - inset.lonMin) * kx * s,
+                y: (inset.y0 ?? inset.y) + (inset.latMax - lat) * s,
                 frame: 'inset',
             };
         }
@@ -262,10 +264,20 @@
             .map(shape => `<path class="am-shape am-shape--${shape.kind}" d="${shape.d}"></path>`)
             .join('');
         const inset = base.inset;
+        // Requadre de l'Alguer a la cantonada de baix a la dreta: arriba a les vores del mapa, només es dibuixen les
+        // línies de dalt i de l'esquerra, i l'illa es retalla al requadre. El nom va a dalt a l'esquerra (al mar).
+        // A l'ordinador el mapa es veu més ample que el dibuix (viewBox): el requadre continua 300 unitats més enllà
+        // de la vora dreta i la de baix perquè arribi sempre a la vora visible.
+        const insetW = inset ? inset.width + 300 : 0;
+        const insetH = inset ? inset.height + 300 : 0;
+        const insetRight = inset ? inset.x + insetW : 0;
+        const insetBottom = inset ? inset.y + insetH : 0;
         const insetHtml = inset?.d
-            ? `<g class="am-inset"><rect x="${inset.x}" y="${inset.y}" width="${inset.width}" height="${inset.height}" rx="10"></rect>
-               <path class="am-shape am-shape--pc" d="${inset.d}"></path>
-               <text x="${inset.x + 10}" y="${inset.y + inset.height - 10}">${esc(inset.label)}</text></g>`
+            ? `<g class="am-inset"><clipPath id="amInsetClip"><rect x="${inset.x}" y="${inset.y}" width="${insetW}" height="${insetH}"></rect></clipPath>
+               <rect class="am-inset__bg" x="${inset.x}" y="${inset.y}" width="${insetW}" height="${insetH}"></rect>
+               <path class="am-shape am-shape--pc" clip-path="url(#amInsetClip)" d="${inset.d}"></path>
+               <path class="am-inset__edge" d="M${inset.x} ${insetBottom}V${inset.y}H${insetRight}"></path>
+               <text x="${inset.x + 12}" y="${inset.y + 28}">${esc(inset.label)}</text></g>`
             : '';
         const dots = model.points
             .map(point => {
