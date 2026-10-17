@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "pendent-aplicacio",
+  "artist": {
+    "name": "Núria Balcells",
+    "category": "Folk i arrel",
+    "origin": "Sant Cugat del Vallès",
+    "requestedChannelId": "UCpXJWymAt3EmCUhJBKARCCQ",
+    "metadataSource": "Petició expressa de l'usuari del 17 d'octubre de 2026"
+  },
+  "selection": {
+    "mode": "només-les-cinc-interpretacions-indicades",
+    "allowOtherChannelVideos": false,
+    "allowShorts": false,
+    "keepAlternativeTestamentRecording": true,
+    "recordings": [
+      {
+        "title": "La Dama d'Aragó - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "videoId": null,
+        "durationFromUser": "3:01"
+      },
+      {
+        "title": "El Testament D'Amèlia - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "videoId": null,
+        "durationFromUser": "5:33"
+      },
+      {
+        "title": "Cançó del Lladre - RECANÇONEM (Núria Balcells, Rocco Papia)",
+        "videoId": null,
+        "durationFromUser": "2:53"
+      },
+      {
+        "title": "Soillarda (Sol de Nit) - Recançonem @ Lisboa",
+        "videoId": null,
+        "durationFromUser": "2:36"
+      },
+      {
+        "title": "Testament d'Amelia _ Una Corda Més",
+        "videoId": null,
+        "durationFromUser": "5:31",
+        "note": "Conservar com a interpretació alternativa, no confondre amb la versió RECANÇONEM."
+      }
+    ],
+    "explicitlyExcluded": [
+      "Soillarda_Recançonem live at lisbon_Short"
+    ]
+  },
+  "reference": "https://nuriabalcells.com/recanconem/",
+  "application": {
+    "catalogApplied": false,
+    "feedApplied": false,
+    "videoIdsVerified": false,
+    "channelOwnershipVerified": false,
+    "blockers": [
+      "El connector ha retornat contingut buit en llegir data/artistes-musica.json i ha rebutjat la lectura alternativa del fitxer per mida o format no admès.",
+      "No s'han pogut verificar els identificadors dels cinc vídeos ni la correspondència del canal indicat amb el publicador."
+    ],
+    "nextSteps": [
+      "Verificar el canal indicat i els identificadors exactes dels cinc vídeos.",
+      "Afegir la fitxa al catàleg principal amb la categoria i l'origen demanats.",
+      "Aplicar la selecció tancada al filtre existent, excloent el Short i la resta del canal.",
+      "Incorporar només aquestes cinc interpretacions sense confondre instrumental amb lletra cantada en català.",
+      "Respectar l'actualització programada: aquest registre no executa cap importació ni és llegit automàticament pel generador."
+    ]
+  }
+}
