@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T20:00:00.000Z",
+  "updatedAt": "2026-10-17T21:00:00.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40518,6 +40518,122 @@
       ],
       "lastChecked": "2026-10-17T19:30:00.000Z",
       "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gerard Jacquet - Tema comprovat (es presenta com a músic, poeta, pintor, actor i contaire nord-català; títols en català i alguna versió com Si Me Quieres Escribir). Ha publicat en català i en francès (la sèrie Les chansons d’aquí barreja totes dues llengües): artista vigilat; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": []
+    },
+    {
+      "name": "Llamp te Frigui",
+      "aliases": [
+        "LLamp Te Frigui",
+        "Llamp Te Frigui"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZVRD2oamzF1lgzroVyVD6w",
+            "handle": "@francksala.",
+            "name": "Franck Sala .",
+            "type": "other",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/@francksala.",
+        "https://llamptefrigui.fr/"
+      ],
+      "lastChecked": "2026-10-17T21:00:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). El grup no té canal propi: els seus vídeos (els que enllaça el web del grup: El Racó, En mobileta, Mala pell, La bomba humana…) són al canal de Franck Sala, membre del grup, que publica gairebé només Llamp te Frigui (22 vídeos). Repertori publicat en català: confiança d’idioma; convindrà vigilar vídeos de concerts i peces que no siguin del grup.",
+      "genresRaw": []
+    },
+    {
+      "name": "Gisela Bellsolà",
+      "aliases": [
+        "Gisela Bellsolà - Topic"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKKjvjnD71ll8kMq2pqQhcg",
+            "handle": null,
+            "name": "Gisela Bellsolà - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCKKjvjnD71ll8kMq2pqQhcg",
+        "https://www.nts.live/artists/142356-gisela-bellsola"
+      ],
+      "lastChecked": "2026-10-17T21:00:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gisela Bellsolà - Tema comprovat (la descripció la presenta com a cantant rossellonesa; títols en català: País catedral, Vent de la tarda, Anna marinera…). Àlbums de poesia catalana musicada; també col·laborà en cançó tradicional i trobadoresca: artista vigilada; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": []
+    },
+    {
+      "name": "Maurici Auzeville",
+      "aliases": [
+        "Maurice Auzeville"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-17",
+        "https://oplcat.eu/index.php/2023/10/17/maurici-auzeville/"
+      ],
+      "lastChecked": "2026-10-17T21:00:00.000Z",
+      "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi: els seus enregistraments (cançons tradicionals del Rosselló de 1958, sardanes) només són a l’arxiu de diversos artistes Singlantana Sound. Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. També cantà òpera i repertori en altres llengües (Dis-moi mistral): caldrà vigilar-lo i quedar-se només amb les sardanes cantades i les peces tradicionals catalanes.",
       "genresRaw": []
     }
   ]

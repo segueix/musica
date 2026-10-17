@@ -84,9 +84,13 @@ jobs:
           test -n "$MUSIC_TARGET_CHANNELS"
           node scripts/update_music_feed.js
 
-      - name: Separa feed calent i historial
+      # Com el workflow diari: sense les afinitats, els canals nous es publicaven sense perfil i la prova de
+      # cobertura (tests/music-affinities-catalog.test.js, a «Validar base musical») fallava fins a l'endemà.
+      - name: Separa feed calent i historial i actualitza les afinitats
         if: steps.scope.outputs.run_api == 'true'
-        run: node scripts/archivar_feed_musical.js
+        run: |
+          node scripts/archivar_feed_musical.js
+          node scripts/generar_afinitats_musica.js --repair-catalog
 
       - name: Valida cobertura
         if: steps.scope.outputs.run_api == 'true'
@@ -106,4 +110,4 @@ jobs:
         if: steps.scope.outputs.run_api == 'true'
         # Si main ha canviat mentrestant: git pull --rebase i es torna a provar (no es perd la quota gastada).
         run: |
-          bash scripts/publicar_dades.sh "data: incorpora els grups nous al feed musical" data js/channels-ca.json
+          bash scripts/publicar_dades.sh "data: incorpora els grups nous al feed musical" data js/channels-ca.json js/features/music-affinity-catalog.js
