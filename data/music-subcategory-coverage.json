@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 438,
+  "musicalArtists": 441,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -106,7 +106,7 @@
       "label": "Rock — pendent d’afinar",
       "category": "Rock",
       "neighbours": [],
-      "artistCount": 39,
+      "artistCount": 40,
       "nucleus": true,
       "artists": [
         "Aspencat",
@@ -147,7 +147,8 @@
         "Whiskyn's",
         "Xucu-pà",
         "Ypnosi",
-        "Blues de Picolat"
+        "Blues de Picolat",
+        "Gerard Jacquet"
       ]
     },
     {
@@ -1046,7 +1047,7 @@
         "autor-folk",
         "autor-pop"
       ],
-      "artistCount": 39,
+      "artistCount": 41,
       "nucleus": true,
       "artists": [
         "Adrià Puntí",
@@ -1087,7 +1088,9 @@
         "Sílvia Comes",
         "Xarim Aresté",
         "Xavier Baró",
-        "Agathe Catel"
+        "Agathe Catel",
+        "Joan Pau Giné",
+        "Pere Figueres"
       ]
     },
     {
@@ -5431,6 +5434,33 @@
       "sources": [
         "https://fr.wikipedia.org/wiki/Blues_de_picolat",
         "https://bluespic.blogspot.com/"
+      ]
+    },
+    {
+      "artist": "Joan Pau Giné",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+      ]
+    },
+    {
+      "artist": "Pere Figueres",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.viki.cat/wiki/Pere_Figueres"
+      ]
+    },
+    {
+      "artist": "Gerard Jacquet",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
       ]
     }
   ]

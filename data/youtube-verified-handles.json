@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T19:30:00.000Z",
+  "updatedAt": "2026-10-17T21:00:00.000Z",
   "channels": [
     {
       "artist": "Svetlana",
@@ -1252,6 +1252,24 @@
       "primary": true,
       "verified": true,
       "source": "https://www.youtube.com/channel/UCJzTwDykoSI4dHbCAg1XGQQ"
+    },
+    {
+      "artist": "Llamp te Frigui",
+      "handle": "@francksala.",
+      "channelId": "UCZVRD2oamzF1lgzroVyVD6w",
+      "type": "other",
+      "primary": true,
+      "verified": true,
+      "source": "https://www.youtube.com/@francksala."
+    },
+    {
+      "artist": "Gisela Bellsolà",
+      "handle": null,
+      "channelId": "UCKKjvjnD71ll8kMq2pqQhcg",
+      "type": "topic",
+      "primary": true,
+      "verified": true,
+      "source": "https://www.youtube.com/channel/UCKKjvjnD71ll8kMq2pqQhcg"
     }
   ]
 }

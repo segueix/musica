@@ -2644,6 +2644,32 @@
       "type": "region",
       "coordinates": null,
       "territory": "País Valencià"
+    },
+    "geonames:3023599": {
+      "name": "Cornellà de la Ribera",
+      "type": "municipality",
+      "geonamesId": 3023599,
+      "coordinates": {
+        "latitude": 42.69736,
+        "longitude": 2.73007,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Corneilla-la-Rivi%C3%A8re&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:3035388": {
+      "name": "Baó",
+      "type": "municipality",
+      "geonamesId": 3035388,
+      "coordinates": {
+        "latitude": 42.70084,
+        "longitude": 2.8222,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ba%C3%B3&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
     }
   },
   "artists": {
@@ -11160,6 +11186,38 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:llamp-te-frigui": {
+      "name": "Llamp te Frigui",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3023599"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de Cornellà de la Ribera, segons la llista de l’editor del catàleg del 17 d’octubre de 2026 i el web del grup.",
+      "sources": [
+        "https://llamptefrigui.fr/"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:gisela-bellsola": {
+      "name": "Gisela Bellsolà",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3035388"
+      ],
+      "confidence": "alta",
+      "basis": "Cantant de Baó (Rosselló), segons la llista de l’editor del catàleg del 17 d’octubre de 2026.",
+      "sources": [
+        "https://www.nts.live/artists/142356-gisela-bellsola"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11824,7 +11882,9 @@
     "UCZcdiQvGBNZY2Juk3QEovZA": "artist:malanima",
     "UC_DpS_aFZdvKqblz0PtYT5Q": "artist:plan-et",
     "UC-IgP47EUNYq687PT6WZ4gQ": "artist:sa-pena",
-    "UCyNGJutrN-ISgp5qUAGUmiw": "artist:sa-pena"
+    "UCyNGJutrN-ISgp5qUAGUmiw": "artist:sa-pena",
+    "UCZVRD2oamzF1lgzroVyVD6w": "artist:llamp-te-frigui",
+    "UCKKjvjnD71ll8kMq2pqQhcg": "artist:gisela-bellsola"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
