@@ -28,15 +28,24 @@ describe('ràdio amb el llenguatge de caràtules', () => {
     });
 });
 
-describe('ràdio: les cantonades de les caràtules (2026-10-17)', () => {
+describe('ràdio: les cantonades de la caràtula del reproductor (2026-10-17)', () => {
     const portada = fs.readFileSync('css/portada.css', 'utf8');
-    const block = portada.slice(portada.indexOf('Ràdio i llista que sona: les mateixes cantonades que les caràtules'));
+    const styles = fs.readFileSync('css/styles.css', 'utf8');
+    const block = portada.slice(
+        portada.indexOf('Ràdio i llista que sona: les mateixes cantonades que la caràtula del reproductor')
+    );
 
-    it('la cua, la seva capçalera i el contenidor que fa scroll fan servir --pt-radius-cover', () => {
-        expect(block).toMatch(/body \.mq \{\s*border-radius: var\(--pt-radius-cover\);/);
+    it('el radi de la ràdio és el del reproductor', () => {
+        const player = styles.match(/\.video-player \{[^}]*border-radius: (\d+px);/)[1];
+        expect(block).toContain(`--pt-radius-player: ${player};`);
+        expect(styles).toMatch(new RegExp(`\\.video-placeholder \\{[^}]*border-radius: ${player};`));
+    });
+
+    it('la cua, la seva capçalera i el contenidor que fa scroll fan servir --pt-radius-player', () => {
+        expect(block).toMatch(/body \.mq \{\s*border-radius: var\(--pt-radius-player\);/);
         expect(block).toMatch(
-            /#watchPage \.watch-main > #playlistQueueContainer \.mq-head \{\s*border-radius: calc\(var\(--pt-radius-cover\) - 1px\)/
+            /#watchPage \.watch-main > #playlistQueueContainer \.mq-head \{\s*border-radius: calc\(var\(--pt-radius-player\) - 1px\)/
         );
-        expect(block).toMatch(/#playlistQueueContainer \{\s*border-radius: var\(--pt-radius-cover\);/);
+        expect(block).toMatch(/#playlistQueueContainer \{\s*border-radius: var\(--pt-radius-player\);/);
     });
 });
