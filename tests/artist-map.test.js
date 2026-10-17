@@ -330,8 +330,11 @@ describe('mapa: «Dibuixa una zona» a dalt a l’esquerra (2026-10-17)', () => 
         );
         expect(block).toMatch(/@keyframes am-draw-glow/);
         // al mòbil, més petit (36 px) amb l'àrea de toc de 44 px
-        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 36px;/);
-        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -4px;/);
+        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 32px;/);
+        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -6px;/);
+        // al mòbil, «+» i «−» sota la pantalla completa (no tapen l'Alguer) i els botons de la dreta, de 36 px
+        expect(block).toMatch(/\.am-zoom \{\s*top: 50px;\s*right: 8px;\s*bottom: auto;/);
+        expect(block).toMatch(/\.am-zoom button,\s*\.am-tool--full \{[^}]*width: 36px;/);
         expect(block).toMatch(/prefers-reduced-motion: no-preference/);
     });
 });
