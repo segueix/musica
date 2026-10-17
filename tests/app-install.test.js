@@ -91,8 +91,20 @@ describe('Instal·la l’app: integració', () => {
         expect(button).toBeGreaterThan(home);
         expect(button).toBeLessThan(html.indexOf('id="portadaEntry"'));
         expect(html).toContain("<strong>Instal·la l'app</strong>");
-        expect(html).toContain('Directament, sense botiga');
+        expect(html).toContain('Directament o comparteix-la');
+        expect(html).not.toMatch(/botiga/i);
+        expect(fs.readFileSync('js/features/app-install.js', 'utf8')).not.toMatch(/botiga/i);
         expect(html).toContain('aria-label="Per a Android, iPhone, Windows i Chromebook"');
+    });
+
+    it('al costat hi ha «Comparteix», que comparteix l’app directament', () => {
+        const share = html.indexOf('id="ptInstallShare"');
+        expect(share).toBeGreaterThan(html.indexOf('id="ptInstallBtn"'));
+        expect(share).toBeLessThan(html.indexOf('id="portadaEntry"'));
+        expect(html).toContain('aria-label="Comparteix l\'app"');
+        expect(fs.readFileSync('js/features/app-install.js', 'utf8')).toContain(
+            "$('ptInstallShare')?.addEventListener('click', shareApp);"
+        );
     });
 
     it('a la dreta, només a la portada i mai quan ja és instal·lada', () => {

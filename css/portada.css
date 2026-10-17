@@ -10872,6 +10872,8 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
 .pt-install {
     display: flex;
     justify-content: flex-end;
+    align-items: stretch;
+    gap: 8px;
     margin: 0 0 12px;
 }
 
@@ -10965,20 +10967,94 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     flex: none;
 }
 
-@media (max-width: 380px) {
+/* «Comparteix»: al costat, de vidre amb vora blanca (com els botons de capçalera d'Inici) */
+.pt-install__share {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: none;
+    min-width: 52px;
+    min-height: 52px;
+    padding: 0 18px;
+    border: 1.5px solid rgba(244, 240, 232, 0.55);
+    border-radius: var(--pt-radius-pill);
+    background: rgba(244, 240, 232, 0.06);
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.pt-install__share:hover {
+    background: var(--pt-surface-2);
+    border-color: var(--pt-text);
+}
+
+.pt-install__share:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+.pt-install__share svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Mòbil: el botó ocupa la fila; les icones dels aparells van sota el text i «Comparteix» queda en un cercle */
+@media (max-width: 520px) {
     .pt-install__btn {
-        gap: 10px;
-        padding-right: 12px;
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas:
+            'icon copy'
+            'icon devices';
+        column-gap: 12px;
+        row-gap: 4px;
+        padding: 8px 14px 8px 8px;
+        border-radius: 28px;
+    }
+
+    .pt-install__icon {
+        grid-area: icon;
+        align-self: center;
+    }
+
+    .pt-install__copy {
+        grid-area: copy;
     }
 
     .pt-install__devices {
-        gap: 6px;
-        padding-left: 10px;
+        grid-area: devices;
+        gap: 8px;
+        padding-left: 0;
+        border-left: 0;
+        color: var(--pt-muted);
     }
 
     .pt-install__devices svg {
         width: 16px;
         height: 16px;
+    }
+
+    .pt-install__share {
+        width: 56px;
+        padding: 0;
+        border-radius: 28px;
+    }
+
+    .pt-install__share span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
     }
 }
 

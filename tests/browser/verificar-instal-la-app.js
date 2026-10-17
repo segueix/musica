@@ -6,7 +6,8 @@
 // Ús:  node tests/browser/verificar-instal-la-app.js
 //      INSTALL_SHOTS=/ruta/captures node tests/browser/verificar-instal-la-app.js
 //
-// A 360, 390 i 1280 px: el botó és a dalt de tot d'Inici, a la dreta, abans de l'entrada, i cap sencer; sense
+// A 360, 390 i 1280 px: el botó és a dalt de tot d'Inici, a la dreta, abans de l'entrada, amb «Comparteix» al costat
+// (que comparteix l'enllaç), i cap sencer; sense
 // «beforeinstallprompt» obre la finestra amb els passos de l'aparell; amb «beforeinstallprompt» (simulat) instal·la
 // directament sense finestra; a la vista d'un estil no hi és.
 
@@ -82,11 +83,15 @@ async function check(browser, width, height) {
         const btn = document.getElementById('ptInstallBtn');
         const entry = document.getElementById('portadaEntry');
         const home = document.getElementById('homePage');
+        const share = document.getElementById('ptInstallShare');
         const r = btn.getBoundingClientRect();
+        const sr = share.getBoundingClientRect();
         const h = home.getBoundingClientRect();
         return {
             visible: r.width > 0 && getComputedStyle(btn).visibility === 'visible',
-            right: Math.round(h.right - r.right),
+            right: Math.round(h.right - sr.right),
+            shareBeside: sr.left >= r.right && Math.abs(sr.top - r.top) < 2 && sr.width >= 44,
+            text: btn.textContent.replace(/\s+/g, ' ').trim(),
             left: Math.round(r.left),
             width: Math.round(r.width),
             vw: window.innerWidth,
@@ -97,8 +102,31 @@ async function check(browser, width, height) {
     ok(`${label}: el botó es veu`, box.visible, box);
     ok(`${label}: és a la dreta`, box.right <= 32 && box.left > 0, box);
     ok(`${label}: és a dalt, abans de l'entrada`, box.aboveEntry);
+    ok(`${label}: «Comparteix» és al costat`, box.shareBeside, box);
+    ok(
+        `${label}: diu que s'instal·la directament o es comparteix`,
+        /Directament o comparteix-la/.test(box.text),
+        box.text
+    );
     ok(`${label}: el text i les icones hi caben`, !box.overflow && box.left >= 8, box);
     if (OUT) await page.screenshot({ path: path.join(OUT, `instal-la-${width}.png`) });
+
+    // «Comparteix» fa servir el menú de compartir del sistema amb l'enllaç de l'app
+    await page.evaluate(() => {
+        window.__shared = null;
+        navigator.share = data => {
+            window.__shared = data;
+            return Promise.resolve();
+        };
+    });
+    await page.click('#ptInstallShare');
+    await page.waitForTimeout(200);
+    const shared = await page.evaluate(() => window.__shared);
+    ok(
+        `${label}: «Comparteix» comparteix l'enllaç de l'app`,
+        shared && /^http:\/\/localhost:\d+\/$/.test(shared.url),
+        shared
+    );
 
     // Sense «beforeinstallprompt»: finestra amb els passos
     await page.click('#ptInstallBtn');

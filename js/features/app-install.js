@@ -1,4 +1,5 @@
-// Instal·la l'app: botó a dalt a la dreta d'Inici (#ptInstallBtn) i finestra amb els passos de cada aparell.
+// Instal·la l'app: botó a dalt a la dreta d'Inici (#ptInstallBtn), «Comparteix» al costat (#ptInstallShare) i finestra
+// amb els passos de cada aparell.
 // Android, Windows, Chromebook (i Linux / Mac amb Chrome o Edge) ofereixen «beforeinstallprompt»: el botó instal·la
 // directament. iPhone, iPad i Safari de Mac no deixen instal·lar des de la pàgina: s'hi mostren els passos.
 // Patró 2 (implementació directa): app.js només crida init() des d'initInstallPrompt().
@@ -195,7 +196,7 @@
                     <img class="ai-logo" src="img/icon-192.png" alt="" width="56" height="56">
                     <div class="ai-head__copy">
                         <h2 class="ai-title" id="aiTitle">Instal·la Segueix Música</h2>
-                        <p class="ai-lead" id="aiLead">S'obre directament com una app, amb la seva icona i a pantalla completa. És gratis i no passa per cap botiga.</p>
+                        <p class="ai-lead" id="aiLead">S'instal·la directament i s'obre com una app, amb la seva icona i a pantalla completa. També la pots compartir.</p>
                     </div>
                     <button class="ai-close" type="button" data-ai-close aria-label="Tanca">${ICONS.close}</button>
                 </header>
@@ -363,6 +364,7 @@
         }
         state.bound = true;
         $('ptInstallBtn')?.addEventListener('click', onInstallClick);
+        $('ptInstallShare')?.addEventListener('click', shareApp);
         try {
             window.matchMedia?.('(display-mode: standalone)')?.addEventListener?.('change', syncButton);
         } catch (error) {
