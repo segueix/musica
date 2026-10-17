@@ -10801,3 +10801,57 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     margin-top: 14px;
     font-size: 0.875rem;
 }
+
+/* ==========================================================================
+   Inici sense rastre del disseny antic en obrir l'app (2026-10-17)
+   index.html porta un contingut de mostra (la targeta de «La teva ràdio» de la primera vegada, caixes grises) que
+   portada.js substitueix quan té les dades: es veia un instant abans del bo. Mentre #homePage té .is-booting
+   (l'HTML el porta; paint() de portada.js el treu a la primera pintada) no se'n veu el contingut, només un requadre
+   de càrrega. Si per qualsevol motiu no es pinta, l'animació el mostra igualment al cap de 5 s.
+   ========================================================================== */
+#homePage.is-portada.is-booting > * {
+    visibility: hidden;
+    animation: pt-boot-reveal 0s linear 5s forwards;
+}
+
+#homePage.is-portada.is-booting::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: min(320px, 60vh);
+    border-radius: var(--pt-radius-cover);
+    background: linear-gradient(100deg, var(--pt-surface) 30%, var(--pt-surface-2) 50%, var(--pt-surface) 70%) 0 0 /
+        300% 100%;
+    animation:
+        pt-boot-shimmer 1.4s ease-in-out infinite,
+        pt-boot-hide 0s linear 5s forwards;
+}
+
+@keyframes pt-boot-reveal {
+    to {
+        visibility: visible;
+    }
+}
+
+@keyframes pt-boot-hide {
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes pt-boot-shimmer {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #homePage.is-portada.is-booting::before {
+        animation: pt-boot-hide 0s linear 5s forwards;
+    }
+}
