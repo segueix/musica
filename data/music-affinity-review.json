@@ -33,6 +33,22 @@
       "method": "source-review"
     },
     {
+      "artist": "Agathe Catel",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
+        "https://musiqc.ca/artistes/agathe-catel"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 1,
+      "method": "user-editorial"
+    },
+    {
       "artist": "Alosa",
       "genres": [
         "Folk i arrel"
@@ -63,6 +79,24 @@
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
       "method": "restored-from-documented-catalog"
+    },
+    {
+      "artist": "Blues de Picolat",
+      "genres": [
+        "Rock",
+        "Jazz / Blues"
+      ],
+      "facets": [
+        "rock",
+        "jazz-blues"
+      ],
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Blues_de_picolat",
+        "https://bluespic.blogspot.com/"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 1,
+      "method": "user-editorial"
     },
     {
       "artist": "Ceaxe",
@@ -309,6 +343,21 @@
       "reviewedAt": "2026-10-17",
       "confidence": 0.7,
       "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Jordi Barre",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/jordi-barre"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 1,
+      "method": "user-editorial"
     },
     {
       "artist": "knocKouts",

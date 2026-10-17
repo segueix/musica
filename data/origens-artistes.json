@@ -2522,6 +2522,45 @@
       "territory": "Catalunya",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Begur&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-17"
+    },
+    "geonames:2987914": {
+      "name": "Perpinyà",
+      "type": "municipality",
+      "geonamesId": 2987914,
+      "coordinates": {
+        "latitude": 42.69764,
+        "longitude": 2.89541,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Perpinya&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:3027888": {
+      "name": "Ceret",
+      "type": "municipality",
+      "geonamesId": 3027888,
+      "coordinates": {
+        "latitude": 42.48533,
+        "longitude": 2.74804,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ceret&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
+    },
+    "geonames:2998023": {
+      "name": "Llo",
+      "type": "municipality",
+      "geonamesId": 2998023,
+      "coordinates": {
+        "latitude": 42.45462,
+        "longitude": 2.06131,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya Nord",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Llo&count=10&language=ca&format=json&countryCode=FR",
+      "checkedOn": "2026-10-17"
     }
   },
   "artists": {
@@ -10823,6 +10862,41 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:agathe-catel": {
+      "name": "Agathe Catel",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3027888",
+        "geonames:2998023"
+      ],
+      "confidence": "alta",
+      "basis": "Nascuda a Ceret i criada a Llo (Cerdanya), segons la llista de l’editor del catàleg del 17 d’octubre de 2026 i la premsa cultural.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
+        "https://musiqc.ca/artistes/agathe-catel"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:blues-de-picolat": {
+      "name": "Blues de Picolat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:2987914"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de blues de Perpinyà, segons la llista de l’editor del catàleg del 17 d’octubre de 2026 i les fonts enllaçades.",
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Blues_de_picolat",
+        "https://bluespic.blogspot.com/"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11466,7 +11540,10 @@
     "UC3KaUcfeFcIlgO-dssb9n2g": "artist:nino-5",
     "UCcYEaa06Rifj3dOcoBemmEQ": "artist:btz",
     "UClEd4A7MtTmIPSB_v7r7APA": "artist:btz",
-    "UCwCawZz1QtCvPzADHbcdvlQ": "artist:glaucs"
+    "UCwCawZz1QtCvPzADHbcdvlQ": "artist:glaucs",
+    "UCIMUDjFw_0JF--3ijeIFIrA": "artist:agathe-catel",
+    "UCprhue6vOAbMuSUEQbzlCZA": "artist:blues-de-picolat",
+    "UCs9uFGVOXA5wSSJrERWEhCw": "artist:jordi-barre"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T17:45:00.000Z",
+  "updatedAt": "2026-10-17T18:30:00.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -16302,16 +16302,26 @@
       "name": "Jordi Barre",
       "aliases": [],
       "genres": [
-        "Folk i arrel"
+        "Cançó d'autor"
       ],
-      "territories": [],
+      "territories": [
+        "Catalunya Nord"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q3183739",
       "musicbrainzId": "f3545e61-19b3-4b2d-bcc8-4c7e18e9d80e",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCs9uFGVOXA5wSSJrERWEhCw",
+            "handle": null,
+            "name": "Jordi Barre - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -16360,16 +16370,21 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q3183739",
         "wikidata:languages-spoken-catalan",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCs9uFGVOXA5wSSJrERWEhCw",
+        "https://www.enciclopedia.cat/gran-enciclopedia-catalana/jordi-barre"
       ],
-      "lastChecked": "2026-09-25T15:55:02.524Z",
-      "notes": "",
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Jordi Barre - Tema comprovat (pistes en català: Canta Perpinyà, Muntanyes Regalades…); el candidat «oficial» @jordibarre5610 és un homònim i no s’indexa. Des del disc de 1963 cantà i enregistrà sempre en català (Enciclopèdia). Evitar duplicats de recopilatoris.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:55:02.524Z",
@@ -40259,6 +40274,123 @@
         ]
       },
       "displayName": "Niño 5"
+    },
+    {
+      "name": "Agathe Catel",
+      "aliases": [
+        "Agathe Catel MUSIC"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCIMUDjFw_0JF--3ijeIFIrA",
+            "handle": null,
+            "name": "Agathe Catel MUSIC",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCIMUDjFw_0JF--3ijeIFIrA",
+        "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
+        "https://musiqc.ca/artistes/agathe-catel"
+      ],
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal propi comprovat (Agathe Catel MUSIC). Repertori en català, francès i portuguès: a Orígens (2026), 8 cançons en català, 2 en francès i 2 instrumentals. Artista vigilada: només s’hi han de quedar les cançons en català i les instrumentals; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": []
+    },
+    {
+      "name": "Blues de Picolat",
+      "aliases": [
+        "Blues De Picolat",
+        "Blues de Pic"
+      ],
+      "genres": [
+        "Rock",
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCprhue6vOAbMuSUEQbzlCZA",
+            "handle": null,
+            "name": "Blues De Picolat - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCprhue6vOAbMuSUEQbzlCZA",
+        "https://fr.wikipedia.org/wiki/Blues_de_picolat",
+        "https://bluespic.blogspot.com/"
+      ],
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Blues De Picolat - Tema comprovat (es presenta com a grup de blues nord-català; títols en català: Món boig, País Bonic, Malloles…). Grup que va adoptar el català com a llengua artística exclusiva; algunes peces tenen títol en anglès (The Sky Is Crying): no s’amaguen pel títol.",
+      "genresRaw": []
+    },
+    {
+      "name": "Albert Bueno",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-17",
+        "https://www.enderrock.cat/noticia/14823/cent-cancons-albert-bueno"
+      ],
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi verificable: el canal «albert bueno - Tema» (UCTSMM3XHykmcW-f36NVvAiQ) no mostra cap pista i podria ser un homònim, i els seus vídeos són a canals d’arxiu de diversos artistes (Singlantana Sound). Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. La integral de 100 cançons inclou peces en francès i una amb una estrofa en anglès: caldrà vigilar-lo.",
+      "genresRaw": []
     }
   ]
 }
