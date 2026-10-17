@@ -1,16 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
-const coreSource = readFileSync(new URL('../js/core/segueix-app.js', import.meta.url), 'utf8');
 const polishSource = readFileSync(new URL('../js/features/shorts-polish.js', import.meta.url), 'utf8');
 
 describe('Shorts polish', () => {
-    it('carrega el complement de Shorts sense modificar el reproductor base', () => {
-        expect(coreSource).toContain("script.src = '/js/features/shorts-polish.js'");
-        expect(polishSource).toContain('short-native-controls-cover');
-        expect(polishSource).not.toContain('contentDocument');
-    });
-
+    // Segueix Música no mostra Shorts (2026-10-04): segueix-app.js ja no carrega shorts-polish.js.
     it('manté el pòster sobre els controls natius durant navegació per scroll o lliscament', () => {
         expect(polishSource).toContain("overlay.addEventListener('wheel'");
         expect(polishSource).toContain("overlay.addEventListener('touchend'");

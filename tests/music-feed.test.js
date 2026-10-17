@@ -23,4 +23,12 @@ describe('neteja i feed musical', () => {
     expect(updater).not.toContain('GOOGLE_SHEET_CSV_URL');
     expect(updater).toContain("channels-ca.json");
   });
+
+  // scripts/test_activitat_musica.cjs l'executa en una carpeta temporal amb només scripts/lib: el generador no pot
+  // carregar scripts de revisió (2026-10-17, la CI fallava amb «Cannot find module './revisions/…'»).
+  it('no depèn de cap script de revisió: les baixes es llegeixen del fitxer de decisions', () => {
+    expect(updater).not.toMatch(/require\(['"]\.\/revisions\//);
+    expect(updater).toContain("'2026-10-13-supervisio-idioma-decisions.json'");
+    expect(updater).toMatch(/readJsonSafe\(SUPERVISION_DECISIONS_FILE,\{remove:\[\]\}\)/);
+  });
 });

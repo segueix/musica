@@ -22,6 +22,6 @@ describe('contracte visual dels chips de categories', () => {
     });
 
     it('carrega el full específic des del mòdul de navegació', () => {
-        expect(navigation).toContain("link.href = '/css/category-chips.css';");
+        expect(navigation).toContain("link.href = window.appDataUrl?.('css/category-chips.css') || '/css/category-chips.css';");
     });
 });

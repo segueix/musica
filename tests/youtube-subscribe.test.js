@@ -51,7 +51,7 @@ describe('Subscripció al canal oficial de YouTube', () => {
             /href="https:\/\/www\.youtube\.com\/channel\/\$\{channel\.id\}"[^>]*class="btn-pill-red">\s*Canal Youtube/
         );
         expect(app).not.toContain('mountWidgets');
-        expect(html).toMatch(/js\/features\/shell-nav\.js[^\n]*\n\s*<script src="js\/features\/youtube-subscribe\.js/);
+        expect(html).toMatch(/js\/features\/shell-nav\.js[^\n]*\n\s*<script defer src="js\/features\/youtube-subscribe\.js/);
         const src = readFileSync('js/features/youtube-subscribe.js', 'utf8');
         expect(src).toContain("const PLATFORM_SRC = 'https://apis.google.com/js/platform.js';");
         // El botó oficial (a la targeta) només amb YouTube acceptat, com el reproductor

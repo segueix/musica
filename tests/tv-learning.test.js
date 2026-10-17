@@ -42,17 +42,7 @@ describe('aprenentatge local de les TV', () => {
         expect(contextTV).toContain('score += learnedAffinity(video) * 0.65');
     });
 
-    it('posa la informació completa al costat del mode bucle', () => {
-        expect(app).toContain('function createTVAlgorithmInfo()');
-        expect(app).toContain("data-lucide=\"info\"");
-        expect(app).toContain('Com es crea una TV?');
-        expect(app).toContain('<strong>1. Selecció inicial.</strong>');
-        expect(app).toContain('<strong>4. Aprenentatge local.</strong>');
-        expect(app).toContain('<strong>6. Descoberta.</strong>');
-        expect(app).toContain('queda només al teu dispositiu');
-        expect(app).toContain('badge.appendChild(createTVAlgorithmInfo())');
-    });
-
+    // La informació «Com es crea una TV?» d'app.js es va treure amb Segueix TV: ja no es comprova.
     it('carrega i precacheja el nou mòdul i resol assets amb query', () => {
         expect(index).toContain('js/features/tv-learning.js?v=20260924-learning-v1');
         expect(sw).toContain("'./js/features/tv-learning.js'");

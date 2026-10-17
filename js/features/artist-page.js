@@ -2,12 +2,14 @@
 // desplega), les ràdios i compartir al damunt; al costat (a sota al mòbil), la cançó més escoltada (#1); a sota, la
 // novetats de 12 mesos i les posicions #2–#21 en caràtules quadrades, amb les dades al damunt. Cada
 // caràtula engega una ràdio de l'artista que comença per aquella cançó. Sense discos, files de videoclips/directes,
-// cerca; només Novetats porta títol i desapareix si és buida (2026-10-17).
+// cerca. Novetats porta capçalera i desapareix si és buida (2026-10-17); si n'hi ha, «Les grans cançons» obre la
+// resta amb un separador perquè es vegi que es passa de les novetats a les més escoltades (sectionsModel()).
 // Implementació directa (patró 2); el que no toca el DOM és pur i testable:
 //  - artistStyles(): estils de l'artista (el principal primer) per a la «ràdio de l'estil»;
 //  - radiosModel(): quines ràdios es poden engegar i amb quin text;
 //  - bioModel(): presentació neta (sense text de farciment);
 //  - songsModel(): la més escoltada i la resta, per visualitzacions;
+//  - sectionsModel(): què diuen i quan surten les capçaleres de Novetats i de «Les grans cançons»;
 //  - songTitle(): títol sense el nom del grup;
 //  - bestHtml(), songCardsHtml(): HTML de cada bloc.
 // La fitxa la pinta openChannelProfileLegacyImpl() (app.js), que crida showProfile(), setSongs() i renderSongs().
@@ -193,6 +195,25 @@
     // Cançons per visualitzacions (sense Shorts ni repetides): la més escoltada i la resta.
     function songsModel(videos) {
         return window.SegueixCatalogPolicy.selectArtist(videos);
+    }
+
+    // Capçaleres dels blocs de cançons. Novetats, si n'hi ha; «Les grans cançons», només quan ve després de les
+    // novetats (sense novetats, la graella continua directament la #1 i no cal cap separador).
+    function sectionsModel({ recent = 0, rest = 0 } = {}) {
+        const last = rest + 1;
+        return {
+            recent: {
+                show: recent > 0,
+                sub: recent === 1 ? '1 cançó dels últims 12 mesos' : `${recent} cançons dels últims 12 mesos`,
+            },
+            hits: {
+                show: recent > 0 && rest > 0,
+                sub:
+                    rest === 1
+                        ? 'Continuem amb les més escoltades: la #2'
+                        : `Continuem amb les més escoltades: de la #2 a la #${last}`,
+            },
+        };
     }
 
     const EYE_ICON =
@@ -403,6 +424,10 @@
         setHtml($('apRecentSongs'), recent.map(video => cardHtml(video, { tag: 'Novetat', names })).join(''));
         const recentSection = $('apRecent');
         if (recentSection) recentSection.hidden = !recent.length;
+        const sections = sectionsModel({ recent: recent.length, rest: hidden ? 0 : model.rest.length });
+        if ($('apRecentSub')) $('apRecentSub').textContent = sections.recent.show ? sections.recent.sub : '';
+        if ($('apHitsSub')) $('apHitsSub').textContent = sections.hits.show ? sections.hits.sub : '';
+        if ($('apHitsHead')) $('apHitsHead').hidden = !sections.hits.show;
 
         const stats = $('apStats');
         if (stats) {
@@ -626,6 +651,7 @@
         setHtml($('apBest'), '');
         setHtml($('apRecentSongs'), '');
         if ($('apRecent')) $('apRecent').hidden = true;
+        if ($('apHitsHead')) $('apHitsHead').hidden = true;
         renderList();
         ['apStats', 'apSongsEmpty'].forEach(id => {
             const node = $(id);
@@ -719,6 +745,7 @@
         artOf,
         songTitle,
         songsModel,
+        sectionsModel,
         bestHtml,
         cardHtml,
         songCardsHtml,

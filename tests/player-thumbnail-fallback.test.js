@@ -52,7 +52,7 @@ describe('fallback de caràtules de vídeo', () => {
 
         listeners.get('error')({ target: img });
 
-        expect(img.src).toBe('/img/caratula.png');
+        expect(img.src).toBe('/img/caratula.webp');
         expect(img.dataset.defaultThumbnailFallback).toBe('applied');
         expect(img.style.visibility).toBe('');
     });
@@ -67,7 +67,7 @@ describe('fallback de caràtules de vídeo', () => {
 
         listeners.get('load')({ target: img });
 
-        expect(img.src).toBe('/img/caratula.png');
+        expect(img.src).toBe('/img/caratula.webp');
         expect(img.dataset.defaultThumbnailFallback).toBe('applied');
     });
 

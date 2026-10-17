@@ -123,6 +123,13 @@
 
     const toArray = value => (Array.isArray(value) ? value : []);
     const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+    const addOnce = (list, value) => {
+        if (!list.includes(value)) list.push(value);
+    };
+    // Mateix ordre que String#localeCompare, però amb un sol col·lador: localeCompare el tornava a preparar a cada
+    // comparació i ordenar els grups d'artistes a cada cançó triada feia lenta la ràdio al mòbil.
+    const KEY_COLLATOR = typeof Intl !== 'undefined' && Intl.Collator ? new Intl.Collator() : null;
+    const compareKeys = (a, b) => (KEY_COLLATOR ? KEY_COLLATOR.compare(a, b) : String(a).localeCompare(String(b)));
     const idOf = video => String(video?.id || '');
     const lower = value =>
         String(value || '')
@@ -809,6 +816,74 @@
 
         const windowOf = () => sequence.slice(-top);
         const recentSet = level => new Set(recentIds.slice(0, Math.round(cfg.cooldown.songs * (level.cool || 0))));
+        // «Artista primer»: les candidates s'agrupen per artista una sola vegada (ordenades pel nom i, dins de cada
+        // artista, en l'ordre de `items`). Abans es tornaven a agrupar i ordenar a cada cançó triada: ~3.500
+        // candidates × 40 cançons, i entrar a una ràdio trigava mig segon a l'ordinador i segons al mòbil.
+        // Les triades surten de `remaining` i el seu id és a `usedIds`, així que el filtre les descarta igual.
+        const staticGroups =
+            options.artistFirst && !keepAll && lookahead === Infinity
+                ? (() => {
+                      const byKey = new Map();
+                      // El descans (cançons i minuts) no canvia durant la tria: es calcula una vegada per nivell.
+                      const coolSets = LEVELS.map(recentSet);
+                      for (const c of items) {
+                          const key = c.f.artist || c.f.id;
+                          // version: canvia quan alguna cançó del grup queda descartada; cache: el grup de l'última tria
+                          if (!byKey.has(key)) byKey.set(key, { key, artist: c.f.artist, members: [], version: 0, cache: null });
+                          const sg = byKey.get(key);
+                          const at = recentTimes.get(c.f.id) || 0;
+                          sg.members.push({
+                              sg,
+                              item: c,
+                              index: -1,
+                              historic: c.f.tier === 'historic',
+                              // Ja triada o la mateixa gravació (dead) / la mateixa obra (deadWork): es marca en triar.
+                              dead: false,
+                              deadWork: false,
+                              cooled: LEVELS.map(
+                                  (level, li) =>
+                                      useCooldown &&
+                                      (coolSets[li].has(c.f.id) ||
+                                          (level.cool > 0 && at && now - at < cfg.cooldown.minutes * 60000 * level.cool))
+                              ),
+                          });
+                      }
+                      return [...byKey.values()].sort((a, b) => compareKeys(a.key, b.key));
+                  })()
+                : null;
+        const markUsed = (() => {
+            if (!staticGroups) return () => {};
+            const byId = new Map();
+            const byWork = new Map();
+            const byRecording = new Map();
+            const index = (map, key, member) => {
+                if (!map.has(key)) map.set(key, []);
+                map.get(key).push(member);
+            };
+            for (const sg of staticGroups) {
+                for (const member of sg.members) {
+                    const f = member.item.f;
+                    index(byId, f.id, member);
+                    index(byWork, f.keys.work, member);
+                    if (f.keys) index(byRecording, f.keys.recording, member);
+                }
+            }
+            // Mateixes regles que usedIds / usedWork / usedIndex.has()
+            const kill = (member, field) => {
+                if (member[field]) return;
+                member[field] = true;
+                member.sg.version += 1;
+            };
+            return (id, keys) => {
+                (byId.get(id) || []).forEach(member => kill(member, 'dead'));
+                if (!keys) return;
+                (byWork.get(keys.work) || []).forEach(member => kill(member, 'deadWork'));
+                (byRecording.get(keys.recording) || []).forEach(member => {
+                    if (isSameRecording(keys, member.item.f.keys)) kill(member, 'dead');
+                });
+            };
+        })();
+        sequence.forEach(item => markUsed(item.id, featuresOf(options.ctx, item.video).keys));
 
         while (picked.length < count && remaining.length) {
             const win = windowOf();
@@ -828,23 +903,56 @@
                 const lastArtists = gap > 0 ? sequence.slice(-gap).map(item => item.artist) : [];
                 let bestScore = -Infinity;
                 const artistGroups = new Map();
-                const limit = Math.min(remaining.length, lookahead);
+                // Si una candidata pot sonar ara (límits d'artista, antigues, obra/gravació repetida i descans).
+                const allowed = c => {
+                    if (usedIds.has(c.f.id)) return false;
+                    if (c.f.artist && lastArtists.includes(c.f.artist)) return false;
+                    if (c.f.artist && (windowArtists.get(c.f.artist) || 0) >= perArtist) return false;
+                    if (c.f.tier === 'historic') {
+                        if (histInWindow >= histMax) return false;
+                        if (!allowConsecutive && !level.consecutive && last?.tier === 'historic') return false;
+                    }
+                    if (level.work && usedWork.has(c.f.keys.work)) return false;
+                    if (usedIndex.has(c.f.keys)) return false;
+                    if (useCooldown) {
+                        if (cool.has(c.f.id)) return false;
+                        const at = recentTimes.get(c.f.id) || 0;
+                        if (level.cool > 0 && at && now - at < cfg.cooldown.minutes * 60000 * level.cool) return false;
+                    }
+                    return true;
+                };
+                if (staticGroups) {
+                    const historicAllowed =
+                        histInWindow < histMax && (allowConsecutive || level.consecutive || last?.tier !== 'historic');
+                    for (const sg of staticGroups) {
+                        if (sg.artist && (lastArtists.includes(sg.artist) || (windowArtists.get(sg.artist) || 0) >= perArtist)) {
+                            continue;
+                        }
+                        // Si res del grup no ha canviat des de l'última tria, es reutilitza (no es modifica després).
+                        const cached = sg.cache;
+                        if (cached && cached.li === li && cached.hist === historicAllowed && cached.version === sg.version) {
+                            if (cached.group) artistGroups.set(sg.key, cached.group);
+                            continue;
+                        }
+                        let group = null;
+                        for (const member of sg.members) {
+                            if (member.dead || (level.work && member.deadWork) || member.cooled[li]) continue;
+                            if (member.historic && !historicAllowed) continue;
+                            const c = member.item;
+                            if (!group) group = { key: sg.key, candidates: [], eras: [], familiarities: [], tags: [] };
+                            group.candidates.push(member);
+                            addOnce(group.eras, c.f.tier);
+                            addOnce(group.familiarities, c.fam);
+                            if (c.tags) c.tags.forEach(tag => addOnce(group.tags, tag));
+                        }
+                        sg.cache = { li, hist: historicAllowed, version: sg.version, group };
+                        if (group) artistGroups.set(sg.key, group);
+                    }
+                }
+                const limit = staticGroups ? 0 : Math.min(remaining.length, lookahead);
                 for (let i = 0; i < limit; i++) {
                     const c = remaining[i];
-                    if (usedIds.has(c.f.id)) continue;
-                    if (c.f.artist && lastArtists.includes(c.f.artist)) continue;
-                    if (c.f.artist && (windowArtists.get(c.f.artist) || 0) >= perArtist) continue;
-                    if (c.f.tier === 'historic') {
-                        if (histInWindow >= histMax) continue;
-                        if (!allowConsecutive && !level.consecutive && last?.tier === 'historic') continue;
-                    }
-                    if (level.work && usedWork.has(c.f.keys.work)) continue;
-                    if (usedIndex.has(c.f.keys)) continue;
-                    if (useCooldown) {
-                        if (cool.has(c.f.id)) continue;
-                        const at = recentTimes.get(c.f.id) || 0;
-                        if (level.cool > 0 && at && now - at < cfg.cooldown.minutes * 60000 * level.cool) continue;
-                    }
+                    if (!allowed(c)) continue;
                     // En reordenacions de llistes mana l'ordre original: `remaining` conserva l'ordre i `base` hi
                     // decreix, així que la primera candidata que encaixa és la triada (no cal puntuar la resta).
                     if (keepAll) {
@@ -855,13 +963,13 @@
                     if (options.artistFirst) {
                         const key = c.f.artist || c.f.id;
                         if (!artistGroups.has(key)) {artistGroups.set(key, {
-                            key, candidates: [], eras: new Set(), familiarities: new Set(), tags: new Set(),
+                            key, candidates: [], eras: [], familiarities: [], tags: [],
                         });}
                         const group = artistGroups.get(key);
                         group.candidates.push({ item: c, index: i });
-                        group.eras.add(c.f.tier);
-                        group.familiarities.add(c.fam);
-                        (c.tags || []).forEach(tag => group.tags.add(tag));
+                        addOnce(group.eras, c.f.tier);
+                        addOnce(group.familiarities, c.fam);
+                        if (c.tags) c.tags.forEach(tag => addOnce(group.tags, tag));
                         continue;
                     }
                     let s = c.base;
@@ -889,7 +997,9 @@
                     }
                 }
                 if (options.artistFirst && artistGroups.size) {
-                    const groups = [...artistGroups.values()].sort((a, b) => a.key.localeCompare(b.key));
+                    const groups = staticGroups
+                        ? [...artistGroups.values()]
+                        : [...artistGroups.values()].sort((a, b) => compareKeys(a.key, b.key));
                     let bestTier = Infinity;
                     groups.forEach(group => {
                         // El perfil és del grup; el nombre de cançons no dona cap bitllet addicional.
@@ -916,15 +1026,15 @@
                         let score = cfg.weights.taste * (options.artistPreferences.get(group.key) || 0);
                         score -= 0.6 * skipPenalty(options.signals.artists[group.key], cfg.taste.artistSkipsToPenalize, now, cfg);
                         if (options.flow) score += options.flow.transition(group.video, last?.video, options.seed);
-                        if (eraTargets) {score += cfg.gain.era * [...group.eras].reduce((sum, tier) =>
-                            sum + eraTargets[tier] - eraCount[tier] / total, 0) / group.eras.size;}
+                        if (eraTargets) {score += cfg.gain.era * group.eras.reduce((sum, tier) =>
+                            sum + eraTargets[tier] - eraCount[tier] / total, 0) / group.eras.length;}
                         if (famTargets) {
                             const used = famCount.known + famCount.affine + famCount.surprise || 1;
-                            score += cfg.gain.familiarity * [...group.familiarities].reduce((sum, fam) =>
+                            score += cfg.gain.familiarity * group.familiarities.reduce((sum, fam) =>
                                 sum + clamp(famTargets[fam] - famCount[fam] / used, -0.25, 0.25), 0)
-                                / group.familiarities.size;
+                                / group.familiarities.length;
                         }
-                        if (mix) score += cfg.gain.style * clamp(mixDeficit({ tags: [...group.tags] }), -0.4, 0.4);
+                        if (mix) score += cfg.gain.style * clamp(mixDeficit({ tags: group.tags }), -0.4, 0.4);
                         score -= 0.15 * (windowArtists.get(group.key) || 0);
                         // Sorteig ponderat amb UNA oportunitat per artista. Cap suma/màxim de pistes.
                         const weight = Math.exp(clamp(score / 0.2, -20, 20));
@@ -936,7 +1046,10 @@
                     for (const c of winner.group.candidates) {
                         let score = c.item.base;
                         if (eraTargets) score += cfg.gain.era * (eraTargets[c.item.f.tier] - eraCount[c.item.f.tier] / total);
-                        if (score > songScore) { songScore = score; chosen = c.index; }
+                        if (score > songScore) {
+                            songScore = score;
+                            chosen = c.index >= 0 ? c.index : remaining.indexOf(c.item);
+                        }
                     }
                     chosenLevel = li;
                 }
@@ -949,6 +1062,7 @@
             usedWork.add(c.f.keys.work);
             usedRecordings.push(c.f.keys);
             usedIndex.add(c.f.keys);
+            markUsed(c.f.id, c.f.keys);
             sequence.push({ video: c.video, id: c.f.id, artist: c.f.artist, tier: c.f.tier, style: c.f.primaryStyle, fam: c.fam });
             eraCount[c.f.tier] += 1;
             famCount[c.fam] += 1;
