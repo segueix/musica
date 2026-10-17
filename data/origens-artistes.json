@@ -11160,22 +11160,6 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
-    },
-    "artist:thatkid": {
-      "name": "ThatKid",
-      "status": "validated",
-      "relation": "origin",
-      "placeIds": [
-        "geonames:3110516"
-      ],
-      "confidence": "alta",
-      "basis": "De Vilassar de Mar, segons l’editor del catàleg (17/10/2026).",
-      "sources": [
-        "https://sidecar.es/en/sladmobb-thatkid/"
-      ],
-      "reviewedOn": "2026-10-17",
-      "assignmentSource": "user-correction",
-      "locked": true
     }
   },
   "channels": {
@@ -11840,9 +11824,7 @@
     "UCZcdiQvGBNZY2Juk3QEovZA": "artist:malanima",
     "UC_DpS_aFZdvKqblz0PtYT5Q": "artist:plan-et",
     "UC-IgP47EUNYq687PT6WZ4gQ": "artist:sa-pena",
-    "UCyNGJutrN-ISgp5qUAGUmiw": "artist:sa-pena",
-    "UC5N8pkZTmXd8EDRxqhtrDbg": "artist:thatkid",
-    "UCxnSSRmXNzweOe_gShnOb_A": "artist:thatkid"
+    "UCyNGJutrN-ISgp5qUAGUmiw": "artist:sa-pena"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 439,
+  "musicalArtists": 438,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -836,7 +836,7 @@
       "label": "Urban — pendent d’afinar",
       "category": "Urban",
       "neighbours": [],
-      "artistCount": 13,
+      "artistCount": 12,
       "nucleus": true,
       "artists": [
         "2ES",
@@ -849,7 +849,6 @@
         "Scorpio",
         "Scotty DK",
         "Subliminal",
-        "ThatKid",
         "Vademecum FAM",
         "Xenia Casado"
       ]
@@ -4747,15 +4746,6 @@
       "basis": "documented-tags",
       "sources": [
         "https://www.metal-archives.com/bands/Thanatopraxy/3540484882"
-      ]
-    },
-    {
-      "artist": "ThatKid",
-      "category": "Urban",
-      "subcategory": "urban-general",
-      "basis": "category-fallback",
-      "sources": [
-        "https://sidecar.es/en/sladmobb-thatkid/"
       ]
     },
     {

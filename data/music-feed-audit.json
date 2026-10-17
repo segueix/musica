@@ -647,14 +647,6 @@
       "governs": true
     },
     {
-      "id": "UCxnSSRmXNzweOe_gShnOb_A",
-      "name": "Thatkid",
-      "songs": 31,
-      "matched": 28,
-      "coverage": 0.9,
-      "governs": true
-    },
-    {
       "id": "UCG1eXBwVPsRtMl1xw0PmIKA",
       "name": "Groggy Rude",
       "songs": 37,
@@ -3919,13 +3911,6 @@
       "withClip": 0
     },
     {
-      "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
-      "name": "ThatKid",
-      "tracks": 165,
-      "selected": 21,
-      "withClip": 26
-    },
-    {
       "id": "UCuBUwUHwHaYGai1Enee7DSw",
       "name": "The Anti-Patiks",
       "tracks": 12,
@@ -4192,9 +4177,9 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 661,
-  "resolvedChannelCount": 661,
-  "feedChannelCount": 661,
+  "indexedChannelCount": 662,
+  "resolvedChannelCount": 659,
+  "feedChannelCount": 659,
   "rawPublicVideoCount": 7382,
   "feedVideoCount": 6811,
   "acceptedMusicCount": 6765,
@@ -4217,7 +4202,7 @@
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6718,
+  "allIndexedChannelsVisible": false,
+  "publishedFeedVideoCount": 6673,
   "publishedShortVideoCount": 0
 }
