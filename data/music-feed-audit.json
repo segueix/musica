@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-17T19:33:36.845Z",
+  "generatedAt": "2026-10-17T19:58:00.286Z",
   "polling": {
-    "requested": 2,
-    "deferred": 662,
-    "failed": 0
+    "requested": 7,
+    "deferred": 657,
+    "failed": 7
   },
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
@@ -1503,6 +1503,22 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
       "name": "Bonestorm",
       "songs": 2,
@@ -1561,6 +1577,14 @@
     {
       "id": "UCBHDy6i_tQcWOjczk47PQyA",
       "name": "Obrint Pas",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
       "songs": 0,
       "matched": 0,
       "coverage": 0,
@@ -4208,19 +4232,19 @@
   "indexedChannelCount": 664,
   "resolvedChannelCount": 664,
   "feedChannelCount": 664,
-  "rawPublicVideoCount": 7317,
-  "feedVideoCount": 6732,
-  "acceptedMusicCount": 6688,
-  "categoryEligibleVideoCount": 6684,
+  "rawPublicVideoCount": 7312,
+  "feedVideoCount": 6719,
+  "acceptedMusicCount": 6683,
+  "categoryEligibleVideoCount": 6679,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1,
+    "before": 0,
     "matched": 0,
-    "rejected": 1
+    "rejected": 0
   },
   "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 6501,
+    "song": 6496,
     "live_song": 183,
     "album": 4,
     "other": 36,
@@ -4231,6 +4255,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6725,
+  "publishedFeedVideoCount": 6719,
   "publishedShortVideoCount": 0
 }
