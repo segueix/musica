@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T18:46:36.329Z",
+  "generatedAt": "2026-10-17T19:33:36.845Z",
   "polling": {
-    "requested": 3,
-    "deferred": 659,
+    "requested": 2,
+    "deferred": 662,
     "failed": 0
   },
   "retainedVideoCount": 0,
@@ -11,7 +11,7 @@
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 370,
+  "topicChannelCount": 371,
   "governedChannelCount": 123,
   "topicCoverage": [
     {
@@ -2567,6 +2567,13 @@
       "withClip": 29
     },
     {
+      "id": "UCKKjvjnD71ll8kMq2pqQhcg",
+      "name": "Gisela Bellsolà",
+      "tracks": 13,
+      "selected": 13,
+      "withClip": 0
+    },
+    {
       "id": "UCwCawZz1QtCvPzADHbcdvlQ",
       "name": "Glaucs",
       "tracks": 170,
@@ -4198,32 +4205,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 662,
-  "resolvedChannelCount": 662,
-  "feedChannelCount": 662,
-  "rawPublicVideoCount": 7310,
-  "feedVideoCount": 6725,
-  "acceptedMusicCount": 6694,
-  "categoryEligibleVideoCount": 6690,
+  "indexedChannelCount": 664,
+  "resolvedChannelCount": 664,
+  "feedChannelCount": 664,
+  "rawPublicVideoCount": 7317,
+  "feedVideoCount": 6732,
+  "acceptedMusicCount": 6688,
+  "categoryEligibleVideoCount": 6684,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1
   },
-  "contentReviewCount": 580,
+  "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 6509,
-    "live_song": 181,
+    "song": 6501,
+    "live_song": 183,
     "album": 4,
     "other": 36,
-    "review": 580
+    "review": 593
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6708,
+  "publishedFeedVideoCount": 6725,
   "publishedShortVideoCount": 0
 }

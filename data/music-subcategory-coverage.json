@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 441,
+  "musicalArtists": 443,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -1047,7 +1047,7 @@
         "autor-folk",
         "autor-pop"
       ],
-      "artistCount": 41,
+      "artistCount": 42,
       "nucleus": true,
       "artists": [
         "Adrià Puntí",
@@ -1090,7 +1090,8 @@
         "Xavier Baró",
         "Agathe Catel",
         "Joan Pau Giné",
-        "Pere Figueres"
+        "Pere Figueres",
+        "Gisela Bellsolà"
       ]
     },
     {
@@ -1167,11 +1168,12 @@
         "mestissatge",
         "rumba-general"
       ],
-      "artistCount": 2,
+      "artistCount": 3,
       "nucleus": false,
       "artists": [
         "Gertrudis",
-        "La Pegatina"
+        "La Pegatina",
+        "Llamp te Frigui"
       ]
     },
     {
@@ -5461,6 +5463,24 @@
       "basis": "category-fallback",
       "sources": [
         "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+      ]
+    },
+    {
+      "artist": "Llamp te Frigui",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "rumba",
+      "basis": "documented-tags",
+      "sources": [
+        "https://llamptefrigui.fr/"
+      ]
+    },
+    {
+      "artist": "Gisela Bellsolà",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.nts.live/artists/142356-gisela-bellsola"
       ]
     }
   ]
