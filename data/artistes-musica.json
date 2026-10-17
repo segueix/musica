@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T21:00:00.000Z",
+  "updatedAt": "2026-10-17T20:49:50.325Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40723,6 +40723,49 @@
       "lastChecked": "2026-10-17T21:00:00.000Z",
       "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi: els seus enregistraments (cançons tradicionals del Rosselló de 1958, sardanes) només són a l’arxiu de diversos artistes Singlantana Sound. Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. També cantà òpera i repertori en altres llengües (Dis-moi mistral): caldrà vigilar-lo i quedar-se només amb les sardanes cantades i les peces tradicionals catalanes.",
       "genresRaw": []
+    },
+    {
+      "name": "Núria Balcells",
+      "displayName": "Núria Balcells",
+      "aliases": [
+        "Nuria Balcells",
+        "Una Corda Més",
+        "Recançonem",
+        "De Vellut"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "instrumental"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCHO5cHnX3GGXitE11VNsAmA",
+            "handle": "@nuriabalcells",
+            "name": "De Vellut",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://nuriabalcells.com/recanconem/",
+        "https://www.youtube.com/@nuriabalcells",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-17T20:49:50.325Z",
+      "notes": "Selecció expressa de cinc interpretacions de Núria Balcells i Rocco Papia. Origen: Sant Cugat del Vallès. Canal propi @nuriabalcells; enregistraments publicats per Rocco Papia, vinculats individualment mitjançant allowedExternalVideos. No importar la resta dels canals. Vegeu docs/revisions/2026-10-17-nuria-balcells.json."
     }
   ]
 }

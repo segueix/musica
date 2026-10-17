@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T10:34:12Z",
+  "updatedAt": "2026-10-17T20:49:50.325Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7331,6 +7331,33 @@
         "song"
       ],
       "note": "Només les peces de la selecció contrastada; novetats pendents de revisió. docs/revisions/2026-10-14-ska2-alta.json"
+    },
+    "UCHO5cHnX3GGXitE11VNsAmA": {
+      "artist": "Núria Balcells",
+      "note": "Només les cinc interpretacions demanades; publicador real Rocco Papia. Fitxa i enllaç al canal propi @nuriabalcells. Caràtula de La Dama d'Aragó.",
+      "allowedVideoIds": [
+        "LA0OEoxDieI",
+        "-5X376Y3nvI",
+        "If61yrkwtRw",
+        "zVyD2jgpzr0",
+        "XD7mk9NaiiE"
+      ],
+      "allowedExternalVideos": {
+        "LA0OEoxDieI": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "-5X376Y3nvI": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "If61yrkwtRw": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "zVyD2jgpzr0": "UCpXJWymAt3EmCUhJBKARCCQ",
+        "XD7mk9NaiiE": "UCpXJWymAt3EmCUhJBKARCCQ"
+      },
+      "avatarVideoId": "LA0OEoxDieI",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "deniedTitleContains": [
+        "Short"
+      ]
     }
   }
 }
