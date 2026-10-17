@@ -11416,3 +11416,139 @@ body.ai-open {
         transition: none;
     }
 }
+
+/* ==========================================================================
+   «Acabades de sortir»: el marc de les vores i el «+N» de les cançons del mateix dia (2026-10-17)
+   ========================================================================== */
+/* La fila va de vora a vora i #homePage retalla el que en sobresurt (contain): ampliada des del centre, la primera
+   caràtula perdia el marc de l'esquerra (i la darrera, el de la dreta). S'amplien cap a dins. */
+@media (hover: hover) and (pointer: fine) {
+    #homePage.is-portada .pt-row > .pt-cell:first-child > :is(.pt-card, .pt-portrait) {
+        transform-origin: left center;
+    }
+
+    #homePage.is-portada .pt-row > .pt-cell:last-child > :is(.pt-card, .pt-portrait) {
+        transform-origin: right center;
+    }
+}
+
+/* «+N»: el grup ha publicat més cançons aquell dia. Una càpsula llima, ben visible, a dalt a l'esquerra (la durada
+   baixa a sota) i, darrere la caràtula, una altra que hi treu el cap: hi ha més cançons a dins. */
+#homePage.is-portada .pt-cell--group {
+    position: relative;
+}
+
+#homePage.is-portada .pt-cell--group::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 10px;
+    left: 10px;
+    height: 20px;
+    border: 2px solid var(--pt-accent);
+    border-bottom: 0;
+    border-radius: var(--pt-radius-cover) var(--pt-radius-cover) 0 0;
+    background: rgba(214, 237, 132, 0.18);
+    pointer-events: none;
+}
+
+#homePage.is-portada .pt-card__more {
+    position: absolute;
+    top: var(--pt-cover-pad);
+    left: var(--pt-cover-pad);
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-width: calc(100% - 2 * var(--pt-cover-pad) - 76px);
+    min-height: 36px;
+    padding: 4px 10px 4px 5px;
+    border: 0;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font: inherit;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: left;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+}
+
+#homePage.is-portada .pt-card__more-n {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 6px;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-on-accent);
+    color: var(--pt-accent);
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+/* Dues línies curtes («cançons més» / «del mateix dia»): els botons de cua i desar ocupen la dreta */
+#homePage.is-portada .pt-card__more-txt {
+    display: grid;
+    font-size: 0.6875rem;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+#homePage.is-portada .pt-card__more:hover {
+    filter: brightness(1.06);
+}
+
+#homePage.is-portada .pt-card__more:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* La durada, sota el «+N» */
+#homePage.is-portada .pt-cell--group .pt-card__dur {
+    top: calc(var(--pt-cover-pad) + 44px);
+}
+
+/* Desplegat: la caràtula i les del mateix dia porten el marc llima, i la càpsula fa d'«Amaga-les» */
+#homePage.is-portada .pt-cell--group.is-open::before {
+    display: none;
+}
+
+#homePage.is-portada :is(.pt-cell--group.is-open, .pt-cell--sibling) > .pt-card {
+    border-color: var(--pt-accent);
+}
+
+#homePage.is-portada .pt-card__more.is-open {
+    background: rgba(20, 22, 21, 0.78);
+    color: var(--pt-accent);
+    border: 1px solid var(--pt-accent);
+}
+
+#homePage.is-portada .pt-card__more.is-open .pt-card__more-n {
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+#homePage.is-portada .pt-cell--sibling .pt-card__badge {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #homePage.is-portada .pt-cell--sibling {
+        animation: pt-sibling-in 0.22s ease-out both;
+    }
+}
+
+@keyframes pt-sibling-in {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
