@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 443,
+  "musicalArtists": 444,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -954,7 +954,7 @@
         "folk-tradicional",
         "folk-fusio"
       ],
-      "artistCount": 20,
+      "artistCount": 21,
       "nucleus": true,
       "artists": [
         "Alosa",
@@ -976,7 +976,8 @@
         "Roba Estesa",
         "Sílvia Pérez Cruz",
         "UC",
-        "Xavier de Bétera"
+        "Xavier de Bétera",
+        "Núria Balcells"
       ]
     },
     {
@@ -5481,6 +5482,16 @@
       "basis": "category-fallback",
       "sources": [
         "https://www.nts.live/artists/142356-gisela-bellsola"
+      ]
+    },
+    {
+      "artist": "Núria Balcells",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://nuriabalcells.com/recanconem/",
+        "https://www.youtube.com/@nuriabalcells"
       ]
     }
   ]
