@@ -419,7 +419,7 @@
         return `
                 <button type="button" class="pt-card__more${group.open ? ' is-open' : ''}" data-pt-group="${id}" aria-expanded="${group.open}" aria-label="${label}" title="${label}">
                     <span class="pt-card__more-n" aria-hidden="true">${group.open ? '−' : `+${n}`}</span>
-                    <span class="pt-card__more-txt" aria-hidden="true">${group.open ? 'Amaga-les' : `<span>${n === 1 ? 'cançó més' : 'cançons més'}</span><span>del mateix dia</span>`}</span>
+                    <span class="pt-card__more-txt" aria-hidden="true">${group.open ? 'Amaga-les' : `<span>${n === 1 ? 'cançó' : 'cançons'}</span>`}</span>
                 </button>`;
     }
 
