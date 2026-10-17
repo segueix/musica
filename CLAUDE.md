@@ -476,7 +476,7 @@ const likes = ctx2.SegueixApp.features.likes;
 
 ### Enllaços del peu (2026-10-02)
 
-- El peu (`.seo-footer-nav`) només porta **Artistes, Urban, Pop, Rock, Cançó d'autor, Indie i Folk i arrel**, amb rutes relatives dins l'app (`./?seccio=artistes`, `./?estil=Pop`…): l'app és a `segueix.github.io/musica/` i les rutes absolutes antigues (`/pop`, `/novetats`, `/musica-tv`…, funcions de segueix.cat) hi donaven 404. `shell-nav.js` intercepta el clic (`data-pt-style` → `openStyle()`, que clica el xip de l'estil; `data-pt-nav="artists"`) i, en obrir la URL directament, `openFromUrl()` hi porta quan els xips són a punt. No hi tornis a posar Novetats ni Música TV.
+- El peu (`.seo-footer-nav`) només porta **Artistes, Urban, Pop, Rock, Cançó d'autor, Indie i Folk i arrel**, amb rutes relatives dins l'app (`./?seccio=artistes`, `./?estil=Pop`…): l'app és a `segueix.github.io/musica/` i les rutes absolutes antigues (`/pop`, `/novetats`, `/musica-tv`…, funcions de segueix.cat) hi donaven 404. `shell-nav.js` intercepta el clic (`data-pt-style` → `openStyle()`, que clica el xip de l'estil; `data-pt-nav="artists"`) i, en obrir la URL directament, `openFromUrl()` hi porta quan els xips són a punt. No hi tornis a posar Novetats ni Música TV. **Condensat (2026-10-17):** a l'ordinador els enllaços, «Privacitat i Avís Legal» i el crèdit van en **una sola fila** (enllaços a l'esquerra, la resta a la dreta; es parteix només si no hi caben) i hi ha menys aire abans del peu (`#mainContent` 8 px; a la fitxa de la cançó, el canal i la cua 8 px de marge); al mòbil, centrat, amb els enllaços en una fila pròpia. Bloc «Peu de pàgina condensat» al final de `portada.css`; prova `tests/peu-condensat.test.js`.
 
 ### Mode conducció (2026-10-02)
 

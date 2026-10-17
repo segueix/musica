@@ -11527,3 +11527,70 @@ body.ai-open {
 @media (display-mode: standalone), (display-mode: window-controls-overlay), (display-mode: minimal-ui) {
     #ptInstall { display: none; }
 }
+
+/* ==========================================================================
+   Peu de pàgina condensat (2026-10-17): els enllaços dels estils, «Privacitat i Avís Legal» i el crèdit van en una
+   sola fila (enllaços a l'esquerra; privacitat i crèdit a la dreta) i només es parteix si no hi caben. Abans eren tres
+   línies (≈ 110 px) amb el botó de privacitat sol en una fila.
+   ========================================================================== */
+.site-credit-footer {
+    padding: 6px 24px 14px;
+}
+
+.site-credit-footer .project-credit--page-end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 16px;
+    text-align: left;
+}
+
+.site-credit-footer .seo-footer-nav {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    gap: 4px 14px;
+    margin: 0;
+}
+
+.site-credit-footer .project-credit-legal-btn {
+    margin: 0 0 0 auto;
+    padding: 4px 12px;
+}
+
+.site-credit-footer .project-credit-subline {
+    margin: 0;
+}
+
+/* Mòbil: tot centrat; privacitat i crèdit comparteixen fila si hi caben */
+@media (max-width: 768px) {
+    .site-credit-footer {
+        padding: 4px 16px 12px;
+    }
+
+    .site-credit-footer .project-credit--page-end {
+        justify-content: center;
+        gap: 6px 12px;
+        text-align: center;
+    }
+
+    .site-credit-footer .seo-footer-nav {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    .site-credit-footer .project-credit-legal-btn {
+        margin: 0;
+    }
+}
+
+/* Menys aire abans del peu (ordinador i tauleta): a la fitxa de la cançó, el canal i la cua portaven 24 px de marge i
+   el contingut principal 24 px més. */
+@media (min-width: 769px) {
+    #mainContent {
+        padding-bottom: 8px;
+    }
+
+    #watchPage .watch-main > :is(.channel-info, #playlistQueueContainer) {
+        margin-bottom: 8px;
+    }
+}
