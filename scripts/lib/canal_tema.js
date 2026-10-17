@@ -20,7 +20,7 @@ const DEFAULTS = Object.freeze({
     minCoverage: 0.75,
     // Pistes del Tema que entren al feed: les més escoltades i totes les publicades fa poc (novetats).
     topicKeep: 40,
-    recentDays: 180,
+    recentDays: 366, // Reserva d’ingesta per cobrir 12 mesos, també en anys de traspàs.
 });
 
 const SONG_TYPES = new Set(['song', 'live_song']);

@@ -62,6 +62,24 @@ function validate(outDir, options = {}) {
     if (Object.keys(routes.artists).filter(id => /^UC[A-Za-z0-9_-]{22}$/.test(id)).length !== report.channels || new Set(Object.values(routes.artists)).size !== report.artists) fail('índex d’artistes incoherent');
     for (const channel of Object.values(channels)) if (!routes.artists[channel]) fail(`canal sense artista: ${channel}`);
 
+    const selection = json('data/hidden-videos.json').catalogSelection;
+    if (selection?.version !== 1 || selection.popularLimit !== 21) fail('falta la política de selecció del catàleg');
+    const selectedIds = new Set([...(selection.popularIds || []), ...Object.keys(selection.recentExpiry || {})]);
+    if (selectedIds.size !== songs.length || songs.some(id => !selectedIds.has(id))) fail('selecció i rutes de cançons diferents');
+    const published = new Set();
+    for (const name of ['feed.json', 'historial-musical.json', 'history-pool.json']) {
+        for (const video of json('data/' + name).videos || []) {
+            if (!selectedIds.has(video.id)) fail(`cançó fora del límit a ${name}: ${video.id}`);
+            if (name !== 'history-pool.json') published.add(video.id);
+        }
+    }
+    if (published.size !== songs.length) fail('cançons seleccionades absents del feed i historial');
+    for (const bucket of json('data/search_index_manifest.json').buckets || []) {
+        for (const video of json('data/' + bucket.file)) {
+            if (!selectedIds.has(video.i)) fail(`cançó fora del límit a la cerca: ${video.i}`);
+        }
+    }
+
     // Els sitemaps només poden anunciar fitxers d’aquest mateix paquet i domini.
     let pageCount = 0;
     for (const index of ['sitemap.xml', 'video-sitemap.xml']) {

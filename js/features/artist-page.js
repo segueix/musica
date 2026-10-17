@@ -1,8 +1,8 @@
 // Fitxa d'artista: la foto de perfil de fons amb el nom, els subscriptors, l'origen, la presentació (una línia que es
 // desplega), les ràdios i compartir al damunt; al costat (a sota al mòbil), la cançó més escoltada (#1); a sota, la
-// resta de cançons per visualitzacions en tres columnes de caràtules quadrades, amb les dades al damunt. Cada
+// novetats de 12 mesos i les posicions #2–#21 en caràtules quadrades, amb les dades al damunt. Cada
 // caràtula engega una ràdio de l'artista que comença per aquella cançó. Sense discos, files de videoclips/directes,
-// cerca ni títols de secció (2026-10-16).
+// cerca; només Novetats porta títol i desapareix si és buida (2026-10-17).
 // Implementació directa (patró 2); el que no toca el DOM és pur i testable:
 //  - artistStyles(): estils de l'artista (el principal primer) per a la «ràdio de l'estil»;
 //  - radiosModel(): quines ràdios es poden engegar i amb quin text;
@@ -192,18 +192,7 @@
 
     // Cançons per visualitzacions (sense Shorts ni repetides): la més escoltada i la resta.
     function songsModel(videos) {
-        const seen = new Set();
-        const list = (Array.isArray(videos) ? videos : [])
-            .filter(video => {
-                const id = text(video?.id);
-                if (!id || video.isShort || seen.has(id)) return false;
-                seen.add(id);
-                return true;
-            })
-            .map((video, index) => ({ video, index }))
-            .sort((a, b) => viewsOf(b.video) - viewsOf(a.video) || a.index - b.index)
-            .map(item => item.video);
-        return { best: list[0] || null, rest: list.slice(1), all: list, total: list.length };
+        return window.SegueixCatalogPolicy.selectArtist(videos);
     }
 
     const EYE_ICON =
@@ -410,6 +399,10 @@
         const names = artistNames();
 
         setHtml($('apBest'), hidden ? '' : bestHtml(model.best, { names }));
+        const recent = hidden ? [] : model.recent;
+        setHtml($('apRecentSongs'), recent.map(video => cardHtml(video, { tag: 'Novetat', names })).join(''));
+        const recentSection = $('apRecent');
+        if (recentSection) recentSection.hidden = !recent.length;
 
         const stats = $('apStats');
         if (stats) {
@@ -631,6 +624,8 @@
         showYoutube(program ? '' : youtubeUrl);
         // Mentre arriben les cançons, cap bloc de la fitxa anterior.
         setHtml($('apBest'), '');
+        setHtml($('apRecentSongs'), '');
+        if ($('apRecent')) $('apRecent').hidden = true;
         renderList();
         ['apStats', 'apSongsEmpty'].forEach(id => {
             const node = $(id);
@@ -653,7 +648,7 @@
     // Cançons ja carregades del canal: habilita la ràdio de l'artista.
     function setSongs(videos, channelId = '') {
         if (channelId && text(channelId) !== state.channelId) return;
-        state.songs = songsOf(videos);
+        state.songs = songsModel(videos).all;
         state.loading = false;
         renderRadios();
     }

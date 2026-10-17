@@ -23,7 +23,8 @@ const guests = sessions.map(([artist, id]) => ({
     contentType: 'live_song',
     publishedAt: '2026-01-01',
 }));
-const page = loadScript('js/features/artist-page.js').SegueixApp.features.artistPage;
+const SegueixCatalogPolicy = loadScript('js/catalog-policy.js').SegueixCatalogPolicy;
+const page = loadScript('js/features/artist-page.js', { SegueixCatalogPolicy }).SegueixApp.features.artistPage;
 
 function apiWithCatalog(data = catalog) {
     const fetch = vi.fn(async () => ({ ok: data !== null, json: async () => data }));

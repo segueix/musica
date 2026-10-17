@@ -46,6 +46,8 @@ const YouTubeAPI = {
     styleHistoryVideos: [],
     styleHistoryPromise: null,
     hiddenVideoIds: new Set(),
+    catalogPopularIds: null,
+    catalogRecentExpiry: null,
     channelArchiveCache: {},
     channelArchivePromises: {},
     legacyArchiveCache: null,
@@ -363,6 +365,10 @@ const YouTubeAPI = {
             }
 
             const payload = await response.json();
+            if (payload?.catalogSelection?.version === 1) {
+                this.catalogPopularIds = new Set(payload.catalogSelection.popularIds || []);
+                this.catalogRecentExpiry = payload.catalogSelection.recentExpiry || {};
+            }
             const ids = Array.isArray(payload?.videoIds) ? payload.videoIds : [];
             const restricted = await restrictedPromise;
             this.hiddenVideoIds = new Set(
@@ -383,13 +389,19 @@ const YouTubeAPI = {
         return this.hiddenVideoIds.has(String(videoId || ''));
     },
 
+    isCatalogVideoAllowed(video) {
+        if (window.SEGUEIX_CATALOG_POLICY !== 1) return true;
+        const id = String(video?.id || video?.i || video || '');
+        return Boolean(this.catalogPopularIds?.has(id) || Number(this.catalogRecentExpiry?.[id]) > Date.now());
+    },
+
     // Fora els vídeos amagats i els Shorts: Segueix Música no en mostra cap (feed, historial, arxiu de la fitxa,
     // pool de ràdio, cerca). Totes les fonts de vídeos de l'app passen per aquí.
     filterHiddenVideos(videos) {
         if (!Array.isArray(videos) || videos.length === 0) {
             return Array.isArray(videos) ? videos : [];
         }
-        return videos.filter((video) => video?.isShort !== true && !this.isVideoHidden(video));
+        return videos.filter((video) => video?.isShort !== true && !this.isVideoHidden(video) && this.isCatalogVideoAllowed(video));
     },
 
     hasKnownChannel(channelId) {
@@ -486,7 +498,7 @@ const YouTubeAPI = {
         [...(this.feedVideos || []), ...(this.historyPoolVideos || [])].forEach(video => {
             if (video?.id) merged.set(String(video.id), video);
         });
-        return [...merged.values()];
+        return this.filterHiddenVideos([...merged.values()]);
     },
 
     async loadChannelArchiveVideos(channelId) {
@@ -586,7 +598,7 @@ const YouTubeAPI = {
             }
         });
 
-        return Array.from(mergedById.values())
+        return this.filterHiddenVideos(Array.from(mergedById.values()))
             .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
     },
     // Catàleg de llançaments: la fitxa ja no mostra discos, però d'aquí surten els directes publicats en canals
@@ -631,7 +643,7 @@ const YouTubeAPI = {
         [...lists, ...guests].flat().forEach(video => {
             if (video?.id) merged.set(String(video.id), video);
         });
-        return [...merged.values()].sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
+        return this.filterHiddenVideos([...merged.values()]).sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
     },
     handleFeedGeneratedAt(feedGeneratedAt) {
         if (!feedGeneratedAt) {

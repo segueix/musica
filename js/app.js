@@ -395,7 +395,7 @@ function getArchiveVideosForChannel(channelId) {
             thumbnail: buildArchiveThumbnail(item?.i),
             source: 'archive',
         }))
-        .filter(video => video.id);
+        .filter(video => video.id && YouTubeAPI.isCatalogVideoAllowed?.(video) !== false);
 }
 let activeSearchRequestId = 0;
 let installPromptEvent = null;
@@ -7466,7 +7466,8 @@ function buildSearchModel(query, options = {}) {
         categoriesOfChannel: channelId => music?.categoriesForChannel?.(channelId) || [],
         artistKeyOf: channelId => music?.artistKeyForChannel?.(channelId) || '',
         primaryCategoryOf: channelId => music?.primaryCategoryForChannel?.(channelId) || '',
-        isEligible: video => !music?.isCategoryEligibleVideo || music.isCategoryEligibleVideo(video),
+        isEligible: video => YouTubeAPI.isCatalogVideoAllowed?.(video) !== false &&
+            (!music?.isCategoryEligibleVideo || music.isCategoryEligibleVideo(video)),
         recordingKeysOf: selection?.titleKeys
             ? video => selection.titleKeys(video.title, getVideoArtistKey(video), video.durationSeconds)
             : null,
@@ -7629,7 +7630,7 @@ function searchArchiveVideosLegacyImpl(query) {
                 score,
             };
         })
-        .filter(video => video.id && video.score > 0)
+        .filter(video => video.id && video.score > 0 && YouTubeAPI.isCatalogVideoAllowed?.(video) !== false)
         .sort((a, b) => {
             if (b.score !== a.score) {
                 return b.score - a.score;
