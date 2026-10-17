@@ -241,10 +241,15 @@
         }
     }
 
+    // Ja instal·lada (o oberta com a app): «Instal·la l'app» no cal, però «Comparteix» sí, amb el seu text.
     function syncButton() {
         const wrap = $('ptInstall');
         if (!wrap) return;
-        wrap.hidden = state.installed || isStandalone();
+        const installed = state.installed || isStandalone();
+        wrap.hidden = false;
+        wrap.classList.toggle('is-installed', installed);
+        const install = $('ptInstallBtn');
+        if (install) install.hidden = installed;
         wrap.classList.toggle('is-direct', Boolean(state.prompt));
     }
 

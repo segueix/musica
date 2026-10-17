@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = 'ad50aecad1f1';
+const CACHE_VERSION = '1a67fc2b8e94';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -100,7 +100,9 @@ const STATIC_ASSETS = [
 // Preview refresh: YouTube sense reproducció en segon pla 2026-10-04.
 
 // v2 retira les còpies antigues on una fitxa podia sobreescriure la portada.
-const STATIC_CACHE = `static-v2-${CACHE_VERSION}`;
+// v3 (2026-10-17): en activar-se esborra totes les còpies de codi anteriors, perquè tothom vegi «Comparteix l'app»
+// i la fila nova de «Continua escoltant» encara que tingués una versió antiga desada.
+const STATIC_CACHE = `static-v3-${CACHE_VERSION}`;
 const DATA_CACHE = 'data-v1';
 
 // Només l’arrel de l’app i index.html comparteixen la clau, independentment de la query.
