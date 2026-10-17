@@ -7897,9 +7897,14 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
     stroke: rgba(244, 240, 232, 0.08);
     stroke-width: 1;
 }
-.am-inset rect {
+/* Requadre de l'Alguer: fons sense vora; només les línies de dalt i de l'esquerra (.am-inset__edge) */
+.am-inset__bg {
     fill: #18201f;
-    stroke: var(--pt-line);
+}
+.am-inset__edge {
+    fill: none;
+    stroke: rgba(244, 240, 232, 0.28);
+    stroke-width: 1.5px;
     vector-effect: non-scaling-stroke;
 }
 .am-inset text {

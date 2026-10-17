@@ -9,12 +9,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const MAIN = { lonMin: -1.75, lonMax: 4.45, latMin: 37.7, latMax: 43.0, width: 1000 };
-// Sardenya sencera (amb l'Alguer), en un requadre al mar a baix a la dreta. L'illa no hi cap a l'escala del mapa
-// principal: va a una escala més petita (factor), amb un marge (pad) i una franja a baix per al nom (label). El
-// requadre acaba a right/bottom de l'SVG (a l'ordinador, els botons de zoom són a la dreta de x ≈ 990).
-const INSET = { lonMin: 8.05, lonMax: 9.9, latMin: 38.8, latMax: 41.33, factor: 0.33, pad: 10, label: 22 };
-const INSET_RIGHT = 975;
-const INSET_BOTTOM = 1112;
+// L'Alguer, a la mateixa escala que el mapa, en un requadre a la cantonada de baix a la dreta: arriba fins a la vora
+// dreta i la de baix del mapa (només se'n veuen les línies de dalt i de l'esquerra) i comença prou a l'oest i al
+// nord perquè cap línia no talli l'illa. El nord de Sardenya que hi cau es retalla al requadre (clipPath, a l'app).
+const INSET = { lonMin: 7.98, latMax: 41.36, width: 210, height: 210 };
 const TERRITORIES = {
     'ES-B': 'Catalunya',
     'ES-GI': 'Catalunya',
@@ -40,18 +38,11 @@ const kx = Math.cos(lat0);
 const scale = MAIN.width / ((MAIN.lonMax - MAIN.lonMin) * kx);
 const height = Math.round((MAIN.latMax - MAIN.latMin) * scale);
 const projectMain = ([lon, lat]) => [(lon - MAIN.lonMin) * kx * scale, (MAIN.latMax - lat) * scale];
-const insetScale = scale * INSET.factor;
-const insetW = Math.round((INSET.lonMax - INSET.lonMin) * kx * insetScale + 2 * INSET.pad);
-const insetH = Math.round((INSET.latMax - INSET.latMin) * insetScale + 2 * INSET.pad + INSET.label);
-const insetX = INSET_RIGHT - insetW;
-const insetY = INSET_BOTTOM - insetH;
-// Origen de les coordenades dins el requadre (cantonada nord-oest de l'àrea geogràfica)
-const insetX0 = insetX + INSET.pad;
-const insetY0 = insetY + INSET.pad;
-const projectInset = ([lon, lat]) => [
-    insetX0 + (lon - INSET.lonMin) * kx * insetScale,
-    insetY0 + (INSET.latMax - lat) * insetScale,
-];
+const insetX = MAIN.width - INSET.width;
+const insetY = height - INSET.height;
+const insetLonMax = INSET.lonMin + INSET.width / (kx * scale);
+const insetLatMin = INSET.latMax - INSET.height / scale;
+const projectInset = ([lon, lat]) => [insetX + (lon - INSET.lonMin) * kx * scale, insetY + (INSET.latMax - lat) * scale];
 
 // Douglas-Peucker sobre punts ja projectats (tolerància en píxels de l'SVG)
 function simplify(points, tolerance) {
@@ -113,9 +104,13 @@ function generate(source) {
                 d: featurePath(feature.geometry, projectMain),
             });
         }
-        // Sardenya sencera (totes les províncies de la regió), dins el requadre
+        // Les províncies de Sardenya que entren al requadre (l'app les retalla a la seva vora)
         if (feature.properties.region === 'Sardegna') {
-            alguer += featurePath(feature.geometry, projectInset);
+            alguer += featurePath(feature.geometry, projectInset, ring =>
+                ring.some(
+                    ([lon, lat]) => lon >= INSET.lonMin && lon <= insetLonMax && lat >= insetLatMin && lat <= INSET.latMax
+                )
+            );
         }
     }
     return {
@@ -124,16 +119,13 @@ function generate(source) {
         projection: { ...MAIN, kx: Math.round(kx * 1e6) / 1e6, scale: Math.round(scale * 1000) / 1000 },
         inset: {
             lonMin: INSET.lonMin,
-            lonMax: INSET.lonMax,
-            latMin: INSET.latMin,
+            lonMax: Math.round(insetLonMax * 1000) / 1000,
+            latMin: Math.round(insetLatMin * 1000) / 1000,
             latMax: INSET.latMax,
             x: insetX,
             y: insetY,
-            width: insetW,
-            height: insetH,
-            x0: insetX0,
-            y0: insetY0,
-            scale: Math.round(insetScale * 1000) / 1000,
+            width: INSET.width,
+            height: INSET.height,
             label: "l'Alguer",
             d: alguer,
         },

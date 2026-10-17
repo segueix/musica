@@ -339,31 +339,33 @@ describe('mapa: «Dibuixa una zona» a dalt a l’esquerra (2026-10-17)', () => 
     });
 });
 
-describe('mapa: el requadre conté tota Sardenya (2026-10-17)', () => {
+describe('mapa: el requadre de l’Alguer a la cantonada (2026-10-17)', () => {
     const base = JSON.parse(readFileSync('data/mapa-base.json', 'utf8'));
     const inset = base.inset;
+    const src = readFileSync('js/features/artist-map.js', 'utf8');
     const points = [...inset.d.matchAll(/(-?\d+(?:\.\d+)?)[ ,](-?\d+(?:\.\d+)?)/g)].map(m => [+m[1], +m[2]]);
 
-    it('cap punt del contorn de l’illa surt del requadre ni de l’SVG', () => {
-        expect(points.length).toBeGreaterThan(50);
-        for (const [x, y] of points) {
-            expect(x).toBeGreaterThanOrEqual(inset.x);
-            expect(x).toBeLessThanOrEqual(inset.x + inset.width);
-            expect(y).toBeGreaterThanOrEqual(inset.y);
-            expect(y).toBeLessThanOrEqual(inset.y + inset.height);
-        }
-        expect(inset.x + inset.width).toBeLessThanOrEqual(base.viewBox[2]);
-        expect(inset.y + inset.height).toBeLessThanOrEqual(base.viewBox[3]);
+    it('arriba a la vora dreta i a la de baix del mapa', () => {
+        expect(inset.x + inset.width).toBe(base.viewBox[2]);
+        expect(inset.y + inset.height).toBe(base.viewBox[3]);
     });
 
-    it('hi és l’illa sencera (del cap nord fins a Càller) i l’Alguer hi cau a dins', () => {
-        expect(inset.latMin).toBeLessThan(38.87);
-        expect(inset.latMax).toBeGreaterThan(41.26);
+    it('les línies de dalt i de l’esquerra no toquen l’illa (com a mínim 15 unitats de marge)', () => {
+        const inside = points.filter(([x, y]) => x >= inset.x - 15 && y >= inset.y - 15);
+        expect(inside.length).toBeGreaterThan(30);
+        for (const [x, y] of inside) {
+            expect(x).toBeGreaterThanOrEqual(inset.x + 15);
+            expect(y).toBeGreaterThanOrEqual(inset.y + 15);
+        }
+    });
+
+    it('l’Alguer hi cau a dins, i només es dibuixen les línies de dalt i de l’esquerra', () => {
         const alguer = feature.project(base, { latitude: 40.558, longitude: 8.319 });
         expect(alguer.frame).toBe('inset');
         expect(alguer.x).toBeGreaterThan(inset.x);
-        expect(alguer.x).toBeLessThan(inset.x + inset.width);
         expect(alguer.y).toBeGreaterThan(inset.y);
         expect(alguer.y).toBeLessThan(inset.y + inset.height);
+        expect(src).toContain('class="am-inset__edge" d="M${inset.x} ${insetBottom}V${inset.y}H${insetRight}"');
+        expect(src).toContain('clip-path="url(#amInsetClip)"');
     });
 });
