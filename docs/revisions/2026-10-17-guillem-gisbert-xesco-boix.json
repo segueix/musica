@@ -1,0 +1,23 @@
+{
+  "data": "2026-10-17",
+  "alta": {
+    "artista": "Guillem Gisbert",
+    "canal": "UCWqkDJA-JbPHz_0WC2wouqg",
+    "handle": "@GuillemGisbert",
+    "categoria": "Pop",
+    "estat": "aprovat",
+    "fonts": [
+      "https://www.youtube.com/channel/UCWqkDJA-JbPHz_0WC2wouqg",
+      "https://www.ceramiquesguzman.com/guillemgisbert",
+      "manual-user-2026-10-17"
+    ]
+  },
+  "existent": {
+    "artista": "Xesco Boix",
+    "canal": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+    "tipus": "topic",
+    "categoria": "Infantil",
+    "nota": "Ja indexat. Es preserva la selecció revisada de Si ens deixéssim de romanços, sense ampliar-la per confiança en l’artista."
+  },
+  "validacio": "Validador del repositori superat: 513 artistes. No s’ha executat npm test ni lint (sessió amb connector, sense checkout complet). Sense crides YouTube API ni Actions. Pendent torn ordinari."
+}

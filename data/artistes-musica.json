@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T08:51:32.038665+00:00",
+  "updatedAt": "2026-10-17T10:35:00Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -13651,16 +13651,30 @@
     },
     {
       "name": "Guillem Gisbert i Puig",
-      "aliases": [],
-      "genres": [],
-      "territories": [],
+      "aliases": [
+        "Guillem Gisbert"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
       "languages": [
         "ca"
       ],
       "wikidataId": "Q62020002",
       "musicbrainzId": "33d6da31-3518-42f9-b371-7509e93ec0bd",
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCWqkDJA-JbPHz_0WC2wouqg",
+            "handle": "@GuillemGisbert",
+            "name": "Guillem Gisbert",
+            "type": "official",
+            "primary": true
+          }
+        ],
         "candidates": [],
         "searchCandidates": [
           {
@@ -13705,15 +13719,19 @@
           }
         ]
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "https://www.wikidata.org/wiki/Q62020002",
-        "wikidata:performed-catalan-work"
+        "wikidata:performed-catalan-work",
+        "genre:manual",
+        "manual-user-2026-10-17",
+        "https://www.ceramiquesguzman.com/guillemgisbert",
+        "https://www.youtube.com/@GuillemGisbert"
       ],
-      "lastChecked": "2026-09-25T15:54:45.205Z",
-      "notes": "",
+      "lastChecked": "2026-10-17T10:35:00Z",
+      "notes": "Canal oficial sol·licitat per l’usuari. Categoria Pop confirmada el 17/10/2026. Incorporació al feed al torn programat; sense activar Actions.",
       "enrichment": {
         "musicbrainz": {
           "checkedAt": "2026-09-25T15:54:45.205Z",
@@ -13746,7 +13764,8 @@
           "musicbrainzReleaseGroupCount": 3
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "displayName": "Guillem Gisbert"
     },
     {
       "name": "Guillem Ramisa",
