@@ -2509,6 +2509,19 @@
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Santa+Coloma+de+Cervell%C3%B3&count=10&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-17",
       "coordinateNote": "Punt de referència del municipi; l’origen de BTZ és la Colònia Güell, dins de Santa Coloma de Cervelló (Baix Llobregat)."
+    },
+    "geonames:3129007": {
+      "name": "Begur",
+      "type": "municipality",
+      "geonamesId": 3129007,
+      "coordinates": {
+        "latitude": 41.95,
+        "longitude": 3.21667,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Begur&count=10&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-17"
     }
   },
   "artists": {
@@ -10793,6 +10806,23 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:glaucs": {
+      "name": "Glaucs",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3129007"
+      ],
+      "confidence": "alta",
+      "basis": "Grup sorgit a Begur l’octubre de 1994 (Jofre Bardagí, Lluís Alsina…): confirmat per l’editor del catàleg el 17 d’octubre de 2026 i recollit per la premsa cultural.",
+      "sources": [
+        "https://surtdecasa.cat/ebre/musica/entrevista-glaucs-2016-benifallet",
+        "https://surtdecasa.cat/emporda/agenda/2021/concert-de-glaucs/170621"
+      ],
+      "reviewedOn": "2026-10-17",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11435,7 +11465,8 @@
     "UC0vBr1BrHrWE07vDPy1tQcw": "artist:trast",
     "UC3KaUcfeFcIlgO-dssb9n2g": "artist:nino-5",
     "UCcYEaa06Rifj3dOcoBemmEQ": "artist:btz",
-    "UClEd4A7MtTmIPSB_v7r7APA": "artist:btz"
+    "UClEd4A7MtTmIPSB_v7r7APA": "artist:btz",
+    "UCwCawZz1QtCvPzADHbcdvlQ": "artist:glaucs"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

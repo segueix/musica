@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T15:30:23Z",
+  "updatedAt": "2026-10-17T17:45:00.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -13185,6 +13185,48 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Glaucs",
+      "aliases": [
+        "Els Glaucs"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCwCawZz1QtCvPzADHbcdvlQ",
+            "handle": null,
+            "name": "Glaucs - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCwCawZz1QtCvPzADHbcdvlQ",
+        "https://surtdecasa.cat/ebre/musica/entrevista-glaucs-2016-benifallet"
+      ],
+      "lastChecked": "2026-10-17T17:45:00.000Z",
+      "notes": "17/10/2026: alta del canal Glaucs - Tema i categoria Pop per indicació expressa de l’usuari: grup de Begur (Baix Empordà) que només ha fet música en català. Canal Tema comprovat (títols en català, coherents amb la discografia). Es conserva la política general del catàleg públic: 21 populars més novetats dels darrers 12 mesos.",
+      "genresRaw": []
     },
     {
       "name": "Gossos",
