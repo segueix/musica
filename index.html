@@ -51,7 +51,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20261016-lletra">
-    <link rel="stylesheet" href="css/portada.css?v=20261017-sense-rastre">
+    <link rel="stylesheet" href="css/portada.css?v=20261017-instal-la">
     <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
     <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
     <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
@@ -251,6 +251,24 @@
     <main class="main-content" id="mainContent" tabindex="-1">
         <!-- Home Page -->
         <div class="page is-portada is-booting" id="homePage">
+            <!-- Instal·la l'app (js/features/app-install.js): a dalt a la dreta d'Inici; amagat si ja s'obre com a app -->
+            <div class="pt-install" id="ptInstall">
+                <button class="pt-install__btn" id="ptInstallBtn" type="button" aria-haspopup="dialog" aria-describedby="ptInstallSub">
+                    <span class="pt-install__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+                    </span>
+                    <span class="pt-install__copy">
+                        <strong>Instal·la l'app</strong>
+                        <small id="ptInstallSub">Directament, sense botiga</small>
+                    </span>
+                    <span class="pt-install__devices" role="img" aria-label="Per a Android, iPhone, Windows i Chromebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.2 10.6a5.8 5.8 0 0 1 11.6 0ZM6.2 11.8h11.6v6.4c0 .8-.6 1.4-1.4 1.4H7.6c-.8 0-1.4-.6-1.4-1.4Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="m8.4 3.7.9 1.6m6.3-1.6-.9 1.6"/></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8ZM14.1 5.9c.6-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3Z"/></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 5.6 10.4 4.5v7H3Zm8.6-1.3L21 3v8.5h-9.4ZM3 12.5h7.4v7L3 18.4Zm8.6 0H21V21l-9.4-1.3Z"/></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4.5" width="16" height="11.5" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M2 19.5h20"/><circle cx="12" cy="10.25" r="3.1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10.25" r="1" fill="currentColor"/></svg>
+                    </span>
+                </button>
+            </div>
             <!-- B · Entrada directa a la música -->
             <section class="pt-entry" id="portadaEntry" aria-labelledby="ptEntryTitle" aria-busy="true">
                 <h1 class="pt-sr-only">Segueix Música · La teva plaça musical</h1>
@@ -1000,6 +1018,7 @@
     <script defer src="js/features/my-music.js?v=20261016-caratules"></script>
     <script defer src="js/features/shell-nav.js?v=20260930-portada-1"></script>
     <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
+    <script defer src="js/features/app-install.js?v=20261017-instal-la"></script>
     <script defer src="js/features/nearby-radio.js?v=20261016-mapa-zona"></script>
     <script defer src="js/features/portada.js?v=20261017-sense-rastre"></script>
     <script defer src="js/features/artist-page.js?v=20261017-cataleg"></script>

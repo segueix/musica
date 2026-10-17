@@ -10863,3 +10863,420 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     font-size: 1.25rem;
     font-weight: 700;
 }
+
+/* ==========================================================================
+   «Instal·la l'app» (js/features/app-install.js): botó a dalt a la dreta d'Inici, amb les icones dels aparells, i la
+   finestra amb els passos de cada aparell (penja de <body>: .page té transformació i retalla). El botó no surt si ja
+   s'obre com a app (display-mode: standalone) ni fora de la portada (estils, Descobreix, cerca).
+   ========================================================================== */
+.pt-install {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 12px;
+}
+
+.pt-install[hidden],
+#homePage:not(.is-portada) .pt-install {
+    display: none;
+}
+
+@media (display-mode: standalone), (display-mode: window-controls-overlay) {
+    .pt-install {
+        display: none;
+    }
+}
+
+.pt-install__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    max-width: 100%;
+    padding: 6px 16px 6px 6px;
+    border: 1.5px solid rgba(214, 237, 132, 0.55);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface);
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.pt-install__btn:hover {
+    background: var(--pt-surface-2);
+    border-color: var(--pt-accent);
+}
+
+.pt-install__btn:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+.pt-install__icon {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.pt-install__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.pt-install__copy {
+    display: grid;
+    min-width: 0;
+    line-height: 1.15;
+}
+
+.pt-install__copy strong {
+    font-size: 0.98rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.pt-install__copy small {
+    color: var(--pt-muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.pt-install__devices {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 12px;
+    border-left: 1px solid var(--pt-line);
+    color: var(--pt-text);
+}
+
+.pt-install__devices svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+}
+
+@media (max-width: 380px) {
+    .pt-install__btn {
+        gap: 10px;
+        padding-right: 12px;
+    }
+
+    .pt-install__devices {
+        gap: 6px;
+        padding-left: 10px;
+    }
+
+    .pt-install__devices svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Finestra amb els passos */
+body.ai-open {
+    overflow: hidden;
+}
+
+.ai-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 13500;
+    display: grid;
+    place-items: center;
+    padding: calc(16px + var(--safe-top, 0px)) 16px calc(16px + var(--safe-bottom, 0px));
+    background: rgba(8, 9, 8, 0.72);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.ai-overlay.is-open {
+    opacity: 1;
+}
+
+.ai-dialog {
+    display: flex;
+    flex-direction: column;
+    width: min(560px, 100%);
+    max-height: min(760px, 100%);
+    overflow: hidden;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-lg);
+    background: var(--pt-bg);
+    color: var(--pt-text);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.ai-head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: start;
+    padding: 18px 18px 12px;
+}
+
+.ai-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+}
+
+.ai-title {
+    margin: 2px 0 4px;
+    font-family: var(--pt-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.ai-lead {
+    margin: 0;
+    color: var(--pt-muted);
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.ai-close {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: -6px -6px 0 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--pt-text);
+    cursor: pointer;
+}
+
+.ai-close:hover {
+    background: var(--pt-surface-2);
+}
+
+.ai-close svg {
+    width: 22px;
+    height: 22px;
+}
+
+.ai-devices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0 18px 14px;
+    list-style: none;
+}
+
+.ai-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-surface);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.ai-chip svg {
+    width: 16px;
+    height: 16px;
+}
+
+.ai-chip.is-mine {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.ai-body {
+    display: grid;
+    gap: 14px;
+    padding: 0 18px 16px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.ai-now,
+.ai-share {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 10px 20px;
+    border-radius: var(--pt-radius-pill);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.ai-now {
+    border: 0;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.ai-now svg,
+.ai-share svg {
+    width: 20px;
+    height: 20px;
+}
+
+.ai-mine {
+    padding: 14px 16px;
+    border: 1px solid rgba(214, 237, 132, 0.45);
+    border-radius: var(--pt-radius);
+    background: var(--pt-surface);
+}
+
+.ai-device-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.ai-device-title small {
+    margin-left: 6px;
+    color: var(--pt-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.ai-device-icon {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--pt-surface-2);
+}
+
+.ai-device-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.ai-steps {
+    margin: 0;
+    padding-left: 22px;
+    display: grid;
+    gap: 6px;
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+.ai-note {
+    margin: 8px 0 0;
+    color: var(--pt-muted);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+
+.ai-others {
+    border-top: 1px solid var(--pt-line);
+    padding-top: 10px;
+}
+
+.ai-others > summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.ai-others > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Fletxa del desplegable (amb display: flex el navegador no hi posa el triangle) */
+.ai-others > summary::after {
+    content: '';
+    width: 9px;
+    height: 9px;
+    margin-right: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.18s ease;
+}
+
+.ai-others[open] > summary::after {
+    transform: translateY(2px) rotate(-135deg);
+}
+
+.ai-other-list {
+    display: grid;
+    gap: 16px;
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ai-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    padding: 12px 18px 18px;
+    border-top: 1px solid var(--pt-line);
+}
+
+.ai-share {
+    border: 1.5px solid rgba(244, 240, 232, 0.55);
+    background: transparent;
+    color: var(--pt-text);
+}
+
+.ai-share:hover {
+    background: var(--pt-surface-2);
+}
+
+.ai-foot__note {
+    flex: 1 1 200px;
+    margin: 0;
+    color: var(--pt-muted);
+    font-size: 0.82rem;
+}
+
+/* Mòbil: a pantalla completa, amb la capçalera i el peu fixos */
+@media (max-width: 600px) {
+    .ai-overlay {
+        padding: 0;
+        place-items: stretch;
+    }
+
+    .ai-dialog {
+        width: 100%;
+        max-height: none;
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+        padding-top: var(--safe-top, 0px);
+        padding-bottom: var(--safe-bottom, 0px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ai-overlay {
+        transition: none;
+    }
+}

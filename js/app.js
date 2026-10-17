@@ -398,7 +398,6 @@ function getArchiveVideosForChannel(channelId) {
         .filter(video => video.id && YouTubeAPI.isCatalogVideoAllowed?.(video) !== false);
 }
 let activeSearchRequestId = 0;
-let installPromptEvent = null;
 let swRegistration = null;
 let isSwRefreshing = false;
 let loadingAutoHideTimer = null;
@@ -4941,53 +4940,9 @@ async function initAppUpdater() {
     }
 }
 
+// «Instal·la l'app» (botó a dalt a la dreta d'Inici): js/features/app-install.js
 function initInstallPrompt() {
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        return;
-    }
-
-    window.addEventListener('beforeinstallprompt', event => {
-        event.preventDefault();
-        installPromptEvent = event;
-
-        if (document.querySelector('.install-floating-btn')) {
-            return;
-        }
-
-        const floatingBtn = document.createElement('button');
-        floatingBtn.type = 'button';
-        floatingBtn.className = 'install-floating-btn';
-        floatingBtn.setAttribute('aria-label', 'Install App');
-        floatingBtn.innerHTML = '<i data-lucide="download"></i><span>Install App</span>';
-        document.body.appendChild(floatingBtn);
-
-        refreshIcons(floatingBtn);
-
-        requestAnimationFrame(() => {
-            floatingBtn.classList.add('show');
-        });
-
-        const removeButton = () => {
-            if (!floatingBtn.isConnected) {
-                return;
-            }
-            floatingBtn.classList.remove('show');
-            setTimeout(() => floatingBtn.remove(), 500);
-        };
-
-        const autoHideTimeout = setTimeout(removeButton, 5000);
-
-        floatingBtn.addEventListener('click', () => {
-            clearTimeout(autoHideTimeout);
-            removeButton();
-
-            if (!installPromptEvent) {
-                return;
-            }
-            installPromptEvent.prompt();
-            installPromptEvent = null;
-        });
-    });
+    SegueixApp.features.appInstall?.init?.();
 }
 
 // Inicialitzar modal de colors
