@@ -1983,3 +1983,12 @@ En l’assaig local la tasca màxima baixa de 1.069 a 441 ms i el bloqueig acumu
 **Solució:** regla compartida `js/catalog-policy.js`, agrupació editorial oficial/Tema i atribucions de convidats existents. `scripts/lib/cataleg_public.js` aplica la selecció al paquet estàtic: feed, historial, pool, arxius i cerca; el mateix conjunt genera pàgines, rutes i sitemaps. Les dades mestres no es purguen: permeten recalcular popularitat i conservar revisions. El fitxer d’ocults ja descarregat porta IDs populars i caducitats; evita recuperar cançons excloses des de snapshots o memòria cau antiga sense una petició nova. La validació de publicació comprova que selecció, rutes i dades coincideixen.
 
 **Verificació:** promoció d’una novetat al lloc corresponent, caducitat exacta a l’any, 29 de febrer, exclusió de pujades antigues, agrupació de canals, homònims i directes convidats; fitxa amb/sense novetats, fonts públiques, cerca, ràdios i regeneració després de caducar. Recompte i limitacions a `docs/CATALEG_21_NOVETATS.md`.
+
+
+## 2026-10-17 — Cues d'Actions, publicacions repetides i ingesta diària
+
+Tots els workflows, inclòs el publicador que només llegeix, compartien `music-data-writer`. La cua per defecte conserva una única entrada pendent: una publicació podia substituir una ingesta encara no iniciada. Ara `music-pages` agrupa només desplegaments; els escriptors comparteixen cua amb `queue: max`, sense interrompre ni fer desaparèixer el torn diari per una altra ordre pendent.
+
+S'arxiva l'actualitzador manual duplicat, es concentren les proves de codi a la PR i es conserva la validació de dades abans de la ingesta. Les PR en esborrany passen validació en marcar-les preparades. El publicador consulta commit, URL i `builtAt` del manifest públic abans de construir: mateix commit avui → omet passos cars; dia següent → reconstrueix per caducar novetats; error o ordre manual/reintent → publica. Un únic job continua generant, validant, desplegant i comprovant el paquet.
+
+Es mantenen una passada diària a les 20 h Europe/Madrid, els torns per activitat 1/3/7 dies i els manteniments manuals. No es consulta YouTube ni s'executa Actions per provar-ho. Detall de l'auditoria i límits de la mesura: `docs/ACCIONS_I_QUOTA.md`. Regressions: `scripts/test_workflow_quota.cjs`, `scripts/test_abast_publicacio.cjs`, proves d'activitat, publicació, quota i construcció estàtica.

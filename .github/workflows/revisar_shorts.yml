@@ -7,10 +7,13 @@ on:
 
 concurrency:
   group: music-data-writer
+  queue: max
   cancel-in-progress: false
 
 jobs:
   revisar_i_corregir:
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -18,27 +21,17 @@ jobs:
     steps:
       - name: Checkout del codi
         uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '20'
-
-      - name: Instal·lar dependències
-        run: npm ci
+          node-version: '22'
 
       - name: Executar verificació de Shorts
         run: node scripts/revisar_shorts.js
 
       - name: Fer commit i push dels canvis
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/feed.json data/falsos-shorts.json
-          if git diff --staged --quiet; then
-            echo "Sense canvis a publicar."
-            exit 0
-          fi
-          git commit -m "chore: revisa falsos Shorts"
-          git pull --rebase origin main
-          git push origin HEAD:main
+        run: >-
+          bash scripts/publicar_dades.sh "chore: revisa falsos Shorts" data/feed.json data/falsos-shorts.json

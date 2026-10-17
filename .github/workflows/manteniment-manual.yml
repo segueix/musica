@@ -12,6 +12,7 @@ permissions:
   contents: write
 concurrency:
   group: music-data-writer
+  queue: max
   cancel-in-progress: false
 jobs:
   manteniment:

@@ -15,6 +15,7 @@ on:
 
 concurrency:
   group: music-data-writer
+  queue: max
   cancel-in-progress: false
 
 permissions:
@@ -32,7 +33,6 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
-          cache: npm
       - name: Sincronitza main
         run: git pull --ff-only origin main
       - name: Decideix si correspon actualitzar
@@ -48,18 +48,10 @@ jobs:
           fs.appendFileSync(process.env.GITHUB_OUTPUT, `work=${scope.work}\nrun_api=${scope.runApi}\n`);
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, scope.message + '\n');
           NODE
-      - name: Instal·la dependències una sola vegada
-        if: steps.scope.outputs.work == 'true'
-        run: npm ci
       - name: "Validar base musical"
         if: steps.scope.outputs.work == 'true'
-        run: npm run music:validate
-      - name: Prova el pipeline abans de consultar YouTube
-        if: steps.scope.outputs.work == 'true'
-        run: |
-          node scripts/test_music_content_classifier.js
-          node --test scripts/test_workflow_quota.cjs scripts/test_activitat_musica.cjs
-          npx vitest run tests/cataleg-musical.test.js tests/any-original.test.js tests/music-content-overrides.test.js tests/channel-video-allowlist.test.js tests/canals-revisats.test.js tests/subtitols-castella.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js tests/quota-feed.test.js tests/llancaments-musicals.test.js
+        run: node scripts/validar_artistes_musica.js
+      # Les proves de codi es fan una vegada a la PR; la base real es valida a cada torn.
       - name: Treu les baixes sense API
         if: steps.scope.outputs.work == 'true'
         run: node scripts/purgar_canals_feed.js
@@ -81,7 +73,7 @@ jobs:
       - name: Regenera la cerca i comprova la cobertura
         if: steps.scope.outputs.work == 'true'
         run: |
-          npm run search:index:hybrid:rebuild
+          node scripts/generar_index_cerca.js
           node - <<'NODE'
           const a = require('./data/music-feed-audit.json');
           if (!a.feedChannelCount) throw new Error('El feed no conté cap canal');
