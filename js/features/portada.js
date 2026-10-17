@@ -736,6 +736,8 @@
             state.rendered = true;
             container.removeAttribute('aria-busy');
             updateEntry();
+            // Primera pintada: ara ja es pot veure Inici (fins aquí, l'HTML de mostra quedava amagat)
+            $('homePage')?.classList.remove('is-booting');
             syncRowControls();
             setupStyleSorting();
             return true;

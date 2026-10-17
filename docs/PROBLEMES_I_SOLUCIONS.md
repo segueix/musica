@@ -1,3 +1,13 @@
+## [2026-10-17] - En obrir l'app es veia un instant el disseny antic d'Inici
+
+**Símptoma:** en obrir la web, durant un moment es veia una altra versió d'Inici (la targeta de «La teva ràdio» de la primera vegada, amb els estils per triar, i caixes grises) i després apareixia la bona.
+
+**Causa Arrel:** `index.html` porta un contingut de mostra a `#portadaEntry` i `#videosGrid`. `portada.js` el substitueix quan el feed és a punt (`paint()` és asíncron), de manera que el navegador pintava primer la mostra. Amb la xarxa lenta, durava més.
+
+**Solució Implementada:** `#homePage` arrenca amb `.is-booting` a l'HTML. El CSS (bloc «Inici sense rastre del disseny antic…» al final de `portada.css`) amaga el contingut mentre dura i mostra un requadre de càrrega (`::before`). `paint()` treu la classe a la primera pintada. Si no arribés mai, l'animació `pt-boot-reveal` (5 s) torna a fer visible el contingut. Comprovat amb captures cada 60 ms durant la recàrrega, a 1280 i 390 px. Prova: `tests/inici-sense-rastre.test.js`.
+
+**Trampa:** l'amagatall només s'aplica amb `.is-portada`: si l'app s'obre en un estil (`?estil=Pop`), `syncActiveClass()` treu `is-portada` i no s'amaga res.
+
 ## [2026-10-16] - Mapa: dibuixar una zona mostra els artistes, no engega la ràdio
 
 **Petició:** en seleccionar una zona, que primer surtin els grups a la dreta i que la persona engegui la ràdio quan vulgui.
