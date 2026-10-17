@@ -11594,3 +11594,22 @@ body.ai-open {
         margin-bottom: 8px;
     }
 }
+
+/* ==========================================================================
+   Ràdio i llista que sona: les mateixes cantonades que les caràtules (2026-10-17). La cua (.mq) feia 14 px i la seva
+   capçalera 8–12 px; a l'ordinador (≥ 1025 px) el contenidor de la cua (#playlistQueueContainer) fa scroll i no
+   tenia radi, de manera que en baixar la llista la capçalera fixa quedava amb les cantonades rectes. Tot passa a
+   --pt-radius-cover (8 px), el radi de les caràtules: canvia-ho només en aquesta variable.
+   ========================================================================== */
+body .mq {
+    border-radius: var(--pt-radius-cover);
+}
+
+body .mq .mq-head,
+#watchPage .watch-main > #playlistQueueContainer .mq-head {
+    border-radius: calc(var(--pt-radius-cover) - 1px) calc(var(--pt-radius-cover) - 1px) 0 0;
+}
+
+#playlistQueueContainer {
+    border-radius: var(--pt-radius-cover);
+}
