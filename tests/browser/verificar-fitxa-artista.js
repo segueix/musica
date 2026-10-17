@@ -13,8 +13,9 @@
 //   2) La més escoltada és la cançó amb més visualitzacions; a l'ordinador va al costat de la capçalera.
 //   3) La resta de cançons, per visualitzacions (#2, #3…), en quatre columnes a l'ordinador i una sola al mòbil (una
 //      sota l'altra), totes amb un marc blanc fi, de caràtules quadrades iguals amb el
-//      mínim espai, les dades al damunt (sense el nom del grup al títol), el play i la cua; cap títol de secció,
-//      cap disc, cap cerca, cap text fora de les caràtules.
+//      mínim espai, les dades al damunt (sense el nom del grup al títol), el play i la cua; cap disc, cap cerca, cap
+//      text fora de les caràtules. Només dues capçaleres: «Novetats» (si n'hi ha) i, just després, «Les grans
+//      cançons» amb un separador, que obre la #2 (2026-10-17).
 //   4) La presentació és d'una línia i, si no hi cap, tocar-la la desplega.
 //   5) El play d'una cançó engega una ràdio de l'artista que comença per aquella cançó.
 //   6) La pàgina no es desborda i no hi ha errors de JavaScript.
@@ -168,6 +169,17 @@ const layout = page =>
                 .filter(el => el.offsetParent)
                 .map(el => el.textContent.trim()),
             ranks: songs.map(row => row.querySelector('.ap-card__rank')?.textContent.trim()),
+            hitsSeparated: (() => {
+                const head = document.getElementById('apHitsHead');
+                const first = document.querySelector('#apSongs .ap-card');
+                if (!head || head.hidden || !first) return false;
+                const style = getComputedStyle(head);
+                return (
+                    parseFloat(style.borderTopWidth) >= 1 &&
+                    head.getBoundingClientRect().bottom <= first.getBoundingClientRect().top + 1 &&
+                    first.querySelector('.ap-card__rank')?.textContent.trim() === '#2'
+                );
+            })(),
             columns: new Set(songs.map(row => Math.round(row.getBoundingClientRect().left))).size,
             gap:
                 songs.length > 1
@@ -318,7 +330,19 @@ async function check(browser, width, height, label) {
         info.bestRank === '#1' && info.ranks.every((rank, i) => rank === `#${i + 2}`),
         [info.bestRank, ...info.ranks.slice(0, 5)]
     );
-    ok(`${label}: cap títol de secció`, info.headings.length === 0, info.headings);
+    ok(
+        `${label}: capçaleres: «Novetats» i després «Les grans cançons» (o cap, si no hi ha novetats)`,
+        info.headings.length === 0 ||
+            (info.headings[0] === 'Novetats' && info.headings[1] === 'Les grans cançons' && info.headings.length === 2),
+        info.headings
+    );
+    if (info.headings.length) {
+        ok(
+            `${label}: «Les grans cançons» té separador i va just abans de la #2`,
+            info.hitsSeparated,
+            info.hitsSeparated
+        );
+    }
     ok(`${label}: el nom del grup no surt dins dels títols`, info.titlesWithName.length === 0, info.titlesWithName);
     ok(`${label}: presentació d'una línia`, info.bioLines <= 1, info.bioLines);
     ok(`${label}: sense discos`, info.noAlbums);

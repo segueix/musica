@@ -7,8 +7,10 @@ const require = createRequire(import.meta.url);
 const SegueixSongTitle = require('../js/song-title.js');
 const SegueixCatalogPolicy = require('../js/catalog-policy.js');
 
-const page = loadScript('js/features/artist-page.js', { SegueixCatalogPolicy, SegueixApp: { features: {}, state: {}, utils: {} } }).SegueixApp
-    .features.artistPage;
+const page = loadScript('js/features/artist-page.js', {
+    SegueixCatalogPolicy,
+    SegueixApp: { features: {}, state: {}, utils: {} },
+}).SegueixApp.features.artistPage;
 const html = fs.readFileSync('index.html', 'utf8');
 const css = fs.readFileSync('css/portada.css', 'utf8');
 
@@ -75,7 +77,8 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
     });
 
     it('treu el nom del grup del títol (davant, darrere o entre parèntesis) però mai el deixa buit', () => {
-        const withCleaner = loadScript('js/features/artist-page.js', { SegueixCatalogPolicy,
+        const withCleaner = loadScript('js/features/artist-page.js', {
+            SegueixCatalogPolicy,
             SegueixApp: { features: {}, state: {}, utils: {} },
             SegueixSongTitle,
         }).SegueixApp.features.artistPage;
@@ -169,7 +172,8 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
 
     it('el play d’una cançó engega la ràdio de l’artista que hi comença', () => {
         const calls = [];
-        const ctx = loadScript('js/features/artist-page.js', { SegueixCatalogPolicy,
+        const ctx = loadScript('js/features/artist-page.js', {
+            SegueixCatalogPolicy,
             document: { getElementById: () => null },
             SegueixApp: {
                 state: {},
@@ -218,7 +222,9 @@ describe('fitxa d’artista: HTML i CSS', () => {
     });
 
     it('al costat de la capçalera (a sota al mòbil), la més escoltada; després la graella de cançons', () => {
-        const order = ['id="apHero"', 'id="apBest"', 'id="apRecent"', 'id="apSongs"'].map(item => channelPage.indexOf(item));
+        const order = ['id="apHero"', 'id="apBest"', 'id="apRecent"', 'id="apSongs"'].map(item =>
+            channelPage.indexOf(item)
+        );
         order.forEach(index => expect(index).toBeGreaterThan(-1));
         expect([...order].sort((a, b) => a - b)).toEqual(order);
         expect(css).toMatch(/#channelPage \.ap-head\s*{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/);
@@ -252,14 +258,33 @@ describe('fitxa d’artista: HTML i CSS', () => {
         expect(css).toMatch(/\.channel-profile-description\.is-expandable\s*{[^}]*cursor:\s*pointer/);
     });
 
-    it('fora de les caràtules només hi ha el títol de Novetats, sense cerca ni ajuda', () => {
+    it('de les novetats a les grans cançons: capçaleres i separador', () => {
+        const api = page;
+        const both = api.sectionsModel({ recent: 3, rest: 20 });
+        expect(both.recent).toEqual({ show: true, sub: '3 cançons dels últims 12 mesos' });
+        expect(both.hits).toEqual({ show: true, sub: 'Continuem amb les més escoltades: de la #2 a la #21' });
+        expect(api.sectionsModel({ recent: 1, rest: 1 }).recent.sub).toBe('1 cançó dels últims 12 mesos');
+        expect(api.sectionsModel({ recent: 1, rest: 1 }).hits.sub).toBe('Continuem amb les més escoltades: la #2');
+        // Sense novetats no cal separador: la graella continua la #1
+        expect(api.sectionsModel({ recent: 0, rest: 20 }).hits.show).toBe(false);
+        expect(api.sectionsModel({ recent: 4, rest: 0 }).hits.show).toBe(false);
+        const order = ['id="apRecentTitle"', 'id="apRecentSongs"', 'id="apHitsHead"', 'id="apSongs"'].map(id =>
+            channelPage.indexOf(id)
+        );
+        expect(order.every((at, i) => at > 0 && (i === 0 || at > order[i - 1]))).toBe(true);
+        expect(css).toMatch(/\.ap-section-head--hits \{[^}]*border-top: 1px solid/);
+        expect(css).toMatch(/\.ap-section-head--new \.ap-section-head__icon \{[^}]*background: var\(--pt-accent\)/);
+    });
+
+    it('fora de les caràtules només hi ha les capçaleres de Novetats i «Les grans cançons», sense cerca ni ajuda', () => {
         const hero = channelPage.slice(channelPage.indexOf('id="apHero"'), channelPage.indexOf('id="apBest"'));
         expect(hero).toContain('id="apBio"');
         expect(hero).toContain('id="apUserCats"');
         const after = channelPage.slice(channelPage.indexOf('id="apBest"'));
-        expect(after.match(/<h2\b/g)).toHaveLength(1);
+        expect(after.match(/<h2\b/g)).toHaveLength(2);
         expect(after).toContain('id="apRecentTitle">Novetats</h2>');
-        expect(after).not.toMatch(/<p(?![^>]*ap-songs-empty)[^>]*>/);
+        expect(after).toContain('id="apHitsTitle">Les grans cançons</h2>');
+        expect(after).not.toMatch(/<p\b(?![^>]*ap-songs-empty)[^>]*>/);
         expect(channelPage).not.toContain('type="search"');
         expect(channelPage).not.toMatch(/apShelves|apAlbums|>Discos</);
         expect(css).not.toMatch(/\.ap-album|\.ap-punk|\.ap-shelf/);

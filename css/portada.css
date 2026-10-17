@@ -4042,8 +4042,8 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 /* ---------- Caràtules quadrades amb les dades al damunt, en blanc (2026-10-16) ----------
    La més escoltada (#1) i, a sota, la resta de cançons per visualitzacions: al mòbil una caràtula sota l'altra (una
    columna), a la tauleta (769–1024 px) en tres columnes i a l'ordinador (≥ 1025 px) en quatre, sempre quadrades,
-   iguals i amb el mínim espai; sense títols de
-   secció. Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
+   iguals i amb el mínim espai; només Novetats i «Les grans cançons» tenen capçalera (bloc «de les novetats a les
+   grans cançons», al final). Totes porten un marc blanc fi. Sobre la imatge, tot en blanc i sense fons: el número a dalt a l'esquerra,
    la cua a dalt a la dreta i, a baix, les visualitzacions, el títol, l'any i la durada i el play. Un fosc suau a baix
    perquè el text es llegeixi. Res no es mou ni gira. Cada caràtula és un contenidor: la lletra, els marges i el play
    creixen amb la seva amplada (cqi), sigui d'una columna o de tres. */
@@ -10856,12 +10856,72 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     }
 }
 
-/* Novetats de la fitxa: mateix format de caràtules que les populars. */
+/* Fitxa d'artista: de les novetats a les grans cançons (2026-10-17). Cada bloc té una capçalera amb una icona
+   rodona i una línia que diu què és; «Les grans cançons» (#2–#21) obre amb un separador (línia i més aire) perquè es
+   vegi clarament que s'acaben les novetats i es continua amb les més escoltades. Les caràtules no canvien. */
+#channelPage .ap-section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0 12px;
+}
+
+#channelPage .ap-section-head[hidden] {
+    display: none;
+}
+
+#channelPage .ap-section-head__icon {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#channelPage .ap-section-head__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+#channelPage .ap-section-head__copy {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+}
+
 #channelPage .ap-section-title {
-    margin: 20px 0 12px;
+    margin: 0;
     color: var(--pt-text, #f4f0e8);
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: clamp(1.25rem, 1.05rem + 1vw, 1.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+#channelPage .ap-section-sub {
+    color: var(--pt-muted);
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+/* Novetats: icona llima */
+#channelPage .ap-section-head--new .ap-section-head__icon {
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+/* Les grans cançons: separador i icona de vidre amb vora blanca */
+#channelPage .ap-section-head--hits {
+    margin-top: 34px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(244, 240, 232, 0.28);
+}
+
+#channelPage .ap-section-head--hits .ap-section-head__icon {
+    border: 1.5px solid rgba(244, 240, 232, 0.7);
+    background: rgba(244, 240, 232, 0.06);
+    color: var(--pt-text);
 }
 
 /* ==========================================================================
