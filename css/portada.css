@@ -5158,8 +5158,6 @@ body.drive-mode .dm-info[hidden] {
     display: none !important;
 }
 
-
-
 #channelVideosGrid[hidden] {
     display: none;
 }
@@ -10927,7 +10925,7 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
 /* ==========================================================================
    «Instal·la l'app» (js/features/app-install.js): botó a dalt a la dreta d'Inici, amb les icones dels aparells, i la
    finestra amb els passos de cada aparell (penja de <body>: .page té transformació i retalla). Si ja s'obre com a
-   app (display-mode: standalone) només hi queda «Comparteix»; fora de la portada (estils, Descobreix, cerca), res.
+   app, la guia continua disponible; fora de la portada (estils, Descobreix, cerca), res.
    ========================================================================== */
 .pt-install {
     display: flex;
@@ -10942,30 +10940,8 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
     display: none;
 }
 
-/* Oberta com a app (instal·lada): només «Comparteix», amb el text (2026-10-17: abans s'amagava tot el bloc i dins
-   l'app no es podia compartir) */
-@media (display-mode: standalone), (display-mode: window-controls-overlay) {
-    .pt-install__btn {
-        display: none;
-    }
-}
-
 .pt-install__btn[hidden] {
     display: none;
-}
-
-#ptInstall.is-installed .pt-install__share span {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    white-space: nowrap;
-}
-
-#ptInstall.is-installed .pt-install__share {
-    width: auto;
-    padding: 0 18px;
 }
 
 .pt-install__btn {
@@ -11048,42 +11024,6 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
 }
 
 /* «Comparteix»: al costat, de vidre amb vora blanca (com els botons de capçalera d'Inici) */
-.pt-install__share {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex: none;
-    min-width: 52px;
-    min-height: 52px;
-    padding: 0 18px;
-    border: 1.5px solid rgba(244, 240, 232, 0.55);
-    border-radius: var(--pt-radius-pill);
-    background: rgba(244, 240, 232, 0.06);
-    color: var(--pt-text);
-    font: inherit;
-    font-size: 0.95rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition:
-        background 0.18s ease,
-        border-color 0.18s ease;
-}
-
-.pt-install__share:hover {
-    background: var(--pt-surface-2);
-    border-color: var(--pt-text);
-}
-
-.pt-install__share:focus-visible {
-    outline: 2px solid var(--pt-accent);
-    outline-offset: 3px;
-}
-
-.pt-install__share svg {
-    width: 20px;
-    height: 20px;
-}
 
 /* Mòbil: el botó ocupa la fila; les icones dels aparells van sota el text i «Comparteix» queda en un cercle */
 @media (max-width: 520px) {
@@ -11122,20 +11062,7 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
         height: 16px;
     }
 
-    .pt-install__share {
-        width: 56px;
-        padding: 0;
-        border-radius: var(--pt-radius-pill);
-    }
 
-    .pt-install__share span {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-    }
 }
 
 /* Finestra amb els passos */
@@ -11263,32 +11190,6 @@ body.ai-open {
     overscroll-behavior: contain;
 }
 
-.ai-now,
-.ai-share {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    min-height: 48px;
-    padding: 10px 20px;
-    border-radius: var(--pt-radius-pill);
-    font: inherit;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.ai-now {
-    border: 0;
-    background: var(--pt-accent);
-    color: var(--pt-on-accent);
-}
-
-.ai-now svg,
-.ai-share svg {
-    width: 20px;
-    height: 20px;
-}
-
 .ai-mine {
     padding: 14px 16px;
     border: 1px solid rgba(214, 237, 132, 0.45);
@@ -11348,37 +11249,6 @@ body.ai-open {
     padding-top: 10px;
 }
 
-.ai-others > summary {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none;
-}
-
-.ai-others > summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Fletxa del desplegable (amb display: flex el navegador no hi posa el triangle) */
-.ai-others > summary::after {
-    content: '';
-    width: 9px;
-    height: 9px;
-    margin-right: 6px;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: translateY(-2px) rotate(45deg);
-    transition: transform 0.18s ease;
-}
-
-.ai-others[open] > summary::after {
-    transform: translateY(2px) rotate(-135deg);
-}
-
 .ai-other-list {
     display: grid;
     gap: 16px;
@@ -11394,16 +11264,6 @@ body.ai-open {
     gap: 10px 14px;
     padding: 12px 18px 18px;
     border-top: 1px solid var(--pt-line);
-}
-
-.ai-share {
-    border: 1.5px solid rgba(244, 240, 232, 0.55);
-    background: transparent;
-    color: var(--pt-text);
-}
-
-.ai-share:hover {
-    background: var(--pt-surface-2);
 }
 
 .ai-foot__note {

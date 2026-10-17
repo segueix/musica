@@ -71,16 +71,19 @@ describe('Instal·la l’app: aparell i navegador', () => {
         expect(install.isStandalone({ navigator: { standalone: true } })).toBe(true);
     });
 
-    it('la finestra marca l’aparell i només ofereix «Instal·la ara» si el navegador ho permet', () => {
+    it('la finestra mostra tots els sistemes sense botons de compartir o instal·lar', () => {
         const withPrompt = install.dialogHtml({ os: 'android', browser: 'chrome', canPrompt: true });
-        expect(withPrompt).toContain('data-ai-now');
+        expect(withPrompt).not.toContain('data-ai-now');
         expect(withPrompt).toMatch(/class="ai-chip is-mine">[\s\S]*?Android/);
-        expect(withPrompt).toContain('data-ai-share');
+        expect(withPrompt).not.toContain('data-ai-share');
+        expect(withPrompt).not.toContain('<details');
+        for (const device of install.DEVICES) expect(withPrompt).toContain(device.name);
         const ios = install.dialogHtml({ os: 'ios', browser: 'safari', canPrompt: false });
         expect(ios).not.toContain('data-ai-now');
         expect(ios).toContain('iPhone i iPad');
         const unknown = install.dialogHtml({ os: 'other', browser: 'other', canPrompt: false });
-        expect(unknown).toContain('<details class="ai-others" open>');
+        expect(unknown).toContain('Tria el teu sistema');
+        expect(unknown).not.toContain('<details');
     });
 });
 
@@ -91,26 +94,22 @@ describe('Instal·la l’app: integració', () => {
         expect(button).toBeGreaterThan(home);
         expect(button).toBeLessThan(html.indexOf('id="portadaEntry"'));
         expect(html).toContain("<strong>Instal·la l'app</strong>");
-        expect(html).toContain('Directament o comparteix-la');
+        expect(html).toContain('Com fer-ho en cada sistema');
         expect(html).not.toMatch(/botiga/i);
         expect(fs.readFileSync('js/features/app-install.js', 'utf8')).not.toMatch(/botiga/i);
         expect(html).toContain('aria-label="Per a Android, iPhone, Windows i Chromebook"');
     });
 
-    it('al costat hi ha «Comparteix», que comparteix l’app directament', () => {
-        const share = html.indexOf('id="ptInstallShare"');
-        expect(share).toBeGreaterThan(html.indexOf('id="ptInstallBtn"'));
-        expect(share).toBeLessThan(html.indexOf('id="portadaEntry"'));
-        expect(html).toContain('aria-label="Comparteix l\'app"');
-        expect(fs.readFileSync('js/features/app-install.js', 'utf8')).toContain(
-            "$('ptInstallShare')?.addEventListener('click', shareApp);"
-        );
+    it('elimina Compartir i el botó principal sempre obre la guia', () => {
+        const src = fs.readFileSync('js/features/app-install.js', 'utf8');
+        expect(html).not.toContain('id="ptInstallShare"');
+        expect(src).not.toContain('shareApp');
+        expect(src).toContain("$('ptInstallBtn')?.addEventListener('click', openDialog);");
     });
 
-    it('a la dreta, només a la portada i mai quan ja és instal·lada', () => {
+    it('a la dreta, només a la portada, també dins l’app', () => {
         expect(css).toMatch(/\.pt-install \{[^}]*justify-content: flex-end;/);
         expect(css).toMatch(/#homePage:not\(\.is-portada\) \.pt-install \{[^}]*display: none;/s);
-        expect(css).toContain('@media (display-mode: standalone)');
     });
 
     it('ja no hi ha el botó flotant antic en anglès', () => {
@@ -128,20 +127,10 @@ describe('Instal·la l’app: integració', () => {
 });
 
 describe('Instal·la l’app: oberta com a app instal·lada', () => {
-    it('amaga només «Instal·la l’app»: «Comparteix» continua visible i amb el text', () => {
+    it('manté la guia accessible dins l’app instal·lada', () => {
         const src = fs.readFileSync('js/features/app-install.js', 'utf8');
-        const sync = src.slice(src.indexOf('function syncButton()'), src.indexOf('async function promptInstall'));
-        expect(sync).toContain('wrap.hidden = false;');
-        expect(sync).toContain("wrap.classList.toggle('is-installed', installed);");
-        expect(sync).toContain('install.hidden = installed;');
-        // CSS: en mode app s'amaga el botó d'instal·lar, no tot el bloc
-        expect(css).toMatch(
-            /@media \(display-mode: standalone\), \(display-mode: window-controls-overlay\) \{\s*\.pt-install__btn \{\s*display: none;/
-        );
-        expect(css).not.toMatch(
-            /@media \(display-mode: standalone\), \(display-mode: window-controls-overlay\) \{\s*\.pt-install \{/
-        );
-        expect(css).toMatch(/#ptInstall\.is-installed \.pt-install__share span \{[^}]*position: static;/);
+        expect(src).toContain('install.hidden = false;');
+        expect(css).not.toMatch(/@media \(display-mode: standalone\)[^{]*\{\s*\.pt-install__btn/);
     });
 
     it('la versió nova del service worker esborra les còpies de codi anteriors', () => {
