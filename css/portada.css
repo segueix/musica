@@ -10925,7 +10925,7 @@ body .mq .mq-item:not(.is-active):focus-within .mq-cover {
 /* ==========================================================================
    «Instal·la l'app» (js/features/app-install.js): botó a dalt a la dreta d'Inici, amb les icones dels aparells, i la
    finestra amb els passos de cada aparell (penja de <body>: .page té transformació i retalla). Si ja s'obre com a
-   app, la guia continua disponible; fora de la portada (estils, Descobreix, cerca), res.
+   app, el botó queda amagat; fora de la portada (estils, Descobreix, cerca), res.
    ========================================================================== */
 .pt-install {
     display: flex;
@@ -11482,4 +11482,9 @@ body.ai-open {
         justify-content: center;
         min-width: 0;
     }
+}
+
+/* Evita mostrar el botó mentre arrenca una app ja instal·lada. */
+@media (display-mode: standalone), (display-mode: window-controls-overlay), (display-mode: minimal-ui) {
+    #ptInstall { display: none; }
 }

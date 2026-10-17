@@ -3,7 +3,8 @@
     const app = window.SegueixApp;
     if (!app) return;
 
-    const state = { bound: false, dialog: null, lastFocus: null };
+    const INSTALLED_KEY = 'segueix_music_app_installed';
+    const state = { installed: false, bound: false, dialog: null, lastFocus: null };
 
     const ICONS = {
         android:
@@ -219,13 +220,24 @@
         return window.document?.getElementById(id) || null;
     }
 
-    // La guia també és accessible des de l’app instal·lada.
+    // Recorda la instal·lació també en tornar a obrir el web en aquest navegador.
     function syncButton() {
         const wrap = $('ptInstall');
         if (!wrap) return;
-        wrap.hidden = false;
+        let remembered = false;
+        try {
+            remembered = window.localStorage?.getItem(INSTALLED_KEY) === '1';
+        } catch (_) { /* Emmagatzematge no disponible. */ }
+        const installed = state.installed || isStandalone() || remembered;
+        if (installed) {
+            state.installed = true;
+            try {
+                window.localStorage?.setItem(INSTALLED_KEY, '1');
+            } catch (_) { /* La detecció actual continua funcionant. */ }
+        }
+        wrap.hidden = installed;
         const install = $('ptInstallBtn');
-        if (install) install.hidden = false;
+        if (install) install.hidden = installed;
     }
 
     function onDialogKey(event) {
@@ -298,6 +310,12 @@
         }
         syncButton();
     }
+
+    window.addEventListener?.('appinstalled', () => {
+        state.installed = true;
+        syncButton();
+        closeDialog();
+    });
 
     app.features.appInstall = {
         init,

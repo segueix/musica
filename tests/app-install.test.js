@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
-import { loadScript } from './setup.js';
+import { loadScript, createMockLocalStorage } from './setup.js';
 
 const html = fs.readFileSync('index.html', 'utf8');
 const css = fs.readFileSync('css/portada.css', 'utf8');
@@ -107,7 +107,7 @@ describe('Instal·la l’app: integració', () => {
         expect(src).toContain("$('ptInstallBtn')?.addEventListener('click', openDialog);");
     });
 
-    it('a la dreta, només a la portada, també dins l’app', () => {
+    it('a la dreta, només a la portada', () => {
         expect(css).toMatch(/\.pt-install \{[^}]*justify-content: flex-end;/);
         expect(css).toMatch(/#homePage:not\(\.is-portada\) \.pt-install \{[^}]*display: none;/s);
     });
@@ -127,10 +127,34 @@ describe('Instal·la l’app: integració', () => {
 });
 
 describe('Instal·la l’app: oberta com a app instal·lada', () => {
-    it('manté la guia accessible dins l’app instal·lada', () => {
-        const src = fs.readFileSync('js/features/app-install.js', 'utf8');
-        expect(src).toContain('install.hidden = false;');
-        expect(css).not.toMatch(/@media \(display-mode: standalone\)[^{]*\{\s*\.pt-install__btn/);
+    it('amaga i recorda el botó quan s’obre instal·lada', () => {
+        const storage = createMockLocalStorage();
+        const wrap = {}, button = { addEventListener() {} };
+        const create = standalone => loadScript('js/features/app-install.js', {
+            localStorage: storage,
+            navigator: { standalone },
+            document: { getElementById: id => id === 'ptInstall' ? wrap : button },
+        });
+        create(false).SegueixApp.features.appInstall.init();
+        expect(wrap.hidden).toBe(false);
+        create(true).SegueixApp.features.appInstall.init();
+        expect(wrap.hidden).toBe(true);
+        expect(button.hidden).toBe(true);
+        create(false).SegueixApp.features.appInstall.init();
+        expect(wrap.hidden).toBe(true);
+    });
+
+    it('amaga el botó immediatament en confirmar la instal·lació', () => {
+        const events = {}, wrap = {}, button = { addEventListener() {} };
+        const sandbox = loadScript('js/features/app-install.js', {
+            addEventListener: (name, handler) => { events[name] = handler; },
+            document: { getElementById: id => id === 'ptInstall' ? wrap : button },
+        });
+        sandbox.SegueixApp.features.appInstall.init();
+        expect(wrap.hidden).toBe(false);
+        events.appinstalled();
+        expect(wrap.hidden).toBe(true);
+        expect(sandbox.localStorage.getItem('segueix_music_app_installed')).toBe('1');
     });
 
     it('la versió nova del service worker esborra les còpies de codi anteriors', () => {
