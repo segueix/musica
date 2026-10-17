@@ -1,20 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
-// Pantalla d'espera amb «Música», marca «Segueix! Música» amb «En català» a sota i rajoles de «Tria el teu so» iguals.
+// Marca «Segueix! Música» amb «En català» a sota i rajoles de «Tria el teu so» iguals. La pantalla d'espera
+// (#intro-splash) es va treure de l'HTML per accelerar l'arrencada mòbil (94ce7232): ja no es comprova.
 
 const html = readFileSync('index.html', 'utf8');
 const css = readFileSync('css/portada.css', 'utf8');
 
 describe('marca i rajoles de la portada', () => {
-    it('la pantalla d’espera porta «Música» sota «Segueix!»', () => {
-        const splash = html.slice(html.indexOf('id="intro-splash"'), html.indexOf('</header>'));
-        expect(splash.indexOf('intro-splash-title')).toBeLessThan(
-            splash.indexOf('<p class="intro-splash-brand">Música</p>')
-        );
-        expect(css).toMatch(/\.intro-splash-brand \{[\s\S]*?color: var\(--pt-accent\);/);
-    });
-
     it('la marca és «Segueix! Música» amb «En català» a sota, a l’ordinador i al mòbil', () => {
         const brand = html.slice(
             html.indexOf('<a class="brand"'),

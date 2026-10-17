@@ -42,6 +42,7 @@ describe('programació de TV', () => {
 
     it('inclou el nou controlador al precache del service worker', () => {
         expect(swSource).toContain("'./js/features/tv-programming.js'");
-        expect(swSource).toContain("const CACHE_VERSION = 'e2a40924f7c1'");
+        // La versió la calcula npm run sw:version a partir del contingut (abans s'escrivia a mà)
+        expect(swSource).toMatch(/const CACHE_VERSION = '[0-9a-f]{12}';/);
     });
 });

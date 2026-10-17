@@ -159,7 +159,7 @@ describe('marca', () => {
 
     it('els enllaços de compartició apunten a Segueix Música a GitHub Pages', () => {
         expect(read('js/utils/share-codecs.js')).toContain(
-            "const SHARE_BASE_URL = 'https://segueix.github.io/musica/'"
+            "const SHARE_BASE_URL = window.SEGUEIX_PUBLIC_URL || 'https://segueix.github.io/musica/'"
         );
     });
 

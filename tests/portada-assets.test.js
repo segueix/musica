@@ -138,12 +138,14 @@ describe('index.html de Segueix Música', () => {
 
     it('la navegació té les vistes demanades a escriptori i a mòbil', () => {
         const side = html.slice(html.indexOf('id="sidebar"'), html.indexOf('<!-- Main Content -->'));
-        for (const label of ['Inici', 'Descobreix', 'Artistes', 'La teva música'])
+        for (const label of ['Inici', 'Descobreix', 'Artistes i grups', 'La teva música'])
             expect(side).toContain(`<span>${label}</span>`);
         const bottom = html.slice(html.indexOf('id="ptBottomNav"'), html.indexOf('<!-- Scripts -->'));
         for (const label of ['Inici', 'Descobreix', 'Cerca', 'La teva música'])
             expect(bottom).toContain(`<span>${label}</span>`);
-        expect((bottom.match(/<button /g) || []).length).toBe(4);
+        // Les quatre vistes i, al final, «Estalvi» (mode estalvi de bateria / conducció, #driveModeBtn)
+        expect((bottom.match(/<button /g) || []).length).toBe(5);
+        expect(bottom).toContain('id="driveModeBtn"');
     });
 
     it('no conserva textos de la web general de vídeos', () => {

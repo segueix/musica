@@ -1992,3 +1992,20 @@ Tots els workflows, inclòs el publicador que només llegeix, compartien `music-
 S'arxiva l'actualitzador manual duplicat, es concentren les proves de codi a la PR i es conserva la validació de dades abans de la ingesta. Les PR en esborrany passen validació en marcar-les preparades. El publicador consulta commit, URL i `builtAt` del manifest públic abans de construir: mateix commit avui → omet passos cars; dia següent → reconstrueix per caducar novetats; error o ordre manual/reintent → publica. Un únic job continua generant, validant, desplegant i comprovant el paquet.
 
 Es mantenen una passada diària a les 20 h Europe/Madrid, els torns per activitat 1/3/7 dies i els manteniments manuals. No es consulta YouTube ni s'executa Actions per provar-ho. Detall de l'auditoria i límits de la mesura: `docs/ACCIONS_I_QUOTA.md`. Regressions: `scripts/test_workflow_quota.cjs`, `scripts/test_abast_publicacio.cjs`, proves d'activitat, publicació, quota i construcció estàtica.
+
+## [2026-10-17] - La ràdio trigava mig segon a triar-se (i les proves del motor fallaven per temps)
+**Símptoma:** `tests/music-selection.test.js` («simulació sobre el catàleg real») fallava: cada cua trigava ~410–550 ms (límit 250 ms) i tres simulacions superaven el temps màxim. Al mòbil, engegar una ràdio era sensiblement més lent que abans.
+
+**Causa Arrel:** amb «artista primer» (`artistFirst`, el camí de `selectRadio()`), `runSelection()` tornava a repassar **totes** les candidates retallades (~3.450 del catàleg de 6.600 cançons) a **cada** cançó triada (~40 per cua): comprovava els límits de cadascuna, les agrupava per artista (Map, tres Set i un objecte per candidata) i ordenava els ~400 grups amb `localeCompare`. El catàleg ha crescut i el cost hi és proporcional.
+
+**Solució Implementada:** a `runSelection()`, només al camí «artista primer» sense `lookahead` ni `keepAll`:
+- Els grups d'artista es fan **una vegada** abans del bucle (`staticGroups`, ordenats amb un sol `Intl.Collator`, que dona el mateix ordre que `localeCompare`).
+- El que no canvia durant la tria es calcula una vegada per candidata (descans per nivell, `cooled[li]`), i les repetides (mateix id, obra o gravació: les regles de `usedIds` / `usedWork` / `usedIndex`) es **marquen en triar** (`markUsed()`, amb índexs per id, obra i `recording`) en lloc de tornar-ho a comprovar per a totes.
+- Els límits d'artista (finestra, separació) es miren una vegada per grup, i cada grup es **reutilitza** si no ha canviat (mateix nivell, mateix permís d'antigues i cap cançó seva descartada: `sg.version`).
+- Llistes curtes en lloc de `Set` per a èpoques, familiaritat i estils de cada grup (mateix ordre d'inserció).
+
+Resultat **idèntic**: 100 cues (quatre modes, 12 llavors, amb i sense senyals, i ràdios de dos estils) comparades amb el codi anterior, byte a byte. Temps per cua: ~548 → ~190 ms en aquest entorn.
+
+**Trampes:** no tornis a agrupar ni filtrar totes les candidates dins del bucle de cada cançó. Una restricció nova que depengui de la cua s'ha d'aplicar al camí estàtic (marcant-la en triar o per grup) **i** al camí general (`allowed()`), o els resultats divergiran. Si canvies l'ordre de les candidates o dels grups, canvia el sorteig (l'`rng` es consumeix en l'ordre dels grups).
+
+**Fitxers Afectats:** `js/features/music-selection.js`, `sw.js`.

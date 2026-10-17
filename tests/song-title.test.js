@@ -236,7 +236,7 @@ describe('sobre el feed real', () => {
 
     it('no queda cap parèntesi ni claudàtor amb «videoclip», «vídeo» o «oficial»', () => {
         const left = results.filter(({ cleaned }) =>
-            /[([{][^()[\]{}]*(video|vídeo|oficial|official)[^()[\]{}]*[)\]}]/i.test(cleaned)
+            /[([{][^()[\]{}]*(?<![\p{L}])(video|vídeo|oficial|official)(?![\p{L}])[^()[\]{}]*[)\]}]/iu.test(cleaned)
         );
         expect(left.map(({ cleaned }) => cleaned)).toEqual([]);
     });

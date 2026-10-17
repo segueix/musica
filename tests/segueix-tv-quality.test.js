@@ -38,7 +38,8 @@ describe('qualitat i seqüenciació de Segueix TV', () => {
         expect(source).toContain('pickedChannels.has(choice.id)');
     });
 
-    it('força una nova versió del cache estàtic', () => {
-        expect(swSource).toContain("const CACHE_VERSION = 'tvq20260924a1'");
+    // La versió del cache ja no s'escriu a mà: la calcula npm run sw:version a partir del contingut dels fitxers.
+    it('el cache estàtic té una versió calculada pel contingut', () => {
+        expect(swSource).toMatch(/const CACHE_VERSION = '[0-9a-f]{12}';/);
     });
 });
