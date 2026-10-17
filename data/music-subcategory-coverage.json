@@ -94,11 +94,10 @@
         "pop-rock",
         "indie-rock"
       ],
-      "artistCount": 2,
+      "artistCount": 1,
       "nucleus": false,
       "artists": [
-        "Joan Colomo",
-        "La Ludwig Band"
+        "Joan Colomo"
       ]
     },
     {
@@ -106,7 +105,7 @@
       "label": "Rock — pendent d’afinar",
       "category": "Rock",
       "neighbours": [],
-      "artistCount": 26,
+      "artistCount": 38,
       "nucleus": true,
       "artists": [
         "Aspencat",
@@ -117,10 +116,15 @@
         "Derbi Junior",
         "Els Bourbons",
         "Exili a Elba",
+        "Gossos",
+        "Hey Zuri",
+        "Ja t'ho diré",
         "Karda Fàstik",
         "Kitsch",
+        "La Ludwig Band",
         "La Madam",
         "La Tour de Carol",
+        "Lax'n'Busto",
         "Lo Maquini",
         "Obeses",
         "Ocults",
@@ -128,11 +132,18 @@
         "Pastorets Rock",
         "Pla Moguda",
         "Raydibaum",
+        "Sau",
         "Sidonie",
         "Smoking Souls",
+        "Sodi",
+        "Sopa de Cabra",
         "Tancat per defunció",
+        "Tardor",
+        "Teràpia de Shock",
         "The Demencials",
         "Tomeu Penya",
+        "Umpah-Pah",
+        "Whiskyn's",
         "Xucu-pà",
         "Ypnosi"
       ]
@@ -527,11 +538,10 @@
         "electronica-pop",
         "urban-pop"
       ],
-      "artistCount": 12,
+      "artistCount": 11,
       "nucleus": true,
       "artists": [
         "Daveu",
-        "Doctor Prats",
         "En Rick",
         "Gavina.mp3",
         "Julieta",
@@ -554,10 +564,9 @@
         "indie-pop",
         "pop-folk"
       ],
-      "artistCount": 13,
+      "artistCount": 12,
       "nucleus": true,
       "artists": [
-        "Al·lèrgiques al Pol·len",
         "Celobert",
         "Cloe Riembau",
         "Cristina Monllau",
@@ -584,11 +593,9 @@
         "pop-indie",
         "indie-pop"
       ],
-      "artistCount": 5,
-      "nucleus": true,
+      "artistCount": 3,
+      "nucleus": false,
       "artists": [
-        "Antònia Font",
-        "Els Amics de les Arts",
         "Ginestà",
         "Júlia Colom",
         "Pepet i Marieta"
@@ -602,34 +609,13 @@
         "rock-pop",
         "indie-rock"
       ],
-      "artistCount": 25,
-      "nucleus": true,
+      "artistCount": 4,
+      "nucleus": false,
       "artists": [
-        "Bèrnia",
-        "Buhos",
-        "Duble Buble",
-        "Els Detectors",
-        "Els Pets",
-        "Gossos",
-        "Hey Zuri",
-        "Ja t'ho diré",
-        "Joan Masdéu",
         "La Fúmiga",
-        "Lax'n'Busto",
-        "Mai Halis",
-        "N'Gai N'Gai",
-        "Nyandú",
         "Pau Vallvé Navarro",
         "Renaldo & Clara",
-        "Sau",
-        "Sodi",
-        "Sopa de Cabra",
-        "Stay Homas",
-        "Tardor",
-        "Teràpia de Shock",
-        "Triquell",
-        "Umpah-Pah",
-        "Whiskyn's"
+        "Stay Homas"
       ]
     },
     {
@@ -637,20 +623,29 @@
       "label": "Pop — pendent d’afinar",
       "category": "Pop",
       "neighbours": [],
-      "artistCount": 39,
+      "artistCount": 53,
       "nucleus": true,
       "artists": [
         "Alfred Garcia",
+        "Al·lèrgiques al Pol·len",
         "Anna Andreu",
+        "Antònia Font",
         "Ariox",
         "Au Rora",
         "Ayryn",
+        "Bèrnia",
         "Blaumut",
+        "Buhos",
         "Ceaxe",
         "dani6ix & IZZKID",
+        "Doctor Prats",
+        "Duble Buble",
         "El Petit de Cal Eril",
         "Elo",
+        "Els Amics de les Arts",
         "Els Catarres",
+        "Els Detectors",
+        "Els Pets",
         "enMatu",
         "Esther Querol Forner",
         "Fades",
@@ -659,13 +654,17 @@
         "Guillem Gisbert i Puig",
         "Gusset",
         "Joan Dausà",
+        "Joan Masdéu",
         "Jofre Bardagí Grima",
         "Lal'ba",
+        "Mai Halis",
         "Maig",
         "Mariona Escoda i Sendra",
         "Miki Núñez",
         "miquel",
+        "N'Gai N'Gai",
         "Naina",
+        "Nyandú",
         "okdw",
         "Oques Grasses",
         "Pol Bordas",
@@ -678,6 +677,7 @@
         "Siderland",
         "Suu",
         "The Tyets",
+        "Triquell",
         "Xicu"
       ]
     },
@@ -1469,8 +1469,8 @@
     {
       "artist": "Al·lèrgiques al Pol·len",
       "category": "Pop",
-      "subcategory": "pop-indie",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q117714888"
       ]
@@ -1582,8 +1582,8 @@
     {
       "artist": "Antònia Font",
       "category": "Pop",
-      "subcategory": "pop-folk",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q2733436"
       ]
@@ -1780,8 +1780,8 @@
     {
       "artist": "Bèrnia",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
       ]
@@ -1906,8 +1906,8 @@
     {
       "artist": "Buhos",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q3354889"
       ]
@@ -2150,8 +2150,8 @@
     {
       "artist": "Doctor Prats",
       "category": "Pop",
-      "subcategory": "pop-electronic",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q24074759"
       ]
@@ -2168,8 +2168,8 @@
     {
       "artist": "Duble Buble",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q11917802"
       ]
@@ -2280,8 +2280,8 @@
     {
       "artist": "Els Amics de les Arts",
       "category": "Pop",
-      "subcategory": "pop-folk",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q3324333"
       ]
@@ -2316,8 +2316,8 @@
     {
       "artist": "Els Detectors",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UCXgOGaZ8NyliSq0XjPt-iPA"
       ]
@@ -2334,8 +2334,8 @@
     {
       "artist": "Els Pets",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q1333372"
       ]
@@ -2707,9 +2707,9 @@
     },
     {
       "artist": "Gossos",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q3315896"
       ]
@@ -2845,9 +2845,9 @@
     },
     {
       "artist": "Hey Zuri",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
       ]
@@ -2882,9 +2882,9 @@
     },
     {
       "artist": "Ja t'ho diré",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire"
       ]
@@ -2955,8 +2955,8 @@
     {
       "artist": "Joan Masdéu",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.joanmasdeu.com/"
       ]
@@ -3195,8 +3195,8 @@
     {
       "artist": "La Ludwig Band",
       "category": "Rock",
-      "subcategory": "rock-pop",
-      "basis": "documented-tags",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q109441792"
       ]
@@ -3317,9 +3317,9 @@
     },
     {
       "artist": "Lax'n'Busto",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q3075731"
       ]
@@ -3446,8 +3446,8 @@
     {
       "artist": "Mai Halis",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
       ]
@@ -3768,8 +3768,8 @@
     {
       "artist": "N'Gai N'Gai",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/disc/7879/roll"
       ]
@@ -3806,11 +3806,9 @@
     {
       "artist": "Nyandú",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
-      "sources": [
-        "data/artistes-musica.json"
-      ]
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": []
     },
     {
       "artist": "Obeses",
@@ -4400,9 +4398,9 @@
     },
     {
       "artist": "Sau",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q2786919"
       ]
@@ -4537,9 +4535,9 @@
     },
     {
       "artist": "Sodi",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.fim.cat/artistes/sodi/"
       ]
@@ -4557,9 +4555,9 @@
     },
     {
       "artist": "Sopa de Cabra",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q3752591"
       ]
@@ -4639,9 +4637,9 @@
     },
     {
       "artist": "Tardor",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://tardor.band/",
         "https://www.pro21cultural.com/project/tardor/",
@@ -4669,9 +4667,9 @@
     },
     {
       "artist": "Teràpia de Shock",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://terapiadeshock.cat/"
       ]
@@ -4804,8 +4802,8 @@
     {
       "artist": "Triquell",
       "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q112663470"
       ]
@@ -4848,9 +4846,9 @@
     },
     {
       "artist": "Umpah-Pah",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
       ]
@@ -4981,9 +4979,9 @@
     },
     {
       "artist": "Whiskyn's",
-      "category": "Pop",
-      "subcategory": "pop-rock",
-      "basis": "documented-tags",
+      "category": "Rock",
+      "subcategory": "rock-general",
+      "basis": "category-fallback",
       "sources": [
         "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/"
       ]

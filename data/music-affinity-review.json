@@ -264,19 +264,17 @@
     {
       "artist": "Hey Zuri",
       "genres": [
-        "Pop",
         "Rock"
       ],
       "facets": [
-        "pop",
         "rock"
       ],
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Ia & Batiste",
@@ -300,19 +298,17 @@
     {
       "artist": "Ja t'ho diré",
       "genres": [
-        "Pop",
         "Rock"
       ],
       "facets": [
-        "pop",
         "rock"
       ],
       "sources": [
         "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "knocKouts",
@@ -349,19 +345,17 @@
     {
       "artist": "Mai Halis",
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "facets": [
-        "pop",
-        "rock"
+        "pop"
       ],
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Malson Atmosfèric",
@@ -414,19 +408,17 @@
     {
       "artist": "N'Gai N'Gai",
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "facets": [
-        "pop",
-        "rock"
+        "pop"
       ],
       "sources": [
         "https://www.enderrock.cat/disc/7879/roll"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Ocults",
@@ -639,21 +631,19 @@
     {
       "artist": "Sodi",
       "genres": [
-        "Pop",
         "Rock",
         "Indie / Alternativa"
       ],
       "facets": [
-        "pop",
         "rock",
         "indie-rock"
       ],
       "sources": [
         "https://www.fim.cat/artistes/sodi/"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Solk",
@@ -796,19 +786,17 @@
     {
       "artist": "Umpah-Pah",
       "genres": [
-        "Pop",
         "Rock"
       ],
       "facets": [
-        "pop",
         "rock"
       ],
       "sources": [
         "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Urbàlia Rurana",
@@ -897,19 +885,17 @@
     {
       "artist": "Whiskyn's",
       "genres": [
-        "Pop",
         "Rock"
       ],
       "facets": [
-        "pop",
         "rock"
       ],
       "sources": [
         "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/"
       ],
-      "reviewedAt": "2026-10-13",
+      "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Àlex Blat",
@@ -1021,11 +1007,9 @@
     {
       "artist": "Tardor",
       "genres": [
-        "Pop",
         "Rock"
       ],
       "facets": [
-        "pop",
         "rock"
       ],
       "sources": [
@@ -1034,9 +1018,9 @@
         "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
         "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
       ],
-      "reviewedAt": "2026-10-13",
-      "confidence": 0.55,
-      "method": "restored-from-documented-catalog"
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
     },
     {
       "artist": "Xiomara Abello",
@@ -1511,6 +1495,305 @@
       "reviewedAt": "2026-10-14",
       "confidence": 0.85,
       "method": "source-review"
+    },
+    {
+      "artist": "Al·lèrgiques al Pol·len",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q117714888"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Antònia Font",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2733436"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Bèrnia",
+      "sources": [
+        "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Buhos",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3354889"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Doctor Prats",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q24074759"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Duble Buble",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q11917802"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Els Amics de les Arts",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3324333"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Els Catarres",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3774740"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Els Detectors",
+      "sources": [
+        "https://www.youtube.com/channel/UCXgOGaZ8NyliSq0XjPt-iPA"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Els Pets",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1333372"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Joan Masdéu",
+      "sources": [
+        "https://www.joanmasdeu.com/"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Nyandú",
+      "sources": [],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Sexenni",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q118593752"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Triquell",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q112663470"
+      ],
+      "facets": [
+        "pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Gossos",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3315896"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Lax'n'Busto",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3075731"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Sau",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q2786919"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Sopa de Cabra",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q3752591"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "Teràpia de Shock",
+      "sources": [
+        "https://terapiadeshock.cat/"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "La Ludwig Band",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q109441792"
+      ],
+      "facets": [
+        "rock"
+      ],
+      "genres": [
+        "Rock",
+        "Folk i arrel"
+      ],
+      "reviewedAt": "2026-10-17",
+      "confidence": 0.7,
+      "method": "editorial-predominant-pop-rock"
     }
   ],
   "relations": [

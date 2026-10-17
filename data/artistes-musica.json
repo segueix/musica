@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T15:26:47Z",
+  "updatedAt": "2026-10-17T15:30:23Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -1325,8 +1325,7 @@
       "name": "Al·lèrgiques al Pol·len",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -1359,7 +1358,8 @@
         "https://www.wikidata.org/wiki/Q117714888",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -1386,6 +1386,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -2272,8 +2279,7 @@
       "name": "Antònia Font",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -2306,7 +2312,8 @@
         "https://www.wikidata.org/wiki/Q2733436",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -2337,6 +2344,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -4018,8 +4032,7 @@
       "name": "Bèrnia",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -4053,7 +4066,8 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-28T15:55:20.040Z",
       "notes": "Classificat al Sona9 2026 com a mestissatge pop.",
@@ -4074,6 +4088,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -5410,8 +5431,7 @@
       "name": "Buhos",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -5444,7 +5464,8 @@
         "https://www.wikidata.org/wiki/Q3354889",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -5477,6 +5498,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -7988,8 +8016,7 @@
       "name": "Doctor Prats",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -8022,7 +8049,8 @@
         "https://www.wikidata.org/wiki/Q24074759",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -8055,6 +8083,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -8190,8 +8225,7 @@
       "name": "Duble Buble",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -8263,7 +8297,9 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
         "manual-user-2026-09-29",
-        "youtube:manual-verified"
+        "youtube:manual-verified",
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:23:49.445Z",
       "notes": "",
@@ -8303,7 +8339,14 @@
       "genresRaw": [
         "pop-rock",
         "pop"
-      ]
+      ],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Dusminguet",
@@ -9404,8 +9447,7 @@
       "name": "Els Amics de les Arts",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -9439,7 +9481,8 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -9477,6 +9520,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -9640,8 +9690,7 @@
       "name": "Els Catarres",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -9675,7 +9724,8 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -9700,6 +9750,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -9708,8 +9765,7 @@
         "Detectors"
       ],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -9735,7 +9791,8 @@
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "https://www.youtube.com/channel/UCXgOGaZ8NyliSq0XjPt-iPA"
+        "https://www.youtube.com/channel/UCXgOGaZ8NyliSq0XjPt-iPA",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-10-07T17:31:16.271Z",
       "notes": "Canal verificat directament. Selecció inicial de cançons en català; resta pendent de revisió.",
@@ -9756,6 +9813,13 @@
           "status": "sense-dades",
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -9920,8 +9984,7 @@
       "name": "Els Pets",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -9952,7 +10015,8 @@
         "youtube:manual-verified",
         "manual-user-2026-09-30",
         "manual-user-2026-10-11",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-10-11T22:10:00.000Z",
       "notes": "Selecció expressa de l’editor: només els llançaments indicats del canal @阿亚伊奥. Nou llançaments verificats, 118 pistes. Pendents dels enllaços: 40 (Remasteritzada 2025), Bondia i Agost. Icona: Bon dia.",
@@ -9990,7 +10054,14 @@
       },
       "genresRaw": [
         "pop-rock"
-      ]
+      ],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Emili Vendrell i Coutier",
@@ -13119,7 +13190,6 @@
       "name": "Gossos",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -13153,7 +13223,8 @@
         "https://www.wikidata.org/wiki/Q3315896",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -13186,6 +13257,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -14420,7 +14498,6 @@
       "name": "Hey Zuri",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -14447,7 +14524,8 @@
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-28T15:55:19.975Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
@@ -14470,10 +14548,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "restored-from-documented-catalog",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -14871,7 +14949,6 @@
       "name": "Ja t'ho diré",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -14899,7 +14976,8 @@
         "manual-user-2026-09-29",
         "youtube:manual-verified",
         "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:23:49.623Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -14922,10 +15000,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "source-review",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://www.enciclopedia.cat/gran-enciclopedia-catalana/ja-tho-dire"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -15671,8 +15749,7 @@
         "Joan Masdeu"
       ],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -15753,7 +15830,8 @@
         "manual-user-2026-10-07",
         "genre:manual",
         "https://www.joanmasdeu.com/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-10-07T16:00:26.789Z",
       "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
@@ -15782,7 +15860,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Joan Miquel Oliver",
@@ -18932,7 +19017,8 @@
         "https://www.wikidata.org/wiki/Q109441792",
         "wikidata:performed-catalan-work",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -18959,6 +19045,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -20069,7 +20162,6 @@
       "name": "Lax'n'Busto",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -20141,7 +20233,9 @@
         "wikidata:languages-spoken-catalan",
         "wikidata:performed-catalan-work",
         "manual-user-2026-09-29",
-        "youtube:api-candidate-verified"
+        "youtube:api-candidate-verified",
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:25:49.832Z",
       "notes": "",
@@ -20183,7 +20277,14 @@
       "genresRaw": [
         "pop-rock",
         "rock"
-      ]
+      ],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "wikidataId": null,
@@ -21424,8 +21525,7 @@
       "name": "Mai Halis",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -21459,7 +21559,8 @@
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026",
         "youtube:manual-verified",
         "manual-user-2026-10-02",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-28T15:55:20.258Z",
       "notes": "Classificat al Sona9 2026 com a pop-rock.",
@@ -21482,10 +21583,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "restored-from-documented-catalog",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -24854,8 +24955,7 @@
       "name": "N'Gai N'Gai",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -24882,7 +24982,8 @@
         "manual-user-2026-09-29",
         "youtube:manual-verified",
         "https://www.enderrock.cat/disc/7879/roll",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:23:49.878Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -24905,10 +25006,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "source-review",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://www.enderrock.cat/disc/7879/roll"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -25363,8 +25464,7 @@
       "displayName": "Nyandú",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -25430,7 +25530,8 @@
       "sources": [
         "manual-user-2026-10-07",
         "genre:manual",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-10-07T16:16:01.523Z",
       "notes": "Alta manual 2026-10-07. Canal identificat per cerca dirigida; filtre musical i d’idioma habitual.",
@@ -25459,7 +25560,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Obeses",
@@ -32019,7 +32127,6 @@
       "name": "Sau",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -32090,7 +32197,9 @@
         "https://www.wikidata.org/wiki/Q2786919",
         "wikidata:performed-catalan-work",
         "manual-user-2026-09-29",
-        "youtube:api-candidate-verified"
+        "youtube:api-candidate-verified",
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:25:49.833Z",
       "notes": "",
@@ -32128,7 +32237,14 @@
       },
       "genresRaw": [
         "pop-rock"
-      ]
+      ],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Scorpio",
@@ -32539,8 +32655,7 @@
       "name": "Sexenni",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -32565,7 +32680,8 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q118593752",
         "wikidata:performed-catalan-work",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -32592,6 +32708,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -33171,7 +33294,6 @@
       "name": "Sodi",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock",
         "Indie / Alternativa"
       ],
@@ -33208,7 +33330,8 @@
         "youtube:manual-verified",
         "manual-user-2026-10-02",
         "https://www.fim.cat/artistes/sodi/",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-28T15:55:19.594Z",
       "notes": "Guanyador de premis Sona9 2025; debut discogràfic 2026.",
@@ -33231,10 +33354,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "source-review",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://www.fim.cat/artistes/sodi/"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -33355,7 +33478,6 @@
       "name": "Sopa de Cabra",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -33388,7 +33510,9 @@
       "sources": [
         "https://www.wikidata.org/wiki/Q3752591",
         "wikidata:performed-catalan-work",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T15:44:05.402Z",
       "notes": "",
@@ -33417,6 +33541,13 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      },
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
       }
     },
     {
@@ -34126,7 +34257,8 @@
         "https://www.pro21cultural.com/project/tardor/",
         "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
         "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "youtube": {
         "channels": [
@@ -34149,7 +34281,6 @@
       "name": "Tardor",
       "displayName": "Tardor",
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [
@@ -34182,13 +34313,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "restored-from-documented-catalog",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://tardor.band/",
-          "https://www.pro21cultural.com/project/tardor/",
-          "https://www.enderrock.cat/noticia/23805/mural-sonor-pais-valencia-canta",
-          "https://www.enderrock.cat/noticia/30622/canco-tardor-es-canta-ara-quatre-llengues-europees-minoritzades"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -34367,7 +34495,6 @@
         "Terapia de Shock"
       ],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -34454,7 +34581,8 @@
         "manual-user-2026-10-07",
         "genre:manual",
         "https://terapiadeshock.cat/",
-        "youtube:targeted-search-verified"
+        "youtube:targeted-search-verified",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-10-07T16:00:26.789Z",
       "notes": "Alta sol·licitada per l’usuari el 2026-10-07. Canals verificats amb cerca dirigida i fonts de l’artista; s’exclouen homònims i canals de segells compartits.",
@@ -34483,7 +34611,14 @@
           "wikidataWorkEvidence": []
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Teresa Rebull",
@@ -36010,8 +36145,7 @@
       "name": "Triquell",
       "aliases": [],
       "genres": [
-        "Pop",
-        "Rock"
+        "Pop"
       ],
       "territories": [],
       "languages": [
@@ -36055,7 +36189,8 @@
         "musicbrainz:youtube-candidate",
         "youtube:channels-list",
         "genre:manual",
-        "manual-user-2026-10-02"
+        "manual-user-2026-10-02",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-25T16:21:19.009Z",
       "notes": "",
@@ -36083,7 +36218,14 @@
           "musicbrainzReleaseGroupCount": 12
         }
       },
-      "genresRaw": []
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
+        "sources": [
+          "docs/revisions/2026-10-17-pop-rock.json"
+        ]
+      }
     },
     {
       "name": "Txarango",
@@ -36366,7 +36508,6 @@
       "name": "Umpah-Pah",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -36394,7 +36535,8 @@
         "manual-user-2026-09-29",
         "youtube:manual-verified",
         "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:23:50.137Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -36418,10 +36560,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "source-review",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://bibliotecavirtual.diba.cat/ca/musica/adria-punti"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
@@ -37484,7 +37626,6 @@
       "name": "Whiskyn's",
       "aliases": [],
       "genres": [
-        "Pop",
         "Rock"
       ],
       "territories": [],
@@ -37512,7 +37653,8 @@
         "manual-user-2026-09-29",
         "youtube:manual-verified",
         "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-17"
       ],
       "lastChecked": "2026-09-29T11:23:50.221Z",
       "notes": "Afegit manualment a partir del llistat verificat de YouTube.",
@@ -37535,10 +37677,10 @@
         }
       },
       "genreReview": {
-        "reviewedAt": "2026-10-13",
-        "method": "source-review",
+        "reviewedAt": "2026-10-17",
+        "method": "editorial-predominant-pop-rock",
         "sources": [
-          "https://25rockcatala.wordpress.com/2016/05/01/whiskyns/"
+          "docs/revisions/2026-10-17-pop-rock.json"
         ]
       }
     },
