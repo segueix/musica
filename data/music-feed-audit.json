@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-17T18:16:22.373Z",
+  "generatedAt": "2026-10-17T18:46:36.329Z",
   "polling": {
-    "requested": 6,
-    "deferred": 655,
+    "requested": 3,
+    "deferred": 659,
     "failed": 0
   },
   "retainedVideoCount": 0,
@@ -11,8 +11,8 @@
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 368,
-  "governedChannelCount": 124,
+  "topicChannelCount": 370,
+  "governedChannelCount": 123,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -2532,6 +2532,13 @@
       "withClip": 7
     },
     {
+      "id": "UCJzTwDykoSI4dHbCAg1XGQQ",
+      "name": "Gerard Jacquet",
+      "tracks": 25,
+      "selected": 22,
+      "withClip": 0
+    },
+    {
       "id": "UCFI6QGe27kctP5lGeugsrhA",
       "name": "Germà Negre",
       "tracks": 49,
@@ -2725,6 +2732,13 @@
       "name": "Joan Miquel Oliver",
       "tracks": 171,
       "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UCPFO4vAR9pm9cI8RS8f5SLw",
+      "name": "Joan-Pau Giné",
+      "tracks": 24,
+      "selected": 20,
       "withClip": 0
     },
     {
@@ -3463,6 +3477,13 @@
       "withClip": 26
     },
     {
+      "id": "UC3R_sFdfopHQUwREiqpOuRQ",
+      "name": "Pere Figueres",
+      "tracks": 28,
+      "selected": 21,
+      "withClip": 0
+    },
+    {
       "id": "UCYECw-23usgJzg1MnHRFFQQ",
       "name": "Pere Tapias",
       "tracks": 127,
@@ -4178,31 +4199,31 @@
     }
   ],
   "indexedChannelCount": 662,
-  "resolvedChannelCount": 659,
-  "feedChannelCount": 659,
-  "rawPublicVideoCount": 7382,
-  "feedVideoCount": 6811,
-  "acceptedMusicCount": 6765,
-  "categoryEligibleVideoCount": 6761,
+  "resolvedChannelCount": 662,
+  "feedChannelCount": 662,
+  "rawPublicVideoCount": 7310,
+  "feedVideoCount": 6725,
+  "acceptedMusicCount": 6694,
+  "categoryEligibleVideoCount": 6690,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 4,
+    "before": 0,
     "matched": 0,
-    "rejected": 4
+    "rejected": 0
   },
   "contentReviewCount": 580,
   "contentTypeCounts": {
-    "song": 6566,
-    "live_song": 195,
+    "song": 6509,
+    "live_song": 181,
     "album": 4,
-    "other": 37,
+    "other": 36,
     "review": 580
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
-  "allIndexedChannelsVisible": false,
-  "publishedFeedVideoCount": 6673,
+  "allIndexedChannelsVisible": true,
+  "publishedFeedVideoCount": 6708,
   "publishedShortVideoCount": 0
 }

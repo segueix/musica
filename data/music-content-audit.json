@@ -1,34 +1,26 @@
 {
-  "generatedAt": "2026-10-17T18:16:22.373Z",
-  "rawPublicVideoCount": 7382,
-  "feedVideoCount": 6811,
-  "acceptedMusicCount": 6765,
-  "categoryEligibleVideoCount": 6761,
+  "generatedAt": "2026-10-17T18:46:36.329Z",
+  "rawPublicVideoCount": 7310,
+  "feedVideoCount": 6725,
+  "acceptedMusicCount": 6694,
+  "categoryEligibleVideoCount": 6690,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 4,
+    "before": 0,
     "matched": 0,
-    "rejected": 4
+    "rejected": 0
   },
-  "rejectedOrReviewCount": 617,
+  "rejectedOrReviewCount": 616,
   "reviewCount": 580,
   "typeCounts": {
-    "song": 6566,
-    "live_song": 195,
+    "song": 6509,
+    "live_song": 181,
     "album": 4,
-    "other": 37,
+    "other": 36,
     "review": 580
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [
-    {
-      "id": "9rPeRTW7nPw",
-      "title": "Agathe Catel_ Interview par La Lucarne d'ARIANE",
-      "channelTitle": "Agathe Catel",
-      "durationSeconds": 1008,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    }
-  ],
-  "publishedFeedVideoCount": 6673,
+  "rejectedSamples": [],
+  "publishedFeedVideoCount": 6708,
   "publishedShortVideoCount": 0
 }
