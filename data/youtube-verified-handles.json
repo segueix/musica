@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T07:30:06.204Z",
+  "updatedAt": "2026-10-17T14:26:08.250Z",
   "channels": [
     {
       "artist": "Svetlana",
@@ -1171,6 +1171,24 @@
       "primary": true,
       "verified": true,
       "source": "manual-user-2026-10-12"
+    },
+    {
+      "artist": "Els Miralls de Dylan",
+      "handle": "@elsmirallsdedylan1592",
+      "channelId": "UCbJBuw-UseR72LHnDUG_9ng",
+      "type": "official",
+      "primary": true,
+      "verified": true,
+      "source": "https://www.youtube.com/@elsmirallsdedylan1592"
+    },
+    {
+      "artist": "Ia & Batiste",
+      "handle": null,
+      "channelId": "UCaFFmM8-URvqHCEH2DtRDuQ",
+      "type": "topic",
+      "primary": true,
+      "verified": true,
+      "source": "https://www.youtube.com/channel/UCaFFmM8-URvqHCEH2DtRDuQ"
     }
   ]
 }
