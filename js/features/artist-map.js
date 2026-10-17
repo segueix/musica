@@ -411,9 +411,13 @@
             <div class="am-body">
                 <div class="am-stage">
                     ${mapSvg(base, model, selectedId, zone)}
-                    <div class="am-tools">
-                        <button type="button" class="am-tool am-tool--erase" data-am-clear aria-label="Esborra la selecció" title="Esborra la selecció"${zone || selectedId ? '' : ' hidden'}>${ICON.erase}</button>
+                    <!-- Dibuixa una zona (i la goma) a dalt a l'esquerra, on el mapa és buit: a la dreta tapava la
+                         Catalunya del Nord. La pantalla completa es queda a dalt a la dreta. -->
+                    <div class="am-tools am-tools--start">
                         <button type="button" class="am-tool am-tool--draw" data-am-draw aria-pressed="false">${ICON.draw}<span>Dibuixa una zona</span></button>
+                        <button type="button" class="am-tool am-tool--erase" data-am-clear aria-label="Esborra la selecció" title="Esborra la selecció"${zone || selectedId ? '' : ' hidden'}>${ICON.erase}</button>
+                    </div>
+                    <div class="am-tools">
                         <button type="button" class="am-tool am-tool--full" data-am-full aria-label="Mapa a pantalla completa"><span class="am-ico-full">${ICON.full}</span><span class="am-ico-close">${ICON.close}</span></button>
                     </div>
                     <p class="am-hint" aria-live="polite">

@@ -11703,3 +11703,76 @@ body .mq .mq-head,
         background: rgba(244, 240, 232, 0.12);
     }
 }
+
+/* ==========================================================================
+   Mapa: «Dibuixa una zona» a dalt a l'esquerra, més gran i amb lluïssor blanca (2026-10-17)
+   A dalt a la dreta tapava la Catalunya del Nord; a l'esquerra el mapa és buit (Aragó). La goma va al seu costat i la
+   pantalla completa es queda a la dreta. El botó és una mica més gran (48 px), de vidre amb vora blanca i una llum
+   blanca suau que respira perquè es vegi que s'hi pot dibuixar; dibuixant, en llima.
+   ========================================================================== */
+.am-tools--start {
+    right: auto;
+    left: 10px;
+}
+
+.am-tool--draw {
+    min-height: 48px;
+    padding: 0 16px 0 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    background: rgba(20, 22, 21, 0.72);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.1),
+        0 0 16px rgba(255, 255, 255, 0.35);
+}
+
+.am-tool--draw svg {
+    width: 22px;
+    height: 22px;
+}
+
+.am-tool--draw:hover {
+    border-color: #fff;
+    background: rgba(20, 22, 21, 0.86);
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.16),
+        0 0 22px rgba(255, 255, 255, 0.5);
+}
+
+.am-tool--draw[aria-pressed='true'] {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    box-shadow: 0 0 18px rgba(214, 237, 132, 0.45);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .am-tool--draw:not([aria-pressed='true']) {
+        animation: am-draw-glow 2.8s ease-in-out infinite;
+    }
+}
+
+@keyframes am-draw-glow {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 3px rgba(255, 255, 255, 0.08),
+            0 0 12px rgba(255, 255, 255, 0.25);
+    }
+    50% {
+        box-shadow:
+            0 0 0 3px rgba(255, 255, 255, 0.16),
+            0 0 22px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media (max-width: 360px) {
+    .am-tool--draw {
+        padding: 0;
+        min-width: 48px;
+    }
+}

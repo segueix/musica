@@ -308,3 +308,27 @@ describe('«Música d’arreu»: de sortida, els artistes de la teva zona', () =
         expect(readFileSync('js/features/nearby-radio.js', 'utf8')).toMatch(/nearbyRadio = \{ savedPlace,/);
     });
 });
+
+describe('mapa: «Dibuixa una zona» a dalt a l’esquerra (2026-10-17)', () => {
+    const src = readFileSync('js/features/artist-map.js', 'utf8');
+    const portadaCss = readFileSync('css/portada.css', 'utf8');
+
+    it('el botó de dibuixar i la goma van a un grup a l’esquerra; la pantalla completa, a la dreta', () => {
+        const start = src.indexOf('<div class="am-tools am-tools--start">');
+        const right = src.indexOf('<div class="am-tools">', start);
+        expect(start).toBeGreaterThan(-1);
+        expect(src.indexOf('data-am-draw', start)).toBeLessThan(right);
+        expect(src.indexOf('data-am-clear', start)).toBeLessThan(right);
+        expect(src.indexOf('data-am-full', right)).toBeGreaterThan(right);
+    });
+
+    it('a l’esquerra, més gran i amb lluïssor blanca', () => {
+        const block = portadaCss.slice(portadaCss.indexOf("Mapa: «Dibuixa una zona» a dalt a l'esquerra"));
+        expect(block).toMatch(/\.am-tools--start \{\s*right: auto;\s*left: 10px;/);
+        expect(block).toMatch(
+            /\.am-tool--draw \{[^}]*min-height: 48px;[^}]*border: 1\.5px solid rgba\(255, 255, 255, 0\.85\);/
+        );
+        expect(block).toMatch(/@keyframes am-draw-glow/);
+        expect(block).toMatch(/prefers-reduced-motion: no-preference/);
+    });
+});
