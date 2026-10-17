@@ -429,11 +429,30 @@
 
     // «Fora del teu radar» / «Per descobrir»: artistes poc escoltats amb afinitat amb els estils explorats.
     function pickRadar({ videos, profile, limit = 10, rng = Math.random, exclude } = {}) {
-        const blocked = exclude instanceof Set ? exclude : new Set();
+        // El perfil desa senyals per canal, però una targeta representa el grup editorial complet.
+        // Fem servir el mapa ja carregat: mai agrupem canals només perquè es diuen igual.
+        const groupByChannel = new Map();
+        const registerChannel = id => {
+            const key = String(id || '').trim().toLowerCase();
+            if (key && !groupByChannel.has(key)) {
+                groupByChannel.set(key, window.SegueixMusicCategories?.artistKeyForChannel?.(id) || key);
+            }
+        };
+        profile?.channels?.forEach((channel, key) => registerChannel(channel.id || key));
+        toArray(videos).forEach(video => registerChannel(video?.channelId || video?.snippet?.channelId));
+        const groupOf = video => groupByChannel.get(artistKeyOf(video)) || artistKeyOf(video);
+        const blocked = new Set(
+            [...(exclude instanceof Set ? exclude : [])].map(key => groupByChannel.get(String(key).toLowerCase()) || key)
+        );
+        const groupFamiliarity = new Map();
+        profile?.artists?.forEach((entry, channelKey) => {
+            const key = groupByChannel.get(channelKey) || channelKey;
+            groupFamiliarity.set(key, (groupFamiliarity.get(key) || 0) + familiarityOfEntry(entry));
+        });
         const newestByArtist = new Map();
         toArray(videos).forEach(video => {
             if (!isStudioSong(video) || !video.thumbnail) return;
-            const key = artistKeyOf(video);
+            const key = groupOf(video);
             if (!key || blocked.has(key)) return;
             const current = newestByArtist.get(key);
             if (!current || timestampOf(video) > timestampOf(current)) newestByArtist.set(key, video);
@@ -441,14 +460,15 @@
 
         const candidates = [];
         newestByArtist.forEach((video, key) => {
-            if (familiarity(profile, key) >= LOW_FAMILIARITY) return;
+            const known = groupFamiliarity.get(key) || 0;
+            if (known >= LOW_FAMILIARITY) return;
             candidates.push({
                 key,
                 video,
-                channel: profile?.channels?.get?.(key) || null,
+                channel: profile?.channels?.get?.(artistKeyOf(video)) || null,
                 styles: stylesOf(video, profile?.channels),
                 affinity: styleAffinity(profile, video),
-                familiarity: familiarity(profile, key),
+                familiarity: known,
             });
         });
 

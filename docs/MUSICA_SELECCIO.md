@@ -51,7 +51,7 @@ Amb el catàleg actual: 1.282 de 3.991 cançons tenen any d'evidència i 854 só
 - **Afinitat**: estil de la cançó inicial i de la sessió.
 - **Penalitzacions**: salts manuals ràpids (≥ 2 de la cançó o ≥ 3 de l'artista, amb decaïment de 7 dies), exposició de les darreres 24 h, «Menys com aquesta» (lleu a l'artista).
 
-Familiaritat (segon eix, compatible amb l'antiguitat): «Els meus de sempre» 75/20/5, «Una mica de tot» 60/30/10, «Sorprèn-me» 25/45/30 (coneguda/descoberta afí/sorpresa). Sense almenys 3 artistes coneguts, la ràdio és variada i ho diu.
+Familiaritat (segon eix, compatible amb l'antiguitat): «Els meus de sempre» 75/20/5, «Una mica de tot» 60/30/10, «Sorprèn-me» 25/45/30 (coneguda/descoberta afí/sorpresa). Sense almenys 3 artistes coneguts, la ràdio és variada.
 
 ## Restriccions sobre el resultat final
 
@@ -67,7 +67,7 @@ La selecció és voraç (una posició cada vegada, sobre un conjunt de treball d
 
 Cada posició cau al primer nivell que té candidates; la cua **no s'omple** amb peces inadequades (pot quedar més curta que 40). Les 12 cançons de descans compten dins d'una sessió (3 h); passat això només mana el temps. Les decisions manuals de l'usuari, les llistes i els bucles triats expressament no estan subjectes a aquests límits.
 
-- **Categories amb poca música actual**: es conserva la categoria, s'amplia el cupo d'històriques i es comunica («Aquesta selecció té poca música dels darrers anys…»). Si tot és d'un sol artista, s'accepten cançons seguides i s'avisa.
+- **Categories amb poca música actual**: es conserva la categoria i s'amplia el cupo d'històriques. Si tot és d'un sol artista, s'accepten cançons seguides. Aquestes adaptacions queden a les metadades internes; no mostren avisos a la ràdio.
 - **Preferència explícita per música antiga**: només amb senyals forts (seguits, cors i repeticions d'antics amb pes ≥ 6, prior de 10 %, sostre del 60 %); un sol clic no la canvia. Amplia el cupo d'històriques i, per sobre del 35 %, permet antigues seguides.
 - **Ràdios de catàleg històric explícit** (`policy: 'historic'`) i les cerques directes no apliquen els percentatges.
 - **Antiguitat i artistes antics**: dins del cupo d'històriques tenen un bonus (0,12) i més soroll (×3), perquè totes les peces representatives de la llista d'antics puguin sortir de tant en tant.
@@ -117,14 +117,14 @@ A la capçalera de la ràdio, al costat del nom (abans hi havia el text del mode
 - **Nom**: el de la ràdio, mai el de la cançó que sona: «Ràdio Pop», «Ràdio Pop + Rock», «La teva ràdio», «Cerca: nit» o el nom de la selecció («Acabades de sortir»). Si ja hi ha una llista amb aquest nom (d'una altra ràdio o de l'usuari) s'hi afegeix un número: «Ràdio Pop (2)». Mai es trepitja una llista existent.
 - **Desada**: el símbol passa a una llista amb una marca (llima) i l'etiqueta diu que ja és desada. Tornar-hi a prémer **actualitza aquella mateixa llista** amb la cua actual (no en crea una altra); si l'usuari l'ha esborrada, en crea una de nova. Començar una altra ràdio (o una cerca, o una selecció) torna a «no desada».
 - Un avís confirma «Llista «…» desada a les teves llistes.» amb l'acció «Obre» (porta a la biblioteca). Una llista de l'usuari que sona en mode llista no mostra el símbol (ja és una llista).
-- El mode de descoberta segueix aplicant-se (selector de la portada i, des del 2026-10-01, també el de cada ràdio: vegeu «Mode de descoberta dins de cada ràdio»); només ha deixat de mostrar-se el seu nom enganxat al nom de la ràdio. Si no hi havia historial suficient, la nota explicativa continua sortint sota la capçalera.
+- El mode de descoberta segueix aplicant-se (selector de la portada i, des del 2026-10-01, també el de cada ràdio: vegeu «Mode de descoberta dins de cada ràdio»); només ha deixat de mostrar-se el seu nom enganxat al nom de la ràdio. Des del 17/10/2026 no es mostren avisos sobre historial, artistes coneguts o adaptacions de la selecció.
 
 ## Mode de descoberta dins de cada ràdio
 
 Cada ràdio generada (general, d'estil o de cerca) porta a la capçalera el selector **«Els meus de sempre» / «Una mica de tot» / «Sorprèn-me» / «Fora del meu radar»** (abans, el primer es deia «A casa»). Una selecció («Acabades de sortir») o una llista de l'usuari no en tenen: es reprodueixen tal com són.
 
 - **Efecte immediat.** `musicQueue.setDiscoveryMode(mode)` desa el mode (`catube_discovery_mode`; la portada s'hi sincronitza) i torna a triar **només la part pendent** de la cua amb el mode nou: la cançó que sona i el que l'usuari hi ha afegit a mà es conserven. En una ràdio de cerca es reordenen les mateixes cançons trobades.
-- **Es veu.** Les cançons pendents entren escalonades de dalt a baix (`.mq-list.is-renewed`, desactivat amb «moviment reduït») i una línia sota el selector diu «Ràdio adaptada a «Sorprèn-me»: 28 cançons noves a la llista.» durant uns 7 s. Si l'historial no arriba a 3 artistes coneguts, diu que el mode s'ha desat però la ràdio es manté variada.
+- **Es veu.** Les cançons pendents entren escalonades de dalt a baix (`.mq-list.is-renewed`, desactivat amb «moviment reduït») i una línia sota el selector diu «Ràdio adaptada a «Sorprèn-me»: 28 cançons noves a la llista.» durant uns 7 s. La confirmació del canvi és la mateixa encara que hi hagi poc historial; no afegeix avisos sobre el perfil de l’usuari.
 - **El selector diu la veritat.** Marca el mode amb què s'ha generat la llista que es veu (`radioMeta.requested`), no el de la portada, que (com abans) s'aplica a la ràdio següent; prémer el mode ja aplicat no fa res.
 - **L'efecte és suau.** El mode és un objectiu de repartiment coneguda/afí/sorpresa que corregeix la puntuació (`gain.familiarity` 0,5), i el gust de l'usuari pesa més. En una prova al navegador amb 30 artistes escoltats, «Els meus de sempre» va donar ~74 % d'artistes coneguts i «Sorprèn-me» ~58 % (objectius 75 % i 25 %); a la llista canvien unes 28–31 de 39 cançons, en part per la tria aleatòria. Cap d'aquestes xifres és de producció.
 
@@ -133,10 +133,10 @@ Cada ràdio generada (general, d'estil o de cerca) porta a la capçalera el sele
 Quart mode del selector (`discovery.MODES`, id `new`; també a la portada, `#ptRadio`). Serveix perquè la persona **descobreixi grups que potser ni sap que existeixen**, no per afinar el gust: a diferència de «Sorprèn-me» (25/45/30, sempre amb una part de coneguts), aquí hi ha un **filtre dur** a `selectRadio()` (`discoveryPool()` de `music-selection.js`).
 
 - **Què és «nou».** `isNewArtist()`: l'artista no és seguit, no té cor, no s'ha escoltat de debò, no surt a l'historial feble (`h`) i **no té cap rastre** a `signals.artists` (un artista que l'usuari només ha saltat també queda fora: ja el va veure i no el va voler). Les cançons escoltades o amb cor d'un artista nou tampoc hi entren.
-- **Prioritats del conjunt de treball (per nivells).** (1) Un sol tema per cada artista nou: com més grups diferents, millor. (2) La resta de cançons d'artistes nous (−0,25 de puntuació) només si no arriben a 12 artistes o a omplir la cua. (3) Només si encara no n'hi ha prou, artistes **poc coneguts** (ni seguits, ni amb cor, ni cap cançó escoltada; −0,5): la nota diu «Ja coneixes gairebé tots els artistes d'aquesta selecció…» (`meta.discover.relaxed`).
+- **Prioritats del conjunt de treball (per nivells).** (1) Un sol tema per cada artista nou: com més grups diferents, millor. (2) La resta de cançons d'artistes nous (−0,25 de puntuació) només si no arriben a 12 artistes o a omplir la cua. (3) Només si encara no n'hi ha prou, artistes **poc coneguts** (ni seguits, ni amb cor, ni cap cançó escoltada; −0,5): queda registrat a `meta.discover.relaxed`, sense cap avís visible.
 - **Menys èxits.** Es resta la meitat del pes de la popularitat (`cfg.discovery.popularityDamping` 0,5) perquè surtin també grups petits; l'antiguitat, el descans, l'estil i el repartiment per artista continuen manant. Entre els nous, els d'estils afins surten una mica més (`familiarity.new` 0 / 0,5 / 0,5).
 - **On s'aplica.** Ràdio general («La teva ràdio», també la primera cançó: `recentSeedPool()`) i ràdios d'estil / de categoria (`policy: 'general'`). **No** en una ràdio de cerca ni en la d'un artista (el conjunt el tria l'usuari): allà s'aplica com «Sorprèn-me». El feed «Recomanat per a tu» (`rankFeed`) tampoc exclou res: tracta `new` com «Sorprèn-me». Amb poc historial (< 3 artistes coneguts) el mode també funciona (tot és nou) i no diu «falta historial».
-- **Es veu.** L'avís sota el selector i la nota de la portada diuen «Ràdio de descoberta: N artistes que encara no has escoltat.» (`meta.discover.artists`).
+- **Interfície.** No es mostren avisos sobre quants artistes ja coneix l’usuari, poca música recent o historial insuficient, ni a la cua ni en engegar-la des de la portada. Canviar de mode confirma que s’ha adaptat la llista. Les metadades `meta.discover.artists` continuen disponibles internament i els errors de reproducció es mantenen visibles.
 - **Preferència global.** Com els altres modes es desa a `catube_discovery_mode`: mentre estigui triat, **cada ràdio general o d'estil** és de descoberta (també la que comença en tocar una cançó). El selector de cada ràdio permet tornar-hi a un altre mode.
 - **Motor antic (`legacy`).** `PATTERNS.new = ['F']`: els nous primer i els coneguts només al final.
 - Proves: `tests/music-selection.test.js` («mode «Fora del meu radar»»), `tests/music-queue-selection.test.js`, `tests/discovery.test.js`; opt-in `node tests/browser/verificar-mode-radio.js` (quatre opcions, 2×2 a la capçalera de la ràdio i a mòbil).
@@ -324,3 +324,12 @@ Els directes i arranjaments alternatius mantenen afinitat neutral, sense segones
 
 Proves: `tests/music-subcategories.test.js`: cobertura, una etiqueta, cinc artistes, relacions simètriques,
 igualtat d’oportunitats amb 1/50 pistes, catàlegs grans, identitat oficial/Topic, cors i exclusions.
+
+
+## «Fora del teu radar»: una targeta per grup (2026-10-17)
+
+La secció de portada agrupa el canal oficial i el Tema amb `SegueixMusicCategories.artistKeyForChannel()`, a partir de la base editorial ja carregada. No deduplica per noms visibles ni afegeix consultes de xarxa. Tria la cançó d'estudi més recent elegible de tots els canals del grup, conservant l'ID real del canal i el vídeo per obrir la fitxa, reproduir i afegir a la cua.
+
+La familiaritat suma les escoltes, cors i seguiments dels canals del grup. Així el Tema d'un grup ja conegut no torna a presentar-lo com si fos un altre artista; un canal que arriba al límit de presència a la portada també exclou els germans del radar. Si no hi ha agrupació editorial, cada canal conserva la seva identitat i dos homònims no es fusionen per coincidència de nom. Aquest canvi és de la secció del radar, no del motor de selecció de cançons de la ràdio.
+
+Regressions locals: `tests/discovery.test.js` (agrupació, senyals creuats, límits i homònims), `tests/portada.test.js` (secció de tres grups amb quatre canals) i `tests/music-queue-selection.test.js` (cap avís de familiaritat ni historial, amb reproducció i canvi de mode conservats).

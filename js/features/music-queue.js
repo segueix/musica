@@ -1452,37 +1452,12 @@
         const after = pendingAutoIds();
         const changed = after.filter(id => !before.has(id)).length;
         const label = discovery.MODES.find(item => item.id === mode)?.label || '';
-        // Sense prou historial (< 3 artistes coneguts) el mode no pot afinar res: la ràdio queda variada i ho diem
-        let variety = radioMeta?.mode === 'variety';
-        try {
-            if (engineOn() && engine().knownArtistCount(selectionSignals()) < 3) variety = true;
-        } catch (error) {
-            // Sense motor (proves): es fa servir el que diu la ràdio
-        }
         const songs = changed === 1 ? '1 cançó nova' : `${changed} cançons noves`;
-        if (mode === 'new') {
-            // Ràdio de descoberta: el que importa és quants grups diferents que no coneixes hi ha (no el tipus d'historial)
-            const artists = new Set(
-                activePlaylistQueue
-                    .slice(currentPlaylistIndex + 1)
-                    .map(item => artistOf(item))
-                    .filter(Boolean)
-            ).size;
-            setModeStatus(
-                radioMeta?.note ||
-                    (artists === 1
-                        ? 'Ràdio de descoberta: 1 artista a la llista.'
-                        : `Ràdio de descoberta: ${artists} artistes a la llista.`)
-            );
-            notifyQueueChanged();
-            return { changed, mode };
-        }
+        // Confirmem l'acció, sense avisos sobre quants artistes coneix l'usuari o quant historial té.
         setModeStatus(
-            variety
-                ? `«${label}» desat. Amb tan poc historial la ràdio es manté variada (${songs} a la llista).`
-                : changed
-                  ? `Ràdio adaptada a «${label}»: ${songs} a la llista.`
-                  : `La llista ja encaixava amb «${label}».`
+            changed
+                ? `Ràdio adaptada a «${label}»: ${songs} a la llista.`
+                : `La llista ja encaixava amb «${label}».`
         );
         notifyQueueChanged();
         return { changed, mode };
@@ -1682,9 +1657,6 @@
             .map((video, index) => ({ video, index }))
             .filter(({ video }) => unavailableVideos.has(String(video.id)));
         const canRegenerate = activePlaylistId === QUEUE_ID;
-        // L'explicació del mode de descoberta (p. ex. si no hi havia historial suficient); el nom del mode ja no es mostra.
-        const applied = canRegenerate ? radioMeta : null;
-        const modeNote = applied?.note ? `<p class="mq-note" role="status">${escapeText(applied.note)}</p>` : '';
 
         // La caràtula de la cançó que sona fa de fons de la capçalera (portada.css, «Ràdio amb el llenguatge de caràtules»)
         const art = String(current?.thumbnail || '').replace(/["'()\\\s]/g, '');
@@ -1697,7 +1669,6 @@
                     ${modeSelectorHtml()}
                 </div>
                 ${stylePickerHtml()}
-                ${modeNote}
                 ${unavailableVideos.has(String(current.id)) ? `<p class="mq-note" role="status">${upcoming.some(video => !unavailableVideos.has(String(video.id))) ? 'Cançó no disponible. Passem a la següent.' : 'No queden cançons disponibles en aquesta ràdio.'}</p>` : ''}
                 <div class="mq-section">${unavailableVideos.has(String(current.id)) ? 'Cançó no disponible' : 'Ara sona'}</div>
                 ${renderItem(current, currentPlaylistIndex, { active: true, draggable: false })}

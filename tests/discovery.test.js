@@ -196,6 +196,53 @@ describe('ordenació de la cua segons el mode', () => {
 describe('«Fora del teu radar»', () => {
     const videos = channels.slice(0, 6).flatMap(channel => [song(channel.id, 3), song(channel.id, 40)]);
 
+    const groupedRadar = () => load({ SegueixMusicCategories: {
+        artistKeyForChannel: id => ['A', 'B'].includes(id) ? 'artist:one' : '',
+    } }).discovery;
+
+    it('oficial i Tema ocupen una sola targeta amb la cançó més recent i un canal navegable', () => {
+        const discovery = groupedRadar();
+        const profile = discovery.buildProfile({ channels });
+        const official = song('A', 20);
+        const topic = song('B', 2);
+        const other = song('C', 3);
+        const radar = discovery.pickRadar({ videos: [official, topic, other], profile, rng: seeded() });
+        expect(radar.items).toHaveLength(2);
+        expect(radar.items.find(item => item.key === 'artist:one')).toMatchObject({
+            channelId: 'B', video: { id: topic.id }, avatar: 'b.jpg',
+        });
+        expect(radar.items.some(item => item.channelId === 'C')).toBe(true);
+    });
+
+    for (const signals of [
+        { history: [song('A'), song('B')] },
+        { liked: [song('A')] },
+        { followedIds: ['A'] },
+    ]) {
+        it('reconeix el grup pels senyals de qualsevol dels dos canals', () => {
+            const discovery = groupedRadar();
+            const profile = discovery.buildProfile({ channels, ...signals });
+            const radar = discovery.pickRadar({ videos: [song('B'), song('C')], profile, rng: seeded() });
+            expect(radar.items.map(item => item.key)).toEqual(['c']);
+        });
+    }
+
+    it('el límit de portada d’un canal també exclou l’altre canal del mateix grup', () => {
+        const discovery = groupedRadar();
+        const profile = discovery.buildProfile({ channels });
+        const radar = discovery.pickRadar({ videos: [song('B'), song('C')], profile, exclude: new Set(['a']) });
+        expect(radar.items.map(item => item.key)).toEqual(['c']);
+    });
+
+    it('no ajunta grups diferents per un nom coincident o sense agrupació editorial', () => {
+        const discovery = groupedRadar();
+        const sameNames = channels.map(channel => ({ ...channel, name: 'Mateix nom' }));
+        const profile = discovery.buildProfile({ channels: sameNames });
+        const radar = discovery.pickRadar({ videos: [song('A'), song('C'), song('D')], profile });
+        expect(radar.items).toHaveLength(3);
+        expect(new Set(radar.items.map(item => item.key)).size).toBe(3);
+    });
+
     it('sense historial es diu «Per descobrir», és variada i no inventa explicacions', () => {
         const { discovery } = load();
         const profile = discovery.buildProfile({ channels });
