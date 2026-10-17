@@ -15,10 +15,10 @@ function seeded(seed = 11) {
     };
 }
 
-function load() {
+function load(extra = {}) {
     const app = { features: {}, state: {}, utils: {} };
-    loadScript('js/features/discovery.js', { SegueixApp: app });
-    loadScript('js/features/portada.js', { SegueixApp: app });
+    loadScript('js/features/discovery.js', { SegueixApp: app, ...extra });
+    loadScript('js/features/portada.js', { SegueixApp: app, ...extra });
     return { discovery: app.features.discovery, portada: app.features.portada };
 }
 const { discovery, portada } = load();
@@ -160,6 +160,21 @@ describe('model de la portada sense historial (primera visita)', () => {
         expect(labels.slice(0, 4)).toEqual(['Urban', 'Pop', 'Rock', "Cançó d'autor"]);
         expect(labels).toContain('Jazz / Blues');
         expect(model.styles.find(s => s.label === 'Jazz / Blues').primary).toBe(false);
+    });
+});
+
+describe('agrupació dels canals al radar de la portada', () => {
+    it('la secció i la reproducció conjunta només inclouen una targeta per grup', () => {
+        const { discovery, portada } = load({ SegueixMusicCategories: {
+            artistKeyForChannel: id => ['C0', 'C1'].includes(id) ? 'artist:one' : '',
+        } });
+        const songs = [video('C0', 20), video('C1', 2), video('C2', 3), video('C3', 4)];
+        const model = portada.buildModel(context({ discovery, all: songs, recent: [], history: [video('C23', 10)] }));
+        expect(model.radar.items).toHaveLength(3);
+        expect(model.radar.items.filter(item => item.key === 'artist:one')).toHaveLength(1);
+        expect(model.radar.items.find(item => item.key === 'artist:one').video.id).toBe(songs[1].id);
+        const html = portada.renderSections(model);
+        expect(html).toContain('data-pt-section="radar"');
     });
 });
 

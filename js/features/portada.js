@@ -1200,7 +1200,6 @@
             toast('Encara no hi ha música carregada. Torna-ho a provar d’aquí a un moment.');
             return;
         }
-        if (result.note) toast(result.note, { duration: 7000 });
     }
 
     function enqueue(id) {

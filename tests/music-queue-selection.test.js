@@ -939,7 +939,7 @@ describe('mode de descoberta dins de cada ràdio', () => {
         expect(env.container.innerHTML).not.toContain('is-renewed');
     });
 
-    it('«Fora del meu radar»: la part pendent només porta artistes que no coneixes i un avís diu quants', () => {
+    it('«Fora del meu radar» completa la ràdio sense avisos sobre els artistes coneguts', () => {
         const env = radioWithMode();
         const result = env.queue.setDiscoveryMode('new');
         expect(result.mode).toBe('new');
@@ -948,14 +948,16 @@ describe('mode de descoberta dins de cada ràdio', () => {
         const pending = env.ctx.activePlaylistQueue.slice(1);
         expect(pending.length).toBeGreaterThan(5);
         // Aquest catàleg només té uns 15 artistes sense escoltar (els 12 de l'historial són c0..c11): tots hi surten
-        // i, com que no n'hi ha prou per omplir la cua, es completa amb els de l'historial i ho diu.
+        // i, com que no n'hi ha prou per omplir la cua, es completa amb els de l'historial.
         const fresh = new Set(pending.map(v => v.channelId).filter(id => !/^c(\d|1[01])$/.test(id)));
         expect(fresh.size).toBeGreaterThanOrEqual(12);
         expect(env.ctx.activePlaylistQueue.slice(1, 6).some(v => /^c(\d|1[01])$/.test(v.channelId))).toBe(false);
         expect(env.queue.getState().meta.note).toMatch(/Ja coneixes gairebé tots els artistes/);
         env.queue.render(env.container);
         expect(env.container.innerHTML).toContain('data-mq-mode="new" aria-checked="true"');
-        expect(env.container.innerHTML).toContain('Ja coneixes gairebé tots els artistes');
+        expect(env.container.innerHTML).not.toContain('Ja coneixes gairebé tots els artistes');
+        expect(env.container.innerHTML).not.toContain('mq-note');
+        expect(env.container.innerHTML).toMatch(/Ràdio adaptada a «Fora del meu radar»/);
     });
 
     it('el mode és un event: la portada s’hi sincronitza', () => {
@@ -993,11 +995,27 @@ describe('mode de descoberta dins de cada ràdio', () => {
         expect(env.queue.setDiscoveryMode('home').mode).toBe('home');
     });
 
-    it('amb poc historial el mode no pot afinar res: ho diu', () => {
+    it('confirma el canvi de mode sense avisos sobre la manca d’historial', () => {
         const env = radioWithMode({ noHistory: true });
         env.queue.setDiscoveryMode('surprise');
         env.queue.render(env.container);
-        expect(env.container.innerHTML).toMatch(/«Sorprèn-me» desat\. Amb tan poc historial la ràdio es manté variada/);
+        expect(env.container.innerHTML).not.toMatch(/poc historial|no tens historial|mq-note/);
+        expect(env.container.innerHTML).toMatch(/Ràdio adaptada a «Sorprèn-me»|La llista ja encaixava amb «Sorprèn-me»/);
+    });
+
+    it('manté l’avís necessari quan la cançó no es pot reproduir', () => {
+        const env = radioWithMode();
+        const current = env.ctx.activePlaylistQueue[env.ctx.currentPlaylistIndex];
+        const iframe = {};
+        Object.assign(env.ctx, {
+            currentVideoId: current.id,
+            videoPlayer: { dataset: { playingVideoId: current.id }, querySelector: () => iframe },
+            cancelLiveSwapFallback() {}, setAutoplayBlockedHint() {}, autoplayBlockTimer: null,
+            setTimeout() {},
+        });
+        expect(env.queue.handleUnavailableVideo(150, iframe)).toBe(true);
+        env.queue.render(env.container);
+        expect(env.container.innerHTML).toContain('Cançó no disponible. Passem a la següent.');
     });
 
     it('una ràdio de cerca té el selector; una selecció o una llista, no', () => {
