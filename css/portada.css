@@ -11770,9 +11770,48 @@ body .mq .mq-head,
     }
 }
 
+/* Mòbil: més petit i discret (36 px, lletra i lluïssor més fines); l'àrea de toc continua fent 44 px (::before) */
+@media (max-width: 768px) {
+    .am-tools--start {
+        top: 8px;
+        left: 8px;
+    }
+
+    .am-tool--draw {
+        position: relative;
+        gap: 5px;
+        min-height: 36px;
+        padding: 0 12px 0 10px;
+        border-width: 1px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+    }
+
+    .am-tool--draw svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .am-tool--draw::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+    }
+
+    @keyframes am-draw-glow {
+        0%,
+        100% {
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+            box-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+        }
+    }
+}
+
 @media (max-width: 360px) {
     .am-tool--draw {
         padding: 0;
-        min-width: 48px;
+        min-width: 36px;
     }
 }

@@ -329,6 +329,9 @@ describe('mapa: «Dibuixa una zona» a dalt a l’esquerra (2026-10-17)', () => 
             /\.am-tool--draw \{[^}]*min-height: 48px;[^}]*border: 1\.5px solid rgba\(255, 255, 255, 0\.85\);/
         );
         expect(block).toMatch(/@keyframes am-draw-glow/);
+        // al mòbil, més petit (36 px) amb l'àrea de toc de 44 px
+        expect(block).toMatch(/@media \(max-width: 768px\) \{[\s\S]*?\.am-tool--draw \{[^}]*min-height: 36px;/);
+        expect(block).toMatch(/\.am-tool--draw::before \{[^}]*inset: -4px;/);
         expect(block).toMatch(/prefers-reduced-motion: no-preference/);
     });
 });
