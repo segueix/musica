@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-16T20:24:11.781Z",
+  "generatedAt": "2026-10-17T11:12:19.889Z",
   "polling": {
-    "requested": 7,
-    "deferred": 647,
+    "requested": 537,
+    "deferred": 118,
     "failed": 7
   },
-  "retainedVideoCount": 0,
+  "retainedVideoCount": 957,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
@@ -335,14 +335,6 @@
       "governs": true
     },
     {
-      "id": "UCxnSSRmXNzweOe_gShnOb_A",
-      "name": "Thatkid",
-      "songs": 31,
-      "matched": 31,
-      "coverage": 1,
-      "governs": true
-    },
-    {
       "id": "UCIE6UEv7aCNJq-Jw9F0mJ7A",
       "name": "Triquell",
       "songs": 31,
@@ -639,8 +631,24 @@
       "governs": true
     },
     {
+      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "name": "Maria del Mar Bonet",
+      "songs": 21,
+      "matched": 19,
+      "coverage": 0.9,
+      "governs": true
+    },
+    {
       "id": "UCCo52K6zPcI8QXDKr2DgjBg",
       "name": "SVETLANA",
+      "songs": 31,
+      "matched": 28,
+      "coverage": 0.9,
+      "governs": true
+    },
+    {
+      "id": "UCxnSSRmXNzweOe_gShnOb_A",
+      "name": "Thatkid",
       "songs": 31,
       "matched": 28,
       "coverage": 0.9,
@@ -651,6 +659,14 @@
       "name": "Groggy Rude",
       "songs": 37,
       "matched": 33,
+      "coverage": 0.89,
+      "governs": true
+    },
+    {
+      "id": "UC57d8FV0O8sOiK6-K-gWNHA",
+      "name": "Mar Pujol",
+      "songs": 27,
+      "matched": 24,
       "coverage": 0.89,
       "governs": true
     },
@@ -759,14 +775,6 @@
       "governs": true
     },
     {
-      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
-      "name": "Maria del Mar Bonet",
-      "songs": 20,
-      "matched": 17,
-      "coverage": 0.85,
-      "governs": true
-    },
-    {
       "id": "UCtHWEhEdI_nkFQmE2Ewzrnw",
       "name": "SMOKING SOULS",
       "songs": 33,
@@ -844,14 +852,6 @@
       "songs": 24,
       "matched": 20,
       "coverage": 0.83,
-      "governs": true
-    },
-    {
-      "id": "UC57d8FV0O8sOiK6-K-gWNHA",
-      "name": "Mar Pujol",
-      "songs": 17,
-      "matched": 14,
-      "coverage": 0.82,
       "governs": true
     },
     {
@@ -1007,14 +1007,6 @@
       "governs": true
     },
     {
-      "id": "UC2rhPnAmAa_Sa9XlK0whmDA",
-      "name": "BAYA BAYE",
-      "songs": 44,
-      "matched": 32,
-      "coverage": 0.73,
-      "governs": false
-    },
-    {
       "id": "UCE5UIlWPKCJ-9LJXlQB-05g",
       "name": "Cloe Riembau",
       "songs": 15,
@@ -1081,6 +1073,14 @@
     {
       "id": "UCnmFh1j3xvDfrw20AqVgegw",
       "name": "Derbi Junior",
+      "songs": 3,
+      "matched": 2,
+      "coverage": 0.67,
+      "governs": false
+    },
+    {
+      "id": "UCdobjCKfq5FbF7eQL6C1VLw",
+      "name": "La Mousse",
       "songs": 3,
       "matched": 2,
       "coverage": 0.67,
@@ -1223,14 +1223,6 @@
       "governs": false
     },
     {
-      "id": "UCdobjCKfq5FbF7eQL6C1VLw",
-      "name": "La Mousse",
-      "songs": 2,
-      "matched": 1,
-      "coverage": 0.5,
-      "governs": false
-    },
-    {
       "id": "UCWwKFCPkzG5Njr-kcpl9dag",
       "name": "Ovella Xao",
       "songs": 38,
@@ -1308,6 +1300,14 @@
       "songs": 24,
       "matched": 9,
       "coverage": 0.38,
+      "governs": false
+    },
+    {
+      "id": "UC2rhPnAmAa_Sa9XlK0whmDA",
+      "name": "BAYA BAYE",
+      "songs": 44,
+      "matched": 15,
+      "coverage": 0.34,
       "governs": false
     },
     {
@@ -1495,6 +1495,22 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
       "name": "Bonestorm",
       "songs": 2,
@@ -1599,6 +1615,14 @@
       "governs": false
     },
     {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
@@ -1616,8 +1640,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 210,
+    "song": 21
+  },
+  "topicHiddenCount": 307,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -1644,8 +1671,8 @@
       "id": "UCETR11eCJC5Z9mitj6MbASw",
       "name": "9Son",
       "tracks": 24,
-      "selected": 0,
-      "withClip": 23
+      "selected": 12,
+      "withClip": 11
     },
     {
       "id": "UCrmKSeRAoGbFoEiLv36EzWg",
@@ -1679,7 +1706,7 @@
       "id": "UCrQY3EI5TJXNbCwkXcDLp7A",
       "name": "Al Tall",
       "tracks": 285,
-      "selected": 40,
+      "selected": 39,
       "withClip": 0
     },
     {
@@ -1756,7 +1783,7 @@
       "id": "UCOuye30wynoiY9VfWM8BFWg",
       "name": "Andreu Rifé",
       "tracks": 71,
-      "selected": 40,
+      "selected": 34,
       "withClip": 0
     },
     {
@@ -1812,8 +1839,8 @@
       "id": "UCnygquYeJppJcbgD085undw",
       "name": "Aspencat",
       "tracks": 42,
-      "selected": 17,
-      "withClip": 17
+      "selected": 24,
+      "withClip": 10
     },
     {
       "id": "UCgAPpOaGsoDsXdEQKLB6gnQ",
@@ -1896,8 +1923,8 @@
       "id": "UCfZSav-wsnpACenDMoHE6BA",
       "name": "Baya Baye",
       "tracks": 61,
-      "selected": 20,
-      "withClip": 30
+      "selected": 37,
+      "withClip": 13
     },
     {
       "id": "UCdFUlEKax2JWJ58pdL2zNvw",
@@ -1970,17 +1997,17 @@
       "withClip": 0
     },
     {
-      "id": "UCc2hL_Q_Fi_nKHLptRFnw3w",
-      "name": "Brot Bord",
-      "tracks": 5,
-      "selected": 5,
-      "withClip": 0
-    },
-    {
       "id": "UCghKNKEskCkE55Wl5A-ggiQ",
       "name": "Brot Bord",
       "tracks": 14,
       "selected": 14,
+      "withClip": 0
+    },
+    {
+      "id": "UCc2hL_Q_Fi_nKHLptRFnw3w",
+      "name": "Brot Bord",
+      "tracks": 5,
+      "selected": 5,
       "withClip": 0
     },
     {
@@ -2071,8 +2098,8 @@
       "id": "UCTsSJXhTo6HpqmtSh8-p31A",
       "name": "Corrandes són Corrandes",
       "tracks": 43,
-      "selected": 32,
-      "withClip": 4
+      "selected": 33,
+      "withClip": 3
     },
     {
       "id": "UCnBMdEFrntxHSNXpIO7HXFA",
@@ -2176,8 +2203,8 @@
       "id": "UCXnvbcjY11hEzjvWXUTjQ8Q",
       "name": "Doctor Prats",
       "tracks": 92,
-      "selected": 40,
-      "withClip": 12
+      "selected": 33,
+      "withClip": 25
     },
     {
       "id": "UCX95O_Gs_2ob3p86_MgldhA",
@@ -2204,7 +2231,7 @@
       "id": "UC1n7SLx5qYPP1HzKh-rvyng",
       "name": "Ebri Knight",
       "tracks": 127,
-      "selected": 40,
+      "selected": 28,
       "withClip": 29
     },
     {
@@ -2330,8 +2357,8 @@
       "id": "UCl3RfIF60BFTx93il4D11nQ",
       "name": "Ernest Crusats",
       "tracks": 13,
-      "selected": 1,
-      "withClip": 8
+      "selected": 8,
+      "withClip": 1
     },
     {
       "id": "UCoEb3Xheb3cPwhNMFEhc_5g",
@@ -2351,7 +2378,7 @@
       "id": "UCv6aLx9OL9Qzc2nmNT5_IdA",
       "name": "Esquirols",
       "tracks": 89,
-      "selected": 40,
+      "selected": 37,
       "withClip": 0
     },
     {
@@ -2526,7 +2553,7 @@
       "id": "UCRa2GTtcn1mkkSfPYQOGPhw",
       "name": "Gessamí Boada",
       "tracks": 57,
-      "selected": 30,
+      "selected": 29,
       "withClip": 14
     },
     {
@@ -2568,7 +2595,7 @@
       "id": "UC8efMlZQ7vQ1cTO6MbspafA",
       "name": "Grup de folk",
       "tracks": 98,
-      "selected": 40,
+      "selected": 33,
       "withClip": 0
     },
     {
@@ -2638,8 +2665,8 @@
       "id": "UCS9aWKrOcJsSqsJqBEouqAg",
       "name": "Isaak Aguilà",
       "tracks": 36,
-      "selected": 22,
-      "withClip": 12
+      "selected": 26,
+      "withClip": 7
     },
     {
       "id": "UCMWf6XTheiTNyzFHQr5A2fQ",
@@ -2659,8 +2686,8 @@
       "id": "UCsNO9JMYvNgA6hEWFuhBk_w",
       "name": "Joan Colomo",
       "tracks": 116,
-      "selected": 38,
-      "withClip": 4
+      "selected": 37,
+      "withClip": 5
     },
     {
       "id": "UC71mv_2wTJu623lsX2ow5nA",
@@ -2729,8 +2756,8 @@
       "id": "UCNKGOTgFuVUOWK2djkKi3DQ",
       "name": "Júlia Cruz",
       "tracks": 6,
-      "selected": 5,
-      "withClip": 0
+      "selected": 4,
+      "withClip": 1
     },
     {
       "id": "UCK4JIjpr1EofBTYKpm-H5QQ",
@@ -2869,8 +2896,8 @@
       "id": "UCRxi4RlTmeoc97rxkLxTiBQ",
       "name": "La Mousse",
       "tracks": 12,
-      "selected": 10,
-      "withClip": 0
+      "selected": 9,
+      "withClip": 1
     },
     {
       "id": "UCMepRsHQTgYZd3u__Xbj_6A",
@@ -3009,7 +3036,7 @@
       "id": "UCG5zbsU-wyiM9QP5oYKhB4A",
       "name": "Magalí Datzira",
       "tracks": 60,
-      "selected": 26,
+      "selected": 24,
       "withClip": 9
     },
     {
@@ -3107,8 +3134,8 @@
       "id": "UCrkGlLnid_710UIFOrWVpAQ",
       "name": "Mar Pujol",
       "tracks": 40,
-      "selected": 17,
-      "withClip": 14
+      "selected": 8,
+      "withClip": 23
     },
     {
       "id": "UC18hp60b-j4DdzwEcWe9wrw",
@@ -3122,7 +3149,7 @@
       "name": "Maria Del Mar Bonet",
       "tracks": 470,
       "selected": 34,
-      "withClip": 17
+      "withClip": 18
     },
     {
       "id": "UC3QJ1xC8aCwQdvTy-HTRwew",
@@ -3303,7 +3330,7 @@
       "id": "UCtq1tANqWFsrmS5XmCXY8qQ",
       "name": "Oques Grasses",
       "tracks": 70,
-      "selected": 23,
+      "selected": 19,
       "withClip": 39
     },
     {
@@ -3366,8 +3393,8 @@
       "id": "UC2UnG44LjrVvcgzlK8Bte5Q",
       "name": "Pastorets rock",
       "tracks": 12,
-      "selected": 1,
-      "withClip": 10
+      "selected": 8,
+      "withClip": 3
     },
     {
       "id": "UC5u_IqqHbJKvmeSXSyCyFyg",
@@ -3520,7 +3547,7 @@
       "id": "UCn4V6rDw7Gz1R6F2qyt2IrQ",
       "name": "Ramon Muntaner",
       "tracks": 119,
-      "selected": 40,
+      "selected": 34,
       "withClip": 0
     },
     {
@@ -3541,7 +3568,7 @@
       "id": "UCCKRS2KD1i75evCURPuHQXA",
       "name": "Raydibaum",
       "tracks": 62,
-      "selected": 40,
+      "selected": 39,
       "withClip": 0
     },
     {
@@ -3583,7 +3610,7 @@
       "id": "UCl4HM-ELckbc7ToCDTyAvVQ",
       "name": "Roba Estesa",
       "tracks": 63,
-      "selected": 28,
+      "selected": 23,
       "withClip": 23
     },
     {
@@ -3689,7 +3716,7 @@
       "name": "Sense Sal",
       "tracks": 25,
       "selected": 25,
-      "withClip": 23
+      "withClip": 10
     },
     {
       "id": "UCWdaWh8h5Uov97df5vX4RCw",
@@ -3737,7 +3764,7 @@
       "id": "UCUWHtSvVKAhJn-zsf38q2TQ",
       "name": "Skatalà",
       "tracks": 57,
-      "selected": 40,
+      "selected": 35,
       "withClip": 0
     },
     {
@@ -3786,7 +3813,7 @@
       "id": "UCerRtDlJWXCmBMgGYjq6gYQ",
       "name": "Stay Homas",
       "tracks": 58,
-      "selected": 21,
+      "selected": 18,
       "withClip": 22
     },
     {
@@ -3842,15 +3869,15 @@
       "id": "UCyS2GxjCglNX_8TY7LDlmlw",
       "name": "Terra Ferma Ska Band",
       "tracks": 29,
-      "selected": 15,
-      "withClip": 9
+      "selected": 17,
+      "withClip": 7
     },
     {
       "id": "UCrAazkwonIdGi_TGkzXkoCw",
       "name": "Terratombats",
       "tracks": 24,
-      "selected": 14,
-      "withClip": 6
+      "selected": 15,
+      "withClip": 5
     },
     {
       "id": "UCx82VgJTTf_cKHahlakKfFg",
@@ -3870,21 +3897,21 @@
       "id": "UC5N8pkZTmXd8EDRxqhtrDbg",
       "name": "ThatKid",
       "tracks": 165,
-      "selected": 18,
-      "withClip": 29
-    },
-    {
-      "id": "UCARSXSWwSje53JsJgzLCtpA",
-      "name": "The Anti-Patiks",
-      "tracks": 23,
-      "selected": 9,
-      "withClip": 0
+      "selected": 21,
+      "withClip": 26
     },
     {
       "id": "UCuBUwUHwHaYGai1Enee7DSw",
       "name": "The Anti-Patiks",
       "tracks": 12,
       "selected": 5,
+      "withClip": 0
+    },
+    {
+      "id": "UCARSXSWwSje53JsJgzLCtpA",
+      "name": "The Anti-Patiks",
+      "tracks": 23,
+      "selected": 9,
       "withClip": 0
     },
     {
@@ -3927,7 +3954,7 @@
       "name": "Toti Soler",
       "tracks": 495,
       "selected": 40,
-      "withClip": 17
+      "withClip": 11
     },
     {
       "id": "UCajdvXC8lGH7n7d8mrhyZJw",
@@ -3954,8 +3981,8 @@
       "id": "UCIDxAwPe8cNl_-NawMu4pDQ",
       "name": "Txarango",
       "tracks": 110,
-      "selected": 38,
-      "withClip": 32
+      "selected": 39,
+      "withClip": 11
     },
     {
       "id": "UCViiIPCMCLZHQSUP16yQuKA",
@@ -4081,13 +4108,13 @@
       "name": "XEIC!",
       "tracks": 94,
       "selected": 40,
-      "withClip": 36
+      "withClip": 10
     },
     {
       "id": "UC5DkIn4ZKBgGKqvpa0JyZlg",
       "name": "Xesco Boix",
-      "tracks": 1,
-      "selected": 1,
+      "tracks": 131,
+      "selected": 40,
       "withClip": 0
     },
     {
@@ -4119,17 +4146,17 @@
       "withClip": 0
     },
     {
-      "id": "UCg6lVNl78-THJI1w8dSy0bA",
-      "name": "YPNOSI",
-      "tracks": 12,
-      "selected": 6,
-      "withClip": 0
-    },
-    {
       "id": "UCqqRg6HX-P769DEoffrQMEQ",
       "name": "YPNOSI",
       "tracks": 33,
       "selected": 25,
+      "withClip": 0
+    },
+    {
+      "id": "UCg6lVNl78-THJI1w8dSy0bA",
+      "name": "YPNOSI",
+      "tracks": 12,
+      "selected": 6,
       "withClip": 0
     },
     {
@@ -4140,32 +4167,56 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 654,
-  "resolvedChannelCount": 654,
-  "feedChannelCount": 654,
-  "rawPublicVideoCount": 7169,
-  "feedVideoCount": 6600,
-  "acceptedMusicCount": 6562,
-  "categoryEligibleVideoCount": 6558,
+  "indexedChannelCount": 655,
+  "resolvedChannelCount": 655,
+  "feedChannelCount": 655,
+  "rawPublicVideoCount": 13629,
+  "feedVideoCount": 11662,
+  "acceptedMusicCount": 12026,
+  "categoryEligibleVideoCount": 11959,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1204,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1204
   },
-  "contentReviewCount": 571,
+  "contentReviewCount": 572,
   "contentTypeCounts": {
-    "song": 6373,
-    "live_song": 185,
-    "album": 4,
-    "other": 36,
-    "review": 571
+    "song": 11565,
+    "live_song": 394,
+    "album": 67,
+    "other": 1031,
+    "review": 572
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutVideos": [
+    "UCmwGTBibm2bt9oF-P7ECSmQ",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCRLHVqJybtjS5ODPP5iAv4w",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UCFI6QGe27kctP5lGeugsrhA",
+    "UC8hpq3EHqyG09og9xy3qOFg",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UCfcp4MZZ3t309KMOLo7JJag",
+    "UC1yaXYiC2Ab3tus3lTDljtw",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCHXlSnGKv7tdBxMw2F-FMkw",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UC9i1uNb0GFrISNB2pctkvRg",
+    "UCYPbYGqAXm8gaYGVY-ANVXA",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ",
+    "UCg6lVNl78-THJI1w8dSy0bA"
+  ],
+  "channelsWithoutAcceptedMusic": [
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6580,
+  "publishedFeedVideoCount": 6635,
   "publishedShortVideoCount": 0
 }

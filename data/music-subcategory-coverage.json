@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 432,
+  "musicalArtists": 433,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -637,7 +637,7 @@
       "label": "Pop — pendent d’afinar",
       "category": "Pop",
       "neighbours": [],
-      "artistCount": 38,
+      "artistCount": 39,
       "nucleus": true,
       "artists": [
         "Alfred Garcia",
@@ -656,6 +656,7 @@
         "Fades",
         "Ferran Palau",
         "Figa Flawas",
+        "Guillem Gisbert i Puig",
         "Gusset",
         "Joan Dausà",
         "Jofre Bardagí Grima",
@@ -2756,6 +2757,17 @@
       "basis": "documented-tags",
       "sources": [
         "https://es-academic.com/dic.nsf/eswiki/1300668/"
+      ]
+    },
+    {
+      "artist": "Guillem Gisbert i Puig",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.wikidata.org/wiki/Q62020002",
+        "https://www.ceramiquesguzman.com/guillemgisbert",
+        "https://www.youtube.com/@GuillemGisbert"
       ]
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:24:11.781Z",
+  "updatedAt": "2026-10-17T11:12:19.889Z",
   "channels": [
     {
       "id": "UCjEehp73GI2mh9Rkv31QT9w",
@@ -165,7 +165,7 @@
       "avatar": "https://yt3.ggpht.com/2tkVa0hjSOm7Yc0iBJjcnjP49qerEqP5WTRBgBF7vF99GK--GBXBh4NR3t4-nq_JxDCTjVNYTF8=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 540,
+      "subscriberCount": 541,
       "categories": [
         "Rock",
         "Cançó d'autor"
@@ -402,25 +402,6 @@
       "primary": true
     },
     {
-      "id": "UC_tsO4hz22Lk0jb1CEIFPmw",
-      "name": "ALL CRÜ",
-      "avatar": "https://yt3.ggpht.com/P3DhyEwNGOTB08lWNQI8sa9nDtR34Um6lIcqmQuZ5ATa7J4amssYiUMENvrEjrlMEszqg3Ok=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 45,
-      "categories": [
-        "Punk"
-      ],
-      "genres": [
-        "Punk"
-      ],
-      "artists": [
-        "All Crü"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCyNWjZ1IhLo8Iy6nUMEz0rw",
       "name": "ALL CRÜ",
       "avatar": "https://yt3.ggpht.com/23Ho_wHqGSULKogmxIkGzf-rSSdaJ-JG3o-DPylDOBhtPxxEVv4X6j0JLOrT3ZjzM4z0rbUd=s800-c-k-c0x00ffffff-no-rj",
@@ -438,6 +419,25 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UC_tsO4hz22Lk0jb1CEIFPmw",
+      "name": "ALL CRÜ",
+      "avatar": "https://yt3.ggpht.com/P3DhyEwNGOTB08lWNQI8sa9nDtR34Um6lIcqmQuZ5ATa7J4amssYiUMENvrEjrlMEszqg3Ok=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 45,
+      "categories": [
+        "Punk"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "artists": [
+        "All Crü"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UCMj8K97SgGnI9OdJIHBH-Sw",
@@ -466,7 +466,7 @@
       "avatar": "https://yt3.ggpht.com/e65ENQi_GJ-rrQj_EM33gY41T7bS9IVF1AzHQiRSzaYwuDEsboKSZxxgubzydJTXi63FjRDGopg=s800-c-k-c0x00ffffff-no-rj",
       "description": "\nmgmt @montebello.agency\n\n\n",
       "handle": "@allergiquesalpollen3859",
-      "subscriberCount": 1920,
+      "subscriberCount": 1930,
       "categories": [
         "Pop",
         "Rock"
@@ -639,7 +639,7 @@
       "avatar": "https://yt3.ggpht.com/UIYMkJJMEPw_rKlX-UBC8fmQD6IlPcA9SyPHS3YhGZrM_CB_koPH2l3J3XNwO35ee6niOJFk0g=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 24100,
+      "subscriberCount": 24000,
       "categories": [
         "Jazz / Blues"
       ],
@@ -792,27 +792,6 @@
       "primary": true
     },
     {
-      "id": "UCeiYZJsHIDALiJkzRkFWlAQ",
-      "name": "Antònia Font",
-      "avatar": "https://yt3.ggpht.com/syfpx9qGF7fC8zMqbydLO9p3qbEUo0eS9hgZSHPYITJ_K53_MT_qvaVVTIavFZbxamQUzBRZ=s800-c-k-c0x00ffffff-no-rj",
-      "description": "Canal Oficial d'Antònia Font",
-      "handle": "@antoniafont",
-      "subscriberCount": 11600,
-      "categories": [
-        "Pop",
-        "Rock"
-      ],
-      "genres": [
-        "Pop",
-        "Rock"
-      ],
-      "artists": [
-        "Antònia Font"
-      ],
-      "type": "official",
-      "primary": true
-    },
-    {
       "id": "UCALf4AsnFm6WhQSD6RGV5pg",
       "name": "Antònia Font",
       "avatar": "https://yt3.ggpht.com/syfpx9qGF7fC8zMqbydLO9p3qbEUo0eS9hgZSHPYITJ_K53_MT_qvaVVTIavFZbxamQUzBRZ=s800-c-k-c0x00ffffff-no-rj",
@@ -834,12 +813,33 @@
       "primary": false
     },
     {
+      "id": "UCeiYZJsHIDALiJkzRkFWlAQ",
+      "name": "Antònia Font",
+      "avatar": "https://yt3.ggpht.com/syfpx9qGF7fC8zMqbydLO9p3qbEUo0eS9hgZSHPYITJ_K53_MT_qvaVVTIavFZbxamQUzBRZ=s800-c-k-c0x00ffffff-no-rj",
+      "description": "Canal Oficial d'Antònia Font",
+      "handle": "@antoniafont",
+      "subscriberCount": 11600,
+      "categories": [
+        "Pop",
+        "Rock"
+      ],
+      "genres": [
+        "Pop",
+        "Rock"
+      ],
+      "artists": [
+        "Antònia Font"
+      ],
+      "type": "official",
+      "primary": true
+    },
+    {
       "id": "UCkIaaBrbzpnm0jbPXxNGwPw",
       "name": "Apologia Grup",
       "avatar": "https://yt3.ggpht.com/O-imoSX_jv4S41gxhT9IH_bt2bg2Fh5OSCCFiMOE5IaatuNmMOLADTv45kWSESCmibAq5Svb=s800-c-k-c0x00ffffff-no-rj",
       "description": "Punk Rock - PPCC",
       "handle": "@apologiagrup",
-      "subscriberCount": 613,
+      "subscriberCount": 612,
       "categories": [
         "Punk"
       ],
@@ -976,7 +976,7 @@
       "avatar": "https://yt3.ggpht.com/ytc/AIdro_lC2zr_OEqQl4J5Vi70MT9A_658UKAlZ3y4tICX2h_kxA=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 317,
+      "subscriberCount": 316,
       "categories": [
         "Rock",
         "Ska / Reggae"
@@ -1669,7 +1669,7 @@
       "avatar": "https://yt3.ggpht.com/0tD-4jGhF9ZEVwtsLW7ChFzu2412oqKD6wbPUF_NiqHYeLAGFHto1qhc_4NX3zEs01zVAB16=s800-c-k-c0x00ffffff-no-rj",
       "description": "Brams va ser fundat espiritualment a Valls la revetlla de Sant Joan de 1990 per Francesc Ribera Titot, Txema Gómez i Sergi Valero i es va posar en funcionament a Berga l'estiu d'aquell mateix any. Des d'aleshores Brams va començar a fer-se conegut arreu dels Països Catalans fins ser un dels referents del rock combatiu català, atès que les seves cançons expressaven un fort compromís cap als valors i les idees de l'independentisme d'esquerres. Després de 9 discs, Brams es va acomiadar dels escenaris el maig de 2005 a Berga en un concert anomenat Sempremés. \nL'any 2010 Brams va retornar als escenaris i als estudis per a crear tres dels seus millors discs.\nEn aquests moments l'activitat de Brams encara es manté activa tot i que volgudament a un ritme més pausat.",
       "handle": "",
-      "subscriberCount": 538,
+      "subscriberCount": 537,
       "categories": [
         "Rock",
         "Ska / Reggae"
@@ -1723,25 +1723,6 @@
       "primary": false
     },
     {
-      "id": "UCc2hL_Q_Fi_nKHLptRFnw3w",
-      "name": "Brot Bord",
-      "avatar": "https://i.ytimg.com/vi/UHWg6k6GdT8/maxresdefault.jpg",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 10,
-      "categories": [
-        "Punk"
-      ],
-      "genres": [
-        "Punk"
-      ],
-      "artists": [
-        "Brot Bord"
-      ],
-      "type": "topic",
-      "primary": true
-    },
-    {
       "id": "UCghKNKEskCkE55Wl5A-ggiQ",
       "name": "Brot Bord",
       "avatar": "https://i.ytimg.com/vi/7abqbEGdCFM/maxresdefault.jpg",
@@ -1759,6 +1740,25 @@
       ],
       "type": "topic",
       "primary": false
+    },
+    {
+      "id": "UCc2hL_Q_Fi_nKHLptRFnw3w",
+      "name": "Brot Bord",
+      "avatar": "https://i.ytimg.com/vi/UHWg6k6GdT8/maxresdefault.jpg",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 10,
+      "categories": [
+        "Punk"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "artists": [
+        "Brot Bord"
+      ],
+      "type": "topic",
+      "primary": true
     },
     {
       "id": "UCcYEaa06Rifj3dOcoBemmEQ",
@@ -2178,7 +2178,7 @@
       "avatar": "https://i.ytimg.com/vi/QkKPvNot94g/maxresdefault.jpg",
       "description": "\"Seran quatre cançons\"",
       "handle": "@club_social_carme",
-      "subscriberCount": 1690,
+      "subscriberCount": 1710,
       "categories": [],
       "genres": [],
       "artists": [
@@ -2355,7 +2355,7 @@
       "avatar": "https://yt3.ggpht.com/gxW3VCKXp-ckbsOP_zHjZBt4XS3L7rAfPw46NIfxEffcH4ArnrX7Z9FWJVQ0ZfztpN6fhapcyw=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 847,
+      "subscriberCount": 846,
       "categories": [
         "Rock",
         "Punk"
@@ -2527,27 +2527,6 @@
       "primary": false
     },
     {
-      "id": "UCtPmA1K41AHE5kYd-klIP8w",
-      "name": "dani6ix & IZZKID",
-      "avatar": "https://yt3.ggpht.com/DjxrNhDmqD2GCxKUKV3GKxqtwC4Zt2WuSWFlezU7qS-yhHycwgLDd6m0BKpj867i1sZT1HI-rg=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 158,
-      "categories": [
-        "Urban",
-        "Pop"
-      ],
-      "genres": [
-        "Pop",
-        "Urbana"
-      ],
-      "artists": [
-        "dani6ix & IZZKID"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UClDOnKVw4NDr-UyX7nnhlBw",
       "name": "dani6ix & IZZKID",
       "avatar": "https://yt3.ggpht.com/UdLQfON_cJYrUps_5ZpA3P7TBEkTzxaBlB-fSu75jR5CfuglREBMUcMqr8uWoR0BlE23acpo=s800-c-k-c0x00ffffff-no-rj",
@@ -2567,6 +2546,27 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UCtPmA1K41AHE5kYd-klIP8w",
+      "name": "dani6ix & IZZKID",
+      "avatar": "https://yt3.ggpht.com/DjxrNhDmqD2GCxKUKV3GKxqtwC4Zt2WuSWFlezU7qS-yhHycwgLDd6m0BKpj867i1sZT1HI-rg=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 158,
+      "categories": [
+        "Urban",
+        "Pop"
+      ],
+      "genres": [
+        "Pop",
+        "Urbana"
+      ],
+      "artists": [
+        "dani6ix & IZZKID"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UCQgDn86_83DIsAggpRadifg",
@@ -2753,7 +2753,7 @@
       "avatar": "https://yt3.ggpht.com/L845m4TehlumaIgxezBpQFDiy2b28TAwtOlxnNfkdM250B0ABHopNI_aZodQtfGkbH1QG00EgX8=s800-c-k-c0x00ffffff-no-rj",
       "description": "Reiniciem-ho tot!! F5!",
       "handle": "@doctorprats",
-      "subscriberCount": 70600,
+      "subscriberCount": 70500,
       "categories": [
         "Pop",
         "Rock"
@@ -2795,7 +2795,7 @@
       "avatar": "https://yt3.ggpht.com/3AmEmDdcewrDeAbbjIYd5xbe8NLlZdXPGGbev-Uz7ug29E5jDpuV0GSx3TsWHcoq_GzoAq71Sck=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 844,
+      "subscriberCount": 843,
       "categories": [
         "Ska / Reggae"
       ],
@@ -3420,7 +3420,7 @@
       "avatar": "https://yt3.ggpht.com/aZDwR8RbZhZ1c-xitcHqYsLdfEyv5YqJ7AcMouOBsSU48bR9s7iPg7R-Q_FZJca4YlAlpfzc2A=s800-c-k-c0x00ffffff-no-rj",
       "description": "Banda de Hardcore Punk formada al 2022 al sud de la Costa Brava (Blanes).\n--------------------------------------------------------------------------------------------------------------------------\nHardcore Punk band since 2022 in the south of the Costa Brava (Blanes).\n",
       "handle": "@en-brut",
-      "subscriberCount": 141,
+      "subscriberCount": 142,
       "categories": [
         "Punk"
       ],
@@ -3694,7 +3694,7 @@
       "avatar": "https://yt3.ggpht.com/MtA8T6m-IRAHThyA97o7I-wEV1v0P6wkXjZr8ctNNZoYypXFkheLaEHAqOJMvCJSKdJFvNjvQXA=s800-c-k-c0x00ffffff-no-rj",
       "description": "Contractació:\nesperitdevipunk@gmail.com",
       "handle": "@esperitdevi",
-      "subscriberCount": 97,
+      "subscriberCount": 103,
       "categories": [
         "Punk"
       ],
@@ -3713,7 +3713,7 @@
       "avatar": "https://yt3.ggpht.com/MXhBUH5tRhUNC4AOKJntBNvLLOO_ckOqVa6aMikS0NH8oT_uGVeN_nZh0-hoFMapZtzpZoRKVQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 755,
+      "subscriberCount": 756,
       "categories": [
         "Folk i arrel"
       ],
@@ -3751,7 +3751,7 @@
       "avatar": "https://yt3.ggpht.com/ZsY7eZoCdI8dgIq0Ac6UaskR-heAhQ-yZ5fytFB-XfOIbW9GaeWrIA-UtEF6_TuYJhU4R1dNPTo=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 183,
+      "subscriberCount": 182,
       "categories": [
         "Pop"
       ],
@@ -3789,7 +3789,7 @@
       "avatar": "https://yt3.ggpht.com/5yXp_Fa65Pa-R37OdB-fgx8DbgagZQwykRmGN1-IZj82Ymi3FCB8ypSNAIQUKZ1mulDhU4VjVw=s800-c-k-c0x00ffffff-no-rj",
       "description": "Exili a Elba és un grup barceloní d'iindie-rock en català format l’any 2012 que va publicar  el primer àlbum l’any 2012.  4 anys després del seu últim LP “Amb poca llum es trenca la foscor\", la banda llança el seu nou treball “Dolce Vita” (2026, Satelite K)  encetant nous camins tant en el so com en la composició de la banda.  Un disc on s'exploren nous terrenys del Rock Alternatiu i el Post-Punk d’influència britànica. Un so més cru i directe, de ritmes accelerats i molta distorsió, compagina a la perfecció amb l’onada introspectiva, reivindicativa i crítica que experimenten les lletres de les cançons del disc. \nTemes que ens recorden el que sempre ha sigut Exili a Elba, emocionant-nos amb alguna cançó íntima i algun midtempo que fan de contrapunt al nou LP. El baix i la bateria sonen amb una contundència mai abans vista en la banda barcelonina que, d’aquesta manera, ens permeten intuir un directe intens, potent i visceral\n",
       "handle": "@exiliaelba",
-      "subscriberCount": 296,
+      "subscriberCount": 297,
       "categories": [
         "Rock",
         "Indie"
@@ -3972,7 +3972,7 @@
       "avatar": "https://yt3.ggpht.com/vhjKtitAyM6OSiE3KPxTNdvT7tltho8sJy_hicprBK7xNEm9Cfz-7mfnpvlMEjVdKO-MwsE4SA=s800-c-k-c0x00ffffff-no-rj",
       "description": "Ferran Palau és un músic i compositor català afincat a les faldes de Montserrat, on viu amb la seva família. Des del 2012, ha creat un llegat impressionant que l’ha convertit en un dels grans referents de l’escena independent catalana. El seu estil, sovint descrit com a minimalista i vaporós, ha anat mutant subtilment a cada disc sense perdre mai de vista l’amor per la cançó en la seva essència més pura.",
       "handle": "@ferranpalauoficial",
-      "subscriberCount": 5030,
+      "subscriberCount": 5040,
       "categories": [
         "Pop",
         "Indie"
@@ -4133,25 +4133,6 @@
       "primary": false
     },
     {
-      "id": "UCmciKowevXGORJnZGaZVrsg",
-      "name": "Forja",
-      "avatar": "https://yt3.ggpht.com/SGp2rKyUU0OxG0hHCTdZLmtOS415dyFkqd9C6uxsnwoLJ4PLbJDdCP4XUCf_IylhchbfZ9k0Dkg=s800-c-k-c0x00ffffff-no-rj",
-      "description": "Forja was born in the summer of 2012 as catalan metal band, with the march of time the band has been forging their style, with patience and dedication, with the warm of the fire of the history, myths, catalan legends and tempered by the feelings and passion waters.",
-      "handle": "",
-      "subscriberCount": 10,
-      "categories": [
-        "Heavy / Metal"
-      ],
-      "genres": [
-        "Metal"
-      ],
-      "artists": [
-        "Forja"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCBaZT9T1jD6ggbVikvr0nAw",
       "name": "Forja",
       "avatar": "https://yt3.ggpht.com/SGp2rKyUU0OxG0hHCTdZLmtOS415dyFkqd9C6uxsnwoLJ4PLbJDdCP4XUCf_IylhchbfZ9k0Dkg=s800-c-k-c0x00ffffff-no-rj",
@@ -4169,6 +4150,25 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UCmciKowevXGORJnZGaZVrsg",
+      "name": "Forja",
+      "avatar": "https://yt3.ggpht.com/SGp2rKyUU0OxG0hHCTdZLmtOS415dyFkqd9C6uxsnwoLJ4PLbJDdCP4XUCf_IylhchbfZ9k0Dkg=s800-c-k-c0x00ffffff-no-rj",
+      "description": "Forja was born in the summer of 2012 as catalan metal band, with the march of time the band has been forging their style, with patience and dedication, with the warm of the fire of the history, myths, catalan legends and tempered by the feelings and passion waters.",
+      "handle": "",
+      "subscriberCount": 10,
+      "categories": [
+        "Heavy / Metal"
+      ],
+      "genres": [
+        "Metal"
+      ],
+      "artists": [
+        "Forja"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UC0WM1w4n_f4A-AZAve2QeIg",
@@ -4424,25 +4424,6 @@
       "primary": true
     },
     {
-      "id": "UCgV7p1tbKMGsNjvg8Zhm4YQ",
-      "name": "GATZARA",
-      "avatar": "https://yt3.ggpht.com/AN0u3iOyl6rG5_WmGllR3J9pasAXaD8qkYTz1Ad0MlODbGfH4lCkEooC7vBzPmRJNUwDMuFdzg=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 9,
-      "categories": [
-        "Punk"
-      ],
-      "genres": [
-        "Punk"
-      ],
-      "artists": [
-        "Gatzara"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCZn28rxOtata8FamPOLCDug",
       "name": "GATZARA",
       "avatar": "https://yt3.ggpht.com/u-n9BqRsOWK6i5KcjcPlOOM8GMmz5kr3zsYzYn0Pr6L0YQGlhy_Uq2HYTObnYc50dpCySKw7Q34=s800-c-k-c0x00ffffff-no-rj",
@@ -4460,6 +4441,25 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UCgV7p1tbKMGsNjvg8Zhm4YQ",
+      "name": "GATZARA",
+      "avatar": "https://yt3.ggpht.com/AN0u3iOyl6rG5_WmGllR3J9pasAXaD8qkYTz1Ad0MlODbGfH4lCkEooC7vBzPmRJNUwDMuFdzg=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 9,
+      "categories": [
+        "Punk"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "artists": [
+        "Gatzara"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UCUTFIQKXld2UO6NRCxiM8qw",
@@ -4504,25 +4504,6 @@
       "primary": false
     },
     {
-      "id": "UCFI6QGe27kctP5lGeugsrhA",
-      "name": "Germà Negre",
-      "avatar": "https://yt3.ggpht.com/B4yhMDgLCBOk668Z2L-RRRq-k9eXGG0T7rHvEz6-gy8O2fbW5doUhTdqe43YH-ic34eumJdyDQ=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 112,
-      "categories": [
-        "Folk i arrel"
-      ],
-      "genres": [
-        "Folk i arrel"
-      ],
-      "artists": [
-        "Germà Negre"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UC_nlyjkIdPSWKkzbWK7Q-0w",
       "name": "Germà Negre",
       "avatar": "https://yt3.ggpht.com/DCWjF2k4gBD7DE5khIfh9OfUY_4WqfWCHuNsEO2vefNqAJgOtxeJqz0lG0xtT_zX_m3jLSuC=s800-c-k-c0x00ffffff-no-rj",
@@ -4540,6 +4521,25 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UCFI6QGe27kctP5lGeugsrhA",
+      "name": "Germà Negre",
+      "avatar": "https://yt3.ggpht.com/B4yhMDgLCBOk668Z2L-RRRq-k9eXGG0T7rHvEz6-gy8O2fbW5doUhTdqe43YH-ic34eumJdyDQ=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 112,
+      "categories": [
+        "Folk i arrel"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "artists": [
+        "Germà Negre"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UChYQSBa6bIG2yArpLA4ykvA",
@@ -4580,25 +4580,6 @@
       "primary": false
     },
     {
-      "id": "UCRa2GTtcn1mkkSfPYQOGPhw",
-      "name": "Gessamí Boada",
-      "avatar": "https://yt3.ggpht.com/uCd729qVO-4qvkkEkG2juTs244gRfwvwBGoT2oFgw6NOnUSMibtLTPhWYkH6gLNMEw3lkV-IKek=s800-c-k-c0x00ffffff-no-rj",
-      "description": "Cantant i compositora maresmenca. Ha publicat tres discos com a cantautora: \"White Flowers\", \"On començo jo\" i \"L'art d'estimar\". Amb només 7 anys entra en contacte amb la música a través del piano, però descobreix la seva veu molts anys més tard. Estudia al Taller de Músics, es forma en songwriting a Alemanya (Popakademie Baden-Württemberg) i es gradua en Cant Modern i Jazz a l'ESMUC (2017).  Ha col·laborat amb artistes com Judit Neddermann, Vic Mirallas o Clara Peya.",
-      "handle": "",
-      "subscriberCount": 75,
-      "categories": [
-        "Cançó d'autor"
-      ],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "artists": [
-        "Gessamí Boada"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCPsEb7F9DceUz4TsdfyuiBw",
       "name": "Gessamí Boada",
       "avatar": "https://yt3.ggpht.com/uCd729qVO-4qvkkEkG2juTs244gRfwvwBGoT2oFgw6NOnUSMibtLTPhWYkH6gLNMEw3lkV-IKek=s800-c-k-c0x00ffffff-no-rj",
@@ -4616,6 +4597,25 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UCRa2GTtcn1mkkSfPYQOGPhw",
+      "name": "Gessamí Boada",
+      "avatar": "https://yt3.ggpht.com/uCd729qVO-4qvkkEkG2juTs244gRfwvwBGoT2oFgw6NOnUSMibtLTPhWYkH6gLNMEw3lkV-IKek=s800-c-k-c0x00ffffff-no-rj",
+      "description": "Cantant i compositora maresmenca. Ha publicat tres discos com a cantautora: \"White Flowers\", \"On començo jo\" i \"L'art d'estimar\". Amb només 7 anys entra en contacte amb la música a través del piano, però descobreix la seva veu molts anys més tard. Estudia al Taller de Músics, es forma en songwriting a Alemanya (Popakademie Baden-Württemberg) i es gradua en Cant Modern i Jazz a l'ESMUC (2017).  Ha col·laborat amb artistes com Judit Neddermann, Vic Mirallas o Clara Peya.",
+      "handle": "",
+      "subscriberCount": 75,
+      "categories": [
+        "Cançó d'autor"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "artists": [
+        "Gessamí Boada"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UC5nvjukz73UjS-GpzieyTxw",
@@ -4835,6 +4835,25 @@
       "primary": true
     },
     {
+      "id": "UCWqkDJA-JbPHz_0WC2wouqg",
+      "name": "Guillem Gisbert",
+      "avatar": "https://yt3.ggpht.com/nd3EH4XXDvD6laJ3l3x9scx8N62g5YnKxhUbKnhm_0bjBxCKcgOYYnDupnFr-xsW9bccDZAn3kU=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "@guillemgisbert",
+      "subscriberCount": 2060,
+      "categories": [
+        "Pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "artists": [
+        "Guillem Gisbert i Puig"
+      ],
+      "type": "official",
+      "primary": true
+    },
+    {
       "id": "UCtEZ1MK5EscjssXcqEYGOng",
       "name": "Guillem Ramisa",
       "avatar": "https://yt3.ggpht.com/0QV-D-Qxdmq6DOHJ4RzBjf88kGX0GNQdUICklDGK6JKzS0hygg-NLVC6zXJtbz1fkPKTClNntfY=s800-c-k-c0x00ffffff-no-rj",
@@ -4899,7 +4918,7 @@
       "avatar": "https://yt3.ggpht.com/-c18LhcvH85rasoWZE2ZUHyFSyKiqBN3NqDOcCvou1dqo5sAjo838bcKaytPAJsV9VGgcc--oQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "Pop Cuquitrash",
       "handle": "@guineupop4382",
-      "subscriberCount": 585,
+      "subscriberCount": 584,
       "categories": [
         "Pop",
         "Indie"
@@ -5042,7 +5061,7 @@
       "avatar": "https://yt3.ggpht.com/WdONNbaz3-YgYxJG8rmtniq5pstxWf2uYotSizHsTzu4TuyGYN1RzgpBccZ6Cx0HAyPxiERB=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 90,
+      "subscriberCount": 92,
       "categories": [
         "Electrònica"
       ],
@@ -5259,7 +5278,7 @@
       "avatar": "https://yt3.ggpht.com/ytc/AIdro_mXCDZm2XJIW_SZ4w5HDMACVKWBg-9v2Zk68hXwu_B8OQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "Contingut audiovisual del músic conegut com a Joan Colomo\nContenido audiovisual del músico conocido como Joan Colomo.\n\n",
       "handle": "@joancolomo2315",
-      "subscriberCount": 466,
+      "subscriberCount": 465,
       "categories": [
         "Rock",
         "Cançó d'autor"
@@ -5583,7 +5602,7 @@
       "avatar": "https://yt3.ggpht.com/_OLoOSErtInK07vtqTq1iunYRph5kzDZeMVR1i-4-NjgfnmMfdKuNQDKGmA0FtmtQahOaUGzE1Q=s800-c-k-c0x00ffffff-no-rj",
       "description": "Already established as one of the most unique voices of the moment, the proposal of Júlia Colom is as personal as it is complex. Combining her roots, experience and honesty with an artistic curiosity that manages to take her beyond trends, Colom offers us a pop fusion that not only captures the musical moment we live in, but surpasses it.\n\nThe artist's identity is born from a life nurtured in music: the centenary “Cant de la Sibil·la” was the first song she learned to sing, at the age of 6, with her grandfather as her teacher. When she turned 18, Colom moved to Barcelona to study singing.\n\nDuring her professional training Colom embarks on a journey to investigate the music of oral tradition in Mallorca, a knowledge that she transforms through her artistic vision, resulting in her debut álbum “Miramar”, acclaimed by audiences and critics alike.\n\nIn 2025 the singer-songwriter returns with \"Paradís\", an album where Colom overcomes the limits of genres such as electronic, pop or folk.\n",
       "handle": "@juliacolom2497",
-      "subscriberCount": 945,
+      "subscriberCount": 946,
       "categories": [
         "Pop",
         "Folk i arrel"
@@ -5625,7 +5644,7 @@
       "avatar": "https://yt3.ggpht.com/36IYcosCSEZ62aW7BJvy2ki80D_9hmuOy3_nOSK_wDnV1PnGLUm1N4nPUpUScRzp69xa0YoC=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@juliacruzmusica",
-      "subscriberCount": 282,
+      "subscriberCount": 281,
       "categories": [
         "Cançó d'autor",
         "Folk i arrel"
@@ -6061,7 +6080,7 @@
       "avatar": "https://yt3.ggpht.com/ytc/AIdro_mmUU_Y3-bjRdwfY8JH-QCTE7KvBw5cjmALWHj7mX6BMA=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@laranna1979",
-      "subscriberCount": 346,
+      "subscriberCount": 347,
       "categories": [
         "Cançó d'autor",
         "Electrònica"
@@ -6082,7 +6101,7 @@
       "avatar": "https://yt3.ggpht.com/ky2Ger8RBPnvmAnVCZndHo-Uqpc4WbgxuxCfcpGBB4plab3Wlc-JljkKxfxjHiR9tbt5Mey0=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 962,
+      "subscriberCount": 961,
       "categories": [
         "Folk i arrel"
       ],
@@ -6215,7 +6234,7 @@
       "avatar": "https://yt3.ggpht.com/GGT2m_HiGpN-jhZ_j21okLT6B7Io4IJ-UbAxde4tU0JcbuKjAy6mWT-yInY-cQ3fVaV2pru7vg=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 337,
+      "subscriberCount": 336,
       "categories": [
         "Folk i arrel"
       ],
@@ -6356,7 +6375,7 @@
       "avatar": "https://i.ytimg.com/vi/9pfs1vwkIGQ/maxresdefault.jpg",
       "description": "",
       "handle": "",
-      "subscriberCount": 33,
+      "subscriberCount": 34,
       "categories": [
         "Rock"
       ],
@@ -6375,7 +6394,7 @@
       "avatar": "https://yt3.ggpht.com/vpHoNN5RHeF4U974ATYU5Mcy3jJGn-77gC4nYsmS7F89ayS3dKVTMZ0cPpWpPblU8ZsNrcbvvYg=s800-c-k-c0x00ffffff-no-rj",
       "description": "creadora\n\nfelix@neualcarrer.coop\n\n\n",
       "handle": "@la_maria",
-      "subscriberCount": 2900,
+      "subscriberCount": 2910,
       "categories": [
         "Folk i arrel"
       ],
@@ -6596,7 +6615,7 @@
       "avatar": "https://yt3.ggpht.com/lQQ_-IRPm-xTarX1igBt1B4za-NaREeq7LroyCbaDdkgrOVe2kHnKAdNIxXwBIo9XWeXmsqL=s800-c-k-c0x00ffffff-no-rj",
       "description": "La Xica, des de València, passant per la voreta de la Marina Baixa, directa cap al teu coret. Disposada a fert-te ballar i sentir a parts iguals :) mmmmuak!",
       "handle": "@laxicaxica",
-      "subscriberCount": 461,
+      "subscriberCount": 469,
       "categories": [
         "Pop",
         "Electrònica"
@@ -6739,7 +6758,7 @@
       "avatar": "https://yt3.ggpht.com/Pwn5gcx4mXs-ud0dnudQQRbd5-toGlHWNL8Ol_BGLsYwDxQIvl81pfrcjsVSyMTwGi8K18RSiw=s800-c-k-c0x00ffffff-no-rj",
       "description": "Lepanto 41 és un grup emergent en català format a Mataró l’any 2023. El projecte neix amb la voluntat d’obrir-se pas dins l’escena catalana a través d’un discurs sincer i emocional.\n\nLa seva música parla de la vulnerabilitat, de les obsessions quotidianes i de la necessitat de trobar vincles reals en un món accelerat. Amb un so urbà i una producció cuidada, Lepanto 41 construeix cançons que connecten des de la proximitat i la veritat, apostant també per la col·laboració amb altres artistes emergents.\n\nA l’escenari, el grup trasllada la seva proposta amb energia i intensitat, connectant amb el públic. Han actuat en espais destacats com Les Santes de Mataró i han estat seleccionats al Maresmusic com una de les propostes amb més projecció de la comarca.\n",
       "handle": "@lepanto41",
-      "subscriberCount": 223,
+      "subscriberCount": 224,
       "categories": [
         "Urban",
         "Pop"
@@ -6914,7 +6933,7 @@
       "avatar": "https://yt3.ggpht.com/W9vlMx9FIHI0dYktzk91vrfeBiAzqXw-D1mhPUS3JpiskRjtzzjUr_FblbgHwUhwEGaDA8-M=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 344,
+      "subscriberCount": 343,
       "categories": [
         "Cançó d'autor"
       ],
@@ -7150,7 +7169,7 @@
       "avatar": "https://yt3.ggpht.com/uBLTdl81vC_FekcawJr7DzAo0eI3rFpQwleSD6cjmb3MCMX0hOllsSfPrgoz2u1sn8d8WQZFAvM=s800-c-k-c0x00ffffff-no-rj",
       "description": "Mai Halis, 5 joves de Vic junts des de 2019 amb ganes de portar la seva música al món.",
       "handle": "@maihalis",
-      "subscriberCount": 93,
+      "subscriberCount": 94,
       "categories": [
         "Pop",
         "Rock"
@@ -7265,27 +7284,6 @@
       "primary": true
     },
     {
-      "id": "UCGmho2bwHxnwlsIc11CgNpQ",
-      "name": "MALÁNIMA",
-      "avatar": "https://yt3.ggpht.com/RgSE6dW1k2yPQ-gx8j4tgx5vmg0DMuNYgUKpjgjuMdTad5kawChzJuz3OOmkGXITBkhkBTNuyaY=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "@malanima_",
-      "subscriberCount": 93,
-      "categories": [
-        "Pop",
-        "Electrònica"
-      ],
-      "genres": [
-        "Pop",
-        "Electrònica"
-      ],
-      "artists": [
-        "Malánima"
-      ],
-      "type": "official",
-      "primary": false
-    },
-    {
       "id": "UCwQqL8LR87I8bPcFNU5zLFw",
       "name": "Malánima",
       "avatar": "https://yt3.ggpht.com/8gLN-CVep3WODBK8_YejZWFm6ZdhwUMVq5OYjSVNiJmWL-jeJ5NcaZHElKr44Gbbl7lFDRWpSg=s800-c-k-c0x00ffffff-no-rj",
@@ -7305,6 +7303,27 @@
       ],
       "type": "topic",
       "primary": true
+    },
+    {
+      "id": "UCGmho2bwHxnwlsIc11CgNpQ",
+      "name": "MALÁNIMA",
+      "avatar": "https://yt3.ggpht.com/RgSE6dW1k2yPQ-gx8j4tgx5vmg0DMuNYgUKpjgjuMdTad5kawChzJuz3OOmkGXITBkhkBTNuyaY=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "@malanima_",
+      "subscriberCount": 93,
+      "categories": [
+        "Pop",
+        "Electrònica"
+      ],
+      "genres": [
+        "Pop",
+        "Electrònica"
+      ],
+      "artists": [
+        "Malánima"
+      ],
+      "type": "official",
+      "primary": false
     },
     {
       "id": "UCZcdiQvGBNZY2Juk3QEovZA",
@@ -7615,9 +7634,9 @@
       "id": "UC57d8FV0O8sOiK6-K-gWNHA",
       "name": "Mar Pujol",
       "avatar": "https://yt3.ggpht.com/9udHuxBH5SsA1E6y6SG-1Zu_ER39gfB-hROLGqr8B_S5igFPPNPOXs-v8T1Nz8ziK1IbCDFcAw=s800-c-k-c0x00ffffff-no-rj",
-      "description": "Mar Pujol és una cantautora de Prats de Lluçanès nascuda l’any 1999. \nA través d’una veu enganxada a una guitarra, canta fantasies de fusta, de pedra i de lluna al seu EP debut 'Trepa'. \nPoc més tard presenta el seu primer àlbum sencer 'Cançons de rebost' (2024 Hidden Track Records). Deu cançons d’interior, marinades en sal, que posen al mateix prestatge allò quotidià i allò trascendental.\n\nAra mateix es troba a punt de públicar el seu 3r treball \"D'aquesta aigua no en beuré\". Un àlbum que té per fluid la contradicció.\n",
+      "description": "Mar Pujol ha anat construint un univers propi a través de la cançó d’autor, amb una veu i una guitarra que li serveixen per observar allò quotidià i trobar-hi noves capes. Des de ‘Trepa’ (autoeditat, 2022), el seu primer EP, fins a ‘Cançons de Rebost’ (Hidden Track Records, 2024), la seva música ha crescut des de la intimitat, la natura i les petites coses, per convertir-les en cançons que parlen també d’allò més profund. Una trajectòria marcada per una mirada sensible i inquieta, que ara obre una nova etapa amb ‘D’aquesta aigua no en beuré’. Ara, amb la Bruna González Subirá (cello) al seu costat en directe, arrenca una gira prometadora amb concerts a Portugal, Islàndia i Catalunya.\n",
       "handle": "@marpujolruiz",
-      "subscriberCount": 1130,
+      "subscriberCount": 1140,
       "categories": [
         "Cançó d'autor"
       ],
@@ -7693,7 +7712,7 @@
       "avatar": "https://yt3.ggpht.com/Bp4H3WIcajlF4SlbcMhxwH8tkbVa5kvvDULL5alRKKLCCVtu82i0dSKLn0Dp_Gf8y6QdsfJ0=s800-c-k-c0x00ffffff-no-rj",
       "description": "Canal oficial de la cantant mallorquina Maria del Mar Bonet",
       "handle": "@mariadelmarbonetoficial",
-      "subscriberCount": 5520,
+      "subscriberCount": 5510,
       "categories": [
         "Cançó d'autor"
       ],
@@ -7764,25 +7783,6 @@
       "primary": false
     },
     {
-      "id": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
-      "name": "Marina Rossell",
-      "avatar": "https://yt3.ggpht.com/jTiCqzkbe7uasSBJtMhPbA6qydTDi3dvCsrREpWKWD6KFV5B_Za1rc6ZKPUSuVFrPI041c8zjgA=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 83,
-      "categories": [
-        "Cançó d'autor"
-      ],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "artists": [
-        "Marina Rossell"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCtFrz4JJnpJq7dhxLNRwkdA",
       "name": "Marina Rossell",
       "avatar": "https://yt3.ggpht.com/jTiCqzkbe7uasSBJtMhPbA6qydTDi3dvCsrREpWKWD6KFV5B_Za1rc6ZKPUSuVFrPI041c8zjgA=s800-c-k-c0x00ffffff-no-rj",
@@ -7800,6 +7800,25 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+      "name": "Marina Rossell",
+      "avatar": "https://yt3.ggpht.com/jTiCqzkbe7uasSBJtMhPbA6qydTDi3dvCsrREpWKWD6KFV5B_Za1rc6ZKPUSuVFrPI041c8zjgA=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 83,
+      "categories": [
+        "Cançó d'autor"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "artists": [
+        "Marina Rossell"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UC_97DSVzzRp28ew8nKB255g",
@@ -7925,7 +7944,7 @@
       "avatar": "https://yt3.ggpht.com/PU1LylKWWWVr2hPhR96oVA-fXjEE1WqrM74YhEs64W1tKn3Hy39aACMrxQkfp5kfgFqlFpPHNA=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 520,
+      "subscriberCount": 519,
       "categories": [
         "Cançó d'autor"
       ],
@@ -8323,7 +8342,7 @@
       "avatar": "https://yt3.ggpht.com/FhlMJ5U-EXx8ZZBieDtqLSgUrv3vCZTKhxyRHrM-V5qX0UaCQCn2-HQcvACYDqPG14DKCxXelg=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 140,
+      "subscriberCount": 141,
       "categories": [
         "Pop",
         "Rock"
@@ -8344,7 +8363,7 @@
       "avatar": "https://yt3.ggpht.com/HNq2zKyWb1rnUBbnDz9UIAlULpTsTHLYCafFwUJyxUgPGMxTMl_KvUb_wyy8flAGhUSdRWD5LQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "NAINA comença  el seu camí en solitari amb ATREVIDA (Halley Records) a la primavera del 2025, el seu primer disc, però la música sempre ha estat amb ella. Amb un calaix ple de cançons escrites, a la fi decideix donar vida a tot el que tenia guardat i trencar el silenci.\n\nJa l’hem vist brillar als escenaris al costat de La Fúmiga, Cactus o Niuss amb les cançons en les que col·labora, i ara inicia la seua primera gira que la portarà al Feslloc, Nits de Vivers de València i altres grans festivals i pobles del PV.\n\nAçò acaba de començar!\n",
       "handle": "@naina_msk",
-      "subscriberCount": 2290,
+      "subscriberCount": 2300,
       "categories": [
         "Urban",
         "Pop"
@@ -8365,7 +8384,7 @@
       "avatar": "https://yt3.ggpht.com/1wNrxCnB-EOHox9oAkyLY5GVNXRjUVud-hPeWGQBCy35TtMIbRtPfjKt9_MtDmgUH36chhQ4uw=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 699,
+      "subscriberCount": 700,
       "categories": [
         "Urban",
         "Pop"
@@ -8405,7 +8424,7 @@
       "avatar": "https://yt3.ggpht.com/_Dx0kEfCBiZECmx3dtEic5lh4shUmBWlAkvuf4acFh_KUB0oRsDwaD3eal0rjYv1wWvsZaQu=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@neisha7495",
-      "subscriberCount": 326,
+      "subscriberCount": 327,
       "categories": [
         "Urban"
       ],
@@ -8424,7 +8443,7 @@
       "avatar": "https://yt3.ggpht.com/HVRBtwK5vKq_l78U2WUz15Ti8t3XOX30Q44U769bgQe_3PbiMZO0n7UaRJKi2pABkjuwm6Pn5g=s800-c-k-c0x00ffffff-no-rj",
       "description": "Som la nova banda del Maresme lliure i tropical \nBarrejant reggae, hip hop, electrònica i influències de música cubana, Niño 5 busca combinar el so modern i el clàssic, explorar gèneres i fer música a foc lent i amb carinyo, amb cançons que fan sentir molt i amb històries de collita pròpia.\n\nContacte: ninocincomusic@gmail.com",
       "handle": "@n5wav",
-      "subscriberCount": 69,
+      "subscriberCount": 70,
       "categories": [
         "Rumba / Mestissatge"
       ],
@@ -8443,7 +8462,7 @@
       "avatar": "https://yt3.ggpht.com/3Hudg7NhlGHXKbPOqbaADk8jZDvReOC8Z7lqhzNYfGBsWvjJWzkbbgudHW9jIpsobyoWTN1KlQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 998,
+      "subscriberCount": 999,
       "categories": [
         "Jazz / Blues"
       ],
@@ -8554,27 +8573,6 @@
       "primary": true
     },
     {
-      "id": "UCHXlSnGKv7tdBxMw2F-FMkw",
-      "name": "OKDW",
-      "avatar": "https://yt3.ggpht.com/75sLRDFouqxcn_muYBaF7q25y5FUBYl8wgTexsRdKy5Hja1fR2p8CV0L7XLUTwe7CK3ZxHoxeA=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 52,
-      "categories": [
-        "Pop",
-        "Altres estils"
-      ],
-      "genres": [
-        "Pop",
-        "Funk / Soul / R&B"
-      ],
-      "artists": [
-        "okdw"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCVJ3B4L5NoSuarmZKopumzQ",
       "name": "okdw",
       "avatar": "https://yt3.ggpht.com/75sLRDFouqxcn_muYBaF7q25y5FUBYl8wgTexsRdKy5Hja1fR2p8CV0L7XLUTwe7CK3ZxHoxeA=s800-c-k-c0x00ffffff-no-rj",
@@ -8594,6 +8592,27 @@
       ],
       "type": "official",
       "primary": true
+    },
+    {
+      "id": "UCHXlSnGKv7tdBxMw2F-FMkw",
+      "name": "OKDW",
+      "avatar": "https://yt3.ggpht.com/75sLRDFouqxcn_muYBaF7q25y5FUBYl8wgTexsRdKy5Hja1fR2p8CV0L7XLUTwe7CK3ZxHoxeA=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 52,
+      "categories": [
+        "Pop",
+        "Altres estils"
+      ],
+      "genres": [
+        "Pop",
+        "Funk / Soul / R&B"
+      ],
+      "artists": [
+        "okdw"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UCCBTyMmUoeGrciYMzrwWiUw",
@@ -8639,7 +8658,7 @@
       "avatar": "https://yt3.ggpht.com/gt_4JxOcyMa3eVBZUnngxEKr3bL3Ed3NSeo4P6e02fwsamqsUFOnLo4JSpFXDL7DmuElsldPAg=s800-c-k-c0x00ffffff-no-rj",
       "description": "Som uns tius, podríem ser ties, som del nostre poble i podem ser del teu quan vulguis, igual que tu del nostre. Som bona gent, ens agraden els préssecs. Som animals, però no som ocells. En cas de ser Oques Grasses seríem un ocell que no vola, però només som un grup que es diu així i que fem cançons. Som el que pensis que som, podem ser molt, podem ser poc, podem ser res.\nT' estimem.\n\nSegueix-nos a:\nWeb: http://www.oquesgrasses.com\nTwitter: http://twitter.com/OquesGrasses\nInstagram: https://www.instagram.com/oquesgrasses/\nFacebook: https://www.facebook.com/OquesGrasses",
       "handle": "@oquesgrasses",
-      "subscriberCount": 94200,
+      "subscriberCount": 94300,
       "categories": [
         "Pop",
         "Rumba / Mestissatge"
@@ -9066,7 +9085,7 @@
       "avatar": "https://yt3.ggpht.com/hJTCpbMpVOJZClCx3IQsokqt0bimNMIH7cbc3t1soDsFqfwqx9JsHlfbvWsAwwx3t5wjpNLddO4=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 1100,
+      "subscriberCount": 1110,
       "categories": [
         "Rock",
         "Cançó d'autor"
@@ -9211,7 +9230,7 @@
       "avatar": "https://yt3.ggpht.com/xqrlgyObJqrVtgP30psPVh92ZcgHLoTOpKwWFCARbxi10qHheU0toWgNZjjpqhlRNQ4LLrBU=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 883,
+      "subscriberCount": 882,
       "categories": [
         "Infantil"
       ],
@@ -9333,7 +9352,7 @@
       "avatar": "https://yt3.ggpht.com/X0Wd1wJ8HesjVw_0eRqQwMfwAaKy3mg_m3sW-BrqDETAF-x9rL9Rkac47mdbNNTbkgjhpyH5Rg=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 2700,
+      "subscriberCount": 2710,
       "categories": [
         "Cançó d'autor"
       ],
@@ -9371,7 +9390,7 @@
       "avatar": "https://i.ytimg.com/vi/CQFtVT5RvIc/maxresdefault.jpg",
       "description": "",
       "handle": "",
-      "subscriberCount": 264,
+      "subscriberCount": 263,
       "categories": [
         "Punk"
       ],
@@ -9708,7 +9727,7 @@
       "avatar": "https://i.ytimg.com/vi/przS4BVU8wg/hqdefault.jpg",
       "description": "",
       "handle": "",
-      "subscriberCount": 80,
+      "subscriberCount": 82,
       "categories": [
         "Urban",
         "Pop",
@@ -9731,7 +9750,7 @@
       "avatar": "https://yt3.ggpht.com/b-iAGCUyiYvCMCVI1d2E-CuBEMQ09B7h2Qn_LqvMZttbLKgVr2F6G5dDOj0uJmfHy6BNw-gJ=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@quinto__v",
-      "subscriberCount": 560,
+      "subscriberCount": 561,
       "categories": [
         "Urban",
         "Pop",
@@ -9773,7 +9792,7 @@
       "avatar": "https://yt3.ggpht.com/8gmAYxzartfoxYOHslX5c0ivuSYjF6h5QfxRg0ODWD-wHVjvCAuQK5pJsTyiGa_rVbmsdQRI=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 409,
+      "subscriberCount": 410,
       "categories": [
         "Cançó d'autor"
       ],
@@ -10251,7 +10270,7 @@
       "avatar": "https://yt3.ggpht.com/zLeMqUFyZ-G2Foc3WzP9UP0cPdm7kDi8evghJS2IeNxSQcEnSGer5U9rzOPZYMdfvyQN1kUKc8I=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@sapena627",
-      "subscriberCount": 453,
+      "subscriberCount": 452,
       "categories": [
         "Urban",
         "Electrònica"
@@ -10272,7 +10291,7 @@
       "avatar": "https://yt3.ggpht.com/zLeMqUFyZ-G2Foc3WzP9UP0cPdm7kDi8evghJS2IeNxSQcEnSGer5U9rzOPZYMdfvyQN1kUKc8I=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 67,
+      "subscriberCount": 66,
       "categories": [
         "Urban",
         "Electrònica"
@@ -10312,7 +10331,7 @@
       "avatar": "https://yt3.ggpht.com/51jrMnKw4YMOzAWEhlbGMVDDh9qpLLhsRjaaIthugZQo-gUt9ExLrxShk93qlN0CKtMfQQ1y=s800-c-k-c0x00ffffff-no-rj",
       "description": "Projecte histriònic que va brotar a Quíbia devers l'any 2773 Ab Urbe Condita i ha estès ses arrels a través de sa pedra per tota s'illa de Mallorca amb s'objectiu de predicar es dogma de sa Sacra Causa i mantenir viva una tradició. \nContacte: sacrogermen@gmail.com\n",
       "handle": "@sacrogermen",
-      "subscriberCount": 96,
+      "subscriberCount": 95,
       "categories": [
         "Urban",
         "Rap / Hip-hop"
@@ -10354,7 +10373,7 @@
       "avatar": "https://yt3.ggpht.com/noiSzPmZdiFTxDNdm_d78HeRxlqCQckm9CdJ62tyLaGZ2MQFI562OpFGWY6phi-YrEiTZSS2=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 515,
+      "subscriberCount": 516,
       "categories": [
         "Punk"
       ],
@@ -10604,25 +10623,6 @@
       "primary": true
     },
     {
-      "id": "UCEOjwllkTYUqljRethReusQ",
-      "name": "Sense Sal",
-      "avatar": "https://yt3.ggpht.com/JNcqQgDXIuSz70lVufXqxRBsgnP-DJFcSYLyn5BMk5xG_6maz_Wp27zZwsrbU_A9KxeNV6jXJmo=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 381,
-      "categories": [
-        "Pop"
-      ],
-      "genres": [
-        "Pop"
-      ],
-      "artists": [
-        "Sense Sal"
-      ],
-      "type": "topic",
-      "primary": true
-    },
-    {
       "id": "UCOkIGVfu3W-Xzuyh-esacsg",
       "name": "Sense Sal",
       "avatar": "https://yt3.ggpht.com/_GtIlvy4yqkzXoXo_Q0sqmSTkwz8xweVG1r9x0HukS0SzzWoRmMYtP4HKb8TNwyfdatoU_xdtg=s800-c-k-c0x00ffffff-no-rj",
@@ -10640,6 +10640,25 @@
       ],
       "type": "official",
       "primary": false
+    },
+    {
+      "id": "UCEOjwllkTYUqljRethReusQ",
+      "name": "Sense Sal",
+      "avatar": "https://yt3.ggpht.com/JNcqQgDXIuSz70lVufXqxRBsgnP-DJFcSYLyn5BMk5xG_6maz_Wp27zZwsrbU_A9KxeNV6jXJmo=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 381,
+      "categories": [
+        "Pop"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "artists": [
+        "Sense Sal"
+      ],
+      "type": "topic",
+      "primary": true
     },
     {
       "id": "UC9aKnizc9niMNJGRL1lnwTg",
@@ -10706,7 +10725,7 @@
       "avatar": "https://yt3.ggpht.com/vlKk9kQrPtkFyNSgkA1jaUbVdUWX6GW2E9hjS-5xWrTz3iXjGgtRunKTWLyynuuJxlT-2-YI=s800-c-k-c0x00ffffff-no-rj",
       "description": "Uri Plana, Andreu Manyós i Roger Argemí són tres amics convençuts que totes les coses, tant les bones com les dolentes, passen de nit. D’aquesta unió neix un estil que s’han pres la llibertat d’anomenar Pop Nocturn. \n\nDesprés de participar al Benidorm Fest 2023 i de la gira Que Esclati Tot, van tornar amb el seu segon àlbum d’estudi, “La Vida Líquida”, on van explorar noves sonoritats, mescles impensables d’estils musicals i una energia més desenfadada.\n\nActualment, grup viu el seu moment més important amb “Tutu Turú”, una aposta de pop enganxós amb producció moderna i detalls d’inspiració llatina que anticipa una nova etapa artística del grup. La cançó s’ha convertit en un fenomen. El tema ha estat número 1 durant 3 mesos a les principals ràdios musicals de Catalunya, convertint-se en una de les cançons catalanes més virals dels últims anys.\n\nAra presenten \"L'Última\", un tema de pop-indie emocional amb tocs electrònics i mediterranis.\n",
       "handle": "@siderlandmusic",
-      "subscriberCount": 2410,
+      "subscriberCount": 2420,
       "categories": [
         "Pop"
       ],
@@ -10881,7 +10900,7 @@
       "avatar": "https://yt3.ggpht.com/z2EK-wo2CS-0bng9El5usNULzfOBRBS_qLNeSXV_vfYXX85anaxzRY1WXF0G8YVleGlxvmKu=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 716,
+      "subscriberCount": 715,
       "categories": [
         "Ska / Reggae"
       ],
@@ -10900,7 +10919,7 @@
       "avatar": "https://yt3.ggpht.com/zOC5mkcXH-lLK3pRfpQRoOHueqA49UKrzkDwHksf6IufCyq4bVwCYQi2IHdI5Gw2eEWKcX1G=s800-c-k-c0x00ffffff-no-rj",
       "description": "SLAD SHORE 📲\n",
       "handle": "@sladtv",
-      "subscriberCount": 603,
+      "subscriberCount": 604,
       "categories": [
         "Urban",
         "Electrònica"
@@ -11169,7 +11188,7 @@
       "avatar": "https://yt3.ggpht.com/uAbqeA-jMx0hnvSnQeMy-Nyq1ymzh0TIPXHoGJC4ipjEf9-xJJQcFgFfcZ8gj90T1um17DkUpw=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 161,
+      "subscriberCount": 160,
       "categories": [
         "Pop",
         "Rumba / Mestissatge"
@@ -11389,25 +11408,6 @@
       "primary": true
     },
     {
-      "id": "UCxVQcJujZLvClGNyvobPRyQ",
-      "name": "Tempestat",
-      "avatar": "https://yt3.ggpht.com/yXhTkwt63W098U9Tbvhj6q11ix_zvu6NIq7OsaqdXtI4yPEk4KRqRGVC6hlz1AcEuylC9RGCzw=s800-c-k-c0x00ffffff-no-rj",
-      "description": "- Tempestat - \nGrup Blackended amb influències Grind/Crust format a Barcelona desde l'any 2017.  \n\n2017 - “Tempestat” EP - CD (Auto edició).\n2018 - “Exhaurit” EP - CD (GodBox Records).\n2018 - “Grind This World 4-Way International Split” - Cassette (No Bread!).\n2022 - Split W/ Sota Terra - K7 - LP. \n\n",
-      "handle": "@tempestat",
-      "subscriberCount": 15,
-      "categories": [
-        "Heavy / Metal"
-      ],
-      "genres": [
-        "Metal"
-      ],
-      "artists": [
-        "Tempestat"
-      ],
-      "type": "official",
-      "primary": true
-    },
-    {
       "id": "UC50KRxJXBWgOj3Q05CDAs8w",
       "name": "Tempestat",
       "avatar": "https://yt3.ggpht.com/xzV8Otj2MODR9PNSfSRfGEkI-Qoq5lqxGSipZRd0bL-YY1zFT874iC1Y0eTDUpUaTCcoZliA=s800-c-k-c0x00ffffff-no-rj",
@@ -11425,6 +11425,25 @@
       ],
       "type": "topic",
       "primary": false
+    },
+    {
+      "id": "UCxVQcJujZLvClGNyvobPRyQ",
+      "name": "Tempestat",
+      "avatar": "https://yt3.ggpht.com/yXhTkwt63W098U9Tbvhj6q11ix_zvu6NIq7OsaqdXtI4yPEk4KRqRGVC6hlz1AcEuylC9RGCzw=s800-c-k-c0x00ffffff-no-rj",
+      "description": "- Tempestat - \nGrup Blackended amb influències Grind/Crust format a Barcelona desde l'any 2017.  \n\n2017 - “Tempestat” EP - CD (Auto edició).\n2018 - “Exhaurit” EP - CD (GodBox Records).\n2018 - “Grind This World 4-Way International Split” - Cassette (No Bread!).\n2022 - Split W/ Sota Terra - K7 - LP. \n\n",
+      "handle": "@tempestat",
+      "subscriberCount": 15,
+      "categories": [
+        "Heavy / Metal"
+      ],
+      "genres": [
+        "Metal"
+      ],
+      "artists": [
+        "Tempestat"
+      ],
+      "type": "official",
+      "primary": true
     },
     {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
@@ -11490,25 +11509,6 @@
       "primary": false
     },
     {
-      "id": "UCyS2GxjCglNX_8TY7LDlmlw",
-      "name": "Terra Ferma Ska Band",
-      "avatar": "https://yt3.ggpht.com/xaezK26dQpQwkQCTEvblHhybsY4TggFQkQ-mfJC1fm79UXW8rjOK3-dRpBhOExmKdXLoi_eS1w=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 20,
-      "categories": [
-        "Ska / Reggae"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "artists": [
-        "Terra Ferma Ska Band"
-      ],
-      "type": "topic",
-      "primary": true
-    },
-    {
       "id": "UCT3FFtIl_wpwLu0pL4ruUDA",
       "name": "Terra Ferma Ska Band",
       "avatar": "https://yt3.ggpht.com/Jq6CiNUa7oT21PpBVyIEvzrDmfjrI4rT1q_Ypn4mLC-Q6RX-fbRfSmkEQckiyYsK2S7fH1uNJA=s800-c-k-c0x00ffffff-no-rj",
@@ -11526,6 +11526,25 @@
       ],
       "type": "official",
       "primary": false
+    },
+    {
+      "id": "UCyS2GxjCglNX_8TY7LDlmlw",
+      "name": "Terra Ferma Ska Band",
+      "avatar": "https://yt3.ggpht.com/xaezK26dQpQwkQCTEvblHhybsY4TggFQkQ-mfJC1fm79UXW8rjOK3-dRpBhOExmKdXLoi_eS1w=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 20,
+      "categories": [
+        "Ska / Reggae"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "artists": [
+        "Terra Ferma Ska Band"
+      ],
+      "type": "topic",
+      "primary": true
     },
     {
       "id": "UCrAazkwonIdGi_TGkzXkoCw",
@@ -11646,25 +11665,6 @@
       "primary": false
     },
     {
-      "id": "UCARSXSWwSje53JsJgzLCtpA",
-      "name": "The Anti-Patiks",
-      "avatar": "https://yt3.ggpht.com/LYWiAvEGm-FmOEpS3EnjanSt6J64q-mwzyy15Vjksr9WDCg0jB7D-npLoMkA2Jn4AF7BM3xgwg=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 139,
-      "categories": [
-        "Punk"
-      ],
-      "genres": [
-        "Punk"
-      ],
-      "artists": [
-        "The Anti-Patiks"
-      ],
-      "type": "topic",
-      "primary": true
-    },
-    {
       "id": "UCuBUwUHwHaYGai1Enee7DSw",
       "name": "The Anti-Patiks",
       "avatar": "https://yt3.ggpht.com/jyxztHMAG8hHtNSs_heG666Z0hD0lVEO4OIYt6gUbLqd26DcWzBu2FRusijtBjKRZFrUG6VmM4E=s800-c-k-c0x00ffffff-no-rj",
@@ -11682,6 +11682,25 @@
       ],
       "type": "topic",
       "primary": false
+    },
+    {
+      "id": "UCARSXSWwSje53JsJgzLCtpA",
+      "name": "The Anti-Patiks",
+      "avatar": "https://yt3.ggpht.com/LYWiAvEGm-FmOEpS3EnjanSt6J64q-mwzyy15Vjksr9WDCg0jB7D-npLoMkA2Jn4AF7BM3xgwg=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 138,
+      "categories": [
+        "Punk"
+      ],
+      "genres": [
+        "Punk"
+      ],
+      "artists": [
+        "The Anti-Patiks"
+      ],
+      "type": "topic",
+      "primary": true
     },
     {
       "id": "UCkbE2-0JpyMzPFxZJ9Ev8aA",
@@ -11731,7 +11750,7 @@
       "avatar": "https://yt3.ggpht.com/raN7lcAksyal2TpVy8YMvUL1aKIxnERNYL5xwZYy311V37bT1jEHPQN_gaGHWIp850LV_WA3LQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "The Tyets, dos productors i compositors de Mataró, el Maresme. Des del 2018 picant pedra fins a dia d'avui. Actuant davant de desenes de milers de persones i acumulant oients i més 300 Milions d'escoltes en plataformes digitals.\n\nLa tieta✨❤️",
       "handle": "@thetyets",
-      "subscriberCount": 58600,
+      "subscriberCount": 58700,
       "categories": [
         "Urban",
         "Pop"
@@ -11752,7 +11771,7 @@
       "avatar": "https://yt3.ggpht.com/raN7lcAksyal2TpVy8YMvUL1aKIxnERNYL5xwZYy311V37bT1jEHPQN_gaGHWIp850LV_WA3LQ=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 621,
+      "subscriberCount": 620,
       "categories": [
         "Urban",
         "Pop"
@@ -12167,7 +12186,7 @@
       "avatar": "https://yt3.ggpht.com/ytc/AIdro_mDlMOfYUdATt5JufMdg78cmcLOjmMSV2fSczuL9nGXkRA=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@urbaliarurana",
-      "subscriberCount": 190,
+      "subscriberCount": 189,
       "categories": [
         "Folk i arrel"
       ],
@@ -12245,7 +12264,7 @@
       "avatar": "https://yt3.ggpht.com/pxssncevq0bQTfitbtdHbKkbViABiwsCMsrFWHbzbDLA9nvwGi88mhBx_fID0YTxizG6RGOhhg=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 393,
+      "subscriberCount": 392,
       "categories": [
         "Urban",
         "Rap / Hip-hop"
@@ -12266,7 +12285,7 @@
       "avatar": "https://yt3.ggpht.com/N-eK6PrOeGuH7QManMWvhjIbAbXa5bT-I7rsEMxnggJPFFsuZGNYm8Tux6WCfZuSR9Zlipo0ZI0=s800-c-k-c0x00ffffff-no-rj",
       "description": "08.10.26 La Nau, Barcelona\n10.10.26 Parma, Itàlia\n31.10.26 CabroRock, Montmeló",
       "handle": "@ei.vennus",
-      "subscriberCount": 661,
+      "subscriberCount": 662,
       "categories": [
         "Pop"
       ],
@@ -12344,7 +12363,7 @@
       "avatar": "https://yt3.ggpht.com/blhn1y7W_mlhpFKJdg6nDWsnfCmPeT9ISChUE8fCqEl8gmjAkDrCEtpwu-vW2CSn7ZnqMLJLTA=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "@vidresalasangofficial6392",
-      "subscriberCount": 735,
+      "subscriberCount": 734,
       "categories": [
         "Heavy / Metal"
       ],
@@ -12767,7 +12786,7 @@
       "avatar": "https://yt3.ggpht.com/dJgB03iu6X3yfnU32GYRNkhCwjaMzaWzdvqiBuWhPO_5MdMlX6IDFT5-Q8PD4MRR6Iew-4v4vA=s800-c-k-c0x00ffffff-no-rj",
       "description": "",
       "handle": "",
-      "subscriberCount": 908,
+      "subscriberCount": 907,
       "categories": [
         "Infantil"
       ],
@@ -12866,7 +12885,7 @@
       "avatar": "https://yt3.ggpht.com/HPFsg_sMZBeUmz5WX2f_Krdqu8fOPLz9l4N7E2R4seLm2P3hRx9taMb0f_4Bdzs1EZAqf9Bl=s800-c-k-c0x00ffffff-no-rj",
       "description": "Xiomara Abello (Castelló de la Plana, 1988) és guitarrista, compositora, cantautora, professora i filòloga d'arrels valencianes i veneçolanes.",
       "handle": "@xiomaraabello7045",
-      "subscriberCount": 324,
+      "subscriberCount": 326,
       "categories": [
         "Cançó d'autor",
         "Folk i arrel"
@@ -12962,25 +12981,6 @@
       "primary": true
     },
     {
-      "id": "UCg6lVNl78-THJI1w8dSy0bA",
-      "name": "YPNOSI",
-      "avatar": "https://yt3.ggpht.com/PTo9UYB6q4EKyzwaTxzhlLMLOAO-1R6teL5_VMW2g6PoTXDO695dGy8Yy2smspNhH4SLwvjt=s800-c-k-c0x00ffffff-no-rj",
-      "description": "",
-      "handle": "",
-      "subscriberCount": 58,
-      "categories": [
-        "Rock"
-      ],
-      "genres": [
-        "Rock"
-      ],
-      "artists": [
-        "Ypnosi"
-      ],
-      "type": "topic",
-      "primary": false
-    },
-    {
       "id": "UCqqRg6HX-P769DEoffrQMEQ",
       "name": "YPNOSI",
       "avatar": "https://yt3.ggpht.com/gb9WUK_Sh3UfJt3fXNWb5JITDq3YAjV_lX0WQ0NZ65hsQheMgO7FVLOoi-DRU4iJukOupuVE=s800-c-k-c0x00ffffff-no-rj",
@@ -12998,6 +12998,25 @@
       ],
       "type": "topic",
       "primary": true
+    },
+    {
+      "id": "UCg6lVNl78-THJI1w8dSy0bA",
+      "name": "YPNOSI",
+      "avatar": "https://yt3.ggpht.com/PTo9UYB6q4EKyzwaTxzhlLMLOAO-1R6teL5_VMW2g6PoTXDO695dGy8Yy2smspNhH4SLwvjt=s800-c-k-c0x00ffffff-no-rj",
+      "description": "",
+      "handle": "",
+      "subscriberCount": 58,
+      "categories": [
+        "Rock"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "artists": [
+        "Ypnosi"
+      ],
+      "type": "topic",
+      "primary": false
     },
     {
       "id": "UCHdLUidEVvmo-4p1h895hcA",
