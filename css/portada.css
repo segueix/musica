@@ -11313,23 +11313,55 @@ body.ai-open {
 }
 
 /* «+N»: el grup ha publicat més cançons aquell dia. Una càpsula llima, ben visible, a dalt a l'esquerra (la durada
-   baixa a sota) i, darrere la caràtula, una altra que hi treu el cap: hi ha més cançons a dins. */
+   baixa a sota) i la caràtula és la primera d'una pila: darrere seu, una o dues capes (una per cançó de més, fins a
+   dues) desplaçades cap a dalt i cap a la dreta, com documents apilats. La caràtula es fa petita el que ocupa la
+   pila (--pt-stack), de manera que la cel·la fa el mateix que les altres i res no se'n surt (la fila té 4 px de gap
+   i retalla). */
 #homePage.is-portada .pt-cell--group {
+    --pt-stack-step: 6px;
+    --pt-stack: var(--pt-stack-step);
     position: relative;
+    isolation: isolate;
+    padding: var(--pt-stack) var(--pt-stack) 0 0;
 }
 
-#homePage.is-portada .pt-cell--group::before {
+#homePage.is-portada .pt-cell--group.pt-cell--stack-2 {
+    --pt-stack: calc(2 * var(--pt-stack-step));
+}
+
+#homePage.is-portada .pt-cell--group > .pt-card {
+    width: calc(var(--pt-cover-w) - var(--pt-stack));
+}
+
+#homePage.is-portada .pt-cell--group::before,
+#homePage.is-portada .pt-cell--group.pt-cell--stack-2::after {
     content: '';
     position: absolute;
-    top: -6px;
-    right: 10px;
-    left: 10px;
-    height: 20px;
+    z-index: -1;
     border: 2px solid var(--pt-accent);
-    border-bottom: 0;
-    border-radius: var(--pt-radius-cover) var(--pt-radius-cover) 0 0;
-    background: rgba(214, 237, 132, 0.18);
+    border-radius: var(--pt-radius-cover);
     pointer-events: none;
+}
+
+/* Capa del mig (o l'única): un pas cap a dalt i cap a la dreta */
+#homePage.is-portada .pt-cell--group::before {
+    top: calc(var(--pt-stack) - var(--pt-stack-step));
+    right: calc(var(--pt-stack) - var(--pt-stack-step));
+    bottom: var(--pt-stack-step);
+    left: var(--pt-stack-step);
+    background: #3a4232;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Capa del fons: dos passos, més apagada */
+#homePage.is-portada .pt-cell--group.pt-cell--stack-2::after {
+    top: 0;
+    right: 0;
+    bottom: calc(2 * var(--pt-stack-step));
+    left: calc(2 * var(--pt-stack-step));
+    z-index: -2;
+    border-color: rgba(214, 237, 132, 0.55);
+    background: #272c24;
 }
 
 #homePage.is-portada .pt-card__more {
@@ -11392,7 +11424,12 @@ body.ai-open {
 }
 
 /* Desplegat: la caràtula i les del mateix dia porten el marc llima, i la càpsula fa d'«Amaga-les» */
-#homePage.is-portada .pt-cell--group.is-open::before {
+#homePage.is-portada .pt-cell--group.is-open {
+    --pt-stack: 0px;
+}
+
+#homePage.is-portada .pt-cell--group.is-open::before,
+#homePage.is-portada .pt-cell--group.is-open::after {
     display: none;
 }
 

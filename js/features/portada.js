@@ -527,7 +527,9 @@
                 const others = expanded ? null : fresh.groups?.[id];
                 if (!others?.length) return `<li class="pt-cell">${cardHtml(video, { now, reason })}</li>`;
                 const open = Boolean(openGroups?.has?.(id));
-                const lead = `<li class="pt-cell pt-cell--group${open ? ' is-open' : ''}">${cardHtml(video, { now, reason, group: { count: others.length, open } })}</li>`;
+                // Una capa darrere la caràtula per cançó de més (fins a dues): una pila de documents
+                const stack = others.length > 1 ? ' pt-cell--stack-2' : '';
+                const lead = `<li class="pt-cell pt-cell--group${stack}${open ? ' is-open' : ''}">${cardHtml(video, { now, reason, group: { count: others.length, open } })}</li>`;
                 if (!open) return lead;
                 return (
                     lead +

@@ -78,11 +78,7 @@ describe('«Acabades de sortir»: cançons del mateix dia', () => {
         const html = portada.freshHtml(model.fresh, false, NOW, null, new Set());
         expect(html).toMatch(new RegExp(`data-pt-group="${lead.id}" aria-expanded="false"`));
         expect(html).toContain(`<span class="pt-card__more-n" aria-hidden="true">+${n}</span>`);
-        expect(html).toContain(
-            n === 1
-                ? '<span>cançó més</span><span>del mateix dia</span>'
-                : '<span>cançons més</span><span>del mateix dia</span>'
-        );
+        expect(html).toContain(n === 1 ? '<span>cançó</span>' : '<span>cançons</span>');
         expect(html).toContain(
             n === 1
                 ? 'aria-label="Mostra una altra cançó nova de Artista 0, publicada el mateix dia"'
@@ -117,6 +113,22 @@ describe('«Acabades de sortir»: cançons del mateix dia', () => {
         const onClick = portadaSource.slice(portadaSource.indexOf('function onClick'));
         expect(onClick.indexOf("pick('[data-pt-group]')")).toBeGreaterThan(-1);
         expect(onClick.indexOf("pick('[data-pt-group]')")).toBeLessThan(onClick.indexOf('.pt-card[data-video-id]'));
+    });
+
+    it('la caràtula és la primera d’una pila: una capa per cançó de més (fins a dues), cap a dalt i a la dreta', () => {
+        const html = portada.freshHtml(model.fresh, false, NOW, null, new Set());
+        expect(html).toContain(n > 1 ? 'pt-cell pt-cell--group pt-cell--stack-2' : 'pt-cell pt-cell--group"');
+        expect(css).toMatch(
+            /#homePage\.is-portada \.pt-cell--group \{[^}]*padding: var\(--pt-stack\) var\(--pt-stack\) 0 0;/
+        );
+        expect(css).toMatch(
+            /\.pt-cell--group > \.pt-card \{\s*width: calc\(var\(--pt-cover-w\) - var\(--pt-stack\)\);/
+        );
+        expect(css).toMatch(
+            /\.pt-cell--group\.pt-cell--stack-2::after \{[^}]*left: calc\(2 \* var\(--pt-stack-step\)\);/
+        );
+        // desplegat, sense pila
+        expect(css).toMatch(/\.pt-cell--group\.is-open \{\s*--pt-stack: 0px;/);
     });
 
     it('el «+N» és una càpsula llima i la fila es desplaça fins a la primera desplegada', () => {
