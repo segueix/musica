@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-17. 159 entrades vigilades i 282 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-17. 160 entrades vigilades i 284 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -191,3 +191,4 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Mascarats | Mascarats Grup, Mascarats - Topic | `UC9Ytb6_hvQB1cH5iLYGAYKg`, `UCd8BT2JBV0_DQOKbseg7_4w` | Revisió 2026-10-14: fragments cantats en altres llengües comprovats en publicacions oficials. Revisió individual de les noves peces. | `docs/revisions/2026-10-14-noves-incorporacions.md` |
 | Repúblika Ska | RepublikaSka, República Ska, Repúblika Ska - Topic | `UCmKA6KQvu6Ol0gv7PHNMPqQ`, `UCa3diMkg9yChODo1MPUGgNw` | Revisió 2026-10-14: fragments cantats en altres llengües comprovats en publicacions oficials. Revisió individual de les noves peces. | `docs/revisions/2026-10-14-noves-incorporacions.md` |
 | Terra Ferma Ska Band | Terra Ferma, Terra Ferma Ska Band - Topic | `UCyS2GxjCglNX_8TY7LDlmlw`, `UCT3FFtIl_wpwLu0pL4ruUDA` | Revisió 2026-10-14: Cada Instant (amb Koers) conté una estrofa cantada en anglès, publicada amb la lletra oficial. Revisió individual de les noves peces. | `https://www.youtube.com/watch?v=KTjaC5tAB8w` |
+| Agathe Catel | Agathe Catel MUSIC | `UCIMUDjFw_0JF--3ijeIFIrA` | 17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal propi comprovat (Agathe Catel MUSIC). Repertori en català, francès i portuguès: a Orígens (2026), 8 cançons en català, 2 en francès i 2 instrumentals. Artista vigilada: només s’hi han de quedar les cançons en català i les instrumentals; la revisió es farà després de l’actualització del feed. | `manual-user-2026-10-17`, `https://www.youtube.com/channel/UCIMUDjFw_0JF--3ijeIFIrA`, `https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens`, `https://musiqc.ca/artistes/agathe-catel` |
