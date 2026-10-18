@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 444,
+  "musicalArtists": 445,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -1187,7 +1187,7 @@
         "rumba",
         "rumba-general"
       ],
-      "artistCount": 17,
+      "artistCount": 18,
       "nucleus": true,
       "artists": [
         "9SON",
@@ -1206,7 +1206,8 @@
         "Terratombats",
         "Txarango",
         "Xeic!",
-        "Niño 5"
+        "Niño 5",
+        "Joan Garriga"
       ]
     },
     {
@@ -5492,6 +5493,16 @@
       "sources": [
         "https://nuriabalcells.com/recanconem/",
         "https://www.youtube.com/@nuriabalcells"
+      ]
+    },
+    {
+      "artist": "Joan Garriga",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://joangarriga.cat/bio/",
+        "https://www.youtube.com/channel/UCdLF7PrhokwO1TwkKQHtR8A"
       ]
     }
   ]

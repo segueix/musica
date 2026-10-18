@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-17T19:58:00.286Z",
+  "generatedAt": "2026-10-18T15:43:49.000Z",
   "polling": {
-    "requested": 7,
-    "deferred": 657,
-    "failed": 7
+    "requested": 1,
+    "deferred": 665,
+    "failed": 0
   },
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
@@ -4229,13 +4229,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 664,
-  "resolvedChannelCount": 664,
-  "feedChannelCount": 664,
-  "rawPublicVideoCount": 7312,
-  "feedVideoCount": 6719,
-  "acceptedMusicCount": 6683,
-  "categoryEligibleVideoCount": 6679,
+  "indexedChannelCount": 666,
+  "resolvedChannelCount": 666,
+  "feedChannelCount": 666,
+  "rawPublicVideoCount": 7314,
+  "feedVideoCount": 6727,
+  "acceptedMusicCount": 6685,
+  "categoryEligibleVideoCount": 6681,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -4244,8 +4244,8 @@
   },
   "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 6496,
-    "live_song": 183,
+    "song": 6499,
+    "live_song": 182,
     "album": 4,
     "other": 36,
     "review": 593
@@ -4255,6 +4255,6 @@
   "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6719,
+  "publishedFeedVideoCount": 6727,
   "publishedShortVideoCount": 0
 }

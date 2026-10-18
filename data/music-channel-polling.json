@@ -4198,14 +4198,20 @@
       "intervalDays": 3,
       "nextCheckOn": "2026-10-20",
       "lastFullTopicAt": "2026-10-17T19:33:33.056Z"
+    },
+    "UCdLF7PrhokwO1TwkKQHtR8A": {
+      "latestPublishedAt": "2024-02-27T22:56:56.000Z",
+      "lastCheckedAt": "2026-10-18T15:43:45.580Z",
+      "intervalDays": 3,
+      "nextCheckOn": "2026-10-21"
     }
   },
-  "updatedAt": "2026-10-17T19:57:56.716Z",
+  "updatedAt": "2026-10-18T15:43:45.580Z",
   "lastRun": {
-    "indexed": 664,
-    "requested": 7,
-    "checked": 0,
-    "deferred": 657,
-    "failed": 7
+    "indexed": 666,
+    "requested": 1,
+    "checked": 1,
+    "deferred": 665,
+    "failed": 0
   }
 }
