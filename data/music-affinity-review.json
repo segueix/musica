@@ -1937,6 +1937,24 @@
       "reviewedAt": "2026-10-17",
       "confidence": 0.7,
       "method": "editorial-predominant-pop-rock"
+    },
+    {
+      "artist": "El Belda i el Conjunt Badabadoc",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "facets": [
+        "ska",
+        "rocksteady",
+        "reggae"
+      ],
+      "sources": [
+        "https://music.apple.com/us/album/per-jamaicanes/1518616895",
+        "https://www.top-charts.com/r/som-aixi-el-belda-i-el-conjunt-badabadoc-carles-belda"
+      ],
+      "reviewedAt": "2026-10-18",
+      "confidence": 0.9,
+      "method": "source-review"
     }
   ],
   "relations": [

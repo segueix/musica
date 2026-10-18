@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T15:38:27.000Z",
+  "updatedAt": "2026-10-18T15:52:29.000Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -11251,6 +11251,23 @@
       "reviewedOn": "2026-10-18",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:el-belda-i-el-conjunt-badabadoc": {
+      "name": "El Belda i el Conjunt Badabadoc",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3111199"
+      ],
+      "confidence": "alta",
+      "basis": "Sabadell per indicació expressa de l’usuari.",
+      "sources": [
+        "manual-user-2026-10-18",
+        "https://www.cpnl.cat/media/upload/imatges/comunicacio/llistes%20musica/Guia-continguts-Cant-cante-web.pdf"
+      ],
+      "reviewedOn": "2026-10-18",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11919,7 +11936,9 @@
     "UCZVRD2oamzF1lgzroVyVD6w": "artist:llamp-te-frigui",
     "UCKKjvjnD71ll8kMq2pqQhcg": "artist:gisela-bellsola",
     "UCHO5cHnX3GGXitE11VNsAmA": "artist:nuria-balcells",
-    "UCdLF7PrhokwO1TwkKQHtR8A": "artist:joan-garriga"
+    "UCdLF7PrhokwO1TwkKQHtR8A": "artist:joan-garriga",
+    "UCsee8KxP3-rJr03f266dtbQ": "artist:el-belda-i-el-conjunt-badabadoc",
+    "UCcgwj-7qGY9B03WX55ZzeXw": "artist:el-belda-i-el-conjunt-badabadoc"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
