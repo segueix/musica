@@ -1,6 +1,6 @@
 # Passada general d'idioma pel títol — 2026-10-18
 
-**Què és:** un triatge de totes les cançons publicades (feed: unes 6.700; i les de l'arxiu que surten a les fitxes d'artista), buscant títols en castellà, anglès, portuguès o altres llengües. **No és una verificació de la lletra:** el títol és només un indici (`CLAUDE.md`: «Mai amagueu una cançó només per la ñ, els accents o la llengua del títol»). **No s'ha amagat cap cançó.**
+**Què és:** un triatge de totes les cançons publicades (feed: unes 6.700; i les de l'arxiu que surten a les fitxes d'artista), buscant títols en castellà, anglès, portuguès o altres llengües. **No és una verificació de la lletra:** el títol és només un indici (`CLAUDE.md`: «Mai amagueu una cançó només per la ñ, els accents o la llengua del títol»). **En aquesta passada no s'ha verificat cap lletra** (vegeu «Aplicat»).
 
 **Com s'ha fet:** per a cada cançó publicada (no oculta ni restringida, sense decisió prèvia a `data/revisio-idiomes.json`), la part del títol que és la cançó (`songPart()`: sense l'artista, els parèntesis ni les col·laboracions) s'ha comparat amb llistes de paraules exclusives del castellà i de l'anglès i amb marques ortogràfiques (ñ, ¿¡, -ción, á, ã/õ, alfabets no llatins). Només es queden les que no tenen cap paraula o lletra catalana (ç, l·l, ny, «amb», «els», «per»…). Després s'han classificat a mà.
 
@@ -14,9 +14,11 @@
 - **41 falsos positius probables:** el títol és català, la paraula és un préstec o és instrumental.
 - No inclou la cua de revisió dels artistes vigilats (`pendents`: 1.653 cançons, la majoria amb títols catalans), que continua com estava.
 
-## Probables en una altra llengua (73)
+## Aplicat (2026-10-18)
 
-Abans d'amagar-les, cal confirmar-ne la lletra (escoltar-les o una font). Es poden amagar amb `node scripts/aplicar_revisio_idiomes.js --amaga=ID,ID… --font=URL`.
+A petició de l'usuari («amaga-les totes»), **les 73 probables s'han amagat** (`data/hidden-videos.json`) amb una decisió `amaga` a `data/revisio-idiomes.json` (`criteri: titol-autoritzat-usuari`, `lletraIntegraVerificada: false`). Els 10 artistes «de confiança» que en tenien (Anna Ferrer, Blues de Picolat, El Nota, Exili a Elba, Glaucs, Ia & Batiste, Inadaptats, Ja t'ho diré, Paula Montalbán, Xesco Boix) han passat a **vigilats** i la resta del seu repertori ha entrat a la cua de revisió (no s'ha amagat). Per recuperar-ne una: treure l'ID de `data/hidden-videos.json` i canviar-ne la decisió a `conserva` a `data/revisio-idiomes.json` (`--recupera` de l'eina només accepta cançons que siguin a la cua). Les «en dubte» i els falsos positius no s'han tocat.
+
+## Probables en una altra llengua (73)
 
 | Artista | Cançó | On és | Per què | Vídeo |
 |---|---|---|---|---|
