@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-18T15:43:49.000Z",
+  "generatedAt": "2026-10-18T15:57:37.474Z",
   "polling": {
-    "requested": 1,
-    "deferred": 665,
+    "requested": 2,
+    "deferred": 666,
     "failed": 0
   },
   "retainedVideoCount": 0,
@@ -11,7 +11,7 @@
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 371,
+  "topicChannelCount": 372,
   "governedChannelCount": 123,
   "topicCoverage": [
     {
@@ -1527,6 +1527,14 @@
       "governs": false
     },
     {
+      "id": "UCsee8KxP3-rJr03f266dtbQ",
+      "name": "Carles Belda",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCMI_YX4hq_6gmj5KXiSMCEQ",
       "name": "Daltabaix",
       "songs": 0,
@@ -2253,6 +2261,13 @@
       "tracks": 127,
       "selected": 28,
       "withClip": 29
+    },
+    {
+      "id": "UCcgwj-7qGY9B03WX55ZzeXw",
+      "name": "El Belda i el Conjunt Badabadoc",
+      "tracks": 29,
+      "selected": 27,
+      "withClip": 0
     },
     {
       "id": "UC1z2kyYBoovz6rXDKVbBH0g",
@@ -4229,13 +4244,13 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 666,
-  "resolvedChannelCount": 666,
-  "feedChannelCount": 666,
-  "rawPublicVideoCount": 7314,
-  "feedVideoCount": 6727,
-  "acceptedMusicCount": 6685,
-  "categoryEligibleVideoCount": 6681,
+  "indexedChannelCount": 668,
+  "resolvedChannelCount": 668,
+  "feedChannelCount": 668,
+  "rawPublicVideoCount": 7338,
+  "feedVideoCount": 6751,
+  "acceptedMusicCount": 6709,
+  "categoryEligibleVideoCount": 6705,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
     "before": 0,
@@ -4244,7 +4259,7 @@
   },
   "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 6499,
+    "song": 6523,
     "live_song": 182,
     "album": 4,
     "other": 36,
@@ -4252,9 +4267,11 @@
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
+  "channelsWithoutVideos": [
+    "UCsee8KxP3-rJr03f266dtbQ"
+  ],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6727,
+  "publishedFeedVideoCount": 6739,
   "publishedShortVideoCount": 0
 }

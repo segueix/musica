@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 445,
+  "musicalArtists": 446,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -940,10 +940,11 @@
         "folk-tradicional",
         "folk-general"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
-        "Els Jóvens"
+        "Els Jóvens",
+        "El Belda i el Conjunt Badabadoc"
       ]
     },
     {
@@ -5503,6 +5504,15 @@
       "sources": [
         "https://joangarriga.cat/bio/",
         "https://www.youtube.com/channel/UCdLF7PrhokwO1TwkKQHtR8A"
+      ]
+    },
+    {
+      "artist": "El Belda i el Conjunt Badabadoc",
+      "category": "Folk i arrel",
+      "subcategory": "folk-fusio",
+      "basis": "editorial",
+      "sources": [
+        "manual-user-2026-10-18"
       ]
     }
   ]
