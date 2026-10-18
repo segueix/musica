@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-18T15:38:27.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -599,6 +599,100 @@
       }
     },
     {
+      "name": "Agathe Catel",
+      "aliases": [
+        "Agathe Catel MUSIC"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCIMUDjFw_0JF--3ijeIFIrA",
+            "handle": null,
+            "name": "Agathe Catel MUSIC",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCIMUDjFw_0JF--3ijeIFIrA",
+        "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
+        "https://musiqc.ca/artistes/agathe-catel"
+      ],
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal propi comprovat (Agathe Catel MUSIC). Repertori en català, francès i portuguès: a Orígens (2026), 8 cançons en català, 2 en francès i 2 instrumentals. Artista vigilada: només s’hi han de quedar les cançons en català i les instrumentals; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
+          "https://musiqc.ca/artistes/agathe-catel"
+        ]
+      }
+    },
+    {
+      "name": "Agraviats",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UClM-LZwhDXymZaKrjGrDnzg",
+            "name": "Agraviats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Origen a Borriol; ska amb influència punk i evolució cap al reggae, funk i swing. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats"
+        ]
+      },
+      "displayName": "Agraviats"
+    },
+    {
       "name": "Ai Ai Ai",
       "aliases": [],
       "genres": [],
@@ -883,6 +977,35 @@
       "genresRaw": [
         "música tradicional"
       ]
+    },
+    {
+      "name": "Albert Bueno",
+      "aliases": [],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-17",
+        "https://www.enderrock.cat/noticia/14823/cent-cancons-albert-bueno"
+      ],
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi verificable: el canal «albert bueno - Tema» (UCTSMM3XHykmcW-f36NVvAiQ) no mostra cap pista i podria ser un homònim, i els seus vídeos són a canals d’arxiu de diversos artistes (Singlantana Sound). Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. La integral de 100 cançons inclou peces en francès i una amb una estrofa en anglès: caldrà vigilar-lo.",
+      "genresRaw": []
     },
     {
       "name": "Albert Fibla",
@@ -1462,6 +1585,60 @@
           "https://www.enderrock.cat/disc/11297/primer-cant-mati"
         ]
       }
+    },
+    {
+      "name": "AlQuadrat",
+      "aliases": [
+        "Al Quadrat"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCSyQZszUB66TBDSGfMDcGNg",
+            "name": "AlQuadrat - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCRy88DHkwZTozU2PfetY0bA",
+            "name": "Al Quadrat",
+            "handle": "@AlQuadratgrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+        "https://www.viasona.cat/grup/alquadrat",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Projecte musical nascut el 2009 a Sant Quirze del Vallès; barreja rumba, ska, reggae i pop. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
+          "https://www.viasona.cat/grup/alquadrat"
+        ]
+      },
+      "displayName": "AlQuadrat"
     },
     {
       "name": "Amargor",
@@ -3275,6 +3452,60 @@
       ]
     },
     {
+      "name": "Atzembla",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": "Q55811636",
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC39UUfaafpeQRfaU5dcJ0ug",
+            "name": "Atzembla - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCG-fbhvlr6lGbl2DhKGFFhA",
+            "name": "Atzembla",
+            "handle": "@atzemblagrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+        "https://www.tresdeu.com/2018/08/atzembla-instint/",
+        "docs/revisions/2026-10-14-ska3-atzembla.md",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de Montcada (l'Horta Nord) format el 2008; punk, rock i ska. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
+          "https://www.tresdeu.com/2018/08/atzembla-instint/",
+          "docs/revisions/2026-10-14-ska3-atzembla.md"
+        ]
+      },
+      "displayName": "Atzembla"
+    },
+    {
       "name": "Au Rora",
       "aliases": [],
       "genres": [
@@ -4552,6 +4783,59 @@
         }
       },
       "genresRaw": []
+    },
+    {
+      "name": "Blues de Picolat",
+      "aliases": [
+        "Blues De Picolat",
+        "Blues de Pic"
+      ],
+      "genres": [
+        "Rock",
+        "Jazz / Blues"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCprhue6vOAbMuSUEQbzlCZA",
+            "handle": null,
+            "name": "Blues De Picolat - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCprhue6vOAbMuSUEQbzlCZA",
+        "https://fr.wikipedia.org/wiki/Blues_de_picolat",
+        "https://bluespic.blogspot.com/"
+      ],
+      "lastChecked": "2026-10-17T18:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Blues De Picolat - Tema comprovat (es presenta com a grup de blues nord-català; títols en català: Món boig, País Bonic, Malloles…). Grup que va adoptar el català com a llengua artística exclusiva; algunes peces tenen títol en anglès (The Sky Is Crying): no s’amaguen pel títol.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://fr.wikipedia.org/wiki/Blues_de_picolat",
+          "https://bluespic.blogspot.com/"
+        ]
+      }
     },
     {
       "name": "Bocc",
@@ -5863,6 +6147,51 @@
         "latin ballad",
         "singer-songwriter"
       ]
+    },
+    {
+      "name": "CampikiPugui",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCB91Q5KFhtxFhqdnemnI5Ew",
+            "name": "CampikiPugui - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+        "https://music.apple.com/us/artist/campikipugui/1209822356",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de mestissatge ska, rock i reggae de la Selva (programació de Selva Cultura); EP «Una altra nit» (2017). Municipi no documentat. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
+          "https://music.apple.com/us/artist/campikipugui/1209822356"
+        ]
+      },
+      "displayName": "CampikiPugui"
     },
     {
       "name": "Carme Canela",
@@ -7796,6 +8125,51 @@
       }
     },
     {
+      "name": "Dekrèpits",
+      "aliases": [
+        "Dekrepits"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKTrsy9eH-cD9geEnh2SB3w",
+            "name": "Dekrèpits - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://medirflash.cat/dekrepits.cfm",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Banda empordanesa de ska i reggae amb música tradicional i acordió. Es conserva l’origen comarcal, sense atribuir un municipi no contrastat. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://medirflash.cat/dekrepits.cfm"
+        ]
+      },
+      "displayName": "Dekrèpits"
+    },
+    {
       "name": "Derbi Junior",
       "aliases": [],
       "genres": [
@@ -7856,6 +8230,56 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Deskarats",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKPv-OAeyx3OeKgn48iPbUQ",
+            "name": "Deskarats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UClrbmaOS1Mrd6tBAya40gaQ",
+            "name": "Deskarats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Banda d’Amer; ska amb referents Skatalà, Madness i The Toasters, i evolució cap a guitarres rock. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
+        ]
+      },
+      "displayName": "Deskarats"
     },
     {
       "name": "Desperta Ferro",
@@ -8220,6 +8644,51 @@
         "soul",
         "rocksteady"
       ]
+    },
+    {
+      "name": "Dring Dublé",
+      "aliases": [
+        "Dring Duble"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCgbhHxO5Pvf0pCYr6f-BNyw",
+            "name": "Dring dublé - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "mitjana",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de dub i ska; el senzill «Crema'ls» (2002) es va gravar als Estudis Sa Iaia de Sabadell (ProDubSA, Ripollet). Vinculació, no municipi de formació. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc"
+        ]
+      },
+      "displayName": "Dring Dublé"
     },
     {
       "name": "Duble Buble",
@@ -9197,6 +9666,56 @@
         "pop rock",
         "pop"
       ]
+    },
+    {
+      "name": "El Veïnat",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3rSnb7CCMA8IrOTEhwPuYg",
+            "name": "El Veïnat - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCW0x-9uiF7yZMI9hEYTVMDQ",
+            "name": "El Veïnat",
+            "handle": "@elveinatTV",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de reggae i ska de Vilassar de Mar nascut a finals del 2011 (Correllengua); disc «Perquè el món et senti». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html"
+        ]
+      },
+      "displayName": "El Veïnat"
     },
     {
       "name": "Electrotoylets",
@@ -10697,6 +11216,103 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Es Reboster",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCoEb3Xheb3cPwhNMFEhc_5g",
+            "name": "Es Reboster - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Banda nascuda a Santa Margalida amb base ska i reggae i influències pop-rock. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html"
+        ]
+      },
+      "displayName": "Es Reboster"
+    },
+    {
+      "name": "Eskassa Llibertat",
+      "aliases": [
+        "eskassallibertat"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC1iF5VxSLKfoIzlpbtQVL5g",
+            "name": "Eskassa Llibertat - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC4BSwwuqk6O9ELABBgsgWGQ",
+            "name": "eskassallibertat",
+            "handle": "@eskassallibertat",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.viasona.cat/grup/eskassa-llibertat",
+        "https://eskassallibertat.bandcamp.com/",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup d’ska format a Terrassa el 2008; «Despertem!» (2010), «#SingleEskassa» (2012) i «Ràdio Llibertat» (2013). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.viasona.cat/grup/eskassa-llibertat",
+          "https://eskassallibertat.bandcamp.com/"
+        ]
+      },
+      "displayName": "Eskassa Llibertat"
     },
     {
       "name": "Esperit de Vi",
@@ -12882,6 +13498,56 @@
       }
     },
     {
+      "name": "Gerard Jacquet",
+      "aliases": [
+        "Gérard Jacquet",
+        "Gerard Jacquet - Topic"
+      ],
+      "genres": [
+        "Rock"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCJzTwDykoSI4dHbCAg1XGQQ",
+            "handle": null,
+            "name": "Gerard Jacquet - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCJzTwDykoSI4dHbCAg1XGQQ",
+        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+      ],
+      "lastChecked": "2026-10-17T19:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gerard Jacquet - Tema comprovat (es presenta com a músic, poeta, pintor, actor i contaire nord-català; títols en català i alguna versió com Si Me Quieres Escribir). Ha publicat en català i en francès (la sèrie Les chansons d’aquí barreja totes dues llengües): artista vigilat; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
+        ]
+      }
+    },
+    {
       "name": "Germà Negre",
       "aliases": [],
       "genres": [
@@ -13193,6 +13859,55 @@
           "musicbrainzReleaseRaw": [],
           "wikidataWorkEvidence": []
         }
+      }
+    },
+    {
+      "name": "Gisela Bellsolà",
+      "aliases": [
+        "Gisela Bellsolà - Topic"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCKKjvjnD71ll8kMq2pqQhcg",
+            "handle": null,
+            "name": "Gisela Bellsolà - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCKKjvjnD71ll8kMq2pqQhcg",
+        "https://www.nts.live/artists/142356-gisela-bellsola"
+      ],
+      "lastChecked": "2026-10-17T21:00:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gisela Bellsolà - Tema comprovat (la descripció la presenta com a cantant rossellonesa; títols en català: País catedral, Vent de la tarda, Anna marinera…). Àlbums de poesia catalana musicada; també col·laborà en cançó tradicional i trobadoresca: artista vigilada; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://www.nts.live/artists/142356-gisela-bellsola"
+        ]
       }
     },
     {
@@ -15692,6 +16407,47 @@
       "genresRaw": []
     },
     {
+      "name": "Joan Garriga",
+      "displayName": "Joan Garriga",
+      "aliases": [
+        "Joan Garriga i el Mariatxi Galàctic"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCdLF7PrhokwO1TwkKQHtR8A",
+            "handle": "@joangarrigamusic",
+            "name": "Joan Garriga",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-18",
+        "genre:manual",
+        "https://joangarriga.cat/bio/",
+        "https://www.youtube.com/channel/UCdLF7PrhokwO1TwkKQHtR8A"
+      ],
+      "lastChecked": "2026-10-18T15:38:27.000Z",
+      "notes": "Origen: la Garriga, per indicació expressa de l’usuari. Només les onze obres seleccionades a docs/revisions/2026-10-18-joan-garriga.json; no importar el repertori de La Troba Kung-Fú o Dusminguet ni les peces pendents. Selecció editorial, no verificació íntegra de totes les lletres."
+    },
+    {
       "name": "Joan Isaac",
       "aliases": [],
       "genres": [
@@ -16048,6 +16804,56 @@
         "experimental",
         "lo-fi"
       ]
+    },
+    {
+      "name": "Joan Pau Giné",
+      "aliases": [
+        "Joan-Pau Giné",
+        "Joan-Pau Giné - Topic"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCPFO4vAR9pm9cI8RS8f5SLw",
+            "handle": null,
+            "name": "Joan-Pau Giné - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCPFO4vAR9pm9cI8RS8f5SLw",
+        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+      ],
+      "lastChecked": "2026-10-17T19:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Joan-Pau Giné - Tema comprovat (Adiu ça va?, L’allioli, Montparnasse…, les mateixes cançons que l’arxiu Singlantana Sound); l’altre canal «Joan Pau Giné - Tema» (UC2izZpLdlBll_IQvwM3rLAA) no té pistes i no s’indexa. Repertori principal en català, però la capsa Records de vida inclou algunes cançons inèdites en francès: artista vigilat; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
+        ]
+      }
     },
     {
       "name": "Joana Serrat",
@@ -17275,6 +18081,56 @@
       }
     },
     {
+      "name": "Kalabranda",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCjL17J5dAE9sMDuX4VvhP1Q",
+            "name": "Kalabranda - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCbxd8rksufs9jtwDGXrN8YQ",
+            "name": "Kalabranda",
+            "handle": "@kalabranda5262",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda d'Arenys de Munt (Aula de Música d'Arenys de Munt, cartell de les Festes del Remei 2019); disc «Desperta la fera». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf"
+        ]
+      },
+      "displayName": "Kalabranda"
+    },
+    {
       "name": "Karda Fàstik",
       "aliases": [
         "Karda Fastik"
@@ -17501,6 +18357,55 @@
       "genresRaw": []
     },
     {
+      "name": "Ki Sap",
+      "aliases": [
+        "Ki-Sap"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
+            "name": "Ki Sap - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCo_8QxIsvo49zaYqqeYxsOQ",
+            "name": "KisapTV",
+            "handle": "@kisaptv",
+            "type": "official",
+            "primary": false
+          },
+          {
+            "id": "UC8qc9EKB0In0JdqOwu896mQ",
+            "name": "Ki Sap Channel",
+            "handle": "@kisapchannel2662",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "https://www.valenciaska.net/grup/ki-sap/",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:08:07.394Z",
+      "notes": "Canal Tema i canals propis revisats. A vora barranc no localitzada als canals revisats; Al dia següent està fragmentada i Mira quina trola manca contrast lingüístic suficient. Cap pista aprovada. docs/revisions/2026-10-14-ska1-alta.json"
+    },
+    {
       "name": "Kiddi",
       "aliases": [],
       "genres": [
@@ -17670,6 +18575,60 @@
           "https://www.liquidatormusic.com/tienda/es/ska-actual-lp/11473-knockouts-party.html"
         ]
       }
+    },
+    {
+      "name": "Kòdul",
+      "aliases": [
+        "Kodul"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC04isma3OjnDslXzt-Ed3Jw",
+            "name": "Kòdul - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCvvFaqxr4vKR-fuF87BwaYA",
+            "name": "Kòdul",
+            "handle": "@tvkodul",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+        "docs/revisions/2026-10-14-ska3-kodul.md",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda festiva i reivindicativa de Sallent (Bages), activa uns 12 anys; darrer disc «Sense mirar enrere» (Propaganda pel Fet!, 2016). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
+          "docs/revisions/2026-10-14-ska3-kodul.md"
+        ]
+      },
+      "displayName": "Kòdul"
     },
     {
       "name": "Koji Kondo",
@@ -18555,6 +19514,67 @@
         "folk",
         "indie pop"
       ]
+    },
+    {
+      "name": "La Bundu Band",
+      "aliases": [
+        "bunduband"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCwPrdShME-yrqB1hDvkUqPw",
+            "name": "La Bundu Band - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCeXegD6_JMqPbUBEzkGinHw",
+            "name": "LA BUNDU BAND (QUIMERA RECORDS 2010)) - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": false
+          },
+          {
+            "id": "UCMr0zO3JvMllHSSfxSawDUQ",
+            "name": "bunduband",
+            "handle": "@bunduband",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+        "https://www.reverbnation.com/labunduband/songs",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda del Maresme (Arenys de Munt); «Guerrer rebel» (Quimera, 2010), «Sembrant beats, recollint revolució» (Kasba, 2014) i «Cat Samurai». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
+          "https://www.reverbnation.com/labunduband/songs"
+        ]
+      },
+      "displayName": "La Bundu Band"
     },
     {
       "name": "La Carrau",
@@ -20914,6 +21934,56 @@
       }
     },
     {
+      "name": "Llamp te Frigui",
+      "aliases": [
+        "LLamp Te Frigui",
+        "Llamp Te Frigui"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCZVRD2oamzF1lgzroVyVD6w",
+            "handle": "@francksala.",
+            "name": "Franck Sala .",
+            "type": "other",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/@francksala.",
+        "https://llamptefrigui.fr/"
+      ],
+      "lastChecked": "2026-10-17T21:00:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). El grup no té canal propi: els seus vídeos (els que enllaça el web del grup: El Racó, En mobileta, Mala pell, La bomba humana…) són al canal de Franck Sala, membre del grup, que publica gairebé només Llamp te Frigui (22 vídeos). Repertori publicat en català: confiança d’idioma; convindrà vigilar vídeos de concerts i peces que no siguin del grup.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://llamptefrigui.fr/"
+        ]
+      }
+    },
+    {
       "name": "Llorenç de Santamaria",
       "aliases": [],
       "genres": [
@@ -21797,6 +22867,49 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Maitips",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
+            "name": "Maitips - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://maitips.bandcamp.com/album/inventa-el-m-n",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Grup de Valls amb arrels ska i evolució cap al reggae i el rock, segons la presentació del seu Bandcamp. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://maitips.bandcamp.com/album/inventa-el-m-n"
+        ]
+      },
+      "displayName": "Maitips"
     },
     {
       "name": "Malánima",
@@ -23466,6 +24579,60 @@
       }
     },
     {
+      "name": "Mascarats",
+      "aliases": [
+        "Mascarats Grup"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC9Ytb6_hvQB1cH5iLYGAYKg",
+            "name": "Mascarats - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCd8BT2JBV0_DQOKbseg7_4w",
+            "name": "Mascarats Grup",
+            "handle": "@MascaratsGrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+        "http://www.mascarats.cat",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de música reivindicativa format a la Sénia que barreja rock i reggae; «Trencarem l’imaginari» (2017) i «Distopia». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
+          "http://www.mascarats.cat"
+        ]
+      },
+      "displayName": "Mascarats"
+    },
+    {
       "name": "MASSAVIU",
       "displayName": "MASSAVIU",
       "aliases": [
@@ -23578,6 +24745,37 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Maurici Auzeville",
+      "aliases": [
+        "Maurice Auzeville"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-17",
+        "https://oplcat.eu/index.php/2023/10/17/maurici-auzeville/"
+      ],
+      "lastChecked": "2026-10-17T21:00:00.000Z",
+      "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi: els seus enregistraments (cançons tradicionals del Rosselló de 1958, sardanes) només són a l’arxiu de diversos artistes Singlantana Sound. Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. També cantà òpera i repertori en altres llengües (Dis-moi mistral): caldrà vigilar-lo i quedar-se només amb les sardanes cantades i les peces tradicionals catalanes.",
+      "genresRaw": []
     },
     {
       "name": "Mazoni",
@@ -25441,6 +26639,98 @@
       ]
     },
     {
+      "name": "Niño 5",
+      "aliases": [
+        "Niño5",
+        "Nino 5",
+        "N5"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3KaUcfeFcIlgO-dssb9n2g",
+            "name": "Niño 5",
+            "handle": "@n5wav",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
+        "https://en-llac.cat/cultura/musica/cor-de-flama/",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T08:51:32.038665+00:00",
+      "notes": "Banda del Maresme. Alta i categoria indicades per l’editor; el canal oficial confirma l’origen i la fusió de reggae, hip-hop, electrònica i música cubana. docs/revisions/2026-10-14-nino5-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
+          "https://en-llac.cat/cultura/musica/cor-de-flama/"
+        ]
+      },
+      "displayName": "Niño 5"
+    },
+    {
+      "name": "Núria Balcells",
+      "displayName": "Núria Balcells",
+      "aliases": [
+        "Nuria Balcells",
+        "Una Corda Més",
+        "Recançonem",
+        "De Vellut"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "instrumental"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCHO5cHnX3GGXitE11VNsAmA",
+            "handle": "@nuriabalcells",
+            "name": "De Vellut",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://nuriabalcells.com/recanconem/",
+        "https://www.youtube.com/@nuriabalcells",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-17T20:49:50.325Z",
+      "notes": "Selecció expressa de cinc interpretacions de Núria Balcells i Rocco Papia. Origen: Sant Cugat del Vallès. Canal propi @nuriabalcells; enregistraments publicats per Rocco Papia, vinculats individualment mitjançant allowedExternalVideos. No importar la resta dels canals. Vegeu docs/revisions/2026-10-17-nuria-balcells.json."
+    },
+    {
       "name": "Núria Feliu i Mestres",
       "aliases": [],
       "genres": [
@@ -26036,6 +27326,49 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Oprimits",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Illes Balears"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCF4BwKBwBRZIpylrvVqQmBQ",
+            "name": "Oprimits - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.verkami.com/projects/3513-oprimits-seguim-endavant",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Formació mallorquina de ska, rock i reggae amb influència punk. Origen insular documentat pel mateix grup. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.verkami.com/projects/3513-oprimits-seguim-endavant"
+        ]
+      },
+      "displayName": "Oprimits"
     },
     {
       "name": "Oques Grasses",
@@ -26905,6 +28238,56 @@
           "wikidataWorkEvidence": []
         }
       }
+    },
+    {
+      "name": "Ovella Xao",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC61lW1hjlSwAgBDWO3yVRBw",
+            "name": "Ovella Xao - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCWwKFCPkzG5Njr-kcpl9dag",
+            "name": "Ovella Xao",
+            "handle": "@OvellaXao",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Grup de música festiva nascut a Sabadell el 2014; «Trempera matinera», «#Pastureig» i «Cant corral» (2018). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw"
+        ]
+      },
+      "displayName": "Ovella Xao"
     },
     {
       "name": "Ovidi Montllor i Mengual",
@@ -28307,6 +29690,55 @@
         "pop-rock"
       ],
       "displayName": "Pepet i Marieta"
+    },
+    {
+      "name": "Pere Figueres",
+      "aliases": [
+        "Pere Figueres - Topic"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya Nord"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC3R_sFdfopHQUwREiqpOuRQ",
+            "handle": null,
+            "name": "Pere Figueres - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-17",
+        "youtube:manual-verified",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC3R_sFdfopHQUwREiqpOuRQ",
+        "https://www.viki.cat/wiki/Pere_Figueres"
+      ],
+      "lastChecked": "2026-10-17T19:30:00.000Z",
+      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Pere Figueres - Tema comprovat (la descripció el situa a Pontellà; títols en català: Desperta’t Rosselló, Al Peu de les Alberes…). Discografia pròpia àmpliament en català; als inicis també interpretava cançons de Brel i Brassens: artista vigilat; la revisió es farà després de l’actualització del feed.",
+      "genresRaw": [],
+      "genreReview": {
+        "reviewedAt": "2026-10-17",
+        "method": "user-editorial",
+        "sources": [
+          "https://www.viki.cat/wiki/Pere_Figueres"
+        ]
+      }
     },
     {
       "name": "Pere Tàpias",
@@ -30962,6 +32394,61 @@
       }
     },
     {
+      "name": "Repúblika Ska",
+      "aliases": [
+        "RepublikaSka",
+        "República Ska"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCmKA6KQvu6Ol0gv7PHNMPqQ",
+            "name": "Repúblika Ska - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCa3diMkg9yChODo1MPUGgNw",
+            "name": "RepublikaSka",
+            "handle": "@RepublikaSka",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.auva.cat/entrevistem-a-republika-ska/",
+        "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Banda d’ska de Lleida formada el 2008; «Ja som aquí» (2011) i «Resistirem» (2013). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.auva.cat/entrevistem-a-republika-ska/",
+          "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html"
+        ]
+      },
+      "displayName": "Repúblika Ska"
+    },
+    {
       "name": "Rita Payés",
       "aliases": [],
       "genres": [
@@ -33136,6 +34623,94 @@
       "displayName": "Sílvia Pérez Cruz"
     },
     {
+      "name": "Skafam",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCw9QWACP-8N1COxwr8u8Ckw",
+            "name": "Skafam - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+        "https://www.viasona.cat/grup/skafam",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Skamot Antifeixista d'Arenys de Munt: ska-punk amb rock, funk i reggae; disc «Riem» (2007). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
+          "https://www.viasona.cat/grup/skafam"
+        ]
+      },
+      "displayName": "Skafam"
+    },
+    {
+      "name": "Skaparapid",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "País Valencià"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCLlsd1LOmkAMoqbSE36JBZg",
+            "name": "Skaparapid - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T06:26:53.987Z",
+      "notes": "Grup nascut a València al Kasal Popular; ska combatiu amb influència punk. Repertori multilingüe seleccionat per cançó. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS"
+        ]
+      },
+      "displayName": "Skaparapid"
+    },
+    {
       "name": "Skatalà",
       "aliases": [],
       "genres": [
@@ -34875,6 +36450,58 @@
       }
     },
     {
+      "name": "Terra Ferma Ska Band",
+      "aliases": [
+        "Terra Ferma"
+      ],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCyS2GxjCglNX_8TY7LDlmlw",
+            "name": "Terra Ferma Ska Band - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UCT3FFtIl_wpwLu0pL4ruUDA",
+            "name": "Terra Ferma",
+            "handle": "@TerraFermagrup",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Projecte nascut a Reus el 2014; «Aixecant el vol» (2015), «Un brot de llum» (2018) i «Sobre viure» (2020). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum"
+        ]
+      },
+      "displayName": "Terra Ferma Ska Band"
+    },
+    {
       "name": "Terratombats",
       "aliases": [],
       "genres": [
@@ -36109,6 +37736,58 @@
       "genresRaw": [
         "folk"
       ]
+    },
+    {
+      "name": "Trast",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCajdvXC8lGH7n7d8mrhyZJw",
+            "name": "Trast - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          },
+          {
+            "id": "UC0vBr1BrHrWE07vDPy1tQcw",
+            "name": "Trast",
+            "handle": "@trastmusica",
+            "type": "official",
+            "primary": false
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-14T07:20:22.536Z",
+      "notes": "Festa, mestissatge i compromís des del Baix Llobregat (canal oficial); «Diari de matinada», «El detonant» (2016) i «Serem». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
+      "genreReview": {
+        "reviewedAt": "2026-10-14",
+        "method": "source-review",
+        "sources": [
+          "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
+          "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
+        ]
+      },
+      "displayName": "Trast"
     },
     {
       "name": "Trèvol",
@@ -39128,1644 +40807,6 @@
         }
       },
       "displayName": "ZOO"
-    },
-    {
-      "name": "Agraviats",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "País Valencià"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UClM-LZwhDXymZaKrjGrDnzg",
-            "name": "Agraviats - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:08:07.394Z",
-      "notes": "Origen a Borriol; ska amb influència punk i evolució cap al reggae, funk i swing. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.verkami.com/projects/1857-torn-de-paraula-nou-disc-d-agraviats"
-        ]
-      },
-      "displayName": "Agraviats"
-    },
-    {
-      "name": "Dekrèpits",
-      "aliases": [
-        "Dekrepits"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCKTrsy9eH-cD9geEnh2SB3w",
-            "name": "Dekrèpits - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://medirflash.cat/dekrepits.cfm",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:08:07.394Z",
-      "notes": "Banda empordanesa de ska i reggae amb música tradicional i acordió. Es conserva l’origen comarcal, sense atribuir un municipi no contrastat. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://medirflash.cat/dekrepits.cfm"
-        ]
-      },
-      "displayName": "Dekrèpits"
-    },
-    {
-      "name": "Deskarats",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCKPv-OAeyx3OeKgn48iPbUQ",
-            "name": "Deskarats - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UClrbmaOS1Mrd6tBAya40gaQ",
-            "name": "Deskarats - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:08:07.394Z",
-      "notes": "Banda d’Amer; ska amb referents Skatalà, Madness i The Toasters, i evolució cap a guitarres rock. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska1-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.enderrock.cat/noticia/6667/comenca-festival-deskarats"
-        ]
-      },
-      "displayName": "Deskarats"
-    },
-    {
-      "name": "Ki Sap",
-      "aliases": [
-        "Ki-Sap"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "País Valencià"
-      ],
-      "languages": [],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
-            "name": "Ki Sap - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCo_8QxIsvo49zaYqqeYxsOQ",
-            "name": "KisapTV",
-            "handle": "@kisaptv",
-            "type": "official",
-            "primary": false
-          },
-          {
-            "id": "UC8qc9EKB0In0JdqOwu896mQ",
-            "name": "Ki Sap Channel",
-            "handle": "@kisapchannel2662",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "https://www.valenciaska.net/grup/ki-sap/",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:08:07.394Z",
-      "notes": "Canal Tema i canals propis revisats. A vora barranc no localitzada als canals revisats; Al dia següent està fragmentada i Mira quina trola manca contrast lingüístic suficient. Cap pista aprovada. docs/revisions/2026-10-14-ska1-alta.json"
-    },
-    {
-      "name": "Oprimits",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Illes Balears"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCF4BwKBwBRZIpylrvVqQmBQ",
-            "name": "Oprimits - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.verkami.com/projects/3513-oprimits-seguim-endavant",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:26:53.987Z",
-      "notes": "Formació mallorquina de ska, rock i reggae amb influència punk. Origen insular documentat pel mateix grup. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.verkami.com/projects/3513-oprimits-seguim-endavant"
-        ]
-      },
-      "displayName": "Oprimits"
-    },
-    {
-      "name": "Skaparapid",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "País Valencià"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCLlsd1LOmkAMoqbSE36JBZg",
-            "name": "Skaparapid - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:26:53.987Z",
-      "notes": "Grup nascut a València al Kasal Popular; ska combatiu amb influència punk. Repertori multilingüe seleccionat per cançó. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS"
-        ]
-      },
-      "displayName": "Skaparapid"
-    },
-    {
-      "name": "Es Reboster",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Illes Balears"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCoEb3Xheb3cPwhNMFEhc_5g",
-            "name": "Es Reboster - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:26:53.987Z",
-      "notes": "Banda nascuda a Santa Margalida amb base ska i reggae i influències pop-rock. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.dbalears.cat/balears/cultura/2007/04/28/146584/es-reboster-presenta-sono-qui-musica-festiva-amb-lletres-de-pes.html"
-        ]
-      },
-      "displayName": "Es Reboster"
-    },
-    {
-      "name": "Maitips",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCLOmT2Ut3zN8IFEtlSgUKmQ",
-            "name": "Maitips - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://maitips.bandcamp.com/album/inventa-el-m-n",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T06:26:53.987Z",
-      "notes": "Grup de Valls amb arrels ska i evolució cap al reggae i el rock, segons la presentació del seu Bandcamp. Selecció parcial contrastada; no importació de tot el canal. docs/revisions/2026-10-14-ska2-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://maitips.bandcamp.com/album/inventa-el-m-n"
-        ]
-      },
-      "displayName": "Maitips"
-    },
-    {
-      "name": "AlQuadrat",
-      "aliases": [
-        "Al Quadrat"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCSyQZszUB66TBDSGfMDcGNg",
-            "name": "AlQuadrat - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCRy88DHkwZTozU2PfetY0bA",
-            "name": "Al Quadrat",
-            "handle": "@AlQuadratgrup",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
-        "https://www.viasona.cat/grup/alquadrat",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Projecte musical nascut el 2009 a Sant Quirze del Vallès; barreja rumba, ska, reggae i pop. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.timeout.cat/barcelona/ca/musica/alquadrat",
-          "https://www.viasona.cat/grup/alquadrat"
-        ]
-      },
-      "displayName": "AlQuadrat"
-    },
-    {
-      "name": "Atzembla",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "País Valencià"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": "Q55811636",
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC39UUfaafpeQRfaU5dcJ0ug",
-            "name": "Atzembla - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCG-fbhvlr6lGbl2DhKGFFhA",
-            "name": "Atzembla",
-            "handle": "@atzemblagrup",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
-        "https://www.tresdeu.com/2018/08/atzembla-instint/",
-        "docs/revisions/2026-10-14-ska3-atzembla.md",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup de Montcada (l'Horta Nord) format el 2008; punk, rock i ska. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://ca.wikipedia.org/wiki/Atzembla_(grup_musical)",
-          "https://www.tresdeu.com/2018/08/atzembla-instint/",
-          "docs/revisions/2026-10-14-ska3-atzembla.md"
-        ]
-      },
-      "displayName": "Atzembla"
-    },
-    {
-      "name": "CampikiPugui",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCB91Q5KFhtxFhqdnemnI5Ew",
-            "name": "CampikiPugui - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
-        "https://music.apple.com/us/artist/campikipugui/1209822356",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup de mestissatge ska, rock i reggae de la Selva (programació de Selva Cultura); EP «Una altra nit» (2017). Municipi no documentat. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.selvacultura.cat/ca/programacio/c/1795-campikipugui.html",
-          "https://music.apple.com/us/artist/campikipugui/1209822356"
-        ]
-      },
-      "displayName": "CampikiPugui"
-    },
-    {
-      "name": "Dring Dublé",
-      "aliases": [
-        "Dring Duble"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCgbhHxO5Pvf0pCYr6f-BNyw",
-            "name": "Dring dublé - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "mitjana",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup de dub i ska; el senzill «Crema'ls» (2002) es va gravar als Estudis Sa Iaia de Sabadell (ProDubSA, Ripollet). Vinculació, no municipi de formació. Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://produbsa.bandcamp.com/album/dring-dubl-cremals-feat-lester-mc"
-        ]
-      },
-      "displayName": "Dring Dublé"
-    },
-    {
-      "name": "El Veïnat",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC3rSnb7CCMA8IrOTEhwPuYg",
-            "name": "El Veïnat - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCW0x-9uiF7yZMI9hEYTVMDQ",
-            "name": "El Veïnat",
-            "handle": "@elveinatTV",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup de reggae i ska de Vilassar de Mar nascut a finals del 2011 (Correllengua); disc «Perquè el món et senti». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://naciodigital.cat/osona/cultura-i-mitjans/el-moscou-estrena-terrassa-amb-el-concert-del-veinat.html"
-        ]
-      },
-      "displayName": "El Veïnat"
-    },
-    {
-      "name": "Eskassa Llibertat",
-      "aliases": [
-        "eskassallibertat"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC1iF5VxSLKfoIzlpbtQVL5g",
-            "name": "Eskassa Llibertat - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UC4BSwwuqk6O9ELABBgsgWGQ",
-            "name": "eskassallibertat",
-            "handle": "@eskassallibertat",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.viasona.cat/grup/eskassa-llibertat",
-        "https://eskassallibertat.bandcamp.com/",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup d’ska format a Terrassa el 2008; «Despertem!» (2010), «#SingleEskassa» (2012) i «Ràdio Llibertat» (2013). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.viasona.cat/grup/eskassa-llibertat",
-          "https://eskassallibertat.bandcamp.com/"
-        ]
-      },
-      "displayName": "Eskassa Llibertat"
-    },
-    {
-      "name": "Kalabranda",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCjL17J5dAE9sMDuX4VvhP1Q",
-            "name": "Kalabranda - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCbxd8rksufs9jtwDGXrN8YQ",
-            "name": "Kalabranda",
-            "handle": "@kalabranda5262",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Banda d'Arenys de Munt (Aula de Música d'Arenys de Munt, cartell de les Festes del Remei 2019); disc «Desperta la fera». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://arenysdemunt-prd.diba.cat/media/import/documents/news/Cartell_Remei_Jove_2019.pdf"
-        ]
-      },
-      "displayName": "Kalabranda"
-    },
-    {
-      "name": "Kòdul",
-      "aliases": [
-        "Kodul"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC04isma3OjnDslXzt-Ed3Jw",
-            "name": "Kòdul - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCvvFaqxr4vKR-fuF87BwaYA",
-            "name": "Kòdul",
-            "handle": "@tvkodul",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
-        "docs/revisions/2026-10-14-ska3-kodul.md",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Banda festiva i reivindicativa de Sallent (Bages), activa uns 12 anys; darrer disc «Sense mirar enrere» (Propaganda pel Fet!, 2016). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://indicat.blogspot.com/2012/12/kodul-enceta-un-verkami-per-al-proper.html",
-          "docs/revisions/2026-10-14-ska3-kodul.md"
-        ]
-      },
-      "displayName": "Kòdul"
-    },
-    {
-      "name": "La Bundu Band",
-      "aliases": [
-        "bunduband"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCwPrdShME-yrqB1hDvkUqPw",
-            "name": "La Bundu Band - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCeXegD6_JMqPbUBEzkGinHw",
-            "name": "LA BUNDU BAND (QUIMERA RECORDS 2010)) - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": false
-          },
-          {
-            "id": "UCMr0zO3JvMllHSSfxSawDUQ",
-            "name": "bunduband",
-            "handle": "@bunduband",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
-        "https://www.reverbnation.com/labunduband/songs",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Banda del Maresme (Arenys de Munt); «Guerrer rebel» (Quimera, 2010), «Sembrant beats, recollint revolució» (Kasba, 2014) i «Cat Samurai». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.verkami.com/projects/7252-nou-disc-de-la-bundu-band-sembrant-beats-recollint-revolucio",
-          "https://www.reverbnation.com/labunduband/songs"
-        ]
-      },
-      "displayName": "La Bundu Band"
-    },
-    {
-      "name": "Mascarats",
-      "aliases": [
-        "Mascarats Grup"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC9Ytb6_hvQB1cH5iLYGAYKg",
-            "name": "Mascarats - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCd8BT2JBV0_DQOKbseg7_4w",
-            "name": "Mascarats Grup",
-            "handle": "@MascaratsGrup",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
-        "http://www.mascarats.cat",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup de música reivindicativa format a la Sénia que barreja rock i reggae; «Trencarem l’imaginari» (2017) i «Distopia». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.youtube.com/channel/UC9Ytb6_hvQB1cH5iLYGAYKg",
-          "http://www.mascarats.cat"
-        ]
-      },
-      "displayName": "Mascarats"
-    },
-    {
-      "name": "Ovella Xao",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC61lW1hjlSwAgBDWO3yVRBw",
-            "name": "Ovella Xao - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCWwKFCPkzG5Njr-kcpl9dag",
-            "name": "Ovella Xao",
-            "handle": "@OvellaXao",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Grup de música festiva nascut a Sabadell el 2014; «Trempera matinera», «#Pastureig» i «Cant corral» (2018). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.youtube.com/channel/UC61lW1hjlSwAgBDWO3yVRBw"
-        ]
-      },
-      "displayName": "Ovella Xao"
-    },
-    {
-      "name": "Repúblika Ska",
-      "aliases": [
-        "RepublikaSka",
-        "República Ska"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCmKA6KQvu6Ol0gv7PHNMPqQ",
-            "name": "Repúblika Ska - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCa3diMkg9yChODo1MPUGgNw",
-            "name": "RepublikaSka",
-            "handle": "@RepublikaSka",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.auva.cat/entrevistem-a-republika-ska/",
-        "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Banda d’ska de Lleida formada el 2008; «Ja som aquí» (2011) i «Resistirem» (2013). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.auva.cat/entrevistem-a-republika-ska/",
-          "https://www.segre.com/ca/cultura/231227/republika-ska-torna-als-escenaris-10-anys-despres_293231.html"
-        ]
-      },
-      "displayName": "Repúblika Ska"
-    },
-    {
-      "name": "Skafam",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCw9QWACP-8N1COxwr8u8Ckw",
-            "name": "Skafam - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
-        "https://www.viasona.cat/grup/skafam",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Skamot Antifeixista d'Arenys de Munt: ska-punk amb rock, funk i reggae; disc «Riem» (2007). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.decibel.cat/grups/grups.php?accio=grup&id=329",
-          "https://www.viasona.cat/grup/skafam"
-        ]
-      },
-      "displayName": "Skafam"
-    },
-    {
-      "name": "Terra Ferma Ska Band",
-      "aliases": [
-        "Terra Ferma"
-      ],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCyS2GxjCglNX_8TY7LDlmlw",
-            "name": "Terra Ferma Ska Band - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UCT3FFtIl_wpwLu0pL4ruUDA",
-            "name": "Terra Ferma",
-            "handle": "@TerraFermagrup",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Projecte nascut a Reus el 2014; «Aixecant el vol» (2015), «Un brot de llum» (2018) i «Sobre viure» (2020). Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://surtdecasa.cat/camp/musica/terra-ferma-un-brot-de-llum"
-        ]
-      },
-      "displayName": "Terra Ferma Ska Band"
-    },
-    {
-      "name": "Trast",
-      "aliases": [],
-      "genres": [
-        "Ska / Reggae"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCajdvXC8lGH7n7d8mrhyZJw",
-            "name": "Trast - Topic",
-            "handle": null,
-            "type": "topic",
-            "primary": true
-          },
-          {
-            "id": "UC0vBr1BrHrWE07vDPy1tQcw",
-            "name": "Trast",
-            "handle": "@trastmusica",
-            "type": "official",
-            "primary": false
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
-        "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T07:20:22.536Z",
-      "notes": "Festa, mestissatge i compromís des del Baix Llobregat (canal oficial); «Diari de matinada», «El detonant» (2016) i «Serem». Alta de la llista ska de l’usuari: canal Tema prioritari. docs/revisions/2026-10-14-ska4-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://surtdecasa.cat/camp/agenda/bonobos-trast/52854",
-          "https://www.youtube.com/channel/UC0vBr1BrHrWE07vDPy1tQcw"
-        ]
-      },
-      "displayName": "Trast"
-    },
-    {
-      "name": "Niño 5",
-      "aliases": [
-        "Niño5",
-        "Nino 5",
-        "N5"
-      ],
-      "genres": [
-        "Rumba / Mestissatge"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC3KaUcfeFcIlgO-dssb9n2g",
-            "name": "Niño 5",
-            "handle": "@n5wav",
-            "type": "official",
-            "primary": true
-          }
-        ]
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
-        "https://en-llac.cat/cultura/musica/cor-de-flama/",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-14T08:51:32.038665+00:00",
-      "notes": "Banda del Maresme. Alta i categoria indicades per l’editor; el canal oficial confirma l’origen i la fusió de reggae, hip-hop, electrònica i música cubana. docs/revisions/2026-10-14-nino5-alta.json",
-      "genreReview": {
-        "reviewedAt": "2026-10-14",
-        "method": "source-review",
-        "sources": [
-          "https://www.youtube.com/channel/UC3KaUcfeFcIlgO-dssb9n2g",
-          "https://en-llac.cat/cultura/musica/cor-de-flama/"
-        ]
-      },
-      "displayName": "Niño 5"
-    },
-    {
-      "name": "Agathe Catel",
-      "aliases": [
-        "Agathe Catel MUSIC"
-      ],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCIMUDjFw_0JF--3ijeIFIrA",
-            "handle": null,
-            "name": "Agathe Catel MUSIC",
-            "type": "official",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/channel/UCIMUDjFw_0JF--3ijeIFIrA",
-        "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
-        "https://musiqc.ca/artistes/agathe-catel"
-      ],
-      "lastChecked": "2026-10-17T18:30:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal propi comprovat (Agathe Catel MUSIC). Repertori en català, francès i portuguès: a Orígens (2026), 8 cançons en català, 2 en francès i 2 instrumentals. Artista vigilada: només s’hi han de quedar les cançons en català i les instrumentals; la revisió es farà després de l’actualització del feed.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://www.enderrock.cat/noticia/30906/agathe-catel-debuta-catala-amb-origens",
-          "https://musiqc.ca/artistes/agathe-catel"
-        ]
-      }
-    },
-    {
-      "name": "Blues de Picolat",
-      "aliases": [
-        "Blues De Picolat",
-        "Blues de Pic"
-      ],
-      "genres": [
-        "Rock",
-        "Jazz / Blues"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCprhue6vOAbMuSUEQbzlCZA",
-            "handle": null,
-            "name": "Blues De Picolat - Topic",
-            "type": "topic",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/channel/UCprhue6vOAbMuSUEQbzlCZA",
-        "https://fr.wikipedia.org/wiki/Blues_de_picolat",
-        "https://bluespic.blogspot.com/"
-      ],
-      "lastChecked": "2026-10-17T18:30:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Blues De Picolat - Tema comprovat (es presenta com a grup de blues nord-català; títols en català: Món boig, País Bonic, Malloles…). Grup que va adoptar el català com a llengua artística exclusiva; algunes peces tenen títol en anglès (The Sky Is Crying): no s’amaguen pel títol.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://fr.wikipedia.org/wiki/Blues_de_picolat",
-          "https://bluespic.blogspot.com/"
-        ]
-      }
-    },
-    {
-      "name": "Albert Bueno",
-      "aliases": [],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [],
-        "searchCandidates": []
-      },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "manual-user-2026-10-17",
-        "https://www.enderrock.cat/noticia/14823/cent-cancons-albert-bueno"
-      ],
-      "lastChecked": "2026-10-17T18:30:00.000Z",
-      "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi verificable: el canal «albert bueno - Tema» (UCTSMM3XHykmcW-f36NVvAiQ) no mostra cap pista i podria ser un homònim, i els seus vídeos són a canals d’arxiu de diversos artistes (Singlantana Sound). Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. La integral de 100 cançons inclou peces en francès i una amb una estrofa en anglès: caldrà vigilar-lo.",
-      "genresRaw": []
-    },
-    {
-      "name": "Joan Pau Giné",
-      "aliases": [
-        "Joan-Pau Giné",
-        "Joan-Pau Giné - Topic"
-      ],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCPFO4vAR9pm9cI8RS8f5SLw",
-            "handle": null,
-            "name": "Joan-Pau Giné - Topic",
-            "type": "topic",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/channel/UCPFO4vAR9pm9cI8RS8f5SLw",
-        "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
-      ],
-      "lastChecked": "2026-10-17T19:30:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Joan-Pau Giné - Tema comprovat (Adiu ça va?, L’allioli, Montparnasse…, les mateixes cançons que l’arxiu Singlantana Sound); l’altre canal «Joan Pau Giné - Tema» (UC2izZpLdlBll_IQvwM3rLAA) no té pistes i no s’indexa. Repertori principal en català, però la capsa Records de vida inclou algunes cançons inèdites en francès: artista vigilat; la revisió es farà després de l’actualització del feed.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://www.viquiradio.com/grups-i-cantants/joan-pau-gin%C3%A9"
-        ]
-      }
-    },
-    {
-      "name": "Pere Figueres",
-      "aliases": [
-        "Pere Figueres - Topic"
-      ],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UC3R_sFdfopHQUwREiqpOuRQ",
-            "handle": null,
-            "name": "Pere Figueres - Topic",
-            "type": "topic",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/channel/UC3R_sFdfopHQUwREiqpOuRQ",
-        "https://www.viki.cat/wiki/Pere_Figueres"
-      ],
-      "lastChecked": "2026-10-17T19:30:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Pere Figueres - Tema comprovat (la descripció el situa a Pontellà; títols en català: Desperta’t Rosselló, Al Peu de les Alberes…). Discografia pròpia àmpliament en català; als inicis també interpretava cançons de Brel i Brassens: artista vigilat; la revisió es farà després de l’actualització del feed.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://www.viki.cat/wiki/Pere_Figueres"
-        ]
-      }
-    },
-    {
-      "name": "Gerard Jacquet",
-      "aliases": [
-        "Gérard Jacquet",
-        "Gerard Jacquet - Topic"
-      ],
-      "genres": [
-        "Rock"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCJzTwDykoSI4dHbCAg1XGQQ",
-            "handle": null,
-            "name": "Gerard Jacquet - Topic",
-            "type": "topic",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/channel/UCJzTwDykoSI4dHbCAg1XGQQ",
-        "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
-      ],
-      "lastChecked": "2026-10-17T19:30:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gerard Jacquet - Tema comprovat (es presenta com a músic, poeta, pintor, actor i contaire nord-català; títols en català i alguna versió com Si Me Quieres Escribir). Ha publicat en català i en francès (la sèrie Les chansons d’aquí barreja totes dues llengües): artista vigilat; la revisió es farà després de l’actualització del feed.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://perpinianum.fr/Perpinianum/doc/SYRACUSE/931811/les-chansons-d-aqui-de-gerard-jacquet-sur-france-bleu-roussillon-gerard-jacquet?_lg=fr-FR"
-        ]
-      }
-    },
-    {
-      "name": "Llamp te Frigui",
-      "aliases": [
-        "LLamp Te Frigui",
-        "Llamp Te Frigui"
-      ],
-      "genres": [
-        "Rumba / Mestissatge"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCZVRD2oamzF1lgzroVyVD6w",
-            "handle": "@francksala.",
-            "name": "Franck Sala .",
-            "type": "other",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/@francksala.",
-        "https://llamptefrigui.fr/"
-      ],
-      "lastChecked": "2026-10-17T21:00:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). El grup no té canal propi: els seus vídeos (els que enllaça el web del grup: El Racó, En mobileta, Mala pell, La bomba humana…) són al canal de Franck Sala, membre del grup, que publica gairebé només Llamp te Frigui (22 vídeos). Repertori publicat en català: confiança d’idioma; convindrà vigilar vídeos de concerts i peces que no siguin del grup.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://llamptefrigui.fr/"
-        ]
-      }
-    },
-    {
-      "name": "Gisela Bellsolà",
-      "aliases": [
-        "Gisela Bellsolà - Topic"
-      ],
-      "genres": [
-        "Cançó d'autor"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCKKjvjnD71ll8kMq2pqQhcg",
-            "handle": null,
-            "name": "Gisela Bellsolà - Topic",
-            "type": "topic",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "manual-user-2026-10-17",
-        "youtube:manual-verified",
-        "genre:manual",
-        "https://www.youtube.com/channel/UCKKjvjnD71ll8kMq2pqQhcg",
-        "https://www.nts.live/artists/142356-gisela-bellsola"
-      ],
-      "lastChecked": "2026-10-17T21:00:00.000Z",
-      "notes": "17/10/2026: alta per indicació de l’usuari (llista d’artistes de la Catalunya del Nord). Canal Gisela Bellsolà - Tema comprovat (la descripció la presenta com a cantant rossellonesa; títols en català: País catedral, Vent de la tarda, Anna marinera…). Àlbums de poesia catalana musicada; també col·laborà en cançó tradicional i trobadoresca: artista vigilada; la revisió es farà després de l’actualització del feed.",
-      "genresRaw": [],
-      "genreReview": {
-        "reviewedAt": "2026-10-17",
-        "method": "user-editorial",
-        "sources": [
-          "https://www.nts.live/artists/142356-gisela-bellsola"
-        ]
-      }
-    },
-    {
-      "name": "Maurici Auzeville",
-      "aliases": [
-        "Maurice Auzeville"
-      ],
-      "genres": [
-        "Folk i arrel"
-      ],
-      "territories": [
-        "Catalunya Nord"
-      ],
-      "languages": [
-        "ca"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [],
-        "searchCandidates": []
-      },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
-      "sources": [
-        "manual-user-2026-10-17",
-        "https://oplcat.eu/index.php/2023/10/17/maurici-auzeville/"
-      ],
-      "lastChecked": "2026-10-17T21:00:00.000Z",
-      "notes": "17/10/2026: a la llista de l’usuari (Catalunya del Nord), però sense canal propi: els seus enregistraments (cançons tradicionals del Rosselló de 1958, sardanes) només són a l’arxiu de diversos artistes Singlantana Sound. Pendent fins que hi hagi un canal seu o una manera d’indexar cançons d’un canal compartit. També cantà òpera i repertori en altres llengües (Dis-moi mistral): caldrà vigilar-lo i quedar-se només amb les sardanes cantades i les peces tradicionals catalanes.",
-      "genresRaw": []
-    },
-    {
-      "name": "Núria Balcells",
-      "displayName": "Núria Balcells",
-      "aliases": [
-        "Nuria Balcells",
-        "Una Corda Més",
-        "Recançonem",
-        "De Vellut"
-      ],
-      "genres": [
-        "Folk i arrel"
-      ],
-      "territories": [
-        "Catalunya"
-      ],
-      "languages": [
-        "instrumental"
-      ],
-      "wikidataId": null,
-      "musicbrainzId": null,
-      "youtube": {
-        "channels": [
-          {
-            "id": "UCHO5cHnX3GGXitE11VNsAmA",
-            "handle": "@nuriabalcells",
-            "name": "De Vellut",
-            "type": "official",
-            "primary": true
-          }
-        ],
-        "searchCandidates": []
-      },
-      "confidence": "alta",
-      "reviewStatus": "aprovat",
-      "active": true,
-      "sources": [
-        "https://nuriabalcells.com/recanconem/",
-        "https://www.youtube.com/@nuriabalcells",
-        "genre:manual"
-      ],
-      "lastChecked": "2026-10-17T20:49:50.325Z",
-      "notes": "Selecció expressa de cinc interpretacions de Núria Balcells i Rocco Papia. Origen: Sant Cugat del Vallès. Canal propi @nuriabalcells; enregistraments publicats per Rocco Papia, vinculats individualment mitjançant allowedExternalVideos. No importar la resta dels canals. Vegeu docs/revisions/2026-10-17-nuria-balcells.json."
     }
   ]
 }

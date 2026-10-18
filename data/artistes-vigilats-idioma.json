@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17",
+  "updatedAt": "2026-10-18",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2477,6 +2477,19 @@
         "manual-user-2026-10-17",
         "https://www.youtube.com/channel/UCKKjvjnD71ll8kMq2pqQhcg",
         "https://www.nts.live/artists/142356-gisela-bellsola"
+      ]
+    },
+    {
+      "artista": "Joan Garriga",
+      "aliases": [
+        "Joan Garriga i el Mariatxi Galàctic"
+      ],
+      "canals": [
+        "UCdLF7PrhokwO1TwkKQHtR8A"
+      ],
+      "motiu": "Canal amb repertori multilingüe i altres projectes. Llista tancada d’onze obres; les pendents no s’indexen. No s’atorga confiança global d’idioma.",
+      "fonts": [
+        "docs/revisions/2026-10-18-joan-garriga.json"
       ]
     }
   ],
