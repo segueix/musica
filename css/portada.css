@@ -4340,6 +4340,14 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     width: 100%;
 }
 
+/* Mòbil: la #1 és un rectangle vertical (4:5), un pèl més alta que les altres caràtules (quadrades), perquè es vegi
+   que és la destacada (2026-10-18). A l'ordinador omple la columna del costat de la capçalera. */
+@media (max-width: 768px) {
+    #channelPage .ap-best .ap-card {
+        aspect-ratio: 4 / 5;
+    }
+}
+
 /* ---------- «Mostra'n més» i el missatge d'un artista sense cançons ---------- */
 #channelPage .ap-more {
     display: block;

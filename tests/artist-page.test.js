@@ -366,4 +366,10 @@ describe('fitxa al mòbil: la capçalera i la #1 no surten de la pantalla (2026-
     it('la graella de dalt té una columna minmax(0, 1fr), no la implícita (auto)', () => {
         expect(css).toMatch(/#channelPage \.ap-head \{\s*display: grid;\s*grid-template-columns: minmax\(0, 1fr\);/);
     });
+
+    it('al mòbil la #1 és un rectangle vertical (4:5), destacada sobre les altres (quadrades)', () => {
+        expect(css).toMatch(
+            /@media \(max-width: 768px\) \{\s*#channelPage \.ap-best \.ap-card \{\s*aspect-ratio: 4 \/ 5;/
+        );
+    });
 });

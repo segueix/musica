@@ -2075,3 +2075,5 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Trampa:** una graella o un flex amb fills de text llarg ha de tenir `minmax(0, 1fr)` / `min-width: 0`; si no, el contingut l'eixampla, i amb `contain` o `overflow: hidden` als pares no es nota fins que algú veu el tall. Proves: `tests/artist-page.test.js` i opt-in `verificar-fitxa-artista.js` («la capçalera i la #1 no surten de la pantalla», «la #1 és quadrada»).
 
+**Actualització (2026-10-18, a petició de l'usuari):** al mòbil la #1 ja no és quadrada sinó un rectangle vertical 4:5 (358 × 448 a 390 px), un pèl més alta que les altres caràtules, perquè quedi destacada (`@media (max-width: 768px)` a `#channelPage .ap-best .ap-card`).
+

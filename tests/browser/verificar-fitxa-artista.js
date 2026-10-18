@@ -265,8 +265,9 @@ async function check(browser, width, height, label) {
     );
     if (width <= 768) {
         ok(
-            `${label}: la #1 és quadrada i fa l'ample de la columna`,
-            Math.abs(caixes.best.width - caixes.best.height) < 2 && Math.abs(caixes.best.width - caixes.hero.width) < 2,
+            `${label}: la #1 és un rectangle vertical (4:5) de l'ample de la columna`,
+            Math.abs(caixes.best.height - caixes.best.width * 1.25) < 2 &&
+                Math.abs(caixes.best.width - caixes.hero.width) < 2,
             caixes.best
         );
     }
