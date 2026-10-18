@@ -96,8 +96,9 @@ function setup({ catalog, history = [], liked = [], followed = [], mode = 'mix',
         spreadVideosByArtist: helpers.spreadVideosByArtist,
         limitClassicFrequency: helpers.limitClassicFrequency,
         filterOutWatchedVideos: list => list.filter(v => !history.some(h => h.id === v.id)),
-        loadVideoInSequence: () => {
+        loadVideoInSequence: options => {
             calls.loaded += 1;
+            calls.lastLoad = options;
         },
         clearEmbeddedYouTubeSession: () => {},
         updatePlaylistModeBadge: () => {},
@@ -1000,7 +1001,9 @@ describe('mode de descoberta dins de cada ràdio', () => {
         env.queue.setDiscoveryMode('surprise');
         env.queue.render(env.container);
         expect(env.container.innerHTML).not.toMatch(/poc historial|no tens historial|mq-note/);
-        expect(env.container.innerHTML).toMatch(/Ràdio adaptada a «Sorprèn-me»|La llista ja encaixava amb «Sorprèn-me»/);
+        expect(env.container.innerHTML).toMatch(
+            /Ràdio adaptada a «Sorprèn-me»|La llista ja encaixava amb «Sorprèn-me»/
+        );
     });
 
     it('manté l’avís necessari quan la cançó no es pot reproduir', () => {
@@ -1010,7 +1013,9 @@ describe('mode de descoberta dins de cada ràdio', () => {
         Object.assign(env.ctx, {
             currentVideoId: current.id,
             videoPlayer: { dataset: { playingVideoId: current.id }, querySelector: () => iframe },
-            cancelLiveSwapFallback() {}, setAutoplayBlockedHint() {}, autoplayBlockTimer: null,
+            cancelLiveSwapFallback() {},
+            setAutoplayBlockedHint() {},
+            autoplayBlockTimer: null,
             setTimeout() {},
         });
         expect(env.queue.handleUnavailableVideo(150, iframe)).toBe(true);
@@ -1189,5 +1194,57 @@ describe('ràdio de grans èxits (llista d’«Artistes i grups»)', () => {
         expect(env.ctx.activePlaylistQueue.map(video => video.viewCount)).toEqual([3000, 500, 10]);
         expect(env.queue.playlistName()).toBe('Grans èxits de Grup A');
         expect(env.queue.startHitsRadio(catalog.slice(0, 1), { name: 'Grup A' })).toBe(false);
+    });
+});
+
+describe('un vídeo que s’obre sol sempre és una ràdio (2026-10-18)', () => {
+    const catalog = () => Array.from({ length: 24 }, (_, i) => song('a' + (i % 8), 0.3 + i * 0.1));
+
+    it('un enllaç o una sessió recuperada engeguen una ràdio amb el segon i sense entrada nova a l’historial', () => {
+        const list = catalog();
+        const env = setup({ catalog: list });
+        expect(env.queue.startFrom(list[3].id, 'api', { startAt: 42.7, replaceHistory: true })).toBe(true);
+        expect(env.queue.getState().active).toBe(true);
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(list[3].id);
+        expect(env.ctx.activePlaylistQueue.length).toBeGreaterThan(1);
+        expect(env.calls.lastLoad).toEqual({ autoPlay: false, replaceHistory: true, startAt: 42 });
+    });
+
+    it('un clic continua començant en pausa i sense opcions de més', () => {
+        const list = catalog();
+        const env = setup({ catalog: list });
+        expect(env.queue.startFrom(list[0].id, 'api')).toBe(true);
+        expect(env.calls.lastLoad).toEqual({ autoPlay: false });
+    });
+
+    it('un vídeo que no és al feed (arxiu, historial) també fa ràdio si se’n passa el vídeo resolt', () => {
+        const list = catalog();
+        const archived = song('a1', 30, { source: 'archive' });
+        const env = setup({ catalog: list });
+        expect(env.queue.startFrom(archived.id, 'api')).toBe(false);
+        expect(env.queue.startFrom(archived.id, 'api', { video: archived })).toBe(true);
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(archived.id);
+    });
+
+    it('amb una llista pròpia sonant: una cançó de la llista hi sona, una de fora engega una ràdio', () => {
+        const list = catalog();
+        const own = list.slice(0, 5);
+        const env = setup({
+            catalog: list,
+            extra: {
+                isPlaylistMode: true,
+                activePlaylistId: 'pl_1',
+                activePlaylistName: 'Estiu',
+                activePlaylistQueue: own,
+            },
+        });
+        expect(env.queue.startFrom(own[2].id, 'api')).toBe(true);
+        expect(env.ctx.activePlaylistId).toBe('pl_1');
+        expect(env.ctx.currentPlaylistIndex).toBe(2);
+
+        expect(env.queue.startFrom(list[10].id, 'api')).toBe(true);
+        expect(env.queue.getState().active).toBe(true);
+        expect(env.ctx.activePlaylistId).not.toBe('pl_1');
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(list[10].id);
     });
 });

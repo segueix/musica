@@ -12149,7 +12149,27 @@ async function showVideoFromAPI(videoId, options = {}) {
     return SegueixApp.features.player?.showVideoFromAPI?.(videoId, options);
 }
 
+// L'app sempre és una ràdio: un vídeo que s'obre sol (enllaç ?v=, enrere/endavant, sessió recuperada, «Continua
+// escoltant», una cançó de fora de la llista que sona...) engega una ràdio que comença per aquesta cançó, amb la
+// cua a la dreta. Abans s'obria la fitxa antiga d'un vídeo sol: reproductor, «Altres vídeos relacionats» i una
+// columna amb els vídeos de l'artista. Retorna true si la cançó ja sona dins d'una cua.
+function startRadioForSingleVideo(videoId, options = {}, video = null) {
+    if (activePlaylistId === '__segueix_tv_discovery__') return false;
+    return Boolean(
+        SegueixApp.features.musicQueue?.startFrom?.(videoId, 'api', {
+            video,
+            startAt: options.startAt,
+            replaceHistory: options.replaceHistory === true,
+            autoPlay: options.autoPlay === true,
+        })
+    );
+}
+
 async function showVideoFromAPILegacyImpl(videoId, options = {}) {
+    // `isPlaylistNavigation` només és cert durant la part síncrona de la crida (loadVideoInSequence el torna a
+    // posar a fals en acabar): es desa per a després de l'espera de l'índex d'arxiu.
+    const fromQueue = isPlaylistNavigation;
+    if (!fromQueue && startRadioForSingleVideo(videoId, options)) return;
     const navigationId = ++playbackNavigationId;
     // Cada obertura té una intenció pròpia; les seleccions esperen el toc natiu.
     const shouldAutoPlay = options.autoPlay === true;
@@ -12291,6 +12311,11 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
             }
             isArchivePlayback = cachedVideo?.source === 'archive' || cachedVideo?.historySource === 'archive';
         }
+    }
+    // Vídeo que no era al feed (arxiu, historial): ara que se'n sap l'artista, també comença una ràdio. La URL
+    // ja s'ha posat a l'historial: la ràdio la substitueix.
+    if (!fromQueue && cachedVideo && startRadioForSingleVideo(videoId, { ...options, replaceHistory: true }, cachedVideo)) {
+        return;
     }
     isAutoPlayNavigating = false;
 
