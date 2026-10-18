@@ -8765,17 +8765,6 @@ function playlistCoverMarkup(list, fallback) {
     return `<span class="playlist-mosaic" role="img" aria-label="${escapeHtml(list.name)}">${tiles}</span>`;
 }
 
-// Fons de «+ Afegeix cançons»: les caràtules de la llista en fila (quatre; si n'hi ha menys, es repeteixen).
-function playlistAddSongsStyle(list) {
-    const thumbs = (list.videos || [])
-        .map(video => String(video?.thumbnail || '').replace(/["'()\\\s]/g, ''))
-        .filter(Boolean)
-        .slice(0, 4);
-    if (!thumbs.length) return '';
-    const vars = [0, 1, 2, 3].map(i => `--pl-add-${i + 1}: url('${thumbs[i % thumbs.length]}')`).join('; ');
-    return ` style="${escapeHtml(vars)}"`;
-}
-
 async function renderPlaylistsPageLegacyImpl() {
     if (!playlistsList) return;
     const storedPlaylists = getPlaylists();
@@ -8849,7 +8838,7 @@ async function renderPlaylistsPageLegacyImpl() {
                         <i data-lucide="share-2"></i>
                     </button>
                     <div class="playlist-card-meta">${videoCount} cançons</div>
-                    <button class="playlist-add-songs" type="button" data-add-songs="${escapeHtml(list.id)}"${playlistAddSongsStyle(list)}>+ Afegeix cançons</button>
+                    <button class="playlist-add-songs" type="button" data-add-songs="${escapeHtml(list.id)}">+ Afegeix cançons</button>
                     ${videosMarkup}
                 </div>
             </div>

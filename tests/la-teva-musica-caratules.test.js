@@ -61,20 +61,13 @@ describe('«La teva música» amb el llenguatge de caràtules', () => {
         expect(block).toMatch(/#playlistsPage \.playlist-mosaic__tile \{[^}]*overflow: hidden;/);
     });
 
-    it('«+ Afegeix cançons» porta les caràtules de la llista de fons', () => {
+    it('«+ Afegeix cançons» va damunt del mosaic de la llista, sense caràtules pròpies', () => {
         const app = fs.readFileSync('js/app.js', 'utf8');
-        expect(app).toMatch(/data-add-songs="\$\{escapeHtml\(list\.id\)\}"\$\{playlistAddSongsStyle\(list\)\}>/);
-        const start = app.indexOf('function playlistAddSongsStyle(list)');
-        const fn = new Function(
-            `const escapeHtml = s => s; ${app.slice(start, app.indexOf('\n}\n', start) + 2)}; return playlistAddSongsStyle;`
-        )();
-        expect(fn({ videos: [] })).toBe('');
-        const out = fn({ videos: [{ thumbnail: "https://i.ytimg.com/vi/a/hq'default.jpg" }, { thumbnail: 'b.jpg' }] });
-        expect(out).toContain("--pl-add-1: url('https://i.ytimg.com/vi/a/hqdefault.jpg')");
-        expect(out).toContain("--pl-add-2: url('b.jpg')");
-        expect(out).toContain("--pl-add-4: url('b.jpg')");
+        expect(app).toMatch(/data-add-songs="\$\{escapeHtml\(list\.id\)\}">\+ Afegeix cançons<\/button>/);
+        expect(app).not.toMatch(/playlistAddSongsStyle/);
+        expect(block).not.toMatch(/var\(--pl-add-/);
         expect(block).toMatch(
-            /#playlistsPage \.playlist-add-songs\[style\*='--pl-add-1'\] \{[^}]*background-image:[^}]*var\(--pl-add-4\)/
+            /#playlistsPage \.playlist-card \.playlist-add-songs \{[^}]*position: absolute;[^}]*top: 10px;[^}]*left: 12px;[^}]*background: rgba\(20, 22, 21, 0\.55\);[^}]*backdrop-filter: blur\(6px\);/
         );
     });
 });
