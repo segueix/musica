@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T15:52:29.000Z",
+  "updatedAt": "2026-10-18T18:00:17.047Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40862,6 +40862,54 @@
           "https://www.top-charts.com/r/som-aixi-el-belda-i-el-conjunt-badabadoc-carles-belda"
         ]
       }
+    },
+    {
+      "name": "Uri Santafé",
+      "displayName": "Uri Santafé",
+      "aliases": [
+        "Uri Santafe"
+      ],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCNtSpJN9-iRH8tENhz1_kXw",
+            "handle": "@urisantafe1993",
+            "name": "URI SANTAFÉ",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCDZC81-3ZBbu4R5yDbJMigQ",
+            "handle": null,
+            "name": "Uri Santafé - Tema",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-18",
+        "genre:manual",
+        "https://www.delirics.cat/urisantafelamliki",
+        "https://www.youtube.com/channel/UCNtSpJN9-iRH8tENhz1_kXw"
+      ],
+      "lastChecked": "2026-10-18T18:00:17.047Z",
+      "notes": "Moià i Urbana per indicació de l’usuari. Canal oficial i Tema verificats. Selecció tancada de 15 cançons amb lletra catalana revisada, amb IDs concrets; resta pendent o fora per llengua. No importar tot el canal ni autoritzar novetats pel títol. docs/revisions/2026-10-18-uri-santafe.json"
     }
   ]
 }

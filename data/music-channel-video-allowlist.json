@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T17:31:20.791Z",
+  "updatedAt": "2026-10-18T18:00:17.047Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7487,6 +7487,41 @@
         "Et cantaré",
         "Marxen lluny",
         "Perquè"
+      ]
+    },
+    "UCNtSpJN9-iRH8tENhz1_kXw": {
+      "artist": "Uri Santafé",
+      "note": "Només vídeos amb lletra revisada. Resta fora fins a verificació; docs/revisions/2026-10-18-uri-santafe.json.",
+      "allowedVideoIds": [
+        "knyxeKlpB4w",
+        "B7TGOnP7niE",
+        "m53bBuI2O_s",
+        "8m3vRueQSSc",
+        "GDyjl2LHFPM",
+        "_ySaoi_hUQ8",
+        "PkkAgCgv1s4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ]
+    },
+    "UCDZC81-3ZBbu4R5yDbJMigQ": {
+      "artist": "Uri Santafé",
+      "note": "Només les vuit pistes identificades amb lletra completa revisada; cap confiança global. docs/revisions/2026-10-18-uri-santafe.json.",
+      "allowedVideoIds": [
+        "5dPtz_8SEXs",
+        "K35EqIBdPng",
+        "BLGHRWKaFGg",
+        "mK__BIMpt6Y",
+        "HoqAoU-cNWI",
+        "rcnKHJn3phM",
+        "plDRkDqvx6g",
+        "IEbavi9eggc"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
       ]
     }
   }
