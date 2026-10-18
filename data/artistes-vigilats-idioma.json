@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18",
+  "updatedAt": "2026-10-18T18:00:17.047Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2618,6 +2618,35 @@
         "manual-user-2026-10-17",
         "https://www.youtube.com/channel/UCKKjvjnD71ll8kMq2pqQhcg",
         "https://www.nts.live/artists/142356-gisela-bellsola"
+      ]
+    },
+    {
+      "artista": "Joan Garriga",
+      "aliases": [
+        "Joan Garriga i el Mariatxi Galàctic"
+      ],
+      "canals": [
+        "UCdLF7PrhokwO1TwkKQHtR8A"
+      ],
+      "motiu": "Canal amb repertori multilingüe i altres projectes. Llista tancada d’onze obres; les pendents no s’indexen. No s’atorga confiança global d’idioma.",
+      "fonts": [
+        "docs/revisions/2026-10-18-joan-garriga.json"
+      ]
+    },
+    {
+      "artista": "Uri Santafé",
+      "aliases": [
+        "Uri Santafe",
+        "Uri Santafé - Topic"
+      ],
+      "canals": [
+        "UCNtSpJN9-iRH8tENhz1_kXw",
+        "UCDZC81-3ZBbu4R5yDbJMigQ"
+      ],
+      "motiu": "Repertori mixt. Només IDs amb lletra comprovada; ni títol ni confiança global autoritzen novetats. Resta pendent fora de l’allowlist.",
+      "fonts": [
+        "manual-user-2026-10-18",
+        "docs/revisions/2026-10-18-uri-santafe.json"
       ]
     }
   ],
@@ -5259,6 +5288,19 @@
         "https://www.youtube.com/@francksala.",
         "https://llamptefrigui.fr/"
       ]
+    },
+    {
+      "artista": "El Belda i el Conjunt Badabadoc",
+      "aliases": [],
+      "canals": [
+        "UCsee8KxP3-rJr03f266dtbQ",
+        "UCcgwj-7qGY9B03WX55ZzeXw"
+      ],
+      "motiu": "Acceptació editorial expressa dels discos Per Jamaicanes i Som Així; selecció tancada a l’allowlist. No implica una revisió individual de totes les lletres ni autoritza novetats.",
+      "fonts": [
+        "manual-user-2026-10-18",
+        "docs/revisions/2026-10-18-belda-balcells.json"
+      ]
     }
   ],
   "discsVerificats": [
@@ -5329,6 +5371,156 @@
         "oRjmw8uoyys"
       ],
       "criteri": "Edició EMI 1983, enregistrada el 1982, documentada íntegrament en català. Deu pistes contrastades amb les publicacions de Parlophone Spain al canal Topic. Revisió 2026-10-14."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "ANGELETA / Vanessa",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1862505650/angeleta-vanessa",
+      "videoIds": [
+        "knyxeKlpB4w"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "BOIGxTU",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1772719724/boigxtu-feat-pep-sala-and-acone",
+      "videoIds": [
+        "B7TGOnP7niE"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "IGLÚ",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1730969916/igl%C3%BA",
+      "videoIds": [
+        "m53bBuI2O_s"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "Ja no tinc temps",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1710017956/ja-no-tinc-temps",
+      "videoIds": [
+        "8m3vRueQSSc"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "F*ck Lent",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1772719629/fck-lent",
+      "videoIds": [
+        "GDyjl2LHFPM"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "Torna-ho a fer",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1689617039/torna-ho-a-fer?tab=lyrics",
+      "videoIds": [
+        "_ySaoi_hUQ8"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "Més fort",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1689617029/m%C3%A9s-fort",
+      "videoIds": [
+        "PkkAgCgv1s4"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "MOMENTS / María",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1862505664/moments-mar%C3%ADa",
+      "videoIds": [
+        "5dPtz_8SEXs"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "CANÇÓ D'AMOR / Sandra",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1862505987/can%C3%A7%C3%B3-damor-sandra",
+      "videoIds": [
+        "K35EqIBdPng"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "JUGANT / Alexandra",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1862506128/jugant-alexandra",
+      "videoIds": [
+        "BLGHRWKaFGg"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "AL CEL",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1772720003/al-cel-feat-acone",
+      "videoIds": [
+        "mK__BIMpt6Y"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "TRAÏCIÓ",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1772719720/tra%C3%AFci%C3%B3",
+      "videoIds": [
+        "HoqAoU-cNWI"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "CREURE",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/1772719726/creure-feat-reina-blava",
+      "videoIds": [
+        "rcnKHJn3phM"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "1 VIDA / Áurea",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/6817041693/1-vida-%C3%A1urea",
+      "videoIds": [
+        "plDRkDqvx6g"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Uri Santafé",
+      "titol": "EL BERENAR / Venus",
+      "accio": "conserva",
+      "font": "https://www.shazam.com/song/6817041675/el-berenar-venus",
+      "videoIds": [
+        "IEbavi9eggc"
+      ],
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
     }
   ]
 }

@@ -1,0 +1,70 @@
+{
+  "data": "2026-10-18",
+  "substitueixPR": 181,
+  "artista": "Joan Garriga",
+  "seleccio": [
+    "TUDGZ-2TQps",
+    "C5oByL-ezdg",
+    "8PYyfC_QLHk",
+    "mYhf6I9yCc8",
+    "ngS-7MDCr5E",
+    "_eCj0yf2D5Q",
+    "P8wjcfG5EZQ",
+    "pnpgKoSX8YU",
+    "gNOiHPIoHFM",
+    "NqG1NXKfgz8",
+    "358mQC2tJlY"
+  ],
+  "externs": [
+    {
+      "id": "mYhf6I9yCc8",
+      "titol": "Fa bon temps",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "ngS-7MDCr5E",
+      "titol": "Colors",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "_eCj0yf2D5Q",
+      "titol": "Nocturn",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "P8wjcfG5EZQ",
+      "titol": "La Rumba",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "pnpgKoSX8YU",
+      "titol": "Això és tot",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "gNOiHPIoHFM",
+      "titol": "Ballem!",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "NqG1NXKfgz8",
+      "titol": "Et cantaré",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    },
+    {
+      "id": "358mQC2tJlY",
+      "titol": "Marxen lluny",
+      "publicador": "UC63BTrp525uyzMd-YTMAt_w"
+    }
+  ],
+  "criteri": "Execució de la selecció editorial anterior. No es declara verificació íntegra de lletres.",
+  "captures": "La Rumba i Ballem! corresponen al disc de 2020; es trien aquests IDs i no els de l’EP de 2019. El vídeo amb títol truncat i imatge de l’espai no s’incorpora perquè la captura no permet identificar-lo.",
+  "pendentsExclosos": [
+    "Cariñosa",
+    "Leila",
+    "Within Human Law",
+    "Mariatxis Trance"
+  ],
+  "correccioRevisio": "Els dos canals vencen al mateix torn programat. Es força lectura completa del Topic en aquell torn, sense dispatch. Soluciona la pèrdua temporal assenyalada a la PR 181.",
+  "limit": "No completa la verificació lingüística estricta de totes les cançons. No altera decisions d’idioma."
+}

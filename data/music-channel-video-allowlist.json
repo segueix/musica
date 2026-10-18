@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-18T18:00:17.047Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7357,6 +7357,171 @@
       ],
       "deniedTitleContains": [
         "Short"
+      ]
+    },
+    "UCdLF7PrhokwO1TwkKQHtR8A": {
+      "artist": "Joan Garriga",
+      "note": "Selecció editorial de les onze obres acordades amb l’usuari el 18/10/2026. No equival a verificació completa de lletres. Coincidència exacta: no admet concerts, versions o col·laboracions per coincidència parcial. Pendents i repertori de La Troba Kung-Fú/Dusminguet exclosos. docs/revisions/2026-10-18-joan-garriga.json Indexació per ID: vuit pistes dels discos El ball i el plany i Et cantaré el rock & roll és mort perquè marxen lluny, allotjades al Topic compartit. Versions de disc de La Rumba (4:02) i Ballem! (4:24), segons captures de l’usuari. No són noves validacions lingüístiques.",
+      "allowedTitles": [
+        "Fa bon temps",
+        "Joan Garriga i el Mariatxi galàctic - Fa bon temps",
+        "Joan Garriga - Fa bon temps",
+        "Colors",
+        "Joan Garriga i el Mariatxi galàctic - Colors",
+        "Joan Garriga - Colors",
+        "Ai on va l’à...",
+        "Joan Garriga i el Mariatxi galàctic - Ai on va l’à...",
+        "Joan Garriga - Ai on va l’à...",
+        "Nocturn",
+        "Joan Garriga i el Mariatxi galàctic - Nocturn",
+        "Joan Garriga - Nocturn",
+        "La rumba",
+        "Joan Garriga i el Mariatxi galàctic - La rumba",
+        "Joan Garriga - La rumba",
+        "Això és tot",
+        "Joan Garriga i el Mariatxi galàctic - Això és tot",
+        "Joan Garriga - Això és tot",
+        "Ballem!",
+        "Joan Garriga i el Mariatxi galàctic - Ballem!",
+        "Joan Garriga - Ballem!",
+        "El rock & roll és mort",
+        "Joan Garriga i el Mariatxi galàctic - El rock & roll és mort",
+        "Joan Garriga - El rock & roll és mort",
+        "Et cantaré",
+        "Joan Garriga i el Mariatxi galàctic - Et cantaré",
+        "Joan Garriga - Et cantaré",
+        "Marxen lluny",
+        "Joan Garriga i el Mariatxi galàctic - Marxen lluny",
+        "Joan Garriga - Marxen lluny",
+        "Perquè",
+        "Joan Garriga i el Mariatxi galàctic - Perquè",
+        "Joan Garriga - Perquè"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ],
+      "allowedVideoIds": [
+        "TUDGZ-2TQps",
+        "C5oByL-ezdg",
+        "8PYyfC_QLHk",
+        "mYhf6I9yCc8",
+        "ngS-7MDCr5E",
+        "_eCj0yf2D5Q",
+        "P8wjcfG5EZQ",
+        "pnpgKoSX8YU",
+        "gNOiHPIoHFM",
+        "NqG1NXKfgz8",
+        "358mQC2tJlY"
+      ],
+      "allowedExternalVideos": {
+        "mYhf6I9yCc8": "UC63BTrp525uyzMd-YTMAt_w",
+        "ngS-7MDCr5E": "UC63BTrp525uyzMd-YTMAt_w",
+        "_eCj0yf2D5Q": "UC63BTrp525uyzMd-YTMAt_w",
+        "P8wjcfG5EZQ": "UC63BTrp525uyzMd-YTMAt_w",
+        "pnpgKoSX8YU": "UC63BTrp525uyzMd-YTMAt_w",
+        "gNOiHPIoHFM": "UC63BTrp525uyzMd-YTMAt_w",
+        "NqG1NXKfgz8": "UC63BTrp525uyzMd-YTMAt_w",
+        "358mQC2tJlY": "UC63BTrp525uyzMd-YTMAt_w"
+      }
+    },
+    "UCcgwj-7qGY9B03WX55ZzeXw": {
+      "artist": "El Belda i el Conjunt Badabadoc",
+      "allowedTitles": [
+        "La Gavina",
+        "L'Empordà",
+        "La Catximba",
+        "Malson Abans De Nadal",
+        "Rosó",
+        "Aquesta Nit",
+        "Al Vent",
+        "Boig Per Tu",
+        "Plou",
+        "La Vall Del Riu Vermell",
+        "Aquesta Nit (Dub)",
+        "Arrels",
+        "Sóc Així",
+        "Gemma",
+        "Llunàtics",
+        "País Petit",
+        "Ie-Ié",
+        "Vitamina Sol",
+        "El Boig De La Ciutat",
+        "Cims I Abismes",
+        "Pantalons Curts I Els Genolls Pelats",
+        "Laura - Crema De Xàtiva",
+        "Cobles del Peirot (feat. Orxata Sound System) [Bonus Track]",
+        "Això és escà! (feat. The Upshitters) [Bonus Track]",
+        "Crema de Xàtiva (feat. Aires de Cornellà) [Bonus Track]",
+        "Cobles del Peirot [Bonus Track]",
+        "Cobles del Peirot - Bonus Track",
+        "Això és escà! [Bonus Track]",
+        "Això és escà! - Bonus Track",
+        "Crema de Xàtiva [Bonus Track]",
+        "Crema de Xàtiva - Bonus Track",
+        "le-Ié"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ],
+      "note": "Només les pistes dels dos discos demanats expressament per l’usuari: Per Jamaicanes (11) i Som Així (14, inclosos bonus). Selecció editorial per disc, no verificació individual de lletres. docs/revisions/2026-10-18-belda-balcells.json"
+    },
+    "UCsee8KxP3-rJr03f266dtbQ": {
+      "artist": "El Belda i el Conjunt Badabadoc",
+      "allowedVideoIds": [],
+      "note": "Canal oficial vinculat al perfil. No importar vídeos addicionals: l’usuari només ha demanat els dos discos del canal Tema. docs/revisions/2026-10-18-belda-balcells.json"
+    },
+    "UC63BTrp525uyzMd-YTMAt_w": {
+      "artist": "La Troba Kung-Fú",
+      "note": "Topic compartit. Les obres seleccionades de Joan Garriga es vinculen per ID al seu perfil oficial. Actualització coordinada dels dos canals.",
+      "deniedTitleContains": [
+        "Fa bon temps",
+        "Colors",
+        "Ai on va l’à",
+        "Nocturn",
+        "La Rumba",
+        "Això és tot",
+        "Ballem",
+        "El rock & roll és mort",
+        "Et cantaré",
+        "Marxen lluny",
+        "Perquè"
+      ]
+    },
+    "UCNtSpJN9-iRH8tENhz1_kXw": {
+      "artist": "Uri Santafé",
+      "note": "Només vídeos amb lletra revisada. Resta fora fins a verificació; docs/revisions/2026-10-18-uri-santafe.json.",
+      "allowedVideoIds": [
+        "knyxeKlpB4w",
+        "B7TGOnP7niE",
+        "m53bBuI2O_s",
+        "8m3vRueQSSc",
+        "GDyjl2LHFPM",
+        "_ySaoi_hUQ8",
+        "PkkAgCgv1s4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ]
+    },
+    "UCDZC81-3ZBbu4R5yDbJMigQ": {
+      "artist": "Uri Santafé",
+      "note": "Només les vuit pistes identificades amb lletra completa revisada; cap confiança global. docs/revisions/2026-10-18-uri-santafe.json.",
+      "allowedVideoIds": [
+        "5dPtz_8SEXs",
+        "K35EqIBdPng",
+        "BLGHRWKaFGg",
+        "mK__BIMpt6Y",
+        "HoqAoU-cNWI",
+        "rcnKHJn3phM",
+        "plDRkDqvx6g",
+        "IEbavi9eggc"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
       ]
     }
   }

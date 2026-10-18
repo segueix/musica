@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-18T15:52:29.000Z",
   "channels": [
     {
       "artist": "Svetlana",
@@ -1279,6 +1279,15 @@
       "primary": true,
       "verified": true,
       "source": "https://www.youtube.com/@nuriabalcells/videos"
+    },
+    {
+      "artist": "El Belda i el Conjunt Badabadoc",
+      "handle": "@elbeldaielconjuntbadabadoc",
+      "channelId": "UCsee8KxP3-rJr03f266dtbQ",
+      "type": "official",
+      "primary": true,
+      "verified": true,
+      "source": "manual-user-2026-10-18"
     }
   ]
 }

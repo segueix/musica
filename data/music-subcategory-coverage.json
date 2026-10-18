@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 444,
+  "musicalArtists": 447,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -837,7 +837,7 @@
       "label": "Urban — pendent d’afinar",
       "category": "Urban",
       "neighbours": [],
-      "artistCount": 12,
+      "artistCount": 13,
       "nucleus": true,
       "artists": [
         "2ES",
@@ -851,7 +851,8 @@
         "Scotty DK",
         "Subliminal",
         "Vademecum FAM",
-        "Xenia Casado"
+        "Xenia Casado",
+        "Uri Santafé"
       ]
     },
     {
@@ -940,10 +941,11 @@
         "folk-tradicional",
         "folk-general"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
-        "Els Jóvens"
+        "Els Jóvens",
+        "El Belda i el Conjunt Badabadoc"
       ]
     },
     {
@@ -1187,7 +1189,7 @@
         "rumba",
         "rumba-general"
       ],
-      "artistCount": 17,
+      "artistCount": 18,
       "nucleus": true,
       "artists": [
         "9SON",
@@ -1206,7 +1208,8 @@
         "Terratombats",
         "Txarango",
         "Xeic!",
-        "Niño 5"
+        "Niño 5",
+        "Joan Garriga"
       ]
     },
     {
@@ -5492,6 +5495,35 @@
       "sources": [
         "https://nuriabalcells.com/recanconem/",
         "https://www.youtube.com/@nuriabalcells"
+      ]
+    },
+    {
+      "artist": "Joan Garriga",
+      "category": "Rumba / Mestissatge",
+      "subcategory": "mestissatge",
+      "basis": "documented-tags",
+      "sources": [
+        "https://joangarriga.cat/bio/",
+        "https://www.youtube.com/channel/UCdLF7PrhokwO1TwkKQHtR8A"
+      ]
+    },
+    {
+      "artist": "El Belda i el Conjunt Badabadoc",
+      "category": "Folk i arrel",
+      "subcategory": "folk-fusio",
+      "basis": "editorial",
+      "sources": [
+        "manual-user-2026-10-18"
+      ]
+    },
+    {
+      "artist": "Uri Santafé",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.delirics.cat/urisantafelamliki",
+        "https://www.youtube.com/channel/UCNtSpJN9-iRH8tENhz1_kXw"
       ]
     }
   ]
