@@ -1,0 +1,139 @@
+{
+  "data": "2026-10-18T16:03:59.078Z",
+  "artista": "Joan Garriga",
+  "alias": "Joan Garriga i el Mariatxi Galàctic",
+  "tipus": "correccio-atribucio-seleccio-existent",
+  "causa": "La selecció inicial només filtrava títols del canal oficial. Vuit de les onze obres ja eren al feed/arxiu del Topic compartit UC63BTrp525uyzMd-YTMAt_w amb l’atribució incorrecta La Troba Kung-Fú.",
+  "abast": "Reatribuir les onze obres ja seleccionades per l’editor sense ampliar repertori ni validar lletres per títol o metadades. No fusionar els artistes ni els canals sencers.",
+  "registres": [
+    {
+      "id": "TUDGZ-2TQps",
+      "titol": "Joan Garriga i el Mariatxi galàctic - El Rock & Roll és mort",
+      "canalActual": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "C5oByL-ezdg",
+      "titol": "Joan Garriga i el Mariatxi galàctic - Perquè",
+      "canalActual": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "8PYyfC_QLHk",
+      "titol": "Joan Garriga i el Mariatxi galàctic - Ai on va l’à...",
+      "canalActual": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "mYhf6I9yCc8",
+      "titol": "Fa bon temps",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "ngS-7MDCr5E",
+      "titol": "Colors",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "ziiqhFMUKwg",
+      "titol": "Nocturn",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "kr0S50i1pjY",
+      "titol": "La Rumba",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "pnpgKoSX8YU",
+      "titol": "Això és tot",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "arxiu",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "8BYqeHuAew0",
+      "titol": "Ballem!",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "NqG1NXKfgz8",
+      "titol": "Et cantaré",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "feed",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    },
+    {
+      "id": "358mQC2tJlY",
+      "titol": "Marxen lluny",
+      "canalActual": "UC63BTrp525uyzMd-YTMAt_w",
+      "ubicacio": "arxiu",
+      "canalDesti": "UCdLF7PrhokwO1TwkKQHtR8A",
+      "estatLinguistic": "Sense nova validació lingüística en aquesta correcció"
+    }
+  ],
+  "revisioLinguistica": {
+    "resolucionsAplicades": 0,
+    "pendent": "No s’ha pogut completar la validació estricta de totes les lletres. Les decisions i la cua data/revisio-idiomes.json es mantenen intactes. La selecció editorial anterior no és una certificació lingüística.",
+    "fontsConsultades": [
+      {
+        "url": "https://www.cifraclub.com.br/joan-garriga-i-el-mariatxi-galactic/fa-bon-temps/",
+        "llegida": true,
+        "nota": "Text complet accessible; apareix Gobierno, sense contrast amb llibret oficial. No s’aplica aprovació estricta."
+      },
+      {
+        "url": "https://www.catorze.cat/musica/nocturn_150750_102.html",
+        "llegida": true,
+        "nota": "Text complet accessible; inclou la interjecció Ale, mariachi. Les edicions de 2019 i 2020 tenen durades diferents: no extrapolar."
+      },
+      {
+        "url": "https://www.songteksten.nl/songteksten/1435304/joan-garriga-i-el-mariatxi-galactic/colors.htm",
+        "llegida": true,
+        "nota": "Només fragment, insuficient."
+      },
+      {
+        "url": "https://lyrhub.com/en/track/Joan-Garriga-i-el-Mariatxi-gal%C3%A0ctic/Aixo%CC%80-e%CC%81s-tot",
+        "llegida": false,
+        "nota": "HTTP 403."
+      }
+    ],
+    "exclososSenseAmpliar": [
+      "Leila",
+      "Cariñosa (totes les versions)",
+      "Within Human Law",
+      "Mariatxis Trance"
+    ],
+    "limit": "No es declara completada la petició de verificar totes les cançons en català."
+  },
+  "publicacio": "Configuració per a la següent passada programada després d’integrar la PR. Sense dispatch d’Actions ni peticions de quota YouTube.",
+  "validacio": {
+    "revisioCodex": "39 proves superades",
+    "filtre": "11 IDs admesos, 8 publicadors externs exactes; origen exclou obres transferides; altres cançons de La Troba continuen admeses; pendents fora de selecció rebutjats.",
+    "npmTest": "No executable: vitest no instal·lat.",
+    "lint": "No executable: eslint no instal·lat.",
+    "limit": "Còpia parcial local via connector GitHub. No s’ha executat el generador ni una consulta YouTube."
+  }
+}

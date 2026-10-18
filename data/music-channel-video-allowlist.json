@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-18T16:03:34.819Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7361,7 +7361,7 @@
     },
     "UCdLF7PrhokwO1TwkKQHtR8A": {
       "artist": "Joan Garriga",
-      "note": "Selecció editorial de les onze obres acordades amb l’usuari el 18/10/2026. No equival a verificació completa de lletres. Coincidència exacta: no admet concerts, versions o col·laboracions per coincidència parcial. Pendents i repertori de La Troba Kung-Fú/Dusminguet exclosos. docs/revisions/2026-10-18-joan-garriga.json",
+      "note": "Selecció editorial de les onze obres acordades amb l’usuari el 18/10/2026. No equival a verificació completa de lletres. Coincidència exacta: no admet concerts, versions o col·laboracions per coincidència parcial. Pendents i repertori de La Troba Kung-Fú/Dusminguet exclosos. docs/revisions/2026-10-18-joan-garriga.json Correcció d’atribució del 18/10: vuit enregistraments ja presents al feed/arxiu del Topic compartit, vinculats per ID i publicador. No constitueix una nova aprovació lingüística ni modifica la cua de pendents. Vegeu docs/revisions/2026-10-18-joan-garriga-atribucio.json.",
       "allowedTitles": [
         "Fa bon temps",
         "Joan Garriga i el Mariatxi galàctic - Fa bon temps",
@@ -7400,7 +7400,30 @@
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song"
-      ]
+      ],
+      "allowedVideoIds": [
+        "TUDGZ-2TQps",
+        "C5oByL-ezdg",
+        "8PYyfC_QLHk",
+        "mYhf6I9yCc8",
+        "ngS-7MDCr5E",
+        "ziiqhFMUKwg",
+        "kr0S50i1pjY",
+        "pnpgKoSX8YU",
+        "8BYqeHuAew0",
+        "NqG1NXKfgz8",
+        "358mQC2tJlY"
+      ],
+      "allowedExternalVideos": {
+        "mYhf6I9yCc8": "UC63BTrp525uyzMd-YTMAt_w",
+        "ngS-7MDCr5E": "UC63BTrp525uyzMd-YTMAt_w",
+        "ziiqhFMUKwg": "UC63BTrp525uyzMd-YTMAt_w",
+        "kr0S50i1pjY": "UC63BTrp525uyzMd-YTMAt_w",
+        "pnpgKoSX8YU": "UC63BTrp525uyzMd-YTMAt_w",
+        "8BYqeHuAew0": "UC63BTrp525uyzMd-YTMAt_w",
+        "NqG1NXKfgz8": "UC63BTrp525uyzMd-YTMAt_w",
+        "358mQC2tJlY": "UC63BTrp525uyzMd-YTMAt_w"
+      }
     },
     "UCcgwj-7qGY9B03WX55ZzeXw": {
       "artist": "El Belda i el Conjunt Badabadoc",
@@ -7448,6 +7471,23 @@
       "artist": "El Belda i el Conjunt Badabadoc",
       "allowedVideoIds": [],
       "note": "Canal oficial vinculat al perfil. No importar vídeos addicionals: l’usuari només ha demanat els dos discos del canal Tema. docs/revisions/2026-10-18-belda-balcells.json"
+    },
+    "UC63BTrp525uyzMd-YTMAt_w": {
+      "artist": "La Troba Kung-Fú",
+      "note": "Canal Topic compartit amb Joan Garriga i el Mariatxi Galàctic. Les onze obres de la selecció editorial s’atribueixen al perfil oficial de Joan Garriga: tres vídeos oficials i vuit enregistraments d’aquest Topic. Excloure les còpies d’aquestes obres de La Troba Kung-Fú per evitar doble atribució. No és una validació lingüística.",
+      "deniedTitleContains": [
+        "Fa bon temps",
+        "Colors",
+        "Nocturn",
+        "La Rumba",
+        "Això és tot",
+        "Ballem",
+        "Et cantaré",
+        "Marxen lluny",
+        "Ai on va l’à",
+        "El rock & roll és mort",
+        "Perquè"
+      ]
     }
   }
 }

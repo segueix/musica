@@ -2065,3 +2065,10 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Trampes:** (1) L'avís de temps (`infoDelivery`) arriba cada pocs centenars de ms: amb un marge de 3 s no es perd; si es perd, l'«acabada» (estat 0) continua fent avançar. (2) Després de `loadVideoById` el vídeo anterior ja no acaba (no hi ha «acabada» repetida). (3) No s'ha provat amb YouTube real. Proves: `tests/final-de-canco.test.js`, `tests/music-queue-selection.test.js`, opt-in `verificar-botons-mobil.js`.
 
+
+
+## 2026-10-18 — Joan Garriga només mostra tres cançons
+
+El canal oficial només aportava tres coincidències de la llista de títols. Vuit obres més ja existien al feed o a l’arxiu del Topic compartit `UC63BTrp525uyzMd-YTMAt_w`, atribuït a La Troba Kung-Fú. No s’ha d’assignar aquest canal sencer a Joan Garriga: barreja repertoris.
+
+La selecció del canal oficial fixa onze `allowedVideoIds` i vuit parelles `allowedExternalVideos` amb el publicador real. El Topic exclou els títols transferits per evitar doble atribució. Es reutilitzen els IDs ja indexats, sense duplicar edicions de 2019/2020 ni els senzills que repeteixen l’EP. Cap decisió d’idioma es modifica: corregir l’artista no certifica la lletra. Revisió i limitacions a `docs/revisions/2026-10-18-joan-garriga-atribucio.json`. Espera la passada programada després de la fusió; no executar Actions per aquesta correcció editorial.
