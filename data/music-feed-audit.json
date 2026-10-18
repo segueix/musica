@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-18T15:57:37.474Z",
+  "generatedAt": "2026-10-18T20:00:30.747Z",
   "polling": {
-    "requested": 2,
-    "deferred": 666,
-    "failed": 0
+    "requested": 358,
+    "deferred": 312,
+    "failed": 7
   },
-  "retainedVideoCount": 0,
+  "retainedVideoCount": 643,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 372,
+  "topicChannelCount": 373,
   "governedChannelCount": 123,
   "topicCoverage": [
     {
@@ -999,6 +999,14 @@
       "governs": true
     },
     {
+      "id": "UC2rhPnAmAa_Sa9XlK0whmDA",
+      "name": "BAYA BAYE",
+      "songs": 44,
+      "matched": 32,
+      "coverage": 0.73,
+      "governs": false
+    },
+    {
       "id": "UCE5UIlWPKCJ-9LJXlQB-05g",
       "name": "Cloe Riembau",
       "songs": 15,
@@ -1295,14 +1303,6 @@
       "governs": false
     },
     {
-      "id": "UC2rhPnAmAa_Sa9XlK0whmDA",
-      "name": "BAYA BAYE",
-      "songs": 44,
-      "matched": 15,
-      "coverage": 0.34,
-      "governs": false
-    },
-    {
       "id": "UCAwpv0YEBlWCi9OeqTCw4FA",
       "name": "Júlia Cruz",
       "songs": 3,
@@ -1404,6 +1404,22 @@
       "songs": 58,
       "matched": 1,
       "coverage": 0.02,
+      "governs": false
+    },
+    {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
       "governs": false
     },
     {
@@ -1647,9 +1663,25 @@
       "governs": false
     },
     {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "name": "URI SANTAFÉ",
+      "songs": 7,
       "matched": 0,
       "coverage": 0,
       "governs": false
@@ -1664,8 +1696,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 158,
+    "song": 15
+  },
+  "topicHiddenCount": 199,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -1699,7 +1734,7 @@
       "id": "UCrmKSeRAoGbFoEiLv36EzWg",
       "name": "ACROS",
       "tracks": 47,
-      "selected": 40,
+      "selected": 42,
       "withClip": 0
     },
     {
@@ -1944,8 +1979,8 @@
       "id": "UCfZSav-wsnpACenDMoHE6BA",
       "name": "Baya Baye",
       "tracks": 61,
-      "selected": 37,
-      "withClip": 13
+      "selected": 19,
+      "withClip": 30
     },
     {
       "id": "UCdFUlEKax2JWJ58pdL2zNvw",
@@ -2007,7 +2042,7 @@
       "id": "UCuk-lO3FpbukFk5lcPx29_g",
       "name": "Brams",
       "tracks": 193,
-      "selected": 40,
+      "selected": 55,
       "withClip": 0
     },
     {
@@ -2231,8 +2266,8 @@
       "id": "UCXnvbcjY11hEzjvWXUTjQ8Q",
       "name": "Doctor Prats",
       "tracks": 92,
-      "selected": 33,
-      "withClip": 25
+      "selected": 40,
+      "withClip": 12
     },
     {
       "id": "UCX95O_Gs_2ob3p86_MgldhA",
@@ -2301,7 +2336,7 @@
       "id": "UCBMrWboBJ7RC04ul-MNY0xA",
       "name": "El Pony Pisador",
       "tracks": 106,
-      "selected": 40,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -2462,7 +2497,7 @@
       "id": "UC-1A04_-NE4nuEor7HG7aSg",
       "name": "Feliu Ventura",
       "tracks": 113,
-      "selected": 40,
+      "selected": 41,
       "withClip": 2
     },
     {
@@ -2552,8 +2587,8 @@
     {
       "id": "UCxZhZaJrcH8nHdrKx4ij0sw",
       "name": "Gato Perez",
-      "tracks": 237,
-      "selected": 26,
+      "tracks": 238,
+      "selected": 25,
       "withClip": 0
     },
     {
@@ -2616,7 +2651,7 @@
       "id": "UCwCawZz1QtCvPzADHbcdvlQ",
       "name": "Glaucs",
       "tracks": 170,
-      "selected": 40,
+      "selected": 43,
       "withClip": 0
     },
     {
@@ -2686,7 +2721,7 @@
       "id": "UCfY137sqCUb5DJNrjiiy6iQ",
       "name": "Hèctor Vila",
       "tracks": 78,
-      "selected": 40,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -2749,8 +2784,8 @@
       "id": "UCsNO9JMYvNgA6hEWFuhBk_w",
       "name": "Joan Colomo",
       "tracks": 116,
-      "selected": 37,
-      "withClip": 5
+      "selected": 38,
+      "withClip": 4
     },
     {
       "id": "UC71mv_2wTJu623lsX2ow5nA",
@@ -2763,7 +2798,7 @@
       "id": "UCcDS4PowmsXc6R3ACE7Vgfg",
       "name": "Joan Isaac",
       "tracks": 406,
-      "selected": 40,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -2833,8 +2868,8 @@
       "id": "UCNKGOTgFuVUOWK2djkKi3DQ",
       "name": "Júlia Cruz",
       "tracks": 6,
-      "selected": 4,
-      "withClip": 1
+      "selected": 5,
+      "withClip": 0
     },
     {
       "id": "UCK4JIjpr1EofBTYKpm-H5QQ",
@@ -3372,7 +3407,7 @@
       "id": "UCjdNldGc9QMmr-mpOQjy7Zg",
       "name": "OBESES",
       "tracks": 151,
-      "selected": 41,
+      "selected": 43,
       "withClip": 0
     },
     {
@@ -3393,7 +3428,7 @@
       "id": "UCCBTyMmUoeGrciYMzrwWiUw",
       "name": "Opció K-95",
       "tracks": 49,
-      "selected": 40,
+      "selected": 46,
       "withClip": 0
     },
     {
@@ -3547,7 +3582,7 @@
       "id": "UCcCicDkn0YDxOeir49bCwPQ",
       "name": "Pilseners",
       "tracks": 59,
-      "selected": 40,
+      "selected": 41,
       "withClip": 0
     },
     {
@@ -3617,7 +3652,7 @@
       "id": "UCD-JAmWvBJA0pW83zFtheiQ",
       "name": "Quimi Portet",
       "tracks": 197,
-      "selected": 40,
+      "selected": 42,
       "withClip": 16
     },
     {
@@ -3701,7 +3736,7 @@
       "id": "UC7kOHFUIoTiH9RrPznoJDEQ",
       "name": "Roger Mas",
       "tracks": 282,
-      "selected": 40,
+      "selected": 41,
       "withClip": 9
     },
     {
@@ -3904,7 +3939,7 @@
       "id": "UCIBWCquq4qqhRWKD6nOdR4w",
       "name": "Still Ill",
       "tracks": 102,
-      "selected": 40,
+      "selected": 43,
       "withClip": 0
     },
     {
@@ -4090,6 +4125,13 @@
       "withClip": 12
     },
     {
+      "id": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "name": "Uri Santafé",
+      "tracks": 8,
+      "selected": 8,
+      "withClip": 0
+    },
+    {
       "id": "UCc20bll252Rwc71ILMnWVcA",
       "name": "vàlius",
       "tracks": 42,
@@ -4223,17 +4265,17 @@
       "withClip": 0
     },
     {
-      "id": "UCqqRg6HX-P769DEoffrQMEQ",
-      "name": "YPNOSI",
-      "tracks": 33,
-      "selected": 25,
-      "withClip": 0
-    },
-    {
       "id": "UCg6lVNl78-THJI1w8dSy0bA",
       "name": "YPNOSI",
       "tracks": 12,
       "selected": 6,
+      "withClip": 0
+    },
+    {
+      "id": "UCqqRg6HX-P769DEoffrQMEQ",
+      "name": "YPNOSI",
+      "tracks": 33,
+      "selected": 25,
       "withClip": 0
     },
     {
@@ -4244,34 +4286,50 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 668,
-  "resolvedChannelCount": 668,
-  "feedChannelCount": 668,
-  "rawPublicVideoCount": 7338,
-  "feedVideoCount": 6751,
-  "acceptedMusicCount": 6709,
-  "categoryEligibleVideoCount": 6705,
+  "indexedChannelCount": 670,
+  "resolvedChannelCount": 670,
+  "feedChannelCount": 670,
+  "rawPublicVideoCount": 11554,
+  "feedVideoCount": 9856,
+  "acceptedMusicCount": 10063,
+  "categoryEligibleVideoCount": 10011,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1016,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1016
   },
   "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 6523,
-    "live_song": 182,
-    "album": 4,
-    "other": 36,
+    "song": 9682,
+    "live_song": 329,
+    "album": 52,
+    "other": 898,
     "review": 593
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
   "channelsWithoutVideos": [
-    "UCsee8KxP3-rJr03f266dtbQ"
+    "UCmwGTBibm2bt9oF-P7ECSmQ",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCRLHVqJybtjS5ODPP5iAv4w",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UC8hpq3EHqyG09og9xy3qOFg",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UC1yaXYiC2Ab3tus3lTDljtw",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UCYPbYGqAXm8gaYGVY-ANVXA",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ"
   ],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutAcceptedMusic": [
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6739,
+  "publishedFeedVideoCount": 6792,
   "publishedShortVideoCount": 0
 }

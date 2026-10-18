@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 446,
+  "musicalArtists": 447,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -837,7 +837,7 @@
       "label": "Urban — pendent d’afinar",
       "category": "Urban",
       "neighbours": [],
-      "artistCount": 12,
+      "artistCount": 13,
       "nucleus": true,
       "artists": [
         "2ES",
@@ -851,7 +851,8 @@
         "Scotty DK",
         "Subliminal",
         "Vademecum FAM",
-        "Xenia Casado"
+        "Xenia Casado",
+        "Uri Santafé"
       ]
     },
     {
@@ -5513,6 +5514,16 @@
       "basis": "editorial",
       "sources": [
         "manual-user-2026-10-18"
+      ]
+    },
+    {
+      "artist": "Uri Santafé",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.delirics.cat/urisantafelamliki",
+        "https://www.youtube.com/channel/UCNtSpJN9-iRH8tENhz1_kXw"
       ]
     }
   ]

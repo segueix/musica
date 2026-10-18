@@ -1,26 +1,871 @@
 {
-  "generatedAt": "2026-10-18T15:57:37.474Z",
-  "rawPublicVideoCount": 7338,
-  "feedVideoCount": 6751,
-  "acceptedMusicCount": 6709,
-  "categoryEligibleVideoCount": 6705,
+  "generatedAt": "2026-10-18T20:00:30.747Z",
+  "rawPublicVideoCount": 11554,
+  "feedVideoCount": 9856,
+  "acceptedMusicCount": 10063,
+  "categoryEligibleVideoCount": 10011,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1016,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1016
   },
-  "rejectedOrReviewCount": 629,
+  "rejectedOrReviewCount": 1491,
   "reviewCount": 593,
   "typeCounts": {
-    "song": 6523,
-    "live_song": 182,
-    "album": 4,
-    "other": 36,
+    "song": 9682,
+    "live_song": 329,
+    "album": 52,
+    "other": 898,
     "review": 593
   },
-  "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [],
-  "publishedFeedVideoCount": 6739,
+  "channelsWithoutAcceptedMusic": [
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
+  "rejectedSamples": [
+    {
+      "id": "P_wsbeP_ul4",
+      "title": "13 de març del 2026",
+      "channelTitle": "31 FAM",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "lowN2QPICGk",
+      "title": "31 FAM - Unplugged (al Palau de la Música)",
+      "channelTitle": "31 FAM",
+      "durationSeconds": 758,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "tEoN5qhDNqk",
+      "title": "La sintonia (skit) [Visualizer]",
+      "channelTitle": "31 FAM",
+      "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "pm7L1OaILVI",
+      "title": "“NO QUIERO HABLAR DE MÍ, PERO YO” disponible el 13 de noviembre 😀",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "KGvB6Re1KmE",
+      "title": "Mi Voz me dice que baile. Mi Voz, disponible en todas las plataformas",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ef7E9H_QAL4",
+      "title": "Así soy yo, como esta canción, pero no. “Mi Voz” - disponible en todas las plataformas",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "QTUFGo-k-Yo",
+      "title": "MI MI VOZ - DISPONIBLE EN TODAS LAS PLATAFORMAS",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 19,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "mnba25PHn24",
+      "title": "17.9.2026 🤫",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 12,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "5od-U0A-s1I",
+      "title": "CLIP RUMBAGENARIOS PROMO GIRA CONO SUR 26 mp4",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 64,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "eGp1g-vJ_lQ",
+      "title": "Albert Pla - El Mortadela",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Xt5pcxVpuKM",
+      "title": "4 de junio · 00:00 h",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "UIfkSS4FZpI",
+      "title": "“Perdónenme” con Sebastián Teysera ¡DISPONIBLE!🤓#albertpla #lavela #single #music",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 15,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "TAE8fFmKNkE",
+      "title": "29 de octubre a las 00:00 (el 28 a las 19:00 en Uruguay y Argentina)🤓 ¿tenéis ganas? #albertpla",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "s8u_dHjYH9E",
+      "title": "Con letra se entiende mejor🤓 #albertpla #concert #musica #todomevabien",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "VS6506iibGo",
+      "title": "Soy Albert Pla y os recomiendo que escuchéis \"TODO ME VA BIEN\", junto con Kase.O y Judit Farrés",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 38,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "GIiY7trvJH0",
+      "title": "👍A nosotros nos va bien, vosotros qué tal? #albertpla #kaseo #rap #single",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "bihsDNztSZA",
+      "title": "TODO ME VA BIEN CON KASE.O👍 ¡YA DISPONIBLE! #concert #musica #rap #albertpla #kaseo",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "NbOFENguIyQ",
+      "title": "ALBERT PLA en el  XOCOROCK 25.BOCAIRENT",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ZuYzlUWYx2g",
+      "title": "ALBERT PLA en  VALENCIA .SALA MOON 10.01.2025",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "k-hSa1ZOgDY",
+      "title": "ALBERT PLA en IRUÑA .FESTIVAL SANTAS PASCUAS ZENTRAL PAMPLONA 3.01.2025",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "O8GrBJNXEF0",
+      "title": "ALBERT PLA  and The SURPRISE BAND .CRUÏLLA 2024",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 30,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "kPgc8bXgKo4",
+      "title": "ALBERT PLA & The Surprise Band  (a)phònica Banyoles 28.06.2024",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "SJ8RLDtL5vs",
+      "title": "ALBERT PLA & The Surprise Band en Sabadell .FESTIVAL OBSERVA 31.05.2024",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "FUlnkXpGEPw",
+      "title": "ALBERT PLA and The Surprise Band en TARRAGONA  13.07.2024",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 41,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "9GAWzQBdHyg",
+      "title": "ALBERT PLA and The Surprise Band en  ZARAGOZA",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Z6B3GLeigB0",
+      "title": "ALBERT PLA and The Surprise Band en  MALLORCA",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "FLss5Cak30w",
+      "title": "ALBERT PLA and The Surprise Band .GIRONA TEMPORADA ALTA 11.11.23",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Oe2MXafylxU",
+      "title": "MANRESA. 10 DE GENER. THE WOW CLUB. Entrades a wowclubmanresa.com",
+      "channelTitle": "alfredgarcia",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "T2iLnJrvJuE",
+      "title": "T’estimo es te quiero. El meu tercer disc. Ja disponible.",
+      "channelTitle": "alfredgarcia",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YbQfnmSW12c",
+      "title": "Vídeo de \"Els teus ulls\" ja disponible. Gràcies a tots per l’acollida 🤍 #shorts",
+      "channelTitle": "alfredgarcia",
+      "durationSeconds": 19,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "B9Z8dEiv4-g",
+      "title": "ALOSA presenta EL PRIMER CANT DEL MATÍ",
+      "channelTitle": "Alosa",
+      "durationSeconds": 300,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "GiYIyBqhGSA",
+      "title": "EL TRO DEL SENYAL En directe a L'Auditori de Barcelona",
+      "channelTitle": "Anna Andreu",
+      "durationSeconds": 257,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "ffdyRGdkodU",
+      "title": "Anna Andreu 'Vigília' (Àudio sencer)",
+      "channelTitle": "Anna Andreu",
+      "durationSeconds": 1469,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "e_-I29a-5J4",
+      "title": "1 d’abril del 2026",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ne0bfgSmfYg",
+      "title": "New release OUT",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "k70NrvbaUQE",
+      "title": "25 de febrer del 2026",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IDu_j6REV7w",
+      "title": "24 de gener del 2025",
+      "channelTitle": "Anna Ferrer",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "R-XkZ6VyvTY",
+      "title": "No Hi Ha Temps - Au Rora feat. Vernat",
+      "channelTitle": "Au Rora",
+      "durationSeconds": 41,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "F3sxCm14O7E",
+      "title": "No hi ha temps - Au Rora feat. Vernat",
+      "channelTitle": "Au Rora",
+      "durationSeconds": 12,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "SeVKKIr7d14",
+      "title": "Making of Diga-li!",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 152,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "lufmDesv5Nw",
+      "title": "VENIM DE NOU",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "EUliCeghawI",
+      "title": "AUXILI  - VIDEO-RESUM FINAL DE LA GIRA 2019 SALA APOLO BARCELONA - 13/11/2019",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 128,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "zGDOi1GGa1Y",
+      "title": "AUXILI A LA SALA RED STAR (Valls) i LA MIRONA (Salt) - GIRA 2019",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 136,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "WOEA7Ufi7u4",
+      "title": "AUXILI - Rabolagartija i Xàtiva - Gira 2019 (Vídeo-Resum #8)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 129,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "51-UVtCY1LY",
+      "title": "AUXILI - Rockovy slunovrat - Gira 2019 (Vídeo-Resum #3)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 231,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "P-K1hFghSx8",
+      "title": "AUXILI - EL FRONT (teaser)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 16,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "3k6QEnp3ydY",
+      "title": "AUXILI - GIRA TRESORS 2018 (Vídeo-resum)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 207,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "Jm77S7qgr1Q",
+      "title": "AUXILI - Hui la liem (Teaser)",
+      "channelTitle": "AUXILI",
+      "durationSeconds": 21,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "T-Qw7RNEIiw",
+      "title": "BANDA NEON a Lloret de Mar - Novembre 2024  #festamajor",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 26,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "AbiUeOxSbbo",
+      "title": "BANDA NEON a ZONA ZÀPING TV3 - M'agrades molt #tv3",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "1Y69neBNqbk",
+      "title": "BANDA NEON a CATALUNYA RÀDIO #radio",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "pjWsRG4lZrM",
+      "title": "Banda Neon a ARBÚCIES 2024 #estiu #festamajor  #musica",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BhTUwwfAiWk",
+      "title": "i es que m'agrades molt, molt més del que tu et penses..! - BANDA NEON",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "kim1Im1ZkiU",
+      "title": "BANDA NEON #tendencias i si.. anem tard😂🫶💜 #tendenciastiktok #tendencia",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 19,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "r12X_B9oOYs",
+      "title": "BANDA NEON a ROSES 10/02/2024",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 42,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "m77-4bh6yE4",
+      "title": "BANDA NEON a Cardona i Torà 2024 - carnaval #show",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "srMR7eUjcXI",
+      "title": "🫧🫧🫧🫧 que boniiiic💜 #bubble #xmas",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 9,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YYR6SMcENII",
+      "title": "SI NO ESTÁS mini cover en plena gira #iñigoquintero",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "OGYYdyiMSdg",
+      "title": "GRÀCIES TORÀ! 19/02/2022",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ehvG5SEkef0",
+      "title": "VALLS, te voy a escribir la canción más bonita del mundo!",
+      "channelTitle": "Banda Neon",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IyQv9TVcphc",
+      "title": "BLAUMUT al PALAU DE LA MÚSICA amb la JOSB - 3CAT (versió curta)",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 3806,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "pzigeg-2fdg",
+      "title": "Teaser Blaumut al Palau de la Música amb la JOSB",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 242,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "RPfr_1mKBiY",
+      "title": "Making Of 0001 - EPISODI 6: “Navegant a derives”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 221,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "x3wYDlJGUcY",
+      "title": "Making Of 0001 - EPISODI 5: “Tan futur, tan de prop”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 151,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "Wl2nZG9aboY",
+      "title": "Making Of 0001 - EPISODI 4: “Murmuris i elefants”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 196,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "AAlIrJrT8dU",
+      "title": "Making Of 0001 - EPISODI 3: “L’equació per trobar el so”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 187,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "Sr2YzDLINVU",
+      "title": "Making Of 0001 - EPISODI 2: “Interiors i plecs en una manta”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 219,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "7uYONC-0aXg",
+      "title": "Making Of 0001 - EPISODI 1: “Les idees, les antípodes i el nord”.",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 191,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "QvOdZbmGgxI",
+      "title": "Blaumut - 0001confinat",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 157,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "rwXiQ5IXMl4",
+      "title": "Blaumut - De veritat #0001",
+      "channelTitle": "Blaumut",
+      "durationSeconds": 235,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "MZZoKww_158",
+      "title": "CALÇOFEST (22/11/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "8xd79gZLYIs",
+      "title": "LA CASTANYADA (01/11/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 23,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "DqYY9jamOMc",
+      "title": "MÓRA LA NOVA (25/10/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jcWxvE5K3g4",
+      "title": "GAVÀ (19/10/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BXSSQJN5vwU",
+      "title": "MOLINS DE REI (28/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "vJz7j25lzPw",
+      "title": "SANTA COLOMA DE FARNERS (26/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Mkh-0CWqyqQ",
+      "title": "LA MERCÈ (26/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Q2yG-_72et4",
+      "title": "AVINYÓ (20/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "6HP4osY0V3E",
+      "title": "CALELLA (19/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "AbTxORbGhkY",
+      "title": "TAVERNES DE VALLDIGNA (13/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "LnfPBSOW09k",
+      "title": "VIDRERES (06/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "-3fTO4fF3NE",
+      "title": "CUBELLES (06/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 26,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "UKhG2K90yjc",
+      "title": "CUBELLS (23/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "YKG15tmPENs",
+      "title": "ARBOÇ (23/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "V92PADrhJV0",
+      "title": "LA FONT D'EN CARRÒS · VALÈNCIA (21/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ba21FovsVg4",
+      "title": "SITGES (16/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Wx7vj3eEQcg",
+      "title": "SANT VICENÇ DE MONTALT (14/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "zgsFp6Ew834",
+      "title": "SOLIVELLA (08/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "qWnmxSqYHsk",
+      "title": "SANT JULIÀ DE LÒRIA • ANDORRA (28/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 30,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "03t3-ienYMg",
+      "title": "BLANES (25/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BcDZ4cczheY",
+      "title": "VILABERTRAN (19/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "SXliAnBhyvc",
+      "title": "FESTIUET • SALOU (18/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "VDNXptwCb1E",
+      "title": "PAUPATERRES • TÀRREGA (11/07/2026)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "26UcykonTSA",
+      "title": "PIRATA BEACH FESTIVAL (09/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jY1_-WO9SBE",
+      "title": "FESTIVALL CAMPRODON (26/4/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "goD0J1zD6Vc",
+      "title": "20È ANIVERSARI ETS - BILBAO EXHIBITION CENTRE (22/3/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "itj_MaTyxDM",
+      "title": "LA MIRONA (SALT) • 14/03/2025",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "djNvl0EUg6A",
+      "title": "Vilanova i La Geltrú (01/03/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "fpkCwtyxpV8",
+      "title": "NOCHE LOCA EN BENIDORM (MAKING-OFF)",
+      "channelTitle": "CACTUS",
+      "durationSeconds": 543,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "GkgNw6WA9QE",
+      "title": "No t'esperava - Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "iotvGhumWM0",
+      "title": "Pretèrit plusquamperfet - Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "hLtQjBNZP10",
+      "title": "Bar de l'Eixample - BST a l'estudi",
+      "channelTitle": "Celobert",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2sqOAcXKIjY",
+      "title": "Bar de l'Eixample - Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 33,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "eH4fy01k83I",
+      "title": "Celobert - Pólvora",
+      "channelTitle": "Celobert",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "T3JuNXUco00",
+      "title": "✨ Això és el que passa en un concert de Celobert amb tota la banda!",
+      "channelTitle": "Celobert",
+      "durationSeconds": 35,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "xic9MfCxy58",
+      "title": "Que vinguin els dies - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "u-X6ecAug_E",
+      "title": "Hi seré - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BnvJLNCxab8",
+      "title": "🎨 16/2 : Hi seré #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 13,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "seu6TvK-SK4",
+      "title": "No t'esperava (Making-of del videoclip) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 28,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "4XsBcmtBgws",
+      "title": "No t'esperava - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "OTOBeOYEREc",
+      "title": "🌤 La teva vida pot canviar en qualsevol moment #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jY6XPJQrb7Y",
+      "title": "✨ La Jordina ha entrat al Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 14,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ci5WUaYuw8Y",
+      "title": "Celobert (Making-of del videoclip) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 60,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "6DC737u8S3Q",
+      "title": "Celobert (Making-of a l'estudi) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 59,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "PqKzAm-ujr0",
+      "title": "Celobert - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "U5L-kJNvxZg",
+      "title": "6/05 videoclip “SI TE’N VAS”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Z4ko6aHkFUc",
+      "title": "20/01 “DE MAIG A JUNY”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 10,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IF3npGq6a7I",
+      "title": "doleeeermeeee",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "8hNm71CUWjQ",
+      "title": "CRIM @ Teatre Auditori Camp de Mart, TARRAGONA (16/05/2021)",
+      "channelTitle": "Crim",
+      "durationSeconds": 173,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "qzrM90fCI1M",
+      "title": "CRIM 10 ANYS Live Streaming (03/01/2021) @ Estraperlo Club",
+      "channelTitle": "Crim",
+      "durationSeconds": 5667,
+      "musicReason": "concert o sessió llarga, no una sola cançó"
+    }
+  ],
+  "publishedFeedVideoCount": 6792,
   "publishedShortVideoCount": 0
 }
