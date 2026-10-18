@@ -96,10 +96,11 @@ describe('seleccions des de la cerca', () => {
             const ctx = { activePlaylistQueue: [{ id: 'song', source: 'api' }], currentPlaylistIndex: 0,
                 focusTVPlayerViewport: vi.fn(), isTVPlaybackMode: () => false, canKeepQueuePlayer: () => false,
                 document: { visibilityState: 'visible' }, updatePlaylistModeBadge: vi.fn(), syncQueueNextOverlay: vi.fn(),
-                showVideoFromAPI: vi.fn() };
+                showVideoFromAPI: vi.fn(), scheduleQueueExtend: vi.fn() };
             runInNewContext(fn('loadVideoInSequence'), ctx);
             ctx.loadVideoInSequence({ autoPlay });
             expect(ctx.showVideoFromAPI).toHaveBeenCalledWith('song', { autoPlay, startAt: 0 });
+            expect(ctx.scheduleQueueExtend).toHaveBeenCalled();
         });
     }
 });

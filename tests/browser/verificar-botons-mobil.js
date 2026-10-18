@@ -45,6 +45,7 @@ window.addEventListener('message', e => {
     return;
   }
   if (d.event === '__end') { set(0); return; }
+  if (d.event === '__time') { out({ event: 'infoDelivery', info: { currentTime: d.t, duration: d.d, playerState: state } }); return; }
   if (d.event !== 'command') return;
   if (d.func === 'pauseVideo') set(2);
   if (d.func === 'playVideo' && auto) set(1);
@@ -199,6 +200,53 @@ async function main() {
             await page.waitForTimeout(400);
             const avis = await page.evaluate(() => document.querySelector('.pt-toast.is-visible')?.textContent || '');
             comprovar('el play abans del primer ▶ respon amb un avís', /Prem ▶ dins del vídeo/.test(avis), avis);
+            await context.close();
+        }
+
+        // Final de cançó (2026-10-18): a 3 s del final passa a la següent (sense esperar la graella de YouTube), i a
+        // l'última cançó la cua s'allarga en lloc d'acabar-se
+        {
+            const { context, page } = await obrir(browser, 0, errors);
+            await tocar(page, '#videoPlayer iframe');
+            await page.waitForTimeout(800);
+            const abans = await estat(page);
+            const temps = (t, d) =>
+                page.evaluate(
+                    ([t, d]) =>
+                        document
+                            .querySelector('#videoPlayer iframe')
+                            .contentWindow.postMessage(JSON.stringify({ event: '__time', t, d }), '*'),
+                    [t, d]
+                );
+            await temps(150, 200);
+            await page.waitForTimeout(500);
+            const mig = await estat(page);
+            await temps(197.6, 200);
+            await page.waitForTimeout(1500);
+            const final = await estat(page);
+            comprovar(
+                'a 3 s del final passa a la cançó següent (abans no)',
+                mig.index === abans.index && final.index === abans.index + 1 && final.id !== abans.id,
+                { abans: abans.index, mig: mig.index, final: final.index }
+            );
+            const cua = await page.evaluate(() => {
+                currentPlaylistIndex = activePlaylistQueue.length - 1;
+                return { llarg: activePlaylistQueue.length, index: currentPlaylistIndex };
+            });
+            await page.waitForTimeout(2500);
+            await acabar(page);
+            await page.waitForTimeout(2000);
+            const despres = await page.evaluate(() => ({
+                llarg: activePlaylistQueue.length,
+                index: currentPlaylistIndex,
+                cua: isPlaylistMode,
+                radio: SegueixApp.features.musicQueue.getState().isRadio,
+            }));
+            comprovar(
+                'a l’última cançó, la ràdio no s’acaba: s’hi afegeixen més cançons i sona la següent',
+                despres.cua && despres.radio && despres.llarg > cua.llarg && despres.index === cua.index + 1,
+                { cua, despres }
+            );
             await context.close();
         }
 

@@ -2055,3 +2055,13 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Trampa:** quan un canvi de comportament fa fallar una verificació de navegador opt-in (no són a `npm test`), s'ha d'actualitzar la verificació en el mateix canvi; si no, queda trencada i amaga regressions reals.
 
+## [2026-10-18] - Recomanacions de YouTube al final de cada vídeo i ràdio que s'acabava
+
+**Petició:** que no surtin les recomanacions de YouTube al final del vídeo incrustat; els videoclips solen tenir massa segons al final.
+
+**Límit:** YouTube no ho permet. `rel=0` (que ja hi era) només fa que siguin del mateix canal (des del 2018) i `modestbranding` es va retirar el 2023. Tapar-les o retallar el reproductor incompleix les normes de YouTube (i la regla «res damunt de l'iframe»). Les pantalles finals que posa l'artista tampoc no es poden treure.
+
+**Solució Implementada:** (1) Dins d'una cua, `maybeAdvanceBeforeEnd()` (`app.js`) passa a la cançó següent quan falten 3 s (`QUEUE_END_TRIM_SECONDS`; `localStorage.catube_queue_end_trim` per canviar-ho o desactivar-ho), amb el temps i la durada que YouTube envia a `infoDelivery`: la graella no arriba a sortir i es retallen els crèdits finals. (2) `musicQueue.extend()` allarga la cua quan en queden poques (a cada cançó nova i a l'última), de manera que mai s'arriba al final de la cua amb el reproductor parat sobre la graella. Una llista pròpia o una selecció que s'acaben continuen com a ràdio de l'estil.
+
+**Trampes:** (1) L'avís de temps (`infoDelivery`) arriba cada pocs centenars de ms: amb un marge de 3 s no es perd; si es perd, l'«acabada» (estat 0) continua fent avançar. (2) Després de `loadVideoById` el vídeo anterior ja no acaba (no hi ha «acabada» repetida). (3) No s'ha provat amb YouTube real. Proves: `tests/final-de-canco.test.js`, `tests/music-queue-selection.test.js`, opt-in `verificar-botons-mobil.js`.
+
