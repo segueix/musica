@@ -164,6 +164,14 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
         });
         expect(html).toContain('>#1<');
         expect(html).toContain('<span class="ap-card__tag">La més escoltada</span>');
+        // a dalt, al costat del #1 (no a baix sobre el títol) i més gran (2026-10-18)
+        expect(html).toMatch(
+            /<span class="ap-card__head" aria-hidden="true"><span class="ap-card__rank" aria-hidden="true">#1<\/span><span class="ap-card__tag">La més escoltada<\/span><\/span>/
+        );
+        expect(html.slice(html.indexOf('ap-card__info'))).not.toContain('ap-card__tag');
+        expect(css).toMatch(
+            /#channelPage \.ap-card__tag \{\s*font-size: max\(0\.85rem, calc\(var\(--ap-t\) \* 0\.8\)\);/
+        );
         expect(html).toContain('data-ap-play="b"');
         expect(html).toContain('5 k</span>');
         expect(html).toContain('1998 · 1:30');
@@ -359,5 +367,17 @@ describe('fitxa d’artista: sense categories personalitzades', () => {
         );
         expect(fn).toContain('<span class="channel-category-btn">');
         expect(fn).not.toContain('<button');
+    });
+});
+
+describe('fitxa al mòbil: la capçalera i la #1 no surten de la pantalla (2026-10-18)', () => {
+    it('la graella de dalt té una columna minmax(0, 1fr), no la implícita (auto)', () => {
+        expect(css).toMatch(/#channelPage \.ap-head \{\s*display: grid;\s*grid-template-columns: minmax\(0, 1fr\);/);
+    });
+
+    it('al mòbil la #1 és un rectangle vertical (4:5), destacada sobre les altres (quadrades)', () => {
+        expect(css).toMatch(
+            /@media \(max-width: 768px\) \{\s*#channelPage \.ap-best \.ap-card \{\s*aspect-ratio: 4 \/ 5;/
+        );
     });
 });

@@ -222,6 +222,15 @@
     // Caràtula quadrada amb les dades al damunt, en blanc: el número (posició per visualitzacions), les
     // visualitzacions, el títol (sense el nom del grup), l'any i la durada, «Afegeix a la cua» i el play. Tota la
     // caràtula engega la ràdio de l'artista que comença per la cançó.
+    // A dalt a l'esquerra: el número i, a la #1, «La més escoltada» al costat i en gran (2026-10-18: abans l'etiqueta
+    // era petita, a baix, sobre el títol).
+    function headHtml(rank, tag) {
+        if (!rank && !tag) return '';
+        return `<span class="ap-card__head" aria-hidden="true">${
+            rank ? `<span class="ap-card__rank" aria-hidden="true">#${rank}</span>` : ''
+        }${tag ? `<span class="ap-card__tag">${escapeHtml(tag)}</span>` : ''}</span>`;
+    }
+
     function cardHtml(video, { rank = 0, tag = '', names = [] } = {}) {
         const id = escapeHtml(video.id);
         const title = songTitle(video, names);
@@ -238,9 +247,8 @@
                 <button class="ap-card__art" type="button" data-ap-play="${id}" aria-label="${escapeHtml(label)}">
                     <img src="${escapeHtml(art)}" alt="" loading="lazy" decoding="async"${isLetterboxed(art) ? ' class="is-letterboxed"' : ''}>
                     <span class="ap-card__shade" aria-hidden="true"></span>
-                    ${rank ? `<span class="ap-card__rank" aria-hidden="true">#${rank}</span>` : ''}
+                    ${headHtml(rank, tag)}
                     <span class="ap-card__info" aria-hidden="true">
-                        ${tag ? `<span class="ap-card__tag">${escapeHtml(tag)}</span>` : ''}
                         ${views ? `<span class="ap-card__views">${EYE_ICON}${formatCount(views)}</span>` : ''}
                         <span class="ap-card__title">${escapeHtml(title)}</span>
                         ${facts ? `<span class="ap-card__facts">${escapeHtml(facts)}</span>` : ''}

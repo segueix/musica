@@ -2065,3 +2065,15 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Trampes:** (1) L'avís de temps (`infoDelivery`) arriba cada pocs centenars de ms: amb un marge de 3 s no es perd; si es perd, l'«acabada» (estat 0) continua fent avançar. (2) Després de `loadVideoById` el vídeo anterior ja no acaba (no hi ha «acabada» repetida). (3) No s'ha provat amb YouTube real. Proves: `tests/final-de-canco.test.js`, `tests/music-queue-selection.test.js`, opt-in `verificar-botons-mobil.js`.
 
+## [2026-10-18] - Fitxa d'artista al mòbil: la #1 no era quadrada i sortia de la pantalla
+
+**Símptoma:** al mòbil, «La més escoltada» (#1) de la fitxa d'artista es veia més gran que la pantalla, tallada per la dreta i no quadrada; a la capçalera tampoc es veien els botons «YouTube» i compartir, ni el final de la línia de visualitzacions i dels botons.
+
+**Causa Arrel:** `#channelPage .ap-head` és una graella sense columnes definides al mòbil. La columna implícita és `auto`, que no es fa més estreta que el contingut mínim dels seus fills: el text que no es parteix de la capçalera (la línia «21 cançons · 14,5 M visualitzacions», la fila de botons) l'eixamplava fins a 586 px en una pantalla de 390. La capçalera i la #1 (quadrada amb aquest ample) en sortien per la dreta; no es veia cap barra horitzontal perquè `#channelPage` té `contain: content` i retalla. A l'ordinador no passava perquè la columna ja era `minmax(0, 1fr)`.
+
+**Solució Implementada:** `grid-template-columns: minmax(0, 1fr)` a `.ap-head` (bloc de la fitxa a `portada.css`): la columna fa l'ample de la pantalla, el text de la capçalera es parteix o s'escurça, i la #1 queda quadrada de 358 × 358 a 390 px, com les altres caràtules.
+
+**Trampa:** una graella o un flex amb fills de text llarg ha de tenir `minmax(0, 1fr)` / `min-width: 0`; si no, el contingut l'eixampla, i amb `contain` o `overflow: hidden` als pares no es nota fins que algú veu el tall. Proves: `tests/artist-page.test.js` i opt-in `verificar-fitxa-artista.js` («la capçalera i la #1 no surten de la pantalla», «la #1 és quadrada»).
+
+**Actualització (2026-10-18, a petició de l'usuari):** al mòbil la #1 ja no és quadrada sinó un rectangle vertical 4:5 (358 × 448 a 390 px), un pèl més alta que les altres caràtules, perquè quedi destacada (`@media (max-width: 768px)` a `#channelPage .ap-best .ap-card`).
+

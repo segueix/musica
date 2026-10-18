@@ -3432,9 +3432,13 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* ---------- Capçalera + la més escoltada ---------- */
-/* Al mòbil la #1 va just a sota de la capçalera, amb el mínim espai (com entre les caràtules) */
+/* Al mòbil la #1 va just a sota de la capçalera, amb el mínim espai (com entre les caràtules). La columna és
+   minmax(0, 1fr) i no la implícita (auto): amb auto s'eixamplava fins al text més llarg que no es parteix (la línia
+   de visualitzacions, la fila de botons) i la capçalera i la #1 feien 586 px en una pantalla de 390 i en sortien
+   per la dreta (2026-10-18). */
 #channelPage .ap-head {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 4px;
 }
 
@@ -4131,10 +4135,24 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.85) 100%);
 }
 
-#channelPage .ap-card__rank {
+/* El número i, a la #1, «La més escoltada» al costat (a dalt a l'esquerra, sense tocar «Afegeix a la cua») */
+#channelPage .ap-card__head {
     position: absolute;
     top: var(--ap-pad);
     left: var(--ap-pad);
+    right: calc(var(--ap-pad) + 44px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.5em;
+    row-gap: 2px;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+
+#channelPage .ap-card__rank {
+    flex: none;
     color: #fff;
     font-size: calc(var(--ap-t) * 1.15);
     font-weight: 900;
@@ -4157,9 +4175,10 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 }
 
 #channelPage .ap-card__tag {
-    font-size: max(0.62rem, calc(var(--ap-t) * 0.55));
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    font-size: max(0.85rem, calc(var(--ap-t) * 0.8));
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
 }
 
@@ -4334,6 +4353,14 @@ body #channelPage .ap-top :is(.channel-back-btn, .channel-profile-share-btn, .ap
 
 #channelPage .ap-best .ap-card {
     width: 100%;
+}
+
+/* Mòbil: la #1 és un rectangle vertical (4:5), un pèl més alta que les altres caràtules (quadrades), perquè es vegi
+   que és la destacada (2026-10-18). A l'ordinador omple la columna del costat de la capçalera. */
+@media (max-width: 768px) {
+    #channelPage .ap-best .ap-card {
+        aspect-ratio: 4 / 5;
+    }
 }
 
 /* ---------- «Mostra'n més» i el missatge d'un artista sense cançons ---------- */
