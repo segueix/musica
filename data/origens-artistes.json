@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-18T15:38:27.000Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -11235,6 +11235,22 @@
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
       "locked": true
+    },
+    "artist:joan-garriga": {
+      "name": "Joan Garriga",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119694"
+      ],
+      "confidence": "alta",
+      "basis": "Origen a la Garriga indicat expressament per l’usuari i documentat a la biografia oficial.",
+      "sources": [
+        "https://joangarriga.cat/bio/"
+      ],
+      "reviewedOn": "2026-10-18",
+      "assignmentSource": "user-correction",
+      "locked": true
     }
   },
   "channels": {
@@ -11902,7 +11918,8 @@
     "UCyNGJutrN-ISgp5qUAGUmiw": "artist:sa-pena",
     "UCZVRD2oamzF1lgzroVyVD6w": "artist:llamp-te-frigui",
     "UCKKjvjnD71ll8kMq2pqQhcg": "artist:gisela-bellsola",
-    "UCHO5cHnX3GGXitE11VNsAmA": "artist:nuria-balcells"
+    "UCHO5cHnX3GGXitE11VNsAmA": "artist:nuria-balcells",
+    "UCdLF7PrhokwO1TwkKQHtR8A": "artist:joan-garriga"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

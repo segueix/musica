@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-18T15:38:27.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40766,6 +40766,47 @@
       ],
       "lastChecked": "2026-10-17T20:49:50.325Z",
       "notes": "Selecció expressa de cinc interpretacions de Núria Balcells i Rocco Papia. Origen: Sant Cugat del Vallès. Canal propi @nuriabalcells; enregistraments publicats per Rocco Papia, vinculats individualment mitjançant allowedExternalVideos. No importar la resta dels canals. Vegeu docs/revisions/2026-10-17-nuria-balcells.json."
+    },
+    {
+      "name": "Joan Garriga",
+      "displayName": "Joan Garriga",
+      "aliases": [
+        "Joan Garriga i el Mariatxi Galàctic"
+      ],
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCdLF7PrhokwO1TwkKQHtR8A",
+            "handle": "@joangarrigamusic",
+            "name": "Joan Garriga",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-18",
+        "genre:manual",
+        "https://joangarriga.cat/bio/",
+        "https://www.youtube.com/channel/UCdLF7PrhokwO1TwkKQHtR8A"
+      ],
+      "lastChecked": "2026-10-18T15:38:27.000Z",
+      "notes": "Origen: la Garriga, per indicació expressa de l’usuari. Només les onze obres seleccionades a docs/revisions/2026-10-18-joan-garriga.json; no importar el repertori de La Troba Kung-Fú o Dusminguet ni les peces pendents. Selecció editorial, no verificació íntegra de totes les lletres."
     }
   ]
 }
