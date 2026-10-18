@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T15:38:27.000Z",
+  "updatedAt": "2026-10-18T15:52:29.000Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40726,12 +40726,13 @@
     },
     {
       "name": "Núria Balcells",
-      "displayName": "Núria Balcells",
+      "displayName": "Núria Balcells i Rocco Papia",
       "aliases": [
         "Nuria Balcells",
         "Una Corda Més",
         "Recançonem",
-        "De Vellut"
+        "De Vellut",
+        "Núria Balcells i Rocco Papia"
       ],
       "genres": [
         "Folk i arrel"
@@ -40807,6 +40808,52 @@
       ],
       "lastChecked": "2026-10-18T15:38:27.000Z",
       "notes": "Origen: la Garriga, per indicació expressa de l’usuari. Només les onze obres seleccionades a docs/revisions/2026-10-18-joan-garriga.json; no importar el repertori de La Troba Kung-Fú o Dusminguet ni les peces pendents. Selecció editorial, no verificació íntegra de totes les lletres."
+    },
+    {
+      "name": "El Belda i el Conjunt Badabadoc",
+      "displayName": "El Belda i el Conjunt Badabadoc",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCsee8KxP3-rJr03f266dtbQ",
+            "handle": "@elbeldaielconjuntbadabadoc",
+            "name": "El Belda i el Conjunt Badabadoc",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCcgwj-7qGY9B03WX55ZzeXw",
+            "handle": null,
+            "name": "El Belda i el Conjunt Badabadoc - Topic",
+            "type": "topic",
+            "primary": false
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-18",
+        "genre:manual",
+        "https://music.apple.com/us/album/per-jamaicanes/1518616895",
+        "https://www.top-charts.com/r/som-aixi-el-belda-i-el-conjunt-badabadoc-carles-belda"
+      ],
+      "lastChecked": "2026-10-18T15:52:29.000Z",
+      "notes": "Origen: Sabadell, segons l’usuari. Indexació limitada als discos Per Jamaicanes i Som Així del canal Tema indicat. Canal oficial per al perfil i l’enllaç @elbeldaielconjuntbadabadoc. docs/revisions/2026-10-18-belda-balcells.json"
     }
   ]
 }
