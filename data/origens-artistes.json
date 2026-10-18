@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T15:52:29.000Z",
+  "updatedAt": "2026-10-18T17:50:02.487Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -11264,6 +11264,22 @@
       "sources": [
         "manual-user-2026-10-18",
         "https://www.cpnl.cat/media/upload/imatges/comunicacio/llistes%20musica/Guia-continguts-Cant-cante-web.pdf"
+      ],
+      "reviewedOn": "2026-10-18",
+      "assignmentSource": "user-correction",
+      "locked": true
+    },
+    "artist:uri-santafe": {
+      "name": "Uri Santafé",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3115985"
+      ],
+      "confidence": "alta",
+      "basis": "Moià per indicació expressa de l’usuari.",
+      "sources": [
+        "manual-user-2026-10-18"
       ],
       "reviewedOn": "2026-10-18",
       "assignmentSource": "user-correction",

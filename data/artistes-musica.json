@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T15:52:29.000Z",
+  "updatedAt": "2026-10-18T17:50:02.487Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40862,6 +40862,37 @@
           "https://www.top-charts.com/r/som-aixi-el-belda-i-el-conjunt-badabadoc-carles-belda"
         ]
       }
+    },
+    {
+      "name": "Uri Santafé",
+      "displayName": "Uri Santafé",
+      "aliases": [
+        "Uri Santafe"
+      ],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [],
+        "searchCandidates": []
+      },
+      "confidence": "pendent",
+      "reviewStatus": "pendent",
+      "active": false,
+      "sources": [
+        "manual-user-2026-10-18",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-18T17:50:02.487Z",
+      "notes": "Alta pendent: Moià i Urbana per indicació de l’usuari. Canal demanat: Uri Santafé - Tema, ID encara no verificat. NO importar el canal sencer. Abans d’assignar cap canal, crear allowedVideoIds amb només els enregistraments amb lletra íntegra comprovada en català. Inicialment llista buida: cap cançó autoritzada. No n’hi ha prou amb el títol o defaultLanguage. Castellà, mixtes i dubtes fora d’ingestió."
     }
   ]
 }

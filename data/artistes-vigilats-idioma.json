@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18",
+  "updatedAt": "2026-10-18T17:50:02.487Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2490,6 +2490,18 @@
       "motiu": "Canal amb repertori multilingüe i altres projectes. Llista tancada d’onze obres; les pendents no s’indexen. No s’atorga confiança global d’idioma.",
       "fonts": [
         "docs/revisions/2026-10-18-joan-garriga.json"
+      ]
+    },
+    {
+      "artista": "Uri Santafé",
+      "aliases": [
+        "Uri Santafe",
+        "Uri Santafé - Topic"
+      ],
+      "canals": [],
+      "motiu": "Només català estricte. Sense confiança global. Canal Tema pendent de verificar; no autoritzar cap enregistrament sense comprovar la lletra completa i la versió. Assignar llista tancada allowedVideoIds abans d’activar el canal.",
+      "fonts": [
+        "manual-user-2026-10-18"
       ]
     }
   ],
