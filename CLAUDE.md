@@ -9,7 +9,7 @@ PWA vanilla JS (sense bundler, sense TypeScript, sense framework) que agrega ví
 ## Comandes
 
 ```bash
-npm run lint          # ESLint — 0 errors, ~93 warnings (tots tolerats)
+npm run lint          # ESLint — 0 errors, ~180 warnings (tots tolerats; js/vendor/ és a .eslintignore)
 npm run lint:fix      # Auto-fix (var→let/const, prefer-const)
 npm run format        # Prettier — formata tot
 npm run format:check  # Verifica format sense modificar

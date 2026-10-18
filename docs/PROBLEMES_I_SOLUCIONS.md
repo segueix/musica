@@ -2045,3 +2045,13 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Proves:** `tests/native-play.test.js` («mòbil: els botons no es queden bloquejats…») i opt-in `node tests/browser/verificar-botons-mobil.js` (YouTube que respon de seguida, que arriba tard, que no respon mai, i «següent» abans del primer ▶). Amb el codi d'abans, el cas «arriba tard» deixa els botons desactivats i la ràdio aturada.
 
+## [2026-10-18] - Fallades que ja hi eren: lint i verificacions de navegador desfasades
+
+**Lint (58 errors):** 53 eren de `js/vendor/` (biblioteques externes minimitzades que genera `npm run vendor:sync`): ara són a `.eslintignore`. Els altres 5 eren barres invertides innecessàries en expressions regulars (`js/data.js`: `/^\"|\"$/` → `/^"|"$/`; `home-sections.js`: `[(\[]` → `[([]`), sense canvi de comportament. `npm run lint`: 0 errors.
+
+**`verificar-portada.js`:** (1) el «+N» d'«Acabades de sortir» feia 36 px d'alt; ara 44 px (mida tàctil mínima) i la durada baixa una mica (`+ 52px`). (2) «En acabar la cançó, la ràdio continua»: la prova enviava «acabada» (0) sense que la cançó hagués sonat mai; des del 2026-10-08 una cançó que espera el primer ▶ no pot acabar (a la realitat no passa): ara envia «sona» (1) i després «acabada».
+
+**`verificar-finestra-sistema.js`:** era d'abans de dos canvis: (1) des del 2026-10-08 la ràdio arrenca aturada i el succedani (amb `autoplay=0`) no començava mai: ara un toc al vídeo és el primer ▶; (2) des del 2026-10-05 `#playerMiniBtn` obre la finestra flotant de dins la pàgina i no la del sistema: la prova l'obre amb `systemPlayer.openPip()` des d'un clic real (`requestWindow()` necessita un gest de l'usuari). L'estat de la Media Session s'espera un moment (el posa al dia un `MutationObserver`).
+
+**Trampa:** quan un canvi de comportament fa fallar una verificació de navegador opt-in (no són a `npm test`), s'ha d'actualitzar la verificació en el mateix canvi; si no, queda trencada i amaga regressions reals.
+

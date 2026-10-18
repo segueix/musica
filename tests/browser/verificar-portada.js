@@ -270,16 +270,19 @@ async function recorregut(browser, width, height) {
         )
     );
 
-    // Reproducció contínua: en acabar la cançó, la següent
+    // Reproducció contínua: en acabar la cançó, la següent. Primer ha de sonar (1): des del 2026-10-08 la cançó
+    // s'espera aturada fins al primer ▶ i un «acabada» sense haver sonat mai no fa avançar res (a la realitat no passa).
     await page.evaluate(() => {
         const frame = document.querySelector('#videoPlayer iframe');
-        window.dispatchEvent(
-            new MessageEvent('message', {
-                data: JSON.stringify({ event: 'onStateChange', info: 0 }),
-                origin: 'https://www.youtube.com',
-                source: frame && frame.contentWindow,
-            })
-        );
+        for (const info of [1, 0]) {
+            window.dispatchEvent(
+                new MessageEvent('message', {
+                    data: JSON.stringify({ event: 'onStateChange', info }),
+                    origin: 'https://www.youtube.com',
+                    source: frame && frame.contentWindow,
+                })
+            );
+        }
     });
     await page.waitForTimeout(1200);
     comprovar(
