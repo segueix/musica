@@ -1,0 +1,8739 @@
+{
+ "data": "2026-10-18",
+ "peticio": "Revisa la cua de 1619 i accepta les que tinguin títol en català",
+ "metode": "Part del títol sense el nom de l'artista (songPart). Cada paraula es comprova amb hunspell (ca, es_ES, en_US). Català: alguna paraula només catalana o una marca catalana (à è ò ï ü ç, l·l, apòstrof) i sense paraules només castellanes/angleses ni marques estrangeres; després revisió manual: 165 títols catalans amb paraules compartides promoguts i 18 títols (noms propis, italià, anglès, francès) retirats.",
+ "lletraIntegraVerificada": false,
+ "cua": 1619,
+ "acceptades": 993,
+ "classificacioAutomatica": {
+  "dubte": 482,
+  "no": 279,
+  "català": 847,
+  "sense paraules": 11
+ },
+ "acceptadesLlista": [
+  {
+   "id": "4lZoqZs0d0w",
+   "artista": "31 FAM",
+   "titol": "BON ANYYYY / PER LA BONA GENT (Unplugged al Palau)"
+  },
+  {
+   "id": "Ss2i-H4kzwQ",
+   "artista": "9Son",
+   "titol": "Això té Sabor"
+  },
+  {
+   "id": "f5XGk6NUEsk",
+   "artista": "9Son",
+   "titol": "Els Mils Paisatges"
+  },
+  {
+   "id": "riZH7gzdqj4",
+   "artista": "9Son",
+   "titol": "Entra i Passa"
+  },
+  {
+   "id": "hWP3Nx1Vljg",
+   "artista": "9Son",
+   "titol": "Et Regalo (feat. Vicenç Solsona)"
+  },
+  {
+   "id": "e-FFVMPNK_0",
+   "artista": "9Son",
+   "titol": "L'informàtic (feat. AUPA Quartet)"
+  },
+  {
+   "id": "IlMgoo3xEXE",
+   "artista": "9Son",
+   "titol": "La Lletra (Homenatge al Poeta Rossellonès Joan Pau Giné)"
+  },
+  {
+   "id": "pkoAHZS-mDk",
+   "artista": "9Son",
+   "titol": "Per si de Cas"
+  },
+  {
+   "id": "VV48nl3iAN0",
+   "artista": "9Son",
+   "titol": "Vacances"
+  },
+  {
+   "id": "pzUTA6qwXXQ",
+   "artista": "Adala",
+   "titol": "ADALA & LITTLE JAVA - LA NOSTRA SENTÈNCIA"
+  },
+  {
+   "id": "RO-4v2_efck",
+   "artista": "Adrià Puntí",
+   "titol": "Atzucac"
+  },
+  {
+   "id": "0TJI1fnriXc",
+   "artista": "Adrià Puntí",
+   "titol": "Cor Agre"
+  },
+  {
+   "id": "Tby92AHAbAY",
+   "artista": "Adrià Puntí",
+   "titol": "El Final de la Festa"
+  },
+  {
+   "id": "dZupDFKvvGA",
+   "artista": "Adrià Puntí",
+   "titol": "Jo També He Dormit a L'Alba"
+  },
+  {
+   "id": "Dkq9_rHR4xU",
+   "artista": "Adrià Puntí",
+   "titol": "La Font del Gat"
+  },
+  {
+   "id": "Cu_eExFVYag",
+   "artista": "Adrià Puntí",
+   "titol": "Mata'l"
+  },
+  {
+   "id": "nZjT94kVUIU",
+   "artista": "Adrià Puntí",
+   "titol": "Mmm, Quin Fàstic, Veeccs, Que Bo!"
+  },
+  {
+   "id": "FOB0jZkZFOA",
+   "artista": "Adrià Puntí",
+   "titol": "Només Ho Faig Per Tu. Homenatge a Carles Sabater"
+  },
+  {
+   "id": "7S1rmdlkS2Q",
+   "artista": "Adrià Puntí",
+   "titol": "Senyor Doctor"
+  },
+  {
+   "id": "EiDvJL-N9Q4",
+   "artista": "Adrià Puntí",
+   "titol": "Solitud"
+  },
+  {
+   "id": "8DM9xCqyqUo",
+   "artista": "Adrià Puntí",
+   "titol": "Tomb"
+  },
+  {
+   "id": "ZMg0qI4oi7o",
+   "artista": "Adrià Puntí",
+   "titol": "Trans Mides"
+  },
+  {
+   "id": "2rpe35fqcsQ",
+   "artista": "Adrià Puntí",
+   "titol": "Udol"
+  },
+  {
+   "id": "UKFdIrmPyFE",
+   "artista": "Adrià Puntí",
+   "titol": "Veïnat"
+  },
+  {
+   "id": "ToKhW5vzT7g",
+   "artista": "Adrià Puntí",
+   "titol": "Viatge D'un Savi Vilatrista Cap Enlloc"
+  },
+  {
+   "id": "z_bwDIfu0Zg",
+   "artista": "Agathe Catel",
+   "titol": "El Cant del mо́n_Agathe Catel & Primaël Montgauzí"
+  },
+  {
+   "id": "6ziQ1k2ZyBo",
+   "artista": "Agraviats",
+   "titol": "A les fosques"
+  },
+  {
+   "id": "sMRP2FB7PJU",
+   "artista": "Agraviats",
+   "titol": "Al carrer de dalt"
+  },
+  {
+   "id": "guQJZY6ZCkY",
+   "artista": "Agraviats",
+   "titol": "Fills del sol"
+  },
+  {
+   "id": "eIIKCRRtPOg",
+   "artista": "Agraviats",
+   "titol": "La nostra canço"
+  },
+  {
+   "id": "cVbCwprreLo",
+   "artista": "Agraviats",
+   "titol": "Les coses"
+  },
+  {
+   "id": "wHJHlD34ORI",
+   "artista": "Agraviats",
+   "titol": "Pobles"
+  },
+  {
+   "id": "E9m_JpZ4faA",
+   "artista": "Agraviats",
+   "titol": "Som els idiotes"
+  },
+  {
+   "id": "y8xzDDLR2zg",
+   "artista": "Albert Pla",
+   "titol": "Catalana De Jaç"
+  },
+  {
+   "id": "04ohtyzoJiE",
+   "artista": "Albert Pla",
+   "titol": "Demá"
+  },
+  {
+   "id": "Abf15-ceybM",
+   "artista": "Albert Pla",
+   "titol": "EL CAGANER"
+  },
+  {
+   "id": "lV2dvpj9d3Y",
+   "artista": "Albert Pla",
+   "titol": "El Capellà del Poble"
+  },
+  {
+   "id": "rts9PvvkE3Q",
+   "artista": "Albert Pla",
+   "titol": "El Quarto dels Trastos"
+  },
+  {
+   "id": "ayR6K2FEASg",
+   "artista": "Albert Pla",
+   "titol": "Història del 600"
+  },
+  {
+   "id": "Z9bfF9eRfOY",
+   "artista": "Albert Pla",
+   "titol": "L'home Que Ens Roba Les Nòvies"
+  },
+  {
+   "id": "0OnakUtVfdM",
+   "artista": "Albert Pla",
+   "titol": "La Barricada del Santpaucentdeu"
+  },
+  {
+   "id": "co1IgonVlnc",
+   "artista": "Albert Pla",
+   "titol": "La Nana de L'Antònio"
+  },
+  {
+   "id": "GlwTq1eQqAs",
+   "artista": "Albert Pla",
+   "titol": "La Platja"
+  },
+  {
+   "id": "wGPbgEt16sI",
+   "artista": "Albert Pla",
+   "titol": "La Sequia"
+  },
+  {
+   "id": "_p8XNpR4nsM",
+   "artista": "Albert Pla",
+   "titol": "La Vida D'un Gat"
+  },
+  {
+   "id": "6lhu1yvyBTo",
+   "artista": "Albert Pla",
+   "titol": "La Violació"
+  },
+  {
+   "id": "rlXx1jM4hd0",
+   "artista": "Albert Pla",
+   "titol": "Papa, Jo Vull Ser Torero"
+  },
+  {
+   "id": "gNnV0vHWxho",
+   "artista": "Albert Pla",
+   "titol": "Ple"
+  },
+  {
+   "id": "bYLxMCI3SAU",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - 08. Formar Part del Mon (ft. Marta Trujillo)"
+  },
+  {
+   "id": "VcvV2sMj2zA",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - Cada nit (ft.Txarango)"
+  },
+  {
+   "id": "ACUKHwrE9F8",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - Deixa'm respirar (ft. Cesk Freixas)."
+  },
+  {
+   "id": "gHOd5DVvfz8",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - Soc igual que ahir (Lyric Video)"
+  },
+  {
+   "id": "x9FjlgSbIcQ",
+   "artista": "AlQuadrat",
+   "titol": "ALQUADRAT - T'ESTIMO PROU"
+  },
+  {
+   "id": "lgDIxLK3sl0",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - Tornarem a Començar"
+  },
+  {
+   "id": "28StnSFou7M",
+   "artista": "AlQuadrat",
+   "titol": "AlQuarat - 04. Llençols"
+  },
+  {
+   "id": "-aCdG0hgu64",
+   "artista": "AlQuadrat",
+   "titol": "Una Vida Esperant-nos"
+  },
+  {
+   "id": "1tZGpkADLNA",
+   "artista": "Anaïs Vila",
+   "titol": "Rerefons"
+  },
+  {
+   "id": "EoW1ZR3_Ol4",
+   "artista": "Anaïs Vila",
+   "titol": "Segons"
+  },
+  {
+   "id": "fcarmf1xT0A",
+   "artista": "Anaïs Vila",
+   "titol": "Tot"
+  },
+  {
+   "id": "feH0seZFzpc",
+   "artista": "Andreu Rifé",
+   "titol": "Aquest Conte No Ha Acabat"
+  },
+  {
+   "id": "516ue6j4OXs",
+   "artista": "Andreu Rifé",
+   "titol": "Blanc i Negre"
+  },
+  {
+   "id": "hrVVv7RZS94",
+   "artista": "Andreu Rifé",
+   "titol": "Bona Nit"
+  },
+  {
+   "id": "0V8UZspInFI",
+   "artista": "Andreu Rifé",
+   "titol": "Descalç 2"
+  },
+  {
+   "id": "FRWnPBlPPIA",
+   "artista": "Andreu Rifé",
+   "titol": "La Reina del Barri Xino"
+  },
+  {
+   "id": "xyMyGf0r_4s",
+   "artista": "Andreu Rifé",
+   "titol": "Mitja Part"
+  },
+  {
+   "id": "mT1bsQgJc9k",
+   "artista": "Andreu Rifé",
+   "titol": "Pa Torrat"
+  },
+  {
+   "id": "f1MXDLREBrc",
+   "artista": "Anna Andreu",
+   "titol": "Anna Andreu 'Els mals costums' (Audio oficial - complet)"
+  },
+  {
+   "id": "sE1bVOQAulU",
+   "artista": "Anna Andreu",
+   "titol": "Anna Andreu 'Hores per dies' (Audio oficial)"
+  },
+  {
+   "id": "U-8YwBg0R_U",
+   "artista": "Anna Andreu",
+   "titol": "Anna Andreu 'La mida' (Audio oficial sencer)"
+  },
+  {
+   "id": "yhepQt0vZBk",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Allà fora"
+  },
+  {
+   "id": "kM1K5YnC_W8",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Als nostres avis"
+  },
+  {
+   "id": "Fc_Da4l3TCw",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Amb tu"
+  },
+  {
+   "id": "EeGNge9Ov5w",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Cap motiu (amb Borja Penalba)"
+  },
+  {
+   "id": "pj8balU2NW4",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Cors armats"
+  },
+  {
+   "id": "OLt1Y1PUjrQ",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Cristalls trencats"
+  },
+  {
+   "id": "ayc1NoMWC9c",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Crits als carrers"
+  },
+  {
+   "id": "xpdX9onQV7Y",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Desarrelat (amb Atupa)"
+  },
+  {
+   "id": "zTMbjAvAnFs",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Els nostres mars"
+  },
+  {
+   "id": "OjvLOwU3kJk",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Eterna nit"
+  },
+  {
+   "id": "Z-Z2iucYotM",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Finestres"
+  },
+  {
+   "id": "Z37_tHrDu9Y",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Força creixent (amb Golpe Bajo)"
+  },
+  {
+   "id": "DbbzmWTeLKI",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Forta i valenta"
+  },
+  {
+   "id": "-jM_69RBO1Q",
+   "artista": "Atzembla",
+   "titol": "Atzembla - L'impacte"
+  },
+  {
+   "id": "DB_Atd_YczY",
+   "artista": "Atzembla",
+   "titol": "Atzembla - L'última nit (Videoclip Oficial)"
+  },
+  {
+   "id": "z07utNXCRDQ",
+   "artista": "Atzembla",
+   "titol": "Atzembla - La mà invisible"
+  },
+  {
+   "id": "2QgfCgctag8",
+   "artista": "Atzembla",
+   "titol": "Atzembla - La mà invisible (Videoclip Oficial)"
+  },
+  {
+   "id": "-7MoE69ZQOs",
+   "artista": "Atzembla",
+   "titol": "Atzembla - La resistència"
+  },
+  {
+   "id": "LDqR4PMLu80",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Lluita"
+  },
+  {
+   "id": "59BU1C2nlfk",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Quants cops"
+  },
+  {
+   "id": "ye6QIId8ypM",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Si tot fóra al revés"
+  },
+  {
+   "id": "PDchJx129EY",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Somnis (amb Xavi Sarrià d'Obrint Pas)"
+  },
+  {
+   "id": "g_L6oWTQMFo",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Tornaràs"
+  },
+  {
+   "id": "m1vpW4GsoYI",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Udol"
+  },
+  {
+   "id": "uh-0IR6qCow",
+   "artista": "Atzembla",
+   "titol": "Atzembla - Veurem l'alba"
+  },
+  {
+   "id": "u6gF4eWoOik",
+   "artista": "Atzembla",
+   "titol": "Avui No"
+  },
+  {
+   "id": "9Uqp1SCy-5I",
+   "artista": "Atzembla",
+   "titol": "Cançó dels Silenciats"
+  },
+  {
+   "id": "98pUuOzwB0g",
+   "artista": "Atzembla",
+   "titol": "EL TEU VIATGE | EP 1: Gravació"
+  },
+  {
+   "id": "zRdkohhTKDo",
+   "artista": "Atzembla",
+   "titol": "EL TEU VIATGE | EP 2: Producció"
+  },
+  {
+   "id": "nk5JcGrgAGE",
+   "artista": "Atzembla",
+   "titol": "EL TEU VIATGE | EP 3: El disc"
+  },
+  {
+   "id": "AJ0EDigfTgM",
+   "artista": "Atzembla",
+   "titol": "Tornar a Començar"
+  },
+  {
+   "id": "uWNioQfp5sM",
+   "artista": "Baya Baye",
+   "titol": "49 Cèntims"
+  },
+  {
+   "id": "dM-r2xPNnkQ",
+   "artista": "Baya Baye",
+   "titol": "Actitud Serrallonga"
+  },
+  {
+   "id": "aYj8wfstoPw",
+   "artista": "Baya Baye",
+   "titol": "Autòctons I Salvatges"
+  },
+  {
+   "id": "D1EtTPSmbSU",
+   "artista": "Baya Baye",
+   "titol": "Bandolers (Bandoleros Catalan Version Remastered)"
+  },
+  {
+   "id": "0G1Fi-yBs8U",
+   "artista": "Baya Baye",
+   "titol": "Cap i Pota"
+  },
+  {
+   "id": "23R7rpBiOZs",
+   "artista": "Baya Baye",
+   "titol": "Cor Bandarra"
+  },
+  {
+   "id": "BNhuUmYKYtA",
+   "artista": "Baya Baye",
+   "titol": "Flors"
+  },
+  {
+   "id": "oFBKu8I9Rgs",
+   "artista": "Baya Baye",
+   "titol": "Just a la Fusta"
+  },
+  {
+   "id": "557LpC2IxzM",
+   "artista": "Baya Baye",
+   "titol": "Malparits"
+  },
+  {
+   "id": "TGLsz2kZH28",
+   "artista": "Baya Baye",
+   "titol": "Pansa Blanca"
+  },
+  {
+   "id": "owIivJYNois",
+   "artista": "Baya Baye",
+   "titol": "SOM-HI NEN"
+  },
+  {
+   "id": "gCr6kC0_Ds0",
+   "artista": "Baya Baye",
+   "titol": "Sucarrats"
+  },
+  {
+   "id": "Yv9IWLrLAg4",
+   "artista": "Brams",
+   "titol": "A cada enterrament"
+  },
+  {
+   "id": "tv05c0ZEK4M",
+   "artista": "Brams",
+   "titol": "Cançó pirata somali"
+  },
+  {
+   "id": "sFOA2qTv-5Q",
+   "artista": "Brams",
+   "titol": "Consell d'enemic"
+  },
+  {
+   "id": "Eo38P-P2mOQ",
+   "artista": "Brams",
+   "titol": "El llop i les cabretes (en directe)"
+  },
+  {
+   "id": "EyTM3hofohU",
+   "artista": "Brams",
+   "titol": "Fidels a la utopia"
+  },
+  {
+   "id": "CnL7g2v0JrA",
+   "artista": "Brams",
+   "titol": "Goigs a Sant Hilari (en directe)"
+  },
+  {
+   "id": "tqkEz77hszs",
+   "artista": "Brams",
+   "titol": "Hi ha vi després de la mort"
+  },
+  {
+   "id": "F0HL30jfcPU",
+   "artista": "Brams",
+   "titol": "Inauguració"
+  },
+  {
+   "id": "9ahnPxhlxdE",
+   "artista": "Brams",
+   "titol": "L'hermafrodita"
+  },
+  {
+   "id": "RLXkp0KiC7E",
+   "artista": "Brams",
+   "titol": "La diplomàcia de la rebel·lia"
+  },
+  {
+   "id": "5s8SFQnMNgE",
+   "artista": "Brams",
+   "titol": "La pesta blava (en directe)"
+  },
+  {
+   "id": "SRc5rNrf8Yo",
+   "artista": "Brams",
+   "titol": "Marihuana berguedana (en directe)"
+  },
+  {
+   "id": "i-XxC3CtoPI",
+   "artista": "Brams",
+   "titol": "Més"
+  },
+  {
+   "id": "A1qS9rrgy1I",
+   "artista": "Brams",
+   "titol": "No és pas boig qui a casa torna"
+  },
+  {
+   "id": "q0dzbXiIByQ",
+   "artista": "Brams",
+   "titol": "Rock a la cort de porcs"
+  },
+  {
+   "id": "XAmVxWrPRG8",
+   "artista": "Brams",
+   "titol": "Salvem els pronoms febles"
+  },
+  {
+   "id": "2luZ4dgKm5w",
+   "artista": "Brams",
+   "titol": "Sóc el millor (en directe)"
+  },
+  {
+   "id": "J-PQfL5tZIc",
+   "artista": "Brams",
+   "titol": "Ui, avui!!"
+  },
+  {
+   "id": "hyS3GDPZEWk",
+   "artista": "BTZ",
+   "titol": "BTZ - MATO PER LA FAM ( Visualizer )"
+  },
+  {
+   "id": "yEaW_q7yIQE",
+   "artista": "BTZ",
+   "titol": "Cel"
+  },
+  {
+   "id": "rX1IovHbSNI",
+   "artista": "BTZ",
+   "titol": "Del Cor a l'Estudi"
+  },
+  {
+   "id": "5FXDG-evLhc",
+   "artista": "BTZ",
+   "titol": "Divendres"
+  },
+  {
+   "id": "jy9ny917PBo",
+   "artista": "BTZ",
+   "titol": "Llàgrimes"
+  },
+  {
+   "id": "4GBX0CvvxG4",
+   "artista": "BTZ",
+   "titol": "MATO PER LA FAM"
+  },
+  {
+   "id": "PoFEc1KvW9Y",
+   "artista": "BTZ",
+   "titol": "OASI"
+  },
+  {
+   "id": "GEHhdamXd9M",
+   "artista": "BTZ",
+   "titol": "OASI"
+  },
+  {
+   "id": "yIOnF-ahZz0",
+   "artista": "BTZ",
+   "titol": "OASI - BTZ (Official Visualizer) #COSMOS"
+  },
+  {
+   "id": "TOI8aMV83bE",
+   "artista": "BTZ",
+   "titol": "Paraules"
+  },
+  {
+   "id": "JB8bIQzc-_k",
+   "artista": "BTZ",
+   "titol": "Perduts"
+  },
+  {
+   "id": "UNXH98zlqlc",
+   "artista": "BTZ",
+   "titol": "PERDUTS - BTZ ft. Koalekay  (Official Video)"
+  },
+  {
+   "id": "_GIR-zOYWLo",
+   "artista": "BTZ",
+   "titol": "Ratpenats"
+  },
+  {
+   "id": "i0Ne95YwXRM",
+   "artista": "BTZ",
+   "titol": "RATPENATS - BTZ (Official Video)"
+  },
+  {
+   "id": "-yynt3UORA4",
+   "artista": "BTZ",
+   "titol": "Sense Tu"
+  },
+  {
+   "id": "XuoAzQgxR9w",
+   "artista": "BTZ",
+   "titol": "Vistes al Mar"
+  },
+  {
+   "id": "i5OabVcqvXs",
+   "artista": "Buhos",
+   "titol": "Arc de Sant Martí"
+  },
+  {
+   "id": "82vFCTySu1M",
+   "artista": "Buhos",
+   "titol": "Campanes de Benvinguda (Cançó de Nadal de TV3 I Catalunya Ràdio)"
+  },
+  {
+   "id": "VGuUKhGUiN4",
+   "artista": "Buhos",
+   "titol": "Connectats (En directe)"
+  },
+  {
+   "id": "xxO9B8zjJlg",
+   "artista": "Buhos",
+   "titol": "Diumenges"
+  },
+  {
+   "id": "1yb7SV_lJ-g",
+   "artista": "Buhos",
+   "titol": "El món de veritat"
+  },
+  {
+   "id": "5XeZuLfqOK0",
+   "artista": "Buhos",
+   "titol": "La pluja tropical"
+  },
+  {
+   "id": "X8IoEoBu9-E",
+   "artista": "Buhos",
+   "titol": "Podem volar"
+  },
+  {
+   "id": "VGNeyB0hZxE",
+   "artista": "Buhos",
+   "titol": "Quan ho sents"
+  },
+  {
+   "id": "f8yno-CIOFc",
+   "artista": "Buhos",
+   "titol": "Som Una Melodia"
+  },
+  {
+   "id": "QkKPvNot94g",
+   "artista": "Club Social Carme",
+   "titol": "AL·LÈRGIQUES AL POL·LEN - SESSIÓ #01 - CLUB SOCIAL CARME"
+  },
+  {
+   "id": "dpGrzBf6iKM",
+   "artista": "Club Social Carme",
+   "titol": "ALOSA - SESSIÓ #07 - CLUB SOCIAL CARME"
+  },
+  {
+   "id": "wJUlrv73K2Y",
+   "artista": "Club Social Carme",
+   "titol": "GINESTÀ - SESSIÓ #05 - CLUB SOCIAL CARME"
+  },
+  {
+   "id": "vvBfCHNvQe0",
+   "artista": "Club Social Carme",
+   "titol": "JOAN DAUSÀ - SESSIÓ #06 - CLUB SOCIAL CARME"
+  },
+  {
+   "id": "z5CG34bAwmA",
+   "artista": "Club Social Carme",
+   "titol": "MARIA JAUME - SESSIÓ #03 - CLUB SOCIAL CARME"
+  },
+  {
+   "id": "J-cSIOU8IZg",
+   "artista": "Colomet",
+   "titol": "Blau"
+  },
+  {
+   "id": "HUHzihpWasw",
+   "artista": "Crim",
+   "titol": "Cançons de Mort"
+  },
+  {
+   "id": "D9G6KDYmWWs",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Bon Dia!"
+  },
+  {
+   "id": "u7mwkSxdVlU",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Deixeu-me Parlar"
+  },
+  {
+   "id": "wYgz2x0ko2M",
+   "artista": "Dàmaris Gelabert",
+   "titol": "És l'Hora de la Banda"
+  },
+  {
+   "id": "ymbxJucYLM8",
+   "artista": "Dàmaris Gelabert",
+   "titol": "No Som Penjadors"
+  },
+  {
+   "id": "nnPbkZL8rKo",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Obertura d'Infantesa"
+  },
+  {
+   "id": "mN71RIew5-s",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Soc Feliç si ets Feliç"
+  },
+  {
+   "id": "13FNnFcoTL4",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Tot Sona!"
+  },
+  {
+   "id": "B-vIaqPKM5s",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Tothom s'equivoca"
+  },
+  {
+   "id": "JwZ5f_vXOjM",
+   "artista": "Dàmaris Gelabert",
+   "titol": "Trist, Sol i Penedit"
+  },
+  {
+   "id": "zMQ7XdHRqH4",
+   "artista": "Deskarats",
+   "titol": "Aixeca't"
+  },
+  {
+   "id": "ISqVDSQC9XE",
+   "artista": "Deskarats",
+   "titol": "Barri"
+  },
+  {
+   "id": "yoJ46Ovv7Mo",
+   "artista": "Deskarats",
+   "titol": "Bri De Palla"
+  },
+  {
+   "id": "_7Oral2gkyo",
+   "artista": "Deskarats",
+   "titol": "Cremant Ilum"
+  },
+  {
+   "id": "XT4-PJ4y7Yk",
+   "artista": "Deskarats",
+   "titol": "Despertem!"
+  },
+  {
+   "id": "s_oOYNM1IIw",
+   "artista": "Deskarats",
+   "titol": "Ja No Es Porta"
+  },
+  {
+   "id": "UUB9b6BlNSY",
+   "artista": "Deskarats",
+   "titol": "La Coral D'en Ferri"
+  },
+  {
+   "id": "UksrMB0abI0",
+   "artista": "Deskarats",
+   "titol": "Les Trompetes de la Mort"
+  },
+  {
+   "id": "3-aFnu8YChg",
+   "artista": "Deskarats",
+   "titol": "Més Que Un Club"
+  },
+  {
+   "id": "JGA4b27oEhQ",
+   "artista": "Deskarats",
+   "titol": "Només Excuses"
+  },
+  {
+   "id": "d2XXVNTDsgQ",
+   "artista": "Deskarats",
+   "titol": "Pa De Motlle"
+  },
+  {
+   "id": "yqScvOQqlpk",
+   "artista": "Deskarats",
+   "titol": "Príncep De Pallumba 1"
+  },
+  {
+   "id": "TM4lpRrfLPw",
+   "artista": "Deskarats",
+   "titol": "Príncep De Pallumba 3"
+  },
+  {
+   "id": "QuqRDBBzpIc",
+   "artista": "Deskarats",
+   "titol": "Princep De Pallumba 4"
+  },
+  {
+   "id": "Xl8ATzZuXjc",
+   "artista": "Deskarats",
+   "titol": "Príncep de Pallumba 5"
+  },
+  {
+   "id": "G8wphhP203A",
+   "artista": "Deskarats",
+   "titol": "Príncep de Pallumba 6"
+  },
+  {
+   "id": "SWPgNKaDM7A",
+   "artista": "Deskarats",
+   "titol": "Sense Vàlvules"
+  },
+  {
+   "id": "31CghByCtRo",
+   "artista": "Deskarats",
+   "titol": "Surt al Carrer"
+  },
+  {
+   "id": "f9MyR3GiVBs",
+   "artista": "Deskarats",
+   "titol": "Venjança Catalana"
+  },
+  {
+   "id": "_Q6HIrDj3Xg",
+   "artista": "Dr. Calypso",
+   "titol": "Camí Fàcil (Live)"
+  },
+  {
+   "id": "URro7cVvZws",
+   "artista": "Dr. Calypso",
+   "titol": "El Que Vull"
+  },
+  {
+   "id": "487qR1Yc92Q",
+   "artista": "Dr. Calypso",
+   "titol": "Forces de la Victòria"
+  },
+  {
+   "id": "goUEyCtHxl8",
+   "artista": "Dr. Calypso",
+   "titol": "Ritmes I Sons"
+  },
+  {
+   "id": "2DZCApS7-Ck",
+   "artista": "Dr. Calypso",
+   "titol": "Ruleta Russa"
+  },
+  {
+   "id": "eeoR-5XtWPE",
+   "artista": "Dring Dublé",
+   "titol": "Foc Al Ric"
+  },
+  {
+   "id": "hSNFdrOoZLI",
+   "artista": "Dusminguet",
+   "titol": "El Viatge"
+  },
+  {
+   "id": "XiVMEJlDVso",
+   "artista": "Dusminguet",
+   "titol": "L´Enterro"
+  },
+  {
+   "id": "Xz10dG8gzIc",
+   "artista": "Ebri Knight",
+   "titol": "Després de Sopar"
+  },
+  {
+   "id": "csIOU3S1Nv8",
+   "artista": "Ebri Knight",
+   "titol": "La Puta i el Ministre"
+  },
+  {
+   "id": "nMnq8fkgP5M",
+   "artista": "Ebri Knight",
+   "titol": "Quan Somrius"
+  },
+  {
+   "id": "wwJ7j4ZLJB8",
+   "artista": "Ebri Knight",
+   "titol": "Tard"
+  },
+  {
+   "id": "u5-dktie-9I",
+   "artista": "Ebri Knight",
+   "titol": "Titellaires"
+  },
+  {
+   "id": "d1lR9Ribens",
+   "artista": "Ebri Knight",
+   "titol": "Xatrac"
+  },
+  {
+   "id": "E5ZCJ8buOW0",
+   "artista": "el petit de cal eril",
+   "titol": "El petit de cal eril -  Com quan dormim  [clip oficial]"
+  },
+  {
+   "id": "obb4_9Pr59s",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - AIGUA FOSCA | ERIL ERIL ERIL"
+  },
+  {
+   "id": "qJPqLEqMh6Y",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - ARA NO SÉ QUÈ DIR-TE (en directe)"
+  },
+  {
+   "id": "x5MJzu2QgMM",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - ARA NO SÉ QUÈ DIR-TE (en directe) (360 interactiu)"
+  },
+  {
+   "id": "18wUkueeIns",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - ARA NO SÉ QUÈ DIR-TE | ERIL ERIL ERIL"
+  },
+  {
+   "id": "ByMYIVaxJ_w",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Ara o mai"
+  },
+  {
+   "id": "s9E-shl3KZo",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Cada dia surt el sol"
+  },
+  {
+   "id": "iYIrHfoS5Og",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Cada dia surt el sol [audio oficial]"
+  },
+  {
+   "id": "8jNYtlNrz2M",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Cap a tu [audio oficial]"
+  },
+  {
+   "id": "FUSwOJ7khNw",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Cap a tu [Clip Oficial]"
+  },
+  {
+   "id": "Ct6-YxuQOYY",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - CLAUS DINS DE CASA"
+  },
+  {
+   "id": "JnER-y4s7Mk",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - JO JA NO SOC QUI ERA | ERIL ERIL ERIL"
+  },
+  {
+   "id": "6wLfSg-wfIM",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - LA POR I L'OBLIT | ERIL ERIL ERIL"
+  },
+  {
+   "id": "R3L0JoVyAbk",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Les hores"
+  },
+  {
+   "id": "vbwPy4j-yx8",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - Les hores [audio oficial]"
+  },
+  {
+   "id": "AQ-C4nyOOQE",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - NI REI, NI DÉU, NI PÀTRIA | ERIL ERIL ERIL"
+  },
+  {
+   "id": "BMDJ8MufPqE",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - No sabràs com acabarà la història"
+  },
+  {
+   "id": "qwDswowq7UY",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - No sabràs com acabarà la història [audio oficial]"
+  },
+  {
+   "id": "0bEqlAHWPeU",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - RIU AVALL | ERIL ERIL ERIL"
+  },
+  {
+   "id": "t6W-_YQRdbk",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - SI NO FOS TAN FÀCIL | ERIL ERIL ERIL"
+  },
+  {
+   "id": "SykeKZYHZKk",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - TANTES VEGADES | ERIL ERIL ERIL"
+  },
+  {
+   "id": "JYe7V-vEs3s",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - TOTES LES LLEIS DELS HOMES | ERIL ERIL ERIL"
+  },
+  {
+   "id": "zTT6dhVYDrY",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - UNA INVISIBLE PART DE TU | ERIL ERIL ERIL"
+  },
+  {
+   "id": "KAZXu8IVHDE",
+   "artista": "El Pony Pisador",
+   "titol": "Cenotafis de marbre florentí"
+  },
+  {
+   "id": "5IVzeRNs1vI",
+   "artista": "El Pony Pisador",
+   "titol": "El Llom del Diplodocus"
+  },
+  {
+   "id": "WVIb5MTHB7o",
+   "artista": "El Pony Pisador",
+   "titol": "El Principi d'Arquimedes"
+  },
+  {
+   "id": "8Lvp7kKFf_k",
+   "artista": "El Pony Pisador",
+   "titol": "L'Havanera del Raier"
+  },
+  {
+   "id": "VnQa3itAW1k",
+   "artista": "El Pony Pisador",
+   "titol": "La Paradeta dels Núvols"
+  },
+  {
+   "id": "9TCk3WTTzDU",
+   "artista": "Enric Hernàez",
+   "titol": "Abans de trobar-te"
+  },
+  {
+   "id": "OF1qe08knec",
+   "artista": "Enric Hernàez",
+   "titol": "Altres llunes II"
+  },
+  {
+   "id": "yY-g6n1AjJA",
+   "artista": "Enric Hernàez",
+   "titol": "Cançó Breu"
+  },
+  {
+   "id": "osVTR6ODBcs",
+   "artista": "Enric Hernàez",
+   "titol": "Cançó de L'atzar"
+  },
+  {
+   "id": "eMuD0yWG3mI",
+   "artista": "Enric Hernàez",
+   "titol": "Cançó Per a Helena"
+  },
+  {
+   "id": "j-Do9-Go-RU",
+   "artista": "Enric Hernàez",
+   "titol": "Dos Anònims"
+  },
+  {
+   "id": "hZ2quxN4sLc",
+   "artista": "Enric Hernàez",
+   "titol": "El Darrer Trobador"
+  },
+  {
+   "id": "5Wg_enoZAwI",
+   "artista": "Enric Hernàez",
+   "titol": "Lluna de Maig"
+  },
+  {
+   "id": "CG_t_uQdgxI",
+   "artista": "Enric Hernàez",
+   "titol": "Nits del nord"
+  },
+  {
+   "id": "U8KCg0BQ0Qg",
+   "artista": "Enric Hernàez",
+   "titol": "Pels Voluntaris Catalans Aliats, Morts a França"
+  },
+  {
+   "id": "qANoeybFOhU",
+   "artista": "Enric Hernàez",
+   "titol": "Prop la Via del Tren"
+  },
+  {
+   "id": "CbAb9_eqqMA",
+   "artista": "Enric Hernàez",
+   "titol": "Que lluny que està París!"
+  },
+  {
+   "id": "lvlwqe8Vhm4",
+   "artista": "Enric Hernàez",
+   "titol": "T'estic cridant"
+  },
+  {
+   "id": "fynBbm6Doj0",
+   "artista": "Es Reboster",
+   "titol": "9Món"
+  },
+  {
+   "id": "ZemvzQOYArU",
+   "artista": "Es Reboster",
+   "titol": "Camí"
+  },
+  {
+   "id": "L8a2ytL6Qi0",
+   "artista": "Es Reboster",
+   "titol": "Esclaus De Guerra"
+  },
+  {
+   "id": "NkCpdQFOQUE",
+   "artista": "Es Reboster",
+   "titol": "Insomni"
+  },
+  {
+   "id": "-ShF4QxtNzU",
+   "artista": "Es Reboster",
+   "titol": "Lliure"
+  },
+  {
+   "id": "56JfcLv0xEQ",
+   "artista": "Es Reboster",
+   "titol": "Màgia"
+  },
+  {
+   "id": "9fEeVRAF2jo",
+   "artista": "Es Reboster",
+   "titol": "Miralls"
+  },
+  {
+   "id": "FEKvjDRXd04",
+   "artista": "Es Reboster",
+   "titol": "Nit D'Estiu"
+  },
+  {
+   "id": "Alg3vatRTBw",
+   "artista": "Es Reboster",
+   "titol": "Què En Farem?"
+  },
+  {
+   "id": "kqLksXEI2Qo",
+   "artista": "Es Reboster",
+   "titol": "Sa Roqueta"
+  },
+  {
+   "id": "NXBCDzmHwOU",
+   "artista": "Es Reboster",
+   "titol": "Solitud"
+  },
+  {
+   "id": "gGiBpoHaUlI",
+   "artista": "Es Reboster",
+   "titol": "Un Món Insegur"
+  },
+  {
+   "id": "2wKJMzBEmdc",
+   "artista": "Flakko",
+   "titol": "Deu Meu"
+  },
+  {
+   "id": "dsO5emUlqkQ",
+   "artista": "Flakko",
+   "titol": "Fet x aixo"
+  },
+  {
+   "id": "KzIsQkz4v7s",
+   "artista": "Flakko",
+   "titol": "Maretjat"
+  },
+  {
+   "id": "LqMqpdXOLTI",
+   "artista": "Flakko",
+   "titol": "Me sap greu"
+  },
+  {
+   "id": "YPn9-J15uPo",
+   "artista": "Gertrudis",
+   "titol": "Cortines (amb Roger Mas)"
+  },
+  {
+   "id": "Rdg2pLVv3QY",
+   "artista": "Gertrudis",
+   "titol": "El Nadal Més Tropical"
+  },
+  {
+   "id": "PHH8d9g4zvw",
+   "artista": "Gertrudis",
+   "titol": "Infinit (amb Óscar de la Fé y Las Flores Azules)"
+  },
+  {
+   "id": "VarHkTcUaWk",
+   "artista": "Gertrudis",
+   "titol": "La Marrana Del Jersei de Llana"
+  },
+  {
+   "id": "lbrxWKcQhn4",
+   "artista": "Gertrudis",
+   "titol": "La Nit De Reis"
+  },
+  {
+   "id": "7jdoVLaXglE",
+   "artista": "Gertrudis",
+   "titol": "Mala Llet"
+  },
+  {
+   "id": "FhWBLlwTqqk",
+   "artista": "Gertrudis",
+   "titol": "T'aprenc"
+  },
+  {
+   "id": "1aNXmyijih8",
+   "artista": "Gisela Bellsolà",
+   "titol": "El Cavaller"
+  },
+  {
+   "id": "TUAoQ5JntBo",
+   "artista": "Gisela Bellsolà",
+   "titol": "És Pura i Sense Nom"
+  },
+  {
+   "id": "_uk0lCUT1l8",
+   "artista": "Gisela Bellsolà",
+   "titol": "Jo És la Mar"
+  },
+  {
+   "id": "dIiy_31vJ8U",
+   "artista": "Gisela Bellsolà",
+   "titol": "La Fugida"
+  },
+  {
+   "id": "mey2q9m0e1k",
+   "artista": "Gisela Bellsolà",
+   "titol": "La Princesa Neu"
+  },
+  {
+   "id": "vIS1l-IvlcQ",
+   "artista": "Gisela Bellsolà",
+   "titol": "No Ploris"
+  },
+  {
+   "id": "KmTkFzf0TYA",
+   "artista": "Gisela Bellsolà",
+   "titol": "Vam Partir Tots Cinc"
+  },
+  {
+   "id": "5Vn4IMnLWLw",
+   "artista": "Gisela Bellsolà",
+   "titol": "Velles Corrandes per a la Pepa"
+  },
+  {
+   "id": "5cigS2GyxX0",
+   "artista": "Gisela Bellsolà",
+   "titol": "Vent de la Tarda"
+  },
+  {
+   "id": "HXvZCVh94Jc",
+   "artista": "Gisela Bellsolà",
+   "titol": "Vine"
+  },
+  {
+   "id": "TtOpapN1CoI",
+   "artista": "Gossos",
+   "titol": "A L'horitzó"
+  },
+  {
+   "id": "Y59WKKKO_cQ",
+   "artista": "Gossos",
+   "titol": "Buscant Espais"
+  },
+  {
+   "id": "XdkPfqMqCoo",
+   "artista": "Gossos",
+   "titol": "Caminant Despert"
+  },
+  {
+   "id": "4rSFsjVakYY",
+   "artista": "Gossos",
+   "titol": "Com Serà"
+  },
+  {
+   "id": "eGc5APQl8dI",
+   "artista": "Gossos",
+   "titol": "Com Si Res"
+  },
+  {
+   "id": "UKJeuTR8C0o",
+   "artista": "Gossos",
+   "titol": "De Tant En Tant"
+  },
+  {
+   "id": "-5HBCj0uHiQ",
+   "artista": "Gossos",
+   "titol": "Dia 1"
+  },
+  {
+   "id": "EtQsZpFE3Xg",
+   "artista": "Gossos",
+   "titol": "Directe a L'infinit"
+  },
+  {
+   "id": "Wy17mIdF0dM",
+   "artista": "Gossos",
+   "titol": "Enmig del Camí"
+  },
+  {
+   "id": "-X-twUHuWtM",
+   "artista": "Gossos",
+   "titol": "L'Amic"
+  },
+  {
+   "id": "Yr-htWK-uG0",
+   "artista": "Gossos",
+   "titol": "Més Enllà"
+  },
+  {
+   "id": "yW5kAQjqwcQ",
+   "artista": "Gossos",
+   "titol": "Mira'm Bé"
+  },
+  {
+   "id": "wo0w0YCUnAQ",
+   "artista": "Gossos",
+   "titol": "No Has Fet Tard"
+  },
+  {
+   "id": "zAd2a_i0rEo",
+   "artista": "Gossos",
+   "titol": "Noves Danses"
+  },
+  {
+   "id": "rMrB4se090I",
+   "artista": "Gossos",
+   "titol": "Pareu el Món"
+  },
+  {
+   "id": "13EkBFbgbRs",
+   "artista": "Gossos",
+   "titol": "Pla Perfecte"
+  },
+  {
+   "id": "4UiauxLsQW4",
+   "artista": "Gossos",
+   "titol": "Plou al Carrer"
+  },
+  {
+   "id": "DGwfW79Dzrc",
+   "artista": "Gossos",
+   "titol": "Rodamón"
+  },
+  {
+   "id": "RbUViMGxcmc",
+   "artista": "Gossos",
+   "titol": "Tríada"
+  },
+  {
+   "id": "3HIVbYx3Xos",
+   "artista": "Gossos",
+   "titol": "Un Dia Més"
+  },
+  {
+   "id": "Qn9BYm8tUh0",
+   "artista": "Gossos",
+   "titol": "Un Nou Paisatge"
+  },
+  {
+   "id": "0Deb6mbytn4",
+   "artista": "Gossos",
+   "titol": "Una Oportunitat"
+  },
+  {
+   "id": "fdGCTAXDgtY",
+   "artista": "Guillermina Motta",
+   "titol": "Ai Pare Pere"
+  },
+  {
+   "id": "x-qK8JtqXFI",
+   "artista": "Guillermina Motta",
+   "titol": "Cançó de Noces"
+  },
+  {
+   "id": "pvGEVdnKcKk",
+   "artista": "Guillermina Motta",
+   "titol": "Cançó Dels Vells Amants"
+  },
+  {
+   "id": "zjmM1TNbMrs",
+   "artista": "Guillermina Motta",
+   "titol": "El Mal de Viure"
+  },
+  {
+   "id": "-lpkDcvxjAA",
+   "artista": "Guillermina Motta",
+   "titol": "Els Petits Mots"
+  },
+  {
+   "id": "ZJoRVaFRw40",
+   "artista": "Guillermina Motta",
+   "titol": "En el Carrer"
+  },
+  {
+   "id": "BHWnpQ3HjFE",
+   "artista": "Guillermina Motta",
+   "titol": "Entre Els Llençols M'arrauliria"
+  },
+  {
+   "id": "Wl6vGCq8fMI",
+   "artista": "Guillermina Motta",
+   "titol": "La Lluerna"
+  },
+  {
+   "id": "7Dr4K5dAwpc",
+   "artista": "Guillermina Motta",
+   "titol": "La Mare de Déu"
+  },
+  {
+   "id": "9H0tkURbQcY",
+   "artista": "Guillermina Motta",
+   "titol": "Mamà Tinc Por"
+  },
+  {
+   "id": "y_2ZnJVlbzc",
+   "artista": "Guillermina Motta",
+   "titol": "Mossa Nova"
+  },
+  {
+   "id": "YCDHi-gY-ls",
+   "artista": "Guillermina Motta",
+   "titol": "Nit de Nadal"
+  },
+  {
+   "id": "_lUa5dL-pfA",
+   "artista": "Guillermina Motta",
+   "titol": "No Queda Bé"
+  },
+  {
+   "id": "b_fZpx4IQwA",
+   "artista": "Guillermina Motta",
+   "titol": "No, Senyors, Ja No Tinc Vint Anys"
+  },
+  {
+   "id": "zTGBy6Ps8Ig",
+   "artista": "Guillermina Motta",
+   "titol": "Platges de Hawaii"
+  },
+  {
+   "id": "fBZpHx03cwc",
+   "artista": "Guillermina Motta",
+   "titol": "Sant Josep I la Mare de Déu"
+  },
+  {
+   "id": "hm7yezYDGHo",
+   "artista": "Guillermina Motta",
+   "titol": "Sense Pensar-ho"
+  },
+  {
+   "id": "j7mRjEWg9S4",
+   "artista": "Guillermina Motta",
+   "titol": "Una Nou"
+  },
+  {
+   "id": "LQ4MaLWqA9A",
+   "artista": "Joan Colomo",
+   "titol": "Brossa nova espacial"
+  },
+  {
+   "id": "A6jkYtG3Z4g",
+   "artista": "Joan Colomo",
+   "titol": "Cadena de subministrament"
+  },
+  {
+   "id": "5fEWRrDeeCI",
+   "artista": "Joan Colomo",
+   "titol": "Dona'm quelcom"
+  },
+  {
+   "id": "H1Zcnwgh-2o",
+   "artista": "Joan Colomo",
+   "titol": "El ball"
+  },
+  {
+   "id": "qLWJHStPqCA",
+   "artista": "Joan Colomo",
+   "titol": "El diner"
+  },
+  {
+   "id": "7NvQXvv31NI",
+   "artista": "Joan Colomo",
+   "titol": "El Guerrer"
+  },
+  {
+   "id": "PhCEvtqLeyI",
+   "artista": "Joan Colomo",
+   "titol": "El meu cap"
+  },
+  {
+   "id": "nhmxl0Bifu8",
+   "artista": "Joan Colomo",
+   "titol": "En Bernat i la Maria"
+  },
+  {
+   "id": "VDmuNSiyaBo",
+   "artista": "Joan Colomo",
+   "titol": "Esclat etern"
+  },
+  {
+   "id": "bRqb_cqXlXk",
+   "artista": "Joan Colomo",
+   "titol": "Èxtasi permanent"
+  },
+  {
+   "id": "0Om8GCo8jBM",
+   "artista": "Joan Colomo",
+   "titol": "Festa amb morts"
+  },
+  {
+   "id": "hOfOe-lALkQ",
+   "artista": "Joan Colomo",
+   "titol": "Geoenginyería"
+  },
+  {
+   "id": "Xb8DTnJlBEU",
+   "artista": "Joan Colomo",
+   "titol": "Himne de la melangia"
+  },
+  {
+   "id": "YzZJ7iHGEdE",
+   "artista": "Joan Colomo",
+   "titol": "La Síntesi"
+  },
+  {
+   "id": "jNU34xOkxr0",
+   "artista": "Joan Colomo",
+   "titol": "Les coses"
+  },
+  {
+   "id": "2L2jNHRRjKc",
+   "artista": "Joan Dausà",
+   "titol": "El Veurem Junts"
+  },
+  {
+   "id": "Ls8YRxtZFz4",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Ets una ravera"
+  },
+  {
+   "id": "dI_K_-dL9Ho",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Fil Musical Perfumeria"
+  },
+  {
+   "id": "0_lZqb5MUX4",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Hem arribat a un acord"
+  },
+  {
+   "id": "Ufi7hZY6twk",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Oxitocina"
+  },
+  {
+   "id": "y6eqy4YwGrw",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Plou"
+  },
+  {
+   "id": "2g7Uf8wrDDU",
+   "artista": "Joan Miquel Oliver",
+   "titol": "S’albirava un tema"
+  },
+  {
+   "id": "7FAfNs7DNaA",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Trona i llampega"
+  },
+  {
+   "id": "Qz8xQeCt908",
+   "artista": "Karlus",
+   "titol": "Angelet fictici"
+  },
+  {
+   "id": "XX2abrWVc9g",
+   "artista": "Karlus",
+   "titol": "Es pou (Capítol 2)"
+  },
+  {
+   "id": "W3m6ZlaQxz8",
+   "artista": "Karlus",
+   "titol": "groc i negre"
+  },
+  {
+   "id": "VL7YX-jHl5o",
+   "artista": "Karlus",
+   "titol": "Indulgència (objecte)"
+  },
+  {
+   "id": "jhG7KCBjYbI",
+   "artista": "Karlus",
+   "titol": "Indulgència (subjecte)"
+  },
+  {
+   "id": "ZcBXWXbuNKk",
+   "artista": "Karlus",
+   "titol": "Karlus - Angelet fictici"
+  },
+  {
+   "id": "Z9cwgbvb68E",
+   "artista": "Karlus",
+   "titol": "Karlus - Es pou (Capítol 2)"
+  },
+  {
+   "id": "qUEyLuMD6GE",
+   "artista": "Karlus",
+   "titol": "Karlus - Permís a sa majora"
+  },
+  {
+   "id": "-AswQl0ssYA",
+   "artista": "Karlus",
+   "titol": "Malnom"
+  },
+  {
+   "id": "tE7PATWVGIE",
+   "artista": "Karlus",
+   "titol": "Permís a sa majora"
+  },
+  {
+   "id": "QLviVtK6f0k",
+   "artista": "Karlus",
+   "titol": "sóc un àngel"
+  },
+  {
+   "id": "RhRtGjJ6RdU",
+   "artista": "Karlus",
+   "titol": "te jurc"
+  },
+  {
+   "id": "9ZNp1DGQGjk",
+   "artista": "KOP",
+   "titol": "És Control"
+  },
+  {
+   "id": "3xfzO9YCiL0",
+   "artista": "KOP",
+   "titol": "Fins la Victòria Sempre"
+  },
+  {
+   "id": "7lz_0EuNN0E",
+   "artista": "KOP",
+   "titol": "Guerrilla De La Comunicació"
+  },
+  {
+   "id": "Sk8sawsUxhc",
+   "artista": "KOP",
+   "titol": "La Nostra Arma"
+  },
+  {
+   "id": "fNhO3CQFFKg",
+   "artista": "KOP",
+   "titol": "No se sap mai (en directe al Elkartasun Eguna Bilbo maig 2000)"
+  },
+  {
+   "id": "SFwBkN6GLYw",
+   "artista": "KOP",
+   "titol": "Per Sempre Més"
+  },
+  {
+   "id": "q5I8fDBRXoQ",
+   "artista": "KOP",
+   "titol": "Un Altre KOP"
+  },
+  {
+   "id": "pzaPM0pCPXs",
+   "artista": "La Bundu Band",
+   "titol": "A les Parets del Meu Barri"
+  },
+  {
+   "id": "P7LN4A1Zuj8",
+   "artista": "La Bundu Band",
+   "titol": "ARA NO ÉS TEMPS DE CANTAR. (AMB MAIRA COMALAT) (.)"
+  },
+  {
+   "id": "477fVILzffw",
+   "artista": "La Bundu Band",
+   "titol": "Cant de Batre 2.0"
+  },
+  {
+   "id": "XKoQQbQXp90",
+   "artista": "La Bundu Band",
+   "titol": "CERCANT L'ESTRELLA POLAR."
+  },
+  {
+   "id": "N_YvoU37-E8",
+   "artista": "La Bundu Band",
+   "titol": "Comediants"
+  },
+  {
+   "id": "ydCOikowLqM",
+   "artista": "La Bundu Band",
+   "titol": "De Rangun a Kinshasa (Dance Remix)"
+  },
+  {
+   "id": "d-F0mM017oM",
+   "artista": "La Bundu Band",
+   "titol": "ENS ATAQUEN"
+  },
+  {
+   "id": "dgc4AAcHVZM",
+   "artista": "La Bundu Band",
+   "titol": "Gas i Foc"
+  },
+  {
+   "id": "8VidpJ9iCck",
+   "artista": "La Bundu Band",
+   "titol": "Gas i foc & Gas gas (Live)"
+  },
+  {
+   "id": "J1LuFOc8TbQ",
+   "artista": "La Bundu Band",
+   "titol": "GUERRER REBEL"
+  },
+  {
+   "id": "dLLCqqjgCuM",
+   "artista": "La Bundu Band",
+   "titol": "Guerrer rebel (Live)"
+  },
+  {
+   "id": "xZMSrufgm4c",
+   "artista": "La Bundu Band",
+   "titol": "Hivern (Live)"
+  },
+  {
+   "id": "yiWygQO7H78",
+   "artista": "La Bundu Band",
+   "titol": "Interludi (Live)"
+  },
+  {
+   "id": "eiqU1VdZ8MU",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - Drets i Deures"
+  },
+  {
+   "id": "nLXcj3TsIZ4",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - El Petit Vailet (Electro-Nadala)"
+  },
+  {
+   "id": "1dxhAxwuQuc",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - L'espurna"
+  },
+  {
+   "id": "cI78eVCK8h4",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - Mai Sabrem (Live Sala Apolo 02/04/2014)"
+  },
+  {
+   "id": "gaSRZEXEdFE",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - Perdent la fe"
+  },
+  {
+   "id": "-jM1kHDDbG4",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band al Punt Avui TV"
+  },
+  {
+   "id": "QJDdY7DLMkw",
+   "artista": "La Bundu Band",
+   "titol": "La Mà Negra"
+  },
+  {
+   "id": "CwVBh1cVSIQ",
+   "artista": "La Bundu Band",
+   "titol": "La Raó 1001"
+  },
+  {
+   "id": "YCuSR6dM4rM",
+   "artista": "La Bundu Band",
+   "titol": "La Revolució del Nou Mil•lenni"
+  },
+  {
+   "id": "q3Fd9fApU9g",
+   "artista": "La Bundu Band",
+   "titol": "La revolució del nou mil·leni (Live)"
+  },
+  {
+   "id": "2JdPuDr2nx0",
+   "artista": "La Bundu Band",
+   "titol": "La Vida Són Dos Dies"
+  },
+  {
+   "id": "bOobUCg0Br0",
+   "artista": "La Bundu Band",
+   "titol": "Mai Sabrem"
+  },
+  {
+   "id": "eEpib2JayzM",
+   "artista": "La Bundu Band",
+   "titol": "MANS TACADES (AMB \"NAN ROIG\")"
+  },
+  {
+   "id": "HnX9hVJpKEk",
+   "artista": "La Bundu Band",
+   "titol": "Multiculturalitat"
+  },
+  {
+   "id": "66qzreU73SU",
+   "artista": "La Bundu Band",
+   "titol": "No Ploris"
+  },
+  {
+   "id": "1z2oNjc3MDo",
+   "artista": "La Bundu Band",
+   "titol": "ON HE DEIXAT LA VIDA? (AMB RAQUEL XIBERTA) (.)"
+  },
+  {
+   "id": "Qj9Hb15YoT8",
+   "artista": "La Bundu Band",
+   "titol": "Petites Diferències Estilístiques"
+  },
+  {
+   "id": "HvWLujX9DSg",
+   "artista": "La Bundu Band",
+   "titol": "Realitats Paral-leles"
+  },
+  {
+   "id": "Czp90F4hR3k",
+   "artista": "La Bundu Band",
+   "titol": "Reportatge sobre La Bundu Band al programa \"La Sonora\" del Canal 33"
+  },
+  {
+   "id": "UZGo75nxofY",
+   "artista": "La Bundu Band",
+   "titol": "Saturació"
+  },
+  {
+   "id": "KkBksLh10D0",
+   "artista": "La Bundu Band",
+   "titol": "SOMNIS A CHIAPAS (AMB \"CASTA DE BRONCE\") \""
+  },
+  {
+   "id": "Udx-gKdyxvU",
+   "artista": "La Bundu Band",
+   "titol": "SOTA PRESSIÓ"
+  },
+  {
+   "id": "23CHAzSgg3c",
+   "artista": "La Bundu Band",
+   "titol": "TOT TÉ UN PREU."
+  },
+  {
+   "id": "znekRPBl2RQ",
+   "artista": "La Bundu Band",
+   "titol": "Verkami per al nou disc de La Bundu Band: \"Sembrant Beats, Recollint Revolució\""
+  },
+  {
+   "id": "2UCHKfDc0zU",
+   "artista": "La Tour De Carol",
+   "titol": "El Llençol"
+  },
+  {
+   "id": "LhY70Qfyr5k",
+   "artista": "La Trinca",
+   "titol": "Educació Sexual (Remasterizado)"
+  },
+  {
+   "id": "K3uvugZMwkE",
+   "artista": "La Trinca",
+   "titol": "El Meu Col. Legi (Remasterizado)"
+  },
+  {
+   "id": "2nTuD3AmM0M",
+   "artista": "La Trinca",
+   "titol": "Informe Terraqui (Remasterizado)"
+  },
+  {
+   "id": "TfBgWIpW1sw",
+   "artista": "La Trinca",
+   "titol": "La Cigala i La Formiga (Remasterizado)"
+  },
+  {
+   "id": "QvnKYxZVo2k",
+   "artista": "La Trinca",
+   "titol": "La Consti (Remasterizado)"
+  },
+  {
+   "id": "6WSRhtyDq9A",
+   "artista": "La Trinca",
+   "titol": "La Nodrissa"
+  },
+  {
+   "id": "3BxA9uclR1A",
+   "artista": "La Trinca",
+   "titol": "Que Mai No Falti Alegria (Remasterizado)"
+  },
+  {
+   "id": "FFdff1b7RWE",
+   "artista": "La Trinca",
+   "titol": "Trempera Matinera (Remasterizado)"
+  },
+  {
+   "id": "KrKpwm9ADEo",
+   "artista": "La Trinca",
+   "titol": "Un Mal Somni (Remasterizado)"
+  },
+  {
+   "id": "jxoMbfuaZLA",
+   "artista": "La Troba Kung-Fú",
+   "titol": "Bufa El Vent"
+  },
+  {
+   "id": "YTyf9Ek72G0",
+   "artista": "La Xica",
+   "titol": "A fer la mà"
+  },
+  {
+   "id": "AC8VZkpBCy8",
+   "artista": "La Xica",
+   "titol": "A fer la mà - LA XICA"
+  },
+  {
+   "id": "FJdXquEkrDE",
+   "artista": "La Xica",
+   "titol": "àngel i dimoni"
+  },
+  {
+   "id": "muOm3jK_RTM",
+   "artista": "La Xica",
+   "titol": "àngel i dimoni - LA XICA"
+  },
+  {
+   "id": "1f7zXMoq0mE",
+   "artista": "La Xica",
+   "titol": "La pàtria dels àngels"
+  },
+  {
+   "id": "j3H88vLHX6A",
+   "artista": "La Xica",
+   "titol": "La pàtria dels àngels - LA XICA"
+  },
+  {
+   "id": "PXidEig3AuE",
+   "artista": "Lepanto 41",
+   "titol": "11. EL CAMÍ - Lepanto 41, Lemurixx, Selves (Visualizer)"
+  },
+  {
+   "id": "dOAz-IuY58s",
+   "artista": "Lepanto 41",
+   "titol": "5. PER ON T'AMAGUES? - Lepanto 41, Wilagosjr, BECO (Visualizer)"
+  },
+  {
+   "id": "69THOsxnTX8",
+   "artista": "Lepanto 41",
+   "titol": "COl·lOCAT"
+  },
+  {
+   "id": "4W_vfntgOUM",
+   "artista": "Lepanto 41",
+   "titol": "EL CAMÍ"
+  },
+  {
+   "id": "0G0jk3GnPpE",
+   "artista": "Lepanto 41",
+   "titol": "el que sento x tu"
+  },
+  {
+   "id": "fy2W5H2Gs4g",
+   "artista": "Lepanto 41",
+   "titol": "GALÀCTICA"
+  },
+  {
+   "id": "8K0Cudaxgnc",
+   "artista": "Lepanto 41",
+   "titol": "PER ON T'AMAGUES?"
+  },
+  {
+   "id": "kFV4lpmlFPo",
+   "artista": "Lídia Pujol",
+   "titol": "Cançó de bressol"
+  },
+  {
+   "id": "YMyhBur_0zU",
+   "artista": "Lídia Pujol",
+   "titol": "El conte dels dos suïcides"
+  },
+  {
+   "id": "P60FcuqhYn4",
+   "artista": "Lídia Pujol",
+   "titol": "Encara"
+  },
+  {
+   "id": "KbWmFr8XxsE",
+   "artista": "Lídia Pujol",
+   "titol": "Farem la revolució i la tornarem a fer"
+  },
+  {
+   "id": "L2CFKKTNEag",
+   "artista": "Lídia Pujol",
+   "titol": "Foravilers"
+  },
+  {
+   "id": "lw0xv4jF6iE",
+   "artista": "Lídia Pujol",
+   "titol": "Giren i van sagnant"
+  },
+  {
+   "id": "savnDY-Hoj0",
+   "artista": "Lídia Pujol",
+   "titol": "L'arbre no sap"
+  },
+  {
+   "id": "TunUY5RZT5I",
+   "artista": "Lídia Pujol",
+   "titol": "L'arbret vora el camí"
+  },
+  {
+   "id": "aKF6NpuXiWI",
+   "artista": "Lídia Pujol",
+   "titol": "La Campaneta"
+  },
+  {
+   "id": "LbtwO_Ei8P8",
+   "artista": "Lídia Pujol",
+   "titol": "La Cançó del Capità"
+  },
+  {
+   "id": "XFpQwbHrQH4",
+   "artista": "Lídia Pujol",
+   "titol": "La Perdiueta"
+  },
+  {
+   "id": "2cYDmk0PUuk",
+   "artista": "Lídia Pujol",
+   "titol": "La sang"
+  },
+  {
+   "id": "sGIYKs_mxF0",
+   "artista": "Lídia Pujol",
+   "titol": "Mata el pare esparver"
+  },
+  {
+   "id": "SmoLSyUrfjA",
+   "artista": "Lídia Pujol",
+   "titol": "Ombra d' Anna"
+  },
+  {
+   "id": "M4l9x2uBwwg",
+   "artista": "Lídia Pujol",
+   "titol": "Poeta i fangador"
+  },
+  {
+   "id": "VB5oQAXX6jY",
+   "artista": "Lídia Pujol",
+   "titol": "Poeta i moliner"
+  },
+  {
+   "id": "jw_k2DjxSPA",
+   "artista": "Lídia Pujol",
+   "titol": "Rossinyol"
+  },
+  {
+   "id": "CeuqcZN_7FY",
+   "artista": "Lluís Llach",
+   "titol": "A força de nits (En directe)"
+  },
+  {
+   "id": "w52ADIkFDrU",
+   "artista": "Lluís Llach",
+   "titol": "El jorn dels miserables (En directe)"
+  },
+  {
+   "id": "ijoeXsMNYrU",
+   "artista": "Lluís Llach",
+   "titol": "Si arribeu (En directe)"
+  },
+  {
+   "id": "9HLUgtbhsgQ",
+   "artista": "Madam(s)",
+   "titol": "Divina Tragèdia"
+  },
+  {
+   "id": "EDe6w3yfvNk",
+   "artista": "Madam(s)",
+   "titol": "Els Bons Catalans"
+  },
+  {
+   "id": "SHyAFuAbd9A",
+   "artista": "Madam(s)",
+   "titol": "Els Meus Amics"
+  },
+  {
+   "id": "14kEl_DyKVo",
+   "artista": "Madam(s)",
+   "titol": "Encendre la Ciutat"
+  },
+  {
+   "id": "sM2GRRkWht8",
+   "artista": "Madam(s)",
+   "titol": "Figures de Cera"
+  },
+  {
+   "id": "YsoJ2UsikQo",
+   "artista": "Madam(s)",
+   "titol": "Formigues o Gegants"
+  },
+  {
+   "id": "Om8yKJ9QM0I",
+   "artista": "Madam(s)",
+   "titol": "Tot el Que Em Diguis"
+  },
+  {
+   "id": "ZGFcUs8xVOA",
+   "artista": "Madam(s)",
+   "titol": "Una Dona Tal Com Cal"
+  },
+  {
+   "id": "b3YLvZ9DXXo",
+   "artista": "Maitips",
+   "titol": "Aixi Es La Vida"
+  },
+  {
+   "id": "jYzSSIHVoyI",
+   "artista": "Maitips",
+   "titol": "Biberons"
+  },
+  {
+   "id": "a0Tp7G-xLa8",
+   "artista": "Maitips",
+   "titol": "Fem Poble"
+  },
+  {
+   "id": "tRtRJE2ec-s",
+   "artista": "Maitips",
+   "titol": "Inventa el món"
+  },
+  {
+   "id": "VkwWps3hd0o",
+   "artista": "Maitips",
+   "titol": "Nen Soldat"
+  },
+  {
+   "id": "WLUFYn_ignM",
+   "artista": "Maitips",
+   "titol": "Pas Del Temps"
+  },
+  {
+   "id": "Qe8COcs8Nyc",
+   "artista": "Maitips",
+   "titol": "Somni Reflex"
+  },
+  {
+   "id": "RhaWJzSDUoY",
+   "artista": "Maitips",
+   "titol": "Titelles"
+  },
+  {
+   "id": "AQIsFjW69mo",
+   "artista": "Maitips",
+   "titol": "Tocar el Cel"
+  },
+  {
+   "id": "W9044ZS-DkA",
+   "artista": "Maitips",
+   "titol": "Vells Ideals"
+  },
+  {
+   "id": "dyWiJLyoQB8",
+   "artista": "Malifeta",
+   "titol": "ALES NEGRES"
+  },
+  {
+   "id": "1kFqZzfT-Xk",
+   "artista": "Malifeta",
+   "titol": "ÍDOL"
+  },
+  {
+   "id": "rYFuAA7LqwQ",
+   "artista": "Malifeta",
+   "titol": "Llengua negra"
+  },
+  {
+   "id": "hz89FvTysxs",
+   "artista": "Malifeta",
+   "titol": "MALIFETA - 06 LLENGUA NEGRA"
+  },
+  {
+   "id": "o89tgjLQIOs",
+   "artista": "Malifeta",
+   "titol": "MALIFETA - Ales negres ft. Toni S. ZOO (videolyric) Prod. pxllt"
+  },
+  {
+   "id": "Un0BCAvMbFc",
+   "artista": "Malifeta",
+   "titol": "MALIFETA - Rovellet de l'ou ft. Sandra Monfort (videolyric) Prod. pxllt"
+  },
+  {
+   "id": "yw7kpjELxZw",
+   "artista": "Malifeta",
+   "titol": "ROVELLET DE L'OU"
+  },
+  {
+   "id": "mBEu_QjfQag",
+   "artista": "Manu Guix",
+   "titol": "Amb tu he après què és estimar (La Marató)"
+  },
+  {
+   "id": "qUB-x2rqDUA",
+   "artista": "Manu Guix",
+   "titol": "La Meva Rosa"
+  },
+  {
+   "id": "jdkYiXfHAVA",
+   "artista": "Manu Guix",
+   "titol": "Un nou matí (La Marató)"
+  },
+  {
+   "id": "Wo_3yQ_E5NM",
+   "artista": "Marina Rossell",
+   "titol": "El Nen Que Creia Saber Volar"
+  },
+  {
+   "id": "QOy8EOZjesM",
+   "artista": "Marina Rossell",
+   "titol": "L'Arc de Sant Martí"
+  },
+  {
+   "id": "FeFp_zycv2M",
+   "artista": "Marina Rossell",
+   "titol": "La Llegenda de Sant Jordi"
+  },
+  {
+   "id": "3tE5vm-kxuA",
+   "artista": "Marina Rossell",
+   "titol": "Màrmara (feat. Georges Moustaki)"
+  },
+  {
+   "id": "fq8lyI3fD34",
+   "artista": "Marina Rossell",
+   "titol": "Otger Cataló I Els Nous Barons de la Fama"
+  },
+  {
+   "id": "b6z8Mpa5UEQ",
+   "artista": "Marina Rossell",
+   "titol": "Per a un Ballarí"
+  },
+  {
+   "id": "iykus-WQUAs",
+   "artista": "Marina Rossell",
+   "titol": "Rumba Dels 60"
+  },
+  {
+   "id": "bsMfmgP4m8Q",
+   "artista": "Marina Rossell",
+   "titol": "Toca'm"
+  },
+  {
+   "id": "BivszZqjzL8",
+   "artista": "Mascarats",
+   "titol": "1- Voltors"
+  },
+  {
+   "id": "0CeEMwnHaEI",
+   "artista": "Mascarats",
+   "titol": "10- L'últim guany"
+  },
+  {
+   "id": "6SrdWeq2itY",
+   "artista": "Mascarats",
+   "titol": "4- Estores roges"
+  },
+  {
+   "id": "Ms4oqO8RwGQ",
+   "artista": "Mascarats",
+   "titol": "5- Colonitzant"
+  },
+  {
+   "id": "793-DAggHTk",
+   "artista": "Mascarats",
+   "titol": "6- La terra plora"
+  },
+  {
+   "id": "z0SemlcqKfQ",
+   "artista": "Mascarats",
+   "titol": "7- Somnis soterrats (amb Estel Candela Roots)"
+  },
+  {
+   "id": "GtcEsidhZDc",
+   "artista": "Mascarats",
+   "titol": "8- L'udol (amb Arnau d'Ebri knight)"
+  },
+  {
+   "id": "gjupUdxlDJc",
+   "artista": "Mascarats",
+   "titol": "9- El cant de la vida (amb Mireia Vives i Flora del Diluvi)"
+  },
+  {
+   "id": "8L1gZjbAFNs",
+   "artista": "Mascarats",
+   "titol": "9N: assumim la veu del poble!"
+  },
+  {
+   "id": "GEfGOjaf6Io",
+   "artista": "Mascarats",
+   "titol": "Àfrica"
+  },
+  {
+   "id": "X2C0UulQbhc",
+   "artista": "Mascarats",
+   "titol": "La nostra batalla - Directe Festa Major Castellers de Sants"
+  },
+  {
+   "id": "aZDaoTaGiRE",
+   "artista": "Mascarats",
+   "titol": "La revolució del coco"
+  },
+  {
+   "id": "4nzaJOAuBjg",
+   "artista": "Mascarats",
+   "titol": "La veu no ens tremola"
+  },
+  {
+   "id": "sVMd25NzKlk",
+   "artista": "Mascarats",
+   "titol": "Mascarats - Per què? - Directe Festa Major dels Castellers de Sants"
+  },
+  {
+   "id": "A07OFwIYiqc",
+   "artista": "Mascarats",
+   "titol": "Montse Venturós - \"Els carrers seran sempre nostres\" Mascarats"
+  },
+  {
+   "id": "0_IyMY8d9ps",
+   "artista": "Mascarats",
+   "titol": "Nous afluents (amb Maria Mingorance)"
+  },
+  {
+   "id": "E85_hc6WyDg",
+   "artista": "Mascarats",
+   "titol": "Reductes d'enyorança"
+  },
+  {
+   "id": "BeXAqORLgas",
+   "artista": "Mascarats",
+   "titol": "Restes d'un naufragi"
+  },
+  {
+   "id": "2nR1KO0-xvw",
+   "artista": "Mascarats",
+   "titol": "Rumb a Ítaca"
+  },
+  {
+   "id": "fbWOCZwvhSU",
+   "artista": "Mascarats",
+   "titol": "Sentiment comú"
+  },
+  {
+   "id": "tJa2c4w9RzQ",
+   "artista": "Mascarats",
+   "titol": "Una nit d'estiu"
+  },
+  {
+   "id": "stpdryyy2fE",
+   "artista": "Mascarats",
+   "titol": "Vent emancipador (feat. Xavi Sarrià)"
+  },
+  {
+   "id": "g3RCeDQbRR0",
+   "artista": "Mazoni",
+   "titol": "Balla amb mi"
+  },
+  {
+   "id": "SIYTQrY66xs",
+   "artista": "Mazoni",
+   "titol": "Cançó trista"
+  },
+  {
+   "id": "Jv3uLata9Ks",
+   "artista": "Mazoni",
+   "titol": "Crec en tu"
+  },
+  {
+   "id": "t1sNIMJp7QQ",
+   "artista": "Mazoni",
+   "titol": "El crim de les germanes Amanita"
+  },
+  {
+   "id": "7gXhjDhnPho",
+   "artista": "Mazoni",
+   "titol": "El mirall"
+  },
+  {
+   "id": "Hx8UAVONDb4",
+   "artista": "Mazoni",
+   "titol": "Ja no em lliguen les cadenes"
+  },
+  {
+   "id": "aoyV1z2-W6c",
+   "artista": "Mazoni",
+   "titol": "No pateixis"
+  },
+  {
+   "id": "iuT58OCw8fo",
+   "artista": "Mazoni",
+   "titol": "Peix brillant"
+  },
+  {
+   "id": "Dnf5BmRmJZ4",
+   "artista": "Mazoni",
+   "titol": "Perdre per guanyar"
+  },
+  {
+   "id": "wBoRtmz7Glk",
+   "artista": "Mazoni",
+   "titol": "Pollastres sense cap"
+  },
+  {
+   "id": "Wi96mNOOBZM",
+   "artista": "Mazoni",
+   "titol": "Prat de vellut"
+  },
+  {
+   "id": "WPh7OnoAnXw",
+   "artista": "Mazoni",
+   "titol": "Putes xarxes socials"
+  },
+  {
+   "id": "p2uB9uE-qS4",
+   "artista": "Mazoni",
+   "titol": "T'estimes?"
+  },
+  {
+   "id": "X6pSQg-hjlE",
+   "artista": "MISHIMA",
+   "titol": "L'olor de la nit (En directe)"
+  },
+  {
+   "id": "IHaFCeyQhT4",
+   "artista": "MISHIMA",
+   "titol": "La forma d'un sentit (En directe)"
+  },
+  {
+   "id": "74TmdzYJhrM",
+   "artista": "MISHIMA",
+   "titol": "Sants Innocents"
+  },
+  {
+   "id": "BHu96VexjJs",
+   "artista": "Montse Castellà",
+   "titol": "Ara és demà"
+  },
+  {
+   "id": "vtseio351VQ",
+   "artista": "Montse Castellà",
+   "titol": "Ara on ets, fill meu? (Where Are You Now, My Son?)"
+  },
+  {
+   "id": "3MqAXF84lBY",
+   "artista": "Montse Castellà",
+   "titol": "Deportats (Deportee)"
+  },
+  {
+   "id": "jWgpaMg-1-k",
+   "artista": "Montse Castellà",
+   "titol": "Endavant! (Carry It On)"
+  },
+  {
+   "id": "JsvL3-zpOmU",
+   "artista": "Montse Castellà",
+   "titol": "Enganxada al cos"
+  },
+  {
+   "id": "EU5--g9w3Lw",
+   "artista": "Montse Castellà",
+   "titol": "Ens en sortirem (We Shall Overcome)"
+  },
+  {
+   "id": "YSR85hDNBvs",
+   "artista": "Montse Castellà",
+   "titol": "Hemisferi nord"
+  },
+  {
+   "id": "9A22xlOhJvI",
+   "artista": "Montse Castellà",
+   "titol": "La Bona Mort"
+  },
+  {
+   "id": "Ux4sZ3HyHJU",
+   "artista": "Montse Castellà",
+   "titol": "Monosíl·lab"
+  },
+  {
+   "id": "MsCZFGZtaw0",
+   "artista": "Montse Castellà",
+   "titol": "Que us vaja bé (Fare Thee Well)"
+  },
+  {
+   "id": "6YsnJtSd4vo",
+   "artista": "Montse Castellà",
+   "titol": "Revolució"
+  },
+  {
+   "id": "9dYk3_DVZlw",
+   "artista": "Montse Castellà",
+   "titol": "Vull Tornar al Meu Sud (Take Me Back To The Sweet Sunny South)"
+  },
+  {
+   "id": "90bTH3jzKG4",
+   "artista": "Oprimits",
+   "titol": "Benvinguts al Món"
+  },
+  {
+   "id": "KR1BufMJHDU",
+   "artista": "Oprimits",
+   "titol": "Cop D'efecte"
+  },
+  {
+   "id": "7D8btPY2aFo",
+   "artista": "Oprimits",
+   "titol": "Correllengua"
+  },
+  {
+   "id": "CO2WaDQoqiU",
+   "artista": "Oprimits",
+   "titol": "Corrupte Naturalment"
+  },
+  {
+   "id": "HayNxu7_Tr0",
+   "artista": "Oprimits",
+   "titol": "Dies de Revolucions"
+  },
+  {
+   "id": "VA1zZavHqMU",
+   "artista": "Oprimits",
+   "titol": "Endavant"
+  },
+  {
+   "id": "1oeqlczoJdo",
+   "artista": "Oprimits",
+   "titol": "Gra6"
+  },
+  {
+   "id": "7l9qvefB-gY",
+   "artista": "Oprimits",
+   "titol": "Mai no Deixis"
+  },
+  {
+   "id": "Kh-t_SOGBrg",
+   "artista": "Oprimits",
+   "titol": "Resistirem"
+  },
+  {
+   "id": "4PA5642eoBc",
+   "artista": "Oprimits",
+   "titol": "Sense tu"
+  },
+  {
+   "id": "rdn1C59dxns",
+   "artista": "Oprimits",
+   "titol": "Solidaritat"
+  },
+  {
+   "id": "4Ez371GQC44",
+   "artista": "Oprimits",
+   "titol": "Som Oprimits"
+  },
+  {
+   "id": "xkfpR_zYb1s",
+   "artista": "Ovella Xao",
+   "titol": "01 Ens menjarem el món - Ovella Xao - #PASTUREIG (amb Bonobos)"
+  },
+  {
+   "id": "2TTx0RADixQ",
+   "artista": "Ovella Xao",
+   "titol": "01 Eufòria - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "fotJTJRARvU",
+   "artista": "Ovella Xao",
+   "titol": "04 Encara penso en tu - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "gFb77TaaoHQ",
+   "artista": "Ovella Xao",
+   "titol": "04 Mentides - Ovella Xao - #PASTUREIG"
+  },
+  {
+   "id": "zifHOPq7UxQ",
+   "artista": "Ovella Xao",
+   "titol": "05 Dictador - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "jC7cVFBeQu0",
+   "artista": "Ovella Xao",
+   "titol": "05 Rauxa dins el cos - Ovella Xao - #PASTUREIG"
+  },
+  {
+   "id": "ddM-xzos_qU",
+   "artista": "Ovella Xao",
+   "titol": "06 Estiu - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "zjW9b_gEu20",
+   "artista": "Ovella Xao",
+   "titol": "06 Viure Volant - Ovella Xao - #PASTUREIG"
+  },
+  {
+   "id": "UhfQfNmPlgE",
+   "artista": "Ovella Xao",
+   "titol": "07 Sirena - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "leuqrkMtp84",
+   "artista": "Ovella Xao",
+   "titol": "08 La Terra dels Somnis - Ovella Xao - #PASTUREIG (amb Animal)"
+  },
+  {
+   "id": "2aCP8YXuBzU",
+   "artista": "Ovella Xao",
+   "titol": "09 A trenc d'alba - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "X7bi1Ep3JEo",
+   "artista": "Ovella Xao",
+   "titol": "10 La noia dels croissants - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "oGGSM83NHjA",
+   "artista": "Ovella Xao",
+   "titol": "10 Nits - Ovella Xao - #PASTUREIG"
+  },
+  {
+   "id": "6I5-8YsW7zY",
+   "artista": "Ovella Xao",
+   "titol": "11 Continuar lluitant - Ovella Xao \"Trempera Matinera\""
+  },
+  {
+   "id": "OugL2J2jjh8",
+   "artista": "Ovella Xao",
+   "titol": "11 Per cert - Ovella Xao - #PASTUREIG"
+  },
+  {
+   "id": "wxhbT5RfwbY",
+   "artista": "Ovella Xao",
+   "titol": "A Cada Pas"
+  },
+  {
+   "id": "fip5kypWKUw",
+   "artista": "Ovella Xao",
+   "titol": "Aquesta Nit - Ovella Xao (LIVE #pasTOUReig)"
+  },
+  {
+   "id": "DQkfK38lrsE",
+   "artista": "Ovella Xao",
+   "titol": "Com Poden Dormir a les Nits?"
+  },
+  {
+   "id": "crHX1im_OZY",
+   "artista": "Ovella Xao",
+   "titol": "Darrere un Arbre"
+  },
+  {
+   "id": "av0UR4mIg7w",
+   "artista": "Ovella Xao",
+   "titol": "Deixeu els Nens que Siguin Nens"
+  },
+  {
+   "id": "6hrbkqRPFe4",
+   "artista": "Ovella Xao",
+   "titol": "El que ens Fa Somiar"
+  },
+  {
+   "id": "jMQ0vZT7mp0",
+   "artista": "Ovella Xao",
+   "titol": "Humans d'última Moda"
+  },
+  {
+   "id": "kD4z9MSsRXE",
+   "artista": "Ovella Xao",
+   "titol": "Llei de Vida"
+  },
+  {
+   "id": "kExFmcRCaB8",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - Avançament del CD \"#Pastureig\""
+  },
+  {
+   "id": "8T-a4cgz_jo",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - CANT CORRAL - Avançament del NOU DISC (2018)"
+  },
+  {
+   "id": "zKvfTLzceDQ",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - Ens menjarem el món (ft. Bonobos) -  Videoclip oficial"
+  },
+  {
+   "id": "8xTAHlWtWSY",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - Pastoreta (Videoclip oficial)"
+  },
+  {
+   "id": "jX6rB6NXwg4",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - Princepeses (ft. Roba Estesa) - Videoclip oficial"
+  },
+  {
+   "id": "uclhL_B7__g",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - SanTOURnem-hi 2017"
+  },
+  {
+   "id": "lTfS-iFT35g",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - Veniu a fer-nos un regal (amb Amics) - Videoclip Oficial"
+  },
+  {
+   "id": "zJzfS8hyo2g",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao \"Trempera Matinera\" - Nou disc Maig 2014"
+  },
+  {
+   "id": "oz6Tdj80nTA",
+   "artista": "Ovella Xao",
+   "titol": "OVELLA XAO ACÚSTIC"
+  },
+  {
+   "id": "JixGgijT8-E",
+   "artista": "Ovella Xao",
+   "titol": "Quan Rius Sota el Sol"
+  },
+  {
+   "id": "FKu9V95HXXE",
+   "artista": "Ovella Xao",
+   "titol": "Roselles"
+  },
+  {
+   "id": "GcjJToOYS3M",
+   "artista": "Ovella Xao",
+   "titol": "Vola pel Món"
+  },
+  {
+   "id": "XEvjqN7bnBg",
+   "artista": "Ovella Xao",
+   "titol": "XAO, OVELLA! - concert de comiat"
+  },
+  {
+   "id": "bgV0ZIzQQis",
+   "artista": "P.A.W.N. Gang",
+   "titol": "DiGAM XQUE"
+  },
+  {
+   "id": "0NdV9mEF1Ow",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Donam la Ma"
+  },
+  {
+   "id": "1GfkX4AB4C8",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Jovas No Vells"
+  },
+  {
+   "id": "2LImmhw7hQA",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Merda Mes Ruda"
+  },
+  {
+   "id": "vbf1O_I2ngU",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Mil Retes"
+  },
+  {
+   "id": "CqW-Zw5Tk0I",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Qui Merdes Ets Tu"
+  },
+  {
+   "id": "9J1sQvBqX70",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Sta Kla un Tret"
+  },
+  {
+   "id": "vkwpmM8gqpc",
+   "artista": "Pere Tapias",
+   "titol": "Autòpsia"
+  },
+  {
+   "id": "wjLK-lXFg0o",
+   "artista": "Pere Tapias",
+   "titol": "Cançó de Les Trompetes"
+  },
+  {
+   "id": "JZFMp2q9AhI",
+   "artista": "Pere Tapias",
+   "titol": "Dietètica Sintètica"
+  },
+  {
+   "id": "5_nT_zwEXYw",
+   "artista": "Pere Tapias",
+   "titol": "El Candidat"
+  },
+  {
+   "id": "1mBN_H5kI9I",
+   "artista": "Pere Tapias",
+   "titol": "El Darrer Adéu"
+  },
+  {
+   "id": "MDK7mRR3jEM",
+   "artista": "Pere Tapias",
+   "titol": "El Discurs"
+  },
+  {
+   "id": "IfQ4goXfWMU",
+   "artista": "Pere Tapias",
+   "titol": "El Tango de L'Amant"
+  },
+  {
+   "id": "1HzcQfFpHoQ",
+   "artista": "Pere Tapias",
+   "titol": "El Trenet de Ribes Roges"
+  },
+  {
+   "id": "workjyc99pY",
+   "artista": "Pere Tapias",
+   "titol": "Ens Podriem Trobar..."
+  },
+  {
+   "id": "vcH2B3DU1rw",
+   "artista": "Pere Tapias",
+   "titol": "És Carola"
+  },
+  {
+   "id": "kA45YMFHJf0",
+   "artista": "Pere Tapias",
+   "titol": "Felicitats Nano!"
+  },
+  {
+   "id": "bWVzyVbIS7k",
+   "artista": "Pere Tapias",
+   "titol": "Havanera Casolana"
+  },
+  {
+   "id": "D8yObNeRDPk",
+   "artista": "Pere Tapias",
+   "titol": "Jo Sóc el Pere, el de la Moto, el de la Gorra"
+  },
+  {
+   "id": "ZlbGgbl4RB0",
+   "artista": "Pere Tapias",
+   "titol": "L'Àrea Metropolitana"
+  },
+  {
+   "id": "x1sbLj1WrCs",
+   "artista": "Pere Tapias",
+   "titol": "La Cadira"
+  },
+  {
+   "id": "7Pg1uCrri4k",
+   "artista": "Pere Tapias",
+   "titol": "La Mar de Bé"
+  },
+  {
+   "id": "PUsvOGyOoOI",
+   "artista": "Pere Tapias",
+   "titol": "Màximes I Mínimes"
+  },
+  {
+   "id": "SDZUvVOfE64",
+   "artista": "Pere Tapias",
+   "titol": "Rotondes, Macagum Ronda"
+  },
+  {
+   "id": "GXRZaZEFiVk",
+   "artista": "Pere Tapias",
+   "titol": "Una Copa de Vi és Com un Poema"
+  },
+  {
+   "id": "mow7mdEIfkM",
+   "artista": "Pere Tapias",
+   "titol": "Vola, Vola, Vola"
+  },
+  {
+   "id": "O5vO7E46CiI",
+   "artista": "Pirat's Sound Sistema",
+   "titol": "Poemes i cançons"
+  },
+  {
+   "id": "DRIWah5DiyQ",
+   "artista": "Pirat's Sound Sistema",
+   "titol": "Sense llum"
+  },
+  {
+   "id": "RzDaj67IuQ4",
+   "artista": "Plan-ET",
+   "titol": "100 graus d'estiu"
+  },
+  {
+   "id": "NbImajEJC9M",
+   "artista": "Plan-ET",
+   "titol": "A Prop De Tu"
+  },
+  {
+   "id": "Hbnf5eD24vM",
+   "artista": "Plan-ET",
+   "titol": "A Prop De Tu"
+  },
+  {
+   "id": "9xXZQ4ERqI8",
+   "artista": "Plan-ET",
+   "titol": "Amor Blindat"
+  },
+  {
+   "id": "RJBrz2SMGrg",
+   "artista": "Plan-ET",
+   "titol": "Com Me Mires"
+  },
+  {
+   "id": "jLzzKVilmAI",
+   "artista": "Plan-ET",
+   "titol": "De Res"
+  },
+  {
+   "id": "JzaNvzAgpRo",
+   "artista": "Plan-ET",
+   "titol": "DELIRI"
+  },
+  {
+   "id": "m3iQlH9-Qgo",
+   "artista": "Plan-ET",
+   "titol": "DELIRI"
+  },
+  {
+   "id": "ifdMgovObxM",
+   "artista": "Plan-ET",
+   "titol": "Estic Per Tu"
+  },
+  {
+   "id": "3WJLC9vCEnI",
+   "artista": "Plan-ET",
+   "titol": "Mai t'oblidaré"
+  },
+  {
+   "id": "TAeJGju3O6E",
+   "artista": "Plan-ET",
+   "titol": "me vares robar"
+  },
+  {
+   "id": "gZgCPmu-CJg",
+   "artista": "Plan-ET",
+   "titol": "me vares robar"
+  },
+  {
+   "id": "hNDclPR4O2M",
+   "artista": "Plan-ET",
+   "titol": "NO ME CONEIX"
+  },
+  {
+   "id": "tk3bW_GQS2Q",
+   "artista": "Plan-ET",
+   "titol": "NO ME CONEIX (feat. cosijoan)"
+  },
+  {
+   "id": "ZPYWNLK4-pw",
+   "artista": "Plan-ET",
+   "titol": "Papà"
+  },
+  {
+   "id": "BWI6XGgBWME",
+   "artista": "Plan-ET",
+   "titol": "Punt De Mira"
+  },
+  {
+   "id": "3CWgaq6BY9Y",
+   "artista": "Plan-ET",
+   "titol": "Punt De Mira"
+  },
+  {
+   "id": "FOw9NU91WUo",
+   "artista": "Plan-ET",
+   "titol": "Pus Mai Més"
+  },
+  {
+   "id": "o1hFh7X41Lw",
+   "artista": "Plan-ET",
+   "titol": "Pus Mai Més (feat. Reïna)"
+  },
+  {
+   "id": "SfiuKuAYRJw",
+   "artista": "Plan-ET",
+   "titol": "QUI ESTIMA MALLORCA?"
+  },
+  {
+   "id": "kDfrU4LqLS8",
+   "artista": "Plan-ET",
+   "titol": "Una Foto Teva (feat. Júlia Colom)"
+  },
+  {
+   "id": "KEACBPA1dFw",
+   "artista": "Plan-ET",
+   "titol": "Una Foto Teva (feat. Júlia Colom)"
+  },
+  {
+   "id": "wF_22aT1I8c",
+   "artista": "Plan-ET",
+   "titol": "VICI"
+  },
+  {
+   "id": "r136Ud_aZNI",
+   "artista": "Rapsodes",
+   "titol": "Concert de Rapsodes -  Alboraia -  2 de Juliol de 2007"
+  },
+  {
+   "id": "LWN9VIOqPhU",
+   "artista": "Rapsodes",
+   "titol": "Mel"
+  },
+  {
+   "id": "FMqmH2yDWic",
+   "artista": "Rapsodes",
+   "titol": "Mil paraules"
+  },
+  {
+   "id": "VQJ-NnzC_WU",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes - Boda La Romeu i El Isaac - 2013"
+  },
+  {
+   "id": "kbcZEEeWtH0",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes 25 d'Abril 2009 València"
+  },
+  {
+   "id": "PJA9Syezgrg",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes al 22e Mercat de Musica Viva de Vic 2010"
+  },
+  {
+   "id": "wyWNF5sU8YE",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes al programa Ànima del C33"
+  },
+  {
+   "id": "B0N-MEVO4DE",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes Atupa Sala Simbiosi Alzira 2013"
+  },
+  {
+   "id": "t3IjuazxUFg",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes Matisse 17 Febrer 2010 València"
+  },
+  {
+   "id": "fmUdPgDHQp8",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 10 - Dinar de Nadal Mésdemil"
+  },
+  {
+   "id": "jhqoy08wPvw",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 11 - Les 12 Hores"
+  },
+  {
+   "id": "diSxigr6mOQ",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 14 - Premis Octubre 2009"
+  },
+  {
+   "id": "DUH4ysKzpYQ",
+   "artista": "Rapsodes",
+   "titol": "Rapsohistòries Vol 6 - Festes Cardedeu El Polvorí"
+  },
+  {
+   "id": "_5U2UiVCiNI",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 8 - Festes de Gràcia"
+  },
+  {
+   "id": "8vAQane04oE",
+   "artista": "Raydibaum",
+   "titol": "Alfabet"
+  },
+  {
+   "id": "ENRCLGKDbj0",
+   "artista": "Raydibaum",
+   "titol": "Amunt els Mercats"
+  },
+  {
+   "id": "ajx-D5HkXQI",
+   "artista": "Raydibaum",
+   "titol": "Aniversari"
+  },
+  {
+   "id": "VDey_gLfxU0",
+   "artista": "Raydibaum",
+   "titol": "Autopistes del Meu Cap"
+  },
+  {
+   "id": "T53kE9kXfmg",
+   "artista": "Raydibaum",
+   "titol": "Brillen al Sol"
+  },
+  {
+   "id": "0mIWlsx8gkE",
+   "artista": "Raydibaum",
+   "titol": "Cançó de Bressol per a Després del Tsunami"
+  },
+  {
+   "id": "bYlZZNyMGCE",
+   "artista": "Raydibaum",
+   "titol": "De Petit"
+  },
+  {
+   "id": "B7jBtcN7aQI",
+   "artista": "Raydibaum",
+   "titol": "Dins la Balena"
+  },
+  {
+   "id": "iLZEsgggnCo",
+   "artista": "Raydibaum",
+   "titol": "Dins la Balena"
+  },
+  {
+   "id": "N-MiwSEcmK4",
+   "artista": "Raydibaum",
+   "titol": "El Cel Nu"
+  },
+  {
+   "id": "qiHbe6oVa28",
+   "artista": "Raydibaum",
+   "titol": "El Pop Ha Mort"
+  },
+  {
+   "id": "pXXCGIewN5I",
+   "artista": "Raydibaum",
+   "titol": "Els Fils"
+  },
+  {
+   "id": "Bv52p3gG6fo",
+   "artista": "Raydibaum",
+   "titol": "Final Meteòric"
+  },
+  {
+   "id": "78THcvjU4_A",
+   "artista": "Raydibaum",
+   "titol": "Gegants"
+  },
+  {
+   "id": "91kbA0paNs0",
+   "artista": "Raydibaum",
+   "titol": "Grans Esperances"
+  },
+  {
+   "id": "RTzaJZhzIcA",
+   "artista": "Raydibaum",
+   "titol": "Hexàgons Vermells"
+  },
+  {
+   "id": "gO2MGN9O-W0",
+   "artista": "Raydibaum",
+   "titol": "La Fugida"
+  },
+  {
+   "id": "Mp684id9eEY",
+   "artista": "Raydibaum",
+   "titol": "Maleeixo el Temps"
+  },
+  {
+   "id": "5xruZoMlxyw",
+   "artista": "Raydibaum",
+   "titol": "Matí"
+  },
+  {
+   "id": "GifypePUWEM",
+   "artista": "Raydibaum",
+   "titol": "Mentre Ells Somriuen"
+  },
+  {
+   "id": "Kso5-kpMtXg",
+   "artista": "Raydibaum",
+   "titol": "Món al Revés"
+  },
+  {
+   "id": "5QpogvflXVQ",
+   "artista": "Raydibaum",
+   "titol": "Morireu al Voltant"
+  },
+  {
+   "id": "Lz_Cu2vhQQA",
+   "artista": "Raydibaum",
+   "titol": "Per Fí Potser Demà"
+  },
+  {
+   "id": "TNP89EPUExA",
+   "artista": "Raydibaum",
+   "titol": "Quiets"
+  },
+  {
+   "id": "ceZVMrbwm0s",
+   "artista": "Raydibaum",
+   "titol": "Regirant"
+  },
+  {
+   "id": "rz156H5Wo-U",
+   "artista": "Raydibaum",
+   "titol": "Tres per 4"
+  },
+  {
+   "id": "YxJi_51XoQY",
+   "artista": "Raydibaum",
+   "titol": "Viatge d'un Savi Vilatrista Cap Enlloc"
+  },
+  {
+   "id": "rVUBSDCjbTE",
+   "artista": "Repúblika Ska",
+   "titol": "02. SOM REPUBLIKANS - REPÚBLIKA SKA (JA SOM AQUÍ!)"
+  },
+  {
+   "id": "-UbGpnD3DyI",
+   "artista": "Repúblika Ska",
+   "titol": "03. FRONT D'ALLIBERAMENT NACIONAL - REPÚBLIKA SKA (JA SOM AQUÍ!)"
+  },
+  {
+   "id": "VpIxdaL-CdQ",
+   "artista": "Repúblika Ska",
+   "titol": "05. NO EM CONFORMO - REPÚBLIKA SKA (JA SOM AQUÍ!)"
+  },
+  {
+   "id": "qC4c7EpW1jk",
+   "artista": "Repúblika Ska",
+   "titol": "08. LA CIUTAT DELS MORTS - REPÚBLIKA SKA (JA SOM AQUÍ!)"
+  },
+  {
+   "id": "a5Y3pznNFLU",
+   "artista": "Repúblika Ska",
+   "titol": "Més vida"
+  },
+  {
+   "id": "azlt5Cd3SF8",
+   "artista": "Repúblika Ska",
+   "titol": "Més Vida - Repúblika Ska (RESISTIREM 2013)"
+  },
+  {
+   "id": "GPQeV5fN_5E",
+   "artista": "Repúblika Ska",
+   "titol": "Perquè Vull"
+  },
+  {
+   "id": "GBMjsZr6dUA",
+   "artista": "Repúblika Ska",
+   "titol": "Perquè vull - Repúblika Ska (RESISTIREM 2013)"
+  },
+  {
+   "id": "eDcZ4jXDngE",
+   "artista": "Repúblika Ska",
+   "titol": "Repúblika Ska presenta RESISTIREM"
+  },
+  {
+   "id": "dopuPchaBHk",
+   "artista": "Repúblika Ska",
+   "titol": "Serem"
+  },
+  {
+   "id": "LukSQoeqpLA",
+   "artista": "Repúblika Ska",
+   "titol": "Serem - Repúblika Ska (RESISTIREM 2013)"
+  },
+  {
+   "id": "bIXCxMLLGSk",
+   "artista": "Repúblika Ska",
+   "titol": "Som de l'oest"
+  },
+  {
+   "id": "0FC4sbHy62o",
+   "artista": "Repúblika Ska",
+   "titol": "Tu pots"
+  },
+  {
+   "id": "ypkSy2UG_J0",
+   "artista": "Repúblika Ska",
+   "titol": "Tu pots- Repúblika Ska (RESISTIREM 2013)"
+  },
+  {
+   "id": "IDOBCpjdx94",
+   "artista": "Roger Mas",
+   "titol": "Cançó de Bressol"
+  },
+  {
+   "id": "V9hZPHl_leQ",
+   "artista": "Roger Mas",
+   "titol": "Cor Pur"
+  },
+  {
+   "id": "x2qvuQ85EoU",
+   "artista": "Roger Mas",
+   "titol": "Deixa'm Trencar L'encant (La Flor de la Redempció)"
+  },
+  {
+   "id": "fwuyaIsSnIY",
+   "artista": "Roger Mas",
+   "titol": "Després de la Tempesta"
+  },
+  {
+   "id": "ZuAhh19HodY",
+   "artista": "Roger Mas",
+   "titol": "Dos Falcons"
+  },
+  {
+   "id": "xIWMK9GGdhA",
+   "artista": "Roger Mas",
+   "titol": "El Diable, la Princesa I Jo"
+  },
+  {
+   "id": "gfigw32Irz0",
+   "artista": "Roger Mas",
+   "titol": "El Setè Estel (La Flor del Somni)"
+  },
+  {
+   "id": "b7sAiv-ZMyU",
+   "artista": "Roger Mas",
+   "titol": "El Temps S'ha Tratocat"
+  },
+  {
+   "id": "VLdzxUn1ch4",
+   "artista": "Roger Mas",
+   "titol": "El Toll de Mercuri (La Flor de la Mort)"
+  },
+  {
+   "id": "bsk-lnZzxt8",
+   "artista": "Roger Mas",
+   "titol": "L'hort"
+  },
+  {
+   "id": "JOstDuGBcJQ",
+   "artista": "Roger Mas",
+   "titol": "La Capsa de Cotó"
+  },
+  {
+   "id": "OMGr6rRql10",
+   "artista": "Roger Mas",
+   "titol": "La Dansa de la Serp"
+  },
+  {
+   "id": "Eh2Ut9Hl7LU",
+   "artista": "Roger Mas",
+   "titol": "La Dansa del Bosc (La Flor de la Vida)"
+  },
+  {
+   "id": "RCj36EAL_sM",
+   "artista": "Roger Mas",
+   "titol": "La Nena de Les Neus (La Flor del Pecat)"
+  },
+  {
+   "id": "xwTTlJGeo0o",
+   "artista": "Roger Mas",
+   "titol": "La Senyora Dels Guants Vermells"
+  },
+  {
+   "id": "utMa_P-LiPQ",
+   "artista": "Roger Mas",
+   "titol": "Les Maragdes"
+  },
+  {
+   "id": "rOiqMAG-X_c",
+   "artista": "Roger Mas",
+   "titol": "Llums de Colors (La Flor de la Consciència)"
+  },
+  {
+   "id": "d8JQndld0PI",
+   "artista": "Roger Mas",
+   "titol": "Odissea?"
+  },
+  {
+   "id": "pu6DKeMRJ5Y",
+   "artista": "Roger Mas",
+   "titol": "Records de Viatge (La Flor de la Memòria)"
+  },
+  {
+   "id": "4YlWLwCEDcI",
+   "artista": "Roger Mas",
+   "titol": "Tinc un Blau Brut D'abril Eixut"
+  },
+  {
+   "id": "kGil-3zCZf0",
+   "artista": "Roger Mas",
+   "titol": "Trist Com el Sol"
+  },
+  {
+   "id": "2ZLEWN3UNog",
+   "artista": "Roger Mas",
+   "titol": "Volant"
+  },
+  {
+   "id": "qv_V3xRFEAc",
+   "artista": "Sa Pena",
+   "titol": "Buscant el camí"
+  },
+  {
+   "id": "fLHfZc_TWCQ",
+   "artista": "Sa Pena",
+   "titol": "Caliu"
+  },
+  {
+   "id": "SkvMqSzWGjY",
+   "artista": "Sa Pena",
+   "titol": "Camins bifurcats"
+  },
+  {
+   "id": "0-z-7_RVp30",
+   "artista": "Sa Pena",
+   "titol": "Consciència d'herència"
+  },
+  {
+   "id": "JdpXC8WFVqc",
+   "artista": "Sa Pena",
+   "titol": "De l'hort al plat (feat. Mistilo)"
+  },
+  {
+   "id": "gggBXEV3KhM",
+   "artista": "Sa Pena",
+   "titol": "Emergència"
+  },
+  {
+   "id": "WsXZzruZvwI",
+   "artista": "Sa Pena",
+   "titol": "Emergència"
+  },
+  {
+   "id": "asAh-DP5xyU",
+   "artista": "Sa Pena",
+   "titol": "Este equip no falla"
+  },
+  {
+   "id": "1K4kwbZsNnU",
+   "artista": "Sa Pena",
+   "titol": "Fera"
+  },
+  {
+   "id": "rhO_ecLJBAg",
+   "artista": "Sa Pena",
+   "titol": "Fera"
+  },
+  {
+   "id": "s19l-wWSKRg",
+   "artista": "Sa Pena",
+   "titol": "FOC I FLAMA"
+  },
+  {
+   "id": "82OdAZojrMc",
+   "artista": "Sa Pena",
+   "titol": "Herois"
+  },
+  {
+   "id": "e7PyVvytEBY",
+   "artista": "Sa Pena",
+   "titol": "Llibera't"
+  },
+  {
+   "id": "rboq2bgLFto",
+   "artista": "Sa Pena",
+   "titol": "Llibera't"
+  },
+  {
+   "id": "-zarLg40QjI",
+   "artista": "Sa Pena",
+   "titol": "LLIBERA'T (Speed Up)"
+  },
+  {
+   "id": "3Kk31BD2P5o",
+   "artista": "Sa Pena",
+   "titol": "Només Tu Pots"
+  },
+  {
+   "id": "JkoJRSw8zyU",
+   "artista": "Sa Pena",
+   "titol": "Prioritat"
+  },
+  {
+   "id": "g1CT-Cgm_DU",
+   "artista": "Sa Pena",
+   "titol": "Refuig"
+  },
+  {
+   "id": "_V9FIvAzuQs",
+   "artista": "Sa Pena",
+   "titol": "REVOLUCIÓ"
+  },
+  {
+   "id": "tlHgBgY83gU",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena  - Herois"
+  },
+  {
+   "id": "Djok9YBm3g8",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Buscant el camí"
+  },
+  {
+   "id": "UiYr0muGxP4",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - CALIU"
+  },
+  {
+   "id": "wYhTLcYW-SM",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Camins Bifurcats"
+  },
+  {
+   "id": "zbhfyjicubg",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Consciència d'herència"
+  },
+  {
+   "id": "hfbQi-vcX_0",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - De L'hort al Plat"
+  },
+  {
+   "id": "J1u2im4Oo3A",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Fera"
+  },
+  {
+   "id": "wid4IXJU9-c",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Foc i flama (Visualizer)"
+  },
+  {
+   "id": "S41xAnBmnbM",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Llibera't"
+  },
+  {
+   "id": "L4pbfzNxAHA",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Llibera't (Speed Up)"
+  },
+  {
+   "id": "izSTzRuLoHk",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Només Tu Pots"
+  },
+  {
+   "id": "M6bO-zjsvDw",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Refuig"
+  },
+  {
+   "id": "FEeDMXbscR0",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Revolució"
+  },
+  {
+   "id": "feSs3aLydoE",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - TOT CANVIA"
+  },
+  {
+   "id": "Cm76suXQt70",
+   "artista": "Sa Pena",
+   "titol": "Tot Canvia"
+  },
+  {
+   "id": "lGEUqeF0Aak",
+   "artista": "Sangtraït",
+   "titol": "Alè de Mil-Cent (En Directe)"
+  },
+  {
+   "id": "hUd14vyPMsU",
+   "artista": "Sangtraït",
+   "titol": "Cara I Creu (En Directe)"
+  },
+  {
+   "id": "A-mZVh_egew",
+   "artista": "Sangtraït",
+   "titol": "El Meu Amic"
+  },
+  {
+   "id": "WjrtK5a34_8",
+   "artista": "Sangtraït",
+   "titol": "Esperit de Mar"
+  },
+  {
+   "id": "UBUY7AGIFgE",
+   "artista": "Sangtraït",
+   "titol": "Foc D'Amor  (Burning Love)"
+  },
+  {
+   "id": "Cb7C715EoGs",
+   "artista": "Sangtraït",
+   "titol": "Història D'un... Mort de Gana"
+  },
+  {
+   "id": "phnKkUvhFaI",
+   "artista": "Sangtraït",
+   "titol": "Inqui-missió"
+  },
+  {
+   "id": "h8yUDqWJnXQ",
+   "artista": "Sangtraït",
+   "titol": "Jocs de Guerra (En Directe)"
+  },
+  {
+   "id": "J6KuugME4qo",
+   "artista": "Sangtraït",
+   "titol": "Llei Seca"
+  },
+  {
+   "id": "HbbhADvPOsQ",
+   "artista": "Sangtraït",
+   "titol": "Llop de Bar"
+  },
+  {
+   "id": "lVXxG0wDmqE",
+   "artista": "Sangtraït",
+   "titol": "Mai Pots Ser Tu (En Directe)"
+  },
+  {
+   "id": "RTkQVqpEcoU",
+   "artista": "Sangtraït",
+   "titol": "Mar de Verí"
+  },
+  {
+   "id": "IlVzothF8bU",
+   "artista": "Sangtraït",
+   "titol": "Neu"
+  },
+  {
+   "id": "NKSu7IOFYw0",
+   "artista": "Sangtraït",
+   "titol": "Pont de la Mort"
+  },
+  {
+   "id": "6xB45Ko4N_w",
+   "artista": "Sangtraït",
+   "titol": "Profecia"
+  },
+  {
+   "id": "VlTXSkCwniw",
+   "artista": "Sangtraït",
+   "titol": "Qüestió de Nassos"
+  },
+  {
+   "id": "5HC9Njpi2j8",
+   "artista": "Sangtraït",
+   "titol": "Sense Respecte"
+  },
+  {
+   "id": "FMVKKJ0awaE",
+   "artista": "Sangtraït",
+   "titol": "Temps Passats"
+  },
+  {
+   "id": "6aaP6rJGOYA",
+   "artista": "Sara Roy",
+   "titol": "Sara Roy - Quan torno a casa torno a ser (Lyric Video)"
+  },
+  {
+   "id": "RcdqkMpxIWo",
+   "artista": "Sara Roy",
+   "titol": "Sara Roy, Ivette Nadal - Entre tanta merda (Videoclip Oficial)"
+  },
+  {
+   "id": "dwTpd3Krw2o",
+   "artista": "Sense Sal",
+   "titol": "12. El vagó del nostre tren - Sense Sal"
+  },
+  {
+   "id": "a_GMcAX1mfY",
+   "artista": "Sense Sal",
+   "titol": "9. Negre i gris - Sense Sal"
+  },
+  {
+   "id": "H2Y2GWCQ4zk",
+   "artista": "Sense Sal",
+   "titol": "CANTEM ELS VOSTRES COMENTARIS!"
+  },
+  {
+   "id": "lvGFduszTdI",
+   "artista": "Sense Sal",
+   "titol": "Cors de fusta"
+  },
+  {
+   "id": "oru9OyXzd5Q",
+   "artista": "Sense Sal",
+   "titol": "Demà sortirà el sol"
+  },
+  {
+   "id": "SxqDOlyJyfw",
+   "artista": "Sense Sal",
+   "titol": "Dues estacions"
+  },
+  {
+   "id": "TWqZSoR6e-I",
+   "artista": "Sense Sal",
+   "titol": "El vagó del nostre tren"
+  },
+  {
+   "id": "HaRWy3aOvsg",
+   "artista": "Sense Sal",
+   "titol": "Encara no ets aquí"
+  },
+  {
+   "id": "1ptx2sqaoZo",
+   "artista": "Sense Sal",
+   "titol": "Encara no ets aquí - Sense Sal"
+  },
+  {
+   "id": "fbAenUC_hsY",
+   "artista": "Sense Sal",
+   "titol": "Encara Queden Dies"
+  },
+  {
+   "id": "Yf6vG2y6OCE",
+   "artista": "Sense Sal",
+   "titol": "Encara queden dies - Sense Sal [Només tenim la veu, 2017]"
+  },
+  {
+   "id": "CNwV_toU5R0",
+   "artista": "Sense Sal",
+   "titol": "Fàcil"
+  },
+  {
+   "id": "adXjznz6Prk",
+   "artista": "Sense Sal",
+   "titol": "Fàcil - Sense Sal [Només tenim la veu, 2017]"
+  },
+  {
+   "id": "FuLrZKATaA8",
+   "artista": "Sense Sal",
+   "titol": "L'home sol"
+  },
+  {
+   "id": "JVp5gSczE3k",
+   "artista": "Sense Sal",
+   "titol": "L'home sol - Sense sal"
+  },
+  {
+   "id": "qyPmsto4pzs",
+   "artista": "Sense Sal",
+   "titol": "La caixa"
+  },
+  {
+   "id": "kcEl63wUyKo",
+   "artista": "Sense Sal",
+   "titol": "La utopia del Senyor Oblit"
+  },
+  {
+   "id": "Rw9HM5Z_Btw",
+   "artista": "Sense Sal",
+   "titol": "Lluny"
+  },
+  {
+   "id": "ROUt0Rw7TOM",
+   "artista": "Sense Sal",
+   "titol": "Maletes de blat"
+  },
+  {
+   "id": "JV2LPixLOUg",
+   "artista": "Sense Sal",
+   "titol": "Mare Foca"
+  },
+  {
+   "id": "J9yzE0E8TzA",
+   "artista": "Sense Sal",
+   "titol": "Mare foca - Sense Sal [Només tenim la veu, 2017]"
+  },
+  {
+   "id": "Mo5FoxNY2TE",
+   "artista": "Sense Sal",
+   "titol": "Mil paraules"
+  },
+  {
+   "id": "hDn6MHcu_k0",
+   "artista": "Sense Sal",
+   "titol": "Negre i gris"
+  },
+  {
+   "id": "wrG1mk5AVis",
+   "artista": "Sense Sal",
+   "titol": "No T'esperaré"
+  },
+  {
+   "id": "oc7uVotlOE8",
+   "artista": "Sense Sal",
+   "titol": "No t'esperaré - Sense Sal [Només tenim la veu, 2017)"
+  },
+  {
+   "id": "r8lHG2ptYwE",
+   "artista": "Sense Sal",
+   "titol": "Oda a la fortalesa"
+  },
+  {
+   "id": "TpFc7gP1CXQ",
+   "artista": "Sense Sal",
+   "titol": "Pigues"
+  },
+  {
+   "id": "xs6eb9CMArQ",
+   "artista": "Sense Sal",
+   "titol": "Planetes"
+  },
+  {
+   "id": "bxSVZZPUQU4",
+   "artista": "Sense Sal",
+   "titol": "Professor cruel"
+  },
+  {
+   "id": "Vdv9pw6o62k",
+   "artista": "Sense Sal",
+   "titol": "Quisca Ramsès i picaró"
+  },
+  {
+   "id": "pnECUZ9HnQo",
+   "artista": "Sense Sal",
+   "titol": "Quisca Ramsès i Picaró  - Sense sal"
+  },
+  {
+   "id": "KhAz2nVUouY",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal - Només tenim la veu (2017) [Àlbum sencer]"
+  },
+  {
+   "id": "2HBuoWP2v6Q",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal - Planetes (Videoclip)"
+  },
+  {
+   "id": "yyoIisC5gF8",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal a 'El Món a Rac 1' amb Jordi Basté"
+  },
+  {
+   "id": "e_oV5w-tkO0",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal a la Festa Major de Terrassa (2016)"
+  },
+  {
+   "id": "UiAYubqFhms",
+   "artista": "Sense Sal",
+   "titol": "Sense sal a la Jazz Cava \"Dues estacions\""
+  },
+  {
+   "id": "r8roAHvZq_Y",
+   "artista": "Sense Sal",
+   "titol": "Sense sal a la RENFE \"Quisca Ramsès Picaró\""
+  },
+  {
+   "id": "Qsgh_yk6ztc",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal guanyadors del Concurs de Cançó de Salitja 2012"
+  },
+  {
+   "id": "r6UjEUEKHUw",
+   "artista": "Sense Sal",
+   "titol": "Senyor Morse"
+  },
+  {
+   "id": "VVHcz08Imzo",
+   "artista": "Sense Sal",
+   "titol": "Surt del teu cap"
+  },
+  {
+   "id": "unKlILqGK1g",
+   "artista": "Sense Sal",
+   "titol": "Terra endins"
+  },
+  {
+   "id": "AP-izFXocyk",
+   "artista": "Sílvia Comes",
+   "titol": "A un Amic del País Basc"
+  },
+  {
+   "id": "mcfeCCaxVAY",
+   "artista": "Sílvia Comes",
+   "titol": "Àngel Per un Final"
+  },
+  {
+   "id": "YGSVWygvf2I",
+   "artista": "Sílvia Comes",
+   "titol": "Companya"
+  },
+  {
+   "id": "0WvNH-Or5NQ",
+   "artista": "Sílvia Comes",
+   "titol": "El Mestre D'escola"
+  },
+  {
+   "id": "s-a-fAqyum4",
+   "artista": "Sílvia Comes",
+   "titol": "No Us Caséssiu Pas, Noietes"
+  },
+  {
+   "id": "QjF2KwNdG-U",
+   "artista": "Sílvia Comes",
+   "titol": "Petita Serenata Diürna"
+  },
+  {
+   "id": "GFI6oN88uxg",
+   "artista": "Sílvia Comes",
+   "titol": "Primavera de Praga"
+  },
+  {
+   "id": "XsuGWQw4QKQ",
+   "artista": "Sílvia Comes",
+   "titol": "Queda't"
+  },
+  {
+   "id": "ZT4RIIemYRw",
+   "artista": "Sílvia Comes",
+   "titol": "Salsitxes"
+  },
+  {
+   "id": "1W7PReog34I",
+   "artista": "Sílvia Comes",
+   "titol": "Una Bruixa Com Nosaltres"
+  },
+  {
+   "id": "bFWqbdxJ-5c",
+   "artista": "Sílvia Comes",
+   "titol": "Visca L'amor"
+  },
+  {
+   "id": "qBZ7KEg1OHc",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "Mallorca i No Trobaràs La Mar (MA. Live In Tokio)"
+  },
+  {
+   "id": "HzhidX7MF6k",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "Na Nena (Tornada A Menorca) (MA. Live In Tokio)"
+  },
+  {
+   "id": "5pe464H9uYw",
+   "artista": "Skaparapid",
+   "titol": "Desapareix"
+  },
+  {
+   "id": "i-5tFP-gqrA",
+   "artista": "Skaparapid",
+   "titol": "Desapareix"
+  },
+  {
+   "id": "nbW5maz666g",
+   "artista": "Skaparapid",
+   "titol": "Dona Rebel·la't"
+  },
+  {
+   "id": "25jUYLHC-rc",
+   "artista": "Skaparapid",
+   "titol": "Donant la Kanya"
+  },
+  {
+   "id": "UG1dJjBpzjg",
+   "artista": "Skaparapid",
+   "titol": "El Ball de la Gent Rara"
+  },
+  {
+   "id": "IBQsGkptvzE",
+   "artista": "Skaparapid",
+   "titol": "Temps Perdut"
+  },
+  {
+   "id": "QCoikc8vxo8",
+   "artista": "Slad Mobb",
+   "titol": "Herència"
+  },
+  {
+   "id": "oJjSd3Qryrs",
+   "artista": "Slad Mobb",
+   "titol": "Herència"
+  },
+  {
+   "id": "g9Ua1DELO0E",
+   "artista": "Slad Mobb",
+   "titol": "Si tu hi ets (The One)"
+  },
+  {
+   "id": "o9tc3srWPzQ",
+   "artista": "Slad Mobb",
+   "titol": "Slad Mobb - Som la Clau (Prod. 60k Cvndy & 60k Solitaire)"
+  },
+  {
+   "id": "ke6-ukp0Y8o",
+   "artista": "Slad Mobb",
+   "titol": "Som la Clau"
+  },
+  {
+   "id": "SL_eXn05plo",
+   "artista": "Slad Mobb",
+   "titol": "Vull saber de tu"
+  },
+  {
+   "id": "rb7ygVTSMnc",
+   "artista": "Sopa de Cabra",
+   "titol": "Cau el Sol (En Directe)"
+  },
+  {
+   "id": "3DMSE7kw0Rw",
+   "artista": "Sopa de Cabra",
+   "titol": "El Llarg Viatge (En Directe)"
+  },
+  {
+   "id": "TpmJoPu3AeU",
+   "artista": "Sopa de Cabra",
+   "titol": "Exilis (En Directe)"
+  },
+  {
+   "id": "FAkmnYB4xnU",
+   "artista": "Sopa de Cabra",
+   "titol": "Fronteres (En Directe a Empúries, febrer 2020)"
+  },
+  {
+   "id": "SC2lIrhlma8",
+   "artista": "Sopa de Cabra",
+   "titol": "Instants del Temps"
+  },
+  {
+   "id": "TlufyX18Goo",
+   "artista": "Sopa de Cabra",
+   "titol": "L'Estiu dels Anys (En Directe)"
+  },
+  {
+   "id": "IfD4g9vqRk0",
+   "artista": "Sopa de Cabra",
+   "titol": "La Dansa de la Llum (En Directe)"
+  },
+  {
+   "id": "j_iyxLyUCKo",
+   "artista": "Sopa de Cabra",
+   "titol": "Lletania (En Directe)"
+  },
+  {
+   "id": "WpwSmngWo2E",
+   "artista": "Sopa de Cabra",
+   "titol": "Mala Sang (En Directe a Girona, desembre 2017)"
+  },
+  {
+   "id": "ylVDDZYzBP8",
+   "artista": "Sopa de Cabra",
+   "titol": "Passaran uns Anys (En Directe a Cap Roig, agost 2025)"
+  },
+  {
+   "id": "Bs7tCEfSYRc",
+   "artista": "Sopa de Cabra",
+   "titol": "Pell de Lluna"
+  },
+  {
+   "id": "Y8tFY1LBTVU",
+   "artista": "Sopa de Cabra",
+   "titol": "Quan Es Faci Fosc (En Directe)"
+  },
+  {
+   "id": "26xYgC2h4Y8",
+   "artista": "Sopa de Cabra",
+   "titol": "Solta una Estrella"
+  },
+  {
+   "id": "qfIStyp9qqY",
+   "artista": "Sopa de Cabra",
+   "titol": "Viure (En Directe)"
+  },
+  {
+   "id": "l74qlARKSMM",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Aires de Revolució - Terra Ferma"
+  },
+  {
+   "id": "mFcHfgr5bv4",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Crònica de Viure"
+  },
+  {
+   "id": "NGDY3jewvig",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Els Nous Batecs (Acústic) - Terra Ferma"
+  },
+  {
+   "id": "Eh7a8SmruU4",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Enemic Desconegut - Terra Ferma"
+  },
+  {
+   "id": "UeWh4Hs6Dcw",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Fent camí"
+  },
+  {
+   "id": "tH-qqtyAS0M",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Fenya rai"
+  },
+  {
+   "id": "01bYIMFcsm8",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Gent del Llamp"
+  },
+  {
+   "id": "LNmoyuCauVs",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "La Força del Camp"
+  },
+  {
+   "id": "i3yrQ13bgdE",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Mentre duri l'espera"
+  },
+  {
+   "id": "KB6xGPOcxDo",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Necessitem Aprendre"
+  },
+  {
+   "id": "VaY3jUJZhCc",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Oda a Tu"
+  },
+  {
+   "id": "MXnPn5mwFl0",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Podria Ser Demà"
+  },
+  {
+   "id": "zRBApBE7k-o",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Principi d'Incertesa"
+  },
+  {
+   "id": "pDFayiIjrKo",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Quaderns Captius"
+  },
+  {
+   "id": "9waf719PYBI",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Res en Ferm"
+  },
+  {
+   "id": "D1oquuErP6c",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Som aquí"
+  },
+  {
+   "id": "bwuWzr_28nY",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Teoria de la Relativitat"
+  },
+  {
+   "id": "PykRwpBH_rY",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Terra Ferma - 02. Els Nous Batecs [Un Brot de Llum, 2018]"
+  },
+  {
+   "id": "UMkTckIXGvg",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Terra Ferma - 03. Un Altre Juny [Un Brot de Llum, 2018]"
+  },
+  {
+   "id": "sELbty3fseA",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Terra Ferma - 08. Confidències (amb Gertrudis) [Un Brot de Llum, 2018]"
+  },
+  {
+   "id": "iO4Nka4ztr4",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Terra Ferma | Els Nous Batecs (VIDEOCLIP)"
+  },
+  {
+   "id": "ReHuGssvZEE",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Terra Ferma | Tornar-hi (videolyric)"
+  },
+  {
+   "id": "MBP1lpKcWgs",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Un Altre Juny"
+  },
+  {
+   "id": "5vrTBS7YElM",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "Videoresum Barraques Reus 2019 - Terra Ferma"
+  },
+  {
+   "id": "iC_CeG4yH0U",
+   "artista": "The Demencials",
+   "titol": "Per Tu I Per Mi"
+  },
+  {
+   "id": "xM3MoELu1nQ",
+   "artista": "Tomeu Penya",
+   "titol": "A Ca Vell, Cus, Cus ?"
+  },
+  {
+   "id": "vP21rotj8tA",
+   "artista": "Tomeu Penya",
+   "titol": "Abans Que Comencis A Plorar"
+  },
+  {
+   "id": "F7li-HeUfr4",
+   "artista": "Tomeu Penya",
+   "titol": "Això És Pecat"
+  },
+  {
+   "id": "fHFT2vW64CE",
+   "artista": "Tomeu Penya",
+   "titol": "Al Teu Costat"
+  },
+  {
+   "id": "dFBQQERNKbc",
+   "artista": "Tomeu Penya",
+   "titol": "Alegria..."
+  },
+  {
+   "id": "WbS5dXpDvgM",
+   "artista": "Tomeu Penya",
+   "titol": "Banastres"
+  },
+  {
+   "id": "m_pWqrRttdA",
+   "artista": "Tomeu Penya",
+   "titol": "Bon Vespre de Concert"
+  },
+  {
+   "id": "u67oaR7rrAI",
+   "artista": "Tomeu Penya",
+   "titol": "Cançó Per a Dones, Frares, Ministre, Son Dureta, Mentides i es Mè Mort Arribant a Manacor"
+  },
+  {
+   "id": "QrT17qGndq8",
+   "artista": "Tomeu Penya",
+   "titol": "Cant Per a Sa Meva Gent"
+  },
+  {
+   "id": "rt5khE7FrjY",
+   "artista": "Tomeu Penya",
+   "titol": "Ciutadà D'aquest Món"
+  },
+  {
+   "id": "TpGhFgh6aws",
+   "artista": "Tomeu Penya",
+   "titol": "D'encà Que No Hi Ets"
+  },
+  {
+   "id": "g4TyEzcSwWQ",
+   "artista": "Tomeu Penya",
+   "titol": "De Tot Cor"
+  },
+  {
+   "id": "F17J_GskC6k",
+   "artista": "Tomeu Penya",
+   "titol": "Diga-li"
+  },
+  {
+   "id": "mzSI_J3QLHA",
+   "artista": "Tomeu Penya",
+   "titol": "Dues Nits a Barcelona"
+  },
+  {
+   "id": "CNIdzh45HyE",
+   "artista": "Tomeu Penya",
+   "titol": "El Dimoni dins Jo"
+  },
+  {
+   "id": "ycfYLYcGUVA",
+   "artista": "Tomeu Penya",
+   "titol": "El Meu Amic Anglès"
+  },
+  {
+   "id": "21RG9VMMz6Y",
+   "artista": "Tomeu Penya",
+   "titol": "Els Cors Ferits"
+  },
+  {
+   "id": "YDojUeU1CGs",
+   "artista": "Tomeu Penya",
+   "titol": "En Biel de Capdepera"
+  },
+  {
+   "id": "W7O9MAxsbeM",
+   "artista": "Tomeu Penya",
+   "titol": "Es Guanyar Fa Riure"
+  },
+  {
+   "id": "N4vOlV7d-zQ",
+   "artista": "Tomeu Penya",
+   "titol": "És per tu"
+  },
+  {
+   "id": "iRaGcVdVtuE",
+   "artista": "Tomeu Penya",
+   "titol": "Es Tango de ses Paparres"
+  },
+  {
+   "id": "iua9Y-fGdwg",
+   "artista": "Tomeu Penya",
+   "titol": "Feixets de cabells"
+  },
+  {
+   "id": "lfmy3jsl9vE",
+   "artista": "Tomeu Penya",
+   "titol": "Gràcies Per Sa Ràdio"
+  },
+  {
+   "id": "-16_1agNZro",
+   "artista": "Tomeu Penya",
+   "titol": "Has vist ploure mai? (Have you ever seen the rain)"
+  },
+  {
+   "id": "rEycxDLTvzQ",
+   "artista": "Tomeu Penya",
+   "titol": "Havanera"
+  },
+  {
+   "id": "APHOdEsMgYo",
+   "artista": "Tomeu Penya",
+   "titol": "I ballàrem dins una rajola"
+  },
+  {
+   "id": "HDYScFwFlSY",
+   "artista": "Tomeu Penya",
+   "titol": "Illes Dins d'un Riu"
+  },
+  {
+   "id": "52p-MjGCHIY",
+   "artista": "Tomeu Penya",
+   "titol": "Illes dins un riu"
+  },
+  {
+   "id": "F9nr1-tq05g",
+   "artista": "Tomeu Penya",
+   "titol": "Illes Dins un Riu"
+  },
+  {
+   "id": "IiatuuMle1w",
+   "artista": "Tomeu Penya",
+   "titol": "Jugant a Pòquer"
+  },
+  {
+   "id": "9tYs6Ae5OM0",
+   "artista": "Tomeu Penya",
+   "titol": "La Vila"
+  },
+  {
+   "id": "VZe1NhkBk0Y",
+   "artista": "Tomeu Penya",
+   "titol": "Llavors t'enyor"
+  },
+  {
+   "id": "7mOhKldjpUg",
+   "artista": "Tomeu Penya",
+   "titol": "Maciana"
+  },
+  {
+   "id": "-nHWV-TQjf4",
+   "artista": "Tomeu Penya",
+   "titol": "Mallorquins i Catalans"
+  },
+  {
+   "id": "ZRDPAfrmyN4",
+   "artista": "Tomeu Penya",
+   "titol": "Mirau-ma Mirau-nos Bé"
+  },
+  {
+   "id": "bR7dD-LuhHM",
+   "artista": "Tomeu Penya",
+   "titol": "Morenassa"
+  },
+  {
+   "id": "Q_gzE21mO1s",
+   "artista": "Tomeu Penya",
+   "titol": "No Em Despertis"
+  },
+  {
+   "id": "hLu34yjMPa8",
+   "artista": "Tomeu Penya",
+   "titol": "No Puc Fer Mes Que Creure"
+  },
+  {
+   "id": "gHw2hja9oYc",
+   "artista": "Tomeu Penya",
+   "titol": "Per S'aeroport del Prat"
+  },
+  {
+   "id": "f8T0nz_Yg84",
+   "artista": "Tomeu Penya",
+   "titol": "Plou"
+  },
+  {
+   "id": "jD5l_wPCzrI",
+   "artista": "Tomeu Penya",
+   "titol": "Porreres"
+  },
+  {
+   "id": "HIWtAj4sZoU",
+   "artista": "Tomeu Penya",
+   "titol": "R.D.I. Comunitat des Pla"
+  },
+  {
+   "id": "Yl9cNlOnk8w",
+   "artista": "Tomeu Penya",
+   "titol": "S'estalella"
+  },
+  {
+   "id": "gWEYM66nQX0",
+   "artista": "Tomeu Penya",
+   "titol": "Sa Perdiu Revetllera"
+  },
+  {
+   "id": "vCrGQZ-BwHw",
+   "artista": "Tomeu Penya",
+   "titol": "Santa Bàrbara"
+  },
+  {
+   "id": "tDr7CRFHiNw",
+   "artista": "Tomeu Penya",
+   "titol": "Si No Fos Per Tu"
+  },
+  {
+   "id": "37OT9d2Ywxg",
+   "artista": "Tomeu Penya",
+   "titol": "Suau"
+  },
+  {
+   "id": "zJjrwzDimMk",
+   "artista": "Tomeu Penya",
+   "titol": "Tenies Set, Pepet"
+  },
+  {
+   "id": "P2ykVmYD3RE",
+   "artista": "Tomeu Penya",
+   "titol": "Toca-La-Hi, Toca-La-Hi"
+  },
+  {
+   "id": "Jrt_XzRXexw",
+   "artista": "Tomeu Penya",
+   "titol": "Torna"
+  },
+  {
+   "id": "ScK3WrGrPhc",
+   "artista": "Tomeu Penya",
+   "titol": "Tu A Ca Teva, Jo A Ca Meva (i Déu Per Tot)"
+  },
+  {
+   "id": "fr5Ta25MazI",
+   "artista": "Tomeu Penya",
+   "titol": "Un Pinyol"
+  },
+  {
+   "id": "HAux3G9y1EM",
+   "artista": "Tomeu Penya",
+   "titol": "Una Aclucada d'ulls"
+  },
+  {
+   "id": "wYGt58sNwOg",
+   "artista": "Tomeu Penya",
+   "titol": "Una Nit d'estiu"
+  },
+  {
+   "id": "X_ehr4NDEz8",
+   "artista": "Tomeu Penya",
+   "titol": "Una Passada de Senyora"
+  },
+  {
+   "id": "0kR2YKZ8_XM",
+   "artista": "Tomeu Penya",
+   "titol": "Unes Paraules"
+  },
+  {
+   "id": "D3u-AQs0h44",
+   "artista": "Tomeu Penya",
+   "titol": "Vaja Quin Paper"
+  },
+  {
+   "id": "Q8Zs6U9sEgU",
+   "artista": "Tomeu Penya",
+   "titol": "Vine Cap Aquí"
+  },
+  {
+   "id": "-23Cc4aPfF8",
+   "artista": "Toti Soler",
+   "titol": "Bestiari"
+  },
+  {
+   "id": "s_su0kJsWXw",
+   "artista": "Toti Soler",
+   "titol": "Bitllet de Quinze"
+  },
+  {
+   "id": "WqP2QtSCCJc",
+   "artista": "Toti Soler",
+   "titol": "Buscant On No N'hi Ha"
+  },
+  {
+   "id": "cTqIdWYim9o",
+   "artista": "Toti Soler",
+   "titol": "Cuca Morena"
+  },
+  {
+   "id": "SuAWzmpC_m0",
+   "artista": "Toti Soler",
+   "titol": "El Cant Monjo"
+  },
+  {
+   "id": "kGdFFdq_GXA",
+   "artista": "Toti Soler",
+   "titol": "El Gat Blanc"
+  },
+  {
+   "id": "GerJ8NDuBrg",
+   "artista": "Toti Soler",
+   "titol": "Entremig (A Lluís Sardà Jr.)"
+  },
+  {
+   "id": "iLWeC3H04Qk",
+   "artista": "Toti Soler",
+   "titol": "Estudi"
+  },
+  {
+   "id": "hgDxAvDJyM8",
+   "artista": "Toti Soler",
+   "titol": "L'Amo de Son Canta en Gall"
+  },
+  {
+   "id": "UMOr9C6F2Pg",
+   "artista": "Toti Soler",
+   "titol": "L'Autobús Fa L'Amor Amb Les Torres de Quart"
+  },
+  {
+   "id": "H5IiBIXAu4k",
+   "artista": "Toti Soler",
+   "titol": "Maig"
+  },
+  {
+   "id": "Nf-6wFtmgsI",
+   "artista": "Toti Soler",
+   "titol": "Peixets de Plata"
+  },
+  {
+   "id": "pDOUQeH-G-0",
+   "artista": "Toti Soler",
+   "titol": "S'alblegai Alegre (Buleria de Menorca)"
+  },
+  {
+   "id": "KY1C6OW2ZYc",
+   "artista": "Toti Soler",
+   "titol": "Sencera"
+  },
+  {
+   "id": "hZDb02VTvAc",
+   "artista": "Toti Soler",
+   "titol": "Tristenge"
+  },
+  {
+   "id": "vtR7xRmEidU",
+   "artista": "Trast",
+   "titol": "01 Per viure - Trast (El Detonant)"
+  },
+  {
+   "id": "gOpmQJXFlRw",
+   "artista": "Trast",
+   "titol": "01 Un nou paradís - Trast"
+  },
+  {
+   "id": "VoQYE3mlI2k",
+   "artista": "Trast",
+   "titol": "02 Obrim els ulls (feat. La Pegatina) - Trast"
+  },
+  {
+   "id": "i90cyZ_Kwwc",
+   "artista": "Trast",
+   "titol": "02 Som el crit (feat. Itaca Band) - Trast (El Detonant)"
+  },
+  {
+   "id": "0V-Xs_DCirE",
+   "artista": "Trast",
+   "titol": "03 Tren sense destí (feat. Aspencat) - Trast (El Detonant)"
+  },
+  {
+   "id": "-hu_dzZt7J4",
+   "artista": "Trast",
+   "titol": "04 Continents trencats (feat. Animal) - Trast (El Detonant)"
+  },
+  {
+   "id": "7eCwHUUUfsI",
+   "artista": "Trast",
+   "titol": "05 Sol i Lluna - Trast"
+  },
+  {
+   "id": "90-o8LMbiA8",
+   "artista": "Trast",
+   "titol": "06 Crida fort - Trast (El Detonant)"
+  },
+  {
+   "id": "7CSF_JswpAc",
+   "artista": "Trast",
+   "titol": "06 Vull ser feliç - Trast"
+  },
+  {
+   "id": "rTK8ABWa0nM",
+   "artista": "Trast",
+   "titol": "07 La nit sencera - Trast (El Detonant)"
+  },
+  {
+   "id": "fRuHdJszaN0",
+   "artista": "Trast",
+   "titol": "07 Promeses de matinada - Trast"
+  },
+  {
+   "id": "QFouLl0ZyGI",
+   "artista": "Trast",
+   "titol": "08 La meva revolució - Trast (El Detonant)"
+  },
+  {
+   "id": "USBcOU_MuZg",
+   "artista": "Trast",
+   "titol": "09 Ho volem tot (feat. Strombers) - Trast"
+  },
+  {
+   "id": "MUKY6KLww2c",
+   "artista": "Trast",
+   "titol": "10 Quan em falla la veu - Trast (El Detonant)"
+  },
+  {
+   "id": "nLbiafDHLvw",
+   "artista": "Trast",
+   "titol": "11 Les Rambles - Trast"
+  },
+  {
+   "id": "KaKW_jhRq34",
+   "artista": "Trast",
+   "titol": "De Nit - Trast feat. La Raíz (directe a Sant Vicenç dels Horts)"
+  },
+  {
+   "id": "_khZDNOtELE",
+   "artista": "Trast",
+   "titol": "Junts - TRAST (videoclip oficial)"
+  },
+  {
+   "id": "fE0htYmJcMI",
+   "artista": "Trast",
+   "titol": "Nova oportunitat (des del confinament)"
+  },
+  {
+   "id": "d8qfwUALumk",
+   "artista": "Trast",
+   "titol": "Quan es Pon el Sol"
+  },
+  {
+   "id": "ynpBcQNngrU",
+   "artista": "Trast",
+   "titol": "Tot i Res"
+  },
+  {
+   "id": "hZ64P1QXieU",
+   "artista": "Trast",
+   "titol": "Trast - A prop de l'abisme"
+  },
+  {
+   "id": "klJXluHg3YI",
+   "artista": "Trast",
+   "titol": "Trast - Buscant amb tu (videoclip oficial)"
+  },
+  {
+   "id": "bGwlUTwfEXs",
+   "artista": "Trast",
+   "titol": "Trast - Focs artificials"
+  },
+  {
+   "id": "j5SbxuRZQkY",
+   "artista": "Trast",
+   "titol": "Trast - Ho vull tot amb tu"
+  },
+  {
+   "id": "CEHMjVR8BCo",
+   "artista": "Trast",
+   "titol": "Trast - No som mags"
+  },
+  {
+   "id": "FQIx8O8bxi4",
+   "artista": "Trast",
+   "titol": "Trast - Nova oportunitat (videoclip oficial)"
+  },
+  {
+   "id": "AJCz3riQuYQ",
+   "artista": "Trast",
+   "titol": "Trast - Que no torni a passar (Lyric video)"
+  },
+  {
+   "id": "pcsDrgFZeRs",
+   "artista": "Trast",
+   "titol": "Trast - Som vius"
+  },
+  {
+   "id": "T0JYjG2nyEc",
+   "artista": "Trast",
+   "titol": "Trast- Avui serem valents (Lyric video)"
+  },
+  {
+   "id": "G1YjXAaL40A",
+   "artista": "Txarango",
+   "titol": "Ara Que Balles amb Mi"
+  },
+  {
+   "id": "gAF1AxF-8kw",
+   "artista": "Txarango",
+   "titol": "Cançons de Llibertat"
+  },
+  {
+   "id": "g5zVCiviTns",
+   "artista": "Txarango",
+   "titol": "El Combat"
+  },
+  {
+   "id": "DPTQXvKzli0",
+   "artista": "Txarango",
+   "titol": "El Meu Poble"
+  },
+  {
+   "id": "UsnEqU-Q_yg",
+   "artista": "Txarango",
+   "titol": "És Hora de Tornar a Casa"
+  },
+  {
+   "id": "Sk-R2wnETco",
+   "artista": "Txarango",
+   "titol": "Esperança"
+  },
+  {
+   "id": "SPms0JJNxKQ",
+   "artista": "Txarango",
+   "titol": "Et Recordo"
+  },
+  {
+   "id": "2Qfj3NtKL6w",
+   "artista": "Txarango",
+   "titol": "La Foguera"
+  },
+  {
+   "id": "TB--qIdk2l8",
+   "artista": "Txarango",
+   "titol": "La Memòria de Les Mans"
+  },
+  {
+   "id": "rlprFR8nWAs",
+   "artista": "Txarango",
+   "titol": "No T'adormis"
+  },
+  {
+   "id": "PowZM_pSXP8",
+   "artista": "Txarango",
+   "titol": "Nous Camins"
+  },
+  {
+   "id": "zklA5l6eeSo",
+   "artista": "Txarango",
+   "titol": "Quan Calla la Ciutat"
+  },
+  {
+   "id": "gdirO-27rz4",
+   "artista": "Txarango",
+   "titol": "Quan Cau el Sol"
+  },
+  {
+   "id": "0Wg-aTa1W50",
+   "artista": "Txarango",
+   "titol": "Si Sabessis"
+  },
+  {
+   "id": "A1BUtbVr5Rc",
+   "artista": "Txarango",
+   "titol": "Terra Endins"
+  },
+  {
+   "id": "KMjNPt05Wfw",
+   "artista": "Txarango",
+   "titol": "Una Lluna a L'Aigua"
+  },
+  {
+   "id": "cvbGUDQWSDk",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 05. Herba alta [Prod. T. Sombra]"
+  },
+  {
+   "id": "b5S3eQZAwsc",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 11. Matriu"
+  },
+  {
+   "id": "r-BbYZvaHzQ",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - Planta morta [Prod. Manu i T.Sombra] (ÀUDIO OFICIAL)"
+  },
+  {
+   "id": "HIn3tgMlEpM",
+   "artista": "Valtonyc",
+   "titol": "La Ve Baixa"
+  },
+  {
+   "id": "RuzgZ3CKrFM",
+   "artista": "Valtonyc",
+   "titol": "Perdre El Control"
+  },
+  {
+   "id": "t8yGKakOxhw",
+   "artista": "XEIC!",
+   "titol": "Essència"
+  },
+  {
+   "id": "x3KJTUW4jlo",
+   "artista": "XEIC!",
+   "titol": "Instant L'ahir"
+  },
+  {
+   "id": "mx9pO8VGcNM",
+   "artista": "XEIC!",
+   "titol": "Malson (con La pegatina)"
+  },
+  {
+   "id": "MszyHLYLtgY",
+   "artista": "XEIC!",
+   "titol": "Mils de veus"
+  },
+  {
+   "id": "Wl3SGBXA2cY",
+   "artista": "XEIC!",
+   "titol": "Règim"
+  },
+  {
+   "id": "C43qh9VNIOQ",
+   "artista": "XEIC!",
+   "titol": "Toca revolta"
+  },
+  {
+   "id": "8l7gPihpovo",
+   "artista": "XEIC!",
+   "titol": "Tornem a Casa"
+  }
+ ],
+ "restenPendents": [
+  {
+   "id": "uK-B6MGOIFE",
+   "artista": "31 FAM",
+   "titol": "Contigo (Remix)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ZQCDRYJjBz8",
+   "artista": "31 FAM",
+   "titol": "X2 REAL",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Xe7pr-AkRhQ",
+   "artista": "9Son",
+   "titol": "Corason",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rScA7ZRBNY8",
+   "artista": "9SON",
+   "titol": "9son - Corason",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "e6u9CWqjMxM",
+   "artista": "Adala",
+   "titol": "Adala & Siva - Blank Fosk [Mixtape 2018]",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "M9zXhsatkYI",
+   "artista": "Adala",
+   "titol": "ADALA EN RUTA [KLIMA 2022]",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ROsyvNkBHyo",
+   "artista": "Adala",
+   "titol": "GENESI TUR 2018 [Video-Resum] - Adala & The Same Song Band",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "iT8YM0u2CvA",
+   "artista": "Adrià Puntí",
+   "titol": "Anònima In Albis",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Mu0jHOl7v_Q",
+   "artista": "Adrià Puntí",
+   "titol": "Joan",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2AhwTOCm7Vc",
+   "artista": "Adrià Puntí",
+   "titol": "Longui No. 13",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "fT5VB2ARRvw",
+   "artista": "Adrià Puntí",
+   "titol": "Maria",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "sOrm2F1oWbM",
+   "artista": "Adrià Puntí",
+   "titol": "Mixeta",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rK79LmdR5_Q",
+   "artista": "Adrià Puntí",
+   "titol": "Mixtura",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "qwVu_yXW1MM",
+   "artista": "Adrià Puntí",
+   "titol": "Paté de Foié",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "wED1bivwuzM",
+   "artista": "Adrià Puntí",
+   "titol": "Presumida",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "7psgLmvepU4",
+   "artista": "Adrià Puntí",
+   "titol": "Ventimiglia",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "bL4ckCEDnYE",
+   "artista": "Adrià Puntí",
+   "titol": "Xabadà",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "3AtbrR3qNqw",
+   "artista": "Agraviats",
+   "titol": "ASTITAKA MAKARUNYA NYA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "T8WADjBwWug",
+   "artista": "Agraviats",
+   "titol": "La Criba",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "1LLAbEyvAhY",
+   "artista": "Agraviats",
+   "titol": "La Tertulia",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "h6dsx8Q3UNs",
+   "artista": "Agraviats",
+   "titol": "Nablues",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "fym_1lmnlY8",
+   "artista": "Agraviats",
+   "titol": "Tue mouches",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "n57IpxcEhnY",
+   "artista": "Agraviats",
+   "titol": "Veo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "6ooQJH7Uj6U",
+   "artista": "Albert Pla",
+   "titol": "Adiós Terrícolas",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "X37Twv2uRjI",
+   "artista": "Albert Pla",
+   "titol": "Antonia Font",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Cyo69Iqj8c4",
+   "artista": "Albert Pla",
+   "titol": "Calaveras",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "9C4aURzI5pY",
+   "artista": "Albert Pla",
+   "titol": "Circo",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "5v-O3mg4Aas",
+   "artista": "Albert Pla",
+   "titol": "Dejadme",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ICV4GgtANPU",
+   "artista": "Albert Pla",
+   "titol": "El Lado Más Bestia de la Vida (Walk on the Wild Side)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "zu9TmvAkaOE",
+   "artista": "Albert Pla",
+   "titol": "Entierro",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "AzM5nshnHS0",
+   "artista": "Albert Pla",
+   "titol": "Insomnio",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "wIwbI0zwtmQ",
+   "artista": "Albert Pla",
+   "titol": "Muerto",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "RtN4WDl0HbY",
+   "artista": "Albert Pla",
+   "titol": "Raro",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "U3aHWM57-bQ",
+   "artista": "Albert Pla",
+   "titol": "Ratón",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "JAv24XO7-vk",
+   "artista": "Albert Pla",
+   "titol": "Teófilo Garrido",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Mh3JtFQEnUY",
+   "artista": "Albert Pla",
+   "titol": "Vocació de Suicida",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "b0crBqLlVe0",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - 14. La Rumbia (ft. Marta Trujillo)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "CQVqr6cMLoY",
+   "artista": "AlQuadrat",
+   "titol": "AlQuadrat - Sent la Fragancia",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "D3u-TSyauJg",
+   "artista": "AlQuadrat",
+   "titol": "Festa Barrakes 2018",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "f5qsrMgXyVc",
+   "artista": "Anaïs Vila",
+   "titol": "Coda",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rT5tHj7i00k",
+   "artista": "Anaïs Vila",
+   "titol": "Come Back And Dance",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "d26a8S9G8-4",
+   "artista": "Anaïs Vila",
+   "titol": "Goodbye",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "HGJmcc5iqmY",
+   "artista": "Andreu Rifé",
+   "titol": "Color",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "fxNsRQpmUt4",
+   "artista": "Andreu Rifé",
+   "titol": "La Criolla",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "QAr713wG3TI",
+   "artista": "Anna Andreu",
+   "titol": "'Letargo y Despertar' d'Anna Andreu",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "y-Hj354Uy5c",
+   "artista": "Atupa",
+   "titol": "Atupa - No más",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "mfl9fgvfi54",
+   "artista": "Au Rora",
+   "titol": "De Cara — Au Rora (lyric video)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "LGIS9v_h_sQ",
+   "artista": "Ayryn",
+   "titol": "Déjà Vu",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "CsAT_gjA_uM",
+   "artista": "Baya Baye",
+   "titol": "08390",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "uD9ZmK-On0U",
+   "artista": "Baya Baye",
+   "titol": "Calipso Club",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "j64_ZXxD9AY",
+   "artista": "Baya Baye",
+   "titol": "Doberman Pinscher's",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "DcX4GMdOE3w",
+   "artista": "Baya Baye",
+   "titol": "Sons of Mgt",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "BmReD8C8uUo",
+   "artista": "Baya Baye",
+   "titol": "Xinas y Manchas",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "EUOFWujGRL0",
+   "artista": "Boom Boom Fighters",
+   "titol": "Badmind",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "zbKEqJJkem0",
+   "artista": "Boom Boom Fighters",
+   "titol": "G Spot",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "CVb8I9WD4bE",
+   "artista": "Boom Boom Fighters",
+   "titol": "Gun Clown",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "TypOPp4Ir_s",
+   "artista": "Boom Boom Fighters",
+   "titol": "K.O. (90’s Tribute)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "l_K1PhTYHbU",
+   "artista": "Boom Boom Fighters",
+   "titol": "Misick",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "QzMXniP4mvQ",
+   "artista": "Boom Boom Fighters",
+   "titol": "No Skailark",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "BV2zgvdDyLU",
+   "artista": "Boom Boom Fighters",
+   "titol": "Party Tonight",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "w28ui4SLd6I",
+   "artista": "Boom Boom Fighters",
+   "titol": "Pum Pum Diamond",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "XCJhNtRE1BU",
+   "artista": "Boom Boom Fighters",
+   "titol": "Rise Up",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "1CIAehZFxkU",
+   "artista": "Boom Boom Fighters",
+   "titol": "SQUANCH",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "f8_zKNIIW28",
+   "artista": "Boom Boom Fighters",
+   "titol": "Weedhead",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "lePmRrwxc6g",
+   "artista": "Boom Boom Fighters",
+   "titol": "Young Veterans",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "MBojT74Nzzs",
+   "artista": "Brams",
+   "titol": "Hey, Joe (no m'enlluernis)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "pCn_SGykBj8",
+   "artista": "BTZ",
+   "titol": "ATMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "333X9TKkGLI",
+   "artista": "BTZ",
+   "titol": "ATMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "jmtCMEcc-Gs",
+   "artista": "BTZ",
+   "titol": "BTZ - ATMOS (Official Visualizer) #COSMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "_YFWkgsdXxE",
+   "artista": "BTZ",
+   "titol": "BTZ - COME BACK ( Visualizer )",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Sy2FY3nQ8Gk",
+   "artista": "BTZ",
+   "titol": "BTZ - COSMOS ( Visualizer )",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mPjFs14hR6s",
+   "artista": "BTZ",
+   "titol": "BTZ - DEMONS ( Visualizer )",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7FdmvPFCrR8",
+   "artista": "BTZ",
+   "titol": "BTZ - LA RUMBA DEL KIRIKU ( Official Visualizer ) #COSMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "JNyIFKA-i9s",
+   "artista": "BTZ",
+   "titol": "BTZ - STEP BY STEP ( Visualizer )",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "6r-MObY5B68",
+   "artista": "BTZ",
+   "titol": "BTZ X CLOE - CHERE (Official Visualizer) #COSMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "oX42GVjF3Cg",
+   "artista": "BTZ",
+   "titol": "CHERE",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "x43Oc59IZrM",
+   "artista": "BTZ",
+   "titol": "CHERE",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Cs6BsdZBQYs",
+   "artista": "BTZ",
+   "titol": "COME BACK",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Qerqpaxhpwg",
+   "artista": "BTZ",
+   "titol": "COSMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "AsOLnHNlMqc",
+   "artista": "BTZ",
+   "titol": "DEMONS",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "xsLcID2l5lI",
+   "artista": "BTZ",
+   "titol": "FENIX",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "xX-cD2GUR68",
+   "artista": "BTZ",
+   "titol": "FENIX",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "3F-ZzEA6Le0",
+   "artista": "BTZ",
+   "titol": "FENIX - BTZ (Official Visualizer) #COSMOS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "p7B9fQkrta0",
+   "artista": "BTZ",
+   "titol": "La Apuesta",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "frKGwtE-RlA",
+   "artista": "BTZ",
+   "titol": "LA RUMBA DEL KIRIKU",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "6lKc83vOg_w",
+   "artista": "BTZ",
+   "titol": "LA RUMBA DEL KIRIKU",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HzkEFeMFD60",
+   "artista": "BTZ",
+   "titol": "Menorca",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "D96Tq3iIH6o",
+   "artista": "BTZ",
+   "titol": "Mi Recuerdo",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "P8H7ZH38baA",
+   "artista": "BTZ",
+   "titol": "Que Te Esperas",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "oGTv_dizigw",
+   "artista": "BTZ",
+   "titol": "STEP BY STEP",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "CWyphcvmRFc",
+   "artista": "Buhos",
+   "titol": "Brama",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "-J8x8ZMmepE",
+   "artista": "Buhos",
+   "titol": "Pura vida",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "TzfFUPoY9Y0",
+   "artista": "Cloe",
+   "titol": "Sin saber el que",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "vf0BFDzgpmo",
+   "artista": "Club Social Carme",
+   "titol": "GAVINA.MP3 - SESSIÓ #02 - CLUB SOCIAL CARME",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ysKfbZElXaY",
+   "artista": "Club Social Carme",
+   "titol": "LA LUDWIG BAND - SESSIÓ #04 - CLUB SOCIAL CARME",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "kiqaF9zmbMA",
+   "artista": "Colomet",
+   "titol": "5 Segundos 2024",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ZRbAqDCowcs",
+   "artista": "Dàmaris Gelabert",
+   "titol": "La Tarantel·la del Senyor Monopolio",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "v9dXnI4romE",
+   "artista": "Deskarats",
+   "titol": "1m2",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "S4eON7qezlY",
+   "artista": "Deskarats",
+   "titol": "9977 Km",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "wOuQTNRk4q0",
+   "artista": "Deskarats",
+   "titol": "All in Macau",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "sNBRpm8FCGc",
+   "artista": "Deskarats",
+   "titol": "All In Macau",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7yXs5g-9Cdo",
+   "artista": "Deskarats",
+   "titol": "Baby Face",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "M-oZ8jadrmQ",
+   "artista": "Deskarats",
+   "titol": "Calor Tropical",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "sIaHV_IgMLA",
+   "artista": "Deskarats",
+   "titol": "Carmen",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ST9MrOPHKec",
+   "artista": "Deskarats",
+   "titol": "George",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "9lkh_M19Esg",
+   "artista": "Deskarats",
+   "titol": "Go To Lloret",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "tiueXgkHTIE",
+   "artista": "Deskarats",
+   "titol": "Kinkis",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "PsTIzggxbpw",
+   "artista": "Deskarats",
+   "titol": "Majinga Zetto",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "X4DdaKvH1Y4",
+   "artista": "Deskarats",
+   "titol": "Mambo Jambo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "VWY2Sea8ZZQ",
+   "artista": "Deskarats",
+   "titol": "Ns/Nc",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Oc8oMbwbLbg",
+   "artista": "Deskarats",
+   "titol": "Outro",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HEqST0GVMqs",
+   "artista": "Deskarats",
+   "titol": "Rastablanc",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "qLS545iRmfg",
+   "artista": "Deskarats",
+   "titol": "Records",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Wgitgz-GUYg",
+   "artista": "Deskarats",
+   "titol": "Surf Rider",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2f5n1z6_i6o",
+   "artista": "Dr. Calypso",
+   "titol": "2300 Millions",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "CpyJvxBU5Gs",
+   "artista": "Dr. Calypso",
+   "titol": "Blow up the Bank",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "WzDxi_G2xo4",
+   "artista": "Dr. Calypso",
+   "titol": "Filmoteca",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2hkBwjX95i8",
+   "artista": "Dr. Calypso",
+   "titol": "I Want a Chance for Romance (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "bcJgl0xJFjM",
+   "artista": "Dr. Calypso",
+   "titol": "Independance (Live)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "lSqbQCFo2_M",
+   "artista": "Dr. Calypso",
+   "titol": "Kaspa",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "oUlf5Lc8Nxc",
+   "artista": "Dr. Calypso",
+   "titol": "Mango",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "oF9Ao5ugvKc",
+   "artista": "Dr. Calypso",
+   "titol": "Mr. Farlop's",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "YOkE3NffAV8",
+   "artista": "Dr. Calypso",
+   "titol": "My Avocado",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ggTo-CkZ4ag",
+   "artista": "Dr. Calypso",
+   "titol": "Plan 10 (Live)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "qnNwUiIFVMM",
+   "artista": "Dr. Calypso",
+   "titol": "Pole Man",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "N1VhzK-uRGs",
+   "artista": "Dr. Calypso",
+   "titol": "Reggae Per en Peach",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "4oIYusoh3CE",
+   "artista": "Dr. Calypso",
+   "titol": "Reggae Xxx",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "YX9zPHs78iM",
+   "artista": "Dr. Calypso",
+   "titol": "Vehicle",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "V2oAnQoMAwY",
+   "artista": "Dusminguet",
+   "titol": "Babouins",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "hJG6AP7905E",
+   "artista": "Dusminguet",
+   "titol": "Candombe apertura",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2BbFBFyg9DU",
+   "artista": "Dusminguet",
+   "titol": "Candombe clausura",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Lf7pjPJJP2s",
+   "artista": "Dusminguet",
+   "titol": "Centroamérica",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "X3PFxaH7elQ",
+   "artista": "Dusminguet",
+   "titol": "La rabia",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "N8KiMii-j0s",
+   "artista": "Dusminguet",
+   "titol": "Nitson",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "OYH_-qX4wfw",
+   "artista": "Dusminguet",
+   "titol": "Spain",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "QCdQuu2FZpY",
+   "artista": "Ebri Knight",
+   "titol": "Bloody Mary",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "txYTAOe07WE",
+   "artista": "Ebri Knight",
+   "titol": "Johnny Fiddle",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "pj6sRJ_uEHA",
+   "artista": "Ebri Knight",
+   "titol": "Lullaby",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "9NWUTp9oiVo",
+   "artista": "el petit de cal eril",
+   "titol": "El petit de cal eril _ Razzamatazz 19-12-2025",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "MeVxACHn078",
+   "artista": "el petit de cal eril",
+   "titol": "El Petit de Cal Eril - N.S.C.A.L.H. [Full video album]",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "kU7uedFZAeY",
+   "artista": "El Pony Pisador",
+   "titol": "Tonada Encantada",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "yZzQGjaYezg",
+   "artista": "Enric Hernàez",
+   "titol": "El Desertor",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rkyotqKDq4s",
+   "artista": "Enric Hernàez",
+   "titol": "Te Recuerdo Amanda",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "k0p4nSAy8z4",
+   "artista": "Enric Hernàez",
+   "titol": "Viva L'Italia",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "MUmFyj3vLPk",
+   "artista": "Es Reboster",
+   "titol": "Baile",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "5BlmJtsVfdg",
+   "artista": "Es Reboster",
+   "titol": "Black & White",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mY5QRO_xMH0",
+   "artista": "Es Reboster",
+   "titol": "Immigrant",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Aigq6UUKsfs",
+   "artista": "Es Reboster",
+   "titol": "Ira",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "fiBWZDUYRek",
+   "artista": "Es Reboster",
+   "titol": "Malcriada",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "aiWmKQOZ1PQ",
+   "artista": "Es Reboster",
+   "titol": "MarRoc",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "X8ZSlNTW4bo",
+   "artista": "Es Reboster",
+   "titol": "Ruleta",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "PJKXKW1sTgw",
+   "artista": "Es Reboster",
+   "titol": "Sono Qui!",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "DKPDJlzPJBU",
+   "artista": "Es Reboster",
+   "titol": "Suerte",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "XC7oIjdZxwo",
+   "artista": "Es Reboster",
+   "titol": "Wow",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "bqxINlXBLMI",
+   "artista": "Flakko",
+   "titol": "Ángel (feat. Na Kate)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "3S-vNrlFf-Y",
+   "artista": "Flakko",
+   "titol": "Can Picafort (feat. Bart0)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ezfigQiknCs",
+   "artista": "Flakko",
+   "titol": "Capital",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "CEGjoLIGpmQ",
+   "artista": "Flakko",
+   "titol": "Freestyle pedaços",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "sbLxoOr6Htg",
+   "artista": "Flakko",
+   "titol": "Medicina",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "P-Ce39JKLTc",
+   "artista": "Flakko",
+   "titol": "Plastic",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ohDn4600y14",
+   "artista": "Flakko",
+   "titol": "TIB501",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "IM5HaT2g2iU",
+   "artista": "Gerard Jacquet",
+   "titol": "Si Dolce è 'l Tormento",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "hC9elbyOV9o",
+   "artista": "Gertrudis",
+   "titol": "El Pantera",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "pLwd43J6PAw",
+   "artista": "Gertrudis",
+   "titol": "La Rumba de Carnaval",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "QhjDRy2An0E",
+   "artista": "Gertrudis",
+   "titol": "Qué Bonica",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "3awhvfMLVzE",
+   "artista": "Gertrudis",
+   "titol": "Riete",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "EDYlj72JyJc",
+   "artista": "Gisela Bellsolà",
+   "titol": "Anna Marinera",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ZBl90bv_30Y",
+   "artista": "Gisela Bellsolà",
+   "titol": "Combat",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Ll9Bx1XXxEk",
+   "artista": "Gisela Bellsolà",
+   "titol": "País Catedral",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "fy1n9VvagJ0",
+   "artista": "Gossos",
+   "titol": "Borratxu",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "8T9TgrPE7X8",
+   "artista": "Gossos",
+   "titol": "La Carta",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "YZRdUbqD3rM",
+   "artista": "Gossos",
+   "titol": "La Casa",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "lsX9Q2nTADo",
+   "artista": "Gossos",
+   "titol": "La Selva Negra",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "is0LFxkoGlg",
+   "artista": "Gossos",
+   "titol": "Sun Is Shining",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ro4Ytv70urQ",
+   "artista": "Guillermina Motta",
+   "titol": "Bach de Roda",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "guP4p_EFxVg",
+   "artista": "Guillermina Motta",
+   "titol": "Lily",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "TnDwzhTVD7E",
+   "artista": "Joan Colomo",
+   "titol": "Els Amigos",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "hVbCCkzsrak",
+   "artista": "Joan Colomo",
+   "titol": "Núcleo Duro",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "a1oMhqBC3ls",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Batiscafo Katiuscas",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "aGcjA4tjUtg",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Gli ippopotami",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Ayieymoih9s",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Iniciam el descens a Júpiter",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "h1ZND6rYDOk",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Mano a Mano",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2F2vBz-NUFM",
+   "artista": "Joan Miquel Oliver",
+   "titol": "My Way",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "gwHKaIvrfpc",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Orthopedic Ragtime",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "I9sx49mSRk0",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Replay",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "X2YJG-CcjzA",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Robot sparks",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "A2EiSjgzqck",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Santa Clara St.",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "23C9iNw5h-E",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Strings & drums",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "bb7DzlmA2y4",
+   "artista": "Joan Miquel Oliver",
+   "titol": "Weekend on Mars",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Vce8aUzy60M",
+   "artista": "Josep Valtonyc",
+   "titol": "Balle Doble H FT Valtonyc - Kalashnikov (Videoclip)",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "4c6gN9ILojY",
+   "artista": "Josep Valtonyc",
+   "titol": "Charly Efe & Valtonyc - Modo Hater (Prod. Josep Valtonyc)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "LkpNf1Nkueo",
+   "artista": "Josep Valtonyc",
+   "titol": "JOSEP V • DESOBDC (videoclip) 2015",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "dyHS2bO9bmo",
+   "artista": "Josep Valtonyc",
+   "titol": "JOSEP VALTONYC · PURA ENTELEQUIA (2016)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "mpccibLRNDw",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - DEAR KAREN 💔",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "x2NzQY7uI1M",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - DEDUST2 (de_dust2)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "uTHg2GAjiUs",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - EPD [VIDEO]",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "RRifXvfyYz4",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - FINLANDIA (2019)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "RcVle66OEqk",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - GIAN MARIA VOLONTÉ [VIDEO]",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "gq9VlmX_VAo",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - L'IMMORTEL (2015)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "dUIjZczjTGc",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - NEVERSLEEP (TRABAJO COMPLETO)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "3ofREStHa-I",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC - THE GC DONT CRY 💋",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7T7_ukJyBSE",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC / PIET HEIN (Prod. Yeke Boy) VIDEOCLIP",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "C0--I5v1s5k",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC / SALONES (VIDEOCLIP)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "EG60LeujejA",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC & THE RE-FUGEES // 128 BARS // (Prod. Valtonyc)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "8Yg2qTn1ExE",
+   "artista": "Josep Valtonyc",
+   "titol": "VALTONYC | EL VIRUS (2020) Prod. STL Beatz",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "h1RDjy4LXIw",
+   "artista": "Júlia Cruz",
+   "titol": "El baile del querer",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "O3IL8rsNNTw",
+   "artista": "Karlus",
+   "titol": "3DÉN",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "UoGW64Gx6FE",
+   "artista": "Karlus",
+   "titol": "aliens",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "zMup3qh6glA",
+   "artista": "Karlus",
+   "titol": "Armadura",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "bf4yxoC0sy0",
+   "artista": "Karlus",
+   "titol": "buu",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "4zTyhs7aGO8",
+   "artista": "Karlus",
+   "titol": "es fameliar",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "03ddArmbsWE",
+   "artista": "Karlus",
+   "titol": "GUAJIRA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "vQcHX73aj5M",
+   "artista": "Karlus",
+   "titol": "he llorado",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "9uvrs7wb_Ho",
+   "artista": "Karlus",
+   "titol": "he llorado",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "p6JhnDvcgLk",
+   "artista": "Karlus",
+   "titol": "Karlus - Metamorfosi",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "RE_Ikkj8lfw",
+   "artista": "Karlus",
+   "titol": "Karlus - NOVA EBUSUS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rjwNr6s4aBw",
+   "artista": "Karlus",
+   "titol": "Karlus - RAJA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "dD3Z8uIgXTs",
+   "artista": "Karlus",
+   "titol": "Karlus - Sonada",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "J1QGHMqPflA",
+   "artista": "Karlus",
+   "titol": "Karlus - Tot lo que som",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "bNrG0dxpobA",
+   "artista": "Karlus",
+   "titol": "KYOTO",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "VsVWjBg4V48",
+   "artista": "Karlus",
+   "titol": "LINDO:)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "IqNKMcthj_4",
+   "artista": "Karlus",
+   "titol": "Metamorfosi",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "sgvqZMP7lZE",
+   "artista": "Karlus",
+   "titol": "NOVA EBUSUS",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "o_scHZ5PeBA",
+   "artista": "Karlus",
+   "titol": "PS2 CUMBIA",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "pGkrMw8q9NY",
+   "artista": "Karlus",
+   "titol": "RAJA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "-QZllpECLqI",
+   "artista": "Karlus",
+   "titol": "RITUAL",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2BktgEZtBIY",
+   "artista": "Karlus",
+   "titol": "Sonada",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "E_Bad0tUdx4",
+   "artista": "Karlus",
+   "titol": "Tot lo que som",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Ady-Enc53Qk",
+   "artista": "KOP",
+   "titol": "Ballin'",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "Dzo8T5_7K7M",
+   "artista": "KOP",
+   "titol": "Cadenas",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "qivzObe42UU",
+   "artista": "KOP",
+   "titol": "Carta de Beltza a Marc",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "IhHFiaFtLrw",
+   "artista": "KOP",
+   "titol": "Carta de Marc a Beltza",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "QHVhEfum4zU",
+   "artista": "KOP",
+   "titol": "Ofensiva",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "_mOb7jjrpWo",
+   "artista": "KOP",
+   "titol": "Unncensored",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "m232AMfz9Ls",
+   "artista": "La Bundu Band",
+   "titol": "A Tu",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "pw1kfGVORdY",
+   "artista": "La Bundu Band",
+   "titol": "Blood & dust (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "R3c1v95wIsA",
+   "artista": "La Bundu Band",
+   "titol": "Bundu Band jungle (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "yMu-Nf4QzSE",
+   "artista": "La Bundu Band",
+   "titol": "Cat Samurai",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "p_H5quXdJ4Q",
+   "artista": "La Bundu Band",
+   "titol": "Dj. Morrison punxant \"La Solució\" de La Bundu Band al Pub Absenta de Reus",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "eUec6o1V7us",
+   "artista": "La Bundu Band",
+   "titol": "Dj. Morrison punxant La Solució de La Bundu Band a la Calçotada d'Olesa",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "tlznCJWFgBQ",
+   "artista": "La Bundu Band",
+   "titol": "Fire, Freedom, Fighter",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "WuHcp1RvnIk",
+   "artista": "La Bundu Band",
+   "titol": "Fruta Fresca",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "PVl9Em6jR-8",
+   "artista": "La Bundu Band",
+   "titol": "Interludi, fire, freedom, fighter (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "z-SfTOT6INw",
+   "artista": "La Bundu Band",
+   "titol": "Intro (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "AV9ygEjFwv0",
+   "artista": "La Bundu Band",
+   "titol": "Joana",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "jUUH2-JtZYE",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - 24601",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "jOCbLTptTvU",
+   "artista": "La Bundu Band",
+   "titol": "La Bundu Band - Fire, Freedom, Fighter (Live Sala Apolo 02/04/2014)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "dQcJ5BsSYZM",
+   "artista": "La Bundu Band",
+   "titol": "On the net (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Dr60i6GEkT0",
+   "artista": "La Bundu Band",
+   "titol": "PALESTINA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "hS0eQuiCEME",
+   "artista": "La Bundu Band",
+   "titol": "Palestina (Live)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "kR0PUd83XzY",
+   "artista": "La Bundu Band",
+   "titol": "Polca d'ours (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Yf_QK924EnM",
+   "artista": "La Bundu Band",
+   "titol": "WELCOME TO JUNGLE",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "JIMoP-j0XAs",
+   "artista": "La Bundu Band",
+   "titol": "Welcome to jungle (Live)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "mYXtiVfA2zk",
+   "artista": "La Madam",
+   "titol": "Catalina",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "vDlUJlqcnEg",
+   "artista": "La Trinca",
+   "titol": "An Al Sentro (Remasterizado)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "f42ZbbFN8bU",
+   "artista": "La Trinca",
+   "titol": "Mama Caca (Remasterizado)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "1oq_js9TODk",
+   "artista": "La Trinca",
+   "titol": "Robert I La Cabra (Remasterizado)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "UyyApXlNTSY",
+   "artista": "La Trinca",
+   "titol": "Tentasión (Remasterizado)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "kr0S50i1pjY",
+   "artista": "La Troba Kung-Fú",
+   "titol": "La Rumba",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "OFQsyFlHcc0",
+   "artista": "La Troba Kung-Fú",
+   "titol": "Rock Rumberu",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "sEdFXssQuiw",
+   "artista": "La Troba Kung-Fú",
+   "titol": "Rumbasoltes",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "jyMvX-r3pP4",
+   "artista": "La Xica",
+   "titol": "malomalo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "g3CjdYFq49E",
+   "artista": "La Xica",
+   "titol": "malomalo - LA XICA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "m401VemF2ps",
+   "artista": "La Xica",
+   "titol": "Palmera Destroy - LA XICA x Orxata",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "AduHuObNET0",
+   "artista": "La Xica",
+   "titol": "Palmera Destroy (LA XICA x Orxata)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "3gCfyOJS090",
+   "artista": "La Xica",
+   "titol": "Tabú",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "gyC8-gJNUEs",
+   "artista": "La Xica",
+   "titol": "Tabú - LA XICA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "8uMR3_HBmEI",
+   "artista": "Lepanto 41",
+   "titol": "1. BURJKHALIFA - Lepanto 41, Selves (Visualizer)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "_VWwjkA2gZY",
+   "artista": "Lepanto 41",
+   "titol": "8. GALÀCTICA - Lepanto 41, Fortuu, Sarco911 (Visualizer)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "a-gvRyArVag",
+   "artista": "Lepanto 41",
+   "titol": "Aquella Lady",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "k7y70VuXMVQ",
+   "artista": "Lepanto 41",
+   "titol": "Aquella Lady (Speed Up)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "zfKcaGBE54Q",
+   "artista": "Lepanto 41",
+   "titol": "Aquella Lady (videoclip)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "z5s0JX_wFLU",
+   "artista": "Lepanto 41",
+   "titol": "EL CAMÍ - Lepanto41,Lemurixx, Selves (VIDEOCLIP OFICIAL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Ta_0BM-R0NY",
+   "artista": "Lepanto 41",
+   "titol": "MULTICOLOR",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "9ZAJMsRUsoo",
+   "artista": "Lepanto 41",
+   "titol": "Multicolor- Lepanto 41",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "eFBDhdlKGKs",
+   "artista": "Lepanto 41",
+   "titol": "V/Botant-Videoclip Oficial Lepanto41&Xandri",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "BTq-_keF0MU",
+   "artista": "Lídia Pujol",
+   "titol": "Babel",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "OL872e6Za4s",
+   "artista": "Lídia Pujol",
+   "titol": "Desayuno",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "lQbNyWb5rrM",
+   "artista": "Lídia Pujol",
+   "titol": "If I Were in Heaven",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "wpL6MWQIe24",
+   "artista": "Lídia Pujol",
+   "titol": "Morir",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "CRRxoGngriY",
+   "artista": "Lluís Llach",
+   "titol": "Abril 74 (En directe)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "14s_cn8ES7o",
+   "artista": "Madam(s)",
+   "titol": "Lupe Dalí",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "FgnPT009p64",
+   "artista": "Madam(s)",
+   "titol": "Tu, Tu, Tu",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rMZo14DUqA4",
+   "artista": "Maitips",
+   "titol": "Adiu, Ça Va?",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "6v_-rbkZrOM",
+   "artista": "Maitips",
+   "titol": "Cuba",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Yx0x3IsElyE",
+   "artista": "Maitips",
+   "titol": "Kaixo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mBZQKDB_Sjk",
+   "artista": "Maitips",
+   "titol": "Tierra",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "JK3iOw7bLWw",
+   "artista": "Malifeta",
+   "titol": "Coenta",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "P5YjXr-MGPA",
+   "artista": "Malifeta",
+   "titol": "Coenta (Dasousa version)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "zmqkG0jVBIw",
+   "artista": "Malifeta",
+   "titol": "MALIFETA - COENTA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Lf7LxjbmgZw",
+   "artista": "Malifeta",
+   "titol": "MALIFETA - Ídol (videolyric) Prod. pxllt",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "T_L010RnNAw",
+   "artista": "Manu Guix",
+   "titol": "Despertar",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "5ljlcPJs9iw",
+   "artista": "Marina Rossell",
+   "titol": "Mármara",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ckO17dtdU3o",
+   "artista": "Marina Rossell",
+   "titol": "Marronet",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "f5JOUmiIvp8",
+   "artista": "Marina Rossell",
+   "titol": "Rumba de Barcelona",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "XVgZs5Ts6SY",
+   "artista": "Mascarats",
+   "titol": "Daouda Dakole",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rjQvkRUhlV8",
+   "artista": "Mascarats",
+   "titol": "Maskarats",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "OildSEdzn3o",
+   "artista": "Mascarats",
+   "titol": "Maskarats al Sona 9 d'Icat.cat",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "eMC6A0DzHrg",
+   "artista": "Mascarats",
+   "titol": "Rubén - Els carrers seran sempre nostres - Mascarats",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "6ljWzGxKQP0",
+   "artista": "Mazoni",
+   "titol": "Ain't got no",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "9DvTN17OsWM",
+   "artista": "Miki Núñez",
+   "titol": "Raquel Sans",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "hBTH8EzfW3I",
+   "artista": "Montse Castellà",
+   "titol": "Gracias A La Vida",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "BqlK4uHZB70",
+   "artista": "Montse Castellà",
+   "titol": "La barca",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HoecnjYSNFw",
+   "artista": "Montse Castellà",
+   "titol": "Lo meu poble està a la cantonada d'un mapa",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "c7fDSZj_vMc",
+   "artista": "Montse Castellà",
+   "titol": "Lo sistema",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "v2ZuPtjHPwM",
+   "artista": "Montse Castellà",
+   "titol": "Lo tren",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "1P2KjIlm8ZE",
+   "artista": "Montse Castellà",
+   "titol": "Mercedès",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "MpW4WpjBH3k",
+   "artista": "Ovella Xao",
+   "titol": "07 President - Ovella Xao - #PASTUREIG (amb Doctor Prats)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "FVIlyvUgFbA",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - GIRA #pasTOUReig 2016",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Kzvd7ikrHfI",
+   "artista": "Ovella Xao",
+   "titol": "Ovella Xao - Sirena (en directe)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "FhKvDutA_Ww",
+   "artista": "Ovella Xao",
+   "titol": "President - Ovella Xao (feat. Doctor Prats LIVE #pasTOUReig)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "svvI2bHOxjU",
+   "artista": "P.A.W.N. Gang",
+   "titol": "A #sho Es Barsiria#",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "76KCR5o15Y4",
+   "artista": "P.A.W.N. Gang",
+   "titol": "A.M.O.R.",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "XzzcgbVRnIc",
+   "artista": "P.A.W.N. Gang",
+   "titol": "AMiM PARAN PAL CARRE",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ToixeupXjQA",
+   "artista": "P.A.W.N. Gang",
+   "titol": "AN AL COLE",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "cc5NdpcL_04",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Barsiria Boys",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "nix950SbsVU",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Bounce",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "F0pkXBc8nKM",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Cheddar",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "G9HpP3w9-y8",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Lianla Pioga",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "r3jdsE6UFDo",
+   "artista": "P.A.W.N. Gang",
+   "titol": "PETRi ASS WHiTE NiGGAS",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "CUZvRWKwL7k",
+   "artista": "P.A.W.N. Gang",
+   "titol": "PORTU UNA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "tmq4Wsp7UzA",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Rial G",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HBbjlcfmsAE",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Rili Hard",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "xOsAcEdh7Fs",
+   "artista": "P.A.W.N. Gang",
+   "titol": "RiTUAL",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2kTqs3MTWN8",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Silvers",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "yBwov7aUKfg",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Sindrome de Upp",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "GUgZkWEJ4Lw",
+   "artista": "P.A.W.N. Gang",
+   "titol": "Stem al Blac",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Y0iMthaCe6A",
+   "artista": "P.A.W.N. Gang",
+   "titol": "The Trap Man",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "zNNbyD-FBGs",
+   "artista": "Pere Tapias",
+   "titol": "Ladies And Gentleman",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "sHpYCfXrSbU",
+   "artista": "Pere Tapias",
+   "titol": "Txa, Txa, Txa Final",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "VKPxPUq-OJ8",
+   "artista": "Pirat's Sound Sistema",
+   "titol": "Dance Ce Reggae",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "FfWUm-xvZPo",
+   "artista": "Pirat's Sound Sistema",
+   "titol": "Nos duchamos?",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "YcPTFcf07BY",
+   "artista": "Plan-ET",
+   "titol": "BESITO",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "30-lU1Ahryk",
+   "artista": "Plan-ET",
+   "titol": "bombonbón",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "7pneG8CIKe8",
+   "artista": "Plan-ET",
+   "titol": "BUFFET ASIA (feat. Borru)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "p1X5MmkFsyw",
+   "artista": "Plan-ET",
+   "titol": "COPA PISTÓN",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "LrSAJMdV2Bw",
+   "artista": "Plan-ET",
+   "titol": "COPA PISTÓN (feat. Drew K.)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "pjD1V7yZp_E",
+   "artista": "Plan-ET",
+   "titol": "Fora Flato",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Jhz37Yb5fA0",
+   "artista": "Plan-ET",
+   "titol": "FORTEZA (feat. teza)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "U1ElOOT4WoM",
+   "artista": "Plan-ET",
+   "titol": "HIGH",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "jUMC2o-FX-U",
+   "artista": "Plan-ET",
+   "titol": "HUROKAN CONDOR (feat. FLAKKO)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "TYdNsyCuZds",
+   "artista": "Plan-ET",
+   "titol": "INTRO (PLANETOSKY S.A)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "TFu8Ja6D7o4",
+   "artista": "Plan-ET",
+   "titol": "Júlia Colom",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "jDrX1xy3esk",
+   "artista": "Plan-ET",
+   "titol": "Lambrusco Rosato",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "2oFdsH1oXRA",
+   "artista": "Plan-ET",
+   "titol": "Ni Dormir",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "hHCnnoRWYJM",
+   "artista": "Plan-ET",
+   "titol": "PONY",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "2ms6ksy_GdQ",
+   "artista": "Plan-ET",
+   "titol": "S.O.S (feat. Fades)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "VzjcNNlnvV4",
+   "artista": "Plan-ET",
+   "titol": "SPEED, Pt. 2",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "kaxAZf5T0GU",
+   "artista": "Plan-ET",
+   "titol": "SUPERSTAR (feat. t.toni)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "I4OODChfBb8",
+   "artista": "Plan-ET",
+   "titol": "VUDÚ",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "wgRznt7k3U0",
+   "artista": "Rapsodes",
+   "titol": "Aquí te pillo, aquí temazo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "eNe-LjXs8d0",
+   "artista": "Rapsodes",
+   "titol": "Concert Rapsodes & Run DMC - Spook - 7 de Gener de 2010",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Scbxk1PXbNg",
+   "artista": "Rapsodes",
+   "titol": "Intakte",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "QIrG1cLdNYc",
+   "artista": "Rapsodes",
+   "titol": "La casa del terror",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "YOdM4WdQ3bc",
+   "artista": "Rapsodes",
+   "titol": "La mejor guerra 2005",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "qaYH_6bS914",
+   "artista": "Rapsodes",
+   "titol": "La música 2006",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "9ABGh43rutU",
+   "artista": "Rapsodes",
+   "titol": "Macarroni 2007",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "01MEt7Ni_Eo",
+   "artista": "Rapsodes",
+   "titol": "PRESENTACIÓ DEL DISC 10/09/08 el loco - 09 fi de festa",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "vBJX53_-aAA",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes & Dialokolectiv - Son Art '09",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "0RBj1bK4GgQ",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes a Extrafalarium (Punt2)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "gADZ49KWmAM",
+   "artista": "Rapsodes",
+   "titol": "Rapsodes improvisant a la japan de Vilareal",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "VaKCZZ08XnY",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 13 - Motor Music Festival",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "yTQ9lP27NiU",
+   "artista": "Rapsodes",
+   "titol": "Rapsohistòries Vol 4 - Tunisia 2009",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "WLon9qVzZws",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 7 - VistaRock '09",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "vS9v8DOwtW4",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol 9 - Multicumple",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HS3zHq5YyY8",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol. 1 Acampallengua 2009 - Mallorca",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "XAppT30zHBI",
+   "artista": "Rapsodes",
+   "titol": "RapsoHistòries Vol. 3. Barrakuda 2009. Aldaia",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "FgVR-nhxpe8",
+   "artista": "Rapsodes",
+   "titol": "Rasohistòries Vol 5 - Paelleta RapsoTheSkafeinà",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "VsdzIcVcQ2U",
+   "artista": "Rapsodes",
+   "titol": "Soiree Catalane amb Rapsodes i Freddy Beats a París",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "gN8aBL7Hd5M",
+   "artista": "Rapsodes",
+   "titol": "TV3 Voluntariat pel Valencia & la Gira 2008 & Rapsodes",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7aub6L2YalY",
+   "artista": "Rapsodes",
+   "titol": "Zombie Tour Abuse 2012",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "MSo-gImcCCU",
+   "artista": "Raydibaum",
+   "titol": "Armando Rampas",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "_XCBWTjtwC0",
+   "artista": "Raydibaum",
+   "titol": "Aurora",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "sPXgCyytxhU",
+   "artista": "Raydibaum",
+   "titol": "Barbados",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Xym7SwVSVC4",
+   "artista": "Raydibaum",
+   "titol": "Compartir",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "fVqUs1XgsG8",
+   "artista": "Raydibaum",
+   "titol": "Moai",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "3CvvhVhqZ4I",
+   "artista": "Raydibaum",
+   "titol": "Pes",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "cRhHQxFjKpY",
+   "artista": "Raydibaum",
+   "titol": "Simius Criticus Sàpiens",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "kSWeXh49ha0",
+   "artista": "Repúblika Ska",
+   "titol": "11. SKARIBBEAN FEST - REPÚBLIKA SKA (JA SOM AQUÍ!)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "n-AJ9YZZ8Gs",
+   "artista": "Repúblika Ska",
+   "titol": "Bromacràcia - Repúblika Ska (RESISTIREM 2013)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HW7X6xXHREo",
+   "artista": "Repúblika Ska",
+   "titol": "Repúblika Ska - Skaribbean Fest (Videoclip Oficial)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "RJ4tiSlaa4A",
+   "artista": "Roba Estesa",
+   "titol": "Roba Estesa feat DJ TRAPELLA| REMIX LNTMNT (Videolyric Oficial)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "MLZ__W9QSNc",
+   "artista": "Roger Mas",
+   "titol": "Janina",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "_iAWwviltSw",
+   "artista": "Roger Mas",
+   "titol": "Kahoté (La Flor del Desamor)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "jyK_8Ad9R2Y",
+   "artista": "Roger Mas",
+   "titol": "Laura",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "5Zeyagpj9pk",
+   "artista": "Roger Mas",
+   "titol": "Matinal",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "0XjMdoVqfT0",
+   "artista": "Roger Mas",
+   "titol": "Mim",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "yaxZ2DG8fl8",
+   "artista": "Roger Mas",
+   "titol": "Mors Ultima Ratio",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "VVBhfGv3kVo",
+   "artista": "Sa Pena",
+   "titol": "ALTERNATIVA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "vXvJI4Unj44",
+   "artista": "Sa Pena",
+   "titol": "Amor Rural",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "g4lJnBo_QjE",
+   "artista": "Sa Pena",
+   "titol": "FCK PENA",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "d_e4bwPRX6k",
+   "artista": "Sa Pena",
+   "titol": "Fckpena",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "7Tw2BpHPgaA",
+   "artista": "Sa Pena",
+   "titol": "Sa Pena - Alternativa ft. Tano (Visualizer)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "BGgHiDvBLkU",
+   "artista": "Sa Pena",
+   "titol": "SA PENA - AMOR RURAL",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "jH_we1XG2IA",
+   "artista": "Sangtraït",
+   "titol": "Sang 45º",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "8fy9DT4x1fY",
+   "artista": "Sara Roy",
+   "titol": "Sara Roy - Només ens queda l'amor (Lyric Video)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "GsAecxzGxJc",
+   "artista": "Sense Sal",
+   "titol": "Autobús 121",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "LjAP6jOLDjc",
+   "artista": "Sense Sal",
+   "titol": "Fases",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "qaL5JXphzfI",
+   "artista": "Sense Sal",
+   "titol": "Hey mar",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ICrKEW364bw",
+   "artista": "Sense Sal",
+   "titol": "Sense sal - Autobús 121 (Tardes de sol i préssecs)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "4fH4mmc9_xs",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal - Concert Final a l'Apolo",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "obsSl2hKGKQ",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal - Fases (Concert per emportar)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "xfAYmvZGkXs",
+   "artista": "Sense Sal",
+   "titol": "Sense Sal - Streaming a Instagram",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "diajYrZ00jY",
+   "artista": "Sense Sal",
+   "titol": "Tot torna a començar",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "uyiMZF_9JfU",
+   "artista": "Sílvia Comes",
+   "titol": "15-17",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "wnS0cTzHek0",
+   "artista": "Sílvia Comes",
+   "titol": "Bolero para Jaime Gil de Biedma",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "_IOQUAE_ovI",
+   "artista": "Sílvia Comes",
+   "titol": "Desayuno",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "uESfi9u4_II",
+   "artista": "Sílvia Comes",
+   "titol": "E Travagancia Italiana",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "0qAII6vhB2A",
+   "artista": "Sílvia Comes",
+   "titol": "Mie2",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "_E4Ho1SxH8o",
+   "artista": "Sílvia Comes",
+   "titol": "Se Miran Se Presienten Se Desean",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "LdXj43VeGzo",
+   "artista": "Sílvia Comes",
+   "titol": "Unicorn",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "LN9uqDJ6rho",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "Acabou Chorare",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "gnqbnT_ODKw",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "Estrela, Estrela (MA. Live In Tokio)",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "B5KCvlYtLnk",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "I Get Along Without You Very Well (Except Sometimes)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "I3cZLTy6hlo",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "La Llorona (MA. Live In Tokio)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "45WKCiR1cR8",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "Menuda",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "esxUFB0y9Kc",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "No Surprises (MA. Live In Tokio)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "cp1NNTWYB38",
+   "artista": "Sílvia Pérez Cruz",
+   "titol": "Oración Del Remanso (MA. Live In Tokio)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "uDSzhHUuVrA",
+   "artista": "Skaparapid",
+   "titol": "... Se Realmente Acreditas",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "OGZ5V5LRJ_M",
+   "artista": "Skaparapid",
+   "titol": "30 Años",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "0vVmDNHzYW8",
+   "artista": "Skaparapid",
+   "titol": "30 Años",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "u482KqeT7n4",
+   "artista": "Skaparapid",
+   "titol": "A 100 Km X Neurona",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "1YehDN86ujA",
+   "artista": "Skaparapid",
+   "titol": "A 100 Km/Neurona",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Nbrz8A5Y8jk",
+   "artista": "Skaparapid",
+   "titol": "Abajo el Sur",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "plRN246sneE",
+   "artista": "Skaparapid",
+   "titol": "Abajo en el Sur",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "vk7t1OazW4A",
+   "artista": "Skaparapid",
+   "titol": "Alejamos Lo Cercano",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "i5z6417jS2M",
+   "artista": "Skaparapid",
+   "titol": "Alejamos Lo Cercano",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ZJKZeU4acEo",
+   "artista": "Skaparapid",
+   "titol": "Amor por el Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "us9ehiL2sGU",
+   "artista": "Skaparapid",
+   "titol": "Amor por el Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "SGw-d0otRaQ",
+   "artista": "Skaparapid",
+   "titol": "Amor Sin Odio",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "svX54Q9pzuU",
+   "artista": "Skaparapid",
+   "titol": "Amor Sin Odio",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ywP63-7C9rY",
+   "artista": "Skaparapid",
+   "titol": "Argentosis",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "DAfuCPo5z5c",
+   "artista": "Skaparapid",
+   "titol": "Argentosis",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Te35ZGT06ls",
+   "artista": "Skaparapid",
+   "titol": "Arroja la Bomba",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "0Ien3EVF3Mw",
+   "artista": "Skaparapid",
+   "titol": "Barrio El Karmen",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ZinPbXlyLhM",
+   "artista": "Skaparapid",
+   "titol": "Buenas Vibraciones",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Qm62k8h-m1I",
+   "artista": "Skaparapid",
+   "titol": "Califato Independent",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "jiomSRpXS7M",
+   "artista": "Skaparapid",
+   "titol": "Califato Independent",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "qo-q9CwfHpo",
+   "artista": "Skaparapid",
+   "titol": "Che Che Chechenia",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "WBbt4XPVAJY",
+   "artista": "Skaparapid",
+   "titol": "Che Che Chechenia",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "v8P8TwZsfS8",
+   "artista": "Skaparapid",
+   "titol": "De la Cuna a la Tumba",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Vgolxm0Wpvs",
+   "artista": "Skaparapid",
+   "titol": "De la Cuna a la Tumba",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "FrnxSvqeHyw",
+   "artista": "Skaparapid",
+   "titol": "Denuncia",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "MFoUWoYR35c",
+   "artista": "Skaparapid",
+   "titol": "Desvelos",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "1BMGZHFOgfM",
+   "artista": "Skaparapid",
+   "titol": "Dime, Dime",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "vuJcBkIWH_w",
+   "artista": "Skaparapid",
+   "titol": "Dime, Dime",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "gHxcNIkZcAY",
+   "artista": "Skaparapid",
+   "titol": "Ekilibrio",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "QPJZSkpagVs",
+   "artista": "Skaparapid",
+   "titol": "El Presidente",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "oP-b2NxaP8Y",
+   "artista": "Skaparapid",
+   "titol": "El Sueño Americano",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "CIKZZDcWaaY",
+   "artista": "Skaparapid",
+   "titol": "Fronteras Invisibles",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "DLdduIuBKLQ",
+   "artista": "Skaparapid",
+   "titol": "Fuerza para Vivir",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "XMYrxlCGtvQ",
+   "artista": "Skaparapid",
+   "titol": "Guillem",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "oHVi96APELM",
+   "artista": "Skaparapid",
+   "titol": "Guillem",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "0UxkFb-h1Eo",
+   "artista": "Skaparapid",
+   "titol": "Hay Que Guay",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "SVTKrayNR6Y",
+   "artista": "Skaparapid",
+   "titol": "Hipertrola",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ENG8LEyiA74",
+   "artista": "Skaparapid",
+   "titol": "Historia de...",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "NBTr0fAMtUU",
+   "artista": "Skaparapid",
+   "titol": "Insumisión",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "xXNIQqIRK7o",
+   "artista": "Skaparapid",
+   "titol": "Intro",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "luCGHadvIgA",
+   "artista": "Skaparapid",
+   "titol": "Itoiz",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "SxcGh0SN4Ko",
+   "artista": "Skaparapid",
+   "titol": "Klon",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "BX0XrZNyTVw",
+   "artista": "Skaparapid",
+   "titol": "Kolors",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ylMypDE2ANk",
+   "artista": "Skaparapid",
+   "titol": "Kolors",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ak4n_pBADKA",
+   "artista": "Skaparapid",
+   "titol": "Kompartiendo Escenario",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "IpGJcgb2BdE",
+   "artista": "Skaparapid",
+   "titol": "Konfesión",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "DrYkgqsIfqs",
+   "artista": "Skaparapid",
+   "titol": "Konfesión",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "C5Cs7DAg_7s",
+   "artista": "Skaparapid",
+   "titol": "La Patria Tenía un Precio",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "-xEgU25DG3U",
+   "artista": "Skaparapid",
+   "titol": "Love for Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "PAwHXJSFeKY",
+   "artista": "Skaparapid",
+   "titol": "Madre",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "4BALC53nMLw",
+   "artista": "Skaparapid",
+   "titol": "Marujeo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "arou1f0xgbY",
+   "artista": "Skaparapid",
+   "titol": "Movilízate",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Y-ogvEWXwPs",
+   "artista": "Skaparapid",
+   "titol": "Nikanor",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "l0uykBZIPZk",
+   "artista": "Skaparapid",
+   "titol": "No a la Mafia de la Heroína",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "r6bOLDfZV0s",
+   "artista": "Skaparapid",
+   "titol": "O Kompact do Papa",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "LMuHaaNHxuQ",
+   "artista": "Skaparapid",
+   "titol": "Obsesiónat",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Zu49Pxge7Rk",
+   "artista": "Skaparapid",
+   "titol": "Parábola de la Televisión y el Buen Espectador",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "2DZwl5jCTKs",
+   "artista": "Skaparapid",
+   "titol": "Pelusas Power",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "WqBUlBHxCwI",
+   "artista": "Skaparapid",
+   "titol": "Per Ké",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "8gjxf38XP0E",
+   "artista": "Skaparapid",
+   "titol": "Pesadilla Laboral",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7WtacWKjNiM",
+   "artista": "Skaparapid",
+   "titol": "Pesadilla Laboral",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "d4DxgfMQjhA",
+   "artista": "Skaparapid",
+   "titol": "Pesadilla Laboral",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "tyf0JTD6t7o",
+   "artista": "Skaparapid",
+   "titol": "Pippi-Jazz",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "xsoNdlUwo4I",
+   "artista": "Skaparapid",
+   "titol": "Plantita Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "UMRbJWn9STI",
+   "artista": "Skaparapid",
+   "titol": "Plantita Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7iTdIeEzpY8",
+   "artista": "Skaparapid",
+   "titol": "Provincias (Bonus Track)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "tNSAOjOxdtM",
+   "artista": "Skaparapid",
+   "titol": "Punto y Raya",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "EPAyBrxEn5k",
+   "artista": "Skaparapid",
+   "titol": "Que Empiece Ya!",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "BJvN-vrO1i8",
+   "artista": "Skaparapid",
+   "titol": "Que Trabaje el Rey",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "xR-evAX74ck",
+   "artista": "Skaparapid",
+   "titol": "Que Trabaje el Rey",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "DxCm4en7M5s",
+   "artista": "Skaparapid",
+   "titol": "Rebelde Corazón",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ZBWITIunpgI",
+   "artista": "Skaparapid",
+   "titol": "Rebelde Corazón",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "YDMsWaynSe4",
+   "artista": "Skaparapid",
+   "titol": "Sharp Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Qt2dQi5R6zE",
+   "artista": "Skaparapid",
+   "titol": "Sharp Ska",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "gwv6QSbThuQ",
+   "artista": "Skaparapid",
+   "titol": "Ska en el Vito",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "fNpBbVv1v_c",
+   "artista": "Skaparapid",
+   "titol": "Ska en el Vito",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "sAH6IQsOoG8",
+   "artista": "Skaparapid",
+   "titol": "Skazoo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "AFSCihKLSE4",
+   "artista": "Skaparapid",
+   "titol": "Somos",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "SJCVJzJMsxg",
+   "artista": "Skaparapid",
+   "titol": "Somos",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "cBwwtBR94RE",
+   "artista": "Skaparapid",
+   "titol": "Tio Javi",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "xVtODETHkCk",
+   "artista": "Skaparapid",
+   "titol": "Torturador",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mTAcxEcg-6g",
+   "artista": "Skaparapid",
+   "titol": "Torturador",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "jIeoDhVmwpo",
+   "artista": "Skaparapid",
+   "titol": "Trabajando al Sol",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "70s1ABBZks0",
+   "artista": "Skaparapid",
+   "titol": "Tras la Mordaza",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "jpchhHJpbB0",
+   "artista": "Skaparapid",
+   "titol": "Tras la Mordaza",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "_OU-3pRqpWw",
+   "artista": "Skaparapid",
+   "titol": "Tuareg",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "ROk8AKOgv5I",
+   "artista": "Skaparapid",
+   "titol": "Viejos Karkamales",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Xu3sbAmbIXs",
+   "artista": "Slad Mobb",
+   "titol": "33myselff, Litro, Zadi Plug - JOVE SLAD LIFE (Prod. 60k Solitaire)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "CBZFvb-NYY8",
+   "artista": "Slad Mobb",
+   "titol": "All In",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "8-zlyvDAzPo",
+   "artista": "Slad Mobb",
+   "titol": "Carioca",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "eE6TAydpSmM",
+   "artista": "Slad Mobb",
+   "titol": "CEO",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Xhm8thd4Kac",
+   "artista": "Slad Mobb",
+   "titol": "Hitmakers",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Y0HveIJqYqI",
+   "artista": "Slad Mobb",
+   "titol": "Insomnia (Interlude)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "zizKxSno8jI",
+   "artista": "Slad Mobb",
+   "titol": "Jabulani",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Xx9-nesJaN8",
+   "artista": "Slad Mobb",
+   "titol": "Jove Slad Life",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "g6rc0uWbDrs",
+   "artista": "Slad Mobb",
+   "titol": "Lamine",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "h6k6wshnGWg",
+   "artista": "Slad Mobb",
+   "titol": "Lonely",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "MbMbhKDB7l4",
+   "artista": "Slad Mobb",
+   "titol": "Marte",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "EKAyElnI-lY",
+   "artista": "Slad Mobb",
+   "titol": "Num. 1",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "W38V82DG75A",
+   "artista": "Slad Mobb",
+   "titol": "Raphinha",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "9sx5l8icWKI",
+   "artista": "Slad Mobb",
+   "titol": "Resonancia",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Nkf9B7fZe64",
+   "artista": "Slad Mobb",
+   "titol": "Slad (Intro)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Ma2Zklw1NV0",
+   "artista": "Slad Mobb",
+   "titol": "Te Tengo",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "oR9FNKKMZz0",
+   "artista": "Slad Mobb",
+   "titol": "Xarlyto & 60K Cvndy - erOt1c4 (Official Video)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mIJx4gRA13A",
+   "artista": "Slad Mobb",
+   "titol": "Xarlyto, Zadi Plug & 33myselff - JABULANI (Prod. 60k Cvndy & 60k Solitaire) Video Oficial",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "kR6TavPBcDA",
+   "artista": "Slad Mobb",
+   "titol": "Xarlyto, Zadi Plug, 33myselff & Vietnam Keed  - LONELY (Prod. 60k Solitaire)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "vu7mfjR_PF4",
+   "artista": "Slad Mobb",
+   "titol": "XXL Gyal",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "zNFlYgt04cs",
+   "artista": "Slad Mobb",
+   "titol": "Zadi Plug - Si algun dia em deixes (Video Oficial)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "QIxm0jAV0gQ",
+   "artista": "Slad Mobb",
+   "titol": "Zadi Plug - Slime Freestyle (prod. Mario Thugger)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "nnYwXSl7U6M",
+   "artista": "Slad Mobb",
+   "titol": "Zadi Plug - SPIDER (Prod. 60 Kartel)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "wrXa9tJDMa4",
+   "artista": "Slad Mobb",
+   "titol": "Zadi Plug - Spiritual (Video Oficial)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "lEAfH5zsUr4",
+   "artista": "Slad Mobb",
+   "titol": "Zadi Plug, Xarlyto & Litro - LAMINE (Prod. 60k Cvndy & 60k Solitaire) Video Oficial",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "24GTkjj10O0",
+   "artista": "Slad Mobb",
+   "titol": "ZADI, LITRO, XARLYTO, GABE FRISCO - HITMAKERS Ft. LEBRØN, SKINNY VR (Prod. 60 KARTEL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "HjR-VcgXmPc",
+   "artista": "Still Ill",
+   "titol": "23-06-2025",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "9MaRGn8c7oc",
+   "artista": "Still Ill",
+   "titol": "Bounce",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "X80VOkp4KG4",
+   "artista": "Still Ill",
+   "titol": "First",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "XzY9KY9HBy0",
+   "artista": "Still Ill",
+   "titol": "I Wanna Know",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "o6Mp0tr26Go",
+   "artista": "Still Ill",
+   "titol": "NO PART",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "AjJhBZKqXcw",
+   "artista": "Still Ill",
+   "titol": "Photograph / Note",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "GWeONOq2nHk",
+   "artista": "Still Ill",
+   "titol": "Prologue",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "9gnCJJ19v6Q",
+   "artista": "Still Ill",
+   "titol": "S9",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "2rAHzk7ErHY",
+   "artista": "Still Ill",
+   "titol": "Still Got to F U C K",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "2owcvwZQjeQ",
+   "artista": "Still Ill",
+   "titol": "Still I Try",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "snx5dIFaIoM",
+   "artista": "Still Ill",
+   "titol": "Still Ignorant",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "7HoHUSCxCaE",
+   "artista": "Still Ill",
+   "titol": "Still Neo",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "2ZvZO2mQF7U",
+   "artista": "Terra Ferma Ska Band",
+   "titol": "La Gàbia i Més Enllà",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Ur3H6aubMno",
+   "artista": "Tesa",
+   "titol": "G",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "iLFaTImk28Y",
+   "artista": "Tesa",
+   "titol": "H",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "ofedU_hH39w",
+   "artista": "Tesa",
+   "titol": "I",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "yAOvq3zRcGQ",
+   "artista": "Tesa",
+   "titol": "II",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "T6zRkeQDFqk",
+   "artista": "Tesa",
+   "titol": "III",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "wJi2rln_Obo",
+   "artista": "Tesa",
+   "titol": "Interval 3",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "5Lo3njtyJ8s",
+   "artista": "Tesa",
+   "titol": "IV",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "OW6-96RBkj0",
+   "artista": "Tesa",
+   "titol": "O",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "KVaThwJcsgs",
+   "artista": "Tesa",
+   "titol": "S",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "CiKvJRKexCU",
+   "artista": "Tesa",
+   "titol": "T",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "b3KuiHSq30A",
+   "artista": "Tesa",
+   "titol": "V",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "fF331XwC6FM",
+   "artista": "Tesa",
+   "titol": "VI",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "HEUzN6j9Z3Y",
+   "artista": "Tomeu Penya",
+   "titol": "Aina",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "NswA1lNYXok",
+   "artista": "Tomeu Penya",
+   "titol": "Cabrera",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "0J6BjcOV7YM",
+   "artista": "Tomeu Penya",
+   "titol": "Cris",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "nEC0jmv9Fdc",
+   "artista": "Tomeu Penya",
+   "titol": "De Londres a Mexico",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "PbXMIFkVRV4",
+   "artista": "Tomeu Penya",
+   "titol": "Gitana",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "oowdtq3JTG8",
+   "artista": "Tomeu Penya",
+   "titol": "Jai'alai",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "4o6hJoIoc88",
+   "artista": "Tomeu Penya",
+   "titol": "Rock & Roll (Els Millors Anys)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "SrEOM6Fie3E",
+   "artista": "Tomeu Penya",
+   "titol": "S'al.lota Més Garrida del Món",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "TXodC6XxgMU",
+   "artista": "Tomeu Penya",
+   "titol": "Sirena",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "jfpsv6Fb5tc",
+   "artista": "Toti Soler",
+   "titol": "Balada en Sol",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "UfeWjBbrp38",
+   "artista": "Toti Soler",
+   "titol": "El juicio de Angela",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "wvSZrG9Nguk",
+   "artista": "Toti Soler",
+   "titol": "Epigrama",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "zPPCX8mw0Ec",
+   "artista": "Toti Soler",
+   "titol": "Guisela",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "LI_tPz2aGUY",
+   "artista": "Toti Soler",
+   "titol": "Laia",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "vA0RXui8yIU",
+   "artista": "Toti Soler",
+   "titol": "Ovidi",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "gJ48phPZsoQ",
+   "artista": "Toti Soler",
+   "titol": "Sevilla",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "YOL-TX1LheE",
+   "artista": "Toti Soler",
+   "titol": "Solea del Maresme",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "cieXhkVnHbI",
+   "artista": "Toti Soler",
+   "titol": "Supernova",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "PrJpuzQhJ58",
+   "artista": "Toti Soler",
+   "titol": "Susanna",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "0ORD_Gd09bs",
+   "artista": "Toti Soler",
+   "titol": "Taj Mahal",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "SxV7NjO1dlM",
+   "artista": "Toti Soler",
+   "titol": "Tarantella",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "yf9dsLnqNNs",
+   "artista": "Trast",
+   "titol": "03 Mi teatro de cartón - Trast",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "fmOxfFDG3xU",
+   "artista": "Trast",
+   "titol": "Trast - Instinto animal",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Bsx7RCxPTFA",
+   "artista": "Trast",
+   "titol": "Trast - Le robo el tiempo a la prisa (Lyric video)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "FUG9LAcIE8M",
+   "artista": "Txarango",
+   "titol": "Aguacero",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "laQgEL6YCGE",
+   "artista": "Txarango",
+   "titol": "Barcelona",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "yIAIMlWkMhU",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 01. Dark Ages",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "3XwOte1E5fo",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 02. Ghostwriter",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "7CO-Q2As-Nc",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 03. Doom Drama",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Yq7mlSwxFAk",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 04. Just another one",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "j7CAAY7dyZM",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 07. Half Life",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "A8Cg_77ElsU",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - 09. Extrasensorial",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "B6KJ7rzSVTs",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - Alliance [Prod. SCXTT] (ÀUDIO OFICIAL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "2g_cPzbm4h4",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - Ikigai [Prod. Isotonez] (ÀUDIO OFICIAL)",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "UF8S0Ntbh2s",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - Shelter (LO-FI VIDEO OFICIAL) [Prod. Ch Pinewood]",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "tTkIWmhGeZM",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama - Ziggurat [Prod. SH1] (ÀUDIO OFICIAL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "qG2N-bOuDEs",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama i Rare Namibian - 01. Asfalt i Edificis [Prod. T.Sombra] (VÍDEO OFICIAL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "YZbl66hZ_y4",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama i Rare Namibian - 02. Alabastre [Prod. T.Sombra] (ÀUDIO OFICIAL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "Egj34UDGK0o",
+   "artista": "Vademecum FAM",
+   "titol": "Nu Drama i Rare Namibian - 03. Rinoceront de Sumatra [Prod. T.Sombra] (ÀUDIO OFICIAL)",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "NoA5Im3nrL4",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum - 2012",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "bvGYXfpbWLE",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2013",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "nDm4YjYGSOU",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2014",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "vHQ3z6swPmM",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2015",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "RPti2DboKFE",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2016",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mZSp7Sa7bMQ",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2017",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "nhSZl6y-EdE",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2018",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "bkTLS9OuD8w",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2019",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "Dxb5Ij4P_d4",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2020",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "v81Hp4wL9JQ",
+   "artista": "Vademecum FAM",
+   "titol": "Vademecum 2021",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "cRHFOKnVv3I",
+   "artista": "Valtonyc",
+   "titol": "Cap Promo",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "4REX__U2MCA",
+   "artista": "Valtonyc",
+   "titol": "Deshonor",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "8WWyGTDN1Pk",
+   "artista": "Valtonyc",
+   "titol": "Edurne (feat. Mi Amargo)",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "_rllDXNRYDs",
+   "artista": "Valtonyc",
+   "titol": "El Cobarde",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "oyid4V_kP0U",
+   "artista": "Valtonyc",
+   "titol": "El Cobarde",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "or8fv4ZPU00",
+   "artista": "Valtonyc",
+   "titol": "Fabula",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "b7LHcgQgZCo",
+   "artista": "Valtonyc",
+   "titol": "Fonky rap",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "3iHHJl6jiQM",
+   "artista": "Valtonyc",
+   "titol": "Gora Getafe",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "-xm8Aou60xk",
+   "artista": "Valtonyc",
+   "titol": "Hipocondría",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "rjQJtCRzRlI",
+   "artista": "Valtonyc",
+   "titol": "Intro",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "FzRb0D-Ng5s",
+   "artista": "Valtonyc",
+   "titol": "Le Roi Du Nord",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "1FL9Pw61n6o",
+   "artista": "Valtonyc",
+   "titol": "Mulay Émbarek",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "rtw7NQElwfY",
+   "artista": "Valtonyc",
+   "titol": "Oleguer P",
+   "motiu": "sense paraules"
+  },
+  {
+   "id": "v-BQeXgUPpg",
+   "artista": "Valtonyc",
+   "titol": "Posca",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "9VCl94aOUGw",
+   "artista": "Valtonyc",
+   "titol": "Punkis & Abogados",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "bPY2QWwXdXY",
+   "artista": "Valtonyc",
+   "titol": "Que Bonito Es El Amor",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "ou-yvs6O-0c",
+   "artista": "Valtonyc",
+   "titol": "Testarrossa",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "1FcQC_tZ9YA",
+   "artista": "Valtonyc",
+   "titol": "Va Te Faire Foutre",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "mPIYkoB_dBs",
+   "artista": "Valtonyc",
+   "titol": "Vostok 1",
+   "motiu": "paraules o marques estrangeres"
+  },
+  {
+   "id": "OhKKA9roxVs",
+   "artista": "XEIC!",
+   "titol": "Ilargia",
+   "motiu": "títol neutre o dubtós"
+  },
+  {
+   "id": "4EIzvzN-P1c",
+   "artista": "XEIC!",
+   "titol": "La cara de la Reina",
+   "motiu": "títol neutre o dubtós"
+  }
+ ]
+}
