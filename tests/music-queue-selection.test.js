@@ -1248,3 +1248,87 @@ describe('un vídeo que s’obre sol sempre és una ràdio (2026-10-18)', () => 
         expect(env.ctx.activePlaylistQueue[0].id).toBe(list[10].id);
     });
 });
+
+describe('la ràdio no s’acaba mai: extend() (2026-10-18)', () => {
+    const catalog = () => Array.from({ length: 60 }, (_, i) => song('x' + (i % 15), 0.3 + i * 0.05));
+    const noRepeatsNear = queue => {
+        for (let i = 1; i < queue.length; i++) {
+            const window = queue.slice(Math.max(0, i - 12), i).map(v => v.id);
+            expect(window).not.toContain(queue[i].id);
+        }
+    };
+
+    it('amb prou cançons per endavant no fa res; quan en queden poques, n’afegeix sense repetir les darreres', () => {
+        const list = catalog();
+        const env = setup({ catalog: list });
+        env.queue.startFrom(list[0].id, 'api');
+        const before = env.ctx.activePlaylistQueue.length;
+        expect(env.queue.extend()).toBe(false);
+        env.ctx.currentPlaylistIndex = before - 1;
+        expect(env.queue.extend()).toBe(true);
+        expect(env.ctx.activePlaylistQueue.length).toBeGreaterThan(before);
+        expect(env.ctx.currentPlaylistIndex).toBe(before - 1);
+        expect(env.queue.getState().isRadio).toBe(true);
+        noRepeatsNear(env.ctx.activePlaylistQueue);
+    });
+
+    it('una llista pròpia que s’acaba continua com a ràdio de l’estil, amb les seves cançons al davant', () => {
+        const list = catalog();
+        const own = list.slice(0, 4);
+        const env = setup({
+            catalog: list,
+            extra: {
+                isPlaylistMode: true,
+                activePlaylistId: 'pl_1',
+                activePlaylistName: 'Estiu',
+                activePlaylistQueue: own,
+                currentPlaylistIndex: 3,
+            },
+        });
+        expect(env.queue.extend({ minAhead: 1 })).toBe(true);
+        expect(env.ctx.activePlaylistId).toBe('__music_queue__');
+        expect(env.ctx.activePlaylistQueue.slice(0, 4).map(v => v.id)).toEqual(own.map(v => v.id));
+        expect(env.ctx.activePlaylistQueue.length).toBeGreaterThan(4);
+        expect(env.queue.getState().categories.length).toBeGreaterThan(0);
+    });
+
+    it('una selecció («Acabades de sortir») que s’acaba continua com a ràdio de l’estil', () => {
+        const list = catalog();
+        const env = setup({ catalog: list });
+        env.queue.playSelection(list.slice(0, 5), 'Acabades de sortir');
+        env.ctx.currentPlaylistIndex = 4;
+        expect(env.queue.extend({ minAhead: 1 })).toBe(true);
+        expect(env.queue.playlistName()).not.toContain('Acabades de sortir');
+        expect(env.queue.getState().categories).toEqual(['Pop']);
+    });
+
+    it('una ràdio de cerca que ja ha sonat sencera torna a començar el conjunt', () => {
+        const list = catalog();
+        const results = list.slice(0, 16);
+        const env = setup({ catalog: list });
+        expect(env.queue.startFromSearch(results, { query: 'nit' })).toBe(true);
+        const before = env.ctx.activePlaylistQueue.length;
+        env.ctx.currentPlaylistIndex = before - 1;
+        expect(env.queue.extend({ minAhead: 1 })).toBe(true);
+        const added = env.ctx.activePlaylistQueue.slice(before);
+        const ids = new Set(results.map(v => v.id));
+        expect(added.length).toBeGreaterThan(0);
+        expect(added.every(v => ids.has(v.id))).toBe(true);
+        noRepeatsNear(env.ctx.activePlaylistQueue);
+    });
+
+    it('no deixa créixer la cua sense límit: es queden les 60 darreres sonades', () => {
+        const list = catalog();
+        const env = setup({ catalog: list });
+        env.queue.startFrom(list[0].id, 'api');
+        const playing = { ...list[59], id: 'sona-ara' };
+        env.ctx.activePlaylistQueue = [
+            ...Array.from({ length: 90 }, (_, i) => ({ ...list[i % 60], id: 'v' + i })),
+            playing,
+        ];
+        env.ctx.currentPlaylistIndex = 90;
+        expect(env.queue.extend()).toBe(true);
+        expect(env.ctx.currentPlaylistIndex).toBe(60);
+        expect(env.ctx.activePlaylistQueue[60].id).toBe('sona-ara');
+    });
+});

@@ -3,3 +3,5 @@ node_modules/
 sw.js
 feed_updates.js
 vitest.config.js
+# Biblioteques externes generades per npm run vendor:sync (minimitzades, no són codi del projecte)
+js/vendor/

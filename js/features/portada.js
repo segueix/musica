@@ -14,6 +14,9 @@
     const DAY_MS = 86400000;
     const FRESH_ROW = 12;
     const FRESH_ALL = 48;
+    // «Reprodueix les novetats»: les cançons del darrer mes, fins a les 40 més noves
+    const FRESH_RADIO_DAYS = 30;
+    const FRESH_RADIO_MAX = 40;
     const RADAR_ROW = 12;
     const LIVE_ROW = 10;
     const MIN_FRESH = 3;
@@ -77,6 +80,37 @@
         if (!time) return '';
         const date = new Date(time);
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    }
+
+    // Intercala els artistes amb diverses cançons (pura): manté l'ordre cronològic tant com pot, però una cançó
+    // d'un artista no torna fins que n'han passat les que li toquen perquè les seves quedin repartides per tota la
+    // llista (8 de 40 → una de cada 5); mai dues seguides del mateix artista si n'hi ha d'altres.
+    function interleaveByArtist(videos, keyOf = video => app.features.discovery?.artistKeyOf?.(video) || '') {
+        const list = toArray(videos);
+        const counts = new Map();
+        list.forEach(video => {
+            const key = keyOf(video);
+            if (key) counts.set(key, (counts.get(key) || 0) + 1);
+        });
+        const lastAt = new Map();
+        const remaining = list.slice();
+        const result = [];
+        const gapOf = key => Math.max(2, Math.ceil(list.length / counts.get(key)));
+        const rested = video => {
+            const key = keyOf(video);
+            return !key || !lastAt.has(key) || result.length - lastAt.get(key) >= gapOf(key);
+        };
+        while (remaining.length) {
+            const previous = result.length ? keyOf(result[result.length - 1]) : '';
+            let pick = remaining.findIndex(rested);
+            if (pick < 0) pick = remaining.findIndex(video => !keyOf(video) || keyOf(video) !== previous);
+            if (pick < 0) pick = 0;
+            const [video] = remaining.splice(pick, 1);
+            const key = keyOf(video);
+            if (key) lastAt.set(key, result.length);
+            result.push(video);
+        }
+        return result;
     }
 
     // La data de què disposem és la de publicació del vídeo: no es presenta mai com a data de llançament del disc.
@@ -343,6 +377,15 @@
                 );
                 if (others.length) model.fresh.groups[String(video.id)] = others;
             });
+            // «Reprodueix les novetats»: totes les estrenes del darrer mes (fins a les 40 més noves), també les que
+            // surten en una altra fila, amb els grups que n'han tret diverses intercalats. Abans eren les 12 primeres
+            // de «Veure-ho tot» i un grup que n'havia publicat 8 el mateix dia omplia gairebé tota la selecció.
+            const since = now - FRESH_RADIO_DAYS * DAY_MS;
+            const month = newest.filter(video => timestampOf(video) >= since).slice(0, FRESH_RADIO_MAX);
+            model.fresh.radio = interleaveByArtist(
+                month.length >= MIN_FRESH ? month : model.fresh.all.slice(0, FRESH_RADIO_MAX),
+                video => discovery.artistKeyOf(video)
+            );
         }
         return model;
     }
@@ -1322,7 +1365,10 @@
         const queue = app.features.musicQueue;
         if (!model || !queue?.playSelection) return;
         const sources = {
-            fresh: { videos: model.fresh?.all.slice(0, FRESH_ROW) || [], label: 'Acabades de sortir' },
+            fresh: {
+                videos: model.fresh?.radio || model.fresh?.all.slice(0, FRESH_ROW) || [],
+                label: 'Acabades de sortir',
+            },
             radar: {
                 videos: model.radar?.items.map(item => item.video) || [],
                 label: model.radar?.title || 'Per descobrir',
@@ -1567,6 +1613,7 @@
         render,
         buildModel,
         buildModelAsync,
+        interleaveByArtist,
         renderSections,
         cardHtml,
         freshHtml,

@@ -114,7 +114,7 @@ function deleteCustomCategoryGlobal(categoryName, options = {}) {
     const rawCategory = typeof categoryName === 'string' ? categoryName : '';
     const normalized = typeof normalizeCustomTag === 'function'
         ? normalizeCustomTag(rawCategory)
-        : rawCategory.trim().replace(/^\"|\"$/g, '');
+        : rawCategory.trim().replace(/^"|"$/g, '');
 
     if (!normalized) {
         return;
@@ -204,7 +204,7 @@ function removeCategoryFromChannel(channelId, categoryName) {
     const rawCategory = typeof categoryName === 'string' ? categoryName : '';
     const normalized = typeof normalizeCustomTag === 'function'
         ? normalizeCustomTag(rawCategory)
-        : rawCategory.trim().replace(/^\"|\"$/g, '');
+        : rawCategory.trim().replace(/^"|"$/g, '');
 
     if (!normalized) {
         return;

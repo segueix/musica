@@ -3087,6 +3087,7 @@ async function bootstrapApp() {
     syncHeaderHeightVar();
     observePlayerLayoutShifts();
     initExternalPlayerControls();
+    initNativePlayTapDetection();
     // YouTube: no superposem controls propis damunt de l'iframe oficial.
     // La navegació de cua continua disponible fora del reproductor.
     // initQueueNextOverlay();
@@ -9110,6 +9111,15 @@ function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt 
         showVideoFromAPI(video.id, showOptions);
     }
     isPlaylistNavigation = false;
+    // Sempre hi ha cançons per endavant (i «següent» sempre es pot tocar): si en queden poques, se n'hi afegeixen
+    scheduleQueueExtend();
+}
+
+let queueExtendTimer = null;
+
+function scheduleQueueExtend() {
+    clearTimeout(queueExtendTimer);
+    queueExtendTimer = setTimeout(() => SegueixApp.features.musicQueue?.extend?.(), 1500);
 }
 
 function handlePlaylistVideoEnded() {
@@ -9122,12 +9132,64 @@ function handlePlaylistVideoEnded() {
     if (!isPlaylistMode || activePlaylistQueue.length === 0) {
         return;
     }
+    // La ràdio no s'acaba mai: a l'última cançó s'hi afegeixen més (musicQueue.extend) en lloc de sortir de la cua i
+    // deixar el reproductor amb la graella de recomanacions de YouTube.
+    if (currentPlaylistIndex >= activePlaylistQueue.length - 1) {
+        SegueixApp.features.musicQueue?.extend?.({ minAhead: 1 });
+    }
     if (currentPlaylistIndex < activePlaylistQueue.length - 1) {
         currentPlaylistIndex += 1;
         loadVideoInSequence();
     } else {
         exitPlaylistMode({ showQueueMessage: true });
     }
+}
+
+// ---------- Final de cançó: abans de les recomanacions de YouTube ----------
+// YouTube no deixa treure la graella de recomanacions del final d'un vídeo incrustat (rel=0 només la limita al mateix
+// canal) i no s'hi pot posar res al damunt. Dins d'una cua, quan falten QUEUE_END_TRIM_SECONDS per acabar, es passa a la
+// cançó següent: la graella no arriba a sortir i els segons de cua que porten molts videoclips (crèdits, silenci) no
+// es fan esperar (2026-10-18). Cançons de menys de 60 s, no. Interruptor: localStorage.catube_queue_end_trim = segons
+// (0 = desactivat). music-signals ja dona la cançó per escoltada sencera al 85 %.
+const QUEUE_END_TRIM_SECONDS = 3;
+const QUEUE_END_TRIM_MIN_DURATION = 60;
+let queueEndTrack = { videoId: '', duration: 0, done: false };
+
+function queueEndTrimSeconds() {
+    try {
+        const saved = window.localStorage?.getItem('catube_queue_end_trim');
+        if (saved !== null && saved !== undefined && saved !== '') {
+            const value = Number(saved);
+            if (Number.isFinite(value) && value >= 0) return Math.min(value, 20);
+        }
+    } catch (error) {
+        // Sense emmagatzematge: el valor per defecte
+    }
+    return QUEUE_END_TRIM_SECONDS;
+}
+
+function shouldAdvanceBeforeEnd({ time, duration, trim }) {
+    if (!(trim > 0) || !(duration >= QUEUE_END_TRIM_MIN_DURATION) || !(time > 0)) return false;
+    const remaining = duration - time;
+    return remaining > 0 && remaining <= trim;
+}
+
+function maybeAdvanceBeforeEnd(info) {
+    const id = String(videoPlayer?.dataset.playingVideoId || '');
+    if (!id || !info) return;
+    if (queueEndTrack.videoId !== id) queueEndTrack = { videoId: id, duration: 0, done: false };
+    const reported = Number(info.duration);
+    if (reported > 0) queueEndTrack.duration = reported;
+    const time = Number(info.currentTime);
+    if (queueEndTrack.done || !Number.isFinite(time)) return;
+    if (!isPlaylistMode || isTVPlaybackMode() || isAwaitingNativePlay()) return;
+    if (videoPlayer.dataset.playerState !== '1') return;
+    const queued = activePlaylistQueue[currentPlaylistIndex];
+    if (!queued || String(queued.id) !== id) return;
+    const duration = queueEndTrack.duration || Number(queued.durationSeconds) || 0;
+    if (!shouldAdvanceBeforeEnd({ time, duration, trim: queueEndTrimSeconds() })) return;
+    queueEndTrack.done = true;
+    handlePlaylistVideoEnded();
 }
 
 let queueNextOverlayHideTimer = null;
@@ -9225,8 +9287,9 @@ function showQueueNextOverlay({ duration = 3000, sticky = false } = {}) {
     }, duration);
 }
 
+// Anterior i següent no esperen el primer ▶ dins del vídeo (2026-10-18): abans quedaven desactivats i no es podia
+// saltar una cançó sense fer-la sonar. Si encara no ha sonat, la cançó nova també es prepara aturada.
 function advanceQueueFromOverlay(event) {
-    if (isAwaitingNativePlay()) return;
     event?.preventDefault?.();
     event?.stopPropagation?.();
 
@@ -9237,11 +9300,10 @@ function advanceQueueFromOverlay(event) {
 
     currentPlaylistIndex += 1;
     hideQueueNextOverlay({ remove: true });
-    loadVideoInSequence();
+    loadVideoInSequence({ autoPlay: !isAwaitingNativePlay() });
 }
 
 function goToPreviousFromOverlay(event) {
-    if (isAwaitingNativePlay()) return;
     event?.preventDefault?.();
     event?.stopPropagation?.();
 
@@ -9252,7 +9314,7 @@ function goToPreviousFromOverlay(event) {
 
     currentPlaylistIndex -= 1;
     hideQueueNextOverlay({ remove: true });
-    loadVideoInSequence();
+    loadVideoInSequence({ autoPlay: !isAwaitingNativePlay() });
 }
 
 // Controls de la cua sobre el reproductor: anterior, següent i finestra flotant. El play/pausa NO hi és: és el del
@@ -10748,6 +10810,9 @@ function handleYouTubeMessageLegacyImpl(event) {
     // Només els avisos de l'iframe del reproductor principal en descriuen l'estat (el de Shorts també n'envia)
     const fromMainPlayer = Boolean(videoPlayer) && event.source === videoPlayer.querySelector('iframe')?.contentWindow;
     const mainIframe = videoPlayer?.querySelector('iframe');
+    // Un avís de YouTube vol dir que ja ha rebut la salutació: s'atura la repetició (keepGreetingYouTube)
+    const isPlayerEvent = /^(onReady|initialDelivery|infoDelivery|apiInfoDelivery|onStateChange|onError|onAutoplayBlocked)$/;
+    if (fromMainPlayer && mainIframe && isPlayerEvent.test(String(payload?.event || ''))) mainIframe._ytConnected = true;
     if (fromMainPlayer && mainIframe?._musicUnavailableHandled) return;
     if (payload?.event === 'onError' && fromMainPlayer) {
         SegueixApp.features.musicQueue?.handleUnavailableVideo?.(payload.info, mainIframe);
@@ -10824,6 +10889,7 @@ function handleYouTubeMessageLegacyImpl(event) {
     ) {
         applyReportedPlayerState(payload.info.playerState);
     }
+    if (payload?.event === 'infoDelivery' && fromMainPlayer) maybeAdvanceBeforeEnd(payload.info);
 }
 
 function isYouTubeEmbed(url) {
@@ -10912,6 +10978,50 @@ function setupYouTubeIframeMessaging(iframe) {
     iframe._ytListener = sendListenerCommand;
     iframe.addEventListener('load', sendListenerCommand);
     setTimeout(sendListenerCommand, 300);
+    keepGreetingYouTube(iframe, sendListenerCommand);
+}
+
+// YouTube només envia avisos (estat, final de cançó) després de rebre «listening». Abans només s'enviava en carregar
+// l'iframe i 300 ms després: si el reproductor encara no escoltava (mòbil lent), la salutació es perdia, l'app no
+// sabia mai que sonava, els botons quedaven desactivats per sempre i la ràdio no passava a la següent (2026-10-18).
+// Ara es repeteix cada 250 ms fins al primer avís de l'iframe (com la biblioteca oficial de YouTube), fins a 15 s. Si
+// no respon mai, no es deixen els botons bloquejats esperant un avís que no arribarà.
+const YT_GREETING_INTERVAL_MS = 250;
+const YT_GREETING_MAX_MS = 15000;
+
+function keepGreetingYouTube(iframe, greet) {
+    clearInterval(iframe._ytGreetingTimer);
+    iframe._ytConnected = false;
+    const startedAt = Date.now();
+    iframe._ytGreetingTimer = setInterval(() => {
+        const current = iframe === videoPlayer?.querySelector('iframe');
+        if (!current || iframe._ytConnected) {
+            clearInterval(iframe._ytGreetingTimer);
+            return;
+        }
+        if (Date.now() - startedAt > YT_GREETING_MAX_MS) {
+            clearInterval(iframe._ytGreetingTimer);
+            releaseNativePlayWait();
+            return;
+        }
+        greet();
+    }, YT_GREETING_INTERVAL_MS);
+}
+
+// Deixa d'esperar el primer ▶ dins del vídeo: els controls propis tornen a funcionar.
+function releaseNativePlayWait() {
+    if (videoPlayer && isAwaitingNativePlay()) videoPlayer.dataset.awaitingNativePlay = 'false';
+}
+
+// Tocar el vídeo de YouTube (el primer ▶) treu el focus de la pàgina i el posa a l'iframe: és el gest que s'esperava.
+// Desbloqueja els controls encara que l'avís «sona» de YouTube no arribi.
+function initNativePlayTapDetection() {
+    window.addEventListener('blur', () => {
+        setTimeout(() => {
+            const iframe = videoPlayer?.querySelector('iframe');
+            if (iframe && document.activeElement === iframe) releaseNativePlayWait();
+        }, 0);
+    });
 }
 
 // Ordres explícites al reproductor de YouTube (no depenen de l'estat que l'iframe hagi reportat).
@@ -11043,14 +11153,18 @@ function initExternalPlayerControls() {
         toggle.classList.toggle('is-playing', playing);
         toggle.setAttribute('aria-label', playing ? 'Pausa' : 'Reprodueix');
         toggle.title = playing ? 'Pausa' : 'Reprodueix';
+        // Esperant el primer ▶ dins del vídeo, el play/pausa no queda desactivat (no reaccionava i semblava penjat):
+        // es veu apagat i, en tocar-lo, un avís diu què cal fer (també amb la finestra flotant, on no hi ha el text).
         const awaiting = isAwaitingNativePlay();
-        toggle.disabled = awaiting;
+        toggle.disabled = false;
+        toggle.classList.toggle('is-waiting-native', awaiting);
+        toggle.setAttribute('aria-disabled', awaiting ? 'true' : 'false');
         if (awaiting) {
             toggle.title = 'Prem ▶ dins del vídeo de YouTube per començar';
             toggle.setAttribute('aria-label', toggle.title);
         }
-        prev.disabled = awaiting || !hasQueuePrevVideo();
-        next.disabled = awaiting || !hasQueueNextVideo();
+        prev.disabled = !hasQueuePrevVideo();
+        next.disabled = !hasQueueNextVideo();
         bar.classList.toggle('is-awaiting-native', awaiting);
         const nativeHint = document.getElementById('playerNativePlayHint');
         if (nativeHint) nativeHint.hidden = !awaiting;
@@ -11074,6 +11188,10 @@ function initExternalPlayerControls() {
 
     prev.addEventListener('click', goToPreviousFromOverlay);
     toggle.addEventListener('click', () => {
+        if (isAwaitingNativePlay()) {
+            window.SegueixApp?.features?.shellNav?.toast?.('Prem ▶ dins del vídeo de YouTube per començar.');
+            return;
+        }
         const blocked = bar.classList.contains('is-autoplay-blocked');
         toggleMainPlayerPlayback();
         // Si el navegador continua sense deixar-la sonar, l'avís torna a sortir (cal tocar el vídeo mateix)

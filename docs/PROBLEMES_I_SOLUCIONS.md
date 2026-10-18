@@ -2029,3 +2029,39 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Proves:** `tests/sempre-radio.test.js`, `tests/music-queue-selection.test.js` («un vídeo que s'obre sol sempre és una ràdio») i opt-in `node tests/browser/verificar-relacionats.js` (vídeo obert sol, enllaç `?v=` a 390 i 1440 px, cançó de fora d'una llista que sona, llista a escriptori). Amb el codi d'abans la verificació s'atura al vídeo obert sol (no hi ha ràdio).
 
+## [2026-10-18] - Mòbil: la pantalla semblava congelada i play / següent no reaccionaven
+
+**Símptoma:** al mòbil, de vegades, després d'engegar una ràdio o tocar una cançó, els botons de sota el reproductor (anterior, play/pausa, següent) quedaven grisos i no feien res, i en acabar la cançó la ràdio no passava a la següent.
+
+**Causa Arrel (reproduïda amb un succedani de l'embed que es comporta com YouTube, `tests/browser/verificar-botons-mobil.js`):** des del 2026-10-08 («Primera reproducció amb el botó natiu de YouTube»), una selecció manual carrega el vídeo aturat (`awaitingNativePlay = 'true'`) i els tres botons queden desactivats fins que YouTube avisa que sona. YouTube només envia avisos després de rebre la salutació `listening`, i l'app només la feia dues vegades (en carregar l'iframe i 300 ms després). Si el reproductor encara no escoltava (mòbil lent), les dues es perdien i no es repetien: l'usuari tocava ▶ dins del vídeo, la música sonava, però l'app no ho sabia mai. Els botons quedaven desactivats per sempre i l'«ended» no arribava, així que la ràdio s'aturava. A més, esperant el primer ▶ no es podia saltar cap cançó, i amb la finestra flotant del mòbil l'avís «Prem ▶ dins del vídeo» s'amagava: els botons grisos no explicaven res. Les proves anteriors no ho veien perquè el seu succedani deia «sona» tot sol, sense esperar la salutació.
+
+**Solució Implementada (`app.js`):**
+- `keepGreetingYouTube()`: repeteix `listening` (i la subscripció als avisos) cada 250 ms fins al primer avís de YouTube (`isPlayerEvent`: onReady, initialDelivery, infoDelivery, onStateChange…; `handleYouTubeMessage` posa `iframe._ytConnected`), com la biblioteca oficial de YouTube. Si en 15 s no respon, `releaseNativePlayWait()` deixa d'esperar el primer ▶.
+- `initNativePlayTapDetection()`: tocar el vídeo treu el focus de la pàgina i el posa a l'iframe (`blur` + `document.activeElement === iframe`): es desbloquegen els controls encara que l'avís de YouTube no arribi.
+- Anterior i següent **no esperen** el primer ▶; si encara no ha sonat res, la cançó nova també es prepara aturada (`loadVideoInSequence({ autoPlay: !isAwaitingNativePlay() })`).
+- El play/pausa **no queda desactivat**: es veu apagat (`.is-waiting-native`) i, en tocar-lo, un avís (`shellNav.toast`) diu «Prem ▶ dins del vídeo de YouTube per començar.» (també amb la finestra flotant).
+
+**Trampes:** (1) Només compten com a resposta els avisos de YouTube, no qualsevol missatge de l'iframe. (2) No s'ha pogut provar amb YouTube real ni en un mòbil real. Per confirmar-ho en un aparell: si queda congelat, `document.getElementById('videoPlayer').dataset.awaitingNativePlay` a la consola (depuració remota) no hauria de quedar en `"true"` amb la música sonant. (3) Si YouTube posa un anunci abans de la cançó i no avisa «sona» fins que acaba, ara el toc al vídeo (focus) ja desbloqueja els controls.
+
+**Proves:** `tests/native-play.test.js` («mòbil: els botons no es queden bloquejats…») i opt-in `node tests/browser/verificar-botons-mobil.js` (YouTube que respon de seguida, que arriba tard, que no respon mai, i «següent» abans del primer ▶). Amb el codi d'abans, el cas «arriba tard» deixa els botons desactivats i la ràdio aturada.
+
+## [2026-10-18] - Fallades que ja hi eren: lint i verificacions de navegador desfasades
+
+**Lint (58 errors):** 53 eren de `js/vendor/` (biblioteques externes minimitzades que genera `npm run vendor:sync`): ara són a `.eslintignore`. Els altres 5 eren barres invertides innecessàries en expressions regulars (`js/data.js`: `/^\"|\"$/` → `/^"|"$/`; `home-sections.js`: `[(\[]` → `[([]`), sense canvi de comportament. `npm run lint`: 0 errors.
+
+**`verificar-portada.js`:** (1) el «+N» d'«Acabades de sortir» feia 36 px d'alt; ara 44 px (mida tàctil mínima) i la durada baixa una mica (`+ 52px`). (2) «En acabar la cançó, la ràdio continua»: la prova enviava «acabada» (0) sense que la cançó hagués sonat mai; des del 2026-10-08 una cançó que espera el primer ▶ no pot acabar (a la realitat no passa): ara envia «sona» (1) i després «acabada».
+
+**`verificar-finestra-sistema.js`:** era d'abans de dos canvis: (1) des del 2026-10-08 la ràdio arrenca aturada i el succedani (amb `autoplay=0`) no començava mai: ara un toc al vídeo és el primer ▶; (2) des del 2026-10-05 `#playerMiniBtn` obre la finestra flotant de dins la pàgina i no la del sistema: la prova l'obre amb `systemPlayer.openPip()` des d'un clic real (`requestWindow()` necessita un gest de l'usuari). L'estat de la Media Session s'espera un moment (el posa al dia un `MutationObserver`).
+
+**Trampa:** quan un canvi de comportament fa fallar una verificació de navegador opt-in (no són a `npm test`), s'ha d'actualitzar la verificació en el mateix canvi; si no, queda trencada i amaga regressions reals.
+
+## [2026-10-18] - Recomanacions de YouTube al final de cada vídeo i ràdio que s'acabava
+
+**Petició:** que no surtin les recomanacions de YouTube al final del vídeo incrustat; els videoclips solen tenir massa segons al final.
+
+**Límit:** YouTube no ho permet. `rel=0` (que ja hi era) només fa que siguin del mateix canal (des del 2018) i `modestbranding` es va retirar el 2023. Tapar-les o retallar el reproductor incompleix les normes de YouTube (i la regla «res damunt de l'iframe»). Les pantalles finals que posa l'artista tampoc no es poden treure.
+
+**Solució Implementada:** (1) Dins d'una cua, `maybeAdvanceBeforeEnd()` (`app.js`) passa a la cançó següent quan falten 3 s (`QUEUE_END_TRIM_SECONDS`; `localStorage.catube_queue_end_trim` per canviar-ho o desactivar-ho), amb el temps i la durada que YouTube envia a `infoDelivery`: la graella no arriba a sortir i es retallen els crèdits finals. (2) `musicQueue.extend()` allarga la cua quan en queden poques (a cada cançó nova i a l'última), de manera que mai s'arriba al final de la cua amb el reproductor parat sobre la graella. Una llista pròpia o una selecció que s'acaben continuen com a ràdio de l'estil.
+
+**Trampes:** (1) L'avís de temps (`infoDelivery`) arriba cada pocs centenars de ms: amb un marge de 3 s no es perd; si es perd, l'«acabada» (estat 0) continua fent avançar. (2) Després de `loadVideoById` el vídeo anterior ja no acaba (no hi ha «acabada» repetida). (3) No s'ha provat amb YouTube real. Proves: `tests/final-de-canco.test.js`, `tests/music-queue-selection.test.js`, opt-in `verificar-botons-mobil.js`.
+

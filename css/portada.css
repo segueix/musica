@@ -6890,6 +6890,8 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .player-native-play-hint[hidden],
 .player-external-controls.is-docked .player-native-play-hint { display: none; }
 .player-external-controls.is-awaiting-native .player-external-btn:disabled { opacity: 0.4; cursor: default; }
+/* El play/pausa esperant el primer ▶ dins del vídeo: apagat però actiu (en tocar-lo, un avís diu què cal fer) */
+.player-external-controls .player-external-btn.is-waiting-native { opacity: 0.45; }
 
 /* Les cançons que YouTube rebutja continuen identificables després del salt de ràdio. */
 .mq-unavailable {
@@ -11368,7 +11370,7 @@ body.ai-open {
     align-items: center;
     gap: 6px;
     max-width: calc(100% - 2 * var(--pt-cover-pad) - 76px);
-    min-height: 36px;
+    min-height: 44px; /* mida tàctil mínima (abans 36 px) */
     padding: 4px 10px 4px 5px;
     border: 0;
     border-radius: var(--pt-radius-pill);
@@ -11415,7 +11417,7 @@ body.ai-open {
 
 /* La durada, sota el «+N» */
 #homePage.is-portada .pt-cell--group .pt-card__dur {
-    top: calc(var(--pt-cover-pad) + 44px);
+    top: calc(var(--pt-cover-pad) + 52px);
 }
 
 /* Desplegat: la caràtula i les del mateix dia porten el marc llima, i la càpsula fa d'«Amaga-les» */

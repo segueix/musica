@@ -41,7 +41,8 @@ const STUB_PLAYER = `<!doctype html><html lang="ca"><head><meta charset="utf-8">
 <style>html,body{margin:0;height:100%;background:#123;color:#fff;font:16px sans-serif}</style></head><body><p>stub</p><script>
 let st = -1;
 function send(info) { st = info; parent.postMessage(JSON.stringify({ event: 'onStateChange', info, id: 'catube-player' }), '*'); }
-document.addEventListener('pointerdown', () => parent.postMessage(JSON.stringify({ event: '__tap' }), '*'));
+// Tocar el vídeo aturat és el primer ▶ (des del 2026-10-08 les seleccions arrenquen aturades i esperen aquest toc)
+document.addEventListener('pointerdown', () => { parent.postMessage(JSON.stringify({ event: '__tap' }), '*'); if (st !== 1) send(1); });
 // El temps actual arriba cada 200 ms (com infoDelivery de YouTube) i la URL diu d'on s'ha arrencat (start=)
 const start = Number(new URLSearchParams(location.search).get('start')) || 0;
 const autoplay = new URLSearchParams(location.search).get('autoplay') !== '0';
@@ -131,6 +132,10 @@ async function novaPagina(browser, width, errors) {
     await ambGustRecent(page);
     await page.click('#ptPlayBtn');
     await page.waitForSelector('#videoPlayer iframe', { timeout: 20000 });
+    await page.waitForTimeout(500);
+    // El primer ▶ dins del vídeo de YouTube
+    const caixa = await page.locator('#videoPlayer iframe').boundingBox();
+    await page.mouse.click(caixa.x + caixa.width / 2, caixa.y + caixa.height / 2);
     await page.waitForFunction(() => document.getElementById('videoPlayer')?.dataset?.playerState === '1', null, {
         timeout: 10000,
     });
@@ -160,6 +165,24 @@ const sona = page =>
         return { index: currentPlaylistIndex, title: video.title, artist: video.channelTitle };
     });
 
+// Des del 2026-10-05 el botó «Reproductor flotant» (#playerMiniBtn) obre la finestra flotant de dins la pàgina i ja
+// no hi ha cap botó que obri la del sistema (systemPlayer.openPip() continua existint; #playerMiniBtn només la tanca).
+// requestWindow() necessita un gest de l'usuari: s'obre amb un clic real a un botó temporal que crida openPip().
+const obrirPip = async page => {
+    await page.evaluate(() => {
+        let button = document.getElementById('__obrePip');
+        if (!button) {
+            button = document.createElement('button');
+            button.id = '__obrePip';
+            button.textContent = 'obre';
+            button.style.cssText = 'position:fixed;left:0;top:0;z-index:2147483647;width:40px;height:40px';
+            button.addEventListener('click', () => SegueixApp.features.systemPlayer.openPip());
+            document.body.appendChild(button);
+        }
+    });
+    await page.click('#__obrePip');
+};
+
 const clicPip = (page, action) =>
     page.evaluate(selector => {
         window.documentPictureInPicture.window.document.querySelector(selector).click();
@@ -188,10 +211,15 @@ const clicPip = (page, action) =>
             media.title === ara.title && media.artist === ara.artist,
             media
         );
+        // L'estat de la Media Session es posa al dia amb un MutationObserver: se li dona un moment
+        await page
+            .waitForFunction(() => navigator.mediaSession.playbackState === 'playing', null, { timeout: 3000 })
+            .catch(() => {});
+        media.state = await page.evaluate(() => navigator.mediaSession.playbackState);
         comprovar('la Media Session sap que sona', media.state === 'playing', media.state);
 
-        // Obrir la finestra del sistema amb el botó «Reproductor flotant» de sota el vídeo
-        await page.click('#playerMiniBtn');
+        // Obrir la finestra del sistema
+        await obrirPip(page);
         await page.waitForFunction(() => Boolean(window.documentPictureInPicture?.window), null, { timeout: 5000 });
         await page.waitForTimeout(600);
         let estat = await pip(page);
@@ -342,7 +370,7 @@ const clicPip = (page, action) =>
         comprovar('«+ com aquesta» queda marcat', preferencia === 'true', preferencia);
 
         const obrir = async () => {
-            await page.click('#playerMiniBtn');
+            await obrirPip(page);
             await page.waitForFunction(() => Boolean(window.documentPictureInPicture?.window), null, { timeout: 5000 });
             await page.waitForTimeout(700);
         };

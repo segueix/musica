@@ -961,6 +961,83 @@
         refresh();
     }
 
+    // ---------- La ràdio no s'acaba mai ----------
+
+    // Quan queden poques cançons per sonar (`minAhead`), s'hi afegeixen més (2026-10-18): en acabar la cua el
+    // reproductor de YouTube es quedava amb la graella de recomanacions al damunt. Ràdio d'estil: més del mateix estil;
+    // ràdio de cerca o d'artista: el mateix conjunt (torna a començar si ja han sonat totes); una selecció («Acabades de
+    // sortir», «Grans èxits…»), «A prop teu» o una llista pròpia continuen com a ràdio de l'estil de la cançó que sona.
+    // Retorna true si n'ha afegit.
+    const EXTEND_KEEP_PLAYED = 60;
+    const EXTEND_RECENT = 12;
+
+    function extend({ minAhead = 3 } = {}) {
+        if (!isPlaylistMode || !activePlaylistQueue.length || activePlaylistId === TV_ID) return false;
+        const ahead = activePlaylistQueue.length - 1 - currentPlaylistIndex;
+        if (ahead >= minAhead) return false;
+        const current = activePlaylistQueue[Math.min(currentPlaylistIndex, activePlaylistQueue.length - 1)];
+        if (!current) return false;
+        const ownList = Boolean(activePlaylistId && !isEphemeral(activePlaylistId));
+        const closedSet = Boolean(searchRadio) && !ownList;
+        const ids = activePlaylistQueue.map(item => String(item?.id));
+        const inQueue = new Set(ids);
+        const recentIds = new Set(ids.slice(-EXTEND_RECENT));
+        const preceding = activePlaylistQueue.slice(-EXTEND_RECENT);
+        let styles = ownList || radioLabel ? [] : radioStyles();
+        let more = [];
+        if (closedSet) {
+            more = buildSearchTail(searchRadio.videos, current, { preceding, playedIds: ids }).filter(
+                item => !inQueue.has(String(item?.id))
+            );
+            // Ja han sonat totes: torna a començar el conjunt (sense les darreres)
+            if (!more.length) {
+                more = buildSearchTail(searchRadio.videos, current, { preceding }).filter(
+                    item => !recentIds.has(String(item?.id))
+                );
+            }
+        } else {
+            if (!styles.length) styles = asCategories(primaryCategoryOf(current));
+            const liveOnly = radioLiveOnly && !ownList;
+            more = buildQueue(current, styles, { liveOnly, preceding, playedIds: ids }).filter(
+                item => !inQueue.has(String(item?.id))
+            );
+            // Catàleg petit: poden tornar cançons d'abans, però no les darreres
+            if (!more.length) {
+                more = buildQueue(current, styles, { liveOnly, preceding }).filter(
+                    item => !recentIds.has(String(item?.id))
+                );
+            }
+        }
+        if (!more.length) return false;
+
+        if (ownList || (radioLabel && !closedSet)) {
+            // La llista o la selecció s'ha acabat: continua com a ràdio de l'estil
+            radioCategory = styles[0] || '';
+            radioExtra = styles.slice(1);
+            radioLabel = '';
+            radioSeedTitle = '';
+            if (ownList) {
+                radioLiveOnly = false;
+                searchRadio = null;
+                savedListId = '';
+                queuedIds = new Set();
+                activePlaylistId = QUEUE_ID;
+                activePlaylistName = QUEUE_NAME;
+            }
+        }
+        let queue = [...activePlaylistQueue, ...more];
+        // No deixa créixer la cua sense límit: només es guarden les darreres cançons ja sonades
+        const drop = Math.max(0, currentPlaylistIndex - EXTEND_KEEP_PLAYED);
+        if (drop) {
+            queue = queue.slice(drop);
+            currentPlaylistIndex -= drop;
+        }
+        activePlaylistQueue = queue;
+        refresh();
+        notifyQueueChanged();
+        return true;
+    }
+
     // ---------- Preferències explícites i canvis de gust ----------
 
     const signalsApi = () => app.features.musicSignals;
@@ -1895,6 +1972,7 @@
         restoreSession,
         startFrom,
         startDiscovery,
+        extend,
         getLastRadio,
         resumeLast,
         playSelection,

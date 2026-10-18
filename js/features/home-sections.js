@@ -42,7 +42,7 @@
     // (o marcades així pel classificador del feed). Exclou portades (covers), lyrics, àudios
     // amb imatge fixa, directes, versions, karaokes, remixos, teasers i contingut auxiliar.
     const OFFICIAL_CLIP_RE =
-        /(v[ií]deo\s*-?\s*clip|clip\s+oficial|official\s+(music\s+)?video|official\s+clip|v[ií]deo\s+oficial|[(\[]\s*(oficial|official)\s*[)\]]|official\s+mv)/i;
+        /(v[ií]deo\s*-?\s*clip|clip\s+oficial|official\s+(music\s+)?video|official\s+clip|v[ií]deo\s+oficial|[([]\s*(oficial|official)\s*[)\]]|official\s+mv)/i;
     const NOT_OFFICIAL_CLIP_RE =
         /(cover|versi[óo]|karaoke|lyric|letra|lletra|audio|àudio|en\s+directe|\blive\b|ac[uú]stic|reacci|making\s+of|teaser|tr[àa]iler|entrevista|podcast|remix|sessi[óo]|behind|darrere|shorts?\b|#shorts)/i;
 
