@@ -164,6 +164,14 @@ describe('fitxa d’artista: cançons per visualitzacions', () => {
         });
         expect(html).toContain('>#1<');
         expect(html).toContain('<span class="ap-card__tag">La més escoltada</span>');
+        // a dalt, al costat del #1 (no a baix sobre el títol) i més gran (2026-10-18)
+        expect(html).toMatch(
+            /<span class="ap-card__head" aria-hidden="true"><span class="ap-card__rank" aria-hidden="true">#1<\/span><span class="ap-card__tag">La més escoltada<\/span><\/span>/
+        );
+        expect(html.slice(html.indexOf('ap-card__info'))).not.toContain('ap-card__tag');
+        expect(css).toMatch(
+            /#channelPage \.ap-card__tag \{\s*font-size: max\(0\.85rem, calc\(var\(--ap-t\) \* 0\.8\)\);/
+        );
         expect(html).toContain('data-ap-play="b"');
         expect(html).toContain('5 k</span>');
         expect(html).toContain('1998 · 1:30');
