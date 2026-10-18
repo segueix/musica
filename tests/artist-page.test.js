@@ -361,3 +361,9 @@ describe('fitxa d’artista: sense categories personalitzades', () => {
         expect(fn).not.toContain('<button');
     });
 });
+
+describe('fitxa al mòbil: la capçalera i la #1 no surten de la pantalla (2026-10-18)', () => {
+    it('la graella de dalt té una columna minmax(0, 1fr), no la implícita (auto)', () => {
+        expect(css).toMatch(/#channelPage \.ap-head \{\s*display: grid;\s*grid-template-columns: minmax\(0, 1fr\);/);
+    });
+});

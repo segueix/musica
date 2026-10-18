@@ -247,6 +247,29 @@ const inside = (inner, outer) =>
 async function check(browser, width, height, label) {
     const { ctx, page, errors } = await openArtist(browser, width, height);
     const info = await layout(page);
+    // La capçalera i «La més escoltada» (#1) caben dins la pantalla i la #1 és quadrada al mòbil (2026-10-18: la
+    // graella de dalt s'eixamplava fins al text més llarg i en sortien per la dreta)
+    const caixes = await page.evaluate(() => {
+        const box = selector => document.querySelector(selector)?.getBoundingClientRect().toJSON();
+        return {
+            vw: innerWidth,
+            doc: document.documentElement.scrollWidth,
+            hero: box('#apHero'),
+            best: box('#apBest .ap-card'),
+        };
+    });
+    ok(
+        `${label}: la capçalera i la #1 no surten de la pantalla`,
+        caixes.doc <= caixes.vw && caixes.hero.right <= caixes.vw && caixes.best.right <= caixes.vw,
+        caixes
+    );
+    if (width <= 768) {
+        ok(
+            `${label}: la #1 és quadrada i fa l'ample de la columna`,
+            Math.abs(caixes.best.width - caixes.best.height) < 2 && Math.abs(caixes.best.width - caixes.hero.width) < 2,
+            caixes.best
+        );
+    }
     ok(
         `${label}: la foto omple la capçalera`,
         Math.abs(info.img.width - info.hero.width) < 3 && Math.abs(info.img.height - info.hero.height) < 3,
@@ -333,7 +356,9 @@ async function check(browser, width, height, label) {
     ok(
         `${label}: capçaleres: «Novetats» i després «Les més escoltades» (o cap, si no hi ha novetats)`,
         info.headings.length === 0 ||
-            (info.headings[0] === 'Novetats' && info.headings[1] === 'Les més escoltades' && info.headings.length === 2),
+            (info.headings[0] === 'Novetats' &&
+                info.headings[1] === 'Les més escoltades' &&
+                info.headings.length === 2),
         info.headings
     );
     if (info.headings.length) {

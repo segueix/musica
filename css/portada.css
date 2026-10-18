@@ -3432,9 +3432,13 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* ---------- Capçalera + la més escoltada ---------- */
-/* Al mòbil la #1 va just a sota de la capçalera, amb el mínim espai (com entre les caràtules) */
+/* Al mòbil la #1 va just a sota de la capçalera, amb el mínim espai (com entre les caràtules). La columna és
+   minmax(0, 1fr) i no la implícita (auto): amb auto s'eixamplava fins al text més llarg que no es parteix (la línia
+   de visualitzacions, la fila de botons) i la capçalera i la #1 feien 586 px en una pantalla de 390 i en sortien
+   per la dreta (2026-10-18). */
 #channelPage .ap-head {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 4px;
 }
 
