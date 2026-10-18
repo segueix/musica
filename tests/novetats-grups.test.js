@@ -150,3 +150,85 @@ describe('«Acabades de sortir»: el marc de la primera caràtula', () => {
         );
     });
 });
+
+describe('«Reprodueix les novetats»: el darrer mes, fins a 40, amb els grups intercalats (2026-10-18)', () => {
+    const ids = [];
+    const make = (channelId, hoursAgo) => {
+        const v = video(channelId, hoursAgo);
+        ids.push(v.id);
+        return v;
+    };
+    // C0 en treu vuit el mateix dia (les més noves); 14 artistes més, una cançó cadascun durant el mes; i cançons
+    // de fa més d'un mes, que no hi han d'entrar
+    const many = Array.from({ length: 14 }, (_, i) => ({ id: `M${i}`, name: `Altre ${i}`, categories: ['Pop'] }));
+    const burst = Array.from({ length: 8 }, (_, i) => make('C0', 1 + i * 0.1));
+    const monthSongs = many.map((c, i) => make(c.id, 10 + i * 40));
+    const old = Array.from({ length: 5 }, (_, i) => make(`M${i}`, 32 * 24 + i));
+    const songs = [...burst, ...monthSongs, ...old];
+    const big = portada.buildModel({
+        discovery,
+        recent: songs,
+        all: songs,
+        channels: [...channels, ...many],
+        history: [],
+        liked: [],
+        followedIds: [],
+        playlists: [],
+        hiddenIds: new Set(),
+        now: NOW,
+        rng: () => 0.5,
+    });
+    const radio = big.fresh.radio;
+    const keyOf = v => discovery.artistKeyOf(v);
+
+    it('porta totes les estrenes del darrer mes (no només les 12 de la fila) i cap de més antiga', () => {
+        expect(radio.length).toBe(burst.length + monthSongs.length);
+        expect(radio.some(v => old.includes(v))).toBe(false);
+    });
+
+    it('el grup que n’ha tret vuit no omple el principi: queden repartides i mai seguides', () => {
+        expect(radio.slice(0, 12).filter(v => v.channelId === 'C0').length).toBeLessThanOrEqual(4);
+        for (let i = 1; i < radio.length; i++) expect(keyOf(radio[i])).not.toBe(keyOf(radio[i - 1]));
+        const positions = radio.map((v, i) => (v.channelId === 'C0' ? i : -1)).filter(i => i >= 0);
+        expect(positions).toHaveLength(8);
+        expect(positions[positions.length - 1]).toBeGreaterThan(radio.length / 2);
+    });
+
+    it('com a màxim 40 cançons, les més noves', () => {
+        const lots = Array.from({ length: 60 }, (_, i) => ({ ...video(`M${i % 14}`, 2 + i * 5) }));
+        const m = portada.buildModel({
+            discovery,
+            recent: lots,
+            all: lots,
+            channels: many,
+            history: [],
+            liked: [],
+            followedIds: [],
+            playlists: [],
+            hiddenIds: new Set(),
+            now: NOW,
+            rng: () => 0.5,
+        });
+        expect(m.fresh.radio).toHaveLength(40);
+        const newest40 = new Set(lots.slice(0, 40).map(v => v.id));
+        expect(m.fresh.radio.every(v => newest40.has(v.id))).toBe(true);
+    });
+
+    it('«Reprodueix les novetats» fa sonar aquesta llista', () => {
+        expect(portadaSource).toMatch(/fresh: \{\s*videos: model\.fresh\?\.radio \|\|/);
+    });
+
+    it('interleaveByArtist (pura): conserva l’ordre quan no hi ha repetits i reparteix els que hi són', () => {
+        const k = v => v.a;
+        const plain = ['a', 'b', 'c'].map(a => ({ a }));
+        expect(portada.interleaveByArtist(plain, k)).toEqual(plain);
+        const list = [...'AAAA'].map((a, i) => ({ a, i })).concat([...'BCDEFGH'].map(a => ({ a })));
+        const out = portada
+            .interleaveByArtist(list, k)
+            .map(v => v.a)
+            .join('');
+        expect(out.length).toBe(11);
+        expect(out).not.toMatch(/AA/);
+        expect(out[0]).toBe('A');
+    });
+});
