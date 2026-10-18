@@ -6890,6 +6890,8 @@ body.is-video-pip .video-placeholder.is-placeholder-hidden {
 .player-native-play-hint[hidden],
 .player-external-controls.is-docked .player-native-play-hint { display: none; }
 .player-external-controls.is-awaiting-native .player-external-btn:disabled { opacity: 0.4; cursor: default; }
+/* El play/pausa esperant el primer ▶ dins del vídeo: apagat però actiu (en tocar-lo, un avís diu què cal fer) */
+.player-external-controls .player-external-btn.is-waiting-native { opacity: 0.45; }
 
 /* Les cançons que YouTube rebutja continuen identificables després del salt de ràdio. */
 .mq-unavailable {

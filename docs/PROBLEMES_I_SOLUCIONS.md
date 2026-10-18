@@ -2029,3 +2029,19 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Proves:** `tests/sempre-radio.test.js`, `tests/music-queue-selection.test.js` («un vídeo que s'obre sol sempre és una ràdio») i opt-in `node tests/browser/verificar-relacionats.js` (vídeo obert sol, enllaç `?v=` a 390 i 1440 px, cançó de fora d'una llista que sona, llista a escriptori). Amb el codi d'abans la verificació s'atura al vídeo obert sol (no hi ha ràdio).
 
+## [2026-10-18] - Mòbil: la pantalla semblava congelada i play / següent no reaccionaven
+
+**Símptoma:** al mòbil, de vegades, després d'engegar una ràdio o tocar una cançó, els botons de sota el reproductor (anterior, play/pausa, següent) quedaven grisos i no feien res, i en acabar la cançó la ràdio no passava a la següent.
+
+**Causa Arrel (reproduïda amb un succedani de l'embed que es comporta com YouTube, `tests/browser/verificar-botons-mobil.js`):** des del 2026-10-08 («Primera reproducció amb el botó natiu de YouTube»), una selecció manual carrega el vídeo aturat (`awaitingNativePlay = 'true'`) i els tres botons queden desactivats fins que YouTube avisa que sona. YouTube només envia avisos després de rebre la salutació `listening`, i l'app només la feia dues vegades (en carregar l'iframe i 300 ms després). Si el reproductor encara no escoltava (mòbil lent), les dues es perdien i no es repetien: l'usuari tocava ▶ dins del vídeo, la música sonava, però l'app no ho sabia mai. Els botons quedaven desactivats per sempre i l'«ended» no arribava, així que la ràdio s'aturava. A més, esperant el primer ▶ no es podia saltar cap cançó, i amb la finestra flotant del mòbil l'avís «Prem ▶ dins del vídeo» s'amagava: els botons grisos no explicaven res. Les proves anteriors no ho veien perquè el seu succedani deia «sona» tot sol, sense esperar la salutació.
+
+**Solució Implementada (`app.js`):**
+- `keepGreetingYouTube()`: repeteix `listening` (i la subscripció als avisos) cada 250 ms fins al primer avís de YouTube (`isPlayerEvent`: onReady, initialDelivery, infoDelivery, onStateChange…; `handleYouTubeMessage` posa `iframe._ytConnected`), com la biblioteca oficial de YouTube. Si en 15 s no respon, `releaseNativePlayWait()` deixa d'esperar el primer ▶.
+- `initNativePlayTapDetection()`: tocar el vídeo treu el focus de la pàgina i el posa a l'iframe (`blur` + `document.activeElement === iframe`): es desbloquegen els controls encara que l'avís de YouTube no arribi.
+- Anterior i següent **no esperen** el primer ▶; si encara no ha sonat res, la cançó nova també es prepara aturada (`loadVideoInSequence({ autoPlay: !isAwaitingNativePlay() })`).
+- El play/pausa **no queda desactivat**: es veu apagat (`.is-waiting-native`) i, en tocar-lo, un avís (`shellNav.toast`) diu «Prem ▶ dins del vídeo de YouTube per començar.» (també amb la finestra flotant).
+
+**Trampes:** (1) Només compten com a resposta els avisos de YouTube, no qualsevol missatge de l'iframe. (2) No s'ha pogut provar amb YouTube real ni en un mòbil real. Per confirmar-ho en un aparell: si queda congelat, `document.getElementById('videoPlayer').dataset.awaitingNativePlay` a la consola (depuració remota) no hauria de quedar en `"true"` amb la música sonant. (3) Si YouTube posa un anunci abans de la cançó i no avisa «sona» fins que acaba, ara el toc al vídeo (focus) ja desbloqueja els controls.
+
+**Proves:** `tests/native-play.test.js` («mòbil: els botons no es queden bloquejats…») i opt-in `node tests/browser/verificar-botons-mobil.js` (YouTube que respon de seguida, que arriba tard, que no respon mai, i «següent» abans del primer ▶). Amb el codi d'abans, el cas «arriba tard» deixa els botons desactivats i la ràdio aturada.
+
