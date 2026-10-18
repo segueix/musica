@@ -11321,7 +11321,8 @@ body.ai-open {
 
 /* «+N»: el grup ha publicat més cançons aquell dia. Una càpsula llima, ben visible, a dalt a l'esquerra (la durada
    baixa a sota) i la caràtula és la primera d'una pila: darrere seu, una o dues capes (una per cançó de més, fins a
-   dues) desplaçades cap a dalt i cap a la dreta, com documents apilats. La caràtula es fa petita el que ocupa la
+   dues) desplaçades cap a dalt i cap a la dreta, com documents apilats, amb un marc blanc fi (1 px; 2026-10-18:
+   abans era de 2 px i llima). La caràtula es fa petita el que ocupa la
    pila (--pt-stack), de manera que la cel·la fa el mateix que les altres i res no se'n surt (la fila té 4 px de gap
    i retalla). */
 #homePage.is-portada .pt-cell--group {
@@ -11345,7 +11346,7 @@ body.ai-open {
     content: '';
     position: absolute;
     z-index: -1;
-    border: 2px solid var(--pt-accent);
+    border: 1px solid #fff;
     border-radius: var(--pt-radius-cover);
     pointer-events: none;
 }
@@ -11356,7 +11357,7 @@ body.ai-open {
     right: calc(var(--pt-stack) - var(--pt-stack-step));
     bottom: var(--pt-stack-step);
     left: var(--pt-stack-step);
-    background: #3a4232;
+    background: #343836;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
@@ -11367,8 +11368,7 @@ body.ai-open {
     bottom: calc(2 * var(--pt-stack-step));
     left: calc(2 * var(--pt-stack-step));
     z-index: -2;
-    border-color: rgba(214, 237, 132, 0.55);
-    background: #272c24;
+    background: #262927;
 }
 
 #homePage.is-portada .pt-card__more {

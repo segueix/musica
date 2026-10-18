@@ -127,6 +127,9 @@ describe('«Acabades de sortir»: cançons del mateix dia', () => {
         expect(css).toMatch(
             /\.pt-cell--group\.pt-cell--stack-2::after \{[^}]*left: calc\(2 \* var\(--pt-stack-step\)\);/
         );
+        // les capes de la pila porten un marc blanc fi (1 px), no llima
+        expect(css).toMatch(/\.pt-cell--group\.pt-cell--stack-2::after \{\s*content: '';[^}]*border: 1px solid #fff;/);
+        expect(css).not.toMatch(/\.pt-cell--stack-2::after \{[^}]*border-color: rgba\(214, 237, 132/);
         // desplegat, sense pila
         expect(css).toMatch(/\.pt-cell--group\.is-open \{\s*--pt-stack: 0px;/);
     });
