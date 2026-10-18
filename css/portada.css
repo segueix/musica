@@ -2781,7 +2781,7 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* Mòbil i tauleta: després d'una ràdio o d'una llista no hi ha «Altres vídeos relacionats» ni vídeos de l'artista
-   (a escriptori, a partir de 1025 px, ja s'amaguen a styles.css per a la ràdio). La TV té el seu propi panell. */
+   (a escriptori, a partir de 1025 px, s'amaguen a styles.css). La TV té el seu propi panell. */
 @media (max-width: 1024px) {
     #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .watch-sidebar,
     #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-related-header,
@@ -10761,43 +10761,31 @@ body .mq .mq-item:not(.is-active):has(:focus-visible) .mq-cover {
     object-fit: cover;
 }
 
-/* «+ Afegeix cançons» amb les caràtules de la llista de fons (2026-10-16): quatre en fila (--pl-add-1…4, les posa
-   playlistAddSongsStyle() d'app.js), enfosquides perquè el text blanc es llegeixi */
-#playlistsPage .playlist-add-songs[style*='--pl-add-1'] {
-    min-height: 52px;
-    border-color: rgba(255, 255, 255, 0.7);
-    background-color: var(--pt-surface-2);
-    background-image:
-        linear-gradient(rgba(20, 22, 21, 0.62), rgba(20, 22, 21, 0.62)),
-        var(--pl-add-1),
-        var(--pl-add-2),
-        var(--pl-add-3),
-        var(--pl-add-4);
-    background-position:
-        center,
-        0 50%,
-        33.333% 50%,
-        66.667% 50%,
-        100% 50%;
-    background-repeat: no-repeat;
-    background-size:
-        100% 100%,
-        25% auto,
-        25% auto,
-        25% auto,
-        25% auto;
+/* «+ Afegeix cançons» damunt del mosaic de la llista (2026-10-18): a dalt a l'esquerra de la caràtula, en càpsula
+   de vidre com compartir i esborrar, de manera que el fons és el mateix mosaic. Abans era una franja a sota amb les
+   caràtules de la llista repetides de fons (playlistAddSongsStyle(), --pl-add-1…4): no l'hi tornis a posar. */
+#playlistsPage .playlist-card .playlist-add-songs {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 12px;
+    max-width: calc(100% - 130px);
+    min-height: 40px;
+    padding: 0 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.55);
     color: #fff;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    font-size: 0.875rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
-#playlistsPage .playlist-add-songs[style*='--pl-add-1']:is(:hover, :focus-visible) {
+#playlistsPage .playlist-card .playlist-add-songs:is(:hover, :focus-visible) {
     border-color: var(--pt-accent);
-    background-image:
-        linear-gradient(rgba(20, 22, 21, 0.45), rgba(20, 22, 21, 0.45)),
-        var(--pl-add-1),
-        var(--pl-add-2),
-        var(--pl-add-3),
-        var(--pl-add-4);
+    background: rgba(20, 22, 21, 0.72);
     color: var(--pt-accent);
 }
 
@@ -11321,7 +11309,8 @@ body.ai-open {
 
 /* «+N»: el grup ha publicat més cançons aquell dia. Una càpsula llima, ben visible, a dalt a l'esquerra (la durada
    baixa a sota) i la caràtula és la primera d'una pila: darrere seu, una o dues capes (una per cançó de més, fins a
-   dues) desplaçades cap a dalt i cap a la dreta, com documents apilats. La caràtula es fa petita el que ocupa la
+   dues) desplaçades cap a dalt i cap a la dreta, com documents apilats, amb un marc blanc fi (1 px; 2026-10-18:
+   abans era de 2 px i llima). La caràtula es fa petita el que ocupa la
    pila (--pt-stack), de manera que la cel·la fa el mateix que les altres i res no se'n surt (la fila té 4 px de gap
    i retalla). */
 #homePage.is-portada .pt-cell--group {
@@ -11345,7 +11334,7 @@ body.ai-open {
     content: '';
     position: absolute;
     z-index: -1;
-    border: 2px solid var(--pt-accent);
+    border: 1px solid #fff;
     border-radius: var(--pt-radius-cover);
     pointer-events: none;
 }
@@ -11356,7 +11345,7 @@ body.ai-open {
     right: calc(var(--pt-stack) - var(--pt-stack-step));
     bottom: var(--pt-stack-step);
     left: var(--pt-stack-step);
-    background: #3a4232;
+    background: #343836;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
@@ -11367,8 +11356,7 @@ body.ai-open {
     bottom: calc(2 * var(--pt-stack-step));
     left: calc(2 * var(--pt-stack-step));
     z-index: -2;
-    border-color: rgba(214, 237, 132, 0.55);
-    background: #272c24;
+    background: #262927;
 }
 
 #homePage.is-portada .pt-card__more {

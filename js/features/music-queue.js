@@ -418,8 +418,20 @@
         activePlaylistQueue = queue;
         currentPlaylistIndex = 0;
         rememberLastRadio(video, categories.join('|'));
-        loadVideoInSequence({ autoPlay: false });
+        loadVideoInSequence(playbackOptions(options.playback));
         return true;
+    }
+
+    // Com ha de començar la primera cançó d'una cua: en pausa (selecció explícita) llevat que qui l'obre demani
+    // reproduir-la; un enllaç o una sessió recuperada hi porten el segon (`startAt`) i no afegeixen entrades a
+    // l'historial (`replaceHistory`).
+    function playbackOptions(playback = {}) {
+        const startAt = Math.max(0, Math.floor(Number(playback?.startAt) || 0));
+        return {
+            autoPlay: playback?.autoPlay === true,
+            ...(playback?.replaceHistory ? { replaceHistory: true } : {}),
+            ...(startAt > 0 ? { startAt } : {}),
+        };
     }
 
     // ---------- Continuar la ràdio en tornar ----------
@@ -752,23 +764,36 @@
     }
 
     // Retorna true si ha engegat la reproducció amb cua (si no, l'app segueix el camí normal).
-    function startFrom(videoId, source) {
+    // `playback` (opcional): `{ video, startAt, replaceHistory, autoPlay }` quan no és un clic sinó un vídeo que
+    // s'obre sol (enllaç ?v=, historial del navegador, sessió recuperada): `video` és el vídeo ja resolt (arxiu,
+    // historial) si no és al feed.
+    function startFrom(videoId, source, playback = {}) {
         if (source === 'static' || document.body.classList.contains('segueix-tv-active')) return false;
         if (typeof loadVideoInSequence !== 'function') return false;
 
-        const video = findVideo(videoId) || activePlaylistQueue.find(item => String(item?.id) === String(videoId));
+        const sameId = item => String(item?.id) === String(videoId);
+        const video =
+            findVideo(videoId) ||
+            activePlaylistQueue.find(sameId) ||
+            (playback?.video && sameId(playback.video) ? playback.video : null);
         if (!video || video.isShort) return false;
 
-        if (isPlaylistMode && activePlaylistId === QUEUE_ID && (!isLiveSong(video) || radioLiveOnly)) {
-            const index = activePlaylistQueue.findIndex(item => String(item?.id) === String(videoId));
+        // Una cançó de la ràdio, o de la llista pròpia que sona, es reprodueix dins de la cua
+        const inQueue =
+            isPlaylistMode &&
+            ((activePlaylistId === QUEUE_ID && (!isLiveSong(video) || radioLiveOnly)) ||
+                (activePlaylistId && !isEphemeral(activePlaylistId)));
+        if (inQueue) {
+            const index = activePlaylistQueue.findIndex(sameId);
             if (index >= 0) {
                 currentPlaylistIndex = index;
                 clearEmbeddedYouTubeSession();
-                loadVideoInSequence({ autoPlay: false });
+                loadVideoInSequence(playbackOptions(playback));
                 return true;
             }
         }
-        if (isPlaylistMode && activePlaylistId && !isEphemeral(activePlaylistId)) return false;
+        // Una cançó de fora de la llista que sona engega una ràdio nova (abans s'obria la fitxa antiga d'un vídeo
+        // sol, amb relacionats i els vídeos de l'artista).
 
         // Categoria de la ràdio: la de la fila de la portada on s'ha clicat (Cançó d'autor, Jazz...) o,
         // a la pàgina d'una categoria, la categoria seleccionada. A Novetats/Tot/... és una ràdio general.
@@ -779,7 +804,7 @@
         // Sense categoria clara (Novetats, Tot, una fitxa d'artista...) la ràdio és de la categoria principal
         // assignada a l'artista de la cançó: una ràdio d'un artista o d'una categoria sempre respecta l'estil.
         if (!category || GENERAL_VIEWS.has(category.toLowerCase())) category = primaryCategoryOf(video);
-        return launch(video, category, { liveOnly: isLiveSong(video) });
+        return launch(video, category, { liveOnly: isLiveSong(video), playback });
     }
 
     // Gust recent de l'usuari (la darrera setmana o dies d'historial + m'agrades + seguits), o null sense el mòdul.

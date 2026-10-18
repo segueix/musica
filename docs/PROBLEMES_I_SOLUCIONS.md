@@ -2014,3 +2014,18 @@ Resultat **idèntic**: 100 cues (quatre modes, 12 llavors, amb i sense senyals, 
 ## 2026-10-17 — Guia d’instal·lació sense compartir
 
 El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostrava els sistemes. El botó d’instal·lar podia obrir directament el prompt del navegador i els altres aparells quedaven plegats. Per petició de l’usuari s’eliminen els dos botons de compartir i la instal·lació directa pròpia. «Instal·la l’app» sempre obre una guia amb tots els passos visibles, també dins l’app instal·lada. Proves: tests/app-install.test.js.
+
+## [2026-10-18] - De vegades sortia la fitxa antiga d'un vídeo sol en lloc d'una ràdio
+
+**Símptoma:** de tant en tant, en lloc de la ràdio (reproductor i cua a la dreta) sortia la vista antiga: el reproductor, «Altres vídeos relacionats» a sota i una columna amb els vídeos de l'artista. L'app és per crear ràdios i descobrir música: sempre hauria de ser una ràdio.
+
+**Causa Arrel:** només el clic d'una caràtula (`playThenNavigate()` → `musicQueue.startFrom()`) engegava una ràdio. Tots els altres camins cridaven `showVideoFromAPI()` directament, que sense una cua en curs feia `exitPlaylistMode()` i pintava la fitxa d'un vídeo sol: l'enllaç compartit `?v=`, enrere/endavant quan `restoreVideoFromHistory()` no tenia cap cua per recuperar, la sessió recuperada en recarregar sense cua desada, «Continua escoltant», el play de la fitxa després d'aturar-la, «Torna el vídeo» de la finestra flotant amb una altra cançó i les targetes de llistes compartides. A més, amb una **llista pròpia** sonant, `startFrom()` tornava `false` per a qualsevol cançó (fins i tot de fora de la llista) i també sortia la fitxa antiga. I a escriptori els relacionats només s'amagaven amb la ràdio (`.mq--radio`), no amb una llista.
+
+**Solució Implementada:**
+- `startRadioForSingleVideo()` (`app.js`), cridada a l'inici de `showVideoFromAPILegacyImpl()` si no ve d'una cua, i un altre cop després de resoldre un vídeo d'arxiu o de l'historial (que `findVideo()` de la ràdio no coneix): passa el vídeo resolt, el segon (`startAt`), `replaceHistory` i `autoPlay` a `musicQueue.startFrom(id, 'api', playback)`. **Trampa:** `isPlaylistNavigation` només és cert durant la part síncrona de la crida (`loadVideoInSequence()` el torna a fals quan `showVideoFromAPI()` retorna la promesa): després de l'`await` de l'índex d'arxiu s'ha de llegir el valor desat (`fromQueue`), o una cançó de la mateixa ràdio en tornaria a engegar una altra.
+- `startFrom()` (`music-queue.js`) accepta `playback` (`playbackOptions()`: per defecte, en pausa i sense res més, com abans) i, amb una llista pròpia sonant, reprodueix la cançó dins la llista si hi és o engega una ràdio si no.
+- `styles.css`: a escriptori els relacionats s'amaguen amb qualsevol cua (`.mq`), no només amb la ràdio.
+- Només queda el vídeo sol si no es pot fer cap ràdio (vídeo desconegut, Short, TV, catàleg sense prou cançons).
+
+**Proves:** `tests/sempre-radio.test.js`, `tests/music-queue-selection.test.js` («un vídeo que s'obre sol sempre és una ràdio») i opt-in `node tests/browser/verificar-relacionats.js` (vídeo obert sol, enllaç `?v=` a 390 i 1440 px, cançó de fora d'una llista que sona, llista a escriptori). Amb el codi d'abans la verificació s'atura al vídeo obert sol (no hi ha ràdio).
+

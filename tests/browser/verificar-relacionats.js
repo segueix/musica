@@ -1,5 +1,6 @@
-// Verificació en navegador real: després d'una ràdio o d'una llista, al mòbil (i tauleta) no hi ha «Altres vídeos
-// relacionats» ni vídeos de l'artista; un vídeo sol continua mostrant-los.
+// Verificació en navegador real: després d'una ràdio o d'una llista no hi ha «Altres vídeos relacionats» ni vídeos de
+// l'artista, a cap mida; i un vídeo que s'obre sol (enllaç ?v=, showVideoFromAPI, una cançó de fora de la llista que
+// sona) engega una ràdio: la fitxa antiga d'un vídeo sol ja no surt (2026-10-18).
 //
 // NO forma part de `npm test`: és una eina opt-in. Requisits: playwright-core i un Chromium (CHROMIUM_PATH).
 // Ús:  node tests/browser/verificar-relacionats.js
@@ -141,24 +142,19 @@ async function main() {
                 radio
             );
 
-            // Un vídeo sol (fora de la ràdio) els continua mostrant
+            // Un vídeo que s'obre sol (fora de cap cua) també és una ràdio, sense relacionats
             await page.evaluate(() => {
-                const song = currentFeedVideos.find(v => v.contentType === 'song' && !v.isShort);
+                const song = currentFeedVideos.filter(v => v.contentType === 'song' && !v.isShort)[7];
                 exitPlaylistMode();
-                loadVideoInSequence(song.id, 'api');
+                window.__solId = song.id;
+                showVideoFromAPI(song.id);
             });
-            await page.waitForFunction(
-                () => !document.querySelector('#playlistQueueContainer:not(.hidden) .mq'),
-                null,
-                {
-                    timeout: 15000,
-                }
-            );
-            await page.waitForTimeout(1500);
+            await page.waitForFunction(() => activePlaylistQueue[0]?.id === window.__solId, null, { timeout: 15000 });
+            await esperarCua(page);
             const sol = await relacionats(page);
             comprovar(
-                `${width} px: un vídeo sol sí que mostra els relacionats`,
-                !sol.cua && (sol.capcalera || sol.titol || sol.graella || sol.sidebar),
+                `${width} px: un vídeo obert sol engega una ràdio que comença per ell, sense relacionats`,
+                sol.cua && nadaRelacionat(sol),
                 sol
             );
             await context.close();
@@ -172,6 +168,58 @@ async function main() {
             comprovar(
                 `${width} px: després d'una llista tampoc`,
                 llista.cua && nadaRelacionat(llista) && llista.alcada < 6000,
+                llista
+            );
+
+            // Amb la llista sonant, una cançó de fora de la llista engega una ràdio (abans, la fitxa d'un vídeo sol)
+            await page.evaluate(() => {
+                const inList = new Set(activePlaylistQueue.map(v => v.id));
+                const song = currentFeedVideos.filter(
+                    v => v.contentType === 'song' && !v.isShort && !inList.has(v.id)
+                )[3];
+                window.__foraId = song.id;
+                showVideoFromAPI(song.id);
+            });
+            await page.waitForFunction(() => activePlaylistQueue[0]?.id === window.__foraId, null, { timeout: 15000 });
+            await esperarCua(page);
+            const fora = await relacionats(page);
+            const radioFora = await page.evaluate(() => activePlaylistId === '__music_queue__');
+            comprovar(
+                `${width} px: amb una llista sonant, una cançó de fora engega una ràdio sense relacionats`,
+                radioFora && fora.cua && nadaRelacionat(fora),
+                { radioFora, ...fora }
+            );
+            await context.close();
+        }
+
+        // Enllaç compartit d'una cançó (?v=): s'obre com a ràdio, a escriptori i al mòbil
+        for (const width of [390, 1440]) {
+            const { context, page } = await novaPagina(browser, width, errors);
+            const id = await page.evaluate(
+                () => currentFeedVideos.filter(v => v.contentType === 'song' && !v.isShort)[5].id
+            );
+            await page.goto(`http://localhost:${PORT}/?v=${id}`, { waitUntil: 'domcontentloaded' });
+            await esperarCua(page);
+            const enllac = await relacionats(page);
+            const primera = await page.evaluate(() => activePlaylistQueue[0]?.id);
+            comprovar(
+                `${width} px: un enllaç ?v= s'obre com a ràdio que comença per la cançó, sense relacionats`,
+                primera === id && enllac.cua && nadaRelacionat(enllac),
+                { primera, id, ...enllac }
+            );
+            await context.close();
+        }
+
+        // Escriptori: una llista pròpia tampoc no mostra relacionats (abans només la ràdio els amagava)
+        {
+            const { context, page } = await novaPagina(browser, 1440, errors);
+            await sembrarLlista(page);
+            await page.click('.hp-card[data-hp-play="pl_1"]');
+            await esperarCua(page);
+            const llista = await relacionats(page);
+            comprovar(
+                '1440 px: una llista a escriptori, sense relacionats',
+                llista.cua && nadaRelacionat(llista),
                 llista
             );
             await context.close();

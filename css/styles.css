@@ -8730,12 +8730,12 @@ body {
         border-radius: 12px 12px 0 0;
     }
 
-    /* Ràdio a escriptori: a sota no hi ha «Altres vídeos relacionats» ni els vídeos de l'artista;
-       només el reproductor i la ràdio. */
-    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .watch-sidebar,
-    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .extra-related-header,
-    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .extra-related-title,
-    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq--radio) .extra-videos-grid {
+    /* Ràdio o llista a escriptori: a sota no hi ha «Altres vídeos relacionats» ni els vídeos de l'artista;
+       només el reproductor i la cua (2026-10-18: abans només amb la ràdio, i una llista pròpia els mostrava). */
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .watch-sidebar,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-related-header,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-related-title,
+    #watchPage:has(#playlistQueueContainer:not(.hidden) .mq) .extra-videos-grid {
         display: none;
     }
 
