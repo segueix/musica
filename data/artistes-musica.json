@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T17:50:02.487Z",
+  "updatedAt": "2026-10-18T18:00:17.047Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40881,18 +40881,35 @@
       "wikidataId": null,
       "musicbrainzId": null,
       "youtube": {
-        "channels": [],
+        "channels": [
+          {
+            "id": "UCNtSpJN9-iRH8tENhz1_kXw",
+            "handle": "@urisantafe1993",
+            "name": "URI SANTAFÉ",
+            "type": "official",
+            "primary": true
+          },
+          {
+            "id": "UCDZC81-3ZBbu4R5yDbJMigQ",
+            "handle": null,
+            "name": "Uri Santafé - Tema",
+            "type": "topic",
+            "primary": false
+          }
+        ],
         "searchCandidates": []
       },
-      "confidence": "pendent",
-      "reviewStatus": "pendent",
-      "active": false,
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
       "sources": [
         "manual-user-2026-10-18",
-        "genre:manual"
+        "genre:manual",
+        "https://www.delirics.cat/urisantafelamliki",
+        "https://www.youtube.com/channel/UCNtSpJN9-iRH8tENhz1_kXw"
       ],
-      "lastChecked": "2026-10-18T17:50:02.487Z",
-      "notes": "Alta pendent: Moià i Urbana per indicació de l’usuari. Canal demanat: Uri Santafé - Tema, ID encara no verificat. NO importar el canal sencer. Abans d’assignar cap canal, crear allowedVideoIds amb només els enregistraments amb lletra íntegra comprovada en català. Inicialment llista buida: cap cançó autoritzada. No n’hi ha prou amb el títol o defaultLanguage. Castellà, mixtes i dubtes fora d’ingestió."
+      "lastChecked": "2026-10-18T18:00:17.047Z",
+      "notes": "Moià i Urbana per indicació de l’usuari. Canal oficial i Tema verificats. Selecció tancada de 15 cançons amb lletra catalana revisada, amb IDs concrets; resta pendent o fora per llengua. No importar tot el canal ni autoritzar novetats pel títol. docs/revisions/2026-10-18-uri-santafe.json"
     }
   ]
 }

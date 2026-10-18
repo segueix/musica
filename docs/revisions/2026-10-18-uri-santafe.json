@@ -2,11 +2,345 @@
   "artista": "Uri Santafé",
   "origen": "Moià",
   "categoria": "Urbana",
-  "estat": "pendent de canal i verificació lingüística",
-  "canalDemanat": "Uri Santafé - Tema",
-  "allowedVideoIds": [],
-  "indexades": 0,
-  "criteri": "Cap importació fins a identificar el canal i verificar cada enregistrament. La llista buida d’aquest informe és preparatòria; cal crear la regla efectiva al canal un cop se’n conegui l’ID.",
-  "bloqueig": "Els resultats de cerca del canal redirigeixen a la portada de YouTube, sense identificador verificable. Cap lletra completa verificada.",
-  "fontPeticio": "manual-user-2026-10-18"
+  "reviewedAt": "2026-10-18T18:01:55.345Z",
+  "estat": "seleccio-verificada-resta-pendent",
+  "canals": [
+    {
+      "id": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "handle": "@urisantafe1993",
+      "name": "URI SANTAFÉ",
+      "type": "official",
+      "primary": true
+    },
+    {
+      "id": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "handle": null,
+      "name": "Uri Santafé - Tema",
+      "type": "topic",
+      "primary": false
+    }
+  ],
+  "criteri": "Només català: manlleus lèxics i interjeccions puntuals no equivalen a versos en una altra llengua. Canvis de llengua i dubtes no entren. Cap validació només pel títol; cap escolta d'àudio simulada.",
+  "metode": "Lectura de lletres completes publicades a Shazam i LOS40. Identificació del canal oficial des del segell Delirics i ID facilitat per l’usuari. IDs de vídeos i publicadors verificats al catàleg i cerca pública YouTube. Sense API d’IA ni claus.",
+  "aprovades": [
+    {
+      "id": "knyxeKlpB4w",
+      "titol": "ANGELETA / Vanessa",
+      "font": "https://www.shazam.com/song/1862505650/angeleta-vanessa",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "B7TGOnP7niE",
+      "titol": "BOIGxTU",
+      "font": "https://www.shazam.com/song/1772719724/boigxtu-feat-pep-sala-and-acone",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "m53bBuI2O_s",
+      "titol": "IGLÚ",
+      "font": "https://www.shazam.com/song/1730969916/igl%C3%BA",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "8m3vRueQSSc",
+      "titol": "Ja no tinc temps",
+      "font": "https://www.shazam.com/song/1710017956/ja-no-tinc-temps",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "GDyjl2LHFPM",
+      "titol": "F*ck Lent",
+      "font": "https://www.shazam.com/song/1772719629/fck-lent",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "_ySaoi_hUQ8",
+      "titol": "Torna-ho a fer",
+      "font": "https://www.shazam.com/song/1689617039/torna-ho-a-fer?tab=lyrics",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "PkkAgCgv1s4",
+      "titol": "Més fort",
+      "font": "https://www.shazam.com/song/1689617029/m%C3%A9s-fort",
+      "canalId": "UCNtSpJN9-iRH8tENhz1_kXw",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català amb col·loquialismes o manlleus puntuals, sense versos en una altra llengua. Vídeo de la mateixa cançó i col·laboració identificat a la pestanya de vídeos del canal oficial; no s'ha fet escolta d'àudio."
+    },
+    {
+      "id": "5dPtz_8SEXs",
+      "titol": "MOMENTS / María",
+      "font": "https://www.shazam.com/song/1862505664/moments-mar%C3%ADa",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "K35EqIBdPng",
+      "titol": "CANÇÓ D'AMOR / Sandra",
+      "font": "https://www.shazam.com/song/1862505987/can%C3%A7%C3%B3-damor-sandra",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "BLGHRWKaFGg",
+      "titol": "JUGANT / Alexandra",
+      "font": "https://www.shazam.com/song/1862506128/jugant-alexandra",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "mK__BIMpt6Y",
+      "titol": "AL CEL",
+      "font": "https://www.shazam.com/song/1772720003/al-cel-feat-acone",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "HoqAoU-cNWI",
+      "titol": "TRAÏCIÓ",
+      "font": "https://www.shazam.com/song/1772719720/tra%C3%AFci%C3%B3",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "rcnKHJn3phM",
+      "titol": "CREURE",
+      "font": "https://www.shazam.com/song/1772719726/creure-feat-reina-blava",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "plDRkDqvx6g",
+      "titol": "1 VIDA / Áurea",
+      "font": "https://www.shazam.com/song/6817041693/1-vida-%C3%A1urea",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "id": "IEbavi9eggc",
+      "titol": "EL BERENAR / Venus",
+      "font": "https://www.shazam.com/song/6817041675/el-berenar-venus",
+      "canalId": "UCDZC81-3ZBbu4R5yDbJMigQ",
+      "accio": "conserva",
+      "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    }
+  ],
+  "noImportar": [
+    {
+      "titol": "Flores",
+      "id": "dqcomBySDMs",
+      "font": "https://www.shazam.com/song/1689616723/flores",
+      "motiu": "Lletra en castellà.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "Irracional",
+      "id": "1dk4xm11rtY",
+      "font": "https://www.shazam.com/song/1689617036/irracional",
+      "motiu": "Lletra en castellà.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "No gano",
+      "id": null,
+      "font": "https://www.shazam.com/song/1689617043/no-gano",
+      "motiu": "Lletra en castellà.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "Trascender",
+      "id": "yLV13IBjr3U",
+      "font": "https://www.shazam.com/song/1689617049/trascender",
+      "motiu": "Lletra en castellà.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "11 de setembre",
+      "id": "tb7YtP4jyfU",
+      "font": "https://los40.com/2023/09/11/uri-santafe-celebra-la-diada-amb-11-de-setembre-reivindicant-lescena-del-hip-hop-a-catalunya/",
+      "motiu": "Vers complet en castellà dins d'una lletra catalana.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "CASA SEVA / Anna",
+      "id": null,
+      "font": "https://www.shazam.com/song/6817041535/casa-seva-anna",
+      "motiu": "Frase cantada en castellà.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "NGU",
+      "id": null,
+      "font": "https://www.shazam.com/song/1772719384/ngu",
+      "motiu": "Expressions cantades en anglès; criteri estricte, fora de la selecció.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "ALGO EN MI",
+      "id": null,
+      "font": "https://www.shazam.com/song/1772720015/algo-en-mi-feat-ananda%C2%BA",
+      "motiu": "Expressió castellana repetida a la tornada.",
+      "accio": "no-importar"
+    },
+    {
+      "titol": "FETS",
+      "id": null,
+      "font": "https://www.shazam.com/song/1772720011/fets",
+      "motiu": "Expressió cantada en anglès al tram final.",
+      "accio": "no-importar"
+    }
+  ],
+  "pendents": [
+    {
+      "titol": "ALCLUB / Mireia",
+      "id": "pB_TaezPfQQ",
+      "font": "https://www.shazam.com/song/1862505979/alclub-mireia",
+      "motiu": "Expressions castellanes i angleses; pendent de resoldre amb criteri estricte.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "TNT / Lakshmi",
+      "id": "kYYWkkNIm8g",
+      "font": "https://www.shazam.com/song/1862505968/tnt-lakshmi",
+      "motiu": "Expressions castellanes; pendent de contrast addicional.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "ESTIMA’M / Clara",
+      "id": "UWW4I6PXOGU",
+      "font": "https://www.shazam.com/song/6817041529/estimam-clara",
+      "motiu": "Expressions i ad-libs castellans; no autoritzat.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "DAURADA / Martina",
+      "id": "R6cG3qNSdJ0",
+      "font": "https://www.shazam.com/song/6817041539/daurada-martina",
+      "motiu": "Expressió castellana recurrent vinculada a un títol aliè; pendent de criteri estricte.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "ENGANXATS / Lola",
+      "id": null,
+      "font": "https://www.shazam.com/song/1862506123/enganxats-lola",
+      "motiu": "Text publicat amb insercions angleses i castellanes; pendent.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "AL FINAL / Lucía",
+      "id": null,
+      "font": "https://www.shazam.com/song/1862506118/al-final-luc%C3%ADa",
+      "motiu": "Text publicat amb passatges ambigus i errors de transcripció; pendent.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "Secrets",
+      "id": "aj17Hos3IhA",
+      "font": "https://www.shazam.com/song/1772719700/secrets",
+      "motiu": "Lletra catalana però crèdits de la font inconsistents; cal font alternativa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "Doblarme",
+      "id": "dsalt0ld8oo",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "La Rabona",
+      "id": "GD8MLhCknRc",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "LIKE U",
+      "id": "bw5EV5p3NQU",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "DISCIPLINA",
+      "id": "SdyusjQp2u4",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "VIOLENCE",
+      "id": "FNLe4qy4mng",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "CALLE 8",
+      "id": "GXW4fWGKL7g",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "25",
+      "id": "xnw46kiFlJY",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "ESTÁ BIEN",
+      "id": "wsvcoT9z6bo",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "ONIRIA",
+      "id": "edA1KBXsq-4",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    },
+    {
+      "titol": "SUAVE",
+      "id": "5elcs84HT3k",
+      "font": null,
+      "motiu": "No s'ha comprovat lletra completa.",
+      "accio": "pendent-no-importar"
+    }
+  ],
+  "limitacions": [
+    "Revisió de discografia no exhaustiva; no es certifica tot el contingut futur.",
+    "Dos enllaços Watch on de Shazam apuntaven a altres artistes segons oEmbed; descartats. Els IDs aprovats provenen de YouTube.",
+    "No s'han baixat àudios ni s'ha simulat una escolta.",
+    "Feed i arxius generats no editats; la incorporació requereix fusió a main i següent execució programada."
+  ],
+  "validacio": {
+    "schemaArtista": "Correcte sobre fitxa Uri aïllada.",
+    "filtre": "15 IDs acceptats; 11 de setembre i ID nou rebutjats.",
+    "politicaIdiomes": "15 decisions conserva individuals, zero pendents per aquests IDs, zero confiança global.",
+    "npmTest": "No executable: vitest no instal·lat.",
+    "npmLint": "No executable: eslint no instal·lat."
+  }
 }
