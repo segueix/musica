@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T13:40:00Z",
+  "updatedAt": "2026-10-19T13:53:06Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7536,6 +7536,16 @@
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song"
+      ],
+      "avatarFromFirstAllowedVideo": true
+    },
+    "UCJ-dDO2z5WvGEv9RzhlYkeA": {
+      "artist": "Tornaveus",
+      "note": "Totes les cançons del canal Tema autoritzades expressament per l’usuari el 2026-10-19; sense llista restrictiva de títols o IDs. No s’afirma verificació individual de lletres.",
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
       ],
       "avatarFromFirstAllowedVideo": true
     }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T13:40:00Z",
+  "updatedAt": "2026-10-19T13:53:06Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -4912,11 +4912,15 @@
     {
       "artista": "Tornaveus",
       "aliases": [
-        "Tornaveus Polifonies"
+        "Tornaveus Polifonies",
+        "Tornaveu",
+        "Tornaveus - Topic"
       ],
       "canals": [
-        "UC8vbtHPcQvQEuQi2wcwK6aQ"
-      ]
+        "UC8vbtHPcQvQEuQi2wcwK6aQ",
+        "UCJ-dDO2z5WvGEv9RzhlYkeA"
+      ],
+      "motiu": "Totes les cançons del canal Tema acceptades expressament per l’usuari el 2026-10-19. El canal oficial conserva la selecció limitada."
     },
     {
       "artista": "Trèvol",
