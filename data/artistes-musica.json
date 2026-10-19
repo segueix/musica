@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T13:53:06Z",
+  "updatedAt": "2026-10-19T16:43:36Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40955,6 +40955,41 @@
       ],
       "lastChecked": "2026-10-19",
       "notes": "Selecció expressa de l’usuari: només 0,007, Els de l'Ou, Joe Mazzaroni i Toasting War. Llista tancada per títols; no s’aprova la resta del catàleg ni s’infereix l’idioma dels títols."
+    },
+    {
+      "name": "Nu Drama",
+      "displayName": "Nu Drama",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCtdHEpTBQZig3Y9-PXBAKYQ",
+            "handle": null,
+            "name": "Nu Drama",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-19",
+        "genre:manual",
+        "https://www.instagram.com/nu.drama/"
+      ],
+      "lastChecked": "2026-10-19T16:43:36Z",
+      "notes": "Alta expressa de l’usuari: Urbana, Sant Joan de les Abadesses i Instagram com a pàgina principal. Accepta totes les cançons d’aquest canal, sense selecció tancada. Acceptació editorial, no verificació individual de les lletres. Fitxa pròpia separada de Vademecum FAM."
     }
   ]
 }
