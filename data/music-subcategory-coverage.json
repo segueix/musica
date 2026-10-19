@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 447,
+  "musicalArtists": 448,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -481,7 +481,7 @@
         "reggae",
         "mestissatge"
       ],
-      "artistCount": 14,
+      "artistCount": 15,
       "nucleus": true,
       "artists": [
         "Auxili",
@@ -497,7 +497,8 @@
         "Ovella Xao",
         "Repúblika Ska",
         "Terra Ferma Ska Band",
-        "Trast"
+        "Trast",
+        "Komando Moriles"
       ]
     },
     {
@@ -5524,6 +5525,15 @@
       "sources": [
         "https://www.delirics.cat/urisantafelamliki",
         "https://www.youtube.com/channel/UCNtSpJN9-iRH8tENhz1_kXw"
+      ]
+    },
+    {
+      "artist": "Komando Moriles",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
+      "basis": "editorial",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Komando_Moriles"
       ]
     }
   ]

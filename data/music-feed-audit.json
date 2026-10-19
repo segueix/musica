@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-18T20:00:30.747Z",
+  "generatedAt": "2026-10-19T13:38:22.380Z",
   "polling": {
-    "requested": 358,
-    "deferred": 312,
-    "failed": 7
+    "requested": 1,
+    "deferred": 670,
+    "failed": 0
   },
-  "retainedVideoCount": 643,
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 373,
+  "topicChannelCount": 374,
   "governedChannelCount": 123,
   "topicCoverage": [
     {
@@ -1696,11 +1696,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 158,
-    "song": 15
-  },
-  "topicHiddenCount": 199,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -2912,6 +2909,13 @@
       "tracks": 27,
       "selected": 8,
       "withClip": 13
+    },
+    {
+      "id": "UCn8foPPMflft1g_JVfcpzYQ",
+      "name": "Komando Moriles",
+      "tracks": 86,
+      "selected": 40,
+      "withClip": 0
     },
     {
       "id": "UCC66jsgEM01kvhvwJ59xttA",
@@ -4286,50 +4290,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 670,
-  "resolvedChannelCount": 670,
-  "feedChannelCount": 670,
-  "rawPublicVideoCount": 11554,
-  "feedVideoCount": 9856,
-  "acceptedMusicCount": 10063,
-  "categoryEligibleVideoCount": 10011,
+  "indexedChannelCount": 671,
+  "resolvedChannelCount": 671,
+  "feedChannelCount": 671,
+  "rawPublicVideoCount": 7381,
+  "feedVideoCount": 6766,
+  "acceptedMusicCount": 6752,
+  "categoryEligibleVideoCount": 6748,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1016,
+    "before": 0,
     "matched": 0,
-    "rejected": 1016
+    "rejected": 0
   },
   "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 9682,
-    "live_song": 329,
-    "album": 52,
-    "other": 898,
+    "song": 6565,
+    "live_song": 183,
+    "album": 4,
+    "other": 36,
     "review": 593
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCmwGTBibm2bt9oF-P7ECSmQ",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCRLHVqJybtjS5ODPP5iAv4w",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UC8hpq3EHqyG09og9xy3qOFg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UC1yaXYiC2Ab3tus3lTDljtw",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UCYPbYGqAXm8gaYGVY-ANVXA",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6792,
+  "publishedFeedVideoCount": 6783,
   "publishedShortVideoCount": 0
 }

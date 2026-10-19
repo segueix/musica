@@ -4235,14 +4235,21 @@
       "lastCheckedAt": "2026-10-18T19:57:41.739Z",
       "intervalDays": 1,
       "nextCheckOn": "2026-10-19"
+    },
+    "UCn8foPPMflft1g_JVfcpzYQ": {
+      "latestPublishedAt": "2025-03-31T10:04:21.000Z",
+      "lastCheckedAt": "2026-10-19T13:38:17.975Z",
+      "intervalDays": 3,
+      "nextCheckOn": "2026-10-22",
+      "lastFullTopicAt": "2026-10-19T13:38:17.975Z"
     }
   },
-  "updatedAt": "2026-10-18T19:57:41.739Z",
+  "updatedAt": "2026-10-19T13:38:17.975Z",
   "lastRun": {
-    "indexed": 670,
-    "requested": 358,
-    "checked": 351,
-    "deferred": 312,
-    "failed": 7
+    "indexed": 671,
+    "requested": 1,
+    "checked": 1,
+    "deferred": 670,
+    "failed": 0
   }
 }
