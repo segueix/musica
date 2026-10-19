@@ -413,10 +413,14 @@
     }
 
     // Estils + categories pròpies en l'ordre desat. Sense el mòdul de categories, només els estils.
+    // Les fotos de fons es reparteixen sense repetir cap grup entre rajoles (discovery.assignUniqueAvatars).
     function arrangeStyles(base, userCategories, order, channels) {
         const uc = app.features.userCategories;
-        if (!uc?.arrangeTiles) return toArray(base);
-        return uc.arrangeTiles(toArray(base), uc.tilesFor(toArray(userCategories), { channels }), order || null);
+        const tiles = uc?.arrangeTiles
+            ? uc.arrangeTiles(toArray(base), uc.tilesFor(toArray(userCategories), { channels }), order || null)
+            : toArray(base);
+        const unique = app.features.discovery?.assignUniqueAvatars;
+        return unique ? unique(tiles) : tiles;
     }
 
     // ---------- HTML (pur) ----------
@@ -752,12 +756,22 @@
                 : null,
             isCurrent: selectionCtx
                 ? video =>
-                      (selectionCtx.features.get(String(video?.id))?.era ||
-                          selection.eraOf(video, { now: selectionCtx.now, isClassicArtist: classicArtist, config: selectionCtx.config })).tier !==
-                      'historic'
+                      (
+                          selectionCtx.features.get(String(video?.id))?.era ||
+                          selection.eraOf(video, {
+                              now: selectionCtx.now,
+                              isClassicArtist: classicArtist,
+                              config: selectionCtx.config,
+                          })
+                      ).tier !== 'historic'
                 : null,
             isNewRelease: selectionCtx
-                ? video => selection.isNewRelease(video, { now: selectionCtx.now, isClassicArtist: classicArtist, config: selectionCtx.config })
+                ? video =>
+                      selection.isNewRelease(video, {
+                          now: selectionCtx.now,
+                          isClassicArtist: classicArtist,
+                          config: selectionCtx.config,
+                      })
                 : null,
             discovery,
             recent: input.recent,
@@ -817,7 +831,9 @@
         if (!discovery || !container) return false;
         const revision = ++paintRevision;
         const previousContent = container.firstElementChild;
-        const isCurrent = () => revision === paintRevision && state.container === container &&
+        const isCurrent = () =>
+            revision === paintRevision &&
+            state.container === container &&
             container.firstElementChild === previousContent &&
             (typeof selectedCategory === 'undefined' || selectedCategory === 'Novetats');
         container.setAttribute('aria-busy', 'true');
@@ -1094,7 +1110,8 @@
         const title = esc(source.title || video?.title || 'Cançó');
         const artist = video ? esc(artistName(video)) : '';
         const image =
-            cardThumbnail(video?.thumbnail) || (now?.id ? `https://i.ytimg.com/vi/${encodeURIComponent(now.id)}/hqdefault.jpg` : '');
+            cardThumbnail(video?.thumbnail) ||
+            (now?.id ? `https://i.ytimg.com/vi/${encodeURIComponent(now.id)}/hqdefault.jpg` : '');
         const art = cssUrl(image);
         const next =
             playing && now.next
@@ -1138,7 +1155,10 @@
     }
 
     function cardThumbnail(value, small = false) {
-        return String(value || '').replace(/(https:\/\/i\.ytimg\.com\/vi\/[^/]+\/)maxresdefault\.jpg(?:\?.*)?$/, `$1${small ? 'mqdefault' : 'hqdefault'}.jpg`);
+        return String(value || '').replace(
+            /(https:\/\/i\.ytimg\.com\/vi\/[^/]+\/)maxresdefault\.jpg(?:\?.*)?$/,
+            `$1${small ? 'mqdefault' : 'hqdefault'}.jpg`
+        );
     }
 
     function coversHtml(videos) {
@@ -1629,6 +1649,3 @@
         getModel: () => state.model,
     };
 })(window);
-
-
-

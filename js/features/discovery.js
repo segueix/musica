@@ -433,7 +433,9 @@
         // Fem servir el mapa ja carregat: mai agrupem canals només perquè es diuen igual.
         const groupByChannel = new Map();
         const registerChannel = id => {
-            const key = String(id || '').trim().toLowerCase();
+            const key = String(id || '')
+                .trim()
+                .toLowerCase();
             if (key && !groupByChannel.has(key)) {
                 groupByChannel.set(key, window.SegueixMusicCategories?.artistKeyForChannel?.(id) || key);
             }
@@ -442,7 +444,9 @@
         toArray(videos).forEach(video => registerChannel(video?.channelId || video?.snippet?.channelId));
         const groupOf = video => groupByChannel.get(artistKeyOf(video)) || artistKeyOf(video);
         const blocked = new Set(
-            [...(exclude instanceof Set ? exclude : [])].map(key => groupByChannel.get(String(key).toLowerCase()) || key)
+            [...(exclude instanceof Set ? exclude : [])].map(
+                key => groupByChannel.get(String(key).toLowerCase()) || key
+            )
         );
         const groupFamiliarity = new Map();
         profile?.artists?.forEach((entry, channelKey) => {
@@ -673,18 +677,53 @@
             .filter(label => stats.has(label))
             .map(label => {
                 const artists = stats.get(label).artists;
-                const avatars = [...artists.values()]
-                    .sort((a, b) => b.at - a.at)
-                    .map(artist => artist.avatar)
-                    .filter(Boolean)
-                    .slice(0, avatarsPerStyle);
-                return { label, artists: artists.size, avatars, primary: PRIMARY_STYLES.includes(label) };
+                // Tots els candidats a fer de fons (el més recent primer): assignUniqueAvatars() en tria sense repetir
+                const faces = [...artists.entries()]
+                    .sort((a, b) => b[1].at - a[1].at)
+                    .filter(([, artist]) => artist.avatar)
+                    .map(([key, artist]) => ({ key, avatar: artist.avatar }));
+                const avatars = faces.slice(0, avatarsPerStyle).map(face => face.avatar);
+                return { label, artists: artists.size, avatars, faces, primary: PRIMARY_STYLES.includes(label) };
             })
             .sort((a, b) => {
                 if (a.primary !== b.primary) return a.primary ? -1 : 1;
                 if (a.primary) return PRIMARY_STYLES.indexOf(a.label) - PRIMARY_STYLES.indexOf(b.label);
                 return 0;
             });
+    }
+
+    // Fons de les rajoles de «Tria el teu so»: cap grup (ni cap foto) no surt a dues rajoles. Es reparteixen per torns
+    // (cada rajola en tria una i es torna a començar) i a cada torn trien primer les que tenen menys candidats, perquè
+    // una categoria amb pocs grups no es quedi sense foto. Rajoles sense `faces` conserven els seus `avatars`.
+    function assignUniqueAvatars(tiles, perTile = 3) {
+        const list = toArray(tiles).map(tile => ({ ...tile }));
+        const usedKeys = new Set();
+        const usedAvatars = new Set();
+        const pending = list
+            .map((tile, index) => ({ tile, index, faces: toArray(tile.faces), cursor: 0, picked: [] }))
+            .filter(entry => entry.faces.length);
+        for (let round = 0; round < perTile; round += 1) {
+            const order = pending
+                .filter(entry => entry.picked.length === round)
+                .sort((a, b) => a.faces.length - b.faces.length || a.index - b.index);
+            order.forEach(entry => {
+                while (entry.cursor < entry.faces.length) {
+                    const face = entry.faces[entry.cursor];
+                    entry.cursor += 1;
+                    const key = String(face?.key || face?.avatar || '');
+                    const avatar = String(face?.avatar || '');
+                    if (!avatar || usedKeys.has(key) || usedAvatars.has(avatar)) continue;
+                    usedKeys.add(key);
+                    usedAvatars.add(avatar);
+                    entry.picked.push(avatar);
+                    break;
+                }
+            });
+        }
+        pending.forEach(entry => {
+            entry.tile.avatars = entry.picked;
+        });
+        return list;
     }
 
     // ---------- Adaptador: context real de l'app (només ús en navegador) ----------
@@ -870,5 +909,6 @@
         pickReturnItems,
         pickStartHere,
         summarizeStyles,
+        assignUniqueAvatars,
     };
 })(window);

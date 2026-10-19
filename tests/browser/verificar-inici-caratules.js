@@ -208,9 +208,22 @@ async function check(browser, width, height) {
     // «Tria el teu so»: les rajoles d'estil i de categoria pròpia no diuen quants artistes hi ha (2026-10-19)
     const styleCounts = await page.$$eval(
         '.pt-style:not(.pt-style--add):not(.pt-style--more)',
-        tiles => tiles.filter(tile => tile.querySelector('.pt-style__count') || /\d+ artistes?/.test(tile.textContent)).length
+        tiles =>
+            tiles.filter(tile => tile.querySelector('.pt-style__count') || /\d+ artistes?/.test(tile.textContent))
+                .length
     );
     ok(`${label}: les rajoles d'estil no porten el nombre d'artistes`, styleCounts === 0, styleCounts);
+    // Cap grup no fa de fons a dues rajoles (també les plegades de «Tots els estils») (2026-10-19)
+    const faces = await page.$$eval('.pt-style__faces img', imgs => imgs.map(img => img.getAttribute('src')));
+    const repeated = faces.filter((src, index) => faces.indexOf(src) !== index);
+    const empty = await page.$$eval('.pt-style:not(.pt-style--add):not(.pt-style--more)', tiles =>
+        tiles.filter(tile => !tile.querySelector('.pt-style__faces img')).map(tile => tile.dataset.ptStyle)
+    );
+    ok(`${label}: cap foto de grup es repeteix entre rajoles`, faces.length > 0 && !repeated.length && !empty.length, {
+        fotos: faces.length,
+        repetides: repeated.slice(0, 3),
+        senseFoto: empty,
+    });
     if (OUT) {
         await page.screenshot({ path: path.join(OUT, `inici-${width}.png`), fullPage: true });
         const styles = await page.$('.pt-section--styles');

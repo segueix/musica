@@ -196,9 +196,12 @@ describe('ordenació de la cua segons el mode', () => {
 describe('«Fora del teu radar»', () => {
     const videos = channels.slice(0, 6).flatMap(channel => [song(channel.id, 3), song(channel.id, 40)]);
 
-    const groupedRadar = () => load({ SegueixMusicCategories: {
-        artistKeyForChannel: id => ['A', 'B'].includes(id) ? 'artist:one' : '',
-    } }).discovery;
+    const groupedRadar = () =>
+        load({
+            SegueixMusicCategories: {
+                artistKeyForChannel: id => (['A', 'B'].includes(id) ? 'artist:one' : ''),
+            },
+        }).discovery;
 
     it('oficial i Tema ocupen una sola targeta amb la cançó més recent i un canal navegable', () => {
         const discovery = groupedRadar();
@@ -209,16 +212,14 @@ describe('«Fora del teu radar»', () => {
         const radar = discovery.pickRadar({ videos: [official, topic, other], profile, rng: seeded() });
         expect(radar.items).toHaveLength(2);
         expect(radar.items.find(item => item.key === 'artist:one')).toMatchObject({
-            channelId: 'B', video: { id: topic.id }, avatar: 'b.jpg',
+            channelId: 'B',
+            video: { id: topic.id },
+            avatar: 'b.jpg',
         });
         expect(radar.items.some(item => item.channelId === 'C')).toBe(true);
     });
 
-    for (const signals of [
-        { history: [song('A'), song('B')] },
-        { liked: [song('A')] },
-        { followedIds: ['A'] },
-    ]) {
+    for (const signals of [{ history: [song('A'), song('B')] }, { liked: [song('A')] }, { followedIds: ['A'] }]) {
         it('reconeix el grup pels senyals de qualsevol dels dos canals', () => {
             const discovery = groupedRadar();
             const profile = discovery.buildProfile({ channels, ...signals });
@@ -416,7 +417,7 @@ describe('«Tria el teu so»', () => {
     it('compta una sola vegada els canals oficial i Topic, amb un avatar per artista', () => {
         const { discovery } = load({
             SegueixMusicCategories: {
-                artistKeyForChannel: id => ['Official', 'Topic'].includes(id) ? 'artist:one' : '',
+                artistKeyForChannel: id => (['Official', 'Topic'].includes(id) ? 'artist:one' : ''),
             },
         });
         const channels = [
@@ -431,6 +432,45 @@ describe('«Tria el teu so»', () => {
         expect(styles.find(s => s.label === 'Pop').artists).toBe(2);
         expect(styles.find(s => s.label === 'Rock').artists).toBe(1);
         expect(styles.find(s => s.label === 'Pop').avatars).toEqual(['one.jpg', 'other.jpg']);
+    });
+
+    it('cap grup no fa de fons a dues rajoles i les que tenen pocs grups trien primer', () => {
+        const { discovery } = load();
+        const face = id => ({ key: `artist:${id}`, avatar: `${id}.jpg` });
+        const tiles = [
+            { label: 'Pop', faces: ['a', 'b', 'c', 'd', 'e'].map(face) },
+            { label: 'Rock', faces: ['a', 'b', 'f', 'g'].map(face) },
+            { label: 'Indie', faces: ['a', 'b', 'c', 'h'].map(face) },
+            { label: 'Favorits', user: true, faces: ['a'].map(face) },
+            { label: 'Buida', avatars: ['x.jpg'] },
+        ];
+        const result = discovery.assignUniqueAvatars(tiles);
+        const all = result.flatMap(tile => (tile.faces ? tile.avatars : []));
+        expect(new Set(all).size).toBe(all.length);
+        // La categoria amb un sol grup el conserva
+        expect(result.find(t => t.label === 'Favorits').avatars).toEqual(['a.jpg']);
+        // Per torns, primer les de menys candidats: cap no repeteix un grup d'una altra
+        expect(result.find(t => t.label === 'Rock').avatars).toEqual(['b.jpg', 'f.jpg', 'g.jpg']);
+        expect(result.find(t => t.label === 'Indie').avatars).toEqual(['c.jpg', 'h.jpg']);
+        expect(result.find(t => t.label === 'Pop').avatars).toEqual(['d.jpg', 'e.jpg']);
+        // Sense candidats, es queden les fotos que tenia; no es modifiquen les rajoles d'entrada
+        expect(result.find(t => t.label === 'Buida').avatars).toEqual(['x.jpg']);
+        expect(tiles[0].avatars).toBeUndefined();
+    });
+
+    it('summarizeStyles dona els candidats i, repartits, cap grup no es repeteix entre estils', () => {
+        const { discovery } = load();
+        const many = Array.from({ length: 8 }, (_, i) => ({
+            id: `M${i}`,
+            avatar: `m${i}.jpg`,
+            categories: i % 2 ? ['Pop', 'Rock'] : ['Pop', 'Rock', 'Indie'],
+        }));
+        const styles = discovery.summarizeStyles({ videos: many.map(c => song(c.id, 3)), channels: many });
+        expect(styles.find(s => s.label === 'Pop').faces).toHaveLength(8);
+        const assigned = discovery.assignUniqueAvatars(styles);
+        const all = assigned.flatMap(tile => tile.avatars);
+        expect(new Set(all).size).toBe(all.length);
+        assigned.forEach(tile => expect(tile.avatars.length).toBeGreaterThan(0));
     });
 
     it('els estils secundaris queden darrere dels accessibles', () => {
