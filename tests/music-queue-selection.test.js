@@ -1087,6 +1087,21 @@ describe('ràdios de la fitxa d’artista', () => {
         expect(ctx.activePlaylistQueue.every(v => v.channelId === 'art')).toBe(true);
     });
 
+    it('«Barreja» d’una ràdio d’artista canvia l’ordre de les pendents i no toca la que sona', () => {
+        const catalog = artistCatalog();
+        const { queue, ctx } = setup({ catalog });
+        const own = catalog.filter(v => v.channelId === 'art');
+        queue.startArtistRadio(own, { name: 'Artista Fitxa', channelId: 'art' });
+        const first = ctx.activePlaylistQueue[0].id;
+        const before = ctx.activePlaylistQueue.slice(1).map(v => v.id);
+        expect(before.length).toBeGreaterThan(2);
+        queue.regenerate();
+        const after = ctx.activePlaylistQueue.slice(1).map(v => v.id);
+        expect(ctx.activePlaylistQueue[0].id).toBe(first);
+        expect(after.join()).not.toBe(before.join());
+        expect([...after].sort()).toEqual([...before].sort());
+    });
+
     it('el play d’una cançó de la fitxa fa començar la ràdio de l’artista per aquella cançó', () => {
         const catalog = artistCatalog();
         const { queue, ctx } = setup({ catalog });
