@@ -63,11 +63,9 @@
         "garage-rock",
         "metal-heavy"
       ],
-      "artistCount": 1,
+      "artistCount": 0,
       "nucleus": false,
-      "artists": [
-        "Sangtraït"
-      ]
+      "artists": []
     },
     {
       "id": "garage-rock",
@@ -95,24 +93,20 @@
         "pop-rock",
         "indie-rock"
       ],
-      "artistCount": 1,
+      "artistCount": 0,
       "nucleus": false,
-      "artists": [
-        "Joan Colomo"
-      ]
+      "artists": []
     },
     {
       "id": "rock-general",
       "label": "Rock — pendent d’afinar",
       "category": "Rock",
       "neighbours": [],
-      "artistCount": 40,
+      "artistCount": 33,
       "nucleus": true,
       "artists": [
-        "Aspencat",
         "Bars",
         "Brams",
-        "Crim",
         "Dan Peralbo & El Comboi",
         "Derbi Junior",
         "Els Bourbons",
@@ -124,7 +118,6 @@
         "Kitsch",
         "La Ludwig Band",
         "La Madam",
-        "La Tour de Carol",
         "Lax'n'Busto",
         "Lo Maquini",
         "Obeses",
@@ -136,18 +129,14 @@
         "Sau",
         "Sidonie",
         "Smoking Souls",
-        "Sodi",
         "Sopa de Cabra",
         "Tancat per defunció",
         "Tardor",
         "Teràpia de Shock",
-        "The Demencials",
-        "Tomeu Penya",
         "Umpah-Pah",
         "Whiskyn's",
         "Xucu-pà",
         "Ypnosi",
-        "Blues de Picolat",
         "Gerard Jacquet"
       ]
     },
@@ -206,7 +195,7 @@
         "punk-pop",
         "punk-garage"
       ],
-      "artistCount": 10,
+      "artistCount": 11,
       "nucleus": true,
       "artists": [
         "Desperta Ferro",
@@ -218,7 +207,8 @@
         "Lladruc",
         "Milícians",
         "Opció K-95",
-        "Pilseners"
+        "Pilseners",
+        "The Demencials"
       ]
     },
     {
@@ -293,7 +283,7 @@
         "punk-folk",
         "ska-punk"
       ],
-      "artistCount": 9,
+      "artistCount": 10,
       "nucleus": true,
       "artists": [
         "All Crü",
@@ -301,6 +291,7 @@
         "Bacora",
         "Batec",
         "Brigada Moreneta",
+        "Crim",
         "Família Fracàs",
         "Gra Fort",
         "Les Cruet",
@@ -414,11 +405,12 @@
         "metal-progressiu",
         "metal-doom"
       ],
-      "artistCount": 2,
+      "artistCount": 3,
       "nucleus": false,
       "artists": [
         "Astral Warrior",
-        "Avalot"
+        "Avalot",
+        "Sangtraït"
       ]
     },
     {
@@ -481,12 +473,13 @@
         "reggae",
         "mestissatge"
       ],
-      "artistCount": 15,
+      "artistCount": 16,
       "nucleus": true,
       "artists": [
         "Auxili",
         "Dr. Calypso",
         "Guaita'ls",
+        "Kayo Malayo",
         "Les Testarudes",
         "Mr. Freak Ska",
         "Dekrèpits",
@@ -509,10 +502,12 @@
         "ska-classic",
         "mestissatge"
       ],
-      "artistCount": 7,
+      "artistCount": 9,
       "nucleus": true,
       "artists": [
         "Adala",
+        "Aspencat",
+        "Boom Boom Fighters",
         "Pirat's Sound Sistema",
         "Maitips",
         "Dring Dublé",
@@ -542,17 +537,11 @@
         "electronica-pop",
         "urban-pop"
       ],
-      "artistCount": 11,
+      "artistCount": 5,
       "nucleus": true,
       "artists": [
-        "Daveu",
         "En Rick",
-        "Gavina.mp3",
         "Julieta",
-        "La Mousse",
-        "Malánima",
-        "Mama Dousha",
-        "Ouineta",
         "Svetlana",
         "Ven'nus",
         "Xanguito"
@@ -568,21 +557,18 @@
         "indie-pop",
         "pop-folk"
       ],
-      "artistCount": 12,
+      "artistCount": 9,
       "nucleus": true,
       "artists": [
         "Celobert",
         "Cloe Riembau",
         "Cristina Monllau",
-        "GUINEU",
         "Jo Jet i Maria Ribot",
         "Manel",
         "Maria Jaume",
         "Mishima",
-        "Pantaleó",
         "Paula Montalbán",
-        "Socunbohemio",
-        "Vittara"
+        "Socunbohemio"
       ]
     },
     {
@@ -597,11 +583,9 @@
         "pop-indie",
         "indie-pop"
       ],
-      "artistCount": 3,
+      "artistCount": 1,
       "nucleus": false,
       "artists": [
-        "Ginestà",
-        "Júlia Colom",
         "Pepet i Marieta"
       ]
     },
@@ -613,12 +597,13 @@
         "rock-pop",
         "indie-rock"
       ],
-      "artistCount": 4,
-      "nucleus": false,
+      "artistCount": 5,
+      "nucleus": true,
       "artists": [
         "La Fúmiga",
         "Pau Vallvé Navarro",
         "Renaldo & Clara",
+        "Sodi",
         "Stay Homas"
       ]
     },
@@ -627,21 +612,21 @@
       "label": "Pop — pendent d’afinar",
       "category": "Pop",
       "neighbours": [],
-      "artistCount": 54,
+      "artistCount": 58,
       "nucleus": true,
       "artists": [
+        "Àlex Blat",
         "Alfred Garcia",
         "Al·lèrgiques al Pol·len",
-        "Anna Andreu",
         "Antònia Font",
         "Ariox",
         "Au Rora",
-        "Ayryn",
         "Bèrnia",
         "Blaumut",
         "Buhos",
-        "Ceaxe",
+        "Caïm Riba",
         "dani6ix & IZZKID",
+        "Daveu",
         "Doctor Prats",
         "Duble Buble",
         "El Petit de Cal Eril",
@@ -654,16 +639,19 @@
         "Esther Querol Forner",
         "Fades",
         "Ferran Palau",
-        "Figa Flawas",
+        "Gavina.mp3",
+        "Ginestà",
         "Glaucs",
         "Guillem Gisbert i Puig",
-        "Gusset",
         "Joan Dausà",
         "Joan Masdéu",
         "Jofre Bardagí Grima",
+        "La Tour de Carol",
         "Lal'ba",
         "Mai Halis",
         "Maig",
+        "Malánima",
+        "Mama Dousha",
         "Mariona Escoda i Sendra",
         "Miki Núñez",
         "miquel",
@@ -672,7 +660,8 @@
         "Nyandú",
         "okdw",
         "Oques Grasses",
-        "Pol Bordas",
+        "Ouineta",
+        "Pantaleó",
         "Reïna",
         "Roger Padrós de la Torre",
         "Roser Dresaire",
@@ -710,11 +699,9 @@
         "pop-folk",
         "autor-folk"
       ],
-      "artistCount": 1,
+      "artistCount": 0,
       "nucleus": false,
-      "artists": [
-        "Ernest Crusats"
-      ]
+      "artists": []
     },
     {
       "id": "indie-pop",
@@ -724,10 +711,11 @@
         "pop-indie",
         "pop-folk"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
-        "Da Souza"
+        "GUINEU",
+        "Vittara"
       ]
     },
     {
@@ -735,10 +723,12 @@
       "label": "Indie — pendent d’afinar",
       "category": "Indie",
       "neighbours": [],
-      "artistCount": 1,
+      "artistCount": 3,
       "nucleus": false,
       "artists": [
-        "Falciots Ninja"
+        "Da Souza",
+        "Falciots Ninja",
+        "Galgo Lento"
       ]
     },
     {
@@ -749,13 +739,11 @@
         "urban-rap",
         "rap-trap"
       ],
-      "artistCount": 4,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
         "31 FAM",
-        "Lildami",
-        "Mushkaa",
-        "Orxata Sound System"
+        "Mushkaa"
       ]
     },
     {
@@ -769,7 +757,7 @@
       "artistCount": 1,
       "nucleus": false,
       "artists": [
-        "Boom Boom Fighters"
+        "Figa Flawas"
       ]
     },
     {
@@ -780,14 +768,9 @@
         "urban-reggaeton",
         "urban-pop"
       ],
-      "artistCount": 4,
+      "artistCount": 0,
       "nucleus": false,
-      "artists": [
-        "Malifeta",
-        "Sa Pena",
-        "Slad Mobb",
-        "Xisk"
-      ]
+      "artists": []
     },
     {
       "id": "urban-rap",
@@ -799,18 +782,11 @@
         "rap-general",
         "rap-fusion"
       ],
-      "artistCount": 9,
-      "nucleus": true,
+      "artistCount": 2,
+      "nucleus": false,
       "artists": [
-        "AVANT",
-        "Baya Baye",
-        "BTZ",
         "Cactus Troop",
-        "Flakko",
-        "Pawn Gang",
-        "Quinto",
-        "ultralone",
-        "ZOO"
+        "Quinto"
       ]
     },
     {
@@ -822,15 +798,10 @@
         "urban-electronic",
         "pop-electronic"
       ],
-      "artistCount": 6,
-      "nucleus": true,
+      "artistCount": 1,
+      "nucleus": false,
       "artists": [
-        "Cloe",
-        "Colomet",
-        "Kiddi",
-        "Lepanto 41",
-        "MASSAVIU",
-        "Masvi"
+        "Ceaxe"
       ]
     },
     {
@@ -838,19 +809,34 @@
       "label": "Urban — pendent d’afinar",
       "category": "Urban",
       "neighbours": [],
-      "artistCount": 13,
+      "artistCount": 28,
       "nucleus": true,
       "artists": [
         "2ES",
+        "AVANT",
+        "Ayryn",
+        "BTZ",
+        "Cloe",
+        "Colomet",
+        "Flakko",
         "Flashy Ice Cream",
         "Fortuu",
-        "Galgo Lento",
+        "Gusset",
         "Hereus del Beat",
+        "Kiddi",
+        "Lepanto 41",
+        "Malifeta",
+        "MASSAVIU",
+        "Masvi",
         "Neisha",
+        "Pawn Gang",
         "Plan-ET",
+        "Pol Bordas",
         "Scorpio",
         "Scotty DK",
+        "Slad Mobb",
         "Subliminal",
+        "ultralone",
         "Vademecum FAM",
         "Xenia Casado",
         "Uri Santafé"
@@ -864,9 +850,10 @@
         "urban-trap",
         "urban-rap"
       ],
-      "artistCount": 1,
+      "artistCount": 2,
       "nucleus": false,
       "artists": [
+        "Lildami",
         "Malson Atmosfèric"
       ]
     },
@@ -892,11 +879,12 @@
         "urban-rap",
         "rap-fusion"
       ],
-      "artistCount": 13,
+      "artistCount": 15,
       "nucleus": true,
       "artists": [
         "Acros",
         "Aina Koda",
+        "Baya Baye",
         "El Nota",
         "Herba Negra",
         "Malparlat",
@@ -907,7 +895,8 @@
         "Senyor Oca",
         "Still Ill",
         "Valtònyc",
-        "Vinnie Kairos"
+        "Vinnie Kairos",
+        "ZOO"
       ]
     },
     {
@@ -918,7 +907,7 @@
         "folk-fusio",
         "folk-general"
       ],
-      "artistCount": 11,
+      "artistCount": 12,
       "nucleus": true,
       "artists": [
         "Al Tall",
@@ -929,6 +918,7 @@
         "Quico el Célio, el Noi i el Mut de Ferreries",
         "RIU",
         "Solk",
+        "Tomeu Penya",
         "Tornaveus",
         "Trèvol",
         "Urbàlia Rurana"
@@ -942,10 +932,9 @@
         "folk-tradicional",
         "folk-general"
       ],
-      "artistCount": 2,
+      "artistCount": 1,
       "nucleus": false,
       "artists": [
-        "Els Jóvens",
         "El Belda i el Conjunt Badabadoc"
       ]
     },
@@ -957,7 +946,7 @@
         "folk-tradicional",
         "folk-fusio"
       ],
-      "artistCount": 21,
+      "artistCount": 24,
       "nucleus": true,
       "artists": [
         "Alosa",
@@ -966,18 +955,21 @@
         "Ebri Knight",
         "El Diluvi",
         "El Pont d'Arcalís",
+        "Els Jóvens",
         "Els Miralls de Dylan",
+        "Ernest Crusats",
         "Esquirols",
         "Falç de Fetillera",
         "Germà Negre",
         "Grup Coral de l'Agrupació Catalana d'Itàlia",
         "Grup de Folk",
-        "Júlia Cruz",
+        "Júlia Colom",
         "L'Ham de Foc",
         "La Coixinera",
+        "Mar Grimalt",
         "Miquel Gil",
         "Roba Estesa",
-        "Sílvia Pérez Cruz",
+        "Sandra Monfort",
         "UC",
         "Xavier de Bétera",
         "Núria Balcells"
@@ -1016,11 +1008,13 @@
         "autor-pop",
         "autor-general"
       ],
-      "artistCount": 4,
-      "nucleus": false,
+      "artistCount": 6,
+      "nucleus": true,
       "artists": [
         "Jaume Sisa i Mestres",
+        "Joan Colomo",
         "Judit Neddermann",
+        "Sílvia Pérez Cruz",
         "Toti Soler",
         "Xiomara Abello"
       ]
@@ -1034,11 +1028,9 @@
         "autor-folk",
         "autor-general"
       ],
-      "artistCount": 3,
+      "artistCount": 1,
       "nucleus": false,
       "artists": [
-        "Àlex Blat",
-        "Caïm Riba",
         "Joan Miquel Oliver"
       ]
     },
@@ -1051,7 +1043,7 @@
         "autor-folk",
         "autor-pop"
       ],
-      "artistCount": 42,
+      "artistCount": 43,
       "nucleus": true,
       "artists": [
         "Adrià Puntí",
@@ -1059,6 +1051,7 @@
         "Albert Pla i Álvarez",
         "Anaïs Vila",
         "Andreu Rifé i Oro",
+        "Anna Andreu",
         "Antonello Colledanchise",
         "Artur Àlvarez",
         "El Gitano de Balaguer",
@@ -1074,7 +1067,7 @@
         "Joan Isaac",
         "Jordi Barre",
         "Josep Tero",
-        "L'arannà",
+        "Júlia Cruz",
         "Lídia Pujol",
         "Manu Guix",
         "Mar Pujol",
@@ -1107,9 +1100,11 @@
         "electronica-experimental",
         "electronica-general"
       ],
-      "artistCount": 0,
+      "artistCount": 1,
       "nucleus": false,
-      "artists": []
+      "artists": [
+        "Orxata Sound System"
+      ]
     },
     {
       "id": "electronica-pop",
@@ -1122,11 +1117,10 @@
         "electronica-experimental",
         "electronica-general"
       ],
-      "artistCount": 2,
+      "artistCount": 1,
       "nucleus": false,
       "artists": [
-        "Karlus",
-        "La Xica"
+        "La Mousse"
       ]
     },
     {
@@ -1138,11 +1132,9 @@
         "electronica-pop",
         "electronica-general"
       ],
-      "artistCount": 1,
+      "artistCount": 0,
       "nucleus": false,
-      "artists": [
-        "Tiger Menja Zebra"
-      ]
+      "artists": []
     },
     {
       "id": "electronica-general",
@@ -1153,15 +1145,19 @@
         "electronica-pop",
         "electronica-experimental"
       ],
-      "artistCount": 6,
+      "artistCount": 10,
       "nucleus": true,
       "artists": [
         "Electrotoylets",
         "GadeGANG",
         "Herois de la Katalunya Interior",
-        "Mar Grimalt",
-        "Sandra Monfort",
-        "Vicky l’Arròs"
+        "Karlus",
+        "L'arannà",
+        "La Xica",
+        "Sa Pena",
+        "Tiger Menja Zebra",
+        "Vicky l’Arròs",
+        "Xisk"
       ]
     },
     {
@@ -1190,7 +1186,7 @@
         "rumba",
         "rumba-general"
       ],
-      "artistCount": 18,
+      "artistCount": 17,
       "nucleus": true,
       "artists": [
         "9SON",
@@ -1199,7 +1195,6 @@
         "Dijous Paella",
         "Dusminguet",
         "Gato Pérez",
-        "Kayo Malayo",
         "La Banda del Yuyu",
         "La Gossa Sorda",
         "La Troba Kung-Fú",
@@ -1261,7 +1256,7 @@
         "jazz-fusio",
         "jazz"
       ],
-      "artistCount": 14,
+      "artistCount": 15,
       "nucleus": true,
       "artists": [
         "Andrea Motis",
@@ -1277,7 +1272,8 @@
         "Pegasus",
         "Rita Payés",
         "Secta Sònica",
-        "Vicens Martín Dream Big Band"
+        "Vicens Martín Dream Big Band",
+        "Blues de Picolat"
       ]
     },
     {
@@ -1453,9 +1449,9 @@
     },
     {
       "artist": "Àlex Blat",
-      "category": "Cançó d'autor",
-      "subcategory": "autor-pop",
-      "basis": "documented-tags",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/noticia/27814/alex-blat-volia-fugir-competencia-entre-bandes-perque-ja-estava-molt-cansat",
         "https://www.primaveradh.com/tenda/val/producte/alex-blat-cd-la-veritat/",
@@ -1568,8 +1564,8 @@
     },
     {
       "artist": "Anna Andreu",
-      "category": "Pop",
-      "subcategory": "pop-general",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
       "basis": "category-fallback",
       "sources": [
         "data/artistes-musica.json"
@@ -1650,9 +1646,9 @@
     },
     {
       "artist": "Aspencat",
-      "category": "Rock",
-      "subcategory": "rock-general",
-      "basis": "category-fallback",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
+      "basis": "documented-tags",
       "sources": [
         "https://halleyrecords.com/artist/aspencat/"
       ]
@@ -1723,16 +1719,16 @@
     {
       "artist": "AVANT",
       "category": "Urban",
-      "subcategory": "urban-rap",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.ppf.cat/index.php/cat/artistes/avant"
       ]
     },
     {
       "artist": "Ayryn",
-      "category": "Pop",
-      "subcategory": "pop-general",
+      "category": "Urban",
+      "subcategory": "urban-general",
       "basis": "category-fallback",
       "sources": [
         "data/artistes-musica.json"
@@ -1785,8 +1781,8 @@
     },
     {
       "artist": "Baya Baye",
-      "category": "Urban",
-      "subcategory": "urban-rap",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
       "basis": "documented-tags",
       "sources": [
         "data/artistes-musica.json"
@@ -1849,8 +1845,8 @@
     },
     {
       "artist": "Boom Boom Fighters",
-      "category": "Urban",
-      "subcategory": "urban-reggaeton",
+      "category": "Ska / Reggae",
+      "subcategory": "reggae",
       "basis": "documented-tags",
       "sources": [
         "https://www.sala-apolo.com/cat/event/curtciruit-boom-boom-fighters-cookah-p-5080"
@@ -1900,8 +1896,8 @@
     {
       "artist": "BTZ",
       "category": "Urban",
-      "subcategory": "urban-rap",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/edr/numero477/noticia/2477",
         "https://www.enderrock.cat/edr/numero463/noticia/2334",
@@ -1938,9 +1934,9 @@
     },
     {
       "artist": "Caïm Riba",
-      "category": "Cançó d'autor",
-      "subcategory": "autor-pop",
-      "basis": "documented-tags",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://rgb.cat/management/caim-riba/"
       ]
@@ -1959,9 +1955,9 @@
     },
     {
       "artist": "Ceaxe",
-      "category": "Pop",
-      "subcategory": "pop-general",
-      "basis": "category-fallback",
+      "category": "Urban",
+      "subcategory": "urban-pop",
+      "basis": "documented-tags",
       "sources": [
         "https://www.delirics.cat/es/ceaxe"
       ]
@@ -2000,8 +1996,8 @@
     {
       "artist": "Cloe",
       "category": "Urban",
-      "subcategory": "urban-pop",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/edr/numero537/noticia/3082"
       ]
@@ -2028,8 +2024,8 @@
     {
       "artist": "Colomet",
       "category": "Urban",
-      "subcategory": "urban-pop",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.apuntmedia.es/noticies/cultura/entrevistem-colomet-motiu-seu-nou-treball-22_1_1593169.html"
       ]
@@ -2065,9 +2061,9 @@
     },
     {
       "artist": "Crim",
-      "category": "Rock",
-      "subcategory": "rock-general",
-      "basis": "category-fallback",
+      "category": "Punk",
+      "subcategory": "punk-rock",
+      "basis": "documented-tags",
       "sources": [
         "https://www.youtube.com/channel/UCJhcsyqAVHFHmghWFkmIx4w"
       ]
@@ -2084,8 +2080,8 @@
     {
       "artist": "Da Souza",
       "category": "Indie",
-      "subcategory": "indie-pop",
-      "basis": "documented-tags",
+      "subcategory": "indie-general",
+      "basis": "category-fallback",
       "sources": [
         "https://dasouza.bandcamp.com/"
       ]
@@ -2129,8 +2125,8 @@
     {
       "artist": "Daveu",
       "category": "Pop",
-      "subcategory": "pop-electronic",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
       ]
@@ -2340,8 +2336,8 @@
     {
       "artist": "Els Jóvens",
       "category": "Folk i arrel",
-      "subcategory": "folk-fusio",
-      "basis": "documented-tags",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/disc/7250/jovens"
       ]
@@ -2431,9 +2427,9 @@
     },
     {
       "artist": "Ernest Crusats",
-      "category": "Indie",
-      "subcategory": "indie-folk",
-      "basis": "documented-tags",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
       "sources": [
         "data/artistes-musica.json"
       ]
@@ -2545,9 +2541,9 @@
     },
     {
       "artist": "Figa Flawas",
-      "category": "Pop",
-      "subcategory": "pop-general",
-      "basis": "category-fallback",
+      "category": "Urban",
+      "subcategory": "urban-reggaeton",
+      "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q107292982"
       ]
@@ -2555,8 +2551,8 @@
     {
       "artist": "Flakko",
       "category": "Urban",
-      "subcategory": "urban-rap",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/noticia/30395/noves-cancons-catala-son-rosalia-gossa-sorda-sexenni-amb-miki-nunez-gavinamp3"
       ]
@@ -2657,8 +2653,8 @@
     },
     {
       "artist": "Galgo Lento",
-      "category": "Urban",
-      "subcategory": "urban-general",
+      "category": "Indie",
+      "subcategory": "indie-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UCXh0ap-a-fIbQBYfCxASKCw"
@@ -2685,8 +2681,8 @@
     {
       "artist": "Gavina.mp3",
       "category": "Pop",
-      "subcategory": "pop-electronic",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UCUTFIQKXld2UO6NRCxiM8qw",
         "https://www.enderrock.cat/sona9/grup2024/86/gavinamp3"
@@ -2725,8 +2721,8 @@
     {
       "artist": "Ginestà",
       "category": "Pop",
-      "subcategory": "pop-folk",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q77583436"
       ]
@@ -2827,8 +2823,8 @@
     },
     {
       "artist": "GUINEU",
-      "category": "Pop",
-      "subcategory": "pop-indie",
+      "category": "Indie",
+      "subcategory": "indie-pop",
       "basis": "documented-tags",
       "sources": [
         "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro25"
@@ -2836,8 +2832,8 @@
     },
     {
       "artist": "Gusset",
-      "category": "Pop",
-      "subcategory": "pop-general",
+      "category": "Urban",
+      "subcategory": "urban-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/noticia/30487/premis-primera-fila-2025-premien-vintena-artistes-catalans"
@@ -2964,8 +2960,8 @@
     },
     {
       "artist": "Joan Colomo",
-      "category": "Rock",
-      "subcategory": "rock-pop",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-folk",
       "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q16189612"
@@ -3074,9 +3070,9 @@
     },
     {
       "artist": "Júlia Colom",
-      "category": "Pop",
-      "subcategory": "pop-folk",
-      "basis": "documented-tags",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UCx4dYUR3m6jehjW7mYdSX7g",
         "https://www.enderrock.cat/disc/11440"
@@ -3084,8 +3080,8 @@
     },
     {
       "artist": "Júlia Cruz",
-      "category": "Folk i arrel",
-      "subcategory": "folk-general",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
@@ -3112,16 +3108,16 @@
     {
       "artist": "Karlus",
       "category": "Electrònica",
-      "subcategory": "electronica-pop",
-      "basis": "documented-tags",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.enderrock.cat/noticia/30211/karlus-eivissa-convertit-lloc-menys-habitable-som-aqui"
       ]
     },
     {
       "artist": "Kayo Malayo",
-      "category": "Rumba / Mestissatge",
-      "subcategory": "mestissatge",
+      "category": "Ska / Reggae",
+      "subcategory": "ska-classic",
       "basis": "documented-tags",
       "sources": [
         "https://ca.wikipedia.org/wiki/Kayo_Malayo"
@@ -3130,8 +3126,8 @@
     {
       "artist": "Kiddi",
       "category": "Urban",
-      "subcategory": "urban-pop",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/@kiddireal"
       ]
@@ -3174,8 +3170,8 @@
     },
     {
       "artist": "L'arannà",
-      "category": "Cançó d'autor",
-      "subcategory": "autor-general",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
@@ -3267,8 +3263,8 @@
     },
     {
       "artist": "La Mousse",
-      "category": "Pop",
-      "subcategory": "pop-electronic",
+      "category": "Electrònica",
+      "subcategory": "electronica-pop",
       "basis": "documented-tags",
       "sources": [
         "https://www.enderrock.cat/sona9/noticia/1271/coneix/propostes/sona9/2026"
@@ -3285,8 +3281,8 @@
     },
     {
       "artist": "La Tour de Carol",
-      "category": "Rock",
-      "subcategory": "rock-general",
+      "category": "Pop",
+      "subcategory": "pop-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UC5CGdoxqbma-pqkAHPjkq9w",
@@ -3336,8 +3332,8 @@
     {
       "artist": "La Xica",
       "category": "Electrònica",
-      "subcategory": "electronica-pop",
-      "basis": "documented-tags",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.diarilaveu.cat/opinio/febrer-on-fire-les-veus-femenines-de-la-musica-valenciana-622773/"
       ]
@@ -3382,8 +3378,8 @@
     {
       "artist": "Lepanto 41",
       "category": "Urban",
-      "subcategory": "urban-pop",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://maresmusic.cat/projectes-2024/"
       ]
@@ -3444,8 +3440,8 @@
     },
     {
       "artist": "Lildami",
-      "category": "Urban",
-      "subcategory": "urban-trap",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-trap",
       "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q42716817"
@@ -3528,8 +3524,8 @@
     {
       "artist": "Malánima",
       "category": "Pop",
-      "subcategory": "pop-electronic",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://ib-musicat.cat/bandes/malanima/"
       ]
@@ -3537,8 +3533,8 @@
     {
       "artist": "Malifeta",
       "category": "Urban",
-      "subcategory": "urban-electronic",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://massacriticasafor.com/revista/una-canco/malifeta-la-nit/"
       ]
@@ -3569,8 +3565,8 @@
     {
       "artist": "Mama Dousha",
       "category": "Pop",
-      "subcategory": "pop-electronic",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.wikidata.org/wiki/Q115940783"
       ]
@@ -3604,8 +3600,8 @@
     },
     {
       "artist": "Mar Grimalt",
-      "category": "Electrònica",
-      "subcategory": "electronica-general",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
@@ -3688,8 +3684,8 @@
     {
       "artist": "MASSAVIU",
       "category": "Urban",
-      "subcategory": "urban-pop",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UCh1_-QpgzIdG-3QfCMfZi6w",
         "https://www.enderrock.cat/sona9/grup2020/38/massaviu"
@@ -3698,8 +3694,8 @@
     {
       "artist": "Masvi",
       "category": "Urban",
-      "subcategory": "urban-pop",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UCoybSbI2HaLsHZnY1RG8LEQ"
       ]
@@ -3942,8 +3938,8 @@
     },
     {
       "artist": "Orxata Sound System",
-      "category": "Urban",
-      "subcategory": "urban-trap",
+      "category": "Electrònica",
+      "subcategory": "electronica-ball",
       "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q9053350"
@@ -3961,8 +3957,8 @@
     {
       "artist": "Ouineta",
       "category": "Pop",
-      "subcategory": "pop-electronic",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://icec.gencat.cat/ca/actualitat/noticies/detall/Noticia_PrimaveraPro26"
       ]
@@ -3988,8 +3984,8 @@
     {
       "artist": "Pantaleó",
       "category": "Pop",
-      "subcategory": "pop-indie",
-      "basis": "documented-tags",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.musicaglobal.com/ca/artistes/pantaleo/"
       ]
@@ -4044,8 +4040,8 @@
     {
       "artist": "Pawn Gang",
       "category": "Urban",
-      "subcategory": "urban-rap",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "data/artistes-musica.json"
       ]
@@ -4164,8 +4160,8 @@
     },
     {
       "artist": "Pol Bordas",
-      "category": "Pop",
-      "subcategory": "pop-general",
+      "category": "Urban",
+      "subcategory": "urban-general",
       "basis": "category-fallback",
       "sources": [
         "data/artistes-musica.json"
@@ -4371,9 +4367,9 @@
     },
     {
       "artist": "Sa Pena",
-      "category": "Urban",
-      "subcategory": "urban-electronic",
-      "basis": "documented-tags",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/watch?v=syNga2zsd40",
         "https://www.youtube.com/watch?v=JSNX30J5PH4",
@@ -4428,8 +4424,8 @@
     },
     {
       "artist": "Sandra Monfort",
-      "category": "Electrònica",
-      "subcategory": "electronica-general",
+      "category": "Folk i arrel",
+      "subcategory": "folk-general",
       "basis": "category-fallback",
       "sources": [
         "https://www.3cat.cat/3cat/catorze-veus-per-entendre-el-futur-del-pop-catala/audio/1244294/"
@@ -4437,8 +4433,8 @@
     },
     {
       "artist": "Sangtraït",
-      "category": "Rock",
-      "subcategory": "hard-rock",
+      "category": "Heavy / Metal",
+      "subcategory": "metal-heavy",
       "basis": "documented-tags",
       "sources": [
         "https://en.wikipedia.org/wiki/Sangtra%C3%AFt"
@@ -4547,9 +4543,9 @@
     },
     {
       "artist": "Sílvia Pérez Cruz",
-      "category": "Folk i arrel",
-      "subcategory": "folk-general",
-      "basis": "category-fallback",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-folk",
+      "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q9081084"
       ]
@@ -4566,8 +4562,8 @@
     {
       "artist": "Slad Mobb",
       "category": "Urban",
-      "subcategory": "urban-electronic",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://primerafila.cat/opinio/discs/2025/06/la-slad-mobb-obra-les-portes-de-barcelona-amb-la-clau-de-la-ciutat/"
       ]
@@ -4592,9 +4588,9 @@
     },
     {
       "artist": "Sodi",
-      "category": "Rock",
-      "subcategory": "rock-general",
-      "basis": "category-fallback",
+      "category": "Pop",
+      "subcategory": "pop-rock",
+      "basis": "documented-tags",
       "sources": [
         "https://www.fim.cat/artistes/sodi/"
       ]
@@ -4779,9 +4775,9 @@
     },
     {
       "artist": "The Demencials",
-      "category": "Rock",
-      "subcategory": "rock-general",
-      "basis": "category-fallback",
+      "category": "Punk",
+      "subcategory": "punk-oi",
+      "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q110485652"
       ]
@@ -4798,8 +4794,8 @@
     {
       "artist": "Tiger Menja Zebra",
       "category": "Electrònica",
-      "subcategory": "electronica-experimental",
-      "basis": "documented-tags",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
       "sources": [
         "https://tigermenjazebra.bandcamp.com/album/admirables",
         "https://hiddentrackrecords.bandcamp.com/album/anarquia-i-mal-de-cap",
@@ -4809,9 +4805,9 @@
     },
     {
       "artist": "Tomeu Penya",
-      "category": "Rock",
-      "subcategory": "rock-general",
-      "basis": "category-fallback",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q2917088",
         "https://www.youtube.com/channel/UCsOxXt5l7XmAc6AvMQDRV4A"
@@ -4886,8 +4882,8 @@
     {
       "artist": "ultralone",
       "category": "Urban",
-      "subcategory": "urban-rap",
-      "basis": "documented-tags",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.youtube.com/channel/UC2Q-E-1tamuyLrKRMd0Wmbg"
       ]
@@ -5000,8 +4996,8 @@
     },
     {
       "artist": "Vittara",
-      "category": "Pop",
-      "subcategory": "pop-indie",
+      "category": "Indie",
+      "subcategory": "indie-pop",
       "basis": "documented-tags",
       "sources": [
         "https://www.enderrock.cat/noticia/31101/vine-enderrock-sona-maig-amb-quinto-vittara-sodi-ginesta"
@@ -5141,9 +5137,9 @@
     },
     {
       "artist": "Xisk",
-      "category": "Urban",
-      "subcategory": "urban-electronic",
-      "basis": "documented-tags",
+      "category": "Electrònica",
+      "subcategory": "electronica-general",
+      "basis": "category-fallback",
       "sources": [
         "https://www.delirics.cat/xisk",
         "https://www.enderrock.cat/noticia/30286/xisk-sent-teu-foc-1lokura"
@@ -5188,8 +5184,8 @@
     },
     {
       "artist": "ZOO",
-      "category": "Urban",
-      "subcategory": "urban-rap",
+      "category": "Rap / Hip-hop",
+      "subcategory": "rap-general",
       "basis": "documented-tags",
       "sources": [
         "https://www.wikidata.org/wiki/Q19832676"
@@ -5435,8 +5431,8 @@
     },
     {
       "artist": "Blues de Picolat",
-      "category": "Rock",
-      "subcategory": "rock-general",
+      "category": "Jazz / Blues",
+      "subcategory": "jazz-general",
       "basis": "category-fallback",
       "sources": [
         "https://fr.wikipedia.org/wiki/Blues_de_picolat",
