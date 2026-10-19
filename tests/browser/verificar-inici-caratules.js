@@ -205,7 +205,17 @@ async function check(browser, width, height) {
     ]);
     ok(`${label}: cap subtítol explicatiu visible`, info.visibleSubs === 0, info.visibleSubs);
     ok(`${label}: la pàgina no es desborda`, info.pageWidth <= info.viewport, [info.pageWidth, info.viewport]);
-    if (OUT) await page.screenshot({ path: path.join(OUT, `inici-${width}.png`), fullPage: true });
+    // «Tria el teu so»: les rajoles d'estil i de categoria pròpia no diuen quants artistes hi ha (2026-10-19)
+    const styleCounts = await page.$$eval(
+        '.pt-style:not(.pt-style--add):not(.pt-style--more)',
+        tiles => tiles.filter(tile => tile.querySelector('.pt-style__count') || /\d+ artistes?/.test(tile.textContent)).length
+    );
+    ok(`${label}: les rajoles d'estil no porten el nombre d'artistes`, styleCounts === 0, styleCounts);
+    if (OUT) {
+        await page.screenshot({ path: path.join(OUT, `inici-${width}.png`), fullPage: true });
+        const styles = await page.$('.pt-section--styles');
+        if (styles) await styles.screenshot({ path: path.join(OUT, `inici-estils-${width}.png`) });
+    }
     // Tocar una caràtula d'«Acabades de sortir» fa sonar la cançó
     const id = await page.$eval('.pt-section--fresh .pt-card', el => el.dataset.videoId);
     await page.click('.pt-section--fresh .pt-card .pt-card__media');
