@@ -318,11 +318,76 @@
     const hasPoint = place =>
         Number.isFinite(place?.coordinates?.latitude) && Number.isFinite(place?.coordinates?.longitude);
 
+    const CHEVRON_ICON =
+        '<svg class="ap-origin__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>';
+    const LINK_ICON =
+        '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3Z"/></svg>';
+    const EXTERNAL_ICON =
+        '<svg class="ap-origin__ext" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg>';
+
+    // Nom llegible del web d'una font («Enderrock», «Viquipèdia»…); si no és a la llista, el domini sense «www.».
+    const SOURCE_NAMES = {
+        'enderrock.cat': 'Enderrock',
+        'enciclopedia.cat': 'Enciclopèdia',
+        'youtube.com': 'YouTube',
+        'ara.cat': 'Ara',
+        'arabalears.cat': 'Ara Balears',
+        'rtve.es': 'RTVE',
+        'verkami.com': 'Verkami',
+        '3cat.cat': '3Cat',
+        'ccma.cat': '3Cat',
+        'eltemps.cat': 'El Temps',
+        'vilaweb.cat': 'VilaWeb',
+        'cadenaser.com': 'Cadena SER',
+        'elperiodico.cat': 'El Periódico',
+        'elperiodico.com': 'El Periódico',
+        'elnacional.cat': 'El Nacional',
+        'naciodigital.cat': 'Nació Digital',
+        'dbalears.cat': 'dBalears',
+        'beteve.cat': 'betevé',
+        'timeout.cat': 'Time Out',
+        'surtdecasa.cat': 'Surt de casa',
+        'lafonoteca.net': 'La Fonoteca',
+        'mondosonoro.com': 'Mondo Sonoro',
+        'diarilaveu.cat': 'Diari La Veu',
+        'diaridebarcelona.cat': 'Diari de Barcelona',
+        'casadelamusica.cat': 'Casa de la Música',
+        'bandsintown.com': 'Bandsintown',
+        'bandcamp.com': 'Bandcamp',
+        'spotify.com': 'Spotify',
+        'instagram.com': 'Instagram',
+        'facebook.com': 'Facebook',
+        'x.com': 'X',
+        'twitter.com': 'X',
+        'ca.wikipedia.org': 'Viquipèdia',
+        'wikipedia.org': 'Wikipedia',
+    };
+
+    function sourceName(url) {
+        const host = (/^https:\/\/([^/?#:]+)/i.exec(text(url))?.[1] || '').toLowerCase().replace(/^www\./, '');
+        if (!host) return 'Font';
+        if (SOURCE_NAMES[host]) return SOURCE_NAMES[host];
+        const parent = Object.keys(SOURCE_NAMES).find(domain => host.endsWith('.' + domain));
+        return parent ? SOURCE_NAMES[parent] : host;
+    }
+
+    // Les fonts amb el nom del web; si dues són del mateix web, «Enderrock (2)».
+    function sourceLinks(sources) {
+        const seen = {};
+        return sources.map(url => {
+            const name = sourceName(url);
+            seen[name] = (seen[name] || 0) + 1;
+            return { url, name: seen[name] > 1 ? `${name} (${seen[name]})` : name };
+        });
+    }
+
     // Xip amb el lloc (es desplega amb el perquè i les fonts) i, per a cada lloc amb coordenades, «Ràdio d'aquí»:
     // la ràdio «A prop teu» d'aquell lloc (nearby-radio.js openPlace(), que no desa la zona de l'usuari).
+    // Les fonts són càpsules amb el nom del web i la fletxa d'enllaç extern, sota «D'on ho sabem».
     function originHtml(model) {
         if (!model) return '';
         const names = model.places.map(place => escapeHtml(place.name)).join(' · ');
+        const territories = [...new Set(model.places.map(place => text(place.territory)).filter(Boolean))];
         const radios = model.places
             .map((place, index) =>
                 hasPoint(place)
@@ -330,10 +395,19 @@
                     : ''
             )
             .join('');
-        return `<summary>${PIN_ICON}<span>${escapeHtml(model.label)}: ${names}</span></summary>
-            <div class="ap-origin__details">${model.basis ? `<p>${escapeHtml(model.basis)}</p>` : ''}
+        const sources = sourceLinks(model.sources)
+            .map(
+                source =>
+                    `<li><a class="ap-origin__source" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(source.url)}">${LINK_ICON}<span>${escapeHtml(source.name)}</span>${EXTERNAL_ICON}<span class="ap-sr">(s’obre en una pestanya nova)</span></a></li>`
+            )
+            .join('');
+        return `<summary>${PIN_ICON}<span class="ap-origin__label">${escapeHtml(model.label)}</span><span class="ap-origin__place">${names}</span>${CHEVRON_ICON}</summary>
+            <div class="ap-origin__details">
+            ${territories.length ? `<p class="ap-origin__where">${names}<span>${escapeHtml(territories.join(' · '))}</span></p>` : ''}
+            ${model.basis ? `<p class="ap-origin__basis">${escapeHtml(model.basis)}</p>` : ''}
             ${radios ? `<div class="ap-origin__radios">${radios}</div>` : ''}
-            <ul>${model.sources.map((url, index) => `<li><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Font ${index + 1}</a></li>`).join('')}</ul></div>`;
+            <p class="ap-origin__heading">D’on ho sabem</p>
+            <ul class="ap-origin__sources">${sources}</ul></div>`;
     }
 
     async function loadOrigins() {
@@ -742,6 +816,7 @@
         radiosModel,
         bioModel,
         originModel,
+        sourceName,
         originHtml,
         formatCount,
         viewsLabel,
