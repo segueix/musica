@@ -166,9 +166,9 @@
                 id: item.id,
                 user: true,
                 artists: artists.size,
-                avatars: [...artists.values()]
-                    .filter(Boolean)
-                    .slice(0, AVATARS),
+                avatars: [...artists.values()].filter(Boolean).slice(0, AVATARS),
+                // Candidats a fer de fons, per no repetir el grup d'una altra rajola (discovery.assignUniqueAvatars)
+                faces: [...artists.entries()].filter(([, avatar]) => avatar).map(([key, avatar]) => ({ key, avatar })),
             };
         });
     }
