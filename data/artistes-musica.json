@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T13:40:00Z",
+  "updatedAt": "2026-10-19T13:53:06Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -35897,10 +35897,11 @@
     },
     {
       "name": "Tornaveus",
-      "aliases": [],
+      "aliases": [
+        "Tornaveu"
+      ],
       "genres": [
-        "Folk i arrel",
-        "Coral / Vocal"
+        "Folk i arrel"
       ],
       "territories": [
         "Catalunya"
@@ -35913,11 +35914,18 @@
       "youtube": {
         "channels": [
           {
+            "id": "UCJ-dDO2z5WvGEv9RzhlYkeA",
+            "handle": null,
+            "name": "Tornaveus - Topic",
+            "type": "topic",
+            "primary": true
+          },
+          {
             "id": "UC8vbtHPcQvQEuQi2wcwK6aQ",
             "handle": "@tornaveus",
             "name": "Tornaveus Polifonies",
             "type": "official",
-            "primary": true
+            "primary": false
           }
         ],
         "searchCandidates": [
@@ -35945,10 +35953,11 @@
       "sources": [
         "https://tornaveuspolifonies.wordpress.com/",
         "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ",
-        "genre:manual"
+        "genre:manual",
+        "manual-user-2026-10-19"
       ],
-      "lastChecked": "2026-10-05T13:00:17.655Z",
-      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca.",
+      "lastChecked": "2026-10-19",
+      "notes": "Polifonies tradicionals catalanes. No donar per català el repertori litúrgic en llatí. Alta de folk i arrel 2026-10-05; canals contrastats amb la identitat i el repertori del grup; selecció catalana limitada per llista blanca. El 2026-10-19 l’usuari autoritza totes les cançons del canal Tema UCJ-dDO2z5WvGEv9RzhlYkeA, nom visible Tornaveu i categoria única Folk i arrel. Acceptació editorial, no verificació individual de lletres. Es manté el filtre del canal oficial.",
       "enrichment": {
         "youtubeSearch": {
           "checkedAt": "2026-10-05T12:58:40.440Z",
@@ -35982,7 +35991,8 @@
           "https://tornaveuspolifonies.wordpress.com/",
           "https://www.youtube.com/channel/UC8vbtHPcQvQEuQi2wcwK6aQ"
         ]
-      }
+      },
+      "displayName": "Tornaveu"
     },
     {
       "name": "Toti Soler",
