@@ -949,6 +949,12 @@
                 fresh = buildSearchTail(searchRadio.videos, current, { preceding: [current, ...kept] });
             }
             fresh = fresh.filter(item => !keptIds.has(String(item.id)));
+            // «Barreja» d'una ràdio d'artista o de cerca: el motor ordena les cançons d'un mateix artista sempre per
+            // puntuació i tornava a donar el mateix ordre (2026-10-19). Aquí es barregen de debò.
+            if (!keepNext) {
+                const before = activePlaylistQueue.slice(currentPlaylistIndex + 1).map(item => String(item?.id));
+                fresh = shuffleSongs(fresh, current, before.filter(id => !keptIds.has(id)));
+            }
         } else {
             fresh = buildQueue(current, radioStyles(), {
                 liveOnly: radioLiveOnly,
@@ -959,6 +965,25 @@
         const maxLength = searchRadio ? SEARCH_RADIO_MAX : MAX_QUEUE_LENGTH;
         activePlaylistQueue = [...played, ...kept, ...fresh].slice(0, maxLength + played.length + kept.length);
         refresh();
+    }
+
+    // Barreja una llista (Fisher-Yates) sense repetir l'ordre anterior i, si hi ha diversos artistes, sense dos
+    // seguits del mateix si es pot evitar.
+    function shuffleSongs(list, current, previousIds = [], rng = Math.random) {
+        if (list.length < 2) return list;
+        const same = order => order.map(item => String(item.id)).join() === previousIds.slice(0, order.length).join();
+        let result = list;
+        for (let attempt = 0; attempt < 4 && (result === list || same(result)); attempt++) {
+            result = list.slice();
+            for (let i = result.length - 1; i > 0; i--) {
+                const j = Math.floor(rng() * (i + 1));
+                [result[i], result[j]] = [result[j], result[i]];
+            }
+            if (typeof spreadVideosByArtist === 'function') {
+                result = spreadVideosByArtist(result, { previousArtist: artistOf(current) });
+            }
+        }
+        return result;
     }
 
     // ---------- La ràdio no s'acaba mai ----------
@@ -1904,6 +1929,7 @@
             }
             if (event.target.closest('[data-mq-regenerate]')) {
                 regenerate();
+                app.features.shellNav?.toast?.('Ràdio barrejada: les cançons següents són noves o en un altre ordre.');
                 return;
             }
             const play = event.target.closest('[data-mq-play]');
