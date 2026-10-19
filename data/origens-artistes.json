@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T18:00:17.047Z",
+  "updatedAt": "2026-10-19T08:35:22.340Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2808,7 +2808,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.quimiportet.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.quimiportet.cat/bio.html",
+            "https://www.quimiportet.cat/"
+          ],
+          "basis": "Web que s'identifica com a oficial, amb discografia i concerts."
+        }
+      }
     },
     "artist:joan-masdeu": {
       "name": "Joan Masdéu",
@@ -2824,7 +2837,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.joanmasdeu.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.joanmasdeu.com/"
+          ],
+          "basis": "Web de Joan Masdéu amb La Bonaventura i videoclips propis."
+        }
+      }
     },
     "artist:joan-miquel-oliver": {
       "name": "Joan Miquel Oliver",
@@ -2909,7 +2934,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.montsecastella.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.montsecastella.cat/"
+          ],
+          "basis": "Presentació en primera persona, discos i contacte de Montse Castellà."
+        }
+      }
     },
     "artist:tomeu-penya": {
       "name": "Tomeu Penya",
@@ -2926,7 +2963,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://tomeupenya.cat/bio/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://tomeupenya.cat/bio/"
+          ],
+          "basis": "Biografia pròpia i discografia del cantautor de Vilafranca de Bonany; portada amb timeout."
+        }
+      }
     },
     "artist:julia-colom": {
       "name": "Júlia Colom",
@@ -3381,7 +3430,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.ginestamusic.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.ginestamusic.com/info",
+            "https://www.ginestamusic.com/"
+          ],
+          "basis": "Web del grup amb concerts, contacte i botiga pròpia."
+        }
+      }
     },
     "artist:opcio-k-95": {
       "name": "Opció K-95",
@@ -3496,7 +3558,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.manuguix.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.manuguix.com/"
+          ],
+          "basis": "Web oficial, biografia de Manu Guix i discografia."
+        }
+      }
     },
     "artist:els-pets": {
       "name": "Els Pets",
@@ -3733,7 +3807,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.auxili.net/biografia-2/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.auxili.net/biografia-2/"
+          ],
+          "basis": "Biografia pròpia del grup d'Ontinyent; portada amb timeout."
+        }
+      }
     },
     "artist:brams": {
       "name": "Brams",
@@ -3784,7 +3870,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.elsamicsdelesarts.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.elsamicsdelesarts.cat/the-band/",
+            "https://www.elsamicsdelesarts.cat/"
+          ],
+          "basis": "Agenda, discografia i comunicats del mateix grup."
+        }
+      }
     },
     "artist:els-catarres": {
       "name": "Els Catarres",
@@ -3954,7 +4053,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://marinarossell.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://marinarossell.com/bio/",
+            "https://marinarossell.com/"
+          ],
+          "basis": "Web oficial, discos de Marina Rossell i contacte."
+        }
+      }
     },
     "artist:remei-de-ca-la-fresca": {
       "name": "Remei de Ca la Fresca",
@@ -4038,7 +4150,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "facebook": {
+          "url": "https://www.facebook.com/aspencatoficial/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "source-crosscheck-and-indexed-profile",
+          "sources": [
+            "https://www.facebook.com/aspencatoficial/",
+            "https://www.aspencat.org/"
+          ],
+          "basis": "Perfil oficial coincident amb la font d'origen. La web històrica aspencat.org no s'ha pogut consultar; es mostra Facebook mentre no hi hagi una web verificable."
+        }
+      }
     },
     "artist:el-nota": {
       "name": "El Nota",
@@ -4108,7 +4233,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.isaakaguila.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.isaakaguila.cat/varis",
+            "https://www.isaakaguila.cat/"
+          ],
+          "basis": "Web del cantautor amb biografia, discografia i concerts."
+        }
+      }
     },
     "artist:maig": {
       "name": "Maig",
@@ -4192,7 +4330,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "user-correction",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.forja-metal.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.forja-metal.com/"
+          ],
+          "basis": "Web de la banda de metal en català; discos i contacte coincidents."
+        }
+      }
     },
     "artist:poor-tramit": {
       "name": "Poor Tràmit",
@@ -4518,7 +4668,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.gossos.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.gossos.cat/vida-de-gos/",
+            "https://www.gossos.cat/"
+          ],
+          "basis": "Notícies en primera persona, concerts i contacte del grup."
+        }
+      }
     },
     "artist:joan-isaac": {
       "name": "Joan Isaac",
@@ -4585,7 +4748,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://marpujol.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://marpujol.com/bio/",
+            "https://marpujol.com/"
+          ],
+          "basis": "Cantautora de Prats de Lluçanès; discos Cançons de Rebost i Trepa."
+        }
+      }
     },
     "artist:pilseners": {
       "name": "Pilseners",
@@ -4750,7 +4926,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://elponypisador.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://elponypisador.com/es/sobre-nosaltres/",
+            "https://elponypisador.com/"
+          ],
+          "basis": "Web del grup, agenda, música i botiga."
+        }
+      }
     },
     "artist:en-rick": {
       "name": "En Rick",
@@ -4882,7 +5071,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.lluisllach.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.lluisllach.cat/catala/biografia.html",
+            "https://www.lluisllach.cat/"
+          ],
+          "basis": "La pàgina s'identifica expressament com a web oficial de Lluís Llach."
+        }
+      }
     },
     "artist:xanguito": {
       "name": "Xanguito",
@@ -5165,7 +5367,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://xavierdebetera.com/biografia/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://xavierdebetera.com/biografia/"
+          ],
+          "basis": "Biografia pròpia de Xavier Benedito Casanoves, cantador de Bétera."
+        }
+      }
     },
     "artist:alosa": {
       "name": "Alosa",
@@ -5279,7 +5493,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.svetlana.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.svetlana.cat/"
+          ],
+          "basis": "Web amb discografia, videoclips, canal de YouTube i contacte del duet."
+        }
+      }
     },
     "artist:the-demencials": {
       "name": "The Demencials",
@@ -5362,7 +5588,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://juditneddermann.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://juditneddermann.com/biografia/",
+            "https://juditneddermann.com/"
+          ],
+          "basis": "Web de la cantant i compositora, amb discografia i contacte."
+        }
+      }
     },
     "artist:miki-nunez": {
       "name": "Miki Núñez",
@@ -5427,7 +5666,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://xavisarria.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://xavisarria.cat/bio/",
+            "https://xavisarria.cat/"
+          ],
+          "basis": "Web de Xavi Sarrià i presentació del disc Causa."
+        }
+      }
     },
     "artist:albert-pla-i-alvarez": {
       "name": "Albert Pla i Álvarez",
@@ -5670,7 +5922,21 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://adala.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://adala.cat/les-nostres-arrels/",
+            "https://adala.cat/contacte/",
+            "https://adala.cat/"
+          ],
+          "basis": "Web d'Adala amb discografia, projectes i contacte."
+        }
+      }
     },
     "artist:adria-punti": {
       "name": "Adrià Puntí",
@@ -6366,7 +6632,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.pegasus.cat/ca/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.pegasus.cat/ca/"
+          ],
+          "basis": "Web del grup de jazz fusió, història, discografia i concerts."
+        }
+      }
     },
     "artist:pixamandurries": {
       "name": "Pixamandúrries",
@@ -6611,7 +6889,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://miquelgil.com/biografia05/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://miquelgil.com/biografia05/"
+          ],
+          "basis": "Biografia pròpia del cantant, trajectòria amb Al Tall i carrera en solitari."
+        }
+      }
     },
     "artist:pere-tapias": {
       "name": "Pere Tàpias",
@@ -6924,7 +7214,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.germanegre.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.germanegre.cat/"
+          ],
+          "basis": "Web del grup amb Puja aquí dalt i balla!, contacte i canal de YouTube."
+        }
+      }
     },
     "artist:les-testarudes": {
       "name": "Les Testarudes",
@@ -7103,7 +7405,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://magalisare.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://magalisare.com/acerca-de/",
+            "https://magalisare.com/"
+          ],
+          "basis": "Web de Magalí Sare, identificada com a cantant i compositora."
+        }
+      }
     },
     "artist:panellet": {
       "name": "Panellet",
@@ -7239,7 +7554,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.potpetit.com/bases-io-partitures/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.potpetit.com/bases-io-partitures/"
+          ],
+          "basis": "Recursos, lletres i partitures publicats pel mateix grup al seu web."
+        }
+      }
     },
     "artist:els-atrapasomnis": {
       "name": "Els Atrapasomnis",
@@ -7255,7 +7582,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://elsatrapasomnis.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://elsatrapasomnis.cat/"
+          ],
+          "basis": "Web del grup familiar amb espectacles, presentació i agenda."
+        }
+      }
     },
     "artist:la-pegatina": {
       "name": "La Pegatina",
@@ -7404,7 +7743,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.lavelladixieland.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.lavelladixieland.com/historia.html",
+            "https://www.lavelladixieland.com/"
+          ],
+          "basis": "Web del grup, 45 aniversari, història i contacte de l'oficina."
+        }
+      }
     },
     "artist:landry-el-rumbero": {
       "name": "Landry el Rumbero",
@@ -7453,7 +7805,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.peppuigdemont.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.peppuigdemont.com/presentacio/",
+            "https://www.peppuigdemont.com/"
+          ],
+          "basis": "Web del cantautor amb espectacles familiars, publicacions i contacte."
+        }
+      }
     },
     "artist:reggae-per-xics": {
       "name": "Reggae per Xics",
@@ -7555,7 +7920,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://andreamotis.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://andreamotis.com/en/",
+            "https://andreamotis.com/"
+          ],
+          "basis": "Web de la cantant i trompetista, amb el disc Intimate i agenda."
+        }
+      }
     },
     "artist:ara-va-de-bo": {
       "name": "Ara Va de Bo",
@@ -7813,7 +8191,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://lali-begood.com/es/bio/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://lali-begood.com/es/bio/"
+          ],
+          "basis": "Biografia pròpia de Lali BeGood, abans Lali Rondalla; portada amb timeout."
+        }
+      }
     },
     "artist:mandanga": {
       "name": "Mandanga!",
@@ -7845,7 +8235,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.milicians.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.milicians.com/biografia/",
+            "https://www.milicians.com/"
+          ],
+          "basis": "Web de Milícians, Garrotxa Streetpunk, amb concerts del grup."
+        }
+      }
     },
     "artist:quico-el-celio-el-noi-i-el-mut-de-ferreries": {
       "name": "Quico el Célio, el Noi i el Mut de Ferreries",
@@ -7862,7 +8265,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.quicoelcelio.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://www.quicoelcelio.com/"
+          ],
+          "basis": "Web del grup tortosí amb Jota X Cobla, discografia i agenda."
+        }
+      }
     },
     "artist:una-bestia-incontrolable": {
       "name": "Una Bèstia Incontrolable",
@@ -8077,7 +8492,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://sau.cat/sau/historia-sau/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://sau.cat/sau/historia-sau/"
+          ],
+          "basis": "Web amb novetats oficials del grup i la Fundació SAU; història i discografia."
+        }
+      }
     },
     "artist:sangtrait": {
       "name": "Sangtraït",
@@ -8541,7 +8968,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://paualabajos.com/bio/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://paualabajos.com/bio/"
+          ],
+          "basis": "La pàgina s'identifica com a web oficial i presenta la biografia del cantautor."
+        }
+      }
     },
     "artist:pep-gimeno-botifarra": {
       "name": "Pep Gimeno \"Botifarra\"",
@@ -8703,7 +9142,20 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://marionasagarra.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://marionasagarra.com/bio/",
+            "https://marionasagarra.com/"
+          ],
+          "basis": "Presentació en primera persona, projectes, biografia i discografia."
+        }
+      }
     },
     "artist:miquela-llado-i-vidal": {
       "name": "Miquela Lladó i Vidal",
@@ -9552,7 +10004,20 @@
       ],
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://laranna.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://laranna.com/qui-som/",
+            "https://laranna.com/"
+          ],
+          "basis": "Web del duet amb concerts, lletres, discografia i presentació."
+        }
+      }
     },
     "artist:n-gai-n-gai": {
       "name": "N'Gai N'Gai",
@@ -10091,7 +10556,20 @@
       ],
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://tornaveuspolifonies.wordpress.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://tornaveuspolifonies.wordpress.com/about/",
+            "https://tornaveuspolifonies.wordpress.com/"
+          ],
+          "basis": "Web del projecte de polifonies tradicionals catalanes."
+        }
+      }
     },
     "artist:anna-andreu": {
       "name": "Anna Andreu",
@@ -10123,7 +10601,20 @@
       ],
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://guillemramisa.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://guillemramisa.com/info/",
+            "https://guillemramisa.com/"
+          ],
+          "basis": "Publicacions en primera persona, gira i disc Tot va sol."
+        }
+      }
     },
     "artist:joan-manuel-serrat": {
       "name": "Joan Manuel Serrat",
@@ -10139,7 +10630,20 @@
       ],
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://jmserrat.com/ca/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://jmserrat.com/ca/biografia/",
+            "https://jmserrat.com/ca/"
+          ],
+          "basis": "Versió catalana del web de Joan Manuel Serrat, biografia i discografia."
+        }
+      }
     },
     "artist:lladruc": {
       "name": "Lladruc",
@@ -10236,7 +10740,19 @@
       ],
       "reviewedOn": "2026-10-12",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://tardor.band/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://tardor.band/"
+          ],
+          "basis": "Web del grup, nou disc, comunitat pròpia i contacte de contractació."
+        }
+      }
     },
     "artist:alex-blat": {
       "name": "Àlex Blat",
@@ -10332,7 +10848,21 @@
       ],
       "reviewedOn": "2026-10-13",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "facebook": {
+          "url": "https://www.facebook.com/borrianabigband/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "source-crosscheck-and-indexed-profile",
+          "sources": [
+            "https://www.facebook.com/borrianabigband/",
+            "https://asociacionbigbands.com/bigband/borriana-big-band/",
+            "https://www.youtube.com/watch?v=jI1AwsOiMeM"
+          ],
+          "basis": "Perfil enllaçat a les descripcions dels vídeos del grup (revisió 2026-10-13), contrastat amb el perfil públic indexat. borrianabigband.com no s'ha pogut consultar."
+        }
+      }
     },
     "artist:neisha": {
       "name": "Neisha",
@@ -11201,7 +11731,19 @@
       ],
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://llamptefrigui.fr/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://llamptefrigui.fr/"
+          ],
+          "basis": "Presentació del grup de Cornellà de la Ribera, repertori i agenda."
+        }
+      }
     },
     "artist:gisela-bellsola": {
       "name": "Gisela Bellsolà",
@@ -11234,7 +11776,19 @@
       ],
       "reviewedOn": "2026-10-17",
       "assignmentSource": "user-correction",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://nuriabalcells.com/recanconem/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://nuriabalcells.com/recanconem/"
+          ],
+          "basis": "Pàgina de Recançonem al web de Núria Balcells, projecte del canal catalogat."
+        }
+      }
     },
     "artist:joan-garriga": {
       "name": "Joan Garriga",
@@ -11250,7 +11804,20 @@
       ],
       "reviewedOn": "2026-10-18",
       "assignmentSource": "user-correction",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://joangarriga.cat/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "manual-page-review",
+          "sources": [
+            "https://joangarriga.cat/bio/",
+            "https://joangarriga.cat/"
+          ],
+          "basis": "Pàgina oficial de Joan Garriga i el Mariatxi Galàctic."
+        }
+      }
     },
     "artist:el-belda-i-el-conjunt-badabadoc": {
       "name": "El Belda i el Conjunt Badabadoc",

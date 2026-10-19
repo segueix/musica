@@ -1,0 +1,3568 @@
+{
+  "reviewedOn": "2026-10-19",
+  "scope": "Primera passada sobre webs identificables a les fonts d'origen i del catàleg, més Facebook de Borriana documentat a la revisió anterior. No és una recerca exhaustiva dels 529 artistes.",
+  "policy": "Web verificada preferent; Facebook verificat si no hi ha web verificada. Pendents i rebutjats no es mostren. No es consulten APIs ni es programa cap workflow.",
+  "verified": [
+    {
+      "artistKey": "artist:quimi-portet",
+      "name": "Quimi Portet",
+      "kind": "website",
+      "url": "https://www.quimiportet.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.quimiportet.cat/bio.html",
+        "https://www.quimiportet.cat/"
+      ],
+      "basis": "Web que s'identifica com a oficial, amb discografia i concerts."
+    },
+    {
+      "artistKey": "artist:montse-castella",
+      "name": "Montse Castellà",
+      "kind": "website",
+      "url": "https://www.montsecastella.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.montsecastella.cat/"
+      ],
+      "basis": "Presentació en primera persona, discos i contacte de Montse Castellà."
+    },
+    {
+      "artistKey": "artist:ginesta",
+      "name": "Ginestà",
+      "kind": "website",
+      "url": "https://www.ginestamusic.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.ginestamusic.com/info",
+        "https://www.ginestamusic.com/"
+      ],
+      "basis": "Web del grup amb concerts, contacte i botiga pròpia."
+    },
+    {
+      "artistKey": "artist:manu-guix",
+      "name": "Manu Guix",
+      "kind": "website",
+      "url": "https://www.manuguix.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.manuguix.com/"
+      ],
+      "basis": "Web oficial, biografia de Manu Guix i discografia."
+    },
+    {
+      "artistKey": "artist:els-amics-de-les-arts",
+      "name": "Els Amics de les Arts",
+      "kind": "website",
+      "url": "https://www.elsamicsdelesarts.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.elsamicsdelesarts.cat/the-band/",
+        "https://www.elsamicsdelesarts.cat/"
+      ],
+      "basis": "Agenda, discografia i comunicats del mateix grup."
+    },
+    {
+      "artistKey": "artist:marina-rossell",
+      "name": "Marina Rossell",
+      "kind": "website",
+      "url": "https://marinarossell.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://marinarossell.com/bio/",
+        "https://marinarossell.com/"
+      ],
+      "basis": "Web oficial, discos de Marina Rossell i contacte."
+    },
+    {
+      "artistKey": "artist:forja",
+      "name": "Forja",
+      "kind": "website",
+      "url": "https://www.forja-metal.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.forja-metal.com/"
+      ],
+      "basis": "Web de la banda de metal en català; discos i contacte coincidents."
+    },
+    {
+      "artistKey": "artist:gossos",
+      "name": "Gossos",
+      "kind": "website",
+      "url": "https://www.gossos.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.gossos.cat/vida-de-gos/",
+        "https://www.gossos.cat/"
+      ],
+      "basis": "Notícies en primera persona, concerts i contacte del grup."
+    },
+    {
+      "artistKey": "artist:mar-pujol",
+      "name": "Mar Pujol",
+      "kind": "website",
+      "url": "https://marpujol.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://marpujol.com/bio/",
+        "https://marpujol.com/"
+      ],
+      "basis": "Cantautora de Prats de Lluçanès; discos Cançons de Rebost i Trepa."
+    },
+    {
+      "artistKey": "artist:lluis-llach-i-grande",
+      "name": "Lluís Llach i Grande",
+      "kind": "website",
+      "url": "https://www.lluisllach.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.lluisllach.cat/catala/biografia.html",
+        "https://www.lluisllach.cat/"
+      ],
+      "basis": "La pàgina s'identifica expressament com a web oficial de Lluís Llach."
+    },
+    {
+      "artistKey": "artist:svetlana",
+      "name": "Svetlana",
+      "kind": "website",
+      "url": "https://www.svetlana.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.svetlana.cat/"
+      ],
+      "basis": "Web amb discografia, videoclips, canal de YouTube i contacte del duet."
+    },
+    {
+      "artistKey": "artist:judit-neddermann",
+      "name": "Judit Neddermann",
+      "kind": "website",
+      "url": "https://juditneddermann.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://juditneddermann.com/biografia/",
+        "https://juditneddermann.com/"
+      ],
+      "basis": "Web de la cantant i compositora, amb discografia i contacte."
+    },
+    {
+      "artistKey": "artist:xavi-sarria",
+      "name": "Xavi Sarrià",
+      "kind": "website",
+      "url": "https://xavisarria.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://xavisarria.cat/bio/",
+        "https://xavisarria.cat/"
+      ],
+      "basis": "Web de Xavi Sarrià i presentació del disc Causa."
+    },
+    {
+      "artistKey": "artist:pegasus",
+      "name": "Pegasus",
+      "kind": "website",
+      "url": "https://www.pegasus.cat/ca/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.pegasus.cat/ca/"
+      ],
+      "basis": "Web del grup de jazz fusió, història, discografia i concerts."
+    },
+    {
+      "artistKey": "artist:magali-sare",
+      "name": "Magalí Sare",
+      "kind": "website",
+      "url": "https://magalisare.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://magalisare.com/acerca-de/",
+        "https://magalisare.com/"
+      ],
+      "basis": "Web de Magalí Sare, identificada com a cantant i compositora."
+    },
+    {
+      "artistKey": "artist:la-vella-dixieland",
+      "name": "La Vella Dixieland",
+      "kind": "website",
+      "url": "https://www.lavelladixieland.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.lavelladixieland.com/historia.html",
+        "https://www.lavelladixieland.com/"
+      ],
+      "basis": "Web del grup, 45 aniversari, història i contacte de l'oficina."
+    },
+    {
+      "artistKey": "artist:pep-puigdemont",
+      "name": "Pep Puigdemont",
+      "kind": "website",
+      "url": "https://www.peppuigdemont.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.peppuigdemont.com/presentacio/",
+        "https://www.peppuigdemont.com/"
+      ],
+      "basis": "Web del cantautor amb espectacles familiars, publicacions i contacte."
+    },
+    {
+      "artistKey": "artist:andrea-motis",
+      "name": "Andrea Motis",
+      "kind": "website",
+      "url": "https://andreamotis.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://andreamotis.com/en/",
+        "https://andreamotis.com/"
+      ],
+      "basis": "Web de la cantant i trompetista, amb el disc Intimate i agenda."
+    },
+    {
+      "artistKey": "artist:milicians",
+      "name": "Milícians",
+      "kind": "website",
+      "url": "https://www.milicians.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.milicians.com/biografia/",
+        "https://www.milicians.com/"
+      ],
+      "basis": "Web de Milícians, Garrotxa Streetpunk, amb concerts del grup."
+    },
+    {
+      "artistKey": "artist:mariona-sagarra",
+      "name": "Mariona Sagarra",
+      "kind": "website",
+      "url": "https://marionasagarra.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://marionasagarra.com/bio/",
+        "https://marionasagarra.com/"
+      ],
+      "basis": "Presentació en primera persona, projectes, biografia i discografia."
+    },
+    {
+      "artistKey": "artist:l-aranna",
+      "name": "L'arannà",
+      "kind": "website",
+      "url": "https://laranna.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://laranna.com/qui-som/",
+        "https://laranna.com/"
+      ],
+      "basis": "Web del duet amb concerts, lletres, discografia i presentació."
+    },
+    {
+      "artistKey": "artist:guillem-ramisa",
+      "name": "Guillem Ramisa",
+      "kind": "website",
+      "url": "https://guillemramisa.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://guillemramisa.com/info/",
+        "https://guillemramisa.com/"
+      ],
+      "basis": "Publicacions en primera persona, gira i disc Tot va sol."
+    },
+    {
+      "artistKey": "artist:joan-manuel-serrat",
+      "name": "Joan Manuel Serrat",
+      "kind": "website",
+      "url": "https://jmserrat.com/ca/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://jmserrat.com/ca/biografia/",
+        "https://jmserrat.com/ca/"
+      ],
+      "basis": "Versió catalana del web de Joan Manuel Serrat, biografia i discografia."
+    },
+    {
+      "artistKey": "artist:tardor",
+      "name": "Tardor",
+      "kind": "website",
+      "url": "https://tardor.band/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://tardor.band/"
+      ],
+      "basis": "Web del grup, nou disc, comunitat pròpia i contacte de contractació."
+    },
+    {
+      "artistKey": "artist:llamp-te-frigui",
+      "name": "Llamp te Frigui",
+      "kind": "website",
+      "url": "https://llamptefrigui.fr/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://llamptefrigui.fr/"
+      ],
+      "basis": "Presentació del grup de Cornellà de la Ribera, repertori i agenda."
+    },
+    {
+      "artistKey": "artist:joan-garriga",
+      "name": "Joan Garriga",
+      "kind": "website",
+      "url": "https://joangarriga.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://joangarriga.cat/bio/",
+        "https://joangarriga.cat/"
+      ],
+      "basis": "Pàgina oficial de Joan Garriga i el Mariatxi Galàctic."
+    },
+    {
+      "artistKey": "artist:nuria-balcells",
+      "name": "Núria Balcells",
+      "kind": "website",
+      "url": "https://nuriabalcells.com/recanconem/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://nuriabalcells.com/recanconem/"
+      ],
+      "basis": "Pàgina de Recançonem al web de Núria Balcells, projecte del canal catalogat."
+    },
+    {
+      "artistKey": "artist:adala",
+      "name": "Adala",
+      "kind": "website",
+      "url": "https://adala.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://adala.cat/les-nostres-arrels/",
+        "https://adala.cat/contacte/",
+        "https://adala.cat/"
+      ],
+      "basis": "Web d'Adala amb discografia, projectes i contacte."
+    },
+    {
+      "artistKey": "artist:els-atrapasomnis",
+      "name": "Els Atrapasomnis",
+      "kind": "website",
+      "url": "https://elsatrapasomnis.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://elsatrapasomnis.cat/"
+      ],
+      "basis": "Web del grup familiar amb espectacles, presentació i agenda."
+    },
+    {
+      "artistKey": "artist:germa-negre",
+      "name": "Germà Negre",
+      "kind": "website",
+      "url": "https://www.germanegre.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.germanegre.cat/"
+      ],
+      "basis": "Web del grup amb Puja aquí dalt i balla!, contacte i canal de YouTube."
+    },
+    {
+      "artistKey": "artist:isaak-aguila",
+      "name": "Isaak Aguilà",
+      "kind": "website",
+      "url": "https://www.isaakaguila.cat/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.isaakaguila.cat/varis",
+        "https://www.isaakaguila.cat/"
+      ],
+      "basis": "Web del cantautor amb biografia, discografia i concerts."
+    },
+    {
+      "artistKey": "artist:joan-masdeu",
+      "name": "Joan Masdéu",
+      "kind": "website",
+      "url": "https://www.joanmasdeu.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.joanmasdeu.com/"
+      ],
+      "basis": "Web de Joan Masdéu amb La Bonaventura i videoclips propis."
+    },
+    {
+      "artistKey": "artist:quico-el-celio-el-noi-i-el-mut-de-ferreries",
+      "name": "Quico el Célio, el Noi i el Mut de Ferreries",
+      "kind": "website",
+      "url": "https://www.quicoelcelio.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.quicoelcelio.com/"
+      ],
+      "basis": "Web del grup tortosí amb Jota X Cobla, discografia i agenda."
+    },
+    {
+      "artistKey": "artist:el-pony-pisador",
+      "name": "El Pony Pisador",
+      "kind": "website",
+      "url": "https://elponypisador.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://elponypisador.com/es/sobre-nosaltres/",
+        "https://elponypisador.com/"
+      ],
+      "basis": "Web del grup, agenda, música i botiga."
+    },
+    {
+      "artistKey": "artist:tornaveus",
+      "name": "Tornaveus",
+      "kind": "website",
+      "url": "https://tornaveuspolifonies.wordpress.com/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://tornaveuspolifonies.wordpress.com/about/",
+        "https://tornaveuspolifonies.wordpress.com/"
+      ],
+      "basis": "Web del projecte de polifonies tradicionals catalanes."
+    },
+    {
+      "artistKey": "artist:tomeu-penya",
+      "name": "Tomeu Penya",
+      "kind": "website",
+      "url": "https://tomeupenya.cat/bio/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://tomeupenya.cat/bio/"
+      ],
+      "basis": "Biografia pròpia i discografia del cantautor de Vilafranca de Bonany; portada amb timeout."
+    },
+    {
+      "artistKey": "artist:auxili",
+      "name": "Auxili",
+      "kind": "website",
+      "url": "https://www.auxili.net/biografia-2/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.auxili.net/biografia-2/"
+      ],
+      "basis": "Biografia pròpia del grup d'Ontinyent; portada amb timeout."
+    },
+    {
+      "artistKey": "artist:xavier-de-betera",
+      "name": "Xavier de Bétera",
+      "kind": "website",
+      "url": "https://xavierdebetera.com/biografia/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://xavierdebetera.com/biografia/"
+      ],
+      "basis": "Biografia pròpia de Xavier Benedito Casanoves, cantador de Bétera."
+    },
+    {
+      "artistKey": "artist:lali-begood",
+      "name": "Lali BeGood",
+      "kind": "website",
+      "url": "https://lali-begood.com/es/bio/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://lali-begood.com/es/bio/"
+      ],
+      "basis": "Biografia pròpia de Lali BeGood, abans Lali Rondalla; portada amb timeout."
+    },
+    {
+      "artistKey": "artist:pau-alabajos-i-ferrer",
+      "name": "Pau Alabajos i Ferrer",
+      "kind": "website",
+      "url": "https://paualabajos.com/bio/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://paualabajos.com/bio/"
+      ],
+      "basis": "La pàgina s'identifica com a web oficial i presenta la biografia del cantautor."
+    },
+    {
+      "artistKey": "artist:sau",
+      "name": "Sau",
+      "kind": "website",
+      "url": "https://sau.cat/sau/historia-sau/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://sau.cat/sau/historia-sau/"
+      ],
+      "basis": "Web amb novetats oficials del grup i la Fundació SAU; història i discografia."
+    },
+    {
+      "artistKey": "artist:miquel-gil",
+      "name": "Miquel Gil",
+      "kind": "website",
+      "url": "https://miquelgil.com/biografia05/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://miquelgil.com/biografia05/"
+      ],
+      "basis": "Biografia pròpia del cantant, trajectòria amb Al Tall i carrera en solitari."
+    },
+    {
+      "artistKey": "artist:el-pot-petit",
+      "name": "El Pot Petit",
+      "kind": "website",
+      "url": "https://www.potpetit.com/bases-io-partitures/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "manual-page-review",
+      "sources": [
+        "https://www.potpetit.com/bases-io-partitures/"
+      ],
+      "basis": "Recursos, lletres i partitures publicats pel mateix grup al seu web."
+    },
+    {
+      "artistKey": "artist:aspencat",
+      "name": "Aspencat",
+      "kind": "facebook",
+      "url": "https://www.facebook.com/aspencatoficial/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "source-crosscheck-and-indexed-profile",
+      "sources": [
+        "https://www.facebook.com/aspencatoficial/",
+        "https://www.aspencat.org/"
+      ],
+      "basis": "Perfil oficial coincident amb la font d'origen. La web històrica aspencat.org no s'ha pogut consultar; es mostra Facebook mentre no hi hagi una web verificable."
+    },
+    {
+      "artistKey": "artist:borriana-big-band",
+      "name": "Borriana Big Band",
+      "kind": "facebook",
+      "url": "https://www.facebook.com/borrianabigband/",
+      "status": "verified",
+      "checkedOn": "2026-10-19",
+      "method": "source-crosscheck-and-indexed-profile",
+      "sources": [
+        "https://www.facebook.com/borrianabigband/",
+        "https://asociacionbigbands.com/bigband/borriana-big-band/",
+        "https://www.youtube.com/watch?v=jI1AwsOiMeM"
+      ],
+      "basis": "Perfil enllaçat a les descripcions dels vídeos del grup (revisió 2026-10-13), contrastat amb el perfil públic indexat. borrianabigband.com no s'ha pogut consultar."
+    }
+  ],
+  "issues": [
+    {
+      "artistKey": "artist:mainasons",
+      "url": "https://mainasons.com/",
+      "status": "rejected",
+      "reason": "La pàgina llegida barreja informació infantil amb promoció de Nacionbet/apostes. No es publica com a destí oficial."
+    },
+    {
+      "url": "https://www.doctorprats.cat/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://terapiadeshock.cat/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://www.marionaescoda.com/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://latresca.com/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://ambauka.cat/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://www.icestorm.cat/ca/inici",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://www.damarisgelabert.com/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://bord.band/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://bluespic.blogspot.com/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://mrfreakska.wordpress.com/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://www.mascarats.cat/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://pinopiras.it/",
+      "status": "pending",
+      "reason": "No s'ha pogut llegir el contingut amb les eines disponibles; no es dedueix que el web estigui definitivament caigut."
+    },
+    {
+      "url": "https://clubsocialcarme.com/",
+      "status": "pending",
+      "reason": "Web llegit i coherent amb Club Social Carme, però el canal encara no té identitat al catàleg d'orígens. Cal resoldre el mapatge abans de publicar l'enllaç."
+    }
+  ],
+  "pending": [
+    {
+      "artistKey": "artist:dusminguet",
+      "name": "Dusminguet",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dusminguet"
+    },
+    {
+      "artistKey": "artist:la-troba-kung-fu",
+      "name": "La Troba Kung-Fú",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-troba-kung-fu"
+    },
+    {
+      "artistKey": "artist:la-coixinera",
+      "name": "La Coixinera",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-coixinera"
+    },
+    {
+      "artistKey": "artist:ebri-knight",
+      "name": "Ebri Knight",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ebri-knight"
+    },
+    {
+      "artistKey": "artist:fetus",
+      "name": "Fetus",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:fetus"
+    },
+    {
+      "artistKey": "artist:mazoni",
+      "name": "Mazoni",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mazoni"
+    },
+    {
+      "artistKey": "artist:el-petit-de-cal-eril",
+      "name": "El Petit de Cal Eril",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-petit-de-cal-eril"
+    },
+    {
+      "artistKey": "artist:joan-miquel-oliver",
+      "name": "Joan Miquel Oliver",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joan-miquel-oliver"
+    },
+    {
+      "artistKey": "artist:xarim-areste",
+      "name": "Xarim Aresté",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xarim-areste"
+    },
+    {
+      "artistKey": "artist:tesa",
+      "name": "Tesa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tesa"
+    },
+    {
+      "artistKey": "artist:feliu-ventura",
+      "name": "Feliu Ventura",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:feliu-ventura"
+    },
+    {
+      "artistKey": "artist:julia-colom",
+      "name": "Júlia Colom",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:julia-colom"
+    },
+    {
+      "artistKey": "artist:caim-riba",
+      "name": "Caïm Riba",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:caim-riba"
+    },
+    {
+      "artistKey": "artist:paul-fuster",
+      "name": "Paul Fuster",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:paul-fuster"
+    },
+    {
+      "artistKey": "artist:marala",
+      "name": "Marala",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:marala"
+    },
+    {
+      "artistKey": "artist:roba-estesa",
+      "name": "Roba Estesa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:roba-estesa"
+    },
+    {
+      "artistKey": "artist:les-cruet",
+      "name": "Les Cruet",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:les-cruet"
+    },
+    {
+      "artistKey": "artist:anna-ferrer",
+      "name": "Anna Ferrer",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:anna-ferrer"
+    },
+    {
+      "artistKey": "artist:sandra-bautista",
+      "name": "Sandra Bautista",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sandra-bautista"
+    },
+    {
+      "artistKey": "artist:frans-cuspinera",
+      "name": "Frans Cuspinera",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:frans-cuspinera"
+    },
+    {
+      "artistKey": "artist:la-gossa-sorda",
+      "name": "La Gossa Sorda",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-gossa-sorda"
+    },
+    {
+      "artistKey": "artist:els-jovens",
+      "name": "Els Jóvens",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:els-jovens"
+    },
+    {
+      "artistKey": "artist:rita-payes",
+      "name": "Rita Payés",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:rita-payes"
+    },
+    {
+      "artistKey": "artist:peret",
+      "name": "Peret",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:peret"
+    },
+    {
+      "artistKey": "artist:l-ham-de-foc",
+      "name": "L'Ham de Foc",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:l-ham-de-foc"
+    },
+    {
+      "artistKey": "artist:al-tall",
+      "name": "Al Tall",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:al-tall"
+    },
+    {
+      "artistKey": "artist:pau-riba-i-romeva",
+      "name": "Pau Riba i Romeva",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pau-riba-i-romeva"
+    },
+    {
+      "artistKey": "artist:companyia-electrica-dharma",
+      "name": "Companyia Elèctrica Dharma",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:companyia-electrica-dharma"
+    },
+    {
+      "artistKey": "artist:quico-pi-de-la-serra",
+      "name": "Quico Pi de la Serra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:quico-pi-de-la-serra"
+    },
+    {
+      "artistKey": "artist:blaumut",
+      "name": "Blaumut",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:blaumut"
+    },
+    {
+      "artistKey": "artist:pol-bordas",
+      "name": "Pol Bordas",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pol-bordas"
+    },
+    {
+      "artistKey": "artist:ferran-palau",
+      "name": "Ferran Palau",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ferran-palau"
+    },
+    {
+      "artistKey": "artist:joan-dausa",
+      "name": "Joan Dausà",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joan-dausa"
+    },
+    {
+      "artistKey": "artist:ven-nus",
+      "name": "Ven'nus",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ven-nus"
+    },
+    {
+      "artistKey": "artist:vidres-a-la-sang",
+      "name": "Vidres a la Sang",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vidres-a-la-sang"
+    },
+    {
+      "artistKey": "artist:renaldo-clara",
+      "name": "Renaldo & Clara",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:renaldo-clara"
+    },
+    {
+      "artistKey": "artist:exili-a-elba",
+      "name": "Exili a Elba",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:exili-a-elba"
+    },
+    {
+      "artistKey": "artist:opcio-k-95",
+      "name": "Opció K-95",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:opcio-k-95"
+    },
+    {
+      "artistKey": "artist:vittara",
+      "name": "Vittara",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vittara"
+    },
+    {
+      "artistKey": "artist:angoixa",
+      "name": "Angoixa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:angoixa"
+    },
+    {
+      "artistKey": "artist:crim",
+      "name": "Crim",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:crim"
+    },
+    {
+      "artistKey": "artist:damaris-gelabert",
+      "name": "Dàmaris Gelabert",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:damaris-gelabert"
+    },
+    {
+      "artistKey": "artist:doctor-prats",
+      "name": "Doctor Prats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:doctor-prats"
+    },
+    {
+      "artistKey": "artist:els-pets",
+      "name": "Els Pets",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:els-pets"
+    },
+    {
+      "artistKey": "artist:valtonyc",
+      "name": "Valtònyc",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:valtonyc"
+    },
+    {
+      "artistKey": "artist:lildami",
+      "name": "Lildami",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lildami"
+    },
+    {
+      "artistKey": "artist:senyor-oca",
+      "name": "Senyor Oca",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:senyor-oca"
+    },
+    {
+      "artistKey": "artist:31-fam",
+      "name": "31 FAM",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:31-fam"
+    },
+    {
+      "artistKey": "artist:mama-dousha",
+      "name": "Mama Dousha",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mama-dousha"
+    },
+    {
+      "artistKey": "artist:baya-baye",
+      "name": "Baya Baye",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:baya-baye"
+    },
+    {
+      "artistKey": "artist:fades",
+      "name": "Fades",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:fades"
+    },
+    {
+      "artistKey": "artist:rapsodes",
+      "name": "Rapsodes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:rapsodes"
+    },
+    {
+      "artistKey": "artist:sopa-de-cabra",
+      "name": "Sopa de Cabra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sopa-de-cabra"
+    },
+    {
+      "artistKey": "artist:falc-de-fetillera",
+      "name": "Falç de Fetillera",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:falc-de-fetillera"
+    },
+    {
+      "artistKey": "artist:maria-del-mar-bonet",
+      "name": "Maria del Mar Bonet",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maria-del-mar-bonet"
+    },
+    {
+      "artistKey": "artist:pau-vallve-navarro",
+      "name": "Pau Vallvé Navarro",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pau-vallve-navarro"
+    },
+    {
+      "artistKey": "artist:brams",
+      "name": "Brams",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:brams"
+    },
+    {
+      "artistKey": "artist:el-diluvi",
+      "name": "El Diluvi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-diluvi"
+    },
+    {
+      "artistKey": "artist:els-catarres",
+      "name": "Els Catarres",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:els-catarres"
+    },
+    {
+      "artistKey": "artist:flashy-ice-cream",
+      "name": "Flashy Ice Cream",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:flashy-ice-cream"
+    },
+    {
+      "artistKey": "artist:minibus-intergalactic",
+      "name": "Minibús intergalàctic",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:minibus-intergalactic"
+    },
+    {
+      "artistKey": "artist:mishima",
+      "name": "Mishima",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mishima"
+    },
+    {
+      "artistKey": "artist:pawn-gang",
+      "name": "Pawn Gang",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pawn-gang"
+    },
+    {
+      "artistKey": "artist:jo-jet-i-maria-ribot",
+      "name": "Jo Jet i Maria Ribot",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jo-jet-i-maria-ribot"
+    },
+    {
+      "artistKey": "artist:joan-colomo",
+      "name": "Joan Colomo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joan-colomo"
+    },
+    {
+      "artistKey": "artist:jofre-bardagi-grima",
+      "name": "Jofre Bardagí Grima",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jofre-bardagi-grima"
+    },
+    {
+      "artistKey": "artist:la-ludwig-band",
+      "name": "La Ludwig Band",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-ludwig-band"
+    },
+    {
+      "artistKey": "artist:remei-de-ca-la-fresca",
+      "name": "Remei de Ca la Fresca",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:remei-de-ca-la-fresca"
+    },
+    {
+      "artistKey": "artist:the-tyets",
+      "name": "The Tyets",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:the-tyets"
+    },
+    {
+      "artistKey": "artist:xicu",
+      "name": "Xicu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xicu"
+    },
+    {
+      "artistKey": "artist:antonia-font",
+      "name": "Antònia Font",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:antonia-font"
+    },
+    {
+      "artistKey": "artist:el-nota",
+      "name": "El Nota",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-nota"
+    },
+    {
+      "artistKey": "artist:gertrudis",
+      "name": "Gertrudis",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gertrudis"
+    },
+    {
+      "artistKey": "artist:gessami-boada",
+      "name": "Gessamí Boada",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gessami-boada"
+    },
+    {
+      "artistKey": "artist:maig",
+      "name": "Maig",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maig"
+    },
+    {
+      "artistKey": "artist:maria-jaume",
+      "name": "Maria Jaume",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maria-jaume"
+    },
+    {
+      "artistKey": "artist:naina",
+      "name": "Naina",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:naina"
+    },
+    {
+      "artistKey": "artist:oques-grasses",
+      "name": "Oques Grasses",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:oques-grasses"
+    },
+    {
+      "artistKey": "artist:poor-tramit",
+      "name": "Poor Tràmit",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:poor-tramit"
+    },
+    {
+      "artistKey": "artist:roger-mas-i-sole",
+      "name": "Roger Mas i Solé",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:roger-mas-i-sole"
+    },
+    {
+      "artistKey": "artist:smoking-souls",
+      "name": "Smoking Souls",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:smoking-souls"
+    },
+    {
+      "artistKey": "artist:terratombats",
+      "name": "Terratombats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:terratombats"
+    },
+    {
+      "artistKey": "artist:terapia-de-shock",
+      "name": "Teràpia de Shock",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:terapia-de-shock"
+    },
+    {
+      "artistKey": "artist:txarango",
+      "name": "Txarango",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:txarango"
+    },
+    {
+      "artistKey": "artist:xeic",
+      "name": "Xeic!",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xeic"
+    },
+    {
+      "artistKey": "artist:fox-system",
+      "name": "Fox System",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:fox-system"
+    },
+    {
+      "artistKey": "artist:herba-negra",
+      "name": "Herba Negra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:herba-negra"
+    },
+    {
+      "artistKey": "artist:inadaptats",
+      "name": "Inadaptats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:inadaptats"
+    },
+    {
+      "artistKey": "artist:kop",
+      "name": "KOP",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:kop"
+    },
+    {
+      "artistKey": "artist:mariona-escoda-i-sendra",
+      "name": "Mariona Escoda i Sendra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mariona-escoda-i-sendra"
+    },
+    {
+      "artistKey": "artist:mr-freak-ska",
+      "name": "Mr. Freak Ska",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mr-freak-ska"
+    },
+    {
+      "artistKey": "artist:obeses",
+      "name": "Obeses",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:obeses"
+    },
+    {
+      "artistKey": "artist:sara-roy",
+      "name": "Sara Roy",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sara-roy"
+    },
+    {
+      "artistKey": "artist:toti-soler",
+      "name": "Toti Soler",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:toti-soler"
+    },
+    {
+      "artistKey": "artist:vrademargk",
+      "name": "Vrademargk",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vrademargk"
+    },
+    {
+      "artistKey": "artist:enmatu",
+      "name": "enMatu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:enmatu"
+    },
+    {
+      "artistKey": "artist:joan-isaac",
+      "name": "Joan Isaac",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joan-isaac"
+    },
+    {
+      "artistKey": "artist:julieta",
+      "name": "Julieta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:julieta"
+    },
+    {
+      "artistKey": "artist:la-madam",
+      "name": "La Madam",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-madam"
+    },
+    {
+      "artistKey": "artist:pilseners",
+      "name": "Pilseners",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pilseners"
+    },
+    {
+      "artistKey": "artist:buhos",
+      "name": "Buhos",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:buhos"
+    },
+    {
+      "artistKey": "artist:dan-peralbo-el-comboi",
+      "name": "Dan Peralbo & El Comboi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dan-peralbo-el-comboi"
+    },
+    {
+      "artistKey": "artist:groggy-rude",
+      "name": "Groggy Rude",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:groggy-rude"
+    },
+    {
+      "artistKey": "artist:ouineta",
+      "name": "Ouineta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ouineta"
+    },
+    {
+      "artistKey": "artist:astral-warrior",
+      "name": "Astral Warrior",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:astral-warrior"
+    },
+    {
+      "artistKey": "artist:bocc",
+      "name": "Bocc",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bocc"
+    },
+    {
+      "artistKey": "artist:celobert",
+      "name": "Celobert",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:celobert"
+    },
+    {
+      "artistKey": "artist:dani6ix-izzkid",
+      "name": "dani6ix & IZZKID",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dani6ix-izzkid"
+    },
+    {
+      "artistKey": "artist:en-rick",
+      "name": "En Rick",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:en-rick"
+    },
+    {
+      "artistKey": "artist:gavina-mp3",
+      "name": "Gavina.mp3",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gavina-mp3"
+    },
+    {
+      "artistKey": "artist:sandra-monfort",
+      "name": "Sandra Monfort",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sandra-monfort"
+    },
+    {
+      "artistKey": "artist:guineu",
+      "name": "GUINEU",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:guineu"
+    },
+    {
+      "artistKey": "artist:hey-zuri",
+      "name": "Hey Zuri",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:hey-zuri"
+    },
+    {
+      "artistKey": "artist:korruption-found",
+      "name": "Korruption Found",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:korruption-found"
+    },
+    {
+      "artistKey": "artist:la-tour-de-carol",
+      "name": "La Tour de Carol",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-tour-de-carol"
+    },
+    {
+      "artistKey": "artist:xanguito",
+      "name": "Xanguito",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xanguito"
+    },
+    {
+      "artistKey": "artist:bonestorm",
+      "name": "Bonestorm",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bonestorm"
+    },
+    {
+      "artistKey": "artist:brot-bord",
+      "name": "Brot Bord",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:brot-bord"
+    },
+    {
+      "artistKey": "artist:cactus-troop",
+      "name": "Cactus Troop",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:cactus-troop"
+    },
+    {
+      "artistKey": "artist:en-brut",
+      "name": "En Brut",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:en-brut"
+    },
+    {
+      "artistKey": "artist:la-fumiga",
+      "name": "La Fúmiga",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-fumiga"
+    },
+    {
+      "artistKey": "artist:lal-ba",
+      "name": "Lal'ba",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lal-ba"
+    },
+    {
+      "artistKey": "artist:malson-atmosferic",
+      "name": "Malson Atmosfèric",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:malson-atmosferic"
+    },
+    {
+      "artistKey": "artist:sexenni",
+      "name": "Sexenni",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sexenni"
+    },
+    {
+      "artistKey": "artist:sodi",
+      "name": "Sodi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sodi"
+    },
+    {
+      "artistKey": "artist:vicky-larros",
+      "name": "Vicky l’Arròs",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vicky-larros"
+    },
+    {
+      "artistKey": "artist:boom-boom-fighters",
+      "name": "Boom Boom Fighters",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:boom-boom-fighters"
+    },
+    {
+      "artistKey": "artist:bernia",
+      "name": "Bèrnia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bernia"
+    },
+    {
+      "artistKey": "artist:les-aranyes",
+      "name": "Les Aranyes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:les-aranyes"
+    },
+    {
+      "artistKey": "artist:stay-homas",
+      "name": "Stay Homas",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:stay-homas"
+    },
+    {
+      "artistKey": "artist:still-ill",
+      "name": "Still Ill",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:still-ill"
+    },
+    {
+      "artistKey": "artist:alosa",
+      "name": "Alosa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:alosa"
+    },
+    {
+      "artistKey": "artist:cloe-riembau",
+      "name": "Cloe Riembau",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:cloe-riembau"
+    },
+    {
+      "artistKey": "artist:gatzara",
+      "name": "Gatzara",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gatzara"
+    },
+    {
+      "artistKey": "artist:orella-d-os",
+      "name": "Orella d'Ós",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orella-d-os"
+    },
+    {
+      "artistKey": "artist:siderland",
+      "name": "Siderland",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:siderland"
+    },
+    {
+      "artistKey": "artist:socunbohemio",
+      "name": "Socunbohemio",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:socunbohemio"
+    },
+    {
+      "artistKey": "artist:the-demencials",
+      "name": "The Demencials",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:the-demencials"
+    },
+    {
+      "artistKey": "artist:triquell",
+      "name": "Triquell",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:triquell"
+    },
+    {
+      "artistKey": "artist:all-cru",
+      "name": "All Crü",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:all-cru"
+    },
+    {
+      "artistKey": "artist:gusset",
+      "name": "Gusset",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gusset"
+    },
+    {
+      "artistKey": "artist:miki-nunez",
+      "name": "Miki Núñez",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:miki-nunez"
+    },
+    {
+      "artistKey": "artist:scorpio",
+      "name": "Scorpio",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:scorpio"
+    },
+    {
+      "artistKey": "artist:silvia-perez-cruz",
+      "name": "Sílvia Pérez Cruz",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:silvia-perez-cruz"
+    },
+    {
+      "artistKey": "artist:albert-pla-i-alvarez",
+      "name": "Albert Pla i Álvarez",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:albert-pla-i-alvarez"
+    },
+    {
+      "artistKey": "artist:cesk-freixas",
+      "name": "Cesk Freixas",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:cesk-freixas"
+    },
+    {
+      "artistKey": "artist:esperit-de-vi",
+      "name": "Esperit de Vi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:esperit-de-vi"
+    },
+    {
+      "artistKey": "artist:jaume-sisa-i-mestres",
+      "name": "Jaume Sisa i Mestres",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jaume-sisa-i-mestres"
+    },
+    {
+      "artistKey": "artist:la-iaia",
+      "name": "La Iaia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-iaia"
+    },
+    {
+      "artistKey": "artist:miquel",
+      "name": "miquel",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:miquel"
+    },
+    {
+      "artistKey": "artist:mushkaa",
+      "name": "Mushkaa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mushkaa"
+    },
+    {
+      "artistKey": "artist:okdw",
+      "name": "okdw",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:okdw"
+    },
+    {
+      "artistKey": "artist:ovidi-montllor-i-mengual",
+      "name": "Ovidi Montllor i Mengual",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ovidi-montllor-i-mengual"
+    },
+    {
+      "artistKey": "artist:pastorets-rock",
+      "name": "Pastorets Rock",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pastorets-rock"
+    },
+    {
+      "artistKey": "artist:pupilles",
+      "name": "Pupil·les",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pupilles"
+    },
+    {
+      "artistKey": "artist:udol",
+      "name": "Udol",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:udol"
+    },
+    {
+      "artistKey": "artist:zombi-pujol",
+      "name": "Zombi Pujol",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:zombi-pujol"
+    },
+    {
+      "artistKey": "artist:9son",
+      "name": "9SON",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:9son"
+    },
+    {
+      "artistKey": "artist:adria-punti",
+      "name": "Adrià Puntí",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:adria-punti"
+    },
+    {
+      "artistKey": "artist:albert-fibla",
+      "name": "Albert Fibla",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:albert-fibla"
+    },
+    {
+      "artistKey": "artist:allergiques-al-pollen",
+      "name": "Al·lèrgiques al Pol·len",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:allergiques-al-pollen"
+    },
+    {
+      "artistKey": "artist:amargor",
+      "name": "Amargor",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:amargor"
+    },
+    {
+      "artistKey": "artist:anais-vila",
+      "name": "Anaïs Vila",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:anais-vila"
+    },
+    {
+      "artistKey": "artist:andreu-rife-i-oro",
+      "name": "Andreu Rifé i Oro",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:andreu-rife-i-oro"
+    },
+    {
+      "artistKey": "artist:animal",
+      "name": "Animal",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:animal"
+    },
+    {
+      "artistKey": "artist:assot",
+      "name": "Assot",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:assot"
+    },
+    {
+      "artistKey": "artist:autodestruccio",
+      "name": "Autodestrucció",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:autodestruccio"
+    },
+    {
+      "artistKey": "artist:avalot",
+      "name": "Avalot",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:avalot"
+    },
+    {
+      "artistKey": "artist:baixa-fidelitat",
+      "name": "Baixa Fidelitat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:baixa-fidelitat"
+    },
+    {
+      "artistKey": "artist:batec",
+      "name": "Batec",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:batec"
+    },
+    {
+      "artistKey": "artist:budellam",
+      "name": "Budellam",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:budellam"
+    },
+    {
+      "artistKey": "artist:coses",
+      "name": "Coses",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:coses"
+    },
+    {
+      "artistKey": "artist:da-souza",
+      "name": "Da Souza",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:da-souza"
+    },
+    {
+      "artistKey": "artist:desperta-ferro",
+      "name": "Desperta Ferro",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:desperta-ferro"
+    },
+    {
+      "artistKey": "artist:dijous-paella",
+      "name": "Dijous Paella",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dijous-paella"
+    },
+    {
+      "artistKey": "artist:dr-calypso",
+      "name": "Dr. Calypso",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dr-calypso"
+    },
+    {
+      "artistKey": "artist:duble-buble",
+      "name": "Duble Buble",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:duble-buble"
+    },
+    {
+      "artistKey": "artist:el-gitano-de-balaguer",
+      "name": "El Gitano de Balaguer",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-gitano-de-balaguer"
+    },
+    {
+      "artistKey": "artist:els-detectors",
+      "name": "Els Detectors",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:els-detectors"
+    },
+    {
+      "artistKey": "artist:enric-barbat",
+      "name": "Enric Barbat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:enric-barbat"
+    },
+    {
+      "artistKey": "artist:enric-hernaez",
+      "name": "Enric Hernàez",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:enric-hernaez"
+    },
+    {
+      "artistKey": "artist:falciots-ninja",
+      "name": "Falciots Ninja",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:falciots-ninja"
+    },
+    {
+      "artistKey": "artist:figa-flawas",
+      "name": "Figa Flawas",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:figa-flawas"
+    },
+    {
+      "artistKey": "artist:foscor",
+      "name": "Foscor",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:foscor"
+    },
+    {
+      "artistKey": "artist:fp",
+      "name": "FP",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:fp"
+    },
+    {
+      "artistKey": "artist:galgo-lento",
+      "name": "Galgo Lento",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:galgo-lento"
+    },
+    {
+      "artistKey": "artist:gra-fort",
+      "name": "Gra Fort",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gra-fort"
+    },
+    {
+      "artistKey": "artist:guillermina-motta",
+      "name": "Guillermina Motta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:guillermina-motta"
+    },
+    {
+      "artistKey": "artist:hector-vila",
+      "name": "Hèctor Vila",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:hector-vila"
+    },
+    {
+      "artistKey": "artist:icestorm",
+      "name": "Icestorm",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:icestorm"
+    },
+    {
+      "artistKey": "artist:josep-tero",
+      "name": "Josep Tero",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:josep-tero"
+    },
+    {
+      "artistKey": "artist:karda-fastik",
+      "name": "Karda Fàstik",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:karda-fastik"
+    },
+    {
+      "artistKey": "artist:kayo-malayo",
+      "name": "Kayo Malayo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:kayo-malayo"
+    },
+    {
+      "artistKey": "artist:la-banda-del-yuyu",
+      "name": "La Banda del Yuyu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-banda-del-yuyu"
+    },
+    {
+      "artistKey": "artist:la-trinca",
+      "name": "La Trinca",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-trinca"
+    },
+    {
+      "artistKey": "artist:lidia-pujol",
+      "name": "Lídia Pujol",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lidia-pujol"
+    },
+    {
+      "artistKey": "artist:massaviu",
+      "name": "MASSAVIU",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:massaviu"
+    },
+    {
+      "artistKey": "artist:nyandu",
+      "name": "Nyandú",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:nyandu"
+    },
+    {
+      "artistKey": "artist:osserp",
+      "name": "Ósserp",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:osserp"
+    },
+    {
+      "artistKey": "artist:pantaleo",
+      "name": "Pantaleó",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pantaleo"
+    },
+    {
+      "artistKey": "artist:pixamandurries",
+      "name": "Pixamandúrries",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pixamandurries"
+    },
+    {
+      "artistKey": "artist:ramon-muntaner-i-torruella",
+      "name": "Ramon Muntaner i Torruella",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ramon-muntaner-i-torruella"
+    },
+    {
+      "artistKey": "artist:raydibaum",
+      "name": "Raydibaum",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:raydibaum"
+    },
+    {
+      "artistKey": "artist:skatala",
+      "name": "Skatalà",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:skatala"
+    },
+    {
+      "artistKey": "artist:sota-terra",
+      "name": "Sota Terra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sota-terra"
+    },
+    {
+      "artistKey": "artist:tancat-per-defuncio",
+      "name": "Tancat per defunció",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tancat-per-defuncio"
+    },
+    {
+      "artistKey": "artist:tashkenti",
+      "name": "Tashkenti",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tashkenti"
+    },
+    {
+      "artistKey": "artist:valius",
+      "name": "Vàlius",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:valius"
+    },
+    {
+      "artistKey": "artist:vinnie-kairos",
+      "name": "Vinnie Kairos",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vinnie-kairos"
+    },
+    {
+      "artistKey": "artist:xavier-baro",
+      "name": "Xavier Baró",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xavier-baro"
+    },
+    {
+      "artistKey": "artist:xenia-casado",
+      "name": "Xenia Casado",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xenia-casado"
+    },
+    {
+      "artistKey": "artist:brigada-moreneta",
+      "name": "Brigada Moreneta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:brigada-moreneta"
+    },
+    {
+      "artistKey": "artist:gadegang",
+      "name": "GadeGANG",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gadegang"
+    },
+    {
+      "artistKey": "artist:maria-betriu",
+      "name": "Maria Betriu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maria-betriu"
+    },
+    {
+      "artistKey": "artist:pere-tapias",
+      "name": "Pere Tàpias",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pere-tapias"
+    },
+    {
+      "artistKey": "artist:silvia-comes",
+      "name": "Sílvia Comes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:silvia-comes"
+    },
+    {
+      "artistKey": "artist:tempestat",
+      "name": "Tempestat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tempestat"
+    },
+    {
+      "artistKey": "artist:ultralone",
+      "name": "ultralone",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ultralone"
+    },
+    {
+      "artistKey": "artist:vicens-martin-dream-big-band",
+      "name": "Vicens Martín Dream Big Band",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vicens-martin-dream-big-band"
+    },
+    {
+      "artistKey": "artist:daltabaix",
+      "name": "Daltabaix",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:daltabaix"
+    },
+    {
+      "artistKey": "artist:esquirols",
+      "name": "Esquirols",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:esquirols"
+    },
+    {
+      "artistKey": "artist:grup-de-folk",
+      "name": "Grup de Folk",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:grup-de-folk"
+    },
+    {
+      "artistKey": "artist:knockouts",
+      "name": "knocKouts",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:knockouts"
+    },
+    {
+      "artistKey": "artist:moksha",
+      "name": "Moksha",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:moksha"
+    },
+    {
+      "artistKey": "artist:ratpenat",
+      "name": "Ratpenat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ratpenat"
+    },
+    {
+      "artistKey": "artist:ambauka",
+      "name": "Ambauka",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ambauka"
+    },
+    {
+      "artistKey": "artist:bacora",
+      "name": "Bacora",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bacora"
+    },
+    {
+      "artistKey": "artist:les-salvatges",
+      "name": "Les Salvatges",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:les-salvatges"
+    },
+    {
+      "artistKey": "artist:mainasons",
+      "name": "Mainasons",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mainasons"
+    },
+    {
+      "artistKey": "artist:tiger-menja-zebra",
+      "name": "Tiger Menja Zebra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tiger-menja-zebra"
+    },
+    {
+      "artistKey": "artist:urbalia-rurana",
+      "name": "Urbàlia Rurana",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:urbalia-rurana"
+    },
+    {
+      "artistKey": "artist:clara-peya",
+      "name": "Clara Peya",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:clara-peya"
+    },
+    {
+      "artistKey": "artist:les-testarudes",
+      "name": "Les Testarudes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:les-testarudes"
+    },
+    {
+      "artistKey": "artist:moto-clua",
+      "name": "Moto Clua",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:moto-clua"
+    },
+    {
+      "artistKey": "artist:x-fanekaes",
+      "name": "X-Fanekaes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:x-fanekaes"
+    },
+    {
+      "artistKey": "artist:bars",
+      "name": "Bars",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bars"
+    },
+    {
+      "artistKey": "artist:familia-fracas",
+      "name": "Família Fracàs",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:familia-fracas"
+    },
+    {
+      "artistKey": "artist:les-buch",
+      "name": "Les Buch",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:les-buch"
+    },
+    {
+      "artistKey": "artist:masvi",
+      "name": "Masvi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:masvi"
+    },
+    {
+      "artistKey": "artist:mendra",
+      "name": "Mendra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mendra"
+    },
+    {
+      "artistKey": "artist:ypnosi",
+      "name": "Ypnosi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ypnosi"
+    },
+    {
+      "artistKey": "artist:el-pont-d-arcalis",
+      "name": "El Pont d'Arcalís",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-pont-d-arcalis"
+    },
+    {
+      "artistKey": "artist:panellet",
+      "name": "Panellet",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:panellet"
+    },
+    {
+      "artistKey": "artist:ariox",
+      "name": "Ariox",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ariox"
+    },
+    {
+      "artistKey": "artist:guaita-ls",
+      "name": "Guaita'ls",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:guaita-ls"
+    },
+    {
+      "artistKey": "artist:herois-de-la-katalunya-interior",
+      "name": "Herois de la Katalunya Interior",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:herois-de-la-katalunya-interior"
+    },
+    {
+      "artistKey": "artist:sabor-de-gracia",
+      "name": "Sabor de Gràcia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sabor-de-gracia"
+    },
+    {
+      "artistKey": "artist:banda-neon",
+      "name": "Banda Neon",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:banda-neon"
+    },
+    {
+      "artistKey": "artist:corrandes-son-corrandes",
+      "name": "Corrandes són corrandes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:corrandes-son-corrandes"
+    },
+    {
+      "artistKey": "artist:la-pegatina",
+      "name": "La Pegatina",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-pegatina"
+    },
+    {
+      "artistKey": "artist:magali-datzira",
+      "name": "Magalí Datzira",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:magali-datzira"
+    },
+    {
+      "artistKey": "artist:tano",
+      "name": "Tano!",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tano"
+    },
+    {
+      "artistKey": "artist:blay-tritono",
+      "name": "Blay Tritono",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:blay-tritono"
+    },
+    {
+      "artistKey": "artist:coca",
+      "name": "Coça",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:coca"
+    },
+    {
+      "artistKey": "artist:jordi-sabates",
+      "name": "Jordi Sabatés",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jordi-sabates"
+    },
+    {
+      "artistKey": "artist:kiddi",
+      "name": "Kiddi",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:kiddi"
+    },
+    {
+      "artistKey": "artist:l-odi-social",
+      "name": "L'Odi Social",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:l-odi-social"
+    },
+    {
+      "artistKey": "artist:landry-el-rumbero",
+      "name": "Landry el Rumbero",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:landry-el-rumbero"
+    },
+    {
+      "artistKey": "artist:orquestra-mirasol",
+      "name": "Orquestra Mirasol",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orquestra-mirasol"
+    },
+    {
+      "artistKey": "artist:reggae-per-xics",
+      "name": "Reggae per Xics",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:reggae-per-xics"
+    },
+    {
+      "artistKey": "artist:secta-sonica",
+      "name": "Secta Sònica",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:secta-sonica"
+    },
+    {
+      "artistKey": "artist:the-anti-patiks",
+      "name": "The Anti-Patiks",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:the-anti-patiks"
+    },
+    {
+      "artistKey": "artist:trevol",
+      "name": "Trèvol",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:trevol"
+    },
+    {
+      "artistKey": "artist:2-princeses-barbudes",
+      "name": "2 Princeses Barbudes",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:2-princeses-barbudes"
+    },
+    {
+      "artistKey": "artist:ara-va-de-bo",
+      "name": "Ara Va de Bo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ara-va-de-bo"
+    },
+    {
+      "artistKey": "artist:bestiari",
+      "name": "Bestiari",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bestiari"
+    },
+    {
+      "artistKey": "artist:carme-canela",
+      "name": "Carme Canela",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:carme-canela"
+    },
+    {
+      "artistKey": "artist:enemic-interior",
+      "name": "Enemic Interior",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:enemic-interior"
+    },
+    {
+      "artistKey": "artist:la-tresca-i-la-verdesca",
+      "name": "La Tresca i la Verdesca",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-tresca-i-la-verdesca"
+    },
+    {
+      "artistKey": "artist:saim",
+      "name": "Saïm",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:saim"
+    },
+    {
+      "artistKey": "artist:samfaina-de-colors",
+      "name": "Samfaina de Colors",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:samfaina-de-colors"
+    },
+    {
+      "artistKey": "artist:thanatopraxy",
+      "name": "Thanatopraxy",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:thanatopraxy"
+    },
+    {
+      "artistKey": "artist:xiula",
+      "name": "Xiula",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xiula"
+    },
+    {
+      "artistKey": "artist:apologia",
+      "name": "Apologia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:apologia"
+    },
+    {
+      "artistKey": "artist:entropia",
+      "name": "Entropia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:entropia"
+    },
+    {
+      "artistKey": "artist:frontpilsen",
+      "name": "Frontpilsen",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:frontpilsen"
+    },
+    {
+      "artistKey": "artist:gato-perez",
+      "name": "Gato Pérez",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gato-perez"
+    },
+    {
+      "artistKey": "artist:jaume-barri",
+      "name": "Jaume Barri",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jaume-barri"
+    },
+    {
+      "artistKey": "artist:jordi-tonietti",
+      "name": "Jordi Tonietti",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jordi-tonietti"
+    },
+    {
+      "artistKey": "artist:mandanga",
+      "name": "Mandanga!",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mandanga"
+    },
+    {
+      "artistKey": "artist:una-bestia-incontrolable",
+      "name": "Una Bèstia Incontrolable",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:una-bestia-incontrolable"
+    },
+    {
+      "artistKey": "artist:xesco-boix",
+      "name": "Xesco Boix",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xesco-boix"
+    },
+    {
+      "artistKey": "artist:2es",
+      "name": "2ES",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:2es"
+    },
+    {
+      "artistKey": "artist:acros",
+      "name": "Acros",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:acros"
+    },
+    {
+      "artistKey": "artist:riu",
+      "name": "RIU",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:riu"
+    },
+    {
+      "artistKey": "artist:sidonie",
+      "name": "Sidonie",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sidonie"
+    },
+    {
+      "artistKey": "artist:solk",
+      "name": "Solk",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:solk"
+    },
+    {
+      "artistKey": "artist:subliminal",
+      "name": "Subliminal",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:subliminal"
+    },
+    {
+      "artistKey": "artist:voltor",
+      "name": "Voltor",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:voltor"
+    },
+    {
+      "artistKey": "artist:alfred-garcia",
+      "name": "Alfred Garcia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:alfred-garcia"
+    },
+    {
+      "artistKey": "artist:manel",
+      "name": "Manel",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:manel"
+    },
+    {
+      "artistKey": "artist:obrint-pas",
+      "name": "Obrint Pas",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:obrint-pas"
+    },
+    {
+      "artistKey": "artist:sangtrait",
+      "name": "Sangtraït",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sangtrait"
+    },
+    {
+      "artistKey": "artist:raimon",
+      "name": "Raimon",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:raimon"
+    },
+    {
+      "artistKey": "artist:lax-n-busto",
+      "name": "Lax'n'Busto",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lax-n-busto"
+    },
+    {
+      "artistKey": "artist:ai-ai-ai",
+      "name": "Ai Ai Ai",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ai-ai-ai"
+    },
+    {
+      "artistKey": "artist:asstrio",
+      "name": "Asstrio",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:asstrio"
+    },
+    {
+      "artistKey": "artist:whiskyn-s",
+      "name": "Whiskyn's",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:whiskyn-s"
+    },
+    {
+      "artistKey": "artist:bonobos",
+      "name": "Bonobos",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bonobos"
+    },
+    {
+      "artistKey": "artist:carmen-amaya",
+      "name": "Carmen Amaya",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:carmen-amaya"
+    },
+    {
+      "artistKey": "artist:carol-rovira",
+      "name": "Carol Rovira",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:carol-rovira"
+    },
+    {
+      "artistKey": "artist:guillamino",
+      "name": "Guillamino",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:guillamino"
+    },
+    {
+      "artistKey": "artist:isaac-ulam",
+      "name": "Isaac Ulam",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:isaac-ulam"
+    },
+    {
+      "artistKey": "artist:ja-t-ho-dire",
+      "name": "Ja t'ho diré",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ja-t-ho-dire"
+    },
+    {
+      "artistKey": "artist:jaume-arnella-i-paris",
+      "name": "Jaume Arnella i París",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jaume-arnella-i-paris"
+    },
+    {
+      "artistKey": "artist:joan-crosas-i-casadesus",
+      "name": "Joan Crosas i Casadesús",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joan-crosas-i-casadesus"
+    },
+    {
+      "artistKey": "artist:joana-serrat",
+      "name": "Joana Serrat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joana-serrat"
+    },
+    {
+      "artistKey": "artist:jordi-barre",
+      "name": "Jordi Barre",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jordi-barre"
+    },
+    {
+      "artistKey": "artist:juli-bustamante",
+      "name": "Juli Bustamante",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:juli-bustamante"
+    },
+    {
+      "artistKey": "artist:kitsch",
+      "name": "Kitsch",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:kitsch"
+    },
+    {
+      "artistKey": "artist:la-carrau",
+      "name": "La Carrau",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-carrau"
+    },
+    {
+      "artistKey": "artist:la-sra-tomasa",
+      "name": "La Sra. Tomasa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-sra-tomasa"
+    },
+    {
+      "artistKey": "artist:los-manolos",
+      "name": "Los Manolos",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:los-manolos"
+    },
+    {
+      "artistKey": "artist:macedonia",
+      "name": "Macedònia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:macedonia"
+    },
+    {
+      "artistKey": "artist:mar-grimalt",
+      "name": "Mar Grimalt",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mar-grimalt"
+    },
+    {
+      "artistKey": "artist:maria-hein",
+      "name": "Maria Hein",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maria-hein"
+    },
+    {
+      "artistKey": "artist:miquel-abras",
+      "name": "Miquel Abras",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:miquel-abras"
+    },
+    {
+      "artistKey": "artist:nuria-feliu-i-mestres",
+      "name": "Núria Feliu i Mestres",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:nuria-feliu-i-mestres"
+    },
+    {
+      "artistKey": "artist:orxata-sound-system",
+      "name": "Orxata Sound System",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orxata-sound-system"
+    },
+    {
+      "artistKey": "artist:pastora",
+      "name": "Pastora",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pastora"
+    },
+    {
+      "artistKey": "artist:pep-gimeno-botifarra",
+      "name": "Pep Gimeno \"Botifarra\"",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pep-gimeno-botifarra"
+    },
+    {
+      "artistKey": "artist:pepet-i-marieta",
+      "name": "Pepet i Marieta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pepet-i-marieta"
+    },
+    {
+      "artistKey": "artist:suu",
+      "name": "Suu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:suu"
+    },
+    {
+      "artistKey": "artist:umpah-pah",
+      "name": "Umpah-Pah",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:umpah-pah"
+    },
+    {
+      "artistKey": "artist:at-versaris",
+      "name": "At Versaris",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:at-versaris"
+    },
+    {
+      "artistKey": "artist:guillem-gisbert-i-puig",
+      "name": "Guillem Gisbert i Puig",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:guillem-gisbert-i-puig"
+    },
+    {
+      "artistKey": "artist:franca-masu",
+      "name": "Franca Masu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:franca-masu"
+    },
+    {
+      "artistKey": "artist:la-brigada",
+      "name": "La Brigada",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-brigada"
+    },
+    {
+      "artistKey": "artist:llorenc-de-santamaria",
+      "name": "Llorenç de Santamaria",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:llorenc-de-santamaria"
+    },
+    {
+      "artistKey": "artist:miquela-llado-i-vidal",
+      "name": "Miquela Lladó i Vidal",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:miquela-llado-i-vidal"
+    },
+    {
+      "artistKey": "artist:narcis-perich-i-serra",
+      "name": "Narcís Perich i Serra",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:narcis-perich-i-serra"
+    },
+    {
+      "artistKey": "artist:nina",
+      "name": "Nina",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:nina"
+    },
+    {
+      "artistKey": "artist:ocults",
+      "name": "Ocults",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ocults"
+    },
+    {
+      "artistKey": "artist:pep-laguarda",
+      "name": "Pep Laguarda",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pep-laguarda"
+    },
+    {
+      "artistKey": "artist:pirat-s-sound-sistema",
+      "name": "Pirat's Sound Sistema",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pirat-s-sound-sistema"
+    },
+    {
+      "artistKey": "artist:pulpopop",
+      "name": "Pulpopop",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pulpopop"
+    },
+    {
+      "artistKey": "artist:quart-primera",
+      "name": "Quart Primera",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:quart-primera"
+    },
+    {
+      "artistKey": "artist:ramon-calduch-i-gimeno",
+      "name": "Ramon Calduch i Gimeno",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ramon-calduch-i-gimeno"
+    },
+    {
+      "artistKey": "artist:remigi-palmero-i-rua",
+      "name": "Remigi Palmero i Ruà",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:remigi-palmero-i-rua"
+    },
+    {
+      "artistKey": "artist:reina",
+      "name": "Reïna",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:reina"
+    },
+    {
+      "artistKey": "artist:roger-padros-de-la-torre",
+      "name": "Roger Padrós de la Torre",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:roger-padros-de-la-torre"
+    },
+    {
+      "artistKey": "artist:salome",
+      "name": "Salomé",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:salome"
+    },
+    {
+      "artistKey": "artist:sense-sal",
+      "name": "Sense Sal",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sense-sal"
+    },
+    {
+      "artistKey": "artist:strombers",
+      "name": "Strombers",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:strombers"
+    },
+    {
+      "artistKey": "artist:teresa-rebull",
+      "name": "Teresa Rebull",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:teresa-rebull"
+    },
+    {
+      "artistKey": "artist:xucu-pa",
+      "name": "Xucu-pà",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xucu-pa"
+    },
+    {
+      "artistKey": "artist:zoo",
+      "name": "ZOO",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:zoo"
+    },
+    {
+      "artistKey": "artist:zetak",
+      "name": "Zetak",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:zetak"
+    },
+    {
+      "artistKey": "artist:concepcio-supervia-i-pascual",
+      "name": "Concepció Supervia i Pascual",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:concepcio-supervia-i-pascual"
+    },
+    {
+      "artistKey": "artist:emili-vendrell-i-coutier",
+      "name": "Emili Vendrell i Coutier",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:emili-vendrell-i-coutier"
+    },
+    {
+      "artistKey": "artist:enric-madriguera-i-rodon",
+      "name": "Enric Madriguera i Rodon",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:enric-madriguera-i-rodon"
+    },
+    {
+      "artistKey": "artist:joaquim-homs-i-oller",
+      "name": "Joaquim Homs i Oller",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joaquim-homs-i-oller"
+    },
+    {
+      "artistKey": "artist:francesca-madriguera-i-rodon",
+      "name": "Francesca Madriguera i Rodon",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:francesca-madriguera-i-rodon"
+    },
+    {
+      "artistKey": "artist:vademecum-fam",
+      "name": "Vademecum FAM",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:vademecum-fam"
+    },
+    {
+      "artistKey": "artist:hereus-del-beat",
+      "name": "Hereus del Beat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:hereus-del-beat"
+    },
+    {
+      "artistKey": "artist:scotty-dk",
+      "name": "Scotty DK",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:scotty-dk"
+    },
+    {
+      "artistKey": "artist:assac",
+      "name": "ASSAC!",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:assac"
+    },
+    {
+      "artistKey": "artist:the-cabrians",
+      "name": "The Cabrians",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:the-cabrians"
+    },
+    {
+      "artistKey": "artist:betagarri",
+      "name": "Betagarri",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:betagarri"
+    },
+    {
+      "artistKey": "artist:bradien",
+      "name": "Bradien",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:bradien"
+    },
+    {
+      "artistKey": "artist:ciment",
+      "name": "Ciment",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ciment"
+    },
+    {
+      "artistKey": "artist:elphomega",
+      "name": "Elphomega",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:elphomega"
+    },
+    {
+      "artistKey": "artist:josep-maria-mestres-quadreny",
+      "name": "Josep Maria Mestres Quadreny",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:josep-maria-mestres-quadreny"
+    },
+    {
+      "artistKey": "artist:lluc",
+      "name": "Lluc",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lluc"
+    },
+    {
+      "artistKey": "artist:au-rora",
+      "name": "Au Rora",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:au-rora"
+    },
+    {
+      "artistKey": "artist:ceaxe",
+      "name": "Ceaxe",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ceaxe"
+    },
+    {
+      "artistKey": "artist:llum",
+      "name": "Llum",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:llum"
+    },
+    {
+      "artistKey": "artist:maria-bertomeu-i-soria",
+      "name": "Maria Bertomeu i Soria",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maria-bertomeu-i-soria"
+    },
+    {
+      "artistKey": "artist:orquestra-de-cadaques",
+      "name": "Orquestra de Cadaqués",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orquestra-de-cadaques"
+    },
+    {
+      "artistKey": "artist:orquestra-simfonica-del-gran-teatre-del-liceu",
+      "name": "Orquestra Simfònica del Gran Teatre del Liceu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orquestra-simfonica-del-gran-teatre-del-liceu"
+    },
+    {
+      "artistKey": "artist:orquestra-simfonica-del-valles",
+      "name": "Orquestra Simfònica del Vallès",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orquestra-simfonica-del-valles"
+    },
+    {
+      "artistKey": "artist:la-banda-trapera-del-rio",
+      "name": "La Banda Trapera del Río",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-banda-trapera-del-rio"
+    },
+    {
+      "artistKey": "artist:la-bien-querida",
+      "name": "La Bien Querida",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-bien-querida"
+    },
+    {
+      "artistKey": "artist:rapsusklei",
+      "name": "Rapsusklei",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:rapsusklei"
+    },
+    {
+      "artistKey": "artist:el-ultimo-de-la-fila",
+      "name": "El Último de la Fila",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-ultimo-de-la-fila"
+    },
+    {
+      "artistKey": "artist:koji-kondo",
+      "name": "Koji Kondo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:koji-kondo"
+    },
+    {
+      "artistKey": "artist:marlena",
+      "name": "MARLENA",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:marlena"
+    },
+    {
+      "artistKey": "artist:julia-cruz",
+      "name": "Júlia Cruz",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:julia-cruz"
+    },
+    {
+      "artistKey": "artist:jaume-balius-i-vila",
+      "name": "Jaume Balius i Vila",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jaume-balius-i-vila"
+    },
+    {
+      "artistKey": "artist:manuel-espona",
+      "name": "Manuel Espona",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:manuel-espona"
+    },
+    {
+      "artistKey": "artist:orfeo-catala",
+      "name": "Orfeó Català",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:orfeo-catala"
+    },
+    {
+      "artistKey": "artist:n-gai-n-gai",
+      "name": "N'Gai N'Gai",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:n-gai-n-gai"
+    },
+    {
+      "artistKey": "artist:yacine-the-oriental-groove",
+      "name": "Yacine & The Oriental Groove",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:yacine-the-oriental-groove"
+    },
+    {
+      "artistKey": "artist:electrotoylets",
+      "name": "Electrotoylets",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:electrotoylets"
+    },
+    {
+      "artistKey": "artist:pesta-porcina",
+      "name": "Pesta Porcina",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pesta-porcina"
+    },
+    {
+      "artistKey": "artist:cristina-monllau",
+      "name": "Cristina Monllau",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:cristina-monllau"
+    },
+    {
+      "artistKey": "artist:elo",
+      "name": "Elo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:elo"
+    },
+    {
+      "artistKey": "artist:la-mousse",
+      "name": "La Mousse",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-mousse"
+    },
+    {
+      "artistKey": "artist:mai-halis",
+      "name": "Mai Halis",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mai-halis"
+    },
+    {
+      "artistKey": "artist:paula-montalban",
+      "name": "Paula Montalbán",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:paula-montalban"
+    },
+    {
+      "artistKey": "artist:pla-moguda",
+      "name": "Pla Moguda",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pla-moguda"
+    },
+    {
+      "artistKey": "artist:roser-dresaire",
+      "name": "Roser Dresaire",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:roser-dresaire"
+    },
+    {
+      "artistKey": "artist:anonymous-grup",
+      "name": "Anonymous (grup)",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:anonymous-grup"
+    },
+    {
+      "artistKey": "artist:arreu",
+      "name": "Arreu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:arreu"
+    },
+    {
+      "artistKey": "artist:ayryn",
+      "name": "Ayryn",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ayryn"
+    },
+    {
+      "artistKey": "artist:berta",
+      "name": "Berta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:berta"
+    },
+    {
+      "artistKey": "artist:calagher",
+      "name": "Calagher",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:calagher"
+    },
+    {
+      "artistKey": "artist:cobla-mediterrania",
+      "name": "Cobla Mediterrània",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:cobla-mediterrania"
+    },
+    {
+      "artistKey": "artist:daveu",
+      "name": "Daveu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:daveu"
+    },
+    {
+      "artistKey": "artist:derbi-junior",
+      "name": "Derbi Junior",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:derbi-junior"
+    },
+    {
+      "artistKey": "artist:els-bourbons",
+      "name": "Els Bourbons",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:els-bourbons"
+    },
+    {
+      "artistKey": "artist:esther-querol-forner",
+      "name": "Esther",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:esther-querol-forner"
+    },
+    {
+      "artistKey": "artist:grans-amb-pus",
+      "name": "Grans amb Pus",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:grans-amb-pus"
+    },
+    {
+      "artistKey": "artist:hirsut",
+      "name": "Hirsut",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:hirsut"
+    },
+    {
+      "artistKey": "artist:jose-domingo",
+      "name": "Jose Domingo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:jose-domingo"
+    },
+    {
+      "artistKey": "artist:la-cobla",
+      "name": "La Cobla",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-cobla"
+    },
+    {
+      "artistKey": "artist:muluk-el-hwa",
+      "name": "Muluk El Hwa",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:muluk-el-hwa"
+    },
+    {
+      "artistKey": "artist:nusar3000",
+      "name": "nusar3000",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:nusar3000"
+    },
+    {
+      "artistKey": "artist:perro-pachingo",
+      "name": "Perro Pachingo",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:perro-pachingo"
+    },
+    {
+      "artistKey": "artist:camilo-sesto",
+      "name": "Camilo Sesto",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:camilo-sesto"
+    },
+    {
+      "artistKey": "artist:quartet-glinka",
+      "name": "Quartet Glinka",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:quartet-glinka"
+    },
+    {
+      "artistKey": "artist:tomas-molina-i-bosch",
+      "name": "Tomàs Molina i Bosch",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:tomas-molina-i-bosch"
+    },
+    {
+      "artistKey": "artist:toni-cruz",
+      "name": "Toni Cruz",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:toni-cruz"
+    },
+    {
+      "artistKey": "artist:anna-andreu",
+      "name": "Anna Andreu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:anna-andreu"
+    },
+    {
+      "artistKey": "artist:lladruc",
+      "name": "Lladruc",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lladruc"
+    },
+    {
+      "artistKey": "artist:lo-maquini",
+      "name": "Lo Maquini",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lo-maquini"
+    },
+    {
+      "artistKey": "artist:pino-piras",
+      "name": "Pino Piras",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pino-piras"
+    },
+    {
+      "artistKey": "artist:grup-coral-de-l-agrupacio-catalana-d-italia",
+      "name": "Grup Coral de l'Agrupació Catalana d'Itàlia",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:grup-coral-de-l-agrupacio-catalana-d-italia"
+    },
+    {
+      "artistKey": "artist:antonello-colledanchise",
+      "name": "Antonello Colledanchise",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:antonello-colledanchise"
+    },
+    {
+      "artistKey": "artist:alex-blat",
+      "name": "Àlex Blat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:alex-blat"
+    },
+    {
+      "artistKey": "artist:quinto",
+      "name": "Quinto",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:quinto"
+    },
+    {
+      "artistKey": "artist:malparlat",
+      "name": "Malparlat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:malparlat"
+    },
+    {
+      "artistKey": "artist:xiomara-abello",
+      "name": "Xiomara Abello",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xiomara-abello"
+    },
+    {
+      "artistKey": "artist:artur-alvarez",
+      "name": "Artur Àlvarez",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:artur-alvarez"
+    },
+    {
+      "artistKey": "artist:neisha",
+      "name": "Neisha",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:neisha"
+    },
+    {
+      "artistKey": "artist:avant",
+      "name": "AVANT",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:avant"
+    },
+    {
+      "artistKey": "artist:xisk",
+      "name": "Xisk",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:xisk"
+    },
+    {
+      "artistKey": "artist:fortuu",
+      "name": "Fortuu",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:fortuu"
+    },
+    {
+      "artistKey": "artist:aina-koda",
+      "name": "Aina Koda",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:aina-koda"
+    },
+    {
+      "artistKey": "artist:malifeta",
+      "name": "Malifeta",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:malifeta"
+    },
+    {
+      "artistKey": "artist:cloe",
+      "name": "Cloe",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:cloe"
+    },
+    {
+      "artistKey": "artist:slad-mobb",
+      "name": "Slad Mobb",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:slad-mobb"
+    },
+    {
+      "artistKey": "artist:la-xica",
+      "name": "La Xica",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-xica"
+    },
+    {
+      "artistKey": "artist:karlus",
+      "name": "Karlus",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:karlus"
+    },
+    {
+      "artistKey": "artist:lepanto41",
+      "name": "Lepanto 41",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:lepanto41"
+    },
+    {
+      "artistKey": "artist:colomet",
+      "name": "Colomet",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:colomet"
+    },
+    {
+      "artistKey": "artist:sacrogermen",
+      "name": "Sacrogermen",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sacrogermen"
+    },
+    {
+      "artistKey": "artist:uc",
+      "name": "UC",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:uc"
+    },
+    {
+      "artistKey": "artist:agraviats",
+      "name": "Agraviats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:agraviats"
+    },
+    {
+      "artistKey": "artist:dekrepits",
+      "name": "Dekrèpits",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dekrepits"
+    },
+    {
+      "artistKey": "artist:deskarats",
+      "name": "Deskarats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:deskarats"
+    },
+    {
+      "artistKey": "artist:oprimits",
+      "name": "Oprimits",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:oprimits"
+    },
+    {
+      "artistKey": "artist:skaparapid",
+      "name": "Skaparapid",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:skaparapid"
+    },
+    {
+      "artistKey": "artist:es-reboster",
+      "name": "Es Reboster",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:es-reboster"
+    },
+    {
+      "artistKey": "artist:maitips",
+      "name": "Maitips",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:maitips"
+    },
+    {
+      "artistKey": "artist:alquadrat",
+      "name": "AlQuadrat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:alquadrat"
+    },
+    {
+      "artistKey": "artist:atzembla",
+      "name": "Atzembla",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:atzembla"
+    },
+    {
+      "artistKey": "artist:campikipugui",
+      "name": "CampikiPugui",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:campikipugui"
+    },
+    {
+      "artistKey": "artist:dring-duble",
+      "name": "Dring Dublé",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:dring-duble"
+    },
+    {
+      "artistKey": "artist:el-veinat",
+      "name": "El Veïnat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-veinat"
+    },
+    {
+      "artistKey": "artist:eskassa-llibertat",
+      "name": "Eskassa Llibertat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:eskassa-llibertat"
+    },
+    {
+      "artistKey": "artist:kalabranda",
+      "name": "Kalabranda",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:kalabranda"
+    },
+    {
+      "artistKey": "artist:kodul",
+      "name": "Kòdul",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:kodul"
+    },
+    {
+      "artistKey": "artist:la-bundu-band",
+      "name": "La Bundu Band",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:la-bundu-band"
+    },
+    {
+      "artistKey": "artist:mascarats",
+      "name": "Mascarats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:mascarats"
+    },
+    {
+      "artistKey": "artist:ovella-xao",
+      "name": "Ovella Xao",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ovella-xao"
+    },
+    {
+      "artistKey": "artist:republika-ska",
+      "name": "Repúblika Ska",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:republika-ska"
+    },
+    {
+      "artistKey": "artist:skafam",
+      "name": "Skafam",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:skafam"
+    },
+    {
+      "artistKey": "artist:terra-ferma-ska-band",
+      "name": "Terra Ferma Ska Band",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:terra-ferma-ska-band"
+    },
+    {
+      "artistKey": "artist:trast",
+      "name": "Trast",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:trast"
+    },
+    {
+      "artistKey": "artist:nino-5",
+      "name": "Niño 5",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:nino-5"
+    },
+    {
+      "artistKey": "artist:btz",
+      "name": "BTZ",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:btz"
+    },
+    {
+      "artistKey": "artist:glaucs",
+      "name": "Glaucs",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:glaucs"
+    },
+    {
+      "artistKey": "artist:agathe-catel",
+      "name": "Agathe Catel",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:agathe-catel"
+    },
+    {
+      "artistKey": "artist:blues-de-picolat",
+      "name": "Blues de Picolat",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:blues-de-picolat"
+    },
+    {
+      "artistKey": "artist:joan-pau-gine",
+      "name": "Joan Pau Giné",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:joan-pau-gine"
+    },
+    {
+      "artistKey": "artist:pere-figueres",
+      "name": "Pere Figueres",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:pere-figueres"
+    },
+    {
+      "artistKey": "artist:gerard-jacquet",
+      "name": "Gerard Jacquet",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gerard-jacquet"
+    },
+    {
+      "artistKey": "artist:ia-batiste",
+      "name": "Ia & Batiste",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ia-batiste"
+    },
+    {
+      "artistKey": "artist:ernest-crusats",
+      "name": "Ernest Crusats",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ernest-crusats"
+    },
+    {
+      "artistKey": "artist:flakko",
+      "name": "Flakko",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:flakko"
+    },
+    {
+      "artistKey": "artist:guillem-gisbert",
+      "name": "Guillem Gisbert i Puig",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:guillem-gisbert"
+    },
+    {
+      "artistKey": "artist:ki-sap",
+      "name": "Ki Sap",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:ki-sap"
+    },
+    {
+      "artistKey": "artist:malanima",
+      "name": "Malánima",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:malanima"
+    },
+    {
+      "artistKey": "artist:plan-et",
+      "name": "Plan-ET",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:plan-et"
+    },
+    {
+      "artistKey": "artist:sa-pena",
+      "name": "Sa Pena",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:sa-pena"
+    },
+    {
+      "artistKey": "artist:gisela-bellsola",
+      "name": "Gisela Bellsolà",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:gisela-bellsola"
+    },
+    {
+      "artistKey": "artist:el-belda-i-el-conjunt-badabadoc",
+      "name": "El Belda i el Conjunt Badabadoc",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:el-belda-i-el-conjunt-badabadoc"
+    },
+    {
+      "artistKey": "artist:uri-santafe",
+      "name": "Uri Santafé",
+      "status": "pending",
+      "sourceRecord": "data/origens-artistes.json#artists/artist:uri-santafe"
+    }
+  ]
+}

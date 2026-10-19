@@ -315,6 +315,52 @@
         };
     }
 
+    // Només enllaços revisats explícitament. Les fonts de l'origen no són necessàriament webs de l'artista.
+    // La identitat compartida fa que el canal oficial i el Tema mostrin el mateix destí.
+    function officialLinkModel(catalog, channelId) {
+        if (catalog?.schemaVersion !== 1) return null;
+        const key = catalog.channels?.[text(channelId)];
+        const links = key ? catalog.artists?.[key]?.officialLinks : null;
+        for (const kind of ['website', 'facebook']) {
+            const entry = links?.[kind];
+            if (entry?.status !== 'verified' || !entry.checkedOn || !entry.sources?.length) continue;
+            try {
+                const url = new URL(entry.url);
+                if (url.protocol !== 'https:' || url.username || url.password || url.port) continue;
+                const host = url.hostname.toLowerCase().replace(/^www\./, '');
+                if (!host.includes('.') || /^(localhost|127\.|0\.)/.test(host)) continue;
+                const facebook = host === 'facebook.com';
+                if ((kind === 'facebook') !== facebook) continue;
+                // Un perfil, mai el login, una publicació o un enllaç per compartir.
+                if (facebook && (!/^\/[\w.-]+\/?$/.test(url.pathname)
+                    || /^(?:login|share|sharer|dialog|watch|reel|groups|events|search)(?:\.|\/|$)/i.test(url.pathname.slice(1))
+                    || url.search || url.hash)) continue;
+                return { kind, url: url.href, label: facebook ? 'Facebook' : 'Web oficial' };
+            } catch (_error) {
+                // Una URL malformada no pot trencar la fitxa ni convertir-se en un enllaç executable.
+            }
+        }
+        return null;
+    }
+
+    function showOfficialLink(model) {
+        const link = $('apOfficialBtn');
+        if (!link) return;
+        link.hidden = !model;
+        if (!model) {
+            link.removeAttribute?.('href');
+            link.removeAttribute?.('aria-label');
+            link.removeAttribute?.('title');
+            link.innerHTML = '';
+            return;
+        }
+        link.href = model.url;
+        link.innerHTML = `${LINK_ICON}<span>${escapeHtml(model.label)}</span>`;
+        const label = `${model.label} de ${state.name || 'l’artista'} (s’obre en una pestanya nova)`;
+        link.setAttribute('aria-label', label);
+        link.setAttribute('title', label);
+    }
+
     const hasPoint = place =>
         Number.isFinite(place?.coordinates?.latitude) && Number.isFinite(place?.coordinates?.longitude);
 
@@ -432,18 +478,23 @@
     async function showOrigin(channelId, program) {
         const request = ++originRequest;
         const section = $('apOrigin');
-        if (!section) return;
-        section.hidden = true;
-        section.open = false;
-        section.innerHTML = '';
+        showOfficialLink(null);
+        if (section) {
+            section.hidden = true;
+            section.open = false;
+            section.innerHTML = '';
+        }
         state.origin = null;
-        if (program || !channelId) return;
+        if (program || !channelId || (!section && !$('apOfficialBtn'))) return;
         const catalog = await loadOrigins();
         if (request !== originRequest || state.channelId !== channelId) return;
+        showOfficialLink(officialLinkModel(catalog, channelId));
         const model = originModel(catalog, channelId);
         state.origin = model;
-        section.innerHTML = originHtml(model);
-        section.hidden = !model;
+        if (section) {
+            section.innerHTML = originHtml(model);
+            section.hidden = !model;
+        }
     }
 
     function startPlaceRadio(index) {
@@ -816,6 +867,7 @@
         radiosModel,
         bioModel,
         originModel,
+        officialLinkModel,
         sourceName,
         originHtml,
         formatCount,
