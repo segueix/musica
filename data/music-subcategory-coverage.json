@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 448,
+  "musicalArtists": 449,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -809,7 +809,7 @@
       "label": "Urban — pendent d’afinar",
       "category": "Urban",
       "neighbours": [],
-      "artistCount": 28,
+      "artistCount": 29,
       "nucleus": true,
       "artists": [
         "2ES",
@@ -839,7 +839,8 @@
         "ultralone",
         "Vademecum FAM",
         "Xenia Casado",
-        "Uri Santafé"
+        "Uri Santafé",
+        "Nu Drama"
       ]
     },
     {
@@ -5530,6 +5531,15 @@
       "basis": "editorial",
       "sources": [
         "https://ca.wikipedia.org/wiki/Komando_Moriles"
+      ]
+    },
+    {
+      "artist": "Nu Drama",
+      "category": "Urban",
+      "subcategory": "urban-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.instagram.com/nu.drama/"
       ]
     }
   ]

@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-10-19T13:38:22.380Z",
+  "generatedAt": "2026-10-19T21:59:11.792Z",
   "polling": {
-    "requested": 1,
-    "deferred": 670,
-    "failed": 0
+    "requested": 359,
+    "deferred": 314,
+    "failed": 7
   },
-  "retainedVideoCount": 0,
+  "retainedVideoCount": 644,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 374,
-  "governedChannelCount": 123,
+  "topicChannelCount": 375,
+  "governedChannelCount": 124,
   "topicCoverage": [
     {
       "id": "UCqaEtRht2jakBhGFLzS617w",
@@ -407,6 +407,14 @@
       "governs": true
     },
     {
+      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
+      "name": "Maria del Mar Bonet",
+      "songs": 29,
+      "matched": 28,
+      "coverage": 0.97,
+      "governs": true
+    },
+    {
       "id": "UCgTB-WFdzE-byKvUR5QVnFQ",
       "name": "Pol Bordas",
       "songs": 38,
@@ -627,14 +635,6 @@
       "name": "La Ludwig Band",
       "songs": 31,
       "matched": 28,
-      "coverage": 0.9,
-      "governs": true
-    },
-    {
-      "id": "UCJtO_dvu5AOSjtz1cWWpV0Q",
-      "name": "Maria del Mar Bonet",
-      "songs": 21,
-      "matched": 19,
       "coverage": 0.9,
       "governs": true
     },
@@ -983,6 +983,14 @@
       "governs": true
     },
     {
+      "id": "UCdobjCKfq5FbF7eQL6C1VLw",
+      "name": "La Mousse",
+      "songs": 4,
+      "matched": 3,
+      "coverage": 0.75,
+      "governs": true
+    },
+    {
       "id": "UC6DmhC1mZqfYnQM72mg3PKw",
       "name": "Minibús Intergalàctic",
       "songs": 20,
@@ -1073,14 +1081,6 @@
     {
       "id": "UCnmFh1j3xvDfrw20AqVgegw",
       "name": "Derbi Junior",
-      "songs": 3,
-      "matched": 2,
-      "coverage": 0.67,
-      "governs": false
-    },
-    {
-      "id": "UCdobjCKfq5FbF7eQL6C1VLw",
-      "name": "La Mousse",
       "songs": 3,
       "matched": 2,
       "coverage": 0.67,
@@ -1535,6 +1535,22 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
       "name": "Bonestorm",
       "songs": 2,
@@ -1671,6 +1687,14 @@
       "governs": false
     },
     {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
@@ -1696,8 +1720,11 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {},
-  "topicHiddenCount": 0,
+  "governedReclassified": {
+    "other": 149,
+    "song": 15
+  },
+  "topicHiddenCount": 211,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -1976,7 +2003,7 @@
       "id": "UCfZSav-wsnpACenDMoHE6BA",
       "name": "Baya Baye",
       "tracks": 61,
-      "selected": 19,
+      "selected": 20,
       "withClip": 30
     },
     {
@@ -2108,7 +2135,7 @@
     {
       "id": "UCu05DiznV7Z3jDMGr6w5WTQ",
       "name": "Ceaxe",
-      "tracks": 45,
+      "tracks": 48,
       "selected": 22,
       "withClip": 9
     },
@@ -3012,8 +3039,8 @@
       "id": "UCRxi4RlTmeoc97rxkLxTiBQ",
       "name": "La Mousse",
       "tracks": 12,
-      "selected": 9,
-      "withClip": 1
+      "selected": 8,
+      "withClip": 2
     },
     {
       "id": "UCMepRsHQTgYZd3u__Xbj_6A",
@@ -3264,8 +3291,8 @@
       "id": "UCLgDhaK2cT63xw3fKKkU1_g",
       "name": "Maria Del Mar Bonet",
       "tracks": 470,
-      "selected": 34,
-      "withClip": 18
+      "selected": 27,
+      "withClip": 25
     },
     {
       "id": "UC3QJ1xC8aCwQdvTy-HTRwew",
@@ -3677,8 +3704,8 @@
       "id": "UCuvGkVD3aN6ncVC6-EN8Wfw",
       "name": "Rapsodes",
       "tracks": 53,
-      "selected": 37,
-      "withClip": 4
+      "selected": 38,
+      "withClip": 3
     },
     {
       "id": "UC0Us9bY-uMslfHcmZSVirRw",
@@ -3704,8 +3731,8 @@
     {
       "id": "UCPLzO9EvgvibAyZCgJDxwyg",
       "name": "Remei de Ca la Fresca",
-      "tracks": 30,
-      "selected": 11,
+      "tracks": 31,
+      "selected": 12,
       "withClip": 11
     },
     {
@@ -4066,6 +4093,13 @@
       "withClip": 0
     },
     {
+      "id": "UCJ-dDO2z5WvGEv9RzhlYkeA",
+      "name": "Tornaveus",
+      "tracks": 16,
+      "selected": 15,
+      "withClip": 0
+    },
+    {
       "id": "UCGCmSXoJ_f046wxT7OHUDMA",
       "name": "Toti Soler",
       "tracks": 495,
@@ -4290,32 +4324,50 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 671,
-  "resolvedChannelCount": 671,
-  "feedChannelCount": 671,
-  "rawPublicVideoCount": 7381,
-  "feedVideoCount": 6766,
-  "acceptedMusicCount": 6752,
-  "categoryEligibleVideoCount": 6748,
+  "indexedChannelCount": 673,
+  "resolvedChannelCount": 673,
+  "feedChannelCount": 673,
+  "rawPublicVideoCount": 11587,
+  "feedVideoCount": 9844,
+  "acceptedMusicCount": 10106,
+  "categoryEligibleVideoCount": 10054,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 0,
+    "before": 1026,
     "matched": 0,
-    "rejected": 0
+    "rejected": 1026
   },
-  "contentReviewCount": 593,
+  "contentReviewCount": 594,
   "contentTypeCounts": {
-    "song": 6565,
-    "live_song": 183,
-    "album": 4,
-    "other": 36,
-    "review": 593
+    "song": 9724,
+    "live_song": 330,
+    "album": 52,
+    "other": 887,
+    "review": 594
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [],
-  "channelsWithoutAcceptedMusic": [],
+  "channelsWithoutVideos": [
+    "UCmwGTBibm2bt9oF-P7ECSmQ",
+    "UCOEzuNu9yvO0AFTnSVKk4LQ",
+    "UCRLHVqJybtjS5ODPP5iAv4w",
+    "UCvdm27ITzhd3bsnftrBmFUg",
+    "UC8hpq3EHqyG09og9xy3qOFg",
+    "UCRdGqpbhydDXIl83A9E8-2Q",
+    "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UC1yaXYiC2Ab3tus3lTDljtw",
+    "UCwYR6Axoc2mEKz89P8t4N5Q",
+    "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCboGC6e3sTTIO9C6lHxifnA",
+    "UCYPbYGqAXm8gaYGVY-ANVXA",
+    "UCJ6EMs_13PLDvRSHi-XqRwQ"
+  ],
+  "channelsWithoutAcceptedMusic": [
+    "UCUSjRkF72RR1E8Rl4SWtVsQ",
+    "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UCdwDeWJ4aJ9RAURZERmWquA"
+  ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6783,
+  "publishedFeedVideoCount": 6821,
   "publishedShortVideoCount": 0
 }
