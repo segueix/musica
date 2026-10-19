@@ -110,6 +110,8 @@ describe('web oficial o Facebook de l’artista', () => {
                 expect(entry.basis.length).toBeGreaterThan(15);
             }
         }
-        expect(catalog.artists['artist:mainasons'].officialLinks).toBeUndefined();
+        // La web de Mainasons promociona un casino: només el seu Instagram
+        expect(Object.keys(catalog.artists['artist:mainasons'].officialLinks)).toEqual(['instagram']);
+        expect(catalog.artists['artist:mainasons'].officialLinks.instagram.url).toBe('https://www.instagram.com/mainasons/');
     });
 });

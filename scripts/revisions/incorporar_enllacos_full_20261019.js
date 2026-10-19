@@ -14,8 +14,9 @@ const ROOT = path.resolve(__dirname, '..', '..');
 const ORIGINS = path.join(ROOT, 'data/origens-artistes.json');
 const RECORD = 'docs/revisions/2026-10-19-enllacos-full-editor.json';
 const CHECKED_ON = '2026-10-19';
-// La web de Mainasons promociona un casino en línia (revisat el 2026-10-19): no s'hi enllaça.
-const SKIP = new Set(['artist:mainasons']);
+// La web de Mainasons promociona un casino en línia (revisat el 2026-10-19): l'editor hi va indicar el seu
+// Instagram en lloc de la web del full.
+const OVERRIDES = { 'artist:mainasons': 'https://www.instagram.com/mainasons/' };
 
 const norm = value =>
     String(value || '')
@@ -88,11 +89,8 @@ function main() {
             for (const id of channelIds) catalog.linkChannels[id] = key;
             report.linksOnly.push(row.artista);
         }
-        if (SKIP.has(key)) {
-            report.skipped.push(`${row.artista} (web amb publicitat d'apostes)`);
-            continue;
-        }
-        const link = classify(row.url);
+        const override = OVERRIDES[key];
+        const link = classify(override || row.url);
         const artist = catalog.artists[key];
         artist.officialLinks = {
             ...(artist.officialLinks || {}),
@@ -102,7 +100,9 @@ function main() {
                 checkedOn: CHECKED_ON,
                 method: 'editor-spreadsheet',
                 sources: [RECORD],
-                basis: "Enllaç facilitat per l'editor del catàleg al full d'artistes pendents (19/10/2026).",
+                basis: override
+                    ? "Instagram indicat per l'editor del catàleg en lloc de la web, que promociona un casino (19/10/2026)."
+                    : "Enllaç facilitat per l'editor del catàleg al full d'artistes pendents (19/10/2026).",
             },
         };
         report.kinds[link.kind] = (report.kinds[link.kind] || 0) + 1;

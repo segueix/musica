@@ -9884,7 +9884,19 @@
       ],
       "reviewedOn": "2026-10-11",
       "assignmentSource": "manual-review",
-      "locked": true
+      "locked": true,
+      "officialLinks": {
+        "instagram": {
+          "url": "https://www.instagram.com/mainasons/",
+          "status": "verified",
+          "checkedOn": "2026-10-19",
+          "method": "editor-spreadsheet",
+          "sources": [
+            "docs/revisions/2026-10-19-enllacos-full-editor.json"
+          ],
+          "basis": "Instagram indicat per l'editor del catàleg en lloc de la web, que promociona un casino (19/10/2026)."
+        }
+      }
     },
     "artist:tiger-menja-zebra": {
       "name": "Tiger Menja Zebra",
