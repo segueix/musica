@@ -39,6 +39,7 @@ export function loadScript(relativePath, extraGlobals = {}) {
         clearTimeout,
         requestIdleCallback: undefined,
         URLSearchParams,
+        URL,
         RegExp,
         Set,
         ...extraGlobals,
@@ -67,3 +68,4 @@ export function createMockLocalStorage() {
         get length() { return store.size; },
     };
 }
+

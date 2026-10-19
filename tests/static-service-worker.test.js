@@ -50,7 +50,7 @@ describe('cache de la web estàtica', () => {
         w.fetch.mockRejectedValue(new Error('offline'));
         expect((await w.get('?v=id')).text).toBe('app');
     });
-    it.each(['feed.json', 'static-routes.json', 'video-channels.json'])('refresca %s abans de servir la còpia antiga', async name => {
+    it.each(['feed.json', 'static-routes.json', 'video-channels.json', 'origens-artistes.json'])('refresca %s abans de servir la còpia antiga', async name => {
         const w = worker();
         w.fetch.mockResolvedValueOnce(w.response('antic')); await w.get(`data/${name}`, 'cors');
         w.fetch.mockResolvedValueOnce(w.response('nou'));
@@ -70,3 +70,4 @@ describe('cache de la web estàtica', () => {
         expect(w.self.skipWaiting).toHaveBeenCalledOnce();
     });
 });
+
