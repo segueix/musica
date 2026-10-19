@@ -316,12 +316,34 @@
     }
 
     // Només enllaços revisats explícitament. Les fonts de l'origen no són necessàriament webs de l'artista.
-    // La identitat compartida fa que el canal oficial i el Tema mostrin el mateix destí.
+    // La identitat compartida fa que el canal oficial i el Tema mostrin el mateix destí. Un artista sense fitxa
+    // d'origen pot tenir l'enllaç igualment (`linkChannels`, entrada «només enllaç»). Una web pròpia, Bandcamp o la
+    // Viquipèdia es mostren com a «Web»; Facebook i Instagram, amb el seu nom (2026-10-19).
+    const OFFICIAL_KINDS = [
+        ['website', 'Web'],
+        ['facebook', 'Facebook'],
+        ['instagram', 'Instagram'],
+    ];
+    const SOCIAL_HOSTS = { 'facebook.com': 'facebook', 'instagram.com': 'instagram' };
+
+    // Un perfil, mai el login, una publicació o un enllaç per compartir. Facebook també admet les pàgines
+    // antigues (/pages/Nom/123, /p/Nom-123) i profile.php?id=123.
+    function socialProfileOk(kind, url) {
+        if (url.hash) return false;
+        const pathname = url.pathname;
+        if (kind === 'instagram') return !url.search && /^\/[\w.]+\/?$/.test(pathname) && !/^\/(?:p|reel|reels|stories|explore|accounts)\/?$/i.test(pathname);
+        if (pathname === '/profile.php') return /^\?id=\d+$/.test(url.search);
+        if (url.search) return false;
+        if (/^\/(?:pages\/[^/]+\/\d+|p\/[^/]+-\d+)\/?$/.test(pathname)) return true;
+        return /^\/[\w.-]+\/?$/.test(pathname)
+            && !/^(?:login|share|sharer|dialog|watch|reel|groups|events|search)(?:\.|\/|$)/i.test(pathname.slice(1));
+    }
+
     function officialLinkModel(catalog, channelId) {
         if (catalog?.schemaVersion !== 1) return null;
-        const key = catalog.channels?.[text(channelId)];
+        const key = catalog.channels?.[text(channelId)] || catalog.linkChannels?.[text(channelId)];
         const links = key ? catalog.artists?.[key]?.officialLinks : null;
-        for (const kind of ['website', 'facebook']) {
+        for (const [kind, label] of OFFICIAL_KINDS) {
             const entry = links?.[kind];
             if (entry?.status !== 'verified' || !entry.checkedOn || !entry.sources?.length) continue;
             try {
@@ -329,13 +351,10 @@
                 if (url.protocol !== 'https:' || url.username || url.password || url.port) continue;
                 const host = url.hostname.toLowerCase().replace(/^www\./, '');
                 if (!host.includes('.') || /^(localhost|127\.|0\.)/.test(host)) continue;
-                const facebook = host === 'facebook.com';
-                if ((kind === 'facebook') !== facebook) continue;
-                // Un perfil, mai el login, una publicació o un enllaç per compartir.
-                if (facebook && (!/^\/[\w.-]+\/?$/.test(url.pathname)
-                    || /^(?:login|share|sharer|dialog|watch|reel|groups|events|search)(?:\.|\/|$)/i.test(url.pathname.slice(1))
-                    || url.search || url.hash)) continue;
-                return { kind, url: url.href, label: facebook ? 'Facebook' : 'Web oficial' };
+                const social = SOCIAL_HOSTS[host] || 'website';
+                if (social !== kind) continue;
+                if (kind !== 'website' && !socialProfileOk(kind, url)) continue;
+                return { kind, url: url.href, label };
             } catch (_error) {
                 // Una URL malformada no pot trencar la fitxa ni convertir-se en un enllaç executable.
             }
