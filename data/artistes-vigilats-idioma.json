@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T18:00:17.047Z",
+  "updatedAt": "2026-10-19T13:40:00Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -5301,6 +5301,14 @@
         "manual-user-2026-10-18",
         "docs/revisions/2026-10-18-belda-balcells.json"
       ]
+    },
+    {
+      "artista": "Komando Moriles",
+      "aliases": [],
+      "canals": [
+        "UCn8foPPMflft1g_JVfcpzYQ"
+      ],
+      "motiu": "Acceptació editorial explícita limitada als quatre títols de music-channel-video-allowlist.json; la resta del catàleg queda exclosa abans de la política d’idioma."
     }
   ],
   "discsVerificats": [
