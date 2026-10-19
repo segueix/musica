@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T18:00:17.047Z",
+  "updatedAt": "2026-10-19T13:40:00Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7523,6 +7523,21 @@
       "allowedContentTypes": [
         "song"
       ]
+    },
+    "UCn8foPPMflft1g_JVfcpzYQ": {
+      "artist": "Komando Moriles",
+      "note": "Selecció expressa de l’usuari el 2026-10-19. Només aquests quatre títols exactes; excloure la resta del canal, versions i directes amb títols diferents.",
+      "allowedTitles": [
+        "0,007",
+        "Els de l'Ou",
+        "Joe Mazzaroni",
+        "Toasting War"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ],
+      "avatarFromFirstAllowedVideo": true
     }
   }
 }

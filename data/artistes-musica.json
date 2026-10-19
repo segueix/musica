@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-18T18:00:17.047Z",
+  "updatedAt": "2026-10-19T13:40:00Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -40910,6 +40910,41 @@
       ],
       "lastChecked": "2026-10-18T18:00:17.047Z",
       "notes": "Moià i Urbana per indicació de l’usuari. Canal oficial i Tema verificats. Selecció tancada de 15 cançons amb lletra catalana revisada, amb IDs concrets; resta pendent o fora per llengua. No importar tot el canal ni autoritzar novetats pel títol. docs/revisions/2026-10-18-uri-santafe.json"
+    },
+    {
+      "name": "Komando Moriles",
+      "displayName": "Komando Moriles",
+      "aliases": [],
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCn8foPPMflft1g_JVfcpzYQ",
+            "name": "Komando Moriles - Topic",
+            "handle": null,
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-19",
+        "https://ca.wikipedia.org/wiki/Komando_Moriles",
+        "genre:manual"
+      ],
+      "lastChecked": "2026-10-19",
+      "notes": "Selecció expressa de l’usuari: només 0,007, Els de l'Ou, Joe Mazzaroni i Toasting War. Llista tancada per títols; no s’aprova la resta del catàleg ni s’infereix l’idioma dels títols."
     }
   ]
 }
