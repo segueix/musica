@@ -64,6 +64,27 @@ describe('Origen a la fitxa', () => {
         expect(html).not.toContain('javascript:');
     });
 
+    it('mostra les fonts amb el nom del web i com a enllaç extern', () => {
+        const api = page();
+        expect(api.sourceName('https://www.enderrock.cat/noticia/1')).toBe('Enderrock');
+        expect(api.sourceName('https://ca.wikipedia.org/wiki/Peret')).toBe('Viquipèdia');
+        expect(api.sourceName('https://artista.bandcamp.com/')).toBe('Bandcamp');
+        expect(api.sourceName('https://www.exemple.cat/bio')).toBe('exemple.cat');
+        const html = api.originHtml({
+            label: 'Origen',
+            places: [{ name: 'Mataró', territory: 'Catalunya', coordinates: { latitude: 41.5, longitude: 2.4 } }],
+            basis: 'Segons la biografia.',
+            sources: ['https://www.enderrock.cat/a', 'https://www.enderrock.cat/b', 'https://ca.wikipedia.org/wiki/X'],
+        });
+        expect(html).not.toMatch(/Font \d/);
+        expect(html).toContain('Enderrock (2)');
+        expect(html).toContain('Viquipèdia');
+        expect(html).toContain('D’on ho sabem');
+        expect(html).toContain('Catalunya');
+        expect(html.match(/class="ap-origin__source"[^>]*target="_blank" rel="noopener noreferrer"/g)).toHaveLength(3);
+        expect(html).toContain('s’obre en una pestanya nova');
+    });
+
     it('no pinta un artista anterior si la càrrega acaba després de canviar de fitxa', async () => {
         let finish;
         const section = { hidden: true, innerHTML: '', open: false };
@@ -84,7 +105,7 @@ describe('Origen a la fitxa', () => {
         api.showProfile({ channelId: channelsOf('Peret')[0] });
         await new Promise((resolve) => setTimeout(resolve, 0));
         expect(section.hidden).toBe(false);
-        expect(section.innerHTML).toContain('Origen: Mataró');
+        expect(section.innerHTML).toContain('<span class="ap-origin__place">Mataró</span>');
         api.showProfile({ channelId: channelsOf('Peret')[0], program: true });
         expect(section.hidden).toBe(true);
     });
