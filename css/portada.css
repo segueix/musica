@@ -12063,3 +12063,66 @@ body .mq .mq-head,
         min-width: 28px;
     }
 }
+
+/* ---------- Fitxa de la cançó a l'ordinador: controls en vertical a la dreta del reproductor (2026-10-19) ----------
+   A ≥ 1025 px, anterior · play/pausa · següent · flotant · m'agrada van en una columna just a la dreta del vídeo
+   (centrats a la seva alçada), no en una fila a sota: el títol, el grup i els botons pugen i la cua de la dreta és
+   més estreta. La graella de .watch-main passa a tres columnes: reproductor, controls i cua; el títol i el canal
+   ocupen les dues primeres. Amb la finestra flotant la barra va a <body> (.is-docked) i aquí no hi té efecte.
+   Els avisos («prem ▶», reproducció automàtica aturada) surten sota la columna, mai damunt del vídeo. */
+@media (min-width: 1025px) {
+    #watchPage .watch-main {
+        grid-template-columns: minmax(320px, 520px) auto minmax(0, 1fr);
+        column-gap: 0;
+    }
+
+    #watchPage .watch-main > .video-placeholder {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #watchPage .watch-main > .player-external-controls:not(.is-docked) {
+        position: relative;
+        grid-column: 2;
+        grid-row: 1;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-self: stretch;
+        gap: 12px;
+        width: auto;
+        margin: 0 0 0 14px;
+    }
+
+    #watchPage .watch-main > .video-info,
+    #watchPage .watch-main > .channel-info,
+    #watchPage .watch-main > .tv-programming-panel {
+        grid-column: 1 / span 2;
+    }
+
+    #watchPage .watch-main > #playlistQueueContainer {
+        grid-column: 3;
+        margin-left: clamp(24px, 3vw, 48px);
+    }
+
+    #watchPage .watch-main > .player-external-controls:not(.is-docked) :is(.player-autoplay-hint, .player-native-play-hint) {
+        position: absolute;
+        top: calc(100% + 14px);
+        right: 0;
+        z-index: 5;
+        width: 240px;
+        padding: 10px 12px;
+        border: 1px solid var(--pt-line);
+        border-radius: var(--pt-radius-player, 12px);
+        background: var(--pt-surface-2);
+        text-align: left;
+    }
+
+    #watchPage .watch-main > .player-external-controls:not(.is-docked) :is(.player-autoplay-hint, .player-native-play-hint)[hidden] {
+        display: none;
+    }
+
+    #watchPage .watch-main > .video-info {
+        margin-top: 12px;
+    }
+}

@@ -154,24 +154,49 @@ async function proves(browser, width, errors) {
 
     // 1) Res damunt del vídeo (ni play/pausa propi, ni capa tàctil, ni controls de la cua): els controls són a la barra
     //    de sota (#playerExternalControls), sota el reproductor i sense tocar-lo
+    // El reproductor s'anima fins al seu lloc (transició de 0,3 s): es mesura quan ja hi és
+    await page
+        .waitForFunction(
+            () => {
+                const player = document.getElementById('videoPlayer').getBoundingClientRect();
+                const holder = document.getElementById('videoPlaceholder').getBoundingClientRect();
+                return Math.abs(player.left - holder.left) <= 2 && Math.abs(player.width - holder.width) <= 2;
+            },
+            null,
+            { timeout: 5000 }
+        )
+        .catch(() => null);
     const estructura = await page.evaluate(() => {
         const player = document.getElementById('videoPlayer').getBoundingClientRect();
         const bar = document.getElementById('playerExternalControls');
         const barBox = bar.getBoundingClientRect();
+        const buttons = [...bar.querySelectorAll('button')].filter(button => !button.hidden);
+        const centres = buttons.map(button => {
+            const box = button.getBoundingClientRect();
+            return Math.round(box.left + box.width / 2);
+        });
         return {
             damunt: document.querySelectorAll(
                 '#videoPlayer :is(.queue-toggle-button, .queue-next-touch-layer, .queue-next-overlay)'
             ).length,
             visible: !bar.hidden && barBox.height > 0,
             sota: Math.round(barBox.top - player.bottom),
+            // Ordinador (≥ 1025 px, 2026-10-19): en columna a la dreta del vídeo, dins la seva alçada
+            dreta: Math.round(barBox.left - player.right),
+            columna: Math.max(...centres) - Math.min(...centres) <= 1,
+            dinsAlcada:
+                buttons[0].getBoundingClientRect().top >= player.top - 1 &&
+                buttons[buttons.length - 1].getBoundingClientRect().bottom <= player.bottom + 1,
             botons: [...bar.querySelectorAll('button')].filter(button => !button.hidden).map(button => button.id),
         };
     });
     comprovar(
-        `${etiqueta}: res damunt del vídeo; anterior · play/pausa · següent · flotant · m'agrada a la barra de sota`,
+        `${etiqueta}: res damunt del vídeo; anterior · play/pausa · següent · flotant · m'agrada ${
+            mobile ? 'a la barra de sota' : 'en columna a la dreta del vídeo'
+        }`,
         estructura.damunt === 0 &&
             estructura.visible &&
-            estructura.sota >= 0 &&
+            (mobile ? estructura.sota >= 0 : estructura.dreta >= 0 && estructura.columna && estructura.dinsAlcada) &&
             estructura.botons.join() === 'playerPrevBtn,playerPlayPauseBtn,playerNextBtn,playerMiniBtn,playerLikeBtn',
         estructura
     );
@@ -191,19 +216,21 @@ async function proves(browser, width, errors) {
                 cuaAcaba: Math.round(queue.bottom),
                 botonsAcaben: Math.round(actions.bottom),
                 canalAcaba: Math.round(channel.bottom),
-                holderControls: Math.round(controls.top - holder.bottom),
-                controlsTitol: Math.round(info.top - controls.bottom),
+                // Els controls són a la dreta del vídeo: el títol va just sota el reproductor
+                holderControls: Math.round(controls.left - holder.right),
+                controlsTitol: Math.round(info.top - holder.bottom),
                 canalBotons: Math.round(
                     actions.top - document.querySelector('.channel-header-row').getBoundingClientRect().bottom
                 ),
             };
         });
         comprovar(
-            `${etiqueta}: la cua de la dreta acaba al nivell dels botons de sota i les línies de l'esquerra estan enganxades`,
+            `${etiqueta}: la cua de la dreta acaba al nivell dels botons de sota, els controls van al costat del vídeo i les línies de l'esquerra estan enganxades`,
             alineacio.cuaAcaba >= alineacio.botonsAcaben &&
                 alineacio.cuaAcaba <= alineacio.canalAcaba + 1 &&
-                alineacio.holderControls <= 12 &&
-                alineacio.controlsTitol <= 10 &&
+                alineacio.holderControls >= 0 &&
+                alineacio.holderControls <= 24 &&
+                alineacio.controlsTitol <= 16 &&
                 alineacio.canalBotons <= 10,
             alineacio
         );
