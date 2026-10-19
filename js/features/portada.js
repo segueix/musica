@@ -625,12 +625,11 @@
         const secondary = styles.filter(style => !style.primary);
         const tile = (style, extra) => {
             const label = esc(style.label);
-            const count =
-                style.artists === 1 ? '1 artista' : style.artists ? `${style.artists} artistes` : 'Sense artistes';
+            // Sense el nombre d'artistes de cada categoria (2026-10-19, a petició de l'usuari)
             const kind = style.user ? 'La teva categoria' : 'Estil';
             return `
                 <li class="pt-style-cell${extra ? ' pt-style-cell--extra' : ''}${style.user ? ' pt-style-cell--user' : ''}"${extra && !expanded ? ' hidden' : ''}>
-                    <button type="button" class="pt-style${style.user ? ' pt-style--user' : ''}" data-pt-style="${label}" aria-label="${kind}: ${label}, ${count}. Alt i fletxes per moure-la">
+                    <button type="button" class="pt-style${style.user ? ' pt-style--user' : ''}" data-pt-style="${label}" aria-label="${kind}: ${label}. Alt i fletxes per moure-la">
                         ${style.user ? '<span class="pt-style__kind">La teva</span>' : ''}
                         <span class="pt-style__faces" aria-hidden="true">${style.avatars
                             .map(
@@ -639,7 +638,6 @@
                             )
                             .join('')}</span>
                         <span class="pt-style__label">${label}</span>
-                        <span class="pt-style__count">${count}</span>
                     </button>
                 </li>`;
         };
