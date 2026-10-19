@@ -3586,6 +3586,45 @@ body .follow-btn-pill.is-followed:hover {
     outline-offset: 3px;
 }
 
+/* Enllaç oficial revisat, al costat de YouTube. No ocupa espai si encara és pendent. */
+#channelPage .ap-top a[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #channelPage .ap-top {
+        gap: 6px;
+    }
+    #channelPage .ap-top__end {
+        gap: 4px;
+    }
+    #channelPage .ap-top .channel-back-btn,
+    #channelPage .ap-top .channel-profile-share-btn.btn-round-icon {
+        width: 40px;
+        height: 44px;
+    }
+    #channelPage .ap-official {
+        flex: 0 1 auto;
+        min-width: 0;
+        padding: 0 8px;
+        gap: 4px;
+        font-size: 0.8125rem;
+        line-height: 1.15;
+    }
+    #channelPage .ap-official span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+    #channelPage #apOfficialBtn:not([hidden]) ~ #apYoutubeBtn {
+        width: 40px;
+        padding: 0;
+        justify-content: center;
+    }
+    #channelPage #apOfficialBtn:not([hidden]) ~ #apYoutubeBtn span {
+        display: none;
+    }
+}
+
 #channelPage .ap-hero__meta {
     display: block;
     flex: none;

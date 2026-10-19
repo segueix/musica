@@ -16,7 +16,7 @@
 // migrant els clients automàticament.
 
 // === AUTO-GENERAT per scripts/actualitzar_versio_sw.js — NO EDITAR MANUALMENT ===
-const CACHE_VERSION = '1d4f6bb55987';
+const CACHE_VERSION = '6c5253a35bbf';
 const STATIC_ASSETS = [
     './',
     './index.html',
@@ -171,6 +171,7 @@ self.addEventListener('fetch', (event) => {
     const isShell = path === APP_PATH || path === new URL(SHELL_URL).pathname;
     const isNavigate = request.mode === 'navigate' || isShell;
     const isNetworkFirstData = path.endsWith('/data/feed.json')
+        || path.endsWith('/data/origens-artistes.json')
         || path.endsWith('/data/hidden-videos.json')
         || path.endsWith('/data/videos-restringits.json')
         || path.endsWith('/data/static-routes.json')
