@@ -4,8 +4,7 @@
     {
       "artist": "Acros",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -15,7 +14,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Adala",
@@ -83,7 +87,6 @@
     {
       "artist": "Blues de Picolat",
       "genres": [
-        "Rock",
         "Jazz / Blues"
       ],
       "facets": [
@@ -96,12 +99,16 @@
       ],
       "reviewedAt": "2026-10-17",
       "confidence": 1,
-      "method": "user-editorial"
+      "method": "user-editorial",
+      "editorialCategory": {
+        "choice": "Jazz / Blues",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Ceaxe",
       "genres": [
-        "Pop",
         "Urbana"
       ],
       "facets": [
@@ -113,13 +120,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Celobert",
       "genres": [
-        "Pop",
-        "Indie / Alternativa"
+        "Pop"
       ],
       "facets": [
         "indie-pop"
@@ -129,13 +140,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Cloe Riembau",
       "genres": [
-        "Pop",
-        "Indie / Alternativa"
+        "Pop"
       ],
       "facets": [
         "indie-pop"
@@ -145,7 +160,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Corrandes són corrandes",
@@ -167,8 +187,7 @@
     {
       "artist": "Cristina Monllau",
       "genres": [
-        "Pop",
-        "Indie / Alternativa"
+        "Pop"
       ],
       "facets": [
         "indie-pop"
@@ -178,7 +197,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Dan Peralbo & El Comboi",
@@ -198,8 +222,7 @@
     {
       "artist": "El Nota",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -209,13 +232,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Elo",
       "genres": [
-        "Pop",
-        "Urbana"
+        "Pop"
       ],
       "facets": [
         "pop",
@@ -226,7 +253,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Els Miralls de Dylan",
@@ -248,8 +280,7 @@
     {
       "artist": "En Rick",
       "genres": [
-        "Pop",
-        "Electrònica"
+        "Pop"
       ],
       "facets": [
         "electropop"
@@ -259,7 +290,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Gerard Jacquet",
@@ -294,7 +330,6 @@
     {
       "artist": "GUINEU",
       "genres": [
-        "Pop",
         "Indie / Alternativa"
       ],
       "facets": [
@@ -305,13 +340,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Indie / Alternativa",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Herba Negra",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap",
@@ -323,7 +362,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Hey Zuri",
@@ -423,7 +467,6 @@
     {
       "artist": "La Mousse",
       "genres": [
-        "Pop",
         "Electrònica"
       ],
       "facets": [
@@ -434,7 +477,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Electrònica",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Llamp te Frigui",
@@ -470,8 +518,7 @@
     {
       "artist": "Malson Atmosfèric",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap",
@@ -482,7 +529,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Marala",
@@ -548,8 +600,7 @@
     {
       "artist": "okdw",
       "genres": [
-        "Pop",
-        "Funk / Soul / R&B"
+        "Pop"
       ],
       "facets": [
         "pop",
@@ -561,13 +612,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Paula Montalbán",
       "genres": [
-        "Pop",
-        "Indie / Alternativa"
+        "Pop"
       ],
       "facets": [
         "alternative-pop"
@@ -577,7 +632,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Pere Figueres",
@@ -597,8 +657,7 @@
     {
       "artist": "Poor Tràmit",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -608,13 +667,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Pupil·les",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -624,7 +687,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Quico el Célio, el Noi i el Mut de Ferreries",
@@ -646,8 +714,7 @@
     {
       "artist": "Rapsodes",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -657,7 +724,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Reïna",
@@ -694,8 +766,7 @@
     {
       "artist": "Roser Dresaire",
       "genres": [
-        "Pop",
-        "Cançó d'autor"
+        "Pop"
       ],
       "facets": [
         "pop",
@@ -706,7 +777,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Sara Roy",
@@ -756,8 +832,7 @@
     {
       "artist": "Sodi",
       "genres": [
-        "Rock",
-        "Indie / Alternativa"
+        "Pop"
       ],
       "facets": [
         "rock",
@@ -768,7 +843,12 @@
       ],
       "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "editorial-predominant-pop-rock"
+      "method": "editorial-predominant-pop-rock",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Solk",
@@ -791,8 +871,7 @@
     {
       "artist": "Still Ill",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -802,7 +881,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Suu",
@@ -875,8 +959,7 @@
     {
       "artist": "Tornaveus",
       "genres": [
-        "Folk i arrel",
-        "Coral / Vocal"
+        "Folk i arrel"
       ],
       "facets": [
         "traditional",
@@ -888,7 +971,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Trèvol",
@@ -944,8 +1032,7 @@
     {
       "artist": "Valtònyc",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -955,13 +1042,17 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Vinnie Kairos",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana"
+        "Rap / Hip-hop"
       ],
       "facets": [
         "rap"
@@ -971,12 +1062,16 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Rap / Hip-hop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Vittara",
       "genres": [
-        "Pop",
         "Indie / Alternativa"
       ],
       "facets": [
@@ -987,7 +1082,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Indie / Alternativa",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Voltor",
@@ -1025,7 +1125,6 @@
     {
       "artist": "Àlex Blat",
       "genres": [
-        "Cançó d'autor",
         "Pop"
       ],
       "facets": [
@@ -1040,7 +1139,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.55,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Artur Àlvarez",
@@ -1068,8 +1172,7 @@
     {
       "artist": "Borriana Big Band",
       "genres": [
-        "Jazz / Blues",
-        "Folk i arrel"
+        "Jazz / Blues"
       ],
       "facets": [
         "jazz-blues",
@@ -1085,7 +1188,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.55,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Jazz / Blues",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Malparlat",
@@ -1150,8 +1258,7 @@
     {
       "artist": "Xiomara Abello",
       "genres": [
-        "Cançó d'autor",
-        "Folk i arrel"
+        "Cançó d'autor"
       ],
       "facets": [
         "singer-songwriter",
@@ -1167,7 +1274,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.55,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Cançó d'autor",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "Pirat's Sound Sistema",
@@ -1931,12 +2043,16 @@
         "rock"
       ],
       "genres": [
-        "Rock",
-        "Folk i arrel"
+        "Rock"
       ],
       "reviewedAt": "2026-10-17",
       "confidence": 0.7,
-      "method": "editorial-predominant-pop-rock"
+      "method": "editorial-predominant-pop-rock",
+      "editorialCategory": {
+        "choice": "Rock",
+        "at": "2026-10-19",
+        "source": "docs/revisions/2026-10-19-una-categoria.json"
+      }
     },
     {
       "artist": "El Belda i el Conjunt Badabadoc",
