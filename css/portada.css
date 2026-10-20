@@ -12126,3 +12126,155 @@ body .mq .mq-head,
         margin-top: 12px;
     }
 }
+
+/* ---------- «La teva ràdio»: «Ràdio nova» i «Afegeix una categoria» en una sola fila (2026-10-20).
+   El botó de categories és de vidre amb vora blanca (com les eines de la ràdio), porta la icona de dos cercles
+   que es barregen, el nombre de categories triades en llima i una fletxa que gira; el desplegable surt just a
+   sota, dins un panell de vidre enganxat a la fila. Al mòbil, els dos botons ocupen tot l'ample, un sota l'altre. ---------- */
+#ptRadio .pt-radio__cta {
+    align-items: stretch;
+    gap: 10px;
+}
+
+#ptRadio .pt-radio__add {
+    gap: 8px;
+    min-height: 52px;
+    padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--pt-radius);
+    background: rgba(20, 22, 21, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 800;
+}
+
+#ptRadio .pt-radio__add:hover,
+#ptRadio .pt-radio__add.is-open {
+    border-color: #fff;
+    background: rgba(20, 22, 21, 0.78);
+}
+
+#ptRadio .pt-radio__add.has-picks {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+}
+
+#ptRadio .pt-radio__add:focus-visible {
+    outline: 3px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+#ptRadio .pt-radio__add svg {
+    width: 20px;
+    height: 20px;
+}
+
+#ptRadio .pt-radio__add-count {
+    display: inline-grid;
+    place-items: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 7px;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font-size: 0.8125rem;
+    font-weight: 900;
+}
+
+#ptRadio .pt-radio__add-count[hidden] {
+    display: none;
+}
+
+#ptRadio .pt-radio__add .pt-radio__add-caret {
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
+
+#ptRadio .pt-radio__add.is-open .pt-radio__add-caret {
+    transform: rotate(180deg);
+}
+
+/* El desplegable: panell de vidre just sota la fila dels botons */
+#ptRadio .pt-radio__picker {
+    margin: 10px 0 0;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--pt-radius);
+    background: rgba(20, 22, 21, 0.62);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    animation: pt-radio-picker-in 0.18s ease;
+}
+
+#ptRadio .pt-radio__picker[hidden] {
+    display: none;
+}
+
+#ptRadio .pt-radio__picker .pt-first__note {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 12px;
+}
+
+#ptRadio .pt-radio__picker .pt-link {
+    min-height: 44px;
+    margin: 0;
+}
+
+#ptRadio .pt-radio__picker .pt-link[hidden] {
+    display: none;
+}
+
+@keyframes pt-radio-picker-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+}
+
+@media (min-width: 769px) {
+    #ptRadio .pt-radio__cta {
+        flex-wrap: nowrap;
+    }
+
+    #ptRadio .pt-radio__add .pt-radio__add-caret {
+        margin-left: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    #ptRadio .pt-radio__add {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #ptRadio .pt-radio__picker {
+        animation: none;
+    }
+
+    #ptRadio .pt-radio__add .pt-radio__add-caret {
+        transition: none;
+    }
+}
+
+/* Quan hi ha «Continua escoltant», «Ràdio nova» passa a secundari: el mateix vidre que el botó de categories */
+#ptRadio .pt-radio__cta .pt-btn--ghost {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(20, 22, 21, 0.55);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    color: #fff;
+}
+
+#ptRadio .pt-radio__cta .pt-btn--ghost:hover:not(:disabled) {
+    border-color: #fff;
+    background: rgba(20, 22, 21, 0.78);
+}

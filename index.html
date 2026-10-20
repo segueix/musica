@@ -283,18 +283,24 @@
                         <p class="pt-eyebrow pt-eyebrow--brand">Ràdio personal</p>
                         <h2 class="pt-radio__title" id="ptEntryTitle">La teva ràdio</h2>
                         <p class="pt-radio__lead" id="ptRadioLead">Les teves preferides i els èxits dels mateixos estils.</p>
-                        <!-- Només la primera vegada (sense historial, m'agrades ni seguits): estils per començar -->
-                        <div class="pt-first" id="ptFirst" hidden>
-                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Categories que vols afegir"></div>
-                            <p class="pt-first__note">Hi sumarem les cançons més vistes de les categories que triïs.</p>
-                        </div>
-                        <div class="pt-entry__cta">
+                        <!-- Una sola fila: engegar la ràdio i, al costat, sumar-hi categories (opcional) -->
+                        <div class="pt-entry__cta pt-radio__cta">
                             <button type="button" class="pt-btn pt-btn--primary" id="ptPlayBtn" data-pt-mix disabled>
                                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>
                                 <span>Engega la ràdio</span>
                             </button>
+                            <button type="button" class="pt-btn pt-radio__add" id="ptAddCategory" data-pt-add-category aria-expanded="false" aria-controls="ptFirst">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="9" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="15" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                                <span class="pt-radio__add-label">Afegeix una categoria</span>
+                                <span class="pt-radio__add-count" id="ptAddCount" hidden></span>
+                                <svg class="pt-radio__add-caret" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+                            </button>
                         </div>
-                        <button type="button" class="pt-link" id="ptAddCategory" data-pt-add-category aria-expanded="false" aria-controls="ptFirst">+ Afegeix una categoria</button>
+                        <!-- Categories que se sumen al gust propi (opcional): es despleguen sota la fila dels botons -->
+                        <div class="pt-first pt-radio__picker" id="ptFirst" hidden>
+                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Categories que vols afegir"></div>
+                            <p class="pt-first__note"><span id="ptFirstNote">Hi sumarem les cançons més vistes de les categories que triïs.</span> <button type="button" class="pt-link" data-pt-first-reset id="ptFirstClear" hidden>Treu-les</button></p>
+                        </div>
                         <p class="pt-note" id="ptNote" role="status" aria-live="polite"></p>
                     </div>
                 </article>
