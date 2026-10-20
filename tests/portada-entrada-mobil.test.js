@@ -143,6 +143,23 @@ describe('«La teva ràdio»: de què està feta i primera vegada', () => {
         expect(css).toMatch(/\.pt-chip\s*{[^}]*min-height:\s*44px/);
     });
 
+    it('«Afegeix una categoria» va a la mateixa fila que el botó de la ràdio i el desplegable surt a sota', () => {
+        const cta = entry.slice(entry.indexOf('pt-radio__cta'), entry.indexOf('id="ptFirst"'));
+        expect(cta).toContain('id="ptPlayBtn"');
+        expect(cta).toContain('id="ptAddCategory"');
+        expect(entry.indexOf('id="ptAddCategory"')).toBeLessThan(entry.indexOf('id="ptFirst"'));
+        expect(entry).toContain('data-pt-first-reset');
+        expect(css).toMatch(/#ptRadio \.pt-radio__add\s*{[^}]*backdrop-filter/);
+    });
+
+    it('el text de la ràdio diu quines categories s’hi sumen', () => {
+        expect(portada.joinLabels(['Pop'])).toBe('Pop');
+        expect(portada.joinLabels(['Pop', 'Rock', 'Indie'])).toBe('Pop, Rock i Indie');
+        const first = portada.firstTimeState(taste);
+        expect(portada.radioLead(taste, first, true, ['Pop', 'Rock'])).toMatch(/dels mateixos estils i de Pop i Rock\.$/);
+        expect(portada.radioLead({ hasAny: false }, first, false, ['Pop'])).toContain('més populars de Pop');
+    });
+
     it('amb gust recent el text diu de què està feta, no que comenci de zero', () => {
         const first = portada.firstTimeState(taste);
         expect(first).toMatchObject({ chooser: false, savedOnly: false });

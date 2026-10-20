@@ -1190,9 +1190,24 @@
         return { chooser: Boolean(state.personalPicker), savedOnly: false, saved: [] };
     }
 
-    function radioLead(taste, first, showsContinue) {
+    // «Pop», «Pop i Rock», «Pop, Rock i Indie»
+    function joinLabels(labels) {
+        const list = toArray(labels).filter(Boolean);
+        if (list.length < 2) return list[0] || '';
+        return `${list.slice(0, -1).join(', ')} i ${list[list.length - 1]}`;
+    }
+
+    function radioLead(taste, first, showsContinue, picks = []) {
         const summary = taste?.hasAny ? app.features.discovery.tasteSummary(taste) : '';
-        return summary ? `${showsContinue ? 'Una ràdio nova. ' : ''}${summary} Amb els èxits dels mateixos estils.`
+        const extra = joinLabels(picks);
+        if (summary) {
+            const hits = extra
+                ? `Amb els èxits dels mateixos estils i de ${extra}.`
+                : 'Amb els èxits dels mateixos estils.';
+            return `${showsContinue ? 'Una ràdio nova. ' : ''}${summary} ${hits}`;
+        }
+        return extra
+            ? `Les cançons més populars de ${extra} per començar. La ràdio s’adaptarà al que escoltis i t’agradi.`
             : 'Les cançons més populars per començar. La ràdio s’adaptarà al que escoltis i t’agradi.';
     }
 
@@ -1200,10 +1215,33 @@
         const box = $('ptFirst');
         const chips = $('ptFirstChips');
         const add = $('ptAddCategory');
+        const picks = [...state.firstPick];
         if (add) {
             add.setAttribute('aria-expanded', String(first.chooser));
-            add.textContent = state.firstPick.size ? `+ Categories afegides (${state.firstPick.size})` : '+ Afegeix una categoria';
+            add.classList.toggle('is-open', first.chooser);
+            add.classList.toggle('has-picks', picks.length > 0);
+            const label = add.querySelector('.pt-radio__add-label');
+            if (label) label.textContent = picks.length ? 'Categories' : 'Afegeix una categoria';
+            const count = add.querySelector('.pt-radio__add-count');
+            if (count) {
+                count.hidden = !picks.length;
+                count.textContent = picks.length ? String(picks.length) : '';
+            }
+            add.setAttribute(
+                'aria-label',
+                picks.length
+                    ? `Categories afegides a la ràdio: ${joinLabels(picks)}`
+                    : 'Afegeix una categoria a la ràdio'
+            );
         }
+        const note = $('ptFirstNote');
+        if (note) {
+            note.textContent = picks.length
+                ? `Hi sumarem les cançons més vistes de ${joinLabels(picks)}.`
+                : 'Hi sumarem les cançons més vistes de les categories que triïs.';
+        }
+        const clear = $('ptFirstClear');
+        if (clear) clear.hidden = !picks.length;
         if (box) box.hidden = !first.chooser;
         if (chips && first.chooser) {
             if (!chips.children.length) {
@@ -1225,7 +1263,6 @@
                 more.textContent = state.firstMore ? 'Menys estils' : 'Més estils';
             }
         }
-
     }
 
     function toggleFirstStyle(label) {
@@ -1270,7 +1307,7 @@
         const first = firstTimeState(taste);
         entry?.classList.toggle('is-first-time', first.chooser);
         const lead = $('ptRadioLead');
-        if (lead) lead.textContent = radioLead(taste, first, showsContinue);
+        if (lead) lead.textContent = radioLead(taste, first, showsContinue, [...state.firstPick]);
         syncFirstTime(first);
         const play = $('ptPlayBtn');
         if (play) {
@@ -1281,6 +1318,10 @@
             // Hi ha una acció principal a la pantalla: si ja es pot continuar, «Ràdio nova» és la secundària
             play.classList.toggle('pt-btn--primary', !showsContinue);
             play.classList.toggle('pt-btn--ghost', showsContinue);
+            play.setAttribute(
+                'aria-label',
+                `${showsContinue ? 'Ràdio nova' : 'Engega la ràdio'}${state.firstPick.size ? ` amb ${joinLabels([...state.firstPick])}` : ''}`
+            );
             entry?.setAttribute('aria-busy', ready ? 'false' : 'true');
         }
         syncModeInputs();
@@ -1332,6 +1373,11 @@
         if (!result.started) {
             toast('Encara no hi ha música carregada. Torna-ho a provar d’aquí a un moment.');
             return;
+        }
+        // Les categories triades es conserven per a la propera ràdio; el desplegable es plega
+        if (state.personalPicker) {
+            state.personalPicker = false;
+            updateEntry();
         }
     }
 
@@ -1627,10 +1673,10 @@
         continueHtml,
         radioCovers,
         radioLead,
+        joinLabels,
         firstTimeState,
         refreshIfStale,
         isActive: () => state.rendered,
         getModel: () => state.model,
     };
 })(window);
-
