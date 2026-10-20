@@ -166,7 +166,9 @@ async function main() {
             )
         );
         await ambGustRecent(page);
-        await page.click('#ptPlayBtn');
+        // Els límits del motor (antigues, artista, modes) són de les ràdios d'estil: «La teva ràdio» és, des del
+        // 2026-10-20, un conjunt tancat dels teus artistes sense modes.
+        await page.evaluate(() => SegueixApp.features.musicQueue.startStyleRadio(['Pop']));
         await page.waitForFunction(() => document.querySelectorAll('#videoPlayer iframe').length === 1, null, {
             timeout: 15000,
         });
@@ -351,7 +353,7 @@ async function main() {
             Object.values(capcalera).every(
                 item =>
                     !item.modeVisible &&
-                    item.selector === 3 &&
+                    item.selector === 4 &&
                     item.botoMida &&
                     item.botoMida[0] >= 44 &&
                     item.botoMida[1] >= 44 &&

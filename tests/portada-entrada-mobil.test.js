@@ -32,7 +32,8 @@ describe('entrada de la portada: «Continua escoltant» i «La teva ràdio»', (
         expect(entry).toContain('id="ptRadioArt"');
         expect(entry).toContain('id="ptRadioLead"');
         expect(entry).toContain('id="ptPlayBtn"');
-        expect(entry).toContain('name="ptMode"');
+        // «La teva ràdio» és només dels teus artistes: sense selector de modes (2026-10-20)
+        expect(entry).not.toContain('name="ptMode"');
     });
 
     it('ja no té el títol gran ni la targeta «Novetat» que competien amb el botó', () => {
@@ -125,14 +126,7 @@ describe('«La teva ràdio»: de què està feta i primera vegada', () => {
         html.indexOf('id="portadaEntry"'),
         html.indexOf('</section>', html.indexOf('id="portadaEntry"'))
     );
-    const taste = {
-        hasAny: true,
-        windowDays: 7,
-        plays: 14,
-        liked: 5,
-        followed: 3,
-        artistKeys: new Set(['a', 'b', 'c']),
-    };
+    const taste = { hasAny: true, liked: 5, followed: 3 };
 
     it('té el selector d’estils de la primera vegada (amagat) i el botó per canviar-los', () => {
         expect(entry).toMatch(/id="ptFirst"[^>]*hidden/);
@@ -142,32 +136,34 @@ describe('«La teva ràdio»: de què està feta i primera vegada', () => {
         expect(css).toMatch(/\.pt-chip\s*{[^}]*min-height:\s*44px/);
     });
 
-    it('amb gust recent el text diu de què està feta, no que comenci de zero', () => {
+    it('el text diu que és només dels artistes que segueixes i de les cançons que t’agraden', () => {
         const first = portada.firstTimeState(taste);
         expect(first).toMatchObject({ chooser: false, savedOnly: false });
         const lead = portada.radioLead(taste, first, false);
-        expect(lead).toContain('Feta amb el que has escoltat aquesta setmana (14 cançons)');
-        expect(lead).toContain('m’agrades (5)');
-        expect(lead).toContain('artistes que segueixes (3)');
-        expect(lead).not.toMatch(/sense parar|zero|nova, amb el mode/);
-        expect(portada.radioLead(taste, first, true)).toMatch(/^Una ràdio nova\. Feta amb/);
+        expect(lead).toBe('Només amb 3 artistes que segueixes i 5 cançons que t’agraden.');
+        expect(portada.radioLead({ hasAny: true, liked: 1, followed: 0 }, first, false)).toBe(
+            'Només amb 1 cançó que t’agrada.'
+        );
+        expect(lead).not.toMatch(/escoltat|sense parar|zero/);
+        expect(portada.radioLead(taste, first, true)).toMatch(/^Una ràdio nova\. Només amb/);
     });
 
     it('la primera vegada (sense res) es demanen els estils', () => {
-        const first = portada.firstTimeState({ hasAny: false, artistKeys: new Set() });
+        const first = portada.firstTimeState({ hasAny: false });
         expect(first.chooser).toBe(true);
         expect(portada.radioLead({ hasAny: false }, first, false)).toBe('Tria fins a tres estils per començar.');
     });
 
-    it('amb estils ja triats i poc més, no es tornen a demanar i s’explica què fa la ràdio', () => {
+    it('amb estils ja triats i cap m’agrada ni seguit, no es tornen a demanar i s’explica què fa la ràdio', () => {
         app.features.discovery.setFirstStyles(['Pop', 'Rock']);
-        const first = portada.firstTimeState({ hasAny: false, artistKeys: new Set() });
+        const first = portada.firstTimeState({ hasAny: false });
         expect(first).toMatchObject({ chooser: false, savedOnly: true });
         expect(portada.radioLead({ hasAny: false }, first, false)).toBe(
-            'Feta amb els estils que vas triar: Pop, Rock. S’adaptarà al que escoltis.'
+            'Les més escoltades dels estils que vas triar: Pop, Rock. Quan segueixis artistes o t’agradin cançons, seran només seves.'
         );
-        // Amb prou artistes coneguts ja no mana l'elecció
+        // Amb un sol m'agrada o un seguit ja no mana l'elecció
         expect(portada.firstTimeState(taste).savedOnly).toBe(false);
+        expect(portada.firstTimeState({ hasAny: true, liked: 1, followed: 0 }).savedOnly).toBe(false);
         app.features.discovery.setFirstStyles([]);
     });
 });

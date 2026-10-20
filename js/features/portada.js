@@ -1173,44 +1173,50 @@
             .join('')}</span>`;
     }
 
-    // ---------- «La teva ràdio»: gust recent i primera vegada ----------
+    // ---------- «La teva ràdio»: m'agrades, seguits i primera vegada ----------
 
+    // «La teva ràdio» només es fa amb les cançons que t'agraden i els artistes que segueixes (music-queue.js,
+    // startDiscovery): aquí només se'n compten quants n'hi ha per explicar-ho a la targeta.
     function tasteNow() {
         const discovery = app.features.discovery;
-        if (!discovery?.recentTaste) return null;
         try {
-            return discovery.recentTaste({ ...discovery.readAppContext() });
+            const context = discovery?.readAppContext?.() || {};
+            const liked = toArray(context.liked).filter(video => video && !video.isShort).length;
+            const followed = new Set(toArray(context.followedIds).map(id => String(id))).size;
+            return { liked, followed, hasAny: liked > 0 || followed > 0 };
         } catch (error) {
             return null;
         }
     }
 
-    // chooser: primera vegada de debò (cap dada i cap estil triat) → s'ensenyen els estils per triar.
-    // savedOnly: ja va triar estils però encara no hi ha cap altra dada.
+    // chooser: sense m'agrades, seguits ni estils triats → s'ensenyen els estils per triar (només aquesta vegada).
+    // savedOnly: ja va triar estils però encara no té cap m'agrada ni cap artista seguit.
     function firstTimeState(taste) {
         const discovery = app.features.discovery;
         const saved = discovery?.getFirstStyles?.() || [];
         const empty = Boolean(taste && !taste.hasAny);
-        // Amb molt poques dades (menys de 3 artistes coneguts) manen els estils triats: encara no hi ha gust que seguir.
-        const thin = Boolean(taste && taste.artistKeys.size < (discovery?.MIN_KNOWN_ARTISTS || 3));
-        return { saved, chooser: empty && saved.length === 0, savedOnly: thin && saved.length > 0 };
+        return { saved, chooser: empty && saved.length === 0, savedOnly: empty && saved.length > 0 };
     }
 
-    // Què diu la targeta de la ràdio: de què està feta (mai «des de zero»).
+    const countOf = (n, one, many) => (n === 1 ? `1 ${one}` : `${n} ${many}`);
+
+    // Què diu la targeta de la ràdio: de què està feta.
     function radioLead(taste, first, showsContinue) {
         if (first.chooser) return 'Tria fins a tres estils per començar.';
         if (first.savedOnly) {
-            return `Feta amb els estils que vas triar: ${first.saved.join(', ')}. S’adaptarà al que escoltis.`;
+            return `Les més escoltades dels estils que vas triar: ${first.saved.join(', ')}. Quan segueixis artistes o t’agradin cançons, seran només seves.`;
         }
-        const summary = taste?.hasAny ? app.features.discovery.tasteSummary(taste) : '';
-        if (summary) return showsContinue ? `Una ràdio nova. ${summary}` : summary;
-        return 'Barreja el que t’agrada amb música nova, sense parar.';
+        if (!taste?.hasAny) return 'Només amb els artistes que segueixes i les cançons que t’agraden.';
+        const parts = [];
+        if (taste.followed) parts.push(countOf(taste.followed, 'artista que segueixes', 'artistes que segueixes'));
+        if (taste.liked) parts.push(countOf(taste.liked, 'cançó que t’agrada', 'cançons que t’agraden'));
+        const summary = `Només amb ${parts.join(' i ')}.`;
+        return showsContinue ? `Una ràdio nova. ${summary}` : summary;
     }
 
     function syncFirstTime(first) {
         const box = $('ptFirst');
         const chips = $('ptFirstChips');
-        const doc = window.document;
         if (box) box.hidden = !first.chooser;
         if (chips && first.chooser) {
             if (!chips.children.length) {
@@ -1232,8 +1238,6 @@
                 more.textContent = state.firstMore ? 'Menys estils' : 'Més estils';
             }
         }
-        const mode = doc?.querySelector?.('#ptRadio .pt-mode');
-        if (mode) mode.hidden = first.chooser || first.savedOnly;
         const reset = $('ptFirstReset');
         if (reset) reset.hidden = !first.savedOnly;
     }
@@ -1276,8 +1280,8 @@
                 art._html = html;
             }
         }
-        // «La teva ràdio» es fa amb el gust recent (escoltat aquests dies, m'agrades i seguits). La primera vegada
-        // —sense res d'això— es demanen els estils, i només aquesta vegada.
+        // «La teva ràdio» es fa amb els m'agrades i els artistes seguits. La primera vegada —sense res d'això— es
+        // demanen els estils, i només aquesta vegada.
         const taste = tasteNow();
         const first = firstTimeState(taste);
         entry?.classList.toggle('is-first-time', first.chooser);
@@ -1295,18 +1299,6 @@
             play.classList.toggle('pt-btn--ghost', showsContinue);
             entry?.setAttribute('aria-busy', ready ? 'false' : 'true');
         }
-        syncModeInputs();
-    }
-
-    function syncModeInputs() {
-        const discovery = app.features.discovery;
-        if (!discovery) return;
-        const mode = discovery.getMode();
-        window.document?.querySelectorAll?.('input[name="ptMode"]').forEach(input => {
-            input.checked = input.value === mode;
-        });
-        const hint = $('ptModeHint');
-        if (hint) hint.textContent = discovery.MODES.find(item => item.id === mode)?.hint || '';
     }
 
     function setNote(text) {
@@ -1354,6 +1346,8 @@
             toast('Encara no hi ha música carregada. Torna-ho a provar d’aquí a un moment.');
             return;
         }
+        // Per què hi ha cançons d'altres artistes (no n'hi havia prou amb els teus)
+        if (result.note) toast(result.note);
     }
 
     function enqueue(id) {
@@ -1506,22 +1500,6 @@
         }
     }
 
-    function onModeChange(event) {
-        const input = event.target;
-        if (input?.name !== 'ptMode') return;
-        const discovery = app.features.discovery;
-        const mode = discovery.setMode(input.value);
-        syncModeInputs();
-        const label = discovery.MODES.find(item => item.id === mode)?.label || '';
-        // Canviar el selector no toca la cançó que sona: només s'aplica en engegar o regenerar la cua.
-        const now = nowPlaying();
-        setNote(
-            now
-                ? `«${label}» s’aplicarà quan facis sonar una ràdio nova o regeneris la cua. No s’interromp res.`
-                : `Preferència desada: «${label}».`
-        );
-    }
-
     function bind() {
         if (state.bound) return;
         state.bound = true;
@@ -1530,12 +1508,10 @@
             root?.addEventListener('click', onClick);
             root?.addEventListener('keydown', onKeydown);
         });
-        entry?.addEventListener('change', onModeChange);
         state.container.addEventListener('scroll', () => syncRowControls(), { capture: true, passive: true });
         window.addEventListener('resize', () => syncRowControls(), { passive: true });
         window.addEventListener('scroll', syncRowControls, { passive: true });
         window.addEventListener('segueix:queue-changed', updateEntry);
-        window.addEventListener('segueix:discovery-mode-changed', syncModeInputs);
         window.addEventListener('segueix:music-prefs-changed', updateEntry);
         window.addEventListener('segueix:user-categories-changed', refreshStyles);
         observeLive();
@@ -1616,7 +1592,6 @@
         state.container = $('videosGrid');
         if (!state.container) return;
         bind();
-        syncModeInputs();
         updateEntry();
         watchLoading();
     }

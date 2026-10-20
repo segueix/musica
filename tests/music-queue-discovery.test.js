@@ -84,46 +84,91 @@ const knownHistory = known.map(id => ({
 }));
 const artistsOf = list => list.map(v => v.channelId);
 
-describe('«Fes-la sonar» (startDiscovery)', () => {
-    it('sense historial engega una ràdio variada i ho explica', () => {
-        const { ctx, queue, calls } = setup({ mode: 'home' });
+// Catàleg amb estils i visualitzacions: A (Pop) i B (Rock) són els artistes propis; la resta, per omplir.
+function personalCatalog({ ownSongs = 3 } = {}) {
+    const list = [];
+    for (let i = 0; i < ownSongs; i++) list.push(song('A', 2 + i, { categories: ['Pop'], viewCount: 100 + i }));
+    for (let i = 0; i < ownSongs; i++) list.push(song('B', 3 + i, { categories: ['Rock'], viewCount: 100 + i }));
+    'CDEFGHIJ'.split('').forEach((id, a) => {
+        for (let i = 0; i < 4; i++) list.push(song(id, 4 + i, { categories: ['Pop'], viewCount: 10000 * (a + 1) + i }));
+    });
+    'MNOP'.split('').forEach((id, a) => {
+        for (let i = 0; i < 4; i++) list.push(song(id, 4 + i, { categories: ['Rock'], viewCount: 5000 * (a + 1) + i }));
+    });
+    'XYZ'.split('').forEach(id => {
+        for (let i = 0; i < 4; i++) list.push(song(id, 4 + i, { categories: ['Jazz / Blues'], viewCount: 9e9 + i }));
+    });
+    return list;
+}
+
+describe('«La teva ràdio»: només el que t’agrada i segueixes', () => {
+    it('amb prou cançons dels teus artistes, la ràdio és només seva (el mode no hi compta)', () => {
+        for (const mode of ['home', 'mix', 'surprise', 'new']) {
+            const list = personalCatalog({ ownSongs: 25 });
+            const liked = [list.find(v => v.channelId === 'B')];
+            const env = setup({ followed: ['A'], liked, mode });
+            env.ctx.currentFeedVideos = list;
+            const result = env.queue.startDiscovery();
+            expect(result.started).toBe(true);
+            expect(result.note).toBe('');
+            const artists = new Set(artistsOf(env.ctx.activePlaylistQueue));
+            expect([...artists].sort()).toEqual(['A', 'B']);
+        }
+    });
+
+    it('si no n’hi ha prou, s’omple amb les més escoltades dels seus estils (mai d’un altre estil)', () => {
+        const list = personalCatalog();
+        const env = setup({ followed: ['A'], liked: [list.find(v => v.channelId === 'B')] });
+        env.ctx.currentFeedVideos = list;
+        const result = env.queue.startDiscovery();
+        expect(result.started).toBe(true);
+        expect(result.note).toMatch(/més escoltades/);
+        const queue = env.ctx.activePlaylistQueue;
+        // La primera és d'un artista propi i totes les cançons pròpies hi són
+        expect(['A', 'B']).toContain(queue[0].channelId);
+        const own = list.filter(v => v.channelId === 'A' || v.channelId === 'B').map(v => v.id);
+        expect(own.every(id => queue.some(v => v.id === id))).toBe(true);
+        // Les altres són de Pop o Rock (els estils d'A i B), cap de Jazz encara que tinguin més visualitzacions
+        const others = queue.filter(v => !['A', 'B'].includes(v.channelId));
+        expect(others.length).toBeGreaterThan(0);
+        expect(others.every(v => ['Pop', 'Rock'].includes(v.categories[0]))).toBe(true);
+    });
+
+    it('no té selector de modes: es diu «La teva ràdio» i en surt el «Barreja», desar i compartir', () => {
+        const list = personalCatalog();
+        const env = setup({ followed: ['A', 'B'] });
+        env.ctx.currentFeedVideos = list;
+        env.queue.startDiscovery();
+        const container = { innerHTML: '', _mqBound: true, addEventListener() {}, querySelector: () => null };
+        env.queue.render(container);
+        expect(env.queue.playlistName()).toBe('La teva ràdio');
+        expect(container.innerHTML).not.toContain('data-mq-mode');
+        expect(container.innerHTML).not.toContain('mq-mode');
+        expect(container.innerHTML).toContain('data-mq-regenerate');
+        expect(container.innerHTML).toContain('data-mq-save-list');
+        expect(env.queue.setDiscoveryMode('surprise')).toBeNull();
+    });
+
+    it('«Continua la ràdio» torna a fer «La teva ràdio» des de la mateixa cançó', () => {
+        const list = personalCatalog({ ownSongs: 25 });
+        const env = setup({ followed: ['A', 'B'] });
+        env.ctx.currentFeedVideos = list;
+        const first = env.queue.startDiscovery().seed;
+        expect(env.queue.getLastRadio()).toMatchObject({ id: first.id, personal: true });
+        env.ctx.activePlaylistQueue = [];
+        expect(env.queue.resumeLast()).toBe(true);
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(first.id);
+        expect(new Set(artistsOf(env.ctx.activePlaylistQueue))).toEqual(new Set(['A', 'B']));
+    });
+
+    it('sense m’agrades ni seguits engega les més escoltades i ho explica', () => {
+        const { ctx, queue, calls } = setup();
+        ctx.currentFeedVideos = personalCatalog();
         const result = queue.startDiscovery();
         expect(result.started).toBe(true);
-        expect(result.mode).toBe('variety');
-        expect(result.note).toMatch(/historial/);
+        expect(result.note).toMatch(/més escoltades/);
         expect(calls.loaded).toBe(1);
-        expect(ctx.isPlaylistMode).toBe(true);
         expect(ctx.activePlaylistId).toBe('__music_queue__');
-        expect(ctx.activePlaylistQueue.length).toBeGreaterThanOrEqual(12);
-        // Una sola cançó per artista a la cua
-        const artists = artistsOf(ctx.activePlaylistQueue);
-        expect(new Set(artists).size).toBe(artists.length);
-        expect(queue.getState().meta.note).toMatch(/historial/);
-    });
-
-    it('«Els meus de sempre» comença per un artista que ja ha escoltat', () => {
-        const { ctx, queue } = setup({ history: knownHistory, mode: 'home' });
-        const result = queue.startDiscovery();
-        expect(result.started).toBe(true);
-        expect(result.mode).toBe('home');
-        expect(known).toContain(ctx.activePlaylistQueue[0].channelId);
-        const firstFour = artistsOf(ctx.activePlaylistQueue.slice(0, 4));
-        expect(firstFour.every(id => known.includes(id))).toBe(true);
-    });
-
-    it('«Sorprèn-me» dona més pes als artistes encara no escoltats', () => {
-        const { ctx, queue } = setup({ history: knownHistory, mode: 'surprise' });
-        queue.startDiscovery();
-        expect(known).not.toContain(ctx.activePlaylistQueue[0].channelId);
-        const firstFour = artistsOf(ctx.activePlaylistQueue.slice(0, 4));
-        expect(firstFour.every(id => !known.includes(id))).toBe(true);
-    });
-
-    it('«Una mica de tot» alterna coneguts i descoberta', () => {
-        const { ctx, queue } = setup({ history: knownHistory, mode: 'mix' });
-        queue.startDiscovery();
-        const kinds = artistsOf(ctx.activePlaylistQueue.slice(0, 6)).map(id => (known.includes(id) ? 'K' : 'F'));
-        expect(kinds).toEqual(['K', 'F', 'K', 'F', 'K', 'F']);
     });
 
     it('no engega res si no hi ha música al feed', () => {
@@ -140,10 +185,63 @@ describe('«Fes-la sonar» (startDiscovery)', () => {
     });
 });
 
+describe('personalRadioPool (pura)', () => {
+    const { queue } = setup();
+    const keyOf = v => v.channelId;
+    const stylesOf = v => v.categories || [];
+
+    it('les cançons amb m’agrada, i totes les dels seus artistes i dels seguits', () => {
+        const list = personalCatalog({ ownSongs: 25 });
+        const liked = [list.find(v => v.channelId === 'B')];
+        const plan = queue.personalRadioPool({ candidates: list, liked, followedKeys: ['A'], keyOf, stylesOf });
+        expect(plan.own).toHaveLength(50);
+        expect(plan.filler).toEqual([]);
+        expect(plan.styles.sort()).toEqual(['Pop', 'Rock']);
+    });
+
+    it('omple fins a la mida amb les més escoltades dels estils propis, com a molt dues per artista', () => {
+        const list = personalCatalog();
+        const plan = queue.personalRadioPool({ candidates: list, followedKeys: ['A'], keyOf, stylesOf, size: 10 });
+        expect(plan.own).toHaveLength(3);
+        expect(plan.filler).toHaveLength(7);
+        expect(plan.filler.every(v => v.categories[0] === 'Pop' && v.channelId !== 'A')).toBe(true);
+        // De més a menys visualitzacions, i dues per artista: J, J, I, I, H, H, G
+        expect(plan.filler.map(v => v.channelId)).toEqual(['J', 'J', 'I', 'I', 'H', 'H', 'G']);
+    });
+
+    it('sense res propi: els estils triats la primera vegada o, si no, les més escoltades de tot', () => {
+        const list = personalCatalog();
+        const chosen = queue.personalRadioPool({
+            candidates: list,
+            keyOf,
+            stylesOf,
+            fallbackStyles: ['Rock'],
+            size: 4,
+        });
+        expect(chosen.own).toEqual([]);
+        expect(chosen.filler.map(v => v.channelId)).toEqual(['P', 'P', 'O', 'O']);
+        const all = queue.personalRadioPool({ candidates: list, keyOf, stylesOf, size: 4 });
+        // (empat de visualitzacions entre X, Y i Z: mana l'ordre del catàleg)
+        expect(all.filler.map(v => v.channelId)).toEqual(['X', 'Y', 'Z', 'X']);
+    });
+
+    it('no repeteix una cançó que ja és pròpia (el mateix títol d’un altre canal)', () => {
+        const list = personalCatalog();
+        const copy = { ...list.find(v => v.channelId === 'J'), id: 'copia000001', title: list[0].title };
+        const plan = queue.personalRadioPool({
+            candidates: [...list, copy],
+            followedKeys: ['A'],
+            keyOf,
+            stylesOf,
+        });
+        expect(plan.filler.some(v => v.id === copy.id)).toBe(false);
+    });
+});
+
 describe('canviar el mode no interromp la cançó actual', () => {
     it('la cua i la cançó queden intactes fins que es regenera', () => {
         const { ctx, queue, calls, discovery } = setup({ history: knownHistory, mode: 'home' });
-        queue.startDiscovery();
+        queue.startFrom(catalog[0].id, 'api');
         const before = ctx.activePlaylistQueue;
         const beforeIds = before.map(v => v.id);
         const loaded = calls.loaded;
@@ -156,7 +254,7 @@ describe('canviar el mode no interromp la cançó actual', () => {
 
     it('en regenerar s’aplica el mode nou i es manté el que sona', () => {
         const { ctx, queue, discovery } = setup({ history: knownHistory, mode: 'home' });
-        queue.startDiscovery();
+        queue.startFrom(catalog[0].id, 'api');
         const current = ctx.activePlaylistQueue[0];
         discovery.setMode('surprise');
         queue.regenerate();
@@ -235,50 +333,22 @@ describe('reproduir una selecció', () => {
     });
 });
 
-describe('«La teva ràdio»: gust recent i primera vegada', () => {
-    const recent = id => ({ ...catalog.find(v => v.channelId === id), viewedAt: new Date().toISOString() });
-
-    it('la primera vegada, amb estils triats, fa una ràdio d’aquells estils', () => {
+describe('«La teva ràdio»: primera vegada', () => {
+    it('amb estils triats i res més, sonen les més escoltades d’aquells estils', () => {
         const env = setup({ mode: 'home' });
-        env.discovery.setFirstStyles(['Pop']);
+        env.ctx.currentFeedVideos = personalCatalog();
+        env.discovery.setFirstStyles(['Rock']);
         const result = env.queue.startDiscovery();
         expect(result.started).toBe(true);
-        expect(result.mode).toBe('none');
-        expect(result.note).toMatch(/estils que vas triar/);
-        expect(env.queue.getState().categories).toEqual(['Pop']);
-        expect(env.calls.loaded).toBe(1);
+        expect(result.note).toMatch(/més escoltades de Rock/);
+        expect(env.ctx.activePlaylistQueue.every(v => v.categories[0] === 'Rock')).toBe(true);
     });
 
-    it('amb molt poques dades (< 3 artistes) continuen manant els estils triats', () => {
-        const env = setup({ history: [recent('A'), recent('B')], mode: 'mix' });
-        env.discovery.setFirstStyles(['Pop']);
+    it('amb m’agrades o seguits, els estils triats la primera vegada ja no manen', () => {
+        const env = setup({ followed: ['A', 'B'], mode: 'home' });
+        env.ctx.currentFeedVideos = personalCatalog({ ownSongs: 25 });
+        env.discovery.setFirstStyles(['Jazz / Blues']);
         env.queue.startDiscovery();
-        expect(env.queue.getState().categories).toEqual(['Pop']);
-    });
-
-    it('amb prou historial ja no mana l’elecció: la ràdio és general i es fa del gust recent', () => {
-        const env = setup({ history: knownHistory, mode: 'home' });
-        env.discovery.setFirstStyles(['Pop']);
-        const result = env.queue.startDiscovery();
-        expect(result.started).toBe(true);
-        expect(result.mode).toBe('home');
-        expect(env.queue.getState().categories).toEqual([]);
-        expect(known).toContain(env.ctx.activePlaylistQueue[0].channelId);
-    });
-
-    it('«Els meus de sempre» comença per un artista de la darrera setmana', () => {
-        const env = setup({ history: knownHistory, mode: 'home' });
-        for (let i = 0; i < 6; i++) {
-            const { ctx, queue } = setup({ history: knownHistory, mode: 'home' });
-            queue.startDiscovery();
-            expect(known).toContain(ctx.activePlaylistQueue[0].channelId);
-        }
-        expect(env.queue.startDiscovery().started).toBe(true);
-    });
-
-    it('un artista seguit compta per al gust encara que no s’hagi escoltat', () => {
-        const { ctx, queue } = setup({ history: knownHistory.slice(0, 3), followed: ['D'], mode: 'home' });
-        queue.startDiscovery();
-        expect(known).toContain(ctx.activePlaylistQueue[0].channelId);
+        expect(new Set(artistsOf(env.ctx.activePlaylistQueue))).toEqual(new Set(['A', 'B']));
     });
 });

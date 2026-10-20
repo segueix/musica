@@ -274,12 +274,13 @@ describe('ràdio amb el motor de selecció', () => {
         expect(built.slice(1).some(v => ids.has(v.id))).toBe(false);
     });
 
-    it('«La teva ràdio» engega la cua i el motor tria la primera cançó', () => {
+    it('«La teva ràdio» engega la cua amb els artistes seguits i la primera cançó és seva', () => {
         const catalog = catalogWithClassics();
-        const { queue, ctx, calls } = setup({ catalog });
+        const { queue, ctx, calls } = setup({ catalog, followed: ['c1', 'c2'] });
         const result = queue.startDiscovery();
         expect(result.started).toBe(true);
         expect(calls.loaded).toBe(1);
+        expect(['c1', 'c2']).toContain(ctx.activePlaylistQueue[0].channelId);
         expect(ctx.activePlaylistQueue.length).toBeGreaterThanOrEqual(12);
         expect(ctx.activePlaylistId).toBe('__music_queue__');
     });
@@ -289,7 +290,7 @@ describe('cua, regeneració i preferències', () => {
     function started() {
         const catalog = catalogWithClassics();
         const env = setup({ catalog });
-        env.queue.startDiscovery();
+        env.queue.startFrom(catalog[0].id, 'api');
         return { ...env, catalog };
     }
 
@@ -528,12 +529,14 @@ describe('«+»: sumar un estil a la ràdio', () => {
         expect(env.queue.buildListName()).toBe('Llista Pop + Rock');
     });
 
-    it('sumar un estil a la ràdio general la converteix en una ràdio d’aquell estil', () => {
-        const env = setup({ catalog: styledCatalog(), music: musicStub });
+    it('«La teva ràdio» no té «+» per sumar estils: és només dels teus artistes', () => {
+        const catalog = styledCatalog();
+        const env = setup({ catalog, music: musicStub, followed: ['pop1', 'rock2'] });
         env.queue.startDiscovery();
-        env.queue.addStyle('Jazz / Blues');
-        expect(env.queue.getState().categories).toEqual(['Jazz / Blues']);
-        expect(new Set(stylesOf(env.ctx.activePlaylistQueue.slice(1)))).toEqual(new Set(['Jazz / Blues']));
+        const container = fakeContainer();
+        env.queue.render(container);
+        expect(container.innerHTML).toContain('La teva ràdio');
+        expect(container.innerHTML).not.toContain('data-mq-add-style');
     });
 
     it('una selecció (Acabades de sortir...) que es regenera passa a ser una ràdio de l’estil de la cançó que sona', () => {
@@ -711,7 +714,7 @@ describe('desar la ràdio com a llista de reproducció', () => {
             const catalog = styledCatalog();
             const history = catalog.slice(0, 30).map(v => ({ ...v, viewedAt: new Date().toISOString() }));
             const env = setup({ catalog, music: musicStub, mode, history, liked: catalog.slice(40, 46) });
-            env.queue.startDiscovery();
+            env.queue.startFrom(catalog[0].id, 'api');
             const container = fakeContainer();
             env.queue.render(container);
             const html = container.innerHTML;
@@ -881,7 +884,8 @@ describe('mode de descoberta dins de cada ràdio', () => {
             extra: { renderPlaylistQueue: () => holder.env?.queue.render(container) },
         });
         holder.env = env;
-        env.queue.startDiscovery();
+        // «La teva ràdio» ja no té modes (2026-10-20): el selector es prova amb una ràdio d'estil.
+        env.queue.startFrom(catalog[0].id, 'api');
         return { ...env, catalog, container };
     }
 

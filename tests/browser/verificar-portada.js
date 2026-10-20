@@ -201,12 +201,12 @@ async function recorregut(browser, width, height) {
     await obrir(page);
     const nav = clau => page.click(`${mobile ? '.pt-bottom-nav' : '#sidebar'} [data-pt-nav="${clau}"]`);
 
-    // 5) «La teva ràdio»: una ràdio, un sol reproductor
+    // 5) «La teva ràdio»: una ràdio, un sol reproductor (amb artistes seguits; només historial demana els estils)
+    await ambGustRecent(page);
     comprovar(
         `${nom}: «La teva ràdio» està actiu`,
         await page.evaluate(() => !document.getElementById('ptPlayBtn').disabled)
     );
-    await ambGustRecent(page);
     await page.click('#ptPlayBtn');
     await page.waitForFunction(() => document.querySelectorAll('#videoPlayer iframe').length === 1, null, {
         timeout: 15000,
@@ -216,6 +216,20 @@ async function recorregut(browser, width, height) {
         return { radio: q.isRadio, longitud: activePlaylistQueue.length, id: q.current && q.current.id };
     });
     comprovar(`${nom}: engega una ràdio amb cua`, cua.radio && cua.longitud >= 2, cua);
+    // «La teva ràdio» (2026-10-20): comença per un artista seguit i no té selector de modes
+    const propia = await page.evaluate(() => {
+        const follows = JSON.parse(localStorage.getItem('catube_follows') || '[]').map(id => getVideoArtistKey({ channelId: id }));
+        return {
+            nom: SegueixApp.features.musicQueue.playlistName(),
+            primeraSeguida: follows.includes(getVideoArtistKey(activePlaylistQueue[0])),
+            selector: document.querySelectorAll('[data-mq-mode], input[name="ptMode"]').length,
+        };
+    });
+    comprovar(
+        `${nom}: «La teva ràdio» comença per un artista seguit i no té selector de modes`,
+        propia.nom === 'La teva ràdio' && propia.primeraSeguida && propia.selector === 0,
+        propia
+    );
 
     // 6) Canviar de secció amb la finestreta: el mateix reproductor
     await page.evaluate(() => document.getElementById('playerMiniBtn')?.click());
@@ -247,16 +261,6 @@ async function recorregut(browser, width, height) {
         `${nom}: «Ara sona» surt a Inici`,
         await page.evaluate(() => Boolean(document.querySelector('.pt-feature--now')))
     );
-
-    // Canviar el mode: no interromp la cançó
-    await page.click('label:has(input[value="surprise"])');
-    const igual = await page.evaluate(
-        id =>
-            SegueixApp.features.musicQueue.getState().current.id === id &&
-            localStorage.getItem('catube_discovery_mode') === 'surprise',
-        cua.id
-    );
-    comprovar(`${nom}: canviar el mode desa la preferència sense interrompre la cançó`, igual);
 
     // La cua respecta les afegides a mà
     await page.click('.pt-section--fresh .pt-cell:nth-child(2) [data-pt-queue]');
@@ -306,12 +310,6 @@ async function teclat(browser) {
     });
     await obrir(page);
     await ambGustRecent(page);
-    await page.focus('input[value="mix"]');
-    await page.keyboard.press('ArrowRight');
-    comprovar(
-        'teclat: les fletxes canvien el mode de descoberta',
-        await page.evaluate(() => localStorage.getItem('catube_discovery_mode') === 'surprise')
-    );
     await page.focus('#ptPlayBtn');
     const focus = await page.evaluate(() => {
         const s = getComputedStyle(document.activeElement);

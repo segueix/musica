@@ -127,13 +127,11 @@ describe('index.html de Segueix Música', () => {
         expect(manifest.background_color).toBe('#141615');
     });
 
-    it('té el cercador, l’entrada directa i el selector de tres opcions', () => {
+    it('té el cercador i l’entrada directa; «La teva ràdio» ja no té el selector de modes (2026-10-20)', () => {
         expect(html).toContain('placeholder="Què vols escoltar?"');
         expect(html).toContain('La teva ràdio');
-        for (const label of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me'])
-            expect(html).toContain(`<span>${label}</span>`);
-        expect(html).toContain('type="radio" name="ptMode"');
-        expect(html).toContain('Quant vols descobrir?');
+        expect(html).not.toContain('name="ptMode"');
+        expect(html).not.toContain('Quant vols descobrir?');
     });
 
     it('la navegació té les vistes demanades a escriptori i a mòbil', () => {
@@ -223,7 +221,6 @@ describe('«La teva ràdio» amb la barra lateral oberta: targeta sencera i car�
         expect(narrow).toMatch(/\.pt-radio__body,\s*\.pt-radio__covers \{\s*--pt-cover: clamp\(72px, 15cqw, 104px\)/);
         expect(narrow).toMatch(/\.pt-radio__body \{\s*flex: 1 1 auto;\s*padding-right: 28px/);
         expect(narrow).toMatch(/\.pt-radio__title,\s*\.pt-radio__lead,[\s\S]*?padding-right: calc\(/);
-        expect(narrow).toMatch(/\.pt-mode__options \{\s*max-width: none/);
     });
 });
 

@@ -126,7 +126,6 @@ const estatRadio = page =>
             canals: activePlaylistQueue.slice(currentPlaylistIndex + 1).map(item => String(item.channelId)),
             aplicat: queue.getAppliedMode(),
             global: localStorage.getItem('catube_discovery_mode'),
-            portada: document.querySelector('input[name="ptMode"]:checked')?.value,
         };
     });
 
@@ -144,7 +143,8 @@ async function main() {
         await page.goto('about:blank');
         await obrir(page);
         await ambGustRecent(page);
-        await page.click('#ptPlayBtn');
+        // «La teva ràdio» ja no té modes (2026-10-20): el selector es prova amb la ràdio d'un estil
+        await page.evaluate(() => SegueixApp.features.musicQueue.startStyleRadio(['Pop']));
         await page.waitForSelector('.mq--radio .mq-head .mq-mode', { timeout: 20000 });
         await page.waitForTimeout(800);
 
@@ -224,9 +224,9 @@ async function main() {
             animacio
         );
         comprovar(
-            'el mode queda desat i la portada s’hi sincronitza',
-            sorpresa.global === 'surprise' && sorpresa.portada === 'surprise',
-            { global: sorpresa.global, portada: sorpresa.portada }
+            'el mode queda desat',
+            sorpresa.global === 'surprise',
+            { global: sorpresa.global }
         );
         comprovar(
             'la cançó afegida a mà es manté a la cua',
@@ -312,7 +312,8 @@ async function main() {
         await page.goto('about:blank');
         await obrir(page);
         await ambGustRecent(page);
-        await page.click('#ptPlayBtn');
+        // «La teva ràdio» ja no té modes (2026-10-20): el selector es prova amb la ràdio d'un estil
+        await page.evaluate(() => SegueixApp.features.musicQueue.startStyleRadio(['Pop']));
         await page.waitForSelector('.mq--radio .mq-head .mq-mode', { timeout: 20000 });
         await page.waitForTimeout(800);
         await page.click('[data-mq-mode="surprise"]');
