@@ -665,7 +665,7 @@
         const artist = String(info.artist || '').trim();
         // `title`: nom fix de la ràdio (la d'una categoria pròpia és «Ràdio <categoria>», no «Ràdio de …»).
         const title = String(info.title || '').trim();
-        searchRadio = { videos: pool, query, artist, title, channelId: String(info.channelId || '') };
+        searchRadio = { videos: pool, query, artist, title, channelId: String(info.channelId || ''), artistOnly: info.artistOnly === true };
         savedListId = '';
         radioSeedTitle = '';
         radioLabel = title || (artist ? `Ràdio de ${artist}` : query ? `Cerca «${query}»` : 'Cerca');
@@ -741,7 +741,7 @@
         return launchPoolRadio(
             pool,
             seed,
-            { artist: name, title: String(options.title || '').trim(), channelId: options.channelId },
+            { artist: name, title: String(options.title || '').trim(), channelId: options.channelId, artistOnly: true },
             options
         );
     }
@@ -1539,6 +1539,7 @@
             isPlaylistMode &&
             activePlaylistId === QUEUE_ID &&
             (!radioLabel || searchRadio) &&
+            !searchRadio?.artistOnly &&
             activePlaylistQueue.length &&
             app.features.discovery?.MODES
         );

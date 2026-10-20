@@ -1075,6 +1075,11 @@ describe('ràdios de la fitxa d’artista', () => {
         expect(queue.getState()).toMatchObject({ isRadio: true, artist: 'Artista Fitxa', search: '' });
         expect(queue.playlistName()).toBe('Ràdio de Artista Fitxa');
         expect(queue.getShareData().name).toBe('Ràdio de Artista Fitxa');
+        const container = { innerHTML: '', querySelector: () => null, querySelectorAll: () => [], addEventListener: () => {} };
+        queue.render(container);
+        expect(container.innerHTML).not.toContain('data-mq-mode');
+        expect(container.innerHTML).toContain('data-mq-regenerate');
+        expect(queue.setDiscoveryMode('surprise')).toBeNull();
     });
 
     it('«Barreja» d’una ràdio d’artista es queda dins les seves cançons', () => {
