@@ -982,3 +982,57 @@ describe('simulació sobre el catàleg real', () => {
     });
 });
 
+
+
+describe('ràdio personal: varietat entre arrencades', () => {
+    const videos = Array.from({ length: 160 }, (_, a) =>
+        Array.from({ length: 5 }, (_, i) => song(`var${a}`, { views: 1000000 / (i + 1), title: `Peça ${a} ${i}` }))).flat();
+    const ctx = makeCtx(videos);
+    const signals = E.emptySignals();
+    signals.followed = new Set(Array.from({ length: 80 }, (_, i) => `var${i}`));
+    const isOwn = v => signals.followed.has(v.channelId);
+    const make = (seed, opts = {}) => E.selectRadio({ ctx, candidates: videos, signals, policy: 'personal', count: 40, rng: mulberry(seed), ...opts });
+    it('reparteix 24 preferides i 16 afins, varia la cua i separa quatre cançons entre artistes', () => {
+        const orders = new Set();
+        for (let i = 0; i < 10; i++) {
+            const result = make(i);
+            expect(result.queue).toHaveLength(40);
+            expect(result.queue.filter(isOwn)).toHaveLength(24);
+            result.queue.forEach((v, at, list) => expect(list.slice(Math.max(0, at - 4), at).map(x => x.channelId)).not.toContain(v.channelId));
+            orders.add(result.queue.map(v => v.id).join(','));
+        }
+        expect(orders.size).toBe(10);
+    });
+    it('renova almenys el 70 % i no repeteix les últimes 20 escoltades ni les cinc arrencades', () => {
+        let previousIds = [], starts = [];
+        const recent = videos.slice(50, 70).map(v => ({ id: v.id, at: NOW }));
+        for (let i = 0; i < 10; i++) {
+            const first = make(100 + i, { count: 1, firstPersonal: true, avoidStarts: starts, previousIds, signals: { ...signals, recent } }).queue[0];
+            expect(starts).not.toContain(first.id);
+            const tail = make(200 + i, { count: 39, seed: first, preceding: [first], previousIds, signals: { ...signals, recent } }).queue;
+            const queue = [first, ...tail];
+            expect(queue.filter(v => previousIds.includes(v.id)).length).toBeLessThanOrEqual(12);
+            expect(queue.some(v => recent.some(r => r.id === v.id))).toBe(false);
+            expect(queue.filter(isOwn)).toHaveLength(24);
+            previousIds = queue.map(v => v.id); starts = [first.id, ...starts].slice(0, 5);
+        }
+    });
+    it('els èxits tenen més probabilitat, però no monopolitzen el sorteig', () => {
+        const pair = [song('popular', { views: 1000000 }), song('minor', { views: 100 })];
+        const pairCtx = makeCtx(pair);
+        let popular = 0;
+        for (let i = 0; i < 200; i++) {
+            const result = E.selectRadio({ ctx: pairCtx, candidates: pair, signals: E.emptySignals(), policy: 'personal', count: 1, rng: mulberry(i) });
+            if (result.queue[0].id === pair[0].id) popular++;
+        }
+        expect(popular).toBeGreaterThan(140); expect(popular).toBeLessThan(200);
+    });
+    it('amb un catàleg petit relaxa la varietat, però no duplica ni recupera descartats', () => {
+        const small = videos.slice(0, 5), sig = E.emptySignals(); sig.lessLike.add(small[0].id);
+        const result = E.selectRadio({ ctx, candidates: small, signals: { ...sig, recent: small.map(v => ({ id: v.id, at: NOW })) }, policy: 'personal', previousIds: small.map(v => v.id), count: 40, rng: mulberry(1) });
+        expect(result.queue).toHaveLength(4);
+        expect(new Set(result.queue.map(v => v.id)).size).toBe(4);
+        expect(result.queue.some(v => v.id === small[0].id)).toBe(false);
+        expect(result.meta.relaxedLevel).toBeGreaterThan(0);
+    });
+});

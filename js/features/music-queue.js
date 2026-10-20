@@ -306,11 +306,10 @@
     function buildQueueEngine(video, category = '', options = {}) {
         const sel = engine();
         const discovery = app.features.discovery;
-        // Ràdio personal: el gust propi el tria el motor i les categories afegides hi entren després com a èxits.
+        // Ràdio personal: el motor reserva places per al gust propi i per als èxits, incloses les categories afegides.
         // Sense gust propi encara, la ràdio és de les categories triades (si n'hi ha).
-        const hasTaste = options.personal && Boolean(recentTasteNow()?.hasAny);
         const candidates = options.personal
-            ? personalCandidates(getCandidates(video, '', options), hasTaste ? [] : category)
+            ? personalCandidates(getCandidates(video, '', options), category)
             : getCandidates(video, category, options);
         const preceding = options.preceding?.length ? options.preceding : [video];
         const mode = options.personal ? 'mix' : options.mode || discovery?.getMode?.() || 'mix';
@@ -320,7 +319,7 @@
             ctx,
             candidates,
             seed: video,
-            signals: selectionSignals(played),
+            signals: selectionSignals(options.personal ? [] : played),
             mode,
             policy: options.personal ? 'personal' : options.policy || 'general',
             affinities: !options.personal,
@@ -329,6 +328,9 @@
             now: Date.now(),
             rng: options.rng || Math.random,
             category,
+            previousIds: options.previousIds,
+            extraCategories: options.personal ? asCategories(category) : [],
+            extraTags: item => asCategories(category).filter(name => matchesCategory(item, name)),
             // Amb diversos estils la ràdio els barreja a parts iguals
             mix:
                 !options.personal && asCategories(category).length > 1
@@ -347,47 +349,7 @@
             era: result.meta.era,
             relaxedLevel: result.meta.relaxedLevel,
         };
-        const extra = options.personal ? asCategories(category) : [];
-        if (!extra.length) return [video, ...result.queue];
-        const taken = new Set([...preceding, ...result.queue].map(item => String(item?.id)));
-        (options.playedIds || []).forEach(id => taken.add(String(id)));
-        const hits = categoryHits(video, extra, { ...options, taken, signals: selectionSignals(played) });
-        return [video, ...blendCategoryHits(result.queue, hits, { artistOf, count: MAX_QUEUE_LENGTH - 1 })];
-    }
-
-    // Èxits de les categories afegides a la ràdio personal: per a cada categoria, les cançons més vistes, una per
-    // artista, sense les que ja hi són ni les que han sonat fa poc (descans de la sessió). Es tornen a torns entre
-    // categories perquè totes hi siguin a parts iguals.
-    function categoryHits(video, categories, options = {}) {
-        const taken = options.taken || new Set();
-        const recent = new Set(
-            (options.signals?.recent || []).slice(0, 12).map(entry => String(entry?.id || ''))
-        );
-        const usedArtists = new Set();
-        const lists = categories.map(name =>
-            getCandidates(video, name, { personal: true, liveOnly: options.liveOnly })
-                .filter(item => !taken.has(String(item.id)) && !recent.has(String(item.id)))
-                .sort((a, b) => (Number(b.viewCount) || 0) - (Number(a.viewCount) || 0))
-        );
-        const out = [];
-        const cursors = lists.map(() => 0);
-        let progressed = true;
-        while (progressed) {
-            progressed = false;
-            lists.forEach((list, index) => {
-                while (cursors[index] < list.length) {
-                    const item = list[cursors[index]++];
-                    const artist = artistOf(item) || String(item.id);
-                    if (usedArtists.has(artist) || taken.has(String(item.id))) continue;
-                    usedArtists.add(artist);
-                    taken.add(String(item.id));
-                    out.push(item);
-                    progressed = true;
-                    break;
-                }
-            });
-        }
-        return out;
+        return [video, ...result.queue];
     }
 
     // Intercala els èxits de les categories afegides amb el gust propi: una de cada dues cançons (pura).
@@ -524,6 +486,7 @@
                     category: category || '',
                     liveOnly: radioLiveOnly,
                     personal: radioMeta?.personal === true,
+                    session: radioMeta?.personal ? { ...captureSession(), playbackSeconds: 0 } : null,
                     at: Date.now(),
                 })
             );
@@ -532,12 +495,27 @@
         }
     }
 
+    // Desa la cua real i la posició; generar una ràdio no equival a haver-ne escoltat les cançons.
+    function persistLastRadio() {
+        if (activePlaylistId !== QUEUE_ID || !radioMeta?.personal || !isPlaylistMode) return;
+        const session = captureSession();
+        const current = session?.queue?.[session.index];
+        if (!current) return;
+        session.playbackSeconds = typeof lastKnownPlayerTime === 'number' ? Math.max(0, lastKnownPlayerTime) : 0;
+        try {
+            window.localStorage?.setItem(LAST_RADIO_KEY, JSON.stringify({
+                id: String(current.id), title: current.title || '', category: radioStyles().join('|'),
+                liveOnly: radioLiveOnly, personal: true, session, at: Date.now(),
+            }));
+        } catch (_) { /* La cua en memòria continua sent utilitzable. */ }
+    }
+
     function getLastRadio() {
         try {
             const raw = JSON.parse(window.localStorage?.getItem?.(LAST_RADIO_KEY) || 'null');
             if (!raw?.id || Date.now() - Number(raw.at) > LAST_RADIO_MAX_AGE) return null;
-            return findVideo(raw.id)
-                ? { id: raw.id, title: raw.title, category: raw.category || '', liveOnly: raw.liveOnly === true, personal: raw.personal === true, at: raw.at }
+            return (findVideo(raw.id) || raw.session?.queue?.find(item => String(item.id) === String(raw.id)))
+                ? { id: raw.id, title: raw.title, category: raw.category || '', liveOnly: raw.liveOnly === true, personal: raw.personal === true, session: raw.session, at: raw.at }
                 : null;
         } catch (error) {
             return null;
@@ -547,13 +525,23 @@
     // Continua la darrera ràdio amb una cua nova (mateixa cançó inicial i categoria). Només des d'un gest de l'usuari.
     function resumeLast() {
         const last = getLastRadio();
-        const video = last ? findVideo(last.id) : null;
+        const video = last ? findVideo(last.id) || last.session?.queue?.find(item => String(item.id) === String(last.id)) : null;
         if (
             !video ||
             document.body.classList.contains('segueix-tv-active') ||
             typeof loadVideoInSequence !== 'function'
         ) {
             return false;
+        }
+        if (last.personal && last.session && restoreSession(last.session, last.id)) {
+            if (typeof cachedAPIVideos !== 'undefined' && Array.isArray(cachedAPIVideos)) {
+                const known = new Set(cachedAPIVideos.map(item => String(item.id)));
+                cachedAPIVideos.push(...activePlaylistQueue.filter(item => !known.has(String(item.id))));
+            }
+            clearEmbeddedYouTubeSession();
+            loadVideoInSequence({ autoPlay: false, replaceHistory: true,
+                startAt: Math.max(0, Number(last.session.playbackSeconds) || 0) });
+            return true;
         }
         clickCategory = null;
         return launch(
@@ -568,6 +556,7 @@
     // Reprodueix una selecció (p. ex. «Acabades de sortir») tal com és, en el seu ordre, com a cua.
     // Després, «Regenera la cua» la converteix en una ràdio normal.
     function playSelection(videos, label = '') {
+        persistLastRadio();
         if (typeof loadVideoInSequence !== 'function' || document.body.classList.contains('segueix-tv-active')) {
             return false;
         }
@@ -917,6 +906,22 @@
         return candidates.filter(item => known(item) || allowed.some(style => matchesCategory(item, style)));
     }
 
+    const PERSONAL_MEMORY_KEY = 'catube_personal_radio_memory_v1';
+    let personalMemory = { previousIds: [], starts: [] };
+    function readPersonalMemory() {
+        try {
+            const value = JSON.parse(window.localStorage?.getItem(PERSONAL_MEMORY_KEY) || 'null');
+            if (value && Array.isArray(value.previousIds) && Array.isArray(value.starts)) personalMemory = value;
+        } catch (_) { /* Sense emmagatzematge: memòria d'aquesta visita. */ }
+        return personalMemory;
+    }
+    function rememberPersonalGeneration() {
+        const old = readPersonalMemory();
+        personalMemory = { previousIds: activePlaylistQueue.map(item => String(item.id)),
+            starts: [String(activePlaylistQueue[0].id), ...old.starts].slice(0, 5) };
+        try { window.localStorage?.setItem(PERSONAL_MEMORY_KEY, JSON.stringify(personalMemory)); } catch (_) { /* Quota. */ }
+    }
+
     // Una sola modalitat de ràdio personal, independent del mode antic desat al navegador.
     function startDiscovery(options = {}) {
         const none = { started: false, note: '', mode: 'none', seed: null };
@@ -925,14 +930,18 @@
         const candidates = personalCandidates(getCandidates(null, '', { personal: true }), extra);
         if (!candidates.length) return none;
         const sel = engine();
+        const memory = readPersonalMemory();
         const first = sel.selectRadio({
             ctx: sel.getAppContext(Array.isArray(currentFeedVideos) ? currentFeedVideos : candidates),
             candidates, signals: selectionSignals(), mode: 'mix', policy: 'personal',
+            firstPersonal: true, avoidStarts: memory.starts, previousIds: memory.previousIds,
             affinities: false, count: 1, now: Date.now(), rng: options.rng || Math.random,
         }).queue[0];
         if (!first) return none;
         clickCategory = null;
-        const started = launch(first, extra, { ...options, personal: true });
+        persistLastRadio();
+        const started = launch(first, extra, { ...options, personal: true, previousIds: memory.previousIds });
+        if (started) rememberPersonalGeneration();
         return { started, note: '', mode: 'mix', seed: first };
     }
 
@@ -1292,6 +1301,7 @@
     }
 
     function refresh() {
+        persistLastRadio();
         updatePlaylistModeBadge?.();
         syncQueueNextOverlay?.();
         renderPlaylistQueue();
@@ -2016,6 +2026,7 @@
     app.features.musicQueue = {
         handleUnavailableVideo,
         captureSession,
+        persistLastRadio,
         restoreSession,
         startFrom,
         startDiscovery,
@@ -2054,4 +2065,5 @@
         QUEUE_ID,
     };
 })(window);
+
 

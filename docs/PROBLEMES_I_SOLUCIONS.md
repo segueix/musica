@@ -2094,3 +2094,12 @@ Petició: retirar els quatre modes de «La teva ràdio», conservar la targeta a
 **Solució Implementada:** a `buildQueueEngine()` (`music-queue.js`) el motor tria la part del gust propi **sense** les categories afegides, i després `categoryHits()` agafa, per a cada categoria, les cançons més vistes (una per artista, a torns entre categories, sense les ja posades ni les 12 darreres escoltades) i `blendCategoryHits()` (pura) les intercala una de cada dues, evitant dos temes seguits del mateix artista. Val en engegar, en sumar una categoria des de la cua i en ampliar-la. Sense gust propi, la base ja és de les categories triades. Amb el catàleg real: 11 Urban, 5 Rock i 4 Jazz de les 20 primeres, els èxits per ordre de visualitzacions.
 
 **Trampa:** no tornis a confiar en el motor per «sumar» una categoria a una política amb sorpresa 0: cal reservar-li places. Prova: `tests/music-queue-selection.test.js` («les categories afegides hi sumen les cançons més vistes»).
+
+
+## 2026-10-20 — Renovació de «La teva ràdio» i continuació exacta
+
+La puntuació fixa repetia els èxits i l'ordre. La política personal del motor compartit ara fa un sorteig ponderat, amb places 60/40, límit del 30 % de coincidències amb la cua anterior, descans de les 20 últimes reproduïdes, cinc arrencades diferents i quatre cançons entre repeticions d'artista. La falta de candidates permet relaxar els límits progressivament; els descartats i els duplicats de gravació continuen exclosos. Les categories afegides tenen places reservades dins del 40 %, sense una postbarreja que saltés les restriccions.
+
+La memòria de generació és independent de les escoltes: no s'afegeix una cua no escoltada a `musicSignals.recent`. «Continua» abans reconstruïa una ràdio a partir de la llavor; ara desa i restaura el snapshot real, l'índex i el segon. Les dades són locals i el nou estat no s'envia a Analytics.
+
+Proves amb llavors fixes: repartiment 24/16 en cues de 40, deu generacions amb com a mínim el 70 % de renovació, exclusió de les 20 reproduïdes i cinc arrencades, descans d'artista, probabilitat dels èxits, catàleg petit sense duplicats ni descartats, memòria entre visites i continuació exacta al segon 73. Sense canvis visuals ni reproducció automàtica.

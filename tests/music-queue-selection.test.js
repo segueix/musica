@@ -1380,7 +1380,7 @@ describe('La teva ràdio: una sola barreja de preferides i èxits', () => {
         expect(env.queue.playlistName()).toBe('La teva ràdio + Rock');
         const rock = env.ctx.activePlaylistQueue.filter(v => v.categories.includes('Rock'));
         expect(rock.length).toBeGreaterThan(0);
-        expect(rock[0].viewCount).toBe(10000000);
+        expect(rock.slice(0, 10).filter(v => v.viewCount > 1000000).length).toBeGreaterThan(5);
         expect(env.ctx.activePlaylistQueue.every(v => !v.categories.includes('Jazz / Blues'))).toBe(true);
         expect(env.queue.removeStyle('Rock')).toBe(true);
         expect(env.queue.playlistName()).toBe('La teva ràdio');
@@ -1403,7 +1403,7 @@ describe('La teva ràdio: una sola barreja de preferides i èxits', () => {
     it('sense dades personals comença pels èxits, i respecta una categoria explícita', () => {
         const catalog = commercialCatalog();
         const env = setup({ catalog, mode: 'new' });
-        expect(env.queue.startDiscovery({ categories: ['Rock'] }).started).toBe(true);
+        expect(env.queue.startDiscovery({ categories: ['Rock'], rng: () => 0.5 }).started).toBe(true);
         expect(env.ctx.activePlaylistQueue[0].viewCount).toBe(10000000);
         expect(env.ctx.activePlaylistQueue.every(v => v.categories.includes('Rock'))).toBe(true);
     });
@@ -1435,14 +1435,13 @@ describe('La teva ràdio: les categories afegides hi sumen les cançons més vis
     it('amb molt de gust propi, la categoria triada hi és de debò i amb els seus èxits', () => {
         const { pop, rock, catalog } = tasteAndRock();
         const env = setup({ catalog, liked: pop, followed: [...new Set(pop.map(v => v.channelId))] });
-        expect(env.queue.startDiscovery({ categories: ['Rock'] }).started).toBe(true);
+        expect(env.queue.startDiscovery({ categories: ['Rock'], rng: () => 0.5 }).started).toBe(true);
         const top = env.ctx.activePlaylistQueue.slice(0, 20);
         const rockIn = top.filter(v => v.categories.includes('Rock'));
         expect(rockIn.length).toBeGreaterThanOrEqual(6);
-        // Els més vistos de la categoria, un per artista
-        const best = [...rock].sort((a, b) => b.viewCount - a.viewCount)[0];
-        expect(env.ctx.activePlaylistQueue.some(v => v.id === best.id)).toBe(true);
-        expect(new Set(rockIn.map(v => v.channelId)).size).toBe(rockIn.length);
+        // Sorteig entre els èxits, amb quatre cançons entre repeticions de grup.
+        expect(rockIn.every(v => v.viewCount > 6000000)).toBe(true);
+        top.forEach((v, i) => expect(top.slice(Math.max(0, i - 4), i).map(x => x.channelId)).not.toContain(v.channelId));
         // El gust propi continua present
         expect(top.filter(v => v.categories.includes('Pop')).length).toBeGreaterThanOrEqual(6);
     });
@@ -1461,4 +1460,39 @@ describe('La teva ràdio: les categories afegides hi sumen les cançons més vis
         const added = env.ctx.activePlaylistQueue.slice(before);
         expect(added.some(v => v.categories.includes('Rock'))).toBe(true);
     });
+});
+
+
+it('Continuar recupera exactament la cua, la cançó i el segon, sense sortejar-la de nou', () => {
+    const catalog = Array.from({length: 80}, (_, i) => song('resume'+i, 0.2));
+    const env = setup({ catalog, liked: catalog.slice(0, 40), extra: { lastKnownPlayerTime: 0 } });
+    env.queue.startDiscovery();
+    const original = env.ctx.activePlaylistQueue.map(v => v.id);
+    env.ctx.currentPlaylistIndex = 7;
+    env.ctx.lastKnownPlayerTime = 73;
+    env.queue.persistLastRadio();
+    env.queue.playSelection(catalog.slice(60, 65), 'Una altra selecció');
+    expect(env.queue.resumeLast()).toBe(true);
+    expect(env.ctx.activePlaylistQueue.map(v => v.id)).toEqual(original);
+    expect(env.ctx.currentPlaylistIndex).toBe(7);
+    expect(env.calls.lastLoad.startAt).toBe(73);
+    expect(env.calls.lastLoad.autoPlay).toBe(false);
+});
+
+it('Ràdio nova conserva la memòria de cues i arrencades entre visites', () => {
+    const catalog = Array.from({ length: 200 }, (_, i) => song('memory'+i, 0.2, { viewCount: 100000+i }));
+    const env = setup({ catalog, liked: catalog.slice(0, 100) });
+    const starts = [], queues = [];
+    for (let i = 0; i < 7; i++) {
+        expect(env.queue.startDiscovery({ rng: () => 0.5 }).started).toBe(true);
+        const ids = env.ctx.activePlaylistQueue.map(v => v.id);
+        expect(starts.slice(-5)).not.toContain(ids[0]);
+        if (queues.length) expect(ids.filter(id => queues.at(-1).includes(id)).length).toBeLessThanOrEqual(12);
+        starts.push(ids[0]); queues.push(ids);
+    }
+    const next = setup({ catalog, liked: catalog.slice(0, 100) });
+    next.localStorage.setItem('catube_personal_radio_memory_v1', env.localStorage.getItem('catube_personal_radio_memory_v1'));
+    next.queue.startDiscovery({ rng: () => 0.5 });
+    expect(starts.slice(-5)).not.toContain(next.ctx.activePlaylistQueue[0].id);
+    expect(next.ctx.activePlaylistQueue.filter(v => queues.at(-1).includes(v.id)).length).toBeLessThanOrEqual(12);
 });

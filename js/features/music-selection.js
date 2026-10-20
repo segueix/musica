@@ -1189,6 +1189,77 @@
             ? 'Ràdio de descoberta: 1 artista que encara no has escoltat.'
             : `Ràdio de descoberta: ${n} artistes que encara no has escoltat.`;
 
+    // Ràdio personal: sorteig ponderat amb places 60/40 i memòria entre arrencades.
+    // Les restriccions només s'afluixen quan no queda cap candidata compatible.
+    function selectPersonalRadio(options, signals) {
+        const { ctx } = options;
+        const rng = options.rng || Math.random;
+        const count = Math.max(1, options.count || ctx.config.queue.max - 1);
+        const preceding = toArray(options.preceding).length ? options.preceding : options.seed ? [options.seed] : [];
+        const known = item => signals.liked.has(item.f.id) || signals.moreLike.has(item.f.id) || isKnownArtist(item.f.artist, signals);
+        const previous = new Set(toArray(options.previousIds).map(String));
+        const recent = new Set(toArray(signals.recent).slice(0, 20).map(entry => String(entry.id)));
+        const starts = new Set(toArray(options.avoidStarts).slice(0, 5).map(String));
+        const sequence = preceding.map(video => ({ video, f: featuresOf(ctx, video) }));
+        const used = new Set(sequence.map(item => item.f.id));
+        const recordings = recordingIndex(sequence.map(item => item.f.keys));
+        const remaining = buildItems(toArray(options.candidates), ctx, signals, options.seed, null);
+        const maxOld = Math.floor((count + preceding.length) * 0.3);
+        let oldCount = sequence.filter(item => previous.has(item.f.id)).length;
+        let knownCount = sequence.filter(known).length;
+        let extraTurn = 0;
+        let relaxedLevel = 0;
+        const picked = [];
+        const extras = toArray(options.extraCategories);
+        const tags = item => options.extraTags?.(item.video) || [];
+        while (picked.length < count) {
+            let pool = [];
+            let level = 0;
+            for (; level < 6 && !pool.length; level++) {
+                const gap = level < 2 ? 4 : level < 4 ? 1 : 0;
+                const lastArtists = new Set(sequence.slice(-gap || sequence.length).map(item => item.f.artist));
+                pool = remaining.filter(item => !used.has(item.f.id) && !recordings.has(item.f.keys)
+                    && (!gap || !lastArtists.has(item.f.artist))
+                    && (level >= 3 || !previous.has(item.f.id) || oldCount < maxOld)
+                    && (level >= 4 || !recent.has(item.f.id))
+                    && (level >= 5 || !starts.has(item.f.id)));
+                if (pool.length) relaxedLevel = Math.max(relaxedLevel, level);
+            }
+            if (!pool.length) break;
+            // Distribució acumulada: 3 conegudes i 2 d'altres grups per cada cinc.
+            const wantKnown = options.firstPersonal || knownCount < Math.round((sequence.length + 1) * 0.6);
+            const lane = pool.filter(item => known(item) === Boolean(wantKnown));
+            if (lane.length) pool = lane;
+            // Les categories explícites tenen places dins del 40 %, sense una postbarreja que trenqui el descans.
+            if (!wantKnown && extras.length) {
+                const label = extras[extraTurn % extras.length];
+                const categoryPool = pool.filter(item => tags(item).includes(label));
+                if (categoryPool.length) pool = categoryPool;
+                extraTurn += 1;
+            }
+            // Cursa exponencial: més vistes i més gust donen més probabilitat, mai una ordenació fixa.
+            let winner = null, best = Infinity;
+            for (const item of pool) {
+                const taste = Math.max(songTaste(item.f.id, signals, ctx.now, ctx.config),
+                    artistTaste(item.f.artist, signals, ctx.now, ctx.config));
+                const views = Math.max(0, Number(item.video.viewCount) || 0);
+                const weight = Math.pow(1 + Math.log1p(views), 2) * (1 + 3 * taste)
+                    / (1 + 4 * item.parts.penalty);
+                const key = -Math.log(Math.max(1e-9, Math.min(1 - 1e-9, rng()))) / weight;
+                if (key < best) { best = key; winner = item; }
+            }
+            if (!winner) break;
+            picked.push(winner); sequence.push(winner); used.add(winner.f.id); recordings.add(winner.f.keys);
+            if (known(winner)) knownCount += 1;
+            if (previous.has(winner.f.id)) oldCount += 1;
+        }
+        return { queue: picked.map(item => item.video), meta: {
+            mode: 'mix', requested: 'mix', personal: true, note: '', relaxedLevel,
+            era: shares(picked), fam: { known: picked.filter(known).length, affine: picked.filter(item => !known(item)).length, surprise: 0 },
+            renewal: { previous: oldCount, limit: maxOld },
+        } };
+    }
+
     // Ràdio: retorna la part automàtica de la cua (sense la cançó inicial).
     // options: { ctx, candidates, seed, signals, mode, policy, count, preceding, now, rng, category }
     function selectRadio(options = {}) {
@@ -1198,6 +1269,7 @@
         const signals = normalizeSignals(options.signals);
         const requestedMode = options.mode && cfg.familiarity[options.mode] ? options.mode : 'mix';
         const policy = options.policy || 'general';
+        if (policy === 'personal') return selectPersonalRadio(options, signals);
         // «Fora del meu radar» només té sentit en una ràdio general o d'estil. En una cerca, o en la ràdio d'un artista, el
         // conjunt el tria l'usuari: allà el mode s'aplica com a «Sorprèn-me» i no s'exclou res.
         const discover = requestedMode === 'new' && policy === 'general';
@@ -1209,24 +1281,13 @@
 
         // «historic»: només música antiga. «search»: ràdio d'una cerca; usa les cançons trobades tal com són
         // (sense mescla d'antiguitat), només ordenades pel gust de l'usuari i sense repetir artista seguit.
-        const eraFree = policy === 'historic' || policy === 'search' || policy === 'personal';
+        const eraFree = policy === 'historic' || policy === 'search';
         const hasEnough = knownArtistCount(signals) >= 3;
         // `mix`: { labels, tagOf } perquè la ràdio barregi diversos estils a parts iguals.
         const mix = options.mix && toArray(options.mix.labels).length > 1 ? options.mix : null;
-        const artistFirst = policy !== 'personal' && options.artistFirst !== false;
+        const artistFirst = options.artistFirst !== false;
         // El soroll per cançó donaria més oportunitats als catàlegs grans abans del sorteig d'artista.
         let built = buildItems(toArray(options.candidates), ctx, signals, seed, artistFirst ? null : rng);
-        if (policy === 'personal') {
-            // Una única barreja: gust propi + èxits. La popularitat és absoluta, no relativa al canal.
-            const maxViews = Math.max(1, ...built.map(item => Number(item.video.viewCount) || 0));
-            for (const item of built) {
-                const taste = Math.max(songTaste(item.f.id, signals, ctx.now, cfg),
-                    artistTaste(item.f.artist, signals, ctx.now, cfg));
-                const popularity = Math.log1p(Math.max(0, Number(item.video.viewCount) || 0)) / Math.log1p(maxViews);
-                item.base = 0.65 * taste + 0.35 * popularity - item.parts.penalty;
-            }
-        }
-        if (policy === 'personal') built.sort((a, b) => b.base - a.base);
         let relaxedDiscovery = false;
         if (discover) {
             const found = discoveryPool(built, signals, count, cfg);
@@ -1287,8 +1348,7 @@
             }
         }
 
-        const famTargets = policy === 'personal' ? { known: 0.65, affine: 0.35, surprise: 0 }
-            : discover ? cfg.familiarity.new : hasEnough ? cfg.familiarity[mode] : null;
+        const famTargets = discover ? cfg.familiarity.new : hasEnough ? cfg.familiarity[mode] : null;
         const useFam = Boolean(famTargets);
         if (!hasEnough && !discover) {
             notes.push(signals.followed.size || Object.keys(signals.artists).length ? NOTE_VARIETY : NOTE_NONE);
@@ -1300,7 +1360,7 @@
             .filter(entry => ctx.now - (Number(entry?.at) || 0) < sessionMs)
             .map(entry => String(entry?.id || ''));
         const selectionOptions = {
-            cfg: policy === 'personal' ? { ...cfg, gain: { ...cfg.gain, familiarity: 1.2 } } : cfg,
+            cfg,
             ctx,
             count,
             preceding,

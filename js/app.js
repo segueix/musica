@@ -3169,6 +3169,7 @@ function getCurrentVisiblePage() {
 
 function saveViewState() {
     try {
+        SegueixApp.features.musicQueue?.persistLastRadio?.();
         const page = getCurrentVisiblePage();
         const isWatchPage = page === 'watch';
         const state = {
