@@ -906,9 +906,7 @@
     {
       "artist": "Svetlana",
       "genres": [
-        "Pop",
-        "Electrònica",
-        "Urbana"
+        "Electrònica"
       ],
       "facets": [
         "electropop",
@@ -920,7 +918,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Electrònica",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
     },
     {
       "artist": "Tancat per defunció",
@@ -940,9 +943,7 @@
     {
       "artist": "Tesa",
       "genres": [
-        "Rap / Hip-hop",
-        "Urbana",
-        "Folk i arrel"
+        "Urbana"
       ],
       "facets": [
         "rap",
@@ -954,7 +955,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
     },
     {
       "artist": "Tornaveus",
@@ -1092,9 +1098,7 @@
     {
       "artist": "Voltor",
       "genres": [
-        "Punk",
-        "Rock",
-        "Ska / Reggae"
+        "Punk"
       ],
       "facets": [
         "hardcore",
@@ -1105,7 +1109,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.7,
-      "method": "source-review"
+      "method": "source-review",
+      "editorialCategory": {
+        "choice": "Punk",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
     },
     {
       "artist": "Whiskyn's",
@@ -1218,9 +1227,7 @@
     {
       "artist": "Quinto",
       "genres": [
-        "Urbana",
-        "Rap / Hip-hop",
-        "Pop"
+        "Urbana"
       ],
       "facets": [
         "urban",
@@ -1235,7 +1242,12 @@
       ],
       "reviewedAt": "2026-10-13",
       "confidence": 0.55,
-      "method": "restored-from-documented-catalog"
+      "method": "restored-from-documented-catalog",
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
     },
     {
       "artist": "Tardor",
@@ -2071,6 +2083,1026 @@
       "reviewedAt": "2026-10-18",
       "confidence": 0.9,
       "method": "source-review"
+    },
+    {
+      "artist": "Adrià Puntí",
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "editorialCategory": {
+        "choice": "Cançó d'autor",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Animal",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Ariox",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Aspencat",
+      "facets": [
+        "ska-reggae"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "editorialCategory": {
+        "choice": "Ska / Reggae",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Ayryn",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "BTZ",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Caïm Riba",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Colomet",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Coses",
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Da Souza",
+      "facets": [
+        "indie"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Indie / Alternativa"
+      ],
+      "editorialCategory": {
+        "choice": "Indie / Alternativa",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "dani6ix & IZZKID",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Derbi Junior",
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rock"
+      ],
+      "editorialCategory": {
+        "choice": "Rock",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Ebri Knight",
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Electrotoylets",
+      "facets": [
+        "electronic"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Electrònica"
+      ],
+      "editorialCategory": {
+        "choice": "Electrònica",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Els Jóvens",
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Falciots Ninja",
+      "facets": [
+        "mestissatge"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "editorialCategory": {
+        "choice": "Rumba / Mestissatge",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Figa Flawas",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Franca Masu",
+      "facets": [
+        "jazz-blues"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "editorialCategory": {
+        "choice": "Jazz / Blues",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Galgo Lento",
+      "facets": [
+        "indie"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Indie / Alternativa"
+      ],
+      "editorialCategory": {
+        "choice": "Indie / Alternativa",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Gavina.mp3",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Joan Colomo",
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "editorialCategory": {
+        "choice": "Cançó d'autor",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Jofre Bardagí Grima",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Júlia Cruz",
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "editorialCategory": {
+        "choice": "Cançó d'autor",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Kayo Malayo",
+      "facets": [
+        "ska-reggae"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Ska / Reggae"
+      ],
+      "editorialCategory": {
+        "choice": "Ska / Reggae",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Kitsch",
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rock"
+      ],
+      "editorialCategory": {
+        "choice": "Rock",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Lal'ba",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Malánima",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Manel",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Mar Grimalt",
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "MASSAVIU",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Masvi",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Oques Grasses",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Orxata Sound System",
+      "facets": [
+        "electronic"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Electrònica"
+      ],
+      "editorialCategory": {
+        "choice": "Electrònica",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Pantaleó",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Pastorets Rock",
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Pau Riba i Romeva",
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rock"
+      ],
+      "editorialCategory": {
+        "choice": "Rock",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Pegasus",
+      "facets": [
+        "jazz-blues"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Jazz / Blues"
+      ],
+      "editorialCategory": {
+        "choice": "Jazz / Blues",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Pepet i Marieta",
+      "facets": [
+        "mestissatge"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "editorialCategory": {
+        "choice": "Rumba / Mestissatge",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Raydibaum",
+      "facets": [
+        "rock"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rock"
+      ],
+      "editorialCategory": {
+        "choice": "Rock",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Roba Estesa",
+      "facets": [
+        "folk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Folk i arrel"
+      ],
+      "editorialCategory": {
+        "choice": "Folk i arrel",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Sa Pena",
+      "facets": [
+        "electronic"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Electrònica"
+      ],
+      "editorialCategory": {
+        "choice": "Electrònica",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Sacrogermen",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Sangtraït",
+      "facets": [
+        "heavy-metal"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Metal"
+      ],
+      "editorialCategory": {
+        "choice": "Metal",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Sílvia Pérez Cruz",
+      "facets": [
+        "singer-songwriter"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "editorialCategory": {
+        "choice": "Cançó d'autor",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Socunbohemio",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Stay Homas",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "The Demencials",
+      "facets": [
+        "punk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Punk"
+      ],
+      "editorialCategory": {
+        "choice": "Punk",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Vàlius",
+      "facets": [
+        "punk"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Punk"
+      ],
+      "editorialCategory": {
+        "choice": "Punk",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Xanguito",
+      "facets": [
+        "pop"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Pop"
+      ],
+      "editorialCategory": {
+        "choice": "Pop",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "Xeic!",
+      "facets": [
+        "mestissatge"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Rumba / Mestissatge"
+      ],
+      "editorialCategory": {
+        "choice": "Rumba / Mestissatge",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
+    },
+    {
+      "artist": "ZOO",
+      "facets": [
+        "urban"
+      ],
+      "sources": [
+        "docs/revisions/2026-10-20-categoria-unica-55.json"
+      ],
+      "reviewedAt": "2026-10-20",
+      "confidence": 0.7,
+      "method": "editorial-user-selection",
+      "genres": [
+        "Urbana"
+      ],
+      "editorialCategory": {
+        "choice": "Urbana",
+        "at": "2026-10-20",
+        "source": "docs/revisions/2026-10-20-categoria-unica-55.json"
+      }
     }
   ],
   "relations": [
