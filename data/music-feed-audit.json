@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-19T21:59:11.792Z",
+  "generatedAt": "2026-10-20T21:13:03.909Z",
   "polling": {
-    "requested": 359,
-    "deferred": 314,
+    "requested": 547,
+    "deferred": 126,
     "failed": 7
   },
-  "retainedVideoCount": 644,
+  "retainedVideoCount": 965,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
@@ -225,8 +225,8 @@
     {
       "id": "UCr8kBnuIa6LPmhZSxbwVs7w",
       "name": "La Pegatina",
-      "songs": 7,
-      "matched": 7,
+      "songs": 6,
+      "matched": 6,
       "coverage": 1,
       "governs": true
     },
@@ -519,6 +519,14 @@
       "governs": true
     },
     {
+      "id": "UCIpVysRnHTbek1TON9dIF6Q",
+      "name": "REMEI DE CA LA FRESCA",
+      "songs": 16,
+      "matched": 15,
+      "coverage": 0.94,
+      "governs": true
+    },
+    {
       "id": "UC9aKnizc9niMNJGRL1lnwTg",
       "name": "Senyor Oca",
       "songs": 18,
@@ -547,14 +555,6 @@
       "name": "Mishima",
       "songs": 41,
       "matched": 38,
-      "coverage": 0.93,
-      "governs": true
-    },
-    {
-      "id": "UCIpVysRnHTbek1TON9dIF6Q",
-      "name": "REMEI DE CA LA FRESCA",
-      "songs": 15,
-      "matched": 14,
       "coverage": 0.93,
       "governs": true
     },
@@ -1551,6 +1551,22 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
       "name": "Bonestorm",
       "songs": 2,
@@ -1695,6 +1711,14 @@
       "governs": false
     },
     {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
@@ -1721,10 +1745,10 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {
-    "other": 149,
-    "song": 15
+    "other": 201,
+    "song": 21
   },
-  "topicHiddenCount": 211,
+  "topicHiddenCount": 331,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -2135,7 +2159,7 @@
     {
       "id": "UCu05DiznV7Z3jDMGr6w5WTQ",
       "name": "Ceaxe",
-      "tracks": 48,
+      "tracks": 57,
       "selected": 22,
       "withClip": 9
     },
@@ -2290,8 +2314,8 @@
       "id": "UCXnvbcjY11hEzjvWXUTjQ8Q",
       "name": "Doctor Prats",
       "tracks": 92,
-      "selected": 40,
-      "withClip": 12
+      "selected": 33,
+      "withClip": 25
     },
     {
       "id": "UCX95O_Gs_2ob3p86_MgldhA",
@@ -2773,7 +2797,7 @@
       "id": "UCaFFmM8-URvqHCEH2DtRDuQ",
       "name": "Ia & batiste",
       "tracks": 86,
-      "selected": 40,
+      "selected": 38,
       "withClip": 0
     },
     {
@@ -2808,8 +2832,8 @@
       "id": "UCsNO9JMYvNgA6hEWFuhBk_w",
       "name": "Joan Colomo",
       "tracks": 116,
-      "selected": 38,
-      "withClip": 4
+      "selected": 37,
+      "withClip": 5
     },
     {
       "id": "UC71mv_2wTJu623lsX2ow5nA",
@@ -2892,8 +2916,8 @@
       "id": "UCNKGOTgFuVUOWK2djkKi3DQ",
       "name": "Júlia Cruz",
       "tracks": 6,
-      "selected": 5,
-      "withClip": 0
+      "selected": 4,
+      "withClip": 1
     },
     {
       "id": "UCK4JIjpr1EofBTYKpm-H5QQ",
@@ -3046,8 +3070,8 @@
       "id": "UCMepRsHQTgYZd3u__Xbj_6A",
       "name": "La Pegatina",
       "tracks": 426,
-      "selected": 34,
-      "withClip": 7
+      "selected": 35,
+      "withClip": 6
     },
     {
       "id": "UC8DHU0fP67z2wgVm7Lkvrzw",
@@ -3717,7 +3741,7 @@
     {
       "id": "UCCKRS2KD1i75evCURPuHQXA",
       "name": "Raydibaum",
-      "tracks": 62,
+      "tracks": 59,
       "selected": 39,
       "withClip": 0
     },
@@ -3732,8 +3756,8 @@
       "id": "UCPLzO9EvgvibAyZCgJDxwyg",
       "name": "Remei de Ca la Fresca",
       "tracks": 31,
-      "selected": 12,
-      "withClip": 11
+      "selected": 11,
+      "withClip": 12
     },
     {
       "id": "UCB3ktCqywNPK-19VWCpEseA",
@@ -4131,7 +4155,7 @@
       "id": "UCIDxAwPe8cNl_-NawMu4pDQ",
       "name": "Txarango",
       "tracks": 110,
-      "selected": 39,
+      "selected": 34,
       "withClip": 11
     },
     {
@@ -4271,7 +4295,7 @@
       "id": "UC5DkIn4ZKBgGKqvpa0JyZlg",
       "name": "Xesco Boix",
       "tracks": 131,
-      "selected": 40,
+      "selected": 32,
       "withClip": 0
     },
     {
@@ -4303,17 +4327,17 @@
       "withClip": 0
     },
     {
-      "id": "UCg6lVNl78-THJI1w8dSy0bA",
-      "name": "YPNOSI",
-      "tracks": 12,
-      "selected": 6,
-      "withClip": 0
-    },
-    {
       "id": "UCqqRg6HX-P769DEoffrQMEQ",
       "name": "YPNOSI",
       "tracks": 33,
       "selected": 25,
+      "withClip": 0
+    },
+    {
+      "id": "UCg6lVNl78-THJI1w8dSy0bA",
+      "name": "YPNOSI",
+      "tracks": 12,
+      "selected": 6,
       "withClip": 0
     },
     {
@@ -4327,23 +4351,23 @@
   "indexedChannelCount": 673,
   "resolvedChannelCount": 673,
   "feedChannelCount": 673,
-  "rawPublicVideoCount": 11587,
-  "feedVideoCount": 9844,
-  "acceptedMusicCount": 10106,
-  "categoryEligibleVideoCount": 10054,
+  "rawPublicVideoCount": 13882,
+  "feedVideoCount": 11833,
+  "acceptedMusicCount": 12267,
+  "categoryEligibleVideoCount": 12200,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1026,
+    "before": 1202,
     "matched": 0,
-    "rejected": 1026
+    "rejected": 1202
   },
-  "contentReviewCount": 594,
+  "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 9724,
-    "live_song": 330,
-    "album": 52,
-    "other": 887,
-    "review": 594
+    "song": 11778,
+    "live_song": 422,
+    "album": 67,
+    "other": 1022,
+    "review": 593
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
@@ -4352,22 +4376,28 @@
     "UCOEzuNu9yvO0AFTnSVKk4LQ",
     "UCRLHVqJybtjS5ODPP5iAv4w",
     "UCvdm27ITzhd3bsnftrBmFUg",
+    "UCFI6QGe27kctP5lGeugsrhA",
     "UC8hpq3EHqyG09og9xy3qOFg",
     "UCRdGqpbhydDXIl83A9E8-2Q",
     "UCr8kBnuIa6LPmhZSxbwVs7w",
+    "UCfcp4MZZ3t309KMOLo7JJag",
     "UC1yaXYiC2Ab3tus3lTDljtw",
     "UCwYR6Axoc2mEKz89P8t4N5Q",
     "UCQAWPZGGc_4JqXq53ATaSBQ",
+    "UCHXlSnGKv7tdBxMw2F-FMkw",
     "UCboGC6e3sTTIO9C6lHxifnA",
+    "UC9i1uNb0GFrISNB2pctkvRg",
     "UCYPbYGqAXm8gaYGVY-ANVXA",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ"
+    "UCJ6EMs_13PLDvRSHi-XqRwQ",
+    "UCg6lVNl78-THJI1w8dSy0bA"
   ],
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
     "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
     "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6821,
+  "publishedFeedVideoCount": 6814,
   "publishedShortVideoCount": 0
 }

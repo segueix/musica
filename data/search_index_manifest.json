@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T21:59:13.872Z",
+  "generatedAt": "2026-10-20T21:13:06.493Z",
   "strategy": {
     "mode": "hybrid",
     "monthlyRecentYears": 2
@@ -67,7 +67,7 @@
       "month": 3,
       "granularity": "month",
       "file": "search_index_2025_03.json",
-      "itemCount": 1629
+      "itemCount": 1651
     },
     {
       "key": "2025_02",
@@ -83,7 +83,7 @@
       "month": 1,
       "granularity": "month",
       "file": "search_index_2025_01.json",
-      "itemCount": 40
+      "itemCount": 39
     },
     {
       "key": "2024",
@@ -91,7 +91,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2024.json",
-      "itemCount": 1285
+      "itemCount": 1280
     },
     {
       "key": "2023",
@@ -163,7 +163,7 @@
       "month": null,
       "granularity": "year",
       "file": "search_index_2015.json",
-      "itemCount": 578
+      "itemCount": 580
     },
     {
       "key": "2014",

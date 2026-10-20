@@ -1,27 +1,28 @@
 {
-  "generatedAt": "2026-10-19T21:59:11.792Z",
-  "rawPublicVideoCount": 11587,
-  "feedVideoCount": 9844,
-  "acceptedMusicCount": 10106,
-  "categoryEligibleVideoCount": 10054,
+  "generatedAt": "2026-10-20T21:13:03.909Z",
+  "rawPublicVideoCount": 13882,
+  "feedVideoCount": 11833,
+  "acceptedMusicCount": 12267,
+  "categoryEligibleVideoCount": 12200,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1026,
+    "before": 1202,
     "matched": 0,
-    "rejected": 1026
+    "rejected": 1202
   },
-  "rejectedOrReviewCount": 1481,
-  "reviewCount": 594,
+  "rejectedOrReviewCount": 1615,
+  "reviewCount": 593,
   "typeCounts": {
-    "song": 9724,
-    "live_song": 330,
-    "album": 52,
-    "other": 887,
-    "review": 594
+    "song": 11778,
+    "live_song": 422,
+    "album": 67,
+    "other": 1022,
+    "review": 593
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
     "UC5CGdoxqbma-pqkAHPjkq9w",
+    "UC_eW1AyvwaPsQA5YAuOC3YQ",
     "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "rejectedSamples": [
@@ -44,6 +45,20 @@
       "title": "La sintonia (skit) [Visualizer]",
       "channelTitle": "31 FAM",
       "durationSeconds": 32,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BLaV52WaZCc",
+      "title": "Emissió en directe de: Adala Music",
+      "channelTitle": "Adala",
+      "durationSeconds": 0,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "8PiM3RgWSRQ",
+      "title": "20 de octubre de 2026",
+      "channelTitle": "ALBERT PLA",
+      "durationSeconds": 41,
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
@@ -208,13 +223,6 @@
       "musicReason": "massa curt: probable teaser/fragment"
     },
     {
-      "id": "FLss5Cak30w",
-      "title": "ALBERT PLA and The Surprise Band .GIRONA TEMPORADA ALTA 11.11.23",
-      "channelTitle": "ALBERT PLA",
-      "durationSeconds": 31,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
       "id": "Oe2MXafylxU",
       "title": "MANRESA. 10 DE GENER. THE WOW CLUB. Entrades a wowclubmanresa.com",
       "channelTitle": "alfredgarcia",
@@ -283,6 +291,111 @@
       "channelTitle": "Anna Ferrer",
       "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "LShZdi8KOYU",
+      "title": "Resum Concert Gran Teatre del Liceu de Barcelona",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 852,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "2ZGbPDi08Ac",
+      "title": "Resum concert Festival Cruïlla",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 308,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "9rnkUa3JaR8",
+      "title": "Resum concert El Tingladu",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 746,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "dcIkZx_5pro",
+      "title": "Resum concert Palma",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 303,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "BQoIEeAHOpg",
+      "title": "Resum Palau Sant Jordi",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 294,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "oSNeXd7zVG4",
+      "title": "Resum concert València",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 220,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "AqL-7f1E8W8",
+      "title": "Resum concert Mallorca",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 309,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "E7bDxvzraqk",
+      "title": "Antònia Font - Merchandising",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 146,
+      "musicReason": "no és a la discografia del canal Tema"
+    },
+    {
+      "id": "hBlJlwDrxiQ",
+      "title": "Teaser Un minut estroboscòpica",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 15,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "FA95j1s4eWk",
+      "title": "Antònia Font - Teaser del single Una daixona de pols",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 122,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "mqq3GrW7TdM",
+      "title": "Antònia Font - Un Minut Estroboscòpica (Teaser)",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 38,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "lhaWreUpnqc",
+      "title": "Antònia Font 2022",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 33,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2wYnPVnAWE4",
+      "title": "Teaser 2022",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 24,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "0oDacVrziR0",
+      "title": "Teaser Videoclip \"Per Jo i Tots es Ciclistes\"",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 28,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "JyF-3kxWOdQ",
+      "title": "Nous partons pour la France",
+      "channelTitle": "Antònia Font",
+      "durationSeconds": 156,
+      "musicReason": "no és a la discografia del canal Tema"
     },
     {
       "id": "R-XkZ6VyvTY",
@@ -359,6 +472,13 @@
       "title": "AUXILI - Hui la liem (Teaser)",
       "channelTitle": "AUXILI",
       "durationSeconds": 21,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "SfKr5W0YnCA",
+      "title": "TEASER TREMOLAR",
+      "channelTitle": "AYRYN",
+      "durationSeconds": 23,
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
@@ -719,6 +839,20 @@
       "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
     },
     {
+      "id": "HavdwwEPLNU",
+      "title": "CRIDA • El racó dels pensaments - Caïm Riba",
+      "channelTitle": "Caïm Riba",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "AhscMYuVf54",
+      "title": "\"Caim i amics\" · Resum - Teaser - Medley",
+      "channelTitle": "Caïm Riba",
+      "durationSeconds": 449,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
       "id": "GkgNw6WA9QE",
       "title": "No t'esperava - Celobert",
       "channelTitle": "Celobert",
@@ -731,141 +865,8 @@
       "channelTitle": "Celobert",
       "durationSeconds": 37,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "hLtQjBNZP10",
-      "title": "Bar de l'Eixample - BST a l'estudi",
-      "channelTitle": "Celobert",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "2sqOAcXKIjY",
-      "title": "Bar de l'Eixample - Celobert",
-      "channelTitle": "Celobert",
-      "durationSeconds": 33,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "eH4fy01k83I",
-      "title": "Celobert - Pólvora",
-      "channelTitle": "Celobert",
-      "durationSeconds": 21,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "T3JuNXUco00",
-      "title": "✨ Això és el que passa en un concert de Celobert amb tota la banda!",
-      "channelTitle": "Celobert",
-      "durationSeconds": 35,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "xic9MfCxy58",
-      "title": "Que vinguin els dies - Celobert #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 18,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "u-X6ecAug_E",
-      "title": "Hi seré - Celobert #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 25,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "BnvJLNCxab8",
-      "title": "🎨 16/2 : Hi seré #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 13,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "seu6TvK-SK4",
-      "title": "No t'esperava (Making-of del videoclip) #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 28,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "4XsBcmtBgws",
-      "title": "No t'esperava - Celobert #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 43,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "OTOBeOYEREc",
-      "title": "🌤 La teva vida pot canviar en qualsevol moment #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 20,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "jY6XPJQrb7Y",
-      "title": "✨ La Jordina ha entrat al Celobert",
-      "channelTitle": "Celobert",
-      "durationSeconds": 14,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "ci5WUaYuw8Y",
-      "title": "Celobert (Making-of del videoclip) #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 60,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "6DC737u8S3Q",
-      "title": "Celobert (Making-of a l'estudi) #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 59,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "PqKzAm-ujr0",
-      "title": "Celobert - Celobert #shorts",
-      "channelTitle": "Celobert",
-      "durationSeconds": 40,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "U5L-kJNvxZg",
-      "title": "6/05 videoclip “SI TE’N VAS”",
-      "channelTitle": "Cloe Riembau",
-      "durationSeconds": 16,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "Z4ko6aHkFUc",
-      "title": "20/01 “DE MAIG A JUNY”",
-      "channelTitle": "Cloe Riembau",
-      "durationSeconds": 10,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "IF3npGq6a7I",
-      "title": "doleeeermeeee",
-      "channelTitle": "Cloe Riembau",
-      "durationSeconds": 31,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "8hNm71CUWjQ",
-      "title": "CRIM @ Teatre Auditori Camp de Mart, TARRAGONA (16/05/2021)",
-      "channelTitle": "Crim",
-      "durationSeconds": 173,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "qzrM90fCI1M",
-      "title": "CRIM 10 ANYS Live Streaming (03/01/2021) @ Estraperlo Club",
-      "channelTitle": "Crim",
-      "durationSeconds": 5667,
-      "musicReason": "concert o sessió llarga, no una sola cançó"
     }
   ],
-  "publishedFeedVideoCount": 6821,
+  "publishedFeedVideoCount": 6814,
   "publishedShortVideoCount": 0
 }
