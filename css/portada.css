@@ -12278,3 +12278,23 @@ body .mq .mq-head,
     border-color: #fff;
     background: rgba(20, 22, 21, 0.78);
 }
+
+/* ---------- Fitxa de la cançó: la fila de botons, tota junta a l'esquerra (2026-10-20) ----------
+   A l'ordinador i a la tauleta, «Canal YouTube» i comentar anaven a l'esquerra i «+» i compartir arraconats a la dreta,
+   amb un forat al mig (styles.css: justify-content: space-between). Ara van tots seguits, i una ratlla fina separa el
+   que porta a YouTube (canal, comentar) del que fa l'app (desar a una llista, compartir). Al mòbil no canvia res. */
+@media (min-width: 769px) {
+    body #watchPage .video-info-modern .video-metadata-bar {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    body #watchPage .video-info-modern .video-metadata-bar > .action-group:not(.action-group-left)::before {
+        content: '';
+        flex: none;
+        width: 1px;
+        height: 28px;
+        margin: 0 6px;
+        background: rgba(244, 240, 232, 0.28);
+    }
+}

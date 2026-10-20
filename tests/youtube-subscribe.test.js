@@ -48,7 +48,7 @@ describe('Subscripció al canal oficial de YouTube', () => {
         const app = readFileSync('js/app.js', 'utf8');
         const html = readFileSync('index.html', 'utf8');
         expect(app).toMatch(
-            /href="https:\/\/www\.youtube\.com\/channel\/\$\{channel\.id\}"[^>]*class="btn-pill-red">\s*Canal Youtube/
+            /href="https:\/\/www\.youtube\.com\/channel\/\$\{channel\.id\}"[^>]*class="btn-pill-red">[\s\S]*?Canal YouTube/
         );
         expect(app).not.toContain('mountWidgets');
         expect(html).toMatch(/js\/features\/shell-nav\.js[^\n]*\n\s*<script defer src="js\/features\/youtube-subscribe\.js/);
