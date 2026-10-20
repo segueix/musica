@@ -161,7 +161,11 @@ const YouTubeAPI = {
     // Nom a mostrar de l'artista (editat a revisio-artistes.html) en lloc del nom del canal de YouTube. El nom del canal
     // es conserva a `originalName` i a `artists`, perquè la cerca continuï trobant-lo.
     withDisplayName(channel) {
-        const display = window.SegueixMusicCategories?.displayNameForChannel?.(channel?.id) || '';
+        const music = window.SegueixMusicCategories;
+        const cleaned = music?.cleanArtistName?.(channel?.name) ?? channel?.name;
+        // «Artista - Topic» / «Artista - Tema» no es mostra mai: sense nom editat, el de l'artista o el nom net.
+        const display = music?.displayNameForChannel?.(channel?.id)
+            || (cleaned !== channel?.name ? music?.artistDisplayNameForChannel?.(channel?.id) || cleaned : '');
         if (!display || channel.name === display) return channel;
         const original = channel.originalName || channel.name || '';
         return {

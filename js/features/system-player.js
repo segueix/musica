@@ -15,6 +15,13 @@
 // en temps d'execució.
 (function (window) {
     const app = window.SegueixApp;
+
+    // Nom de l'artista que es mostra: mai «Artista - Topic» / «Artista - Tema» (cues i dades desades d'abans).
+    function artistLabel(video) {
+        const name = String(video?.channelTitle || '');
+        return window.SegueixMusicCategories?.cleanArtistName?.(name) ?? name;
+    }
+
     if (!app) return;
 
     const SEEK_STEP = 10;
@@ -226,7 +233,7 @@
             if (key !== lastMetadataKey && typeof window.MediaMetadata === 'function') {
                 navigator.mediaSession.metadata = new window.MediaMetadata({
                     title: video.title || '',
-                    artist: video.channelTitle || '',
+                    artist: artistLabel(video),
                     album,
                     artwork: artworkOf(video),
                 });
@@ -365,7 +372,7 @@
         const label = queueName();
         el('label').textContent = label || 'Ara sona';
         el('title').textContent = video?.title || 'No sona res';
-        el('artist').textContent = video?.channelTitle || '';
+        el('artist').textContent = artistLabel(video);
         el('time').textContent = formatTime(time);
         el('duration').textContent = duration ? formatTime(duration) : '–:––';
         el('fill').style.width = duration ? `${Math.min(100, (time / duration) * 100)}%` : '0%';
@@ -391,9 +398,9 @@
         if (upcoming) {
             el('next').querySelector('b').textContent = upcoming.title || '';
             const artist = el('next').querySelector('span');
-            if (artist) artist.textContent = upcoming.channelTitle;
+            if (artist) artist.textContent = artistLabel(upcoming);
         }
-        doc.title = video ? `${video.title} · ${video.channelTitle || 'Segueix Música'}` : 'Segueix Música';
+        doc.title = video ? `${video.title} · ${artistLabel(video) || 'Segueix Música'}` : 'Segueix Música';
     }
 
     function onPipClick(event) {

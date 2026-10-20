@@ -241,7 +241,7 @@
     function decorateChannel(channel) {
         if (!channel) return channel;
         const id = channel.id || channel.channelId;
-        const display = displayNameForChannel(id);
+        const display = shownName(id, channel.name || channel.title);
         return {
             ...channel,
             ...(display && channel.name !== display
@@ -254,11 +254,28 @@
         };
     }
 
+    // Nom de l'artista sense « - Topic» / « - Tema» (canals automàtics de YouTube Music). Només amb guió: «Pirat's Sound
+    // Sistema» no es toca. Mai buit.
+    const TOPIC_SUFFIX = /\s*[-–—]\s*(?:t[oò]pic|tema)\s*$/i;
+    function cleanArtistName(name) {
+        const text = String(name ?? '');
+        const cleaned = text.replace(TOPIC_SUFFIX, '').trim();
+        return cleaned || text;
+    }
+
+    // Nom a mostrar d'un canal: l'editat; si no n'hi ha i el de YouTube és «Artista - Topic», el de l'artista.
+    function shownName(channelId, name) {
+        const display = displayNameForChannel(channelId);
+        if (display) return display;
+        if (!TOPIC_SUFFIX.test(String(name ?? ''))) return '';
+        return artistChannelMetaByChannel.get(String(channelId || ''))?.artistName || cleanArtistName(name);
+    }
+
     // Posa a un vídeo el nom a mostrar de l'artista (`channelTitle`); el de YouTube queda a `originalChannelTitle`.
     function applyDisplayName(video) {
         if (!video) return video;
         const id = String(video.channelId || video.sourceChannelId || video.snippet?.channelId || '');
-        const display = displayNameForChannel(id);
+        const display = shownName(id, video.channelTitle || video.snippet?.channelTitle);
         if (!display || video.channelTitle === display) return video;
         return {
             ...video,
@@ -311,6 +328,7 @@
         artistKeyForChannel,
         primaryCategoryForChannel,
         displayNameForChannel,
+        cleanArtistName,
         artistDisplayNameForChannel,
         artistChannelMeta,
         decorateChannel,

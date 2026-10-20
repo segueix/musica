@@ -126,6 +126,12 @@
 
     let sortable = null;
 
+    // Nom de l'artista que es mostra: mai «Artista - Topic» / «Artista - Tema» (cues i dades desades d'abans).
+    function artistLabel(video) {
+        const name = String(video?.channelTitle || '');
+        return window.SegueixMusicCategories?.cleanArtistName?.(name) ?? name;
+    }
+
     function escapeText(value) {
         const div = document.createElement('div');
         div.textContent = String(value ?? '');
@@ -1326,7 +1332,7 @@
                         ${nearbyLine(video)}
                         <span class="mq-title">${escapeText(video.title)}</span>
                         ${unavailable ? '<span class="mq-unavailable">No disponible</span>' : ''}
-                        <span class="mq-artist">${escapeText(video.channelTitle || '')}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
+                        <span class="mq-artist">${escapeText(artistLabel(video))}${queuedIds.has(String(video.id)) && !active ? ' · <span class="mq-added">Afegida per tu</span>' : ''}</span>
                     </span>
                     <span class="mq-duration">${escapeText(duration || '')}</span>
                 </button>
