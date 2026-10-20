@@ -226,7 +226,7 @@
             window.YouTubeAPI?.getRadioPoolVideos?.() || (Array.isArray(currentFeedVideos) ? currentFeedVideos : []);
         // Política anterior: una cançó de l'historial quedava fora per sempre. El motor de selecció la deixa
         // tornar (amb descans, cors i repeticions voluntàries), així que només s'exclou amb `engine: 'legacy'`.
-        if (!engineOn()) {
+        if (!options.personal && !engineOn()) {
             try {
                 if (typeof filterOutWatchedVideos === 'function') pool = filterOutWatchedVideos(pool) || pool;
             } catch (error) {
@@ -306,9 +306,11 @@
     function buildQueueEngine(video, category = '', options = {}) {
         const sel = engine();
         const discovery = app.features.discovery;
-        const candidates = getCandidates(video, category, options);
+        const candidates = options.personal
+            ? personalCandidates(getCandidates(video, '', options), category)
+            : getCandidates(video, category, options);
         const preceding = options.preceding?.length ? options.preceding : [video];
-        const mode = options.mode || discovery?.getMode?.() || 'mix';
+        const mode = options.personal ? 'mix' : options.mode || discovery?.getMode?.() || 'mix';
         const ctx = sel.getAppContext(Array.isArray(currentFeedVideos) ? currentFeedVideos : candidates);
         const played = (options.playedIds || []).slice().reverse();
         const result = sel.selectRadio({
@@ -317,7 +319,8 @@
             seed: video,
             signals: selectionSignals(played),
             mode,
-            policy: options.policy || 'general',
+            policy: options.personal ? 'personal' : options.policy || 'general',
+            affinities: !options.personal,
             preceding,
             count: MAX_QUEUE_LENGTH - 1,
             now: Date.now(),
@@ -325,7 +328,7 @@
             category,
             // Amb diversos estils la ràdio els barreja a parts iguals
             mix:
-                asCategories(category).length > 1
+                !options.personal && asCategories(category).length > 1
                     ? {
                           labels: asCategories(category),
                           tagOf: item => asCategories(category).filter(name => matchesCategory(item, name)),
@@ -337,6 +340,7 @@
             requested: result.meta.requested,
             note: result.meta.note || '',
             engine: 'v1',
+            personal: options.personal === true,
             era: result.meta.era,
             relaxedLevel: result.meta.relaxedLevel,
         };
@@ -347,7 +351,7 @@
     // Una sola cançó per artista (i cap del mateix artista que la que sona); si no arriba al mínim,
     // es completa amb repeticions, però mai dues seguides.
     function buildQueue(video, category = '', options = {}) {
-        if (engineOn()) return buildQueueEngine(video, category, options);
+        if (options.personal || engineOn()) return buildQueueEngine(video, category, options);
         const candidates = getCandidates(video, category, options);
         const seenArtists = new Set([artistOf(video)]);
         const unique = [];
@@ -456,6 +460,7 @@
                     title: video.title || '',
                     category: category || '',
                     liveOnly: radioLiveOnly,
+                    personal: radioMeta?.personal === true,
                     at: Date.now(),
                 })
             );
@@ -469,7 +474,7 @@
             const raw = JSON.parse(window.localStorage?.getItem?.(LAST_RADIO_KEY) || 'null');
             if (!raw?.id || Date.now() - Number(raw.at) > LAST_RADIO_MAX_AGE) return null;
             return findVideo(raw.id)
-                ? { id: raw.id, title: raw.title, category: raw.category || '', liveOnly: raw.liveOnly === true, at: raw.at }
+                ? { id: raw.id, title: raw.title, category: raw.category || '', liveOnly: raw.liveOnly === true, personal: raw.personal === true, at: raw.at }
                 : null;
         } catch (error) {
             return null;
@@ -493,7 +498,7 @@
             String(last.category || '')
                 .split('|')
                 .filter(Boolean),
-            { liveOnly: last.liveOnly }
+            { liveOnly: last.liveOnly, personal: last.personal }
         );
     }
 
@@ -833,95 +838,39 @@
         }
     }
 
-    // Cançons d'on surt la PRIMERA cançó de «La teva ràdio», segons el mode: «Els meus de sempre» → artistes que has
-    // escoltat/agradat/seguit; «Una mica de tot» → aquests més els del seu estil; «Sorprèn-me» → el seu estil, però
-    // d'altres artistes. Amb poques cançons (< 5) es torna a un conjunt més ampli. La resta de la cua la fa el motor.
-    const MIN_SEED_POOL = 5;
-    function recentSeedPool(candidates, mode, taste) {
+    // Manté el gust propi i amplia només amb els seus estils o els que s'afegeixen explícitament.
+    function personalCandidates(candidates, extra = []) {
         const discovery = app.features.discovery;
-        if (!taste?.hasAny || !taste.artistKeys?.size || !discovery?.artistKeyOf) return candidates;
-        const channels = discovery.normalizeChannels?.(feedChannels());
-        const known = item => taste.artistKeys.has(discovery.artistKeyOf(item));
+        const taste = recentTasteNow();
+        const channels = discovery?.normalizeChannels?.(feedChannels());
+        const styles = asCategories([...(taste?.styles || []), ...asCategories(extra),
+            ...(!taste?.hasAny ? discovery?.getFirstStyles?.() || [] : [])]);
+        const known = item => taste?.artistKeys?.has(discovery?.artistKeyOf?.(item));
         const own = candidates.filter(known);
-        const styled = taste.styles.length
-            ? candidates.filter(item => discovery.stylesOf(item, channels).some(style => taste.styles.includes(style)))
-            : [];
-        let pool = own;
-        if (mode === 'mix') pool = [...new Set([...own, ...styled])];
-        else if (mode === 'surprise') pool = styled.filter(item => !known(item));
-        else if (mode === 'new') {
-            // «Fora del meu radar»: artistes que no coneixes, els del teu estil primer; el motor encara filtra el que has
-            // deixat rastre, així que amb pocs candidats es pot ampliar a tots els que no coneixes.
-            const fresh = candidates.filter(item => !known(item));
-            const styledFresh = styled.filter(item => !known(item));
-            return styledFresh.length >= MIN_SEED_POOL ? styledFresh : fresh.length ? fresh : candidates;
-        }
-        if (pool.length >= MIN_SEED_POOL) return pool;
-        return own.length >= MIN_SEED_POOL ? own : candidates;
+        const ownStyles = asCategories(own.flatMap(item => discovery?.stylesOf?.(item, channels) || item.categories || []));
+        const allowed = asCategories([...styles, ...ownStyles]);
+        // Sense historial ni categories triades: els èxits del catàleg serveixen de punt de partida.
+        if (!allowed.length && !own.length) return candidates;
+        return candidates.filter(item => known(item) || allowed.some(style => matchesCategory(item, style)));
     }
 
-    // «La teva ràdio»: tria la primera cançó segons el que has escoltat aquests dies, el que t'agrada i segueixes
-    // (i el mode de descoberta) i engega la ràdio. La PRIMERA vegada —sense historial, m'agrades ni seguits— es fa
-    // amb els estils que l'usuari va triar (`catube_first_styles`).
-    // No canvia res mentre l'usuari no ho demana: només s'invoca des d'un gest de l'usuari.
-    // Retorna { started, note, mode } perquè la interfície pugui explicar què s'ha fet.
+    // Una sola modalitat de ràdio personal, independent del mode antic desat al navegador.
     function startDiscovery(options = {}) {
         const none = { started: false, note: '', mode: 'none', seed: null };
-        if (document.body.classList.contains('segueix-tv-active')) return none;
-        if (typeof loadVideoInSequence !== 'function') return none;
-        const candidates = getCandidates(null, '');
+        if (document.body.classList.contains('segueix-tv-active') || typeof loadVideoInSequence !== 'function') return none;
+        const extra = asCategories(options.categories || []);
+        const candidates = personalCandidates(getCandidates(null, '', { personal: true }), extra);
         if (!candidates.length) return none;
-
-        const taste = recentTasteNow();
-        // Amb molt poques dades (menys de 3 artistes coneguts) manen els estils que va triar la primera vegada.
-        if (taste && taste.artistKeys.size < (app.features.discovery.MIN_KNOWN_ARTISTS || 3)) {
-            const chosen = app.features.discovery.getFirstStyles?.() || [];
-            if (chosen.length) {
-                const started = startStyleRadio(chosen, options);
-                return {
-                    started,
-                    note: started ? 'Ràdio amb els estils que vas triar: s’adaptarà a tu quan escoltis música.' : '',
-                    mode: 'none',
-                    seed: started ? activePlaylistQueue[0] || null : null,
-                };
-            }
-        }
-
-        if (engineOn()) {
-            // «La teva ràdio»: la primera cançó també la tria el motor (gust, actualitat, rotació i mode),
-            // entre les cançons del gust recent.
-            const sel = engine();
-            const ctx = sel.getAppContext(Array.isArray(currentFeedVideos) ? currentFeedVideos : candidates);
-            const mode = options.mode || app.features.discovery?.getMode?.() || 'mix';
-            const first = sel.selectRadio({
-                ctx,
-                candidates: recentSeedPool(candidates, mode, taste),
-                signals: selectionSignals(),
-                mode,
-                count: 1,
-                now: Date.now(),
-                rng: options.rng || Math.random,
-            }).queue[0];
-            if (!first) return none;
-            clickCategory = null;
-            const started = launch(first, '', options);
-            return { started, note: started ? radioMeta?.note || '' : '', mode: radioMeta?.mode || 'mix', seed: first };
-        }
-
-        const unique = [];
-        const seen = new Set();
-        rankCandidates(candidates).forEach(item => {
-            const artist = artistOf(item);
-            if (artist && seen.has(artist)) return;
-            if (artist) seen.add(artist);
-            unique.push(item);
-        });
-        const plan = applyDiscoveryMode(unique, options);
-        const seed = plan.ordered[0];
-        if (!seed) return none;
+        const sel = engine();
+        const first = sel.selectRadio({
+            ctx: sel.getAppContext(Array.isArray(currentFeedVideos) ? currentFeedVideos : candidates),
+            candidates, signals: selectionSignals(), mode: 'mix', policy: 'personal',
+            affinities: false, count: 1, now: Date.now(), rng: options.rng || Math.random,
+        }).queue[0];
+        if (!first) return none;
         clickCategory = null;
-        const started = launch(seed, '', options);
-        return { started, note: started ? radioMeta?.note || '' : '', mode: radioMeta?.mode || plan.mode, seed };
+        const started = launch(first, extra, { ...options, personal: true });
+        return { started, note: '', mode: 'mix', seed: first };
     }
 
     // Torna a generar la part pendent de la cua amb l'ordenació de TV i el mode de descoberta actual
@@ -963,6 +912,7 @@
             }
         } else {
             fresh = buildQueue(current, radioStyles(), {
+                personal: radioMeta?.personal === true,
                 liveOnly: radioLiveOnly,
                 preceding: [...played, ...kept],
                 playedIds: played.map(item => String(item.id)),
@@ -1010,6 +960,7 @@
         if (!current) return false;
         const ownList = Boolean(activePlaylistId && !isEphemeral(activePlaylistId));
         const closedSet = Boolean(searchRadio) && !ownList;
+        const personal = !ownList && !radioLabel && radioMeta?.personal === true;
         const ids = activePlaylistQueue.map(item => String(item?.id));
         const inQueue = new Set(ids);
         const recentIds = new Set(ids.slice(-EXTEND_RECENT));
@@ -1027,14 +978,14 @@
                 );
             }
         } else {
-            if (!styles.length) styles = asCategories(primaryCategoryOf(current));
+            if (!personal && !styles.length) styles = asCategories(primaryCategoryOf(current));
             const liveOnly = radioLiveOnly && !ownList;
-            more = buildQueue(current, styles, { liveOnly, preceding, playedIds: ids }).filter(
+            more = buildQueue(current, styles, { liveOnly, personal, preceding, playedIds: ids }).filter(
                 item => !inQueue.has(String(item?.id))
             );
             // Catàleg petit: poden tornar cançons d'abans, però no les darreres
             if (!more.length) {
-                more = buildQueue(current, styles, { liveOnly, preceding }).filter(
+                more = buildQueue(current, styles, { liveOnly, personal, preceding }).filter(
                     item => !recentIds.has(String(item?.id))
                 );
             }
@@ -1357,6 +1308,7 @@
 
     // Nom de la llista desada: el de la ràdio (estil/estils, cerca o selecció), mai el de la cançó que sona.
     function playlistName() {
+        if (radioMeta?.personal) return 'La teva ràdio' + (radioStyles().length ? ' + ' + radioStyles().join(' + ') : '');
         if (radioSeedTitle) return `Ràdio ${radioSeedTitle}`;
         if (radioLiveOnly) return radioStyles().length ? `Ràdio de directes · ${radioStyles().join(' + ')}` : 'Ràdio de directes';
         if (searchRadioName()) return searchRadioName();
@@ -1468,7 +1420,7 @@
     // La llista desa es comparteix per ID (així s'hi enganxa l'estat real de la biblioteca).
     function radioShareName() {
         if (activePlaylistId !== QUEUE_ID) return String(activePlaylistName || '').trim();
-        if (radioSeedTitle || radioLiveOnly) return playlistName();
+        if (radioMeta?.personal || radioSeedTitle || radioLiveOnly) return playlistName();
         if (searchRadioName()) return searchRadioName();
         if (radioLabel) return radioLabel;
         const styles = radioStyles();
@@ -1528,7 +1480,7 @@
     }
 
     function modeSelectorHtml() {
-        if (!modeApplies()) return '';
+        if (radioMeta?.personal || !modeApplies()) return '';
         const discovery = app.features.discovery;
         const current = appliedMode();
         const hint = discovery.MODES.find(mode => mode.id === current)?.hint || '';
@@ -1574,7 +1526,7 @@
     function setDiscoveryMode(value) {
         const discovery = app.features.discovery;
         const mode = discovery?.MODES?.find(item => item.id === value)?.id;
-        if (!mode || !modeApplies()) return null;
+        if (radioMeta?.personal || !mode || !modeApplies()) return null;
         if (appliedMode() === mode) return null;
         discovery.setMode(mode);
         const before = new Set(pendingAutoIds());
@@ -1639,7 +1591,7 @@
                   .map(
                       (name, index) =>
                           `<span class="mq-style${index ? ' mq-style--extra' : ''}">${escapeText(name)}${
-                              styles.length > 1
+                              (radioMeta?.personal || styles.length > 1)
                                   ? `<button type="button" class="mq-style__remove" data-mq-remove-style="${escapeText(name)}" aria-label="Treu ${escapeText(name)} de la ràdio" title="Treu ${escapeText(name)}">${ICONS.close}</button>`
                                   : ''
                           }</span>`
@@ -1649,7 +1601,7 @@
         const add = availableStyles().length
             ? `<button type="button" class="mq-add-style" data-mq-add-style aria-haspopup="true" aria-expanded="${stylePickerOpen}" aria-label="Afegeix un estil a la ràdio" title="Afegeix un estil a la ràdio">${ICONS.blend}</button>`
             : '';
-        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${radioLiveOnly ? '<span class="mq-style">Directes</span>' : ''}${radioSeedTitle ? `<span class="mq-style">${escapeText(playlistName())}</span>` : ''}${chips}<span class="mq-tools">${add}${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
+        return `<span class="mq-source mq-styles" role="group" aria-label="Estil de la ràdio">${radioLiveOnly ? '<span class="mq-style">Directes</span>' : ''}${radioSeedTitle ? `<span class="mq-style">${escapeText(playlistName())}</span>` : ''}${radioMeta?.personal && styles.length ? '<span class="mq-style">La teva ràdio</span>' : ''}${chips}<span class="mq-tools">${add}${regenerateButtonHtml()}${saveButtonHtml()}${shareButtonHtml()}</span></span>`;
     }
 
     function stylePickerHtml() {
@@ -1657,7 +1609,7 @@
         const options = availableStyles();
         if (!options.length) return '';
         return `<div class="mq-style-picker" role="group" aria-label="Estil que vols sumar a la ràdio">
-            <p class="mq-style-picker__title">Suma un estil a la ràdio: es barrejaran a parts iguals</p>
+            <p class="mq-style-picker__title">${radioMeta?.personal ? 'Afegeix una categoria: hi sumarem les cançons més vistes' : 'Suma un estil a la ràdio: es barrejaran a parts iguals'}</p>
             <div class="mq-style-picker__options">${options
                 .map(
                     label =>
@@ -1687,9 +1639,9 @@
         const name = String(label || '')
             .trim()
             .toLowerCase();
-        if (styles.length < 2 || !styles.some(item => item.toLowerCase() === name)) return false;
+        if ((!radioMeta?.personal && styles.length < 2) || !styles.some(item => item.toLowerCase() === name)) return false;
         const rest = styles.filter(item => item.toLowerCase() !== name);
-        radioCategory = rest[0];
+        radioCategory = rest[0] || '';
         radioExtra = rest.slice(1);
         pendingFocus = '[data-mq-add-style]';
         regenerate();
@@ -2038,3 +1990,4 @@
         QUEUE_ID,
     };
 })(window);
+

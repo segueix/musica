@@ -2077,3 +2077,10 @@ El botó de compartir cridava navigator.share (o copiava l’enllaç), no mostra
 
 **Actualització (2026-10-18, a petició de l'usuari):** al mòbil la #1 ja no és quadrada sinó un rectangle vertical 4:5 (358 × 448 a 390 px), un pèl més alta que les altres caràtules, perquè quedi destacada (`@media (max-width: 768px)` a `#channelPage .ap-best .ap-card`).
 
+
+
+## 2026-10-20 — Una sola ràdio personal amb preferides i èxits
+
+Petició: retirar els quatre modes de «La teva ràdio», conservar la targeta amb caràtules de fons i afegir categories opcionalment. La política `personal` del motor compartit combina gust i visualitzacions absolutes, amb un repartiment orientatiu entre coneguts i afins, sense afavorir novetats per la data de pujada. El conjunt es limita als artistes del gust propi i als seus estils, ampliat per les categories explícites. Sense gust ni categories, comença pels èxits del catàleg. Es mantenen descartats, descans, deduplicació i separació d’artistes.
+
+`radioMeta.personal` conserva la política en regenerar, ampliar i recuperar la cua; `catube_last_radio.personal` la conserva en continuar la darrera ràdio. Sumar una categoria no substitueix el gust propi, i es pot treure l’última categoria afegida. La targeta ja no exigeix triar estils ni mostra els quatre modes: el desplegable es veu només amb «+ Afegeix una categoria». Les altres ràdios conserven els seus modes. Proves actualitzades del motor, la cua, el gust recent i l’entrada de portada, incloent preferides amb poques visualitzacions, èxits d’estils afins, categories, continuació i sessió. La captura visual de navegador no s’ha pogut executar perquè aquest entorn no té Chromium instal·lat.

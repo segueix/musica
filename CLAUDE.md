@@ -684,3 +684,11 @@ const likes = ctx2.SegueixApp.features.likes;
 ## Actions: organització vigent del 17/10/2026
 
 Mana `docs/ACCIONS_I_QUOTA.md` sobre les referències històriques d'aquest document. Deu workflows i un únic cron: feed diari a les 20 h Europe/Madrid, canals vençuts segons activitat (1/3/7 dies). L'entrada manual `actualitzador.yml` està arxivada; usar `actualitzar-feed-musica.yml`. La publicació té cua independent i omet reconstruccions del mateix commit el mateix dia; l'endemà renova les novetats. La CI es fa una vegada a la PR, també en marcar-la preparada. No dispatch ni reintents per provar canvis editorials o d'Actions. Pages ha de tenir Source → GitHub Actions; mai publicació paral·lela des d'una branca.
+
+
+
+## Ràdio personal: criteri vigent del 20/10/2026
+
+La petició del 20/10 substitueix els modes i l’entrada obligatòria d’estils de «La teva ràdio» descrits més amunt. Una única modalitat combina preferides i artistes del gust de l’usuari amb èxits dels mateixos estils. `policy: personal` del motor compartit prioritza gust i visualitzacions absolutes, sense quota d’antiguitat; manté descartats, descans, separació d’artistes i deduplicació. Els modes antics desats no hi intervenen.
+
+La targeta conserva el mosaic de fons, títol, resum del gust i botó de reproducció, amb «+ Afegeix una categoria» que desplega les categories opcionalment. No tornar-hi a posar els quatre modes ni exigir una selecció inicial. Les categories sumen èxits al gust propi; no el substitueixen. La cua personal conserva el botó de sumar categories i permet treure l’última categoria afegida. `radioMeta.personal` conserva aquesta política en regenerar, ampliar i restaurar la sessió. Els altres tipus de ràdio mantenen la seva política.

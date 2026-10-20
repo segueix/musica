@@ -1185,32 +1185,25 @@
         }
     }
 
-    // chooser: primera vegada de debò (cap dada i cap estil triat) → s'ensenyen els estils per triar.
-    // savedOnly: ja va triar estils però encara no hi ha cap altra dada.
-    function firstTimeState(taste) {
-        const discovery = app.features.discovery;
-        const saved = discovery?.getFirstStyles?.() || [];
-        const empty = Boolean(taste && !taste.hasAny);
-        // Amb molt poques dades (menys de 3 artistes coneguts) manen els estils triats: encara no hi ha gust que seguir.
-        const thin = Boolean(taste && taste.artistKeys.size < (discovery?.MIN_KNOWN_ARTISTS || 3));
-        return { saved, chooser: empty && saved.length === 0, savedOnly: thin && saved.length > 0 };
+    // La targeta sempre té la mateixa forma; afegir categories és opcional.
+    function firstTimeState() {
+        return { chooser: Boolean(state.personalPicker), savedOnly: false, saved: [] };
     }
 
-    // Què diu la targeta de la ràdio: de què està feta (mai «des de zero»).
     function radioLead(taste, first, showsContinue) {
-        if (first.chooser) return 'Tria fins a tres estils per començar.';
-        if (first.savedOnly) {
-            return `Feta amb els estils que vas triar: ${first.saved.join(', ')}. S’adaptarà al que escoltis.`;
-        }
         const summary = taste?.hasAny ? app.features.discovery.tasteSummary(taste) : '';
-        if (summary) return showsContinue ? `Una ràdio nova. ${summary}` : summary;
-        return 'Barreja el que t’agrada amb música nova, sense parar.';
+        return summary ? `${showsContinue ? 'Una ràdio nova. ' : ''}${summary} Amb els èxits dels mateixos estils.`
+            : 'Les cançons més populars per començar. La ràdio s’adaptarà al que escoltis i t’agradi.';
     }
 
     function syncFirstTime(first) {
         const box = $('ptFirst');
         const chips = $('ptFirstChips');
-        const doc = window.document;
+        const add = $('ptAddCategory');
+        if (add) {
+            add.setAttribute('aria-expanded', String(first.chooser));
+            add.textContent = state.firstPick.size ? `+ Categories afegides (${state.firstPick.size})` : '+ Afegeix una categoria';
+        }
         if (box) box.hidden = !first.chooser;
         if (chips && first.chooser) {
             if (!chips.children.length) {
@@ -1232,16 +1225,11 @@
                 more.textContent = state.firstMore ? 'Menys estils' : 'Més estils';
             }
         }
-        const mode = doc?.querySelector?.('#ptRadio .pt-mode');
-        if (mode) mode.hidden = first.chooser || first.savedOnly;
-        const reset = $('ptFirstReset');
-        if (reset) reset.hidden = !first.savedOnly;
+
     }
 
     function toggleFirstStyle(label) {
-        const max = app.features.discovery?.MAX_FIRST_STYLES || 3;
         if (state.firstPick.has(label)) state.firstPick.delete(label);
-        else if (state.firstPick.size >= max) toast(`Pots triar-ne fins a ${max}.`);
         else state.firstPick.add(label);
         updateEntry();
     }
@@ -1286,8 +1274,8 @@
         syncFirstTime(first);
         const play = $('ptPlayBtn');
         if (play) {
-            play.disabled = !ready || (first.chooser && state.firstPick.size === 0);
-            play.title = first.chooser && state.firstPick.size === 0 ? 'Tria almenys un estil per començar' : '';
+            play.disabled = !ready;
+            play.title = '';
             const text = play.querySelector('span');
             if (text) text.textContent = showsContinue ? 'Ràdio nova' : 'Engega la ràdio';
             // Hi ha una acció principal a la pantalla: si ja es pot continuar, «Ràdio nova» és la secundària
@@ -1340,16 +1328,7 @@
     function startMix() {
         const queue = app.features.musicQueue;
         if (!queue?.startDiscovery) return;
-        // La primera vegada la ràdio es fa amb els estils triats: es desen i ja no es tornen a demanar.
-        const first = firstTimeState(tasteNow());
-        if (first.chooser) {
-            if (!state.firstPick.size) {
-                toast('Tria almenys un estil per començar.');
-                return;
-            }
-            app.features.discovery.setFirstStyles([...state.firstPick]);
-        }
-        const result = queue.startDiscovery();
+        const result = queue.startDiscovery({ categories: [...state.firstPick] });
         if (!result.started) {
             toast('Encara no hi ha música carregada. Torna-ho a provar d’aquí a un moment.');
             return;
@@ -1466,6 +1445,11 @@
             if (!app.features.musicQueue?.resumeLast?.())
                 toast('No s’ha pogut continuar la ràdio. Prova «La teva ràdio».');
             return undefined;
+        }
+        if (pick('[data-pt-add-category]')) {
+            state.personalPicker = !state.personalPicker;
+            updateEntry();
+            return;
         }
         if ((el = pick('[data-pt-first-style]'))) return toggleFirstStyle(el.dataset.ptFirstStyle);
         if (pick('[data-pt-first-more]')) {
@@ -1649,3 +1633,4 @@
         getModel: () => state.model,
     };
 })(window);
+

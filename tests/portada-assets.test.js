@@ -127,13 +127,12 @@ describe('index.html de Segueix Música', () => {
         expect(manifest.background_color).toBe('#141615');
     });
 
-    it('té el cercador, l’entrada directa i el selector de tres opcions', () => {
+    it('té el cercador, l’entrada directa i una única ràdio amb categories opcionals', () => {
         expect(html).toContain('placeholder="Què vols escoltar?"');
         expect(html).toContain('La teva ràdio');
-        for (const label of ['Els meus de sempre', 'Una mica de tot', 'Sorprèn-me'])
-            expect(html).toContain(`<span>${label}</span>`);
-        expect(html).toContain('type="radio" name="ptMode"');
-        expect(html).toContain('Quant vols descobrir?');
+        expect(html).not.toContain('name="ptMode"');
+        expect(html).not.toContain('Quant vols descobrir?');
+        expect(html).toContain('data-pt-add-category');
     });
 
     it('la navegació té les vistes demanades a escriptori i a mòbil', () => {
@@ -245,3 +244,4 @@ describe('fitxa de la cançó: cua alineada amb els botons i línies enganxades'
         expect(block).toMatch(/\.video-metadata-bar \{\s*padding-top: 0;/);
     });
 });
+

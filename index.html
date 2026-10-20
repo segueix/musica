@@ -276,17 +276,17 @@
                 <h1 class="pt-sr-only">Segueix Música · La teva plaça musical</h1>
                 <!-- Continua escoltant: la cançó que sona ara o l'última ràdio (la pinta portada.js; buit si no n'hi ha cap) -->
                 <div class="pt-entry__feature" id="ptFeature"></div>
-                <!-- La teva ràdio: una ràdio nova, amb el mode de descoberta triat -->
+                <!-- La teva ràdio: una sola barreja personal de preferides i èxits -->
                 <article class="pt-radio" id="ptRadio">
                     <div class="pt-radio__art" id="ptRadioArt" aria-hidden="true"></div>
                     <div class="pt-radio__body">
                         <p class="pt-eyebrow pt-eyebrow--brand">Ràdio personal</p>
                         <h2 class="pt-radio__title" id="ptEntryTitle">La teva ràdio</h2>
-                        <p class="pt-radio__lead" id="ptRadioLead">Barreja el que t’agrada amb música nova, sense parar.</p>
+                        <p class="pt-radio__lead" id="ptRadioLead">Les teves preferides i els èxits dels mateixos estils.</p>
                         <!-- Només la primera vegada (sense historial, m'agrades ni seguits): estils per començar -->
                         <div class="pt-first" id="ptFirst" hidden>
-                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Estils per començar (fins a tres)"></div>
-                            <p class="pt-first__note">Només t’ho demanem aquesta primera vegada: després la ràdio s’adapta al que escoltis, t’agradi i segueixis.</p>
+                            <div class="pt-first__chips" id="ptFirstChips" role="group" aria-label="Categories que vols afegir"></div>
+                            <p class="pt-first__note">Hi sumarem les cançons més vistes de les categories que triïs.</p>
                         </div>
                         <div class="pt-entry__cta">
                             <button type="button" class="pt-btn pt-btn--primary" id="ptPlayBtn" data-pt-mix disabled>
@@ -294,17 +294,7 @@
                                 <span>Engega la ràdio</span>
                             </button>
                         </div>
-                        <fieldset class="pt-mode">
-                            <legend class="pt-mode__legend">Quant vols descobrir?</legend>
-                            <div class="pt-mode__options">
-                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="home"><span>Els meus de sempre</span></label>
-                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="mix" checked><span>Una mica de tot</span></label>
-                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="surprise"><span>Sorprèn-me</span></label>
-                                <label class="pt-mode__opt"><input type="radio" name="ptMode" value="new"><span>Fora del meu radar</span></label>
-                            </div>
-                            <p class="pt-mode__hint" id="ptModeHint">Combina música coneguda i descoberta.</p>
-                        </fieldset>
-                        <button type="button" class="pt-link" id="ptFirstReset" data-pt-first-reset hidden>Canvia els estils que vas triar</button>
+                        <button type="button" class="pt-link" id="ptAddCategory" data-pt-add-category aria-expanded="false" aria-controls="ptFirst">+ Afegeix una categoria</button>
                         <p class="pt-note" id="ptNote" role="status" aria-live="polite"></p>
                     </div>
                 </article>
@@ -1071,6 +1061,7 @@
 
 </body>
 </html>
+
 
 
 

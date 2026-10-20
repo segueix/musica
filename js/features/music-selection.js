@@ -1209,13 +1209,24 @@
 
         // «historic»: només música antiga. «search»: ràdio d'una cerca; usa les cançons trobades tal com són
         // (sense mescla d'antiguitat), només ordenades pel gust de l'usuari i sense repetir artista seguit.
-        const eraFree = policy === 'historic' || policy === 'search';
+        const eraFree = policy === 'historic' || policy === 'search' || policy === 'personal';
         const hasEnough = knownArtistCount(signals) >= 3;
         // `mix`: { labels, tagOf } perquè la ràdio barregi diversos estils a parts iguals.
         const mix = options.mix && toArray(options.mix.labels).length > 1 ? options.mix : null;
-        const artistFirst = options.artistFirst !== false;
+        const artistFirst = policy !== 'personal' && options.artistFirst !== false;
         // El soroll per cançó donaria més oportunitats als catàlegs grans abans del sorteig d'artista.
         let built = buildItems(toArray(options.candidates), ctx, signals, seed, artistFirst ? null : rng);
+        if (policy === 'personal') {
+            // Una única barreja: gust propi + èxits. La popularitat és absoluta, no relativa al canal.
+            const maxViews = Math.max(1, ...built.map(item => Number(item.video.viewCount) || 0));
+            for (const item of built) {
+                const taste = Math.max(songTaste(item.f.id, signals, ctx.now, cfg),
+                    artistTaste(item.f.artist, signals, ctx.now, cfg));
+                const popularity = Math.log1p(Math.max(0, Number(item.video.viewCount) || 0)) / Math.log1p(maxViews);
+                item.base = 0.65 * taste + 0.35 * popularity - item.parts.penalty;
+            }
+        }
+        if (policy === 'personal') built.sort((a, b) => b.base - a.base);
         let relaxedDiscovery = false;
         if (discover) {
             const found = discoveryPool(built, signals, count, cfg);
@@ -1276,7 +1287,8 @@
             }
         }
 
-        const famTargets = discover ? cfg.familiarity.new : hasEnough ? cfg.familiarity[mode] : null;
+        const famTargets = policy === 'personal' ? { known: 0.65, affine: 0.35, surprise: 0 }
+            : discover ? cfg.familiarity.new : hasEnough ? cfg.familiarity[mode] : null;
         const useFam = Boolean(famTargets);
         if (!hasEnough && !discover) {
             notes.push(signals.followed.size || Object.keys(signals.artists).length ? NOTE_VARIETY : NOTE_NONE);
@@ -1288,7 +1300,7 @@
             .filter(entry => ctx.now - (Number(entry?.at) || 0) < sessionMs)
             .map(entry => String(entry?.id || ''));
         const selectionOptions = {
-            cfg,
+            cfg: policy === 'personal' ? { ...cfg, gain: { ...cfg.gain, familiarity: 1.2 } } : cfg,
             ctx,
             count,
             preceding,
@@ -1632,6 +1644,7 @@
         knownArtistCount,
     };
 })(window);
+
 
 
 

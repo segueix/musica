@@ -881,7 +881,7 @@ describe('mode de descoberta dins de cada ràdio', () => {
             extra: { renderPlaylistQueue: () => holder.env?.queue.render(container) },
         });
         holder.env = env;
-        env.queue.startDiscovery();
+        env.queue.startStyleRadio('Pop');
         return { ...env, catalog, container };
     }
 
@@ -1346,4 +1346,77 @@ describe('la ràdio no s’acaba mai: extend() (2026-10-18)', () => {
         expect(env.ctx.currentPlaylistIndex).toBe(60);
         expect(env.ctx.activePlaylistQueue[60].id).toBe('sona-ara');
     });
+});
+
+
+describe('La teva ràdio: una sola barreja de preferides i èxits', () => {
+    function commercialCatalog() {
+        return ['Pop', 'Rock', 'Jazz / Blues'].flatMap((style, c) =>
+            Array.from({ length: 24 }, (_, i) => song(`commercial-${c}-${i}`, 0.4, {
+                categories: [style], viewCount: i < 12 ? 10000000 - i * 10000 : 10,
+            })));
+    }
+    it('ignora els quatre modes antics i conserva el gust propi i els seus estils', () => {
+        const catalog = commercialCatalog();
+        for (const mode of ['home', 'mix', 'surprise', 'new']) {
+            const env = setup({ catalog, liked: [catalog[15]], mode });
+            expect(env.queue.startDiscovery().started).toBe(true);
+            expect(env.ctx.activePlaylistQueue.some(v => v.id === catalog[15].id)).toBe(true);
+            expect(env.ctx.activePlaylistQueue.every(v => v.categories.includes('Pop'))).toBe(true);
+            expect(env.ctx.activePlaylistQueue.slice(0, 10).filter(v => v.viewCount > 1000000).length).toBeGreaterThan(6);
+            const container = fakeContainer(); env.queue.render(container);
+            expect(container.innerHTML).not.toContain('data-mq-mode');
+            expect(container.innerHTML).toContain('data-mq-add-style');
+            expect(env.queue.setDiscoveryMode('new')).toBeNull();
+        }
+    });
+    it('sumar i treure una categoria conserva les preferides i la cançó que sona', () => {
+        const catalog = commercialCatalog();
+        const env = setup({ catalog, liked: [catalog[15]] });
+        env.queue.startDiscovery();
+        const current = env.ctx.activePlaylistQueue[0].id;
+        expect(env.queue.addStyle('Rock')).toBe(true);
+        expect(env.ctx.activePlaylistQueue[0].id).toBe(current);
+        expect(env.queue.playlistName()).toBe('La teva ràdio + Rock');
+        const rock = env.ctx.activePlaylistQueue.filter(v => v.categories.includes('Rock'));
+        expect(rock.length).toBeGreaterThan(0);
+        expect(rock[0].viewCount).toBe(10000000);
+        expect(env.ctx.activePlaylistQueue.every(v => !v.categories.includes('Jazz / Blues'))).toBe(true);
+        expect(env.queue.removeStyle('Rock')).toBe(true);
+        expect(env.queue.playlistName()).toBe('La teva ràdio');
+        expect(env.ctx.activePlaylistQueue.every(v => v.categories.includes('Pop'))).toBe(true);
+    });
+    it('manté la política en recuperar la sessió i ampliar la cua', () => {
+        const catalog = commercialCatalog();
+        const env = setup({ catalog, liked: [catalog[15]] });
+        env.queue.startDiscovery({ categories: ['Rock'] });
+        const saved = env.queue.captureSession();
+        const other = setup({ catalog, liked: [catalog[15]], mode: 'new' });
+        expect(other.queue.restoreSession(saved, saved.queue[0].id)).toBe(true);
+        other.queue.regenerate();
+        expect(other.queue.captureSession().radioMeta.personal).toBe(true);
+        other.ctx.currentPlaylistIndex = other.ctx.activePlaylistQueue.length - 1;
+        other.queue.extend();
+        expect(other.queue.captureSession().radioMeta.personal).toBe(true);
+        expect(other.ctx.activePlaylistQueue.every(v => !v.categories.includes('Jazz / Blues'))).toBe(true);
+    });
+    it('sense dades personals comença pels èxits, i respecta una categoria explícita', () => {
+        const catalog = commercialCatalog();
+        const env = setup({ catalog, mode: 'new' });
+        expect(env.queue.startDiscovery({ categories: ['Rock'] }).started).toBe(true);
+        expect(env.ctx.activePlaylistQueue[0].viewCount).toBe(10000000);
+        expect(env.ctx.activePlaylistQueue.every(v => v.categories.includes('Rock'))).toBe(true);
+    });
+});
+
+it('la ràdio personal es pot continuar i barreja èxits encara que hi hagi molts favorits', () => {
+    const catalog = Array.from({ length: 100 }, (_, i) => song('fav-' + i, 0.2, { viewCount: i < 50 ? 500 : 10000000 }));
+    const env = setup({ catalog, liked: catalog.slice(0, 50), mode: 'new' });
+    env.queue.startDiscovery();
+    const top = env.ctx.activePlaylistQueue.slice(0, 20);
+    expect(top.some(v => v.viewCount === 10000000)).toBe(true);
+    expect(top.some(v => v.viewCount === 500)).toBe(true);
+    env.queue.playSelection(catalog.slice(0, 3), 'Una altra llista');
+    expect(env.queue.resumeLast()).toBe(true);
+    expect(env.queue.captureSession().radioMeta.personal).toBe(true);
 });

@@ -32,7 +32,8 @@ describe('entrada de la portada: «Continua escoltant» i «La teva ràdio»', (
         expect(entry).toContain('id="ptRadioArt"');
         expect(entry).toContain('id="ptRadioLead"');
         expect(entry).toContain('id="ptPlayBtn"');
-        expect(entry).toContain('name="ptMode"');
+        expect(entry).not.toContain('name="ptMode"');
+        expect(entry).toContain('data-pt-add-category');
     });
 
     it('ja no té el títol gran ni la targeta «Novetat» que competien amb el botó', () => {
@@ -134,11 +135,11 @@ describe('«La teva ràdio»: de què està feta i primera vegada', () => {
         artistKeys: new Set(['a', 'b', 'c']),
     };
 
-    it('té el selector d’estils de la primera vegada (amagat) i el botó per canviar-los', () => {
+    it('té categories opcionals amagades fins que es prem el botó', () => {
         expect(entry).toMatch(/id="ptFirst"[^>]*hidden/);
         expect(entry).toContain('id="ptFirstChips"');
-        expect(entry).toContain('Només t’ho demanem aquesta primera vegada');
-        expect(entry).toMatch(/id="ptFirstReset"[^>]*hidden/);
+        expect(entry).toContain('Hi sumarem les cançons més vistes');
+        expect(entry).toContain('id="ptAddCategory"');
         expect(css).toMatch(/\.pt-chip\s*{[^}]*min-height:\s*44px/);
     });
 
@@ -153,21 +154,22 @@ describe('«La teva ràdio»: de què està feta i primera vegada', () => {
         expect(portada.radioLead(taste, first, true)).toMatch(/^Una ràdio nova\. Feta amb/);
     });
 
-    it('la primera vegada (sense res) es demanen els estils', () => {
+    it('la primera vegada es pot començar sense triar estils', () => {
         const first = portada.firstTimeState({ hasAny: false, artistKeys: new Set() });
-        expect(first.chooser).toBe(true);
-        expect(portada.radioLead({ hasAny: false }, first, false)).toBe('Tria fins a tres estils per començar.');
+        expect(first.chooser).toBe(false);
+        expect(portada.radioLead({ hasAny: false }, first, false)).toContain('Les cançons més populars');
     });
 
     it('amb estils ja triats i poc més, no es tornen a demanar i s’explica què fa la ràdio', () => {
         app.features.discovery.setFirstStyles(['Pop', 'Rock']);
         const first = portada.firstTimeState({ hasAny: false, artistKeys: new Set() });
-        expect(first).toMatchObject({ chooser: false, savedOnly: true });
+        expect(first).toMatchObject({ chooser: false, savedOnly: false });
         expect(portada.radioLead({ hasAny: false }, first, false)).toBe(
-            'Feta amb els estils que vas triar: Pop, Rock. S’adaptarà al que escoltis.'
+            'Les cançons més populars per començar. La ràdio s’adaptarà al que escoltis i t’agradi.'
         );
         // Amb prou artistes coneguts ja no mana l'elecció
         expect(portada.firstTimeState(taste).savedOnly).toBe(false);
         app.features.discovery.setFirstStyles([]);
     });
 });
+
