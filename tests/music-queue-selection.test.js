@@ -1420,3 +1420,45 @@ it('la ràdio personal es pot continuar i barreja èxits encara que hi hagi molt
     expect(env.queue.resumeLast()).toBe(true);
     expect(env.queue.captureSession().radioMeta.personal).toBe(true);
 });
+
+describe('La teva ràdio: les categories afegides hi sumen les cançons més vistes', () => {
+    function tasteAndRock() {
+        const pop = [];
+        for (let a = 0; a < 30; a++) for (let i = 0; i < 4; i++) pop.push(song(`pop${a}`, 0.5, { viewCount: 50000 }));
+        const rock = [];
+        for (let a = 0; a < 20; a++)
+            for (let i = 0; i < 3; i++)
+                rock.push(song(`rock${a}`, 1, { categories: ['Rock'], viewCount: 9000000 - a * 100000 - i * 1000 }));
+        return { pop, rock, catalog: [...pop, ...rock] };
+    }
+
+    it('amb molt de gust propi, la categoria triada hi és de debò i amb els seus èxits', () => {
+        const { pop, rock, catalog } = tasteAndRock();
+        const env = setup({ catalog, liked: pop, followed: [...new Set(pop.map(v => v.channelId))] });
+        expect(env.queue.startDiscovery({ categories: ['Rock'] }).started).toBe(true);
+        const top = env.ctx.activePlaylistQueue.slice(0, 20);
+        const rockIn = top.filter(v => v.categories.includes('Rock'));
+        expect(rockIn.length).toBeGreaterThanOrEqual(6);
+        // Els més vistos de la categoria, un per artista
+        const best = [...rock].sort((a, b) => b.viewCount - a.viewCount)[0];
+        expect(env.ctx.activePlaylistQueue.some(v => v.id === best.id)).toBe(true);
+        expect(new Set(rockIn.map(v => v.channelId)).size).toBe(rockIn.length);
+        // El gust propi continua present
+        expect(top.filter(v => v.categories.includes('Pop')).length).toBeGreaterThanOrEqual(6);
+    });
+
+    it('també en sumar la categoria des de la cua i en ampliar-la', () => {
+        const { pop, catalog } = tasteAndRock();
+        const env = setup({ catalog, liked: pop, followed: [...new Set(pop.map(v => v.channelId))] });
+        env.queue.startDiscovery();
+        expect(env.ctx.activePlaylistQueue.slice(0, 20).some(v => v.categories.includes('Rock'))).toBe(false);
+        expect(env.queue.addStyle('Rock')).toBe(true);
+        expect(env.ctx.activePlaylistQueue.slice(1, 21).filter(v => v.categories.includes('Rock')).length)
+            .toBeGreaterThanOrEqual(6);
+        env.ctx.currentPlaylistIndex = env.ctx.activePlaylistQueue.length - 1;
+        const before = env.ctx.activePlaylistQueue.length;
+        env.queue.extend();
+        const added = env.ctx.activePlaylistQueue.slice(before);
+        expect(added.some(v => v.categories.includes('Rock'))).toBe(true);
+    });
+});

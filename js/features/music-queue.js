@@ -306,8 +306,11 @@
     function buildQueueEngine(video, category = '', options = {}) {
         const sel = engine();
         const discovery = app.features.discovery;
+        // Ràdio personal: el gust propi el tria el motor i les categories afegides hi entren després com a èxits.
+        // Sense gust propi encara, la ràdio és de les categories triades (si n'hi ha).
+        const hasTaste = options.personal && Boolean(recentTasteNow()?.hasAny);
         const candidates = options.personal
-            ? personalCandidates(getCandidates(video, '', options), category)
+            ? personalCandidates(getCandidates(video, '', options), hasTaste ? [] : category)
             : getCandidates(video, category, options);
         const preceding = options.preceding?.length ? options.preceding : [video];
         const mode = options.personal ? 'mix' : options.mode || discovery?.getMode?.() || 'mix';
@@ -344,7 +347,67 @@
             era: result.meta.era,
             relaxedLevel: result.meta.relaxedLevel,
         };
-        return [video, ...result.queue];
+        const extra = options.personal ? asCategories(category) : [];
+        if (!extra.length) return [video, ...result.queue];
+        const taken = new Set([...preceding, ...result.queue].map(item => String(item?.id)));
+        (options.playedIds || []).forEach(id => taken.add(String(id)));
+        const hits = categoryHits(video, extra, { ...options, taken, signals: selectionSignals(played) });
+        return [video, ...blendCategoryHits(result.queue, hits, { artistOf, count: MAX_QUEUE_LENGTH - 1 })];
+    }
+
+    // Èxits de les categories afegides a la ràdio personal: per a cada categoria, les cançons més vistes, una per
+    // artista, sense les que ja hi són ni les que han sonat fa poc (descans de la sessió). Es tornen a torns entre
+    // categories perquè totes hi siguin a parts iguals.
+    function categoryHits(video, categories, options = {}) {
+        const taken = options.taken || new Set();
+        const recent = new Set(
+            (options.signals?.recent || []).slice(0, 12).map(entry => String(entry?.id || ''))
+        );
+        const usedArtists = new Set();
+        const lists = categories.map(name =>
+            getCandidates(video, name, { personal: true, liveOnly: options.liveOnly })
+                .filter(item => !taken.has(String(item.id)) && !recent.has(String(item.id)))
+                .sort((a, b) => (Number(b.viewCount) || 0) - (Number(a.viewCount) || 0))
+        );
+        const out = [];
+        const cursors = lists.map(() => 0);
+        let progressed = true;
+        while (progressed) {
+            progressed = false;
+            lists.forEach((list, index) => {
+                while (cursors[index] < list.length) {
+                    const item = list[cursors[index]++];
+                    const artist = artistOf(item) || String(item.id);
+                    if (usedArtists.has(artist) || taken.has(String(item.id))) continue;
+                    usedArtists.add(artist);
+                    taken.add(String(item.id));
+                    out.push(item);
+                    progressed = true;
+                    break;
+                }
+            });
+        }
+        return out;
+    }
+
+    // Intercala els èxits de les categories afegides amb el gust propi: una de cada dues cançons (pura).
+    // Evita, si pot, dos temes seguits del mateix artista.
+    function blendCategoryHits(base, hits, { artistOf: keyOf = item => String(item?.channelId || ''), count = Infinity } = {}) {
+        const own = Array.isArray(base) ? base.slice() : [];
+        const extra = Array.isArray(hits) ? hits.slice() : [];
+        const ids = new Set(extra.map(item => String(item?.id)));
+        const rest = own.filter(item => !ids.has(String(item?.id)));
+        const out = [];
+        let turn = 0;
+        while (out.length < count && (rest.length || extra.length)) {
+            const source = (turn % 2 === 1 && extra.length) || !rest.length ? extra : rest;
+            const previous = out.length ? keyOf(out[out.length - 1]) : '';
+            let at = source.findIndex(item => keyOf(item) !== previous);
+            if (at < 0) at = 0;
+            out.push(source.splice(at, 1)[0]);
+            turn += 1;
+        }
+        return out;
     }
 
     // Cua = vídeo inicial + ordenació de Música TV, repartida segons el mode de descoberta.
@@ -1956,6 +2019,7 @@
         restoreSession,
         startFrom,
         startDiscovery,
+        blendCategoryHits,
         extend,
         getLastRadio,
         resumeLast,
