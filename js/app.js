@@ -1837,7 +1837,9 @@ function getProgramVideos(program) {
 
 function getWatchChannelInfoContext(channel, video) {
     const program = getPrimaryProgramForVideo(video);
-    const channelName = channel?.title || channel?.name || '';
+    const rawName = channel?.title || channel?.name || '';
+    // Mai «Artista - Topic» / «Artista - Tema» al costat del reproductor.
+    const channelName = window.SegueixMusicCategories?.cleanArtistName?.(rawName) ?? rawName;
 
     return {
         program,

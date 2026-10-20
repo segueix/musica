@@ -180,6 +180,6 @@ it('«A prop teu»: primer la distància, després la cançó i el grup (llista 
  const mq = readFileSync('js/features/music-queue.js', 'utf8');
  const text = mq.slice(mq.indexOf('<span class="mq-text">'));
  expect(text.indexOf('${nearbyLine(video)}')).toBeLessThan(text.indexOf('mq-title'));
- expect(text.indexOf('mq-title')).toBeLessThan(text.indexOf('video.channelTitle'));
+ expect(text.indexOf('mq-title')).toBeLessThan(text.indexOf('artistLabel(video)'));
  expect(near).toContain('nearbyKm: km(r.location.distance)');
 });
