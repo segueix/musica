@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T13:53:06Z",
+  "updatedAt": "2026-10-21T14:25:00Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7548,6 +7548,24 @@
         "live_song"
       ],
       "avatarFromFirstAllowedVideo": true
+    },
+    "UCQt9awGIFZeldFsATZNeJag": {
+      "artist": "Rosalía",
+      "note": "Selecció expressa de l’usuari el 2026-10-21: només les tres gravacions. Publicadors Topic, VEVO i Ivan Santaeularia comprovats a YouTube; agrupades sota el perfil oficial. Divinize és bilingüe, excepció expressa. Excloure el videoclip doble Fucking Money Man i la resta del repertori.",
+      "allowedVideoIds": [
+        "JNWq0bsWBrQ",
+        "OxDmGz60hws",
+        "umnd1uvlukE"
+      ],
+      "allowedExternalVideos": {
+        "JNWq0bsWBrQ": "UCeYz6rzUGhVwqxRM37FUo8w",
+        "OxDmGz60hws": "UCy2bCk5KnIfjmWYFHMZcd5w",
+        "umnd1uvlukE": "UCFRGyogwy4iFmAfw2xl-TtA"
+      },
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song"
+      ]
     }
   }
 }

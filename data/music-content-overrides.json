@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:49:50.325Z",
+  "updatedAt": "2026-10-21T14:25:00Z",
   "description": "Decisions manuals sobre el tipus de contingut de vídeos concrets. Manen sobre el classificador automàtic (scripts/lib/classificar_contingut_musical.js) i el pipeline (scripts/update_music_feed.js) les reaplica a cada generació del feed. Tipus permesos: song, live_song, album, other. Un vídeo revisat aquí surt de data/music-content-review.json.",
   "videos": [
     {
@@ -15493,6 +15493,24 @@
       "title": "Testament d'Amelia _ Una Corda Més",
       "contentType": "song",
       "note": "Selecció expressa de Núria Balcells / Recançonem. Crèdits: violí de 5 cordes i guitarra de 7 cordes. No és verificació d'una lletra cantada. docs/revisions/2026-10-17-nuria-balcells.json"
+    },
+    {
+      "id": "JNWq0bsWBrQ",
+      "contentType": "song",
+      "title": "Milionària",
+      "note": "Àudio separat en català; no el videoclip doble amb Dio$ No$ Libre Del Dinero."
+    },
+    {
+      "id": "OxDmGz60hws",
+      "contentType": "song",
+      "title": "ROSALÍA - Divinize (Official Lyric Video)",
+      "note": "Català i anglès. Excepció editorial sol·licitada expressament per l’usuari el 2026-10-21; no es classifica com a català íntegre."
+    },
+    {
+      "id": "umnd1uvlukE",
+      "contentType": "song",
+      "title": "Herois Obscurs",
+      "note": "Col·laboració de Rosalía amb Ivan Santaeulària i Jack Tarradellas a Or verd. ℗ 2014 Temps Records; la pujada correspon a la reedició de 2021. https://open.spotify.com/track/25RWOcsYa4GF5PebBNAaIE"
     }
   ]
 }

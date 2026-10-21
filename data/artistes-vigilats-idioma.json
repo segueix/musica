@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T16:43:36Z",
+  "updatedAt": "2026-10-21T14:25:00Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2647,6 +2647,22 @@
       "fonts": [
         "manual-user-2026-10-18",
         "docs/revisions/2026-10-18-uri-santafe.json"
+      ]
+    },
+    {
+      "artista": "Rosalía",
+      "aliases": [
+        "ROSALÍA",
+        "Rosalia",
+        "Rosalía Vila"
+      ],
+      "canals": [
+        "UCQt9awGIFZeldFsATZNeJag"
+      ],
+      "motiu": "Repertori majoritàriament en altres llengües. Només tres gravacions aprovades per selecció expressa; Divinize és una excepció bilingüe.",
+      "fonts": [
+        "manual-user-2026-10-21",
+        "https://www.enderrock.cat/noticia/19638/rosalia-canta-catala-milionaria"
       ]
     }
   ],
@@ -5545,6 +5561,36 @@
         "IEbavi9eggc"
       ],
       "criteri": "Lletra completa publicada llegida; discurs en català, amb manlleus o interjeccions puntuals. Títol i canal publicador verificats als resultats de YouTube; no es transfereix a altres versions."
+    },
+    {
+      "artista": "Rosalía",
+      "titol": "Milionària",
+      "accio": "conserva",
+      "font": "https://www.youtube.com/watch?v=JNWq0bsWBrQ",
+      "videoIds": [
+        "JNWq0bsWBrQ"
+      ],
+      "criteri": "Selecció expressa de l’usuari el 2026-10-21. Àudio separat en català; no el videoclip doble amb Dio$ No$ Libre Del Dinero."
+    },
+    {
+      "artista": "Rosalía",
+      "titol": "ROSALÍA - Divinize (Official Lyric Video)",
+      "accio": "conserva",
+      "font": "https://www.youtube.com/watch?v=OxDmGz60hws",
+      "videoIds": [
+        "OxDmGz60hws"
+      ],
+      "criteri": "Selecció expressa de l’usuari el 2026-10-21. Català i anglès. Excepció editorial sol·licitada expressament per l’usuari el 2026-10-21; no es classifica com a català íntegre."
+    },
+    {
+      "artista": "Rosalía",
+      "titol": "Herois Obscurs",
+      "accio": "conserva",
+      "font": "https://www.youtube.com/watch?v=umnd1uvlukE",
+      "videoIds": [
+        "umnd1uvlukE"
+      ],
+      "criteri": "Selecció expressa de l’usuari el 2026-10-21. Col·laboració de Rosalía amb Ivan Santaeulària i Jack Tarradellas a Or verd. ℗ 2014 Temps Records; la pujada correspon a la reedició de 2021. https://open.spotify.com/track/25RWOcsYa4GF5PebBNAaIE"
     }
   ]
 }

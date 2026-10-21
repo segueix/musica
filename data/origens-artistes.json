@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T16:43:36Z",
+  "updatedAt": "2026-10-21T14:25:00Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2670,6 +2670,19 @@
       "territory": "Catalunya Nord",
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Ba%C3%B3&count=10&language=ca&format=json&countryCode=FR",
       "checkedOn": "2026-10-17"
+    },
+    "geonames:3110661": {
+      "name": "Sant Esteve Sesrovires",
+      "type": "municipality",
+      "geonamesId": 3110661,
+      "coordinates": {
+        "latitude": 41.49341,
+        "longitude": 1.8833,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant%20Esteve%20Sesrovires&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-21"
     }
   },
   "artists": {
@@ -17625,6 +17638,34 @@
           "basis": "Enllaç facilitat per l'editor del catàleg al full d'artistes pendents (19/10/2026)."
         }
       }
+    },
+    "artist:rosalia": {
+      "name": "Rosalía",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3110661"
+      ],
+      "confidence": "alta",
+      "basis": "Enderrock identifica Rosalía com a artista de Sant Esteve Sesrovires.",
+      "sources": [
+        "https://www.enderrock.cat/noticia/19638/rosalia-canta-catala-milionaria"
+      ],
+      "reviewedOn": "2026-10-21",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://www.rosalia.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-21",
+          "method": "manual-review",
+          "sources": [
+            "https://www.rosalia.com/"
+          ],
+          "basis": "Web oficial de Rosalía."
+        }
+      }
     }
   },
   "channels": {
@@ -18299,7 +18340,8 @@
     "UCNtSpJN9-iRH8tENhz1_kXw": "artist:uri-santafe",
     "UCDZC81-3ZBbu4R5yDbJMigQ": "artist:uri-santafe",
     "UCn8foPPMflft1g_JVfcpzYQ": "artist:komando-moriles",
-    "UCtdHEpTBQZig3Y9-PXBAKYQ": "artist:nu-drama"
+    "UCtdHEpTBQZig3Y9-PXBAKYQ": "artist:nu-drama",
+    "UCQt9awGIFZeldFsATZNeJag": "artist:rosalia"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

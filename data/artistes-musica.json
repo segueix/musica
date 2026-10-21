@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-19T19:48:04.122Z",
+  "updatedAt": "2026-10-21T14:25:00Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -41255,6 +41255,50 @@
       ],
       "lastChecked": "2026-10-19T16:43:36Z",
       "notes": "Alta expressa de l’usuari: Urbana, Sant Joan de les Abadesses i Instagram com a pàgina principal. Accepta totes les cançons d’aquest canal, sense selecció tancada. Acceptació editorial, no verificació individual de les lletres. Fitxa pròpia separada de Vademecum FAM."
+    },
+    {
+      "name": "Rosalía",
+      "displayName": "Rosalía",
+      "aliases": [
+        "ROSALÍA",
+        "Rosalia",
+        "Rosalía Vila"
+      ],
+      "genres": [
+        "Pop"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà",
+        "anglès"
+      ],
+      "wikidataId": "Q28843759",
+      "musicbrainzId": "25f3abd9-63b5-471a-bd25-feb9672dfa11",
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCQt9awGIFZeldFsATZNeJag",
+            "name": "ROSALÍA",
+            "handle": "@rosalia",
+            "type": "official",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCQt9awGIFZeldFsATZNeJag",
+        "https://www.rosalia.com/"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Selecció tancada: Milionària, Divinize i Herois obscurs (2014). Tres cançons en total, no quatre. Divinize combina català i anglès i s’inclou per petició expressa. No aprovar la resta del repertori."
     }
   ]
 }
