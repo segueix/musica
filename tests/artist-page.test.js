@@ -381,3 +381,21 @@ describe('fitxa al mòbil: la capçalera i la #1 no surten de la pantalla (2026-
         );
     });
 });
+
+describe('fitxa d’artista: origen amb «Ràdio local»', () => {
+    it('cada lloc amb coordenades porta «Ràdio local · lloc» (abans «Ràdio d’aquí»)', () => {
+        const out = page.originHtml({
+            label: 'Origen',
+            basis: '',
+            sources: [],
+            places: [
+                { name: 'Mataró', territory: 'Catalunya', coordinates: { latitude: 41.54, longitude: 2.44 } },
+                { name: 'Sense punt', territory: 'Catalunya' },
+            ],
+        });
+        expect(out).toContain('data-ap-place="0"');
+        expect(out).toContain('<span>Ràdio local · Mataró</span>');
+        expect(out).not.toContain('data-ap-place="1"');
+        expect(out).not.toMatch(/d['’]aquí/);
+    });
+});

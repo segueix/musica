@@ -3415,7 +3415,7 @@ body .follow-btn-pill.is-followed:hover {
 /* ==========================================================================
    Fitxa d'artista (#channelPage) — redisseny 2026-10-16
    La foto de perfil fa de fons de la capçalera (.ap-hero) i al damunt hi van el nom, els subscriptors, les cançons,
-   l'origen (amb «Ràdio d'aquí»), la presentació (una línia), els estils i les teves categories, les ràdios, seguir
+   l'origen (amb «Ràdio local»), la presentació (una línia), els estils i les teves categories, les ràdios, seguir
    i compartir. Al costat (a sota al mòbil), la cançó més escoltada (.ap-best, #1). A sota, la resta de cançons per
    visualitzacions en tres columnes de caràtules quadrades (.ap-grid), sense títols de secció; cada caràtula engega
    una ràdio de l'artista que comença per aquella cançó.
@@ -3707,7 +3707,7 @@ body .follow-btn-pill.is-followed:hover {
 }
 
 /* Origen (2026-10-19): càpsula de vidre «Origen · Mataró» amb una fletxa que gira; desplegada, un panell de vidre amb
-   el lloc i el territori, el perquè, «Ràdio d'aquí» i, sota «D'on ho sabem», les fonts com a càpsules amb el nom del
+   el lloc i el territori, el perquè, «Ràdio local» i, sota «D'on ho sabem», les fonts com a càpsules amb el nom del
    web (Enderrock, Viquipèdia…) i la fletxa d'enllaç extern. Abans eren «Font 1», «Font 2» subratllats. */
 #channelPage .ap-origin {
     max-width: 100%;

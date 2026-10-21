@@ -340,7 +340,7 @@
     function homePanelHtml(home) {
         return `<div class="am-panel__head"><div><p class="am-panel__eyebrow">La teva zona</p><h3>A prop de ${esc(home.name)}</h3>
                 <p>${home.artists.length === 1 ? 'L’artista més proper' : `Els ${home.artists.length} artistes més propers`}</p></div>
-                <button type="button" class="am-radio" data-am-home-radio>Ràdio d'aquí</button></div>
+                <button type="button" class="am-radio" data-am-home-radio>Ràdio local</button></div>
             <ul class="am-artists">${artistItems(home.artists, true)}</ul>
             <p class="am-panel__hint am-panel__hint--after">Toca un punt del mapa o <strong>dibuixa una zona</strong> per veure’n uns altres.</p>`;
     }
@@ -354,7 +354,7 @@
             ? `${esc(point.territory)} · ubicació aproximada (${esc(point.reference)})`
             : esc(point.territory);
         return `<div class="am-panel__head"><div><h3>${esc(point.name)}</h3><p>${where} · ${artistsLabel(point.artists.length)}</p></div>
-                <button type="button" class="am-radio" data-am-radio="${esc(point.id)}">Ràdio d'aquí</button></div>
+                <button type="button" class="am-radio" data-am-radio="${esc(point.id)}">Ràdio local</button></div>
             <ul class="am-artists">${artistItems(point.artists)}</ul>`;
     }
 

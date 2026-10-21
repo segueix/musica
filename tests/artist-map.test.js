@@ -296,6 +296,10 @@ describe('«Música d’arreu»: de sortida, els artistes de la teva zona', () =
         expect(out).toContain('La teva zona');
         expect(out).toContain('A prop de Vic');
         expect(out).toContain('data-am-home-radio');
+        // El botó es diu «Ràdio local» (2026-10-21; abans «Ràdio d'aquí»), també al panell d'un lloc
+        expect(out).toMatch(/data-am-home-radio>Ràdio local</);
+        expect(feature.panelHtml(points[0], home)).toMatch(/data-am-radio="girona">Ràdio local</);
+        expect(out + feature.panelHtml(points[0], home)).not.toMatch(/d['’]aquí/);
         expect(out).toContain('data-am-artist="UCb"');
         expect(feature.panelHtml(points[0], home)).toContain('data-am-radio="girona"');
         expect(feature.panelHtml(points[0], home)).not.toContain('La teva zona');
