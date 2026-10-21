@@ -11172,6 +11172,8 @@ function initExternalPlayerControls() {
         bar.classList.toggle('is-awaiting-native', awaiting);
         const nativeHint = document.getElementById('playerNativePlayHint');
         if (nativeHint) nativeHint.hidden = !awaiting;
+        // L'avís que es veu: a sobre del títol, que baixa una mica amb una animació (portada.css, «Prem ▶ al reproductor»)
+        document.getElementById('nativePlayCue')?.classList.toggle('is-visible', awaiting && hasIframe);
         const miniActive = isMiniPlayerActive();
         place(miniActive, miniActive && !mobileQuery.matches);
         followPlayer();

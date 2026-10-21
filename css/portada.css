@@ -12265,3 +12265,101 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     background: var(--pt-accent);
     color: var(--pt-on-accent);
 }
+
+/* ---------- Fitxa de la cançó: «Prem ▶ al reproductor per començar» a sobre del títol (2026-10-21) ----------
+   Mentre s'espera el primer ▶ dins del vídeo (isAwaitingNativePlay(), app.js), a sobre del títol s'obre una càpsula
+   llima amb una fletxa que apunta al reproductor: l'alçada s'anima de 0 a la seva (grid-template-rows 0fr → 1fr), de
+   manera que el títol baixa una mica i el text hi apareix a sobre. Quan comença a sonar, es torna a plegar. L'avís de
+   dins la barra de controls (#playerNativePlayHint, role="status") queda només per als lectors de pantalla (retallat amb
+   clip: rect(); player-controls.test.js no hi deixa cap retall amb camí, per protegir el reproductor). */
+#watchPage .native-play-cue {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#watchPage .native-play-cue__clip {
+    min-height: 0;
+    overflow: hidden;
+}
+
+#watchPage .native-play-cue__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 12px;
+    padding: 10px 18px 10px 14px;
+    border-radius: var(--pt-radius-pill);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.25;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+#watchPage .native-play-cue__arrow {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* En obrir-se, primer baixa el títol i de seguida apareix el text; la fletxa fa un petit gest cap al vídeo */
+#watchPage .native-play-cue.is-visible {
+    grid-template-rows: 1fr;
+    transition-delay: 0.15s;
+}
+
+#watchPage .native-play-cue.is-visible .native-play-cue__pill {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.35s;
+}
+
+#watchPage .native-play-cue.is-visible .native-play-cue__arrow {
+    animation: native-play-cue-nudge 1.4s ease-in-out 0.8s infinite;
+}
+
+@keyframes native-play-cue-nudge {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #watchPage .native-play-cue,
+    #watchPage .native-play-cue__pill {
+        transition: none;
+    }
+
+    #watchPage .native-play-cue.is-visible .native-play-cue__arrow {
+        animation: none;
+    }
+}
+
+/* L'avís de la barra de controls continua per als lectors de pantalla, però ja no es veu (el text és a sobre del títol) */
+.player-external-controls .player-native-play-hint {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
