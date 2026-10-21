@@ -441,15 +441,15 @@ async function check(browser, width, height, label) {
         await page.evaluate(() => window.scrollTo(0, 0));
     }
     ok(`${label}: sense errors en obrir la fitxa`, errors.length === 0, errors);
-    // Origen: el xip es desplega i porta «Ràdio d'aquí», que obre la ràdio «A prop teu» d'aquell lloc
+    // Origen: el xip es desplega i porta «Ràdio local», que obre la ràdio «A prop teu» d'aquell lloc
     if (await page.isVisible('#apOrigin summary')) {
         await page.click('#apOrigin summary');
         const place = await page.$('#apOrigin [data-ap-place]');
-        ok(`${label}: l'origen porta «Ràdio d'aquí»`, Boolean(place));
+        ok(`${label}: l'origen porta «Ràdio local»`, Boolean(place));
         if (place) {
             await place.click();
             await page.waitForSelector('dialog.near-dialog[open]', { timeout: 15000 }).catch(() => null);
-            ok(`${label}: «Ràdio d'aquí» obre la ràdio del lloc`, await page.isVisible('dialog.near-dialog[open]'));
+            ok(`${label}: «Ràdio local» obre la ràdio del lloc`, await page.isVisible('dialog.near-dialog[open]'));
             await page.keyboard.press('Escape');
             await page.waitForTimeout(300);
         }

@@ -446,7 +446,7 @@
         });
     }
 
-    // Xip amb el lloc (es desplega amb el perquè i les fonts) i, per a cada lloc amb coordenades, «Ràdio d'aquí»:
+    // Xip amb el lloc (es desplega amb el perquè i les fonts) i, per a cada lloc amb coordenades, «Ràdio local»:
     // la ràdio «A prop teu» d'aquell lloc (nearby-radio.js openPlace(), que no desa la zona de l'usuari).
     // Les fonts són càpsules amb el nom del web i la fletxa d'enllaç extern, sota «D'on ho sabem».
     function originHtml(model) {
@@ -456,7 +456,7 @@
         const radios = model.places
             .map((place, index) =>
                 hasPoint(place)
-                    ? `<button class="ap-chip-btn ap-origin__radio" type="button" data-ap-place="${index}">${PIN_ICON}<span>Ràdio d’aquí · ${escapeHtml(place.name)}</span></button>`
+                    ? `<button class="ap-chip-btn ap-origin__radio" type="button" data-ap-place="${index}">${PIN_ICON}<span>Ràdio local · ${escapeHtml(place.name)}</span></button>`
                     : ''
             )
             .join('');
