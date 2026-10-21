@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T14:25:00Z",
+  "updatedAt": "2026-10-21T20:30:09Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7565,6 +7565,138 @@
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "song"
+      ]
+    },
+    "UCYRxQ_jB6vat3NkBxIOe4fQ": {
+      "artist": "Port Bo",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "allowedVideoIds": [
+        "fmh3WEHkmjA",
+        "SBcpZi2DkaI"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "fmh3WEHkmjA"
+    },
+    "UCM0EHoHg-iQnr2hi5tzamLg": {
+      "artist": "Els Pescadors de l’Escala",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "allowedVideoIds": [
+        "LG1kQCd_rEE",
+        "2Ty89Uuqvz4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "LG1kQCd_rEE"
+    },
+    "UCuZ3VZ2TMeFeV6pZvG9SueQ": {
+      "artist": "Peix Fregit",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "allowedVideoIds": [
+        "MdPbW5BmYPI"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "MdPbW5BmYPI"
+    },
+    "UC_G7mnl8-6cNBYPakcWGBJQ": {
+      "artist": "Bergantí",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Canal Tema de l’edició de la 47a Cantada (2013), compartit: només les tres pistes acreditades a Bergantí. Els canals Bergantí/Grup Bergantí no aporten aquí altres pistes validades.",
+      "allowedVideoIds": [
+        "TA9x2SkO7R0",
+        "3aEEcPf0IsU",
+        "mcdN9pZ-zP8"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "TA9x2SkO7R0"
+    },
+    "UCg_cSzozOrPF-OKMgWlvh-w": {
+      "artist": "Arjau",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "allowedVideoIds": [
+        "U6e5EWIOij4",
+        "gr1iFewu0l4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "U6e5EWIOij4"
+    },
+    "UCq2UolkO1YhWax4NwsHC-cw": {
+      "artist": "Les Anxovetes",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. YouTube etiqueta incorrectament el canal com La Dona Del Sac; els tres IDs estan enllaçats al web de Les Anxovetes i acreditats al grup. No incorporar altres artistes del canal.",
+      "allowedVideoIds": [
+        "aovi9R6FlUA",
+        "sugkEZqdStk",
+        "fpReIjhiOD4"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "aovi9R6FlUA"
+    },
+    "UCaOPnT08yPkgHCxSo56Z5ng": {
+      "artist": "Els Cremats",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "allowedVideoIds": [
+        "uBebM6ml3Ws"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "uBebM6ml3Ws"
+    },
+    "UCAUgxOKd6wQwP_aUk54LgmQ": {
+      "artist": "Mar Endins",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "allowedVideoIds": [
+        "MduB4_gWqDo",
+        "PslaS-y2ayE"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "MduB4_gWqDo"
+    },
+    "UCD_2AZugryBv83F1Ula_X3w": {
+      "artist": "Cavall Bernat",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Encara sense pistes admeses: falta verificar íntegrament la lletra de les gravacions candidates.",
+      "allowedVideoIds": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ]
+    },
+    "UCYOWVkZwBVSxzYQfK_khVYg": {
+      "artist": "Terra Endins",
+      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Encara sense pistes admeses: falta verificar íntegrament la lletra de les gravacions candidates.",
+      "allowedVideoIds": [],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
       ]
     }
   }

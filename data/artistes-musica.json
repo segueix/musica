@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21T14:25:00Z",
+  "updatedAt": "2026-10-21T20:30:09Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -41299,6 +41299,447 @@
       ],
       "lastChecked": "2026-10-21",
       "notes": "Selecció tancada: Milionària, Divinize i Herois obscurs (2014). Tres cançons en total, no quatre. Divinize combina català i anglès i s’inclou per petició expressa. No aprovar la resta del repertori."
+    },
+    {
+      "name": "Port Bo",
+      "displayName": "Port Bo",
+      "aliases": [
+        "Port-Bo"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+            "handle": null,
+            "name": "Port Bo - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCYRxQ_jB6vat3NkBxIOe4fQ",
+        "https://habacompo.cat/lletra-de-lhavanera-mariner-de-terra-endins",
+        "https://habacompo.cat/lletra-i-video-de-lhavanera-anima-marinera"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json."
+    },
+    {
+      "name": "Els Pescadors de l’Escala",
+      "displayName": "Els Pescadors de l’Escala",
+      "aliases": [
+        "Els Pescadors de l'Escala"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCM0EHoHg-iQnr2hi5tzamLg",
+            "handle": null,
+            "name": "Els Pescadors de l’Escala - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCM0EHoHg-iQnr2hi5tzamLg",
+        "https://habacompo.cat/lletra-de-lhavanera-entre-les-barques",
+        "https://habacompo.cat/lletra-de-lhavanera-el-llop-de-mar"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json."
+    },
+    {
+      "name": "Peix Fregit",
+      "displayName": "Peix Fregit",
+      "aliases": [
+        "Grup Peix Fregit"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCuZ3VZ2TMeFeV6pZvG9SueQ",
+            "handle": null,
+            "name": "Peix Fregit - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCuZ3VZ2TMeFeV6pZvG9SueQ",
+        "https://habacompo.cat/acords-de-aigua-de-mar"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json."
+    },
+    {
+      "name": "Bergantí",
+      "displayName": "Bergantí",
+      "aliases": [
+        "Grup Bergantí",
+        "El Bergantí"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC_G7mnl8-6cNBYPakcWGBJQ",
+            "handle": null,
+            "name": "Release - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC_G7mnl8-6cNBYPakcWGBJQ",
+        "https://www.havanerescalella.cat/wp-content/uploads/2016/02/can%C3%A7oner_2013.pdf"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Canal Tema de l’edició de la 47a Cantada (2013), compartit: només les tres pistes acreditades a Bergantí. Els canals Bergantí/Grup Bergantí no aporten aquí altres pistes validades."
+    },
+    {
+      "name": "Arjau",
+      "displayName": "Arjau",
+      "aliases": [
+        "Grup Arjau"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCg_cSzozOrPF-OKMgWlvh-w",
+            "handle": null,
+            "name": "Arjau - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCg_cSzozOrPF-OKMgWlvh-w",
+        "https://habacompo.cat/lletra-de-lhavanera-lavi-meliu",
+        "https://habacompo.cat/onades-damor-lletra"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json."
+    },
+    {
+      "name": "Les Anxovetes",
+      "displayName": "Les Anxovetes",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCq2UolkO1YhWax4NwsHC-cw",
+            "handle": null,
+            "name": "La Dona Del Sac - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCq2UolkO1YhWax4NwsHC-cw",
+        "https://www.lesanxovetes.cat/canco/la-barca-xica/",
+        "https://www.lesanxovetes.cat/canco/mare-vull-ser-pescador/",
+        "https://www.lesanxovetes.cat/canco/mariner-de-terra-endins/"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. YouTube etiqueta incorrectament el canal com La Dona Del Sac; els tres IDs estan enllaçats al web de Les Anxovetes i acreditats al grup. No incorporar altres artistes del canal."
+    },
+    {
+      "name": "Els Cremats",
+      "displayName": "Els Cremats",
+      "aliases": [
+        "Cremats"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCaOPnT08yPkgHCxSo56Z5ng",
+            "handle": null,
+            "name": "Els Cremats - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCaOPnT08yPkgHCxSo56Z5ng",
+        "https://www.havanerescalella.cat/wp-content/uploads/2016/02/Can%C3%A7oner-Palau-ALTA.pdf"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json."
+    },
+    {
+      "name": "Mar Endins",
+      "displayName": "Mar Endins",
+      "aliases": [],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCAUgxOKd6wQwP_aUk54LgmQ",
+            "handle": null,
+            "name": "Mar Endins - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCAUgxOKd6wQwP_aUk54LgmQ",
+        "https://www.havaneresmarendins.com/La%20Can%C3%A7o%20del%20Mestral.pdf",
+        "https://www.havaneresmarendins.com/El%20vaiv%C3%A9%20de%20les%20ones.pdf"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json."
+    },
+    {
+      "name": "Cavall Bernat",
+      "displayName": "Cavall Bernat",
+      "aliases": [
+        "Grup d'Havaneres Cavall Bernat"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCD_2AZugryBv83F1Ula_X3w",
+            "handle": null,
+            "name": "Cavall Bernat - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCD_2AZugryBv83F1Ula_X3w"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Encara sense pistes admeses: falta verificar íntegrament la lletra de les gravacions candidates."
+    },
+    {
+      "name": "Terra Endins",
+      "displayName": "Terra Endins",
+      "aliases": [
+        "Grup Terra Endins"
+      ],
+      "genres": [
+        "Folk i arrel"
+      ],
+      "genresRaw": [
+        "havanera"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "castellà"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCYOWVkZwBVSxzYQfK_khVYg",
+            "handle": null,
+            "name": "Terra Endins - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-21",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCYOWVkZwBVSxzYQfK_khVYg"
+      ],
+      "lastChecked": "2026-10-21",
+      "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Encara sense pistes admeses: falta verificar íntegrament la lletra de les gravacions candidates."
     }
   ]
 }
