@@ -2103,3 +2103,8 @@ La puntuació fixa repetia els èxits i l'ordre. La política personal del motor
 La memòria de generació és independent de les escoltes: no s'afegeix una cua no escoltada a `musicSignals.recent`. «Continua» abans reconstruïa una ràdio a partir de la llavor; ara desa i restaura el snapshot real, l'índex i el segon. Les dades són locals i el nou estat no s'envia a Analytics.
 
 Proves amb llavors fixes: repartiment 24/16 en cues de 40, deu generacions amb com a mínim el 70 % de renovació, exclusió de les 20 reproduïdes i cinc arrencades, descans d'artista, probabilitat dels èxits, catàleg petit sense duplicats ni descartats, memòria entre visites i continuació exacta al segon 73. Sense canvis visuals ni reproducció automàtica.
+
+
+## 2026-10-21 — Retorns regulars a «La teva ràdio»
+
+La ràdio personal reserva un objectiu del 20 % a cançons realment escoltades: cors, «més com aquesta» o el quart del conjunt amb més visualitzacions. La resta prioritza cançons encara no escoltades. Els retorns es reparteixen acumuladament (una de cada cinc), comptant la llavor i la cua existent en ampliar-la. Es mantenen els descansos, descartats, deduplicació i renovació entre sessions; si no hi ha prou candidates compatibles, el percentatge és orientatiu. Les cues només generades no compten com a escoltes. Proves específiques: 8 retorns en 40, descans de les 20 últimes, absència d'historial i ampliació 40+10.

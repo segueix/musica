@@ -1204,6 +1204,17 @@
         const used = new Set(sequence.map(item => item.f.id));
         const recordings = recordingIndex(sequence.map(item => item.f.keys));
         const remaining = buildItems(toArray(options.candidates), ctx, signals, options.seed, null);
+        // Un retorn cada cinc cançons, només amb escoltes reals (no cues generades).
+        const heard = new Set(toArray(signals.recent).map(entry => String(entry.id)));
+        Object.entries(signals.songs).forEach(([id, entry]) => {
+            if (entry && (entry.q || entry.f || entry.r || entry.l || entry.h)) heard.add(id);
+        });
+        const popular = new Set(remaining.slice().sort((a, b) =>
+            (Number(b.video.viewCount) || 0) - (Number(a.video.viewCount) || 0)
+        ).slice(0, Math.ceil(remaining.length * 0.25)).map(item => item.f.id));
+        const returning = item => heard.has(item.f.id) &&
+            (signals.liked.has(item.f.id) || signals.moreLike.has(item.f.id) || popular.has(item.f.id));
+        let returnCount = sequence.filter(item => heard.has(item.f.id)).length;
         const maxOld = Math.floor((count + preceding.length) * 0.3);
         let oldCount = sequence.filter(item => previous.has(item.f.id)).length;
         let knownCount = sequence.filter(known).length;
@@ -1226,6 +1237,14 @@
                 if (pool.length) relaxedLevel = Math.max(relaxedLevel, level);
             }
             if (!pool.length) break;
+            // El 20 % recupera preferides o èxits escoltats; la resta prioritza cançons no escoltades.
+            const wantReturn = returnCount < Math.floor((sequence.length + 1) * 0.2);
+            const rotationPool = pool.filter(item => wantReturn ? returning(item) : !heard.has(item.f.id));
+            if (rotationPool.length) pool = rotationPool;
+            else {
+                const fresh = pool.filter(item => !heard.has(item.f.id));
+                if (fresh.length) pool = fresh;
+            }
             // Distribució acumulada: 3 conegudes i 2 d'altres grups per cada cinc.
             const wantKnown = options.firstPersonal || knownCount < Math.round((sequence.length + 1) * 0.6);
             const lane = pool.filter(item => known(item) === Boolean(wantKnown));
@@ -1251,12 +1270,14 @@
             if (!winner) break;
             picked.push(winner); sequence.push(winner); used.add(winner.f.id); recordings.add(winner.f.keys);
             if (known(winner)) knownCount += 1;
+            if (heard.has(winner.f.id)) returnCount += 1;
             if (previous.has(winner.f.id)) oldCount += 1;
         }
         return { queue: picked.map(item => item.video), meta: {
             mode: 'mix', requested: 'mix', personal: true, note: '', relaxedLevel,
             era: shares(picked), fam: { known: picked.filter(known).length, affine: picked.filter(item => !known(item)).length, surprise: 0 },
             renewal: { previous: oldCount, limit: maxOld },
+            returns: { count: returnCount, target: 0.2 },
         } };
     }
 
