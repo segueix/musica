@@ -1895,7 +1895,8 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
             <div class="video-metadata-bar">
                 <div class="action-group action-group-left">
                     <a href="https://www.youtube.com/channel/${channel.id}" target="_blank" rel="noopener noreferrer" class="btn-pill-red">
-                        Canal Youtube
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"></path></svg>
+                        Canal YouTube
                     </a>
                     ${supportBtnMobile}
                     <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--desktop" title="Comenta" aria-label="Comenta">
@@ -11171,6 +11172,8 @@ function initExternalPlayerControls() {
         bar.classList.toggle('is-awaiting-native', awaiting);
         const nativeHint = document.getElementById('playerNativePlayHint');
         if (nativeHint) nativeHint.hidden = !awaiting;
+        // L'avís que es veu: a sobre del títol, que baixa una mica amb una animació (portada.css, «Prem ▶ al reproductor»)
+        document.getElementById('nativePlayCue')?.classList.toggle('is-visible', awaiting && hasIframe);
         const miniActive = isMiniPlayerActive();
         place(miniActive, miniActive && !mobileQuery.matches);
         followPlayer();
