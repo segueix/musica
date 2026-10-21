@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 449,
+  "musicalArtists": 450,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -604,7 +604,7 @@
       "label": "Pop — pendent d’afinar",
       "category": "Pop",
       "neighbours": [],
-      "artistCount": 62,
+      "artistCount": 63,
       "nucleus": true,
       "artists": [
         "Àlex Blat",
@@ -668,7 +668,8 @@
         "The Tyets",
         "Triquell",
         "Xanguito",
-        "Xicu"
+        "Xicu",
+        "Rosalía"
       ]
     },
     {
@@ -5522,6 +5523,16 @@
       "basis": "category-fallback",
       "sources": [
         "https://www.instagram.com/nu.drama/"
+      ]
+    },
+    {
+      "artist": "Rosalía",
+      "category": "Pop",
+      "subcategory": "pop-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/channel/UCQt9awGIFZeldFsATZNeJag",
+        "https://www.rosalia.com/"
       ]
     }
   ]

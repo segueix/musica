@@ -4255,14 +4255,20 @@
       "lastCheckedAt": "2026-10-19T21:56:07.371Z",
       "intervalDays": 3,
       "nextCheckOn": "2026-10-22"
+    },
+    "UCQt9awGIFZeldFsATZNeJag": {
+      "latestPublishedAt": "2026-10-12T03:30:39.000Z",
+      "lastCheckedAt": "2026-10-21T13:24:50.230Z",
+      "intervalDays": 1,
+      "nextCheckOn": "2026-10-22"
     }
   },
-  "updatedAt": "2026-10-20T21:08:25.207Z",
+  "updatedAt": "2026-10-21T13:24:50.230Z",
   "lastRun": {
-    "indexed": 673,
-    "requested": 547,
-    "checked": 540,
-    "deferred": 126,
-    "failed": 7
+    "indexed": 674,
+    "requested": 1,
+    "checked": 1,
+    "deferred": 673,
+    "failed": 0
   }
 }

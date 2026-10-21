@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-20T21:13:03.909Z",
+  "generatedAt": "2026-10-21T13:24:53.494Z",
   "polling": {
-    "requested": 547,
-    "deferred": 126,
-    "failed": 7
+    "requested": 1,
+    "deferred": 673,
+    "failed": 0
   },
-  "retainedVideoCount": 965,
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 25,
   "restrictedVideosAdded": [],
@@ -1744,11 +1744,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 201,
-    "song": 21
-  },
-  "topicHiddenCount": 331,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -4348,56 +4345,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 673,
-  "resolvedChannelCount": 673,
-  "feedChannelCount": 673,
-  "rawPublicVideoCount": 13882,
-  "feedVideoCount": 11833,
-  "acceptedMusicCount": 12267,
-  "categoryEligibleVideoCount": 12200,
+  "indexedChannelCount": 674,
+  "resolvedChannelCount": 674,
+  "feedChannelCount": 674,
+  "rawPublicVideoCount": 7403,
+  "feedVideoCount": 6815,
+  "acceptedMusicCount": 6774,
+  "categoryEligibleVideoCount": 6770,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1202,
+    "before": 0,
     "matched": 0,
-    "rejected": 1202
+    "rejected": 0
   },
   "contentReviewCount": 593,
   "contentTypeCounts": {
-    "song": 11778,
-    "live_song": 422,
-    "album": 67,
-    "other": 1022,
+    "song": 6589,
+    "live_song": 181,
+    "album": 4,
+    "other": 36,
     "review": 593
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCmwGTBibm2bt9oF-P7ECSmQ",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCRLHVqJybtjS5ODPP5iAv4w",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCFI6QGe27kctP5lGeugsrhA",
-    "UC8hpq3EHqyG09og9xy3qOFg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UCfcp4MZZ3t309KMOLo7JJag",
-    "UC1yaXYiC2Ab3tus3lTDljtw",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCHXlSnGKv7tdBxMw2F-FMkw",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCYPbYGqAXm8gaYGVY-ANVXA",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCg6lVNl78-THJI1w8dSy0bA"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC_eW1AyvwaPsQA5YAuOC3YQ",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 6814,
+  "publishedFeedVideoCount": 6816,
   "publishedShortVideoCount": 0
 }
