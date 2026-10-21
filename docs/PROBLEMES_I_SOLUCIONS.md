@@ -2108,3 +2108,12 @@ Proves amb llavors fixes: repartiment 24/16 en cues de 40, deu generacions amb c
 ## 2026-10-21 — Retorns regulars a «La teva ràdio»
 
 La ràdio personal reserva un objectiu del 20 % a cançons realment escoltades: cors, «més com aquesta» o el quart del conjunt amb més visualitzacions. La resta prioritza cançons encara no escoltades. Els retorns es reparteixen acumuladament (una de cada cinc), comptant la llavor i la cua existent en ampliar-la. Es mantenen els descansos, descartats, deduplicació i renovació entre sessions; si no hi ha prou candidates compatibles, el percentatge és orientatiu. Les cues només generades no compten com a escoltes. Proves específiques: 8 retorns en 40, descans de les 20 últimes, absència d'historial i ampliació 40+10.
+
+
+## 2026-10-21 — La ràdio d'un artista amb poques cançons es repetia
+
+**Problema:** tocar una cançó a la fitxa d'artista engega `startArtistRadio()` (només cançons seves). Quan ja havien sonat totes, `extend()` tornava a començar el mateix conjunt sense les 12 darreres: amb un artista de 5–10 cançons les mateixes cançons tornaven de seguida.
+
+**Solució Implementada:** a `extend()` (`music-queue.js`), si la ràdio és d'artista (`searchRadio.artistOnly`) i ja no queda cap cançó seva per sonar, es fa `buildQueue()` amb l'estil principal de l'artista (`primaryCategoryOf()` de la cançó que sona) i la ràdio passa a ser **ràdio d'aquest estil** (`radioCategory`, `searchRadio = null`, nom «Ràdio Pop»), amb l'avís «Ja han sonat totes les cançons de X: la ràdio continua amb Pop». Les cançons que ja són a la cua no s'hi tornen a posar. Si l'estil no dona cap cançó, es manté el comportament antic (torna a començar el conjunt) i `radioMeta` es restaura. La ràdio de cerca i la d'una categoria pròpia no canvien.
+
+**Trampa:** `buildQueue()` reescriu `radioMeta`; si no s'aprofita el resultat, cal restaurar-lo. Prova: `tests/music-queue-selection.test.js` («una ràdio d'artista que ja ha sonat sencera continua com a ràdio del seu estil»).

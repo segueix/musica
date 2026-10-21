@@ -1337,6 +1337,28 @@ describe('la ràdio no s’acaba mai: extend() (2026-10-18)', () => {
         noRepeatsNear(env.ctx.activePlaylistQueue);
     });
 
+    it('una ràdio d’artista que ja ha sonat sencera continua com a ràdio del seu estil (2026-10-21)', () => {
+        const list = catalog();
+        const own = Array.from({ length: 5 }, (_, i) => song('art', 1 + i));
+        const env = setup({ catalog: [...list, ...own] });
+        expect(env.queue.startArtistRadio(own, { name: 'Artista Fitxa', channelId: 'art', seedId: own[2].id })).toBe(
+            true
+        );
+        const before = env.ctx.activePlaylistQueue.length;
+        expect(before).toBe(own.length);
+        env.ctx.currentPlaylistIndex = before - 1;
+        expect(env.queue.extend({ minAhead: 1 })).toBe(true);
+        const added = env.ctx.activePlaylistQueue.slice(before);
+        const ownIds = new Set(own.map(v => v.id));
+        expect(added.length).toBeGreaterThan(0);
+        expect(added.some(v => !ownIds.has(v.id))).toBe(true);
+        expect(added.every(v => v.categories.includes('Pop'))).toBe(true);
+        expect(new Set(env.ctx.activePlaylistQueue.map(v => v.id)).size).toBe(env.ctx.activePlaylistQueue.length);
+        expect(env.queue.getState()).toMatchObject({ artist: '', categories: ['Pop'] });
+        expect(env.queue.playlistName()).not.toContain('Artista Fitxa');
+        expect(env.ctx.currentPlaylistIndex).toBe(before - 1);
+    });
+
     it('no deixa créixer la cua sense límit: es queden les 60 darreres sonades', () => {
         const list = catalog();
         const env = setup({ catalog: list });

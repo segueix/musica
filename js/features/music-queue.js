@@ -1018,9 +1018,10 @@
 
     // Quan queden poques cançons per sonar (`minAhead`), s'hi afegeixen més (2026-10-18): en acabar la cua el
     // reproductor de YouTube es quedava amb la graella de recomanacions al damunt. Ràdio d'estil: més del mateix estil;
-    // ràdio de cerca o d'artista: el mateix conjunt (torna a començar si ja han sonat totes); una selecció («Acabades de
-    // sortir», «Grans èxits…»), «A prop teu» o una llista pròpia continuen com a ràdio de l'estil de la cançó que sona.
-    // Retorna true si n'ha afegit.
+    // ràdio de cerca: el mateix conjunt (torna a començar si ja han sonat totes); ràdio d'artista: quan ja han sonat
+    // totes les seves cançons, continua com a ràdio del seu estil principal (2026-10-21: abans tornava a començar i amb
+    // pocs temes es repetia de seguida); una selecció («Acabades de sortir», «Grans èxits…»), «A prop teu» o una llista
+    // pròpia continuen com a ràdio de l'estil de la cançó que sona. Retorna true si n'ha afegit.
     const EXTEND_KEEP_PLAYED = 60;
     const EXTEND_RECENT = 12;
 
@@ -1039,10 +1040,28 @@
         const preceding = activePlaylistQueue.slice(-EXTEND_RECENT);
         let styles = ownList || radioLabel ? [] : radioStyles();
         let more = [];
+        let artistDone = false;
         if (closedSet) {
             more = buildSearchTail(searchRadio.videos, current, { preceding, playedIds: ids }).filter(
                 item => !inQueue.has(String(item?.id))
             );
+            // Ràdio d'artista esgotada: passa a la ràdio del seu estil (sense repetir res del que ja és a la cua)
+            if (!more.length && searchRadio.artistOnly) {
+                const artistStyles = asCategories(primaryCategoryOf(current));
+                const metaBefore = radioMeta;
+                const styleMore = artistStyles.length
+                    ? buildQueue(current, artistStyles, { preceding, playedIds: ids }).filter(
+                          item => !inQueue.has(String(item?.id))
+                      )
+                    : [];
+                if (styleMore.length) {
+                    more = styleMore;
+                    styles = artistStyles;
+                    artistDone = true;
+                } else {
+                    radioMeta = metaBefore;
+                }
+            }
             // Ja han sonat totes: torna a començar el conjunt (sense les darreres)
             if (!more.length) {
                 more = buildSearchTail(searchRadio.videos, current, { preceding }).filter(
@@ -1064,7 +1083,17 @@
         }
         if (!more.length) return false;
 
-        if (ownList || (radioLabel && !closedSet)) {
+        if (artistDone) {
+            const artist = searchRadio.artist;
+            radioCategory = styles[0] || '';
+            radioExtra = styles.slice(1);
+            radioLabel = '';
+            radioSeedTitle = '';
+            searchRadio = null;
+            app.features.shellNav?.toast?.(
+                `Ja han sonat totes les cançons${artist ? ` de ${artist}` : ''}: la ràdio continua amb ${radioCategory}.`
+            );
+        } else if (ownList || (radioLabel && !closedSet)) {
             // La llista o la selecció s'ha acabat: continua com a ràdio de l'estil
             radioCategory = styles[0] || '';
             radioExtra = styles.slice(1);
