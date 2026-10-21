@@ -33,4 +33,23 @@ describe('fitxa de la cançó: fila de botons junta a l’esquerra', () => {
     it('«Canal YouTube» porta el logotip de YouTube (decoratiu) davant del text', () => {
         expect(app).toMatch(/class="btn-pill-red">\s*<svg[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>\s*Canal YouTube/);
     });
+
+    it('colors: el que porta a YouTube, neutre; el que fa l’app, llima suau i llima ple en passar-hi el ratolí', () => {
+        const colors = css.slice(css.indexOf('/* ---------- Fitxa de la cançó: colors de la fila de botons'));
+        const yt = ':is(.btn-pill-red, .btn-comment-youtube--desktop, .btn-comment-youtube--mobile)';
+        const own = ':is(#playlistBtn, #shareBtn)';
+        const rule = selector => {
+            const at = colors.indexOf(selector + ' {');
+            return at < 0 ? '' : colors.slice(at, colors.indexOf('}', at));
+        };
+        // Neutre: sense fons i vora crema fina (la vora fluorescent es canvia amb la mateixa variable)
+        expect(rule(yt)).toMatch(/--pt-icon-border: rgba\(244, 240, 232, 0\.24\);[^}]*background: transparent;/);
+        // L'app: llima suau amb la icona llima, sense vora; en passar-hi el ratolí o amb el teclat, llima ple
+        expect(rule(own)).toMatch(
+            /border-color: transparent;[^}]*background: rgba\(214, 237, 132, 0\.14\);[^}]*color: var\(--pt-accent\);/
+        );
+        expect(rule(own + ':is(:hover, :focus-visible)')).toMatch(
+            /background: var\(--pt-accent\);[^}]*color: var\(--pt-on-accent\);/
+        );
+    });
 });

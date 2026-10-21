@@ -12064,69 +12064,6 @@ body .mq .mq-head,
     }
 }
 
-/* ---------- Fitxa de la cançó a l'ordinador: controls en vertical a la dreta del reproductor (2026-10-19) ----------
-   A ≥ 1025 px, anterior · play/pausa · següent · flotant · m'agrada van en una columna just a la dreta del vídeo
-   (centrats a la seva alçada), no en una fila a sota: el títol, el grup i els botons pugen i la cua de la dreta és
-   més estreta. La graella de .watch-main passa a tres columnes: reproductor, controls i cua; el títol i el canal
-   ocupen les dues primeres. Amb la finestra flotant la barra va a <body> (.is-docked) i aquí no hi té efecte.
-   Els avisos («prem ▶», reproducció automàtica aturada) surten sota la columna, mai damunt del vídeo. */
-@media (min-width: 1025px) {
-    #watchPage .watch-main {
-        grid-template-columns: minmax(320px, 520px) auto minmax(0, 1fr);
-        column-gap: 0;
-    }
-
-    #watchPage .watch-main > .video-placeholder {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    #watchPage .watch-main > .player-external-controls:not(.is-docked) {
-        position: relative;
-        grid-column: 2;
-        grid-row: 1;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-self: stretch;
-        gap: 12px;
-        width: auto;
-        margin: 0 0 0 14px;
-    }
-
-    #watchPage .watch-main > .video-info,
-    #watchPage .watch-main > .channel-info,
-    #watchPage .watch-main > .tv-programming-panel {
-        grid-column: 1 / span 2;
-    }
-
-    #watchPage .watch-main > #playlistQueueContainer {
-        grid-column: 3;
-        margin-left: clamp(24px, 3vw, 48px);
-    }
-
-    #watchPage .watch-main > .player-external-controls:not(.is-docked) :is(.player-autoplay-hint, .player-native-play-hint) {
-        position: absolute;
-        top: calc(100% + 14px);
-        right: 0;
-        z-index: 5;
-        width: 240px;
-        padding: 10px 12px;
-        border: 1px solid var(--pt-line);
-        border-radius: var(--pt-radius-player, 12px);
-        background: var(--pt-surface-2);
-        text-align: left;
-    }
-
-    #watchPage .watch-main > .player-external-controls:not(.is-docked) :is(.player-autoplay-hint, .player-native-play-hint)[hidden] {
-        display: none;
-    }
-
-    #watchPage .watch-main > .video-info {
-        margin-top: 12px;
-    }
-}
-
 /* ---------- «La teva ràdio»: «Ràdio nova» i «Afegeix una categoria» en una sola fila (2026-10-20).
    El botó de categories és de vidre amb vora blanca (com les eines de la ràdio), porta la icona de dos cercles
    que es barregen, el nombre de categories triades en llima i una fletxa que gira; el desplegable surt just a
@@ -12297,4 +12234,34 @@ body .mq .mq-head,
         margin: 0 6px;
         background: rgba(244, 240, 232, 0.28);
     }
+}
+
+/* ---------- Fitxa de la cançó: colors de la fila de botons, YouTube neutre i l'app en llima (2026-10-21) ----------
+   Sobre el fons negre la vora verd fluorescent (--pt-icon-border, contrast 15:1) cridava més que les icones. A la fila
+   de sota l'artista, el que porta a YouTube («Canal YouTube», comentar) va neutre: sense fons i amb una vora crema fina;
+   el que es queda a l'app («+» per desar a una llista, compartir) va ple de llima suau amb la icona llima i, en passar-hi
+   el ratolí o amb el teclat, llima ple. Així el color explica la ratlla que separa els dos grups. Als botons de YouTube
+   la vora es canvia amb la mateixa variable: la regla comuna dels botons d'icona porta ids dins :is() i guanyaria. */
+html body #watchPage .video-info-modern .video-metadata-bar :is(.btn-pill-red, .btn-comment-youtube--desktop, .btn-comment-youtube--mobile) {
+    --pt-icon-border: rgba(244, 240, 232, 0.24);
+    background: transparent;
+    color: var(--pt-text);
+}
+
+html body #watchPage .video-info-modern .video-metadata-bar :is(.btn-pill-red, .btn-comment-youtube--desktop, .btn-comment-youtube--mobile):is(:hover, :focus-visible) {
+    --pt-icon-border: var(--pt-text);
+    background: rgba(244, 240, 232, 0.08);
+    color: var(--pt-text);
+}
+
+html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #shareBtn) {
+    border-color: transparent;
+    background: rgba(214, 237, 132, 0.14);
+    color: var(--pt-accent);
+}
+
+html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #shareBtn):is(:hover, :focus-visible) {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
 }
