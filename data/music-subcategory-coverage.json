@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 450,
+  "musicalArtists": 460,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -904,7 +904,7 @@
         "folk-fusio",
         "folk-general"
       ],
-      "artistCount": 12,
+      "artistCount": 22,
       "nucleus": true,
       "artists": [
         "Al Tall",
@@ -918,7 +918,17 @@
         "Tomeu Penya",
         "Tornaveus",
         "Trèvol",
-        "Urbàlia Rurana"
+        "Urbàlia Rurana",
+        "Port Bo",
+        "Els Pescadors de l’Escala",
+        "Peix Fregit",
+        "Bergantí",
+        "Arjau",
+        "Les Anxovetes",
+        "Els Cremats",
+        "Mar Endins",
+        "Cavall Bernat",
+        "Terra Endins"
       ]
     },
     {
@@ -5533,6 +5543,110 @@
       "sources": [
         "https://www.youtube.com/channel/UCQt9awGIFZeldFsATZNeJag",
         "https://www.rosalia.com/"
+      ]
+    },
+    {
+      "artist": "Port Bo",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCYRxQ_jB6vat3NkBxIOe4fQ",
+        "https://habacompo.cat/lletra-de-lhavanera-mariner-de-terra-endins",
+        "https://habacompo.cat/lletra-i-video-de-lhavanera-anima-marinera"
+      ]
+    },
+    {
+      "artist": "Els Pescadors de l’Escala",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCM0EHoHg-iQnr2hi5tzamLg",
+        "https://habacompo.cat/lletra-de-lhavanera-entre-les-barques",
+        "https://habacompo.cat/lletra-de-lhavanera-el-llop-de-mar"
+      ]
+    },
+    {
+      "artist": "Peix Fregit",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCuZ3VZ2TMeFeV6pZvG9SueQ",
+        "https://habacompo.cat/acords-de-aigua-de-mar"
+      ]
+    },
+    {
+      "artist": "Bergantí",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UC_G7mnl8-6cNBYPakcWGBJQ",
+        "https://www.havanerescalella.cat/wp-content/uploads/2016/02/can%C3%A7oner_2013.pdf"
+      ]
+    },
+    {
+      "artist": "Arjau",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCg_cSzozOrPF-OKMgWlvh-w",
+        "https://habacompo.cat/lletra-de-lhavanera-lavi-meliu",
+        "https://habacompo.cat/onades-damor-lletra"
+      ]
+    },
+    {
+      "artist": "Les Anxovetes",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCq2UolkO1YhWax4NwsHC-cw",
+        "https://www.lesanxovetes.cat/canco/la-barca-xica/",
+        "https://www.lesanxovetes.cat/canco/mare-vull-ser-pescador/",
+        "https://www.lesanxovetes.cat/canco/mariner-de-terra-endins/"
+      ]
+    },
+    {
+      "artist": "Els Cremats",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCaOPnT08yPkgHCxSo56Z5ng",
+        "https://www.havanerescalella.cat/wp-content/uploads/2016/02/Can%C3%A7oner-Palau-ALTA.pdf"
+      ]
+    },
+    {
+      "artist": "Mar Endins",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCAUgxOKd6wQwP_aUk54LgmQ",
+        "https://www.havaneresmarendins.com/La%20Can%C3%A7o%20del%20Mestral.pdf",
+        "https://www.havaneresmarendins.com/El%20vaiv%C3%A9%20de%20les%20ones.pdf"
+      ]
+    },
+    {
+      "artist": "Cavall Bernat",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCD_2AZugryBv83F1Ula_X3w"
+      ]
+    },
+    {
+      "artist": "Terra Endins",
+      "category": "Folk i arrel",
+      "subcategory": "folk-tradicional",
+      "basis": "documented-tags",
+      "sources": [
+        "https://www.youtube.com/channel/UCYOWVkZwBVSxzYQfK_khVYg"
       ]
     }
   ]
