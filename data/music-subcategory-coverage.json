@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 460,
+  "musicalArtists": 461,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -1049,7 +1049,7 @@
         "autor-folk",
         "autor-pop"
       ],
-      "artistCount": 45,
+      "artistCount": 46,
       "nucleus": true,
       "artists": [
         "Adrià Puntí",
@@ -1096,7 +1096,8 @@
         "Agathe Catel",
         "Joan Pau Giné",
         "Pere Figueres",
-        "Gisela Bellsolà"
+        "Gisela Bellsolà",
+        "Anna Roig i l'Ombre de Ton Chien"
       ]
     },
     {
@@ -5564,7 +5565,11 @@
       "sources": [
         "https://www.youtube.com/channel/UCM0EHoHg-iQnr2hi5tzamLg",
         "https://habacompo.cat/lletra-de-lhavanera-entre-les-barques",
-        "https://habacompo.cat/lletra-de-lhavanera-el-llop-de-mar"
+        "https://habacompo.cat/lletra-de-lhavanera-el-llop-de-mar",
+        "https://lyricstranslate.com/en/catalan-folk-vell-pescador-lyrics.html",
+        "https://lyricstranslate.com/en/catalan-folk-mariner-de-terra-endins-lyrics.html",
+        "https://habacompo.cat/encis-damor-lletra",
+        "https://habacompo.cat/mar-destrelles-lletra"
       ]
     },
     {
@@ -5647,6 +5652,17 @@
       "basis": "documented-tags",
       "sources": [
         "https://www.youtube.com/channel/UCYOWVkZwBVSxzYQfK_khVYg"
+      ]
+    },
+    {
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/@annaroigilombre",
+        "https://www.youtube.com/channel/UCFtfi1A29MUUHvDU38Dw4wg",
+        "https://www.annaroig.com/bio/"
       ]
     }
   ]

@@ -1,46 +1,30 @@
 {
-  "generatedAt": "2026-10-21T21:12:47.340Z",
-  "rawPublicVideoCount": 13169,
-  "feedVideoCount": 11101,
-  "acceptedMusicCount": 11549,
-  "categoryEligibleVideoCount": 11449,
+  "generatedAt": "2026-10-22T10:46:42.293Z",
+  "rawPublicVideoCount": 11666,
+  "feedVideoCount": 9918,
+  "acceptedMusicCount": 10185,
+  "categoryEligibleVideoCount": 10133,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1205,
+    "before": 1026,
     "matched": 0,
-    "rejected": 1205
+    "rejected": 1026
   },
-  "rejectedOrReviewCount": 1620,
+  "rejectedOrReviewCount": 1481,
   "reviewCount": 591,
   "typeCounts": {
-    "song": 11087,
-    "live_song": 362,
-    "album": 100,
-    "other": 1029,
+    "song": 9804,
+    "live_song": 329,
+    "album": 52,
+    "other": 890,
     "review": 591
   },
   "channelsWithoutAcceptedMusic": [
     "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UCQOqsrBqC_4Ibu_MJrBpK_g",
     "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UC4S5WcSVzMhUd-UwKKpKp5w",
     "UCdwDeWJ4aJ9RAURZERmWquA"
   ],
   "rejectedSamples": [
-    {
-      "id": "lGT_JGeoULk",
-      "title": "2ES & SELOP - BYE BYE",
-      "channelTitle": "2ES",
-      "durationSeconds": 191,
-      "musicReason": "revisat manualment: Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
-    },
-    {
-      "id": "GtDCepBTk7o",
-      "title": "2ES feat. Selop - It's my time",
-      "channelTitle": "2ES",
-      "durationSeconds": 217,
-      "musicReason": "revisat manualment: Petició editorial explícita del 2026-10-11: incorporar les cançons de 2ES excepte BYE BYE i It’s my time."
-    },
     {
       "id": "P_wsbeP_ul4",
       "title": "13 de març del 2026",
@@ -61,97 +45,6 @@
       "channelTitle": "31 FAM",
       "durationSeconds": 32,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "unwOAO70FTE",
-      "title": "9SON Gira de Sol a Sol 2016",
-      "channelTitle": "9SON",
-      "durationSeconds": 342,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "_1s_IMQCJJs",
-      "title": "TORNAREM A NÉIXER",
-      "channelTitle": "9SON",
-      "durationSeconds": 189,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "77wC_8UKtMI",
-      "title": "9SON Apolo 28 març 15",
-      "channelTitle": "9SON",
-      "durationSeconds": 5336,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "7uXgjFX1kCs",
-      "title": "ÍSSIM Complet",
-      "channelTitle": "9SON",
-      "durationSeconds": 2191,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "EDTb5cUyXS0",
-      "title": "IVAN LABANDA amb 9SON",
-      "channelTitle": "9SON",
-      "durationSeconds": 38,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "VanQMK7HgH8",
-      "title": "Personatge 2 a l'Apolo",
-      "channelTitle": "9SON",
-      "durationSeconds": 41,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "mZ4AkNVABzE",
-      "title": "Sister ACT a l'Apolo",
-      "channelTitle": "9SON",
-      "durationSeconds": 29,
-      "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "7_9Pjm4yUo4",
-      "title": "9SON Avançament del disc #ÍSSIM",
-      "channelTitle": "9SON",
-      "durationSeconds": 183,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "KwaVCx5bijs",
-      "title": "Pau Benavent opina de 9SON",
-      "channelTitle": "9SON",
-      "durationSeconds": 142,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "4CodQ3VsXww",
-      "title": "9SON - Crit Entròpic (Teaser)",
-      "channelTitle": "9SON",
-      "durationSeconds": 36,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "O_s7gsNKA7U",
-      "title": "9SON versiona Juan Luís Guerra - LIVE",
-      "channelTitle": "9SON",
-      "durationSeconds": 412,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "rFrjnL4bkAs",
-      "title": "9SON \"OBERT\" 九 是 打开 !!! Teaser",
-      "channelTitle": "9SON",
-      "durationSeconds": 118,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "cIvG1z1fyjI",
-      "title": "CORASON LIVE",
-      "channelTitle": "9SON",
-      "durationSeconds": 322,
-      "musicReason": "no és a la discografia del canal Tema"
     },
     {
       "id": "8PiM3RgWSRQ",
@@ -350,20 +243,6 @@
       "musicReason": "no és a la discografia del canal Tema"
     },
     {
-      "id": "VEZOOy1ohkk",
-      "title": "ANIMAL - La Melodia del Foc - Teaser Oficial 2018",
-      "channelTitle": "AnimalGrup",
-      "durationSeconds": 138,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "5FfxV282eKw",
-      "title": "ANIMAL - Teaser Oficial - Més enllà de les paraules",
-      "channelTitle": "AnimalGrup",
-      "durationSeconds": 85,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
       "id": "GiYIyBqhGSA",
       "title": "EL TRO DEL SENYAL En directe a L'Auditori de Barcelona",
       "channelTitle": "Anna Andreu",
@@ -404,125 +283,6 @@
       "channelTitle": "Anna Ferrer",
       "durationSeconds": 16,
       "musicReason": "massa curt: probable teaser/fragment"
-    },
-    {
-      "id": "x6j6i4WbL2k",
-      "title": "Aspencat entrevista a Enric Duran - Docuclip \"Som Moviment\"",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 853,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "jRuj8lE6n38",
-      "title": "Aspencat entrevista a Ester Quintana - Docuclip \"Som Moviment\"",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 1028,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "F85n_XaE4Hs",
-      "title": "Aspencat entrevista a Diego Cañamero - Docuclip \"Som Moviment\".",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 1423,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "8jCH1VIY52E",
-      "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' (2017)",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 30,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "PcgVA7yjhxU",
-      "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' amb Enric Duran (2017)",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 73,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "BCLoApXyNXg",
-      "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' amb Ester Quintana (2017)",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 52,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "RKYqfkdHXEk",
-      "title": "ASPENCAT - Teaser del nou videoclip 'Som moviment' amb Diego Cañamero (2017)",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 67,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "Dwnnfa1TGoE",
-      "title": "ASPENCAT - Gira Tot és Ara 2016",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 230,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "LuWUklViocI",
-      "title": "ASPENCAT - Naixen Primaveres al Lluís Vives",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 202,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "vVXo5IWxreE",
-      "title": "ASPENCAT - Cap a la Mediterrània",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 265,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "KXJcTCEdvxc",
-      "title": "Teaser Aspencat - Nou Single i Videoclip - 2 de Setembre",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 27,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "tGLXypkSt2M",
-      "title": "Aspencat al Viñarock 2015",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 252,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "QHxXRRaN2dc",
-      "title": "Aspencat al Viñarock 2014 (Queden Matinades)",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 282,
-      "musicReason": "no és a la discografia del canal Tema"
-    },
-    {
-      "id": "_nhMwm0Lfwk",
-      "title": "Aspencat nou disc 2013 Promo 3",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 101,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "r1O10k1AFUM",
-      "title": "Aspencat nou disc 2013 Promo 2",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 89,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "nzlc0WHuHsI",
-      "title": "Aspencat nou disc 2013 Promo 1",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 82,
-      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
-    },
-    {
-      "id": "nWDOmgK9Efg",
-      "title": "Aspencat Temps",
-      "channelTitle": "Aspencat",
-      "durationSeconds": 267,
-      "musicReason": "no és a la discografia del canal Tema"
     },
     {
       "id": "R-XkZ6VyvTY",
@@ -866,8 +626,246 @@
       "channelTitle": "Buhos",
       "durationSeconds": 21,
       "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Ba21FovsVg4",
+      "title": "SITGES (16/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 17,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Wx7vj3eEQcg",
+      "title": "SANT VICENÇ DE MONTALT (14/08/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 27,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "zgsFp6Ew834",
+      "title": "SOLIVELLA (08/09/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "qWnmxSqYHsk",
+      "title": "SANT JULIÀ DE LÒRIA • ANDORRA (28/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 30,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "03t3-ienYMg",
+      "title": "BLANES (25/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 36,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BcDZ4cczheY",
+      "title": "VILABERTRAN (19/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "SXliAnBhyvc",
+      "title": "FESTIUET • SALOU (18/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "VDNXptwCb1E",
+      "title": "PAUPATERRES • TÀRREGA (11/07/2026)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 22,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "26UcykonTSA",
+      "title": "PIRATA BEACH FESTIVAL (09/07/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jY1_-WO9SBE",
+      "title": "FESTIVALL CAMPRODON (26/4/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 28,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "goD0J1zD6Vc",
+      "title": "20È ANIVERSARI ETS - BILBAO EXHIBITION CENTRE (22/3/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "itj_MaTyxDM",
+      "title": "LA MIRONA (SALT) • 14/03/2025",
+      "channelTitle": "Buhos",
+      "durationSeconds": 34,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "djNvl0EUg6A",
+      "title": "Vilanova i La Geltrú (01/03/2025)",
+      "channelTitle": "Buhos",
+      "durationSeconds": 29,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "fpkCwtyxpV8",
+      "title": "NOCHE LOCA EN BENIDORM (MAKING-OFF)",
+      "channelTitle": "CACTUS",
+      "durationSeconds": 543,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "GkgNw6WA9QE",
+      "title": "No t'esperava - Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "iotvGhumWM0",
+      "title": "Pretèrit plusquamperfet - Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 37,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "hLtQjBNZP10",
+      "title": "Bar de l'Eixample - BST a l'estudi",
+      "channelTitle": "Celobert",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "2sqOAcXKIjY",
+      "title": "Bar de l'Eixample - Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 33,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "eH4fy01k83I",
+      "title": "Celobert - Pólvora",
+      "channelTitle": "Celobert",
+      "durationSeconds": 21,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "T3JuNXUco00",
+      "title": "✨ Això és el que passa en un concert de Celobert amb tota la banda!",
+      "channelTitle": "Celobert",
+      "durationSeconds": 35,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "xic9MfCxy58",
+      "title": "Que vinguin els dies - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 18,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "u-X6ecAug_E",
+      "title": "Hi seré - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 25,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "BnvJLNCxab8",
+      "title": "🎨 16/2 : Hi seré #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 13,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "seu6TvK-SK4",
+      "title": "No t'esperava (Making-of del videoclip) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 28,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "4XsBcmtBgws",
+      "title": "No t'esperava - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 43,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "OTOBeOYEREc",
+      "title": "🌤 La teva vida pot canviar en qualsevol moment #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 20,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "jY6XPJQrb7Y",
+      "title": "✨ La Jordina ha entrat al Celobert",
+      "channelTitle": "Celobert",
+      "durationSeconds": 14,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "ci5WUaYuw8Y",
+      "title": "Celobert (Making-of del videoclip) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 60,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "6DC737u8S3Q",
+      "title": "Celobert (Making-of a l'estudi) #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 59,
+      "musicReason": "títol d’entrevista/podcast/promoció o contingut auxiliar"
+    },
+    {
+      "id": "PqKzAm-ujr0",
+      "title": "Celobert - Celobert #shorts",
+      "channelTitle": "Celobert",
+      "durationSeconds": 40,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "U5L-kJNvxZg",
+      "title": "6/05 videoclip “SI TE’N VAS”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 16,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "Z4ko6aHkFUc",
+      "title": "20/01 “DE MAIG A JUNY”",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 10,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "IF3npGq6a7I",
+      "title": "doleeeermeeee",
+      "channelTitle": "Cloe Riembau",
+      "durationSeconds": 31,
+      "musicReason": "massa curt: probable teaser/fragment"
+    },
+    {
+      "id": "8hNm71CUWjQ",
+      "title": "CRIM @ Teatre Auditori Camp de Mart, TARRAGONA (16/05/2021)",
+      "channelTitle": "Crim",
+      "durationSeconds": 173,
+      "musicReason": "no és a la discografia del canal Tema"
     }
   ],
-  "publishedFeedVideoCount": 6791,
+  "publishedFeedVideoCount": 6871,
   "publishedShortVideoCount": 0
 }
