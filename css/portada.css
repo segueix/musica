@@ -12709,16 +12709,18 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     }
 }
 
-/* Un toc propi: la llista va dins d'un marc blanc, amb un fons fosc que s'encén de llima des del trofeu */
+/* Un toc propi: la llista va dins d'un marc blanc, amb un degradat del color de fons (el que es tria a la
+   configuració): a dalt, aclarit amb un 20 % de blanc; a baix, el mateix color que la pàgina, on s'hi fon */
 #homePage .hc {
     position: relative;
     padding: 20px 20px 16px;
     border: 2px solid #fff;
     border-radius: var(--pt-radius-lg);
-    background:
-        radial-gradient(120% 90% at 0% 0%, rgba(214, 237, 132, 0.2), transparent 55%),
-        radial-gradient(80% 70% at 100% 100%, rgba(217, 138, 112, 0.14), transparent 60%),
-        #101211;
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-background, var(--pt-bg)) 80%, #fff) 0%,
+        var(--color-background, var(--pt-bg)) 100%
+    );
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 

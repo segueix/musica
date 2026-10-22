@@ -317,10 +317,13 @@ describe('llista d’èxits: secció d’Inici', () => {
         expect(css).toMatch(/\.hc__title-row \{[^}]*position: relative/);
     });
 
-    it('la llista té un toc propi: marc blanc i fons fosc amb llum de llima', () => {
+    it('la llista té un toc propi: marc blanc i un degradat del color de fons, de clar (a dalt) a fosc', () => {
         const css = readFileSync('css/portada.css', 'utf8');
         const block = css.slice(css.indexOf('/* Un toc propi'));
-        expect(block).toMatch(/#homePage \.hc \{[^}]*border: 2px solid #fff;[^}]*radial-gradient/);
+        expect(block).toMatch(
+            /#homePage \.hc \{[^}]*border: 2px solid #fff;[^}]*linear-gradient\(\s*180deg,\s*color-mix\(in srgb, var\(--color-background, var\(--pt-bg\)\) 80%, #fff\) 0%,\s*var\(--color-background, var\(--pt-bg\)\) 100%/
+        );
+        expect(block.slice(0, block.indexOf('}'))).not.toContain('radial-gradient');
         expect(block).toMatch(/\.hc-row\.is-top \.hc-row__btn \{[^}]*inset 3px 0 0 var\(--pt-accent\)/);
     });
 
