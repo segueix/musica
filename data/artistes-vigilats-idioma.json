@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T10:01:23.704Z",
+  "updatedAt": "2026-10-22T10:44:42.454Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2842,6 +2842,22 @@
         "docs/revisions/2026-10-22-anna-roig.json",
         "https://www.annaroig.com/bio/"
       ]
+    },
+    {
+      "artista": "Bèrnia",
+      "aliases": [
+        "bernia - Topic",
+        "bernia"
+      ],
+      "canals": [
+        "UC7Y0TrjWk-TcCLcoCXulf0Q",
+        "UCdFUlEKax2JWJ58pdL2zNvw"
+      ],
+      "motiu": "Petició explícita de l'usuari el 2026-10-22: vigilància habitual d'idioma després de demanar la retirada de «Que parle la flor». Cal revisar les incorporacions; no s'atribueix una llengua a tot el repertori.",
+      "fonts": [
+        "manual-user-2026-10-22",
+        "docs/revisions/2026-10-22-retirada-que-parle-la-flor.json"
+      ]
     }
   ],
   "confianca": [
@@ -3177,17 +3193,6 @@
       ],
       "canals": [
         "UCxaFjfjCeRo1dUZXm_YtM6w"
-      ]
-    },
-    {
-      "artista": "Bèrnia",
-      "aliases": [
-        "bernia - Topic",
-        "bernia"
-      ],
-      "canals": [
-        "UC7Y0TrjWk-TcCLcoCXulf0Q",
-        "UCdFUlEKax2JWJ58pdL2zNvw"
       ]
     },
     {

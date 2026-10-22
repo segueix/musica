@@ -17,5 +17,15 @@
     "acceptada": "2026-10-21T21:12:46.776Z"
   },
   "aplicacio": "ID afegit a data/hidden-videos.json. El filtre comú del client l'aplica al feed, cerca, ràdios i arxius; impedeix que la pista reaparegui en actualitzacions.",
-  "base": "8ac28ec2dbb40a3f9a2d8352699268de2280fa86"
+  "base": "8ac28ec2dbb40a3f9a2d8352699268de2280fa86",
+  "vigilancia": {
+    "data": "2026-10-22T10:45:12.399Z",
+    "peticio": "Afegir Bèrnia a la llista habitual de vigilància d'idioma.",
+    "canals": [
+      "UC7Y0TrjWk-TcCLcoCXulf0Q",
+      "UCdFUlEKax2JWJ58pdL2zNvw"
+    ],
+    "canvi": "Trasllat de confianca a vigilats. Les incorporacions passen a pendents; les acceptacions anteriors per confiança es reavaluaran en la passada ordinària. Es conserven decisions explícites per ID.",
+    "validacio": "Comprovats els dos canals amb createPolicy i updatePending: noves pistes a pendents, cap acceptació automàtica. 39 proves de revisió i 16 de política correctes; una prova d'integració no completada per absència de data/feed.json a la còpia local."
+  }
 }
