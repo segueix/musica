@@ -104,13 +104,13 @@ describe('«A prop teu» a la portada', () => {
   expect(html).toContain('Canvia la ubicació');
   delete store.segueix_nearby_manual_v1;
  });
- it('surt just després de «Comença per aquí», abans de les novetats', () => {
+ it('va al bloc «per descobrir», després de «Fora del teu radar» (ordre d’Inici del 2026-10-22)', () => {
   const src = readFileSync('js/features/portada.js', 'utf8');
-  const lead = src.indexOf('${model.lead ? leadHtml(model.lead)');
+  const radar = src.indexOf('${model.radar ? radarHtml(model.radar)');
   const near = src.indexOf('nearbyRadio?.cardHtml?.()');
   const fresh = src.indexOf('${model.fresh ? freshHtml(');
-  expect(lead).toBeLessThan(near);
-  expect(near).toBeLessThan(fresh);
+  expect(fresh).toBeLessThan(radar);
+  expect(radar).toBeLessThan(near);
  });
  it('el diàleg és a pantalla completa al mòbil i té els botons fixos a baix', () => {
   const css = readFileSync('css/portada.css', 'utf8');
