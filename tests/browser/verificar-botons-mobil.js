@@ -203,7 +203,7 @@ async function main() {
             await context.close();
         }
 
-        // Final de cançó (2026-10-18): a 3 s del final passa a la següent (sense esperar la graella de YouTube), i a
+        // Final de cançó (2026-10-22): espera el final real de YouTube, i a
         // l'última cançó la cua s'allarga en lloc d'acabar-se
         {
             const { context, page } = await obrir(browser, 0, errors);
@@ -221,14 +221,18 @@ async function main() {
             await temps(150, 200);
             await page.waitForTimeout(500);
             const mig = await estat(page);
-            await temps(197.6, 200);
+            await temps(199.9, 200);
             await page.waitForTimeout(1500);
             const final = await estat(page);
             comprovar(
-                'a 3 s del final passa a la cançó següent (abans no)',
-                mig.index === abans.index && final.index === abans.index + 1 && final.id !== abans.id,
+                'no retalla els últims segons de la cançó',
+                mig.index === abans.index && final.index === abans.index && final.id === abans.id,
                 { abans: abans.index, mig: mig.index, final: final.index }
             );
+            await acabar(page);
+            await page.waitForTimeout(1500);
+            const acabat = await estat(page);
+            comprovar('avança quan YouTube confirma el final', acabat.index === abans.index + 1, acabat);
             const cua = await page.evaluate(() => {
                 currentPlaylistIndex = activePlaylistQueue.length - 1;
                 return { llarg: activePlaylistQueue.length, index: currentPlaylistIndex };

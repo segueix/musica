@@ -9149,53 +9149,6 @@ function handlePlaylistVideoEnded() {
     }
 }
 
-// ---------- Final de cançó: abans de les recomanacions de YouTube ----------
-// YouTube no deixa treure la graella de recomanacions del final d'un vídeo incrustat (rel=0 només la limita al mateix
-// canal) i no s'hi pot posar res al damunt. Dins d'una cua, quan falten QUEUE_END_TRIM_SECONDS per acabar, es passa a la
-// cançó següent: la graella no arriba a sortir i els segons de cua que porten molts videoclips (crèdits, silenci) no
-// es fan esperar (2026-10-18). Cançons de menys de 60 s, no. Interruptor: localStorage.catube_queue_end_trim = segons
-// (0 = desactivat). music-signals ja dona la cançó per escoltada sencera al 85 %.
-const QUEUE_END_TRIM_SECONDS = 3;
-const QUEUE_END_TRIM_MIN_DURATION = 60;
-let queueEndTrack = { videoId: '', duration: 0, done: false };
-
-function queueEndTrimSeconds() {
-    try {
-        const saved = window.localStorage?.getItem('catube_queue_end_trim');
-        if (saved !== null && saved !== undefined && saved !== '') {
-            const value = Number(saved);
-            if (Number.isFinite(value) && value >= 0) return Math.min(value, 20);
-        }
-    } catch (error) {
-        // Sense emmagatzematge: el valor per defecte
-    }
-    return QUEUE_END_TRIM_SECONDS;
-}
-
-function shouldAdvanceBeforeEnd({ time, duration, trim }) {
-    if (!(trim > 0) || !(duration >= QUEUE_END_TRIM_MIN_DURATION) || !(time > 0)) return false;
-    const remaining = duration - time;
-    return remaining > 0 && remaining <= trim;
-}
-
-function maybeAdvanceBeforeEnd(info) {
-    const id = String(videoPlayer?.dataset.playingVideoId || '');
-    if (!id || !info) return;
-    if (queueEndTrack.videoId !== id) queueEndTrack = { videoId: id, duration: 0, done: false };
-    const reported = Number(info.duration);
-    if (reported > 0) queueEndTrack.duration = reported;
-    const time = Number(info.currentTime);
-    if (queueEndTrack.done || !Number.isFinite(time)) return;
-    if (!isPlaylistMode || isTVPlaybackMode() || isAwaitingNativePlay()) return;
-    if (videoPlayer.dataset.playerState !== '1') return;
-    const queued = activePlaylistQueue[currentPlaylistIndex];
-    if (!queued || String(queued.id) !== id) return;
-    const duration = queueEndTrack.duration || Number(queued.durationSeconds) || 0;
-    if (!shouldAdvanceBeforeEnd({ time, duration, trim: queueEndTrimSeconds() })) return;
-    queueEndTrack.done = true;
-    handlePlaylistVideoEnded();
-}
-
 let queueNextOverlayHideTimer = null;
 let queueNextOverlayObserver = null;
 let queueNextOverlaySyncFrame = null;
@@ -10893,7 +10846,6 @@ function handleYouTubeMessageLegacyImpl(event) {
     ) {
         applyReportedPlayerState(payload.info.playerState);
     }
-    if (payload?.event === 'infoDelivery' && fromMainPlayer) maybeAdvanceBeforeEnd(payload.info);
 }
 
 function isYouTubeEmbed(url) {
