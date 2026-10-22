@@ -6,9 +6,9 @@
 // Ús:  node tests/browser/verificar-llista-exits.js
 //      EXITS_SHOTS=/ruta/captures node tests/browser/verificar-llista-exits.js
 //
-// A 1280 px i a 390 px: la secció surt després d'«Acabades de sortir» amb deu files (dues columnes a l'ordinador,
-// una al mòbil, sense desbordar la pantalla), «Mostra les 40» la desplega i tocar una fila engega la selecció
-// «Llista d'èxits» a partir d'aquella cançó.
+// A 1280 px i a 390 px: la secció surt després d'«Acabades de sortir» amb les 40 cançons dins del marc blanc (dues
+// columnes a l'ordinador, una al mòbil, sense desbordar la pantalla); la llista fa scroll per dins i la capçalera
+// (fins a «Escolta-la») no es mou; tocar una fila engega la selecció «Llista d'èxits» a partir d'aquella cançó.
 
 const http = require('http');
 const fs = require('fs');
@@ -93,6 +93,7 @@ async function check(browser, width, height) {
             first: section.querySelector('.hc-row__title')?.textContent,
             eyebrow: section.querySelector('.hc__eyebrow')?.textContent.trim(),
             minHeight: Math.min(...rows.map(r => r.height)),
+            more: Boolean(section.querySelector('[data-hc-more]')),
         };
     });
     ok(
@@ -100,7 +101,7 @@ async function check(browser, width, height) {
         info.sections.indexOf('chart') === info.sections.indexOf('fresh') + 1,
         info.sections
     );
-    ok(`${label}: deu files`, info.rows === 10, info.rows);
+    ok(`${label}: les 40 cançons, sense «Mostra les 40»`, info.rows === 40 && !info.more, info.rows);
     ok(`${label}: ${mobile ? 'una columna' : 'dues columnes'}`, info.columns === (mobile ? 1 : 2), info.columns);
     ok(`${label}: no desborda la pantalla`, info.right <= info.width && info.scroll <= info.width, info);
     ok(`${label}: files d'almenys 44 px`, info.minHeight >= 44, info.minHeight);
@@ -152,14 +153,35 @@ async function check(browser, width, height) {
     await page.mouse.click(5, height - 5);
     ok(`${label}: un clic fora el tanca`, await page.evaluate(() => document.getElementById('hcInfo').hidden));
 
-    await page.click('[data-hc-more]');
-    const open = await page.evaluate(() => ({
-        rows: document.querySelectorAll('[data-pt-section="chart"] .hc-row').length,
-        expanded: document.querySelector('[data-hc-more]')?.getAttribute('aria-expanded'),
-        text: document.querySelector('[data-hc-more]')?.textContent,
-    }));
-    ok(`${label}: «Mostra les 40» les desplega`, open.rows > 10 && open.expanded === 'true', open);
-    await page.click('[data-hc-more]');
+    // Scroll dins del marc: la llista es mou, la capçalera i la pàgina no
+    const scrolled = await page.evaluate(async () => {
+        const box = document.querySelector('.hc__scroll');
+        const head = document.querySelector('[data-pt-section="chart"] .pt-head');
+        const headTop = head.getBoundingClientRect().top;
+        const pageY = window.scrollY;
+        box.scrollTop = box.scrollHeight;
+        await new Promise(resolve => setTimeout(resolve, 100));
+        const last = [...box.querySelectorAll('.hc-row__btn')].pop().getBoundingClientRect();
+        const area = box.getBoundingClientRect();
+        return {
+            scrolls: box.scrollHeight > box.clientHeight + 40,
+            height: Math.round(box.clientHeight),
+            top: box.scrollTop,
+            headStill: Math.abs(head.getBoundingClientRect().top - headTop) < 1,
+            pageStill: window.scrollY === pageY,
+            lastVisible: last.bottom <= area.bottom + 1,
+        };
+    });
+    ok(`${label}: la llista fa scroll dins del marc`, scrolled.scrolls && scrolled.top > 0, scrolled);
+    ok(`${label}: la capçalera (fins a «Escolta-la») queda fixa`, scrolled.headStill && scrolled.pageStill, scrolled);
+    ok(`${label}: s'arriba a la #40`, scrolled.lastVisible, scrolled);
+    if (OUT) {
+        const section = await page.$('[data-pt-section="chart"]');
+        await section.screenshot({ path: path.join(OUT, `llista-exits-final-${width}.png`) });
+    }
+    await page.evaluate(() => {
+        document.querySelector('.hc__scroll').scrollTop = 0;
+    });
 
     await page.click('[data-pt-section="chart"] [data-hc-play="2"]');
     await page.waitForTimeout(800);

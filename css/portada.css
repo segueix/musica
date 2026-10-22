@@ -12368,7 +12368,7 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
    Llista d'èxits setmanal (2026-10-22): secció d'Inici després d'«Acabades de sortir»
    (js/features/hits-chart.js, dades a data/llista-exits.json). Files numerades: posició i moviment,
    caràtula, títol i artista, i les visualitzacions guanyades. Al mòbil una columna; a ≥ 900 px dues
-   (1–5 i 6–10; desplegada, 1–20 i 21–40), per això el nombre de files va a --hc-rows.
+   (1 i 2 a la primera fila, 3 i 4 a la segona…). Les 40 fan scroll dins del marc (.hc__scroll).
    ========================================================================== */
 .hc[hidden] {
     display: none;
@@ -12403,9 +12403,31 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
 @media (min-width: 900px) {
     .hc__list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: repeat(var(--hc-rows, 5), auto);
-        grid-auto-flow: column;
         column-gap: 16px;
+    }
+}
+
+/* Les 40 cançons es despleguen dins del marc: la capçalera queda fixa i només fa scroll la llista
+   (5 files i mitja a l'ordinador, 6 i mitja al mòbil; la mitja fila i el difuminat de baix avisen que n'hi ha més) */
+.hc__scroll {
+    max-height: 408px;
+    margin: 0 -6px;
+    padding: 2px 6px 28px;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+    scrollbar-color: rgba(214, 237, 132, 0.55) transparent;
+    scrollbar-width: thin;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
+}
+
+.hc__scroll .hc-row__btn:focus-visible {
+    outline-offset: -2px;
+}
+
+@media (max-width: 899px) {
+    .hc__scroll {
+        max-height: min(476px, 62vh);
     }
 }
 
@@ -12544,14 +12566,6 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     font-variant-numeric: tabular-nums;
     font-weight: 700;
     white-space: nowrap;
-}
-
-.hc__foot {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 8px 16px;
-    margin-top: 12px;
 }
 
 /* Botó «i»: cercle de vidre amb vora blanca al costat del títol (44 px de toc, 30 px visibles) */
@@ -12695,16 +12709,18 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     }
 }
 
-/* Un toc propi: la llista va dins d'un marc blanc, amb un fons fosc que s'encén de llima des del trofeu */
+/* Un toc propi: la llista va dins d'un marc blanc, amb un degradat del color de fons (el que es tria a la
+   configuració): a dalt, aclarit amb un 20 % de blanc; a baix, el mateix color que la pàgina, on s'hi fon */
 #homePage .hc {
     position: relative;
     padding: 20px 20px 16px;
     border: 2px solid #fff;
     border-radius: var(--pt-radius-lg);
-    background:
-        radial-gradient(120% 90% at 0% 0%, rgba(214, 237, 132, 0.2), transparent 55%),
-        radial-gradient(80% 70% at 100% 100%, rgba(217, 138, 112, 0.14), transparent 60%),
-        #101211;
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-background, var(--pt-bg)) 80%, #fff) 0%,
+        var(--color-background, var(--pt-bg)) 100%
+    );
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -12715,7 +12731,7 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
 
 /* Les tres primeres, amb una franja llima a l'esquerra */
 #homePage .hc .hc-row.is-top .hc-row__btn {
-    background: linear-gradient(90deg, rgba(214, 237, 132, 0.12), transparent 70%);
+    background: linear-gradient(90deg, rgba(214, 237, 132, 0.12), transparent 70%) no-repeat border-box;
     box-shadow: inset 3px 0 0 var(--pt-accent);
 }
 
