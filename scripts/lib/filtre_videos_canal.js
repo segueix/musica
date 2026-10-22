@@ -56,6 +56,10 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
             .filter(([id, uploader]) => /^[A-Za-z0-9_-]{11}$/.test(id) && /^UC[A-Za-z0-9_-]{22}$/.test(uploader))
         ),
         acceptedMusicOnly: rule?.acceptedMusicOnly === true,
+        // Tipus fix per a tot el que passa el filtre del canal (p. ex. sessions en directe llargues d'un cicle).
+        forceContentType: ['song', 'live_song'].includes(rule?.forceContentType) ? rule.forceContentType : null,
+        // «ARTISTA - SESSIÓ #08 - CICLE»: cada sessió surt també a la fitxa de l'artista (albums-musica.json).
+        guestSessions: rule?.guestSessions === true,
         allowedContentTypes: new Set(
           (Array.isArray(rule?.allowedContentTypes) ? rule.allowedContentTypes : [])
             .map(value => String(value || '').trim())
@@ -72,6 +76,8 @@ function loadChannelVideoAllowlist(filePath, fsModule = require('fs')) {
         parsedRule.hasTitleFilter ||
         parsedRule.deniedTitleContains.length > 0 ||
         parsedRule.acceptedMusicOnly ||
+        parsedRule.forceContentType ||
+        parsedRule.guestSessions ||
         parsedRule.allowedContentTypes.size > 0 ||
         parsedRule.avatarVideoId ||
         parsedRule.avatarFromFirstAllowedVideo ||

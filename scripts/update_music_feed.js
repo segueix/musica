@@ -722,6 +722,11 @@ async function main(){
         topicReview.push({id:videoId,channelId:id,channelTitle:channel.name,title:item?.snippet?.title||carried?.title||'',from:classification.contentType,to:finalClassification.contentType});
         if(TOPIC_GOVERNANCE==='apply') classification=finalClassification;
       }
+      // Tipus fix del canal (p. ex. sessions llargues del Club Social Carme): mana la decisió manual per vídeo, si n'hi ha.
+      const videoDuration=item?.durationSeconds??carried?.durationSeconds;
+      if(channelVideoRule?.forceContentType && !contentOverrides.has(videoId) && !isShortByDuration(videoDuration)){
+        classification={accepted:true,contentType:channelVideoRule.forceContentType,confidence:1,reason:'tipus fix del canal (music-channel-video-allowlist.json)'};
+      }
       if(channelVideoRule?.acceptedMusicOnly && !classification.accepted) continue;
       if(
         channelVideoRule?.allowedContentTypes?.size &&
@@ -918,6 +923,10 @@ async function main(){
     {hiddenIds,generatedAt}
   );
   releasesMusic.applyReleaseCatalog(albumCatalog,releasesRegistry,{channels,hiddenIds});
+  albumsMusic.addGuestSessions(albumCatalog,videos,channels,{
+    sourceChannelIds:[...channelVideoAllowlist].filter(([,rule])=>rule.guestSessions).map(([id])=>id),
+    hiddenIds
+  });
   fs.writeFileSync(ALBUMS_FILE,JSON.stringify(albumCatalog));
   const albumCount=Object.values(albumCatalog.artists||{}).reduce((sum,entry)=>sum+(entry.albums||[]).length,0);
   console.log('💿 Catàleg local de discos:',albumCount,'discos de',Object.keys(albumCatalog.artists||{}).length,'artistes.');
