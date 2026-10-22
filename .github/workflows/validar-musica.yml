@@ -45,7 +45,7 @@ jobs:
       - name: Prova classificador musical
         run: node scripts/test_music_content_classifier.js
       - name: Proves sense xarxa de quota i revisió Codex
-        run: node --test scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs scripts/test_publicacio_estatica.cjs scripts/test_abast_publicacio.cjs
+        run: node --test scripts/test_avisos_idiomes.cjs scripts/test_workflow_quota.cjs scripts/test_revisio_codex.cjs scripts/test_activitat_musica.cjs scripts/test_publicacio_estatica.cjs scripts/test_abast_publicacio.cjs
       - name: Comprova la sintaxi dels generadors
         run: |
           node --check scripts/optimitzar_web_estatica.cjs
@@ -61,4 +61,3 @@ jobs:
         run: npx vitest run tests/musicbrainz-enrichment.test.js tests/youtube-search-candidates.test.js tests/music-genres.test.js tests/arxiu-musical.test.js tests/music-content-overrides.test.js tests/subtitols-castella.test.js tests/albums-musica.test.js tests/quota-feed.test.js tests/channel-video-allowlist.test.js tests/resoldre-canals-quota.test.js tests/music-affinities-catalog.test.js tests/music-subcategories.test.js tests/static-site.test.js tests/static-catalog.test.js tests/static-seo-runtime.test.js tests/static-service-worker.test.js tests/admin-musica.test.js tests/music-admin.test.js tests/config-backup.test.js tests/startup-performance.test.js tests/cataleg-musical.test.js tests/any-original.test.js tests/canals-revisats.test.js tests/aprimar-feed.test.js tests/canal-tema.test.js tests/revisio-idiomes.test.js tests/llancaments-musicals.test.js tests/catalog-policy.test.js
       - name: Valida la base actual
         run: node scripts/validar_artistes_musica.js
-
