@@ -20,6 +20,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   actualitza:
@@ -83,3 +84,10 @@ jobs:
         if: steps.scope.outputs.work == 'true'
         run: >-
           bash scripts/publicar_dades.sh "data: actualització musical programada" data js/channels-ca.json js/features/music-affinity-catalog.js
+      - name: Avisa de cançons noves pendents d’idioma
+        if: steps.scope.outputs.work == 'true'
+        # Un error de correu no ha de bloquejar la publicació del catàleg.
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/avisar_pendents_idioma.cjs
