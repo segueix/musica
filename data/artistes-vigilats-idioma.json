@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T06:49:31.712Z",
+  "updatedAt": "2026-10-22T10:01:23.704Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -6366,6 +6366,58 @@
       "criteri": "Lletra íntegra vinculada explícitament a Els Pescadors de l'Escala i Genuí (2022); ID i canal Tema de la llista d'aquest àlbum. No s'aplica a Port Bo ni a altres intèrprets també enumerats a la font.",
       "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
       "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Els Pescadors de l’Escala",
+      "titol": "Vell Pescador",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/catalan-folk-vell-pescador-lyrics.html",
+      "videoIds": [
+        "-ZgcpocJiDM"
+      ],
+      "criteri": "Lletra íntegra catalana llegida. La font enllaça el mateix ID -ZgcpocJiDM; la llista pública identifica la pista, el disc i el canal Tema.",
+      "origen": "docs/revisions/2026-10-22-pescadors-escala-ampliacio.json",
+      "data": "2026-10-22T10:01:23.704Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Els Pescadors de l’Escala",
+      "titol": "Mariner De Terra Endins",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/catalan-folk-mariner-de-terra-endins-lyrics.html",
+      "videoIds": [
+        "Fv0THWawacU"
+      ],
+      "criteri": "Lletra íntegra catalana llegida. La font identifica Els Pescadors de l'Escala i La rosa dels vents (1997); l'ID prové de la llista pública d'aquesta edició al canal Tema. No s'aplica als altres intèrprets de la font.",
+      "origen": "docs/revisions/2026-10-22-pescadors-escala-ampliacio.json",
+      "data": "2026-10-22T10:01:23.704Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Els Pescadors de l’Escala",
+      "titol": "Encís D'Amor",
+      "accio": "conserva",
+      "font": "https://habacompo.cat/encis-damor-lletra",
+      "videoIds": [
+        "LT4LGGeZouQ"
+      ],
+      "criteri": "Lletra íntegra catalana llegida. La font vincula la peça al disc Sempre Pescadors 50 (2014); llista pública amb el mateix títol i canal Tema. No s'estén a la versió d'Havaneres d'amor i mar.",
+      "origen": "docs/revisions/2026-10-22-pescadors-escala-ampliacio.json",
+      "data": "2026-10-22T10:01:23.704Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Els Pescadors de l’Escala",
+      "titol": "Mar D'estrelles",
+      "accio": "conserva",
+      "font": "https://habacompo.cat/mar-destrelles-lletra",
+      "videoIds": [
+        "SrO35LOZIjY"
+      ],
+      "criteri": "Lletra íntegra catalana llegida, incloent tornades i coda. La font identifica el disc dels Pescadors de l'Escala de 2018 (Picap); llista pública amb el mateix títol i canal Tema.",
+      "origen": "docs/revisions/2026-10-22-pescadors-escala-ampliacio.json",
+      "data": "2026-10-22T10:01:23.704Z",
       "lletraIntegraVerificada": true
     }
   ]

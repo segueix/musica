@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T06:49:31.712Z",
+  "updatedAt": "2026-10-22T10:01:23.704Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7593,11 +7593,15 @@
     },
     "UCM0EHoHg-iQnr2hi5tzamLg": {
       "artist": "Els Pescadors de l’Escala",
-      "note": "Selecció ampliada a 3 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències noves: docs/revisions/2026-10-22-havaneres-segona-revisio.json.",
+      "note": "Selecció ampliada a 7 pistes Tema amb lletra catalana íntegra verificada. Revisió parcial: la resta del repertori continua pendent de comprovació, no descartat. Evidències: docs/revisions/2026-10-22-pescadors-escala-ampliacio.json.",
       "allowedVideoIds": [
         "LG1kQCd_rEE",
         "2Ty89Uuqvz4",
-        "27giBccYFy4"
+        "27giBccYFy4",
+        "-ZgcpocJiDM",
+        "Fv0THWawacU",
+        "LT4LGGeZouQ",
+        "SrO35LOZIjY"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
