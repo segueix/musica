@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T06:07:44Z",
+  "updatedAt": "2026-10-22T18:04:47.265Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -17709,6 +17709,40 @@
           "basis": "Web indicada a la descripció del canal oficial i biografia del projecte."
         }
       }
+    },
+    "artist:teuma-thug": {
+      "name": "Teuma Thug",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Membre de P.A.W.N. Gang, col·lectiu sorgit al barri de Gràcia de Barcelona. Es desa Barcelona com a municipi de procedència musical.",
+      "sources": [
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ],
+      "reviewedOn": "2026-10-22",
+      "assignmentSource": "manual-review",
+      "locked": true
+    },
+    "artist:good-jan": {
+      "name": "Good Jan",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "Membre de P.A.W.N. Gang, col·lectiu sorgit al barri de Gràcia de Barcelona. Es desa Barcelona com a municipi de procedència musical.",
+      "sources": [
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ],
+      "reviewedOn": "2026-10-22",
+      "assignmentSource": "manual-review",
+      "locked": true
     }
   },
   "channels": {
@@ -18385,7 +18419,9 @@
     "UCn8foPPMflft1g_JVfcpzYQ": "artist:komando-moriles",
     "UCtdHEpTBQZig3Y9-PXBAKYQ": "artist:nu-drama",
     "UCQt9awGIFZeldFsATZNeJag": "artist:rosalia",
-    "UCFtfi1A29MUUHvDU38Dw4wg": "artist:anna-roig-i-l-ombre-de-ton-chien"
+    "UCFtfi1A29MUUHvDU38Dw4wg": "artist:anna-roig-i-l-ombre-de-ton-chien",
+    "UCP_oNrTxABOWdNVpuxh_wUw": "artist:teuma-thug",
+    "UC-rX86Ux3rfWiEHYBDAt98w": "artist:good-jan"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {
