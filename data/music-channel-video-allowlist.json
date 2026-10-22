@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T20:30:09Z",
+  "updatedAt": "2026-10-22T06:07:44Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7698,6 +7698,22 @@
         "song",
         "live_song"
       ]
+    },
+    "UCFtfi1A29MUUHvDU38Dw4wg": {
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "note": "Selecció catalana revisada per lletra íntegra i gravació d'estudi. Prioritat al Tema; repertori restant pendent. Evidència: docs/revisions/2026-10-22-anna-roig.json",
+      "allowedVideoIds": [
+        "glOmif7hhBM",
+        "bfILfWuXxfI",
+        "-8GUnKE6vTw",
+        "GaC3D6ZZDWk"
+      ],
+      "acceptedMusicOnly": true,
+      "allowedContentTypes": [
+        "song",
+        "live_song"
+      ],
+      "avatarVideoId": "glOmif7hhBM"
     }
   }
 }

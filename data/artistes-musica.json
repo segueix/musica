@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21T20:30:09Z",
+  "updatedAt": "2026-10-22T06:07:44Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -41740,6 +41740,54 @@
       ],
       "lastChecked": "2026-10-21",
       "notes": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json. Encara sense pistes admeses: falta verificar íntegrament la lletra de les gravacions candidates."
+    },
+    {
+      "name": "Anna Roig i l'Ombre de Ton Chien",
+      "displayName": "Anna Roig i l'Ombre de Ton Chien",
+      "aliases": [
+        "Anna Roig i L’ombre de ton chien",
+        "Anna Roig i L'ombre de ton chien",
+        "Anna Roig",
+        "annaroigilombre"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "genresRaw": [
+        "Cançó d'autor"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "català",
+        "francès"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCFtfi1A29MUUHvDU38Dw4wg",
+            "handle": null,
+            "name": "Anna Roig i L’ombre de ton chien - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "https://www.youtube.com/@annaroigilombre",
+        "https://www.youtube.com/channel/UCFtfi1A29MUUHvDU38Dw4wg",
+        "https://www.annaroig.com/bio/",
+        "genre:manual",
+        "manual-user-2026-10-22"
+      ],
+      "lastChecked": "2026-10-22",
+      "notes": "Alta sol·licitada amb @annaroigilombre, Sant Sadurní d'Anoia i Cançó d'autor. Es prioritza el canal Tema del grup segons la preferència editorial de l'usuari. Repertori català i francès: només quatre pistes d'estudi verificades per lletra íntegra, mitjançant llista blanca d'IDs. La resta queda pendent de revisió; no es dona confiança lingüística global ni s'afegeixen els canals homònims d'Anna Roig Dolz."
     }
   ]
 }

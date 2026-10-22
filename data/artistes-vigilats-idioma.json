@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21T20:30:09Z",
+  "updatedAt": "2026-10-22T06:07:44Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2824,6 +2824,23 @@
         "manual-user-2026-10-21",
         "genre:manual",
         "https://www.youtube.com/channel/UCYOWVkZwBVSxzYQfK_khVYg"
+      ]
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "aliases": [
+        "Anna Roig i L’ombre de ton chien",
+        "Anna Roig i L'ombre de ton chien",
+        "Anna Roig",
+        "annaroigilombre"
+      ],
+      "canals": [
+        "UCFtfi1A29MUUHvDU38Dw4wg"
+      ],
+      "motiu": "Repertori en català i francès. Només s'accepten les gravacions amb lletra íntegra catalana verificada; alta sense confiança global.",
+      "fonts": [
+        "docs/revisions/2026-10-22-anna-roig.json",
+        "https://www.annaroig.com/bio/"
       ]
     }
   ],
@@ -5959,6 +5976,58 @@
       "criteri": "Lletra sencera a la pàgina 2 de la partitura oficial de Francesc Salse, vinculada pel web de Mar Endins al disc Havaneres de Francesc Salse; coincideix amb la pista. No es duplica la reedició d’A prop de mi.",
       "origen": "docs/revisions/2026-10-21-havaneres-tema.json",
       "data": "2026-10-21T20:30:09Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "La senyora tímida",
+      "accio": "conserva",
+      "font": "https://www.musica.com/letras.asp?letra=1992242",
+      "videoIds": [
+        "glOmif7hhBM"
+      ],
+      "criteri": "Lletra íntegra en català publicada per a Anna Roig y l'Ombre de Ton Chien. La fitxa de Viasona identifica el mateix tema i disc; la pista Topic acredita el grup, el disc Bigoti Vermell i l'edició de 2011.",
+      "origen": "docs/revisions/2026-10-22-anna-roig.json",
+      "data": "2026-10-22T06:07:44Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Corre, salta, brinca, vola",
+      "accio": "conserva",
+      "font": "https://www.musica.com/letras.asp?letra=1992247",
+      "videoIds": [
+        "bfILfWuXxfI"
+      ],
+      "criteri": "Lletra íntegra en català publicada per al grup. Pista d'estudi Topic acreditada al mateix grup, autors i disc Bigoti Vermell (2011).",
+      "origen": "docs/revisions/2026-10-22-anna-roig.json",
+      "data": "2026-10-22T06:07:44Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Com el mar",
+      "accio": "conserva",
+      "font": "https://www.youtube.com/watch?v=__UNUs90ZhM",
+      "videoIds": [
+        "-8GUnKE6vTw"
+      ],
+      "criteri": "Lletra íntegra en català a la descripció de l'Audio Single oficial, que l'identifica com la quarta cançó d'Un Pas i Neu i un Pas. Pista Topic del mateix disc de 2014; no es valida la versió acústica ni altres directes.",
+      "origen": "docs/revisions/2026-10-22-anna-roig.json",
+      "data": "2026-10-22T06:07:44Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Em creuràs",
+      "accio": "conserva",
+      "font": "https://www.youtube.com/watch?v=MhR1-mBui8U",
+      "videoIds": [
+        "GaC3D6ZZDWk"
+      ],
+      "criteri": "Lletra íntegra en català a la descripció de l'Audio Single oficial, identificat com la setena cançó d'Un Pas i Neu i un Pas. Pista Topic del mateix disc de 2014.",
+      "origen": "docs/revisions/2026-10-22-anna-roig.json",
+      "data": "2026-10-22T06:07:44Z",
       "lletraIntegraVerificada": true
     }
   ]

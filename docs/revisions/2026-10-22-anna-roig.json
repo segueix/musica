@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "request": "Indexa @annaroigilombre Sant Sadurní d'Anoia, cançó d'autor",
+  "artist": "Anna Roig i l'Ombre de Ton Chien",
+  "category": "Cançó d'autor",
+  "origin": "Sant Sadurní d'Anoia",
+  "channelChoice": {
+    "requestedHandle": "@annaroigilombre",
+    "officialChannelId": "UCn95qKTzXvkfYhYnnxEXztw",
+    "selectedChannelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+    "type": "topic",
+    "reason": "Prioritat a Tema indicada per l'usuari; el canal oficial serveix per identificar l'artista i contrastar lletres, però no s'ingereix.",
+    "otherTopicObserved": "UCgIH_SWGG5qAx7Ijf9HI_Fw"
+  },
+  "method": "Lectura íntegra de lletres publicades i correspondència amb artista, disc i pista d'estudi acreditats a YouTube. No s'ha fet una escolta ni s'han validat directes o versions diferents.",
+  "accepted": [
+    {
+      "videoId": "glOmif7hhBM",
+      "title": "La senyora tímida",
+      "album": "Bigoti Vermell",
+      "year": 2011,
+      "source": "https://www.musica.com/letras.asp?letra=1992242",
+      "basis": "Lletra íntegra en català publicada per a Anna Roig y l'Ombre de Ton Chien. La fitxa de Viasona identifica el mateix tema i disc; la pista Topic acredita el grup, el disc Bigoti Vermell i l'edició de 2011.",
+      "support": "https://www.viasona.cat/grup/anna-roig-i-l-ombre-de-ton-chien/bigoti-vermell/la-senyora-timida",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "bfILfWuXxfI",
+      "title": "Corre, salta, brinca, vola",
+      "album": "Bigoti Vermell",
+      "year": 2011,
+      "source": "https://www.musica.com/letras.asp?letra=1992247",
+      "basis": "Lletra íntegra en català publicada per al grup. Pista d'estudi Topic acreditada al mateix grup, autors i disc Bigoti Vermell (2011).",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "-8GUnKE6vTw",
+      "title": "Com el mar",
+      "album": "Un Pas i Neu i un Pas",
+      "year": 2014,
+      "source": "https://www.youtube.com/watch?v=__UNUs90ZhM",
+      "basis": "Lletra íntegra en català a la descripció de l'Audio Single oficial, que l'identifica com la quarta cançó d'Un Pas i Neu i un Pas. Pista Topic del mateix disc de 2014; no es valida la versió acústica ni altres directes.",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "GaC3D6ZZDWk",
+      "title": "Em creuràs",
+      "album": "Un Pas i Neu i un Pas",
+      "year": 2014,
+      "source": "https://www.youtube.com/watch?v=MhR1-mBui8U",
+      "basis": "Lletra íntegra en català a la descripció de l'Audio Single oficial, identificat com la setena cançó d'Un Pas i Neu i un Pas. Pista Topic del mateix disc de 2014.",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    }
+  ],
+  "pending": [
+    {
+      "videoId": "gqnsbiVULbY",
+      "title": "Gare de Metz",
+      "reason": "L'accés públic a la fitxa del vídeo demana inici de sessió i no s'ha pogut llegir la lletra completa. No s'aprova ni s'oculta permanentment."
+    },
+    {
+      "videoId": "JZRY6xpGutg",
+      "title": "Ja mai més",
+      "reason": "Pista i canal identificats, pendent de verificar lletra íntegra."
+    },
+    {
+      "videoId": "zu613GJkmhA",
+      "title": "Tocar fusta i menjar ferro",
+      "reason": "Pista i canal identificats, pendent de verificar lletra íntegra."
+    },
+    {
+      "videoId": "SB20Z3OYIWs",
+      "title": "Així és la vida",
+      "reason": "Pista i canal identificats, pendent de verificar lletra íntegra."
+    },
+    {
+      "videoId": "K8IlmGnjDtU",
+      "title": "Jo voldria saber si els ocells",
+      "reason": "Pista i canal identificats, pendent de verificar lletra íntegra."
+    }
+  ],
+  "scope": "Selecció inicial de quatre cançons, no validació de tot el catàleg. La resta, inclosos els senzills del segon Tema, queda fora de la selecció mentre no es revisi. Cap canvi a hidden-videos.",
+  "sources": [
+    "https://www.annaroig.com/bio/",
+    "https://www.youtube.com/@annaroigilombre",
+    "https://www.youtube.com/channel/UCFtfi1A29MUUHvDU38Dw4wg"
+  ],
+  "publication": "Sense dispatch d'Actions ni actualització manual del feed; espera el torn diari de les 20 h Europe/Madrid.",
+  "validation": {
+    "artistSchema": "543 artistes; correcte",
+    "selectedTracks": "4 gravacions admeses i reconegudes com a revisades; cap acceptació global per artista. Exemple francès i ID nou no admesos. Origen resoluble.",
+    "tests": {
+      "passed": 37,
+      "unavailable": 2,
+      "detail": "Les proves del catàleg complet no es poden completar a la còpia local parcial: falten js/channels-ca.json i data/revisio-idiomes.json. No s'atribueixen aquests errors al codi."
+    },
+    "lint": {
+      "errors": 0,
+      "warnings": 178
+    }
+  }
+}
