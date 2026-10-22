@@ -354,3 +354,32 @@ describe('portada cooperativa', () => {
         expect(app.features.portada.getModel()).toBe(null);
     });
 });
+
+describe('Ordre d’Inici en tres blocs (2026-10-22)', () => {
+    // La portada amb les seccions que pinten altres mòduls («Les teves llistes», «Llista d'èxits», «A prop teu»)
+    const app = { state: {}, utils: {}, features: {} };
+    loadScript('js/features/discovery.js', { SegueixApp: app });
+    loadScript('js/features/portada.js', { SegueixApp: app });
+    const section = key => `<section data-pt-section="${key}"></section>`;
+    app.features.homePlaylists = { sectionHtml: () => section('playlists') };
+    app.features.hitsChart = { cardHtml: () => section('chart') };
+    app.features.nearbyRadio = { cardHtml: () => section('near') };
+    const order = html => [...html.matchAll(/data-pt-section="([a-z]+)"/g)].map(match => match[1]);
+    const BLOCKS = ['lead', 'playlists', 'fresh', 'chart', 'live', 'radar', 'near', 'styles'];
+
+    it('amb historial: el teu, ara mateix i per descobrir', () => {
+        const model = app.features.portada.buildModel(context({ history: historyOf(['C2', 'C6', 'C10']) }));
+        expect(model.lead.kind).toBe('return');
+        const seen = order(app.features.portada.renderSections(model, { now: NOW }));
+        expect(seen).toEqual(BLOCKS.filter(key => seen.includes(key)));
+        for (const key of ['lead', 'playlists', 'fresh', 'chart', 'near', 'styles']) expect(seen).toContain(key);
+    });
+
+    it('qui és nou té «Tria el teu so» al davant de tot', () => {
+        const model = app.features.portada.buildModel(context());
+        expect(model.lead?.kind).not.toBe('return');
+        const seen = order(app.features.portada.renderSections(model, { now: NOW }));
+        expect(seen[0]).toBe('styles');
+        expect(seen.slice(1)).toEqual(BLOCKS.filter(key => key !== 'styles' && seen.includes(key)));
+    });
+});

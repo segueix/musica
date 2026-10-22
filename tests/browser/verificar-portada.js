@@ -170,8 +170,10 @@ async function verificarAmplada(browser, width, height, history) {
         mesures.seccions
     );
     comprovar(
+        // Ordre d'Inici del 2026-10-22: amb historial, «Torna-hi» primer; qui és nou té «Tria el teu so» al davant
         `${etiqueta}: «${history ? 'Torna-hi' : 'Comença per aquí'}» a la seva posició`,
-        mesures.seccions[0] === 'lead'
+        history ? mesures.seccions[0] === 'lead' : mesures.seccions[0] === 'styles' && mesures.seccions[1] === 'lead',
+        mesures.seccions
     );
     comprovar(`${etiqueta}: sense desplaçament lateral de la pàgina`, mesures.desbordament <= 0, mesures.desbordament);
     comprovar(`${etiqueta}: controls tàctils ≥ 44 × 44 px`, mesures.petits.length === 0, mesures.petits);

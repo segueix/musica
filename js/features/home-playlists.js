@@ -1,7 +1,7 @@
-// Llistes de reproducció de l'usuari a la part inferior de la pàgina principal.
-// Implementació directa: llegeix les llistes de SegueixApp.features.library i les
-// repinta quan canvien (esdeveniment segueix:playlists-changed) o quan es torna a
-// renderitzar el feed.
+// «Les teves llistes» de la pàgina principal. Implementació directa: llegeix les llistes de
+// SegueixApp.features.library i les repinta quan canvien (esdeveniment segueix:playlists-changed).
+// Des del 2026-10-22 la secció (#homePlaylists) la pinta la portada dins del bloc «el teu», just després de
+// «Torna-hi» (portada.js crida sectionHtml()); abans era un element fix a baix de tot d'Inici.
 (function (window) {
     const app = window.SegueixApp;
     if (!app) return;
@@ -59,20 +59,12 @@
         }
     }
 
-    function render() {
-        container = container || document.getElementById('homePlaylists');
-        if (!container) return;
-        if (!isHomeView()) {
-            container.classList.add('hidden');
-            container.innerHTML = '';
-            return;
-        }
+    function markup() {
         const playlists = (app.features.library?.getPlaylists?.() || []).filter(
             list => list && Array.isArray(list.videos)
         );
-        container.classList.remove('hidden');
         // «Crea una llista» va primer perquè sigui sempre visible, i les existents es poden reprendre a continuació.
-        container.innerHTML = `
+        return `
             <header class="home-section-header">
                 <div class="home-section-heading">
                     <h2 class="home-section-title">Les teves llistes</h2>
@@ -107,6 +99,25 @@
         `;
     }
 
+    // La secció sencera, per a la portada (portada.js la posa després de «Torna-hi»).
+    function sectionHtml() {
+        if (!isHomeView()) return '';
+        return `<section class="home-playlists" id="homePlaylists" data-pt-section="playlists" aria-label="Les teves llistes">${markup()}</section>`;
+    }
+
+    // Repinta la secció que hi hagi ara a la pàgina (la portada la crea de nou a cada pintada).
+    function render() {
+        container = document.getElementById('homePlaylists');
+        if (!container) return;
+        if (!isHomeView()) {
+            container.classList.add('hidden');
+            container.innerHTML = '';
+            return;
+        }
+        container.classList.remove('hidden');
+        container.innerHTML = markup();
+    }
+
     function openCreateForm(wrap) {
         wrap.innerHTML = `
             <form class="hp-add-form" data-hp-form>
@@ -131,12 +142,14 @@
         clearTimeout(renderTimer);
         renderTimer = setTimeout(() => {
             // No trepitgem el formulari de nova llista si l'usuari l'està escrivint.
-            if (container?.querySelector('[data-hp-form] input:focus')) return;
+            if (document.getElementById('homePlaylists')?.querySelector('[data-hp-form] input:focus')) return;
             render();
         }, 60);
     }
 
     function onClick(event) {
+        container = event.target.closest?.('#homePlaylists');
+        if (!container) return;
         const arrow = event.target.closest('[data-hp-scroll]');
         if (arrow) {
             const row = container.querySelector('.hp-row');
@@ -171,16 +184,10 @@
     }
 
     function init() {
-        container = document.getElementById('homePlaylists');
-        if (!container) return;
-        container.addEventListener('click', onClick);
+        // La secció es crea i es destrueix amb la portada: els clics es reben a nivell de document.
+        document.addEventListener('click', onClick);
         window.addEventListener('segueix:playlists-changed', scheduleRender);
         window.addEventListener('storage', scheduleRender);
-        // El feed es repinta en canviar de categoria: en aquest moment refresquem també les llistes.
-        const grid = document.getElementById('videosGrid');
-        if (grid && typeof MutationObserver === 'function') {
-            new MutationObserver(scheduleRender).observe(grid, { childList: true });
-        }
         render();
     }
 
@@ -190,5 +197,5 @@
         init();
     }
 
-    app.features.homePlaylists = { render };
+    app.features.homePlaylists = { render, sectionHtml };
 })(window);

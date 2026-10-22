@@ -12786,3 +12786,11 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     }
 }
 
+/* ==========================================================================
+   Ordre d'Inici en tres blocs (2026-10-22): «Les teves llistes» la pinta ara la portada dins de .pt-sections,
+   just després de «Torna-hi»; l'espai entre seccions ja el posa el gap de .pt-sections.
+   ========================================================================== */
+#homePage .pt-sections > .home-playlists {
+    margin-top: 0;
+    padding-bottom: 0;
+}

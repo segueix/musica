@@ -703,18 +703,25 @@
             </section>`;
     }
 
+    // Ordre d'Inici (2026-10-22), en tres blocs: el teu («Torna-hi», «Les teves llistes»), ara mateix («Acabades de
+    // sortir», «Llista d'èxits», «En directe») i per descobrir («Fora del teu radar», «A prop teu», «Tria el teu so»).
+    // Qui és nou (sense historial ni preferides) té «Tria el teu so» al davant de tot: és la seva porta d'entrada.
     function renderSections(model, options = {}) {
         if (model.status === 'empty') return `<div class="pt-sections">${emptyHtml()}</div>`;
         const now = options.now ?? Date.now();
+        const newcomer = !model.hasHistory && model.lead?.kind !== 'return';
+        const styles = stylesHtml(model.styles, Boolean(options.stylesExpanded));
         return `
             <div class="pt-sections">
+                ${newcomer ? styles : ''}
                 ${model.lead ? leadHtml(model.lead) : ''}
-                ${app.features.nearbyRadio?.cardHtml?.() || ''}
+                ${app.features.homePlaylists?.sectionHtml?.() || ''}
                 ${model.fresh ? freshHtml(model.fresh, Boolean(options.freshExpanded), now, model.reasons) : ''}
                 ${app.features.hitsChart?.cardHtml?.() || ''}
-                ${model.radar ? radarHtml(model.radar) : ''}
-                ${stylesHtml(model.styles, Boolean(options.stylesExpanded))}
                 ${model.live ? liveHtml(model.live, now) : ''}
+                ${model.radar ? radarHtml(model.radar) : ''}
+                ${app.features.nearbyRadio?.cardHtml?.() || ''}
+                ${newcomer ? '' : styles}
             </div>`;
     }
 
