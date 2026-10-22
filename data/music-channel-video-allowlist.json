@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T06:22:29.738Z",
+  "updatedAt": "2026-10-22T06:49:31.712Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7569,7 +7569,7 @@
     },
     "UCYRxQ_jB6vat3NkBxIOe4fQ": {
       "artist": "Port Bo",
-      "note": "Selecció ampliada a 10 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències: docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json.",
+      "note": "Selecció ampliada a 12 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències noves: docs/revisions/2026-10-22-havaneres-segona-revisio.json.",
       "allowedVideoIds": [
         "fmh3WEHkmjA",
         "SBcpZi2DkaI",
@@ -7580,7 +7580,9 @@
         "K0TdHjhUJSo",
         "ZNwF3lxfZPQ",
         "bmlx0FeqTWI",
-        "y32xdr1sBUs"
+        "y32xdr1sBUs",
+        "XU_MThnZx_E",
+        "woLQPe9b3rc"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -7591,10 +7593,11 @@
     },
     "UCM0EHoHg-iQnr2hi5tzamLg": {
       "artist": "Els Pescadors de l’Escala",
-      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "note": "Selecció ampliada a 3 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències noves: docs/revisions/2026-10-22-havaneres-segona-revisio.json.",
       "allowedVideoIds": [
         "LG1kQCd_rEE",
-        "2Ty89Uuqvz4"
+        "2Ty89Uuqvz4",
+        "27giBccYFy4"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -7675,10 +7678,15 @@
     },
     "UCAUgxOKd6wQwP_aUk54LgmQ": {
       "artist": "Mar Endins",
-      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "note": "Selecció ampliada a 7 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències noves: docs/revisions/2026-10-22-havaneres-segona-revisio.json.",
       "allowedVideoIds": [
         "MduB4_gWqDo",
-        "PslaS-y2ayE"
+        "PslaS-y2ayE",
+        "PlA4KMyMXX4",
+        "UMhbE5YGYQI",
+        "TlppjHAyXAw",
+        "JXiCjJYvurU",
+        "68ykIocvtLE"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

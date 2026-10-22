@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T06:22:29.738Z",
+  "updatedAt": "2026-10-22T06:49:31.712Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -6262,6 +6262,110 @@
       "criteri": "Lletra íntegra atribuïda al grup; pista d'estudi de Bigoti Vermell (2011).",
       "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
       "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "Amor Perdut",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/port-bo-amor-perdut-lyrics",
+      "videoIds": [
+        "XU_MThnZx_E"
+      ],
+      "criteri": "Lletra íntegra de Port Bo. L'índex del mateix artista identifica Pessigolletes al cor (2002); la llista pública de l'àlbum identifica aquesta pista i el canal Tema.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "La Sirena I la Lluna",
+      "accio": "conserva",
+      "font": "https://habacompo.cat/lletra-de-lhavanera-la-sirena-i-la-lluna",
+      "videoIds": [
+        "woLQPe9b3rc"
+      ],
+      "criteri": "Lletra íntegra llegida en la recerca de la sessió, vinculada explícitament a Port Bo, Pessigolletes al cor (2002). La llista pública de l'àlbum permet resoldre l'ID Tema que faltava a la revisió anterior. Les reobertures finals de la font han donat timeout; no s'ha utilitzat aquest error com a prova.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Mar Endins",
+      "titol": "Pregunta - Li Al Mar",
+      "accio": "conserva",
+      "font": "https://www.havaneresmarendins.com/Pregunta-li%20al%20mar.pdf",
+      "videoIds": [
+        "PlA4KMyMXX4"
+      ],
+      "criteri": "Lletra íntegra de la partitura oficial, pàgina 2. La pàgina oficial de Francesc Salse vincula les primeres 14 peces a aquest àlbum de Mar Endins; llista pública de YouTube amb el mateix títol i canal Tema. No s'estén a altres enregistraments.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Mar Endins",
+      "titol": "Torna'm Al Mar, Pescador",
+      "accio": "conserva",
+      "font": "https://www.havaneresmarendins.com/Tornam%20al%20mar%20p.pdf",
+      "videoIds": [
+        "UMhbE5YGYQI"
+      ],
+      "criteri": "Lletra íntegra de la partitura oficial, pàgina 3. La pàgina oficial de Francesc Salse vincula les primeres 14 peces a aquest àlbum de Mar Endins; llista pública de YouTube amb el mateix títol i canal Tema. No s'estén a altres enregistraments.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Mar Endins",
+      "titol": "El Fidel Seguidor",
+      "accio": "conserva",
+      "font": "https://www.havaneresmarendins.com/El%20fidel%20Seguidor.pdf",
+      "videoIds": [
+        "TlppjHAyXAw"
+      ],
+      "criteri": "Lletra íntegra de la partitura oficial, pàgina 2. La pàgina oficial de Francesc Salse vincula les primeres 14 peces a aquest àlbum de Mar Endins; llista pública de YouTube amb el mateix títol i canal Tema. No s'estén a altres enregistraments.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Mar Endins",
+      "titol": "Tu i el Mar",
+      "accio": "conserva",
+      "font": "https://www.havaneresmarendins.com/Tu%20i%20el%20mar.pdf",
+      "videoIds": [
+        "JXiCjJYvurU"
+      ],
+      "criteri": "Lletra íntegra de la partitura oficial, pàgina 2. La pàgina oficial de Francesc Salse vincula les primeres 14 peces a aquest àlbum de Mar Endins; llista pública de YouTube amb el mateix títol i canal Tema. No s'estén a altres enregistraments.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Mar Endins",
+      "titol": "Els Oficis",
+      "accio": "conserva",
+      "font": "https://www.havaneresmarendins.com/Els%20oficis.pdf",
+      "videoIds": [
+        "68ykIocvtLE"
+      ],
+      "criteri": "Lletra íntegra de la partitura oficial, pàgina 2. La pàgina oficial de Francesc Salse vincula les primeres 14 peces a aquest àlbum de Mar Endins; llista pública de YouTube amb el mateix títol i canal Tema. No s'estén a altres enregistraments.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Els Pescadors de l’Escala",
+      "titol": "Pescador Sóc d'Una Cala",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/catalan-folk-pescador-soc-duna-cala-lyrics.html",
+      "videoIds": [
+        "27giBccYFy4"
+      ],
+      "criteri": "Lletra íntegra vinculada explícitament a Els Pescadors de l'Escala i Genuí (2022); ID i canal Tema de la llista d'aquest àlbum. No s'aplica a Port Bo ni a altres intèrprets també enumerats a la font.",
+      "origen": "docs/revisions/2026-10-22-havaneres-segona-revisio.json",
+      "data": "2026-10-22T06:49:31.712Z",
       "lletraIntegraVerificada": true
     }
   ]
