@@ -251,7 +251,7 @@ describe('llista d’èxits: secció d’Inici', () => {
         expect(chart.movement(entry(3), true)).toBeNull();
     });
 
-    it('treu els artistes amagats i pinta deu cançons, amb «Mostra les 40»', () => {
+    it('treu els artistes amagats i pinta totes les cançons dins d’una zona amb scroll (sense «Mostra les 40»)', () => {
         const data = {
             from: '2026-10-15',
             to: '2026-10-22',
@@ -264,15 +264,19 @@ describe('llista d’èxits: secció d’Inici', () => {
         expect(html).toContain('data-pt-section="chart"');
         expect(html).toContain("Llista d'èxits");
         expect(html).toContain('Setmana del 15 al 22 d&#39;octubre');
-        expect((html.match(/data-hc-play="/g) || []).length).toBe(10);
-        expect(html).toContain('Mostra les 39');
+        expect((html.match(/data-hc-play="/g) || []).length).toBe(39);
+        expect(html).not.toContain('data-hc-more');
+        expect(html).not.toContain('Mostra les');
         expect(html).toContain('data-hc-play-all');
         expect(html).toContain('+12,3 k');
         expect(html).toContain('Puja 1 lloc');
-        const open = chart.sectionHtml(model, { expanded: true });
-        expect((open.match(/data-hc-play="/g) || []).length).toBe(39);
-        expect(open).toContain('--hc-rows: 20');
+        // La capçalera (fins a «Escolta-la») és fora de la zona que fa scroll
+        expect(html.indexOf('data-hc-play-all')).toBeLessThan(html.indexOf('class="hc__scroll"'));
+        expect(html.indexOf('class="hc__scroll"')).toBeLessThan(html.indexOf('class="hc__list"'));
         expect(chart.buildModel({ entries: [] })).toBeNull();
+        const css = readFileSync('css/portada.css', 'utf8');
+        expect(css).toMatch(/\.hc__scroll \{[^}]*max-height: 408px;[^}]*overflow-y: auto/);
+        expect(css).not.toMatch(/--hc-rows|\.hc__foot|\.hc__more/);
     });
 
     it('escapa els títols i fa servir la caràtula de YouTube', () => {

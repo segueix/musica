@@ -53,8 +53,8 @@ primer torn en desa un de nou i la llista torna a sortir al cap d'una setmana (o
 ## A l'app
 
 `js/features/hits-chart.js` (patró 2): `portada.js` crida `hitsChart.cardHtml()` després d'«Acabades de sortir»; la
-primera vegada hi deixa una secció amagada i la substitueix quan arriba `data/llista-exits.json`. Deu files (dues
-columnes a ≥ 900 px), «Mostra les 40» i «Escolta-la». «Com es fa» és un botó rodó «i» al costat del títol (`[data-hc-info]`) que obre un quadre flotant (`#hcInfo`, penja de `.hc__title-row`; es tanca amb la ×, Esc o un clic fora). La secció va dins d'un **marc blanc** amb un fons fosc propi (llum de llima des del trofeu i terracota a baix) i les tres primeres porten una franja llima. Tocar una fila fa sonar la selecció «Llista d'èxits»
+primera vegada hi deixa una secció amagada i la substitueix quan arriba `data/llista-exits.json`. Les 40 cançons (dues
+columnes a ≥ 900 px) fan scroll dins del marc blanc i la capçalera, fins a «Escolta-la», queda fixa a dalt (sense «Mostra les 40»). «Com es fa» és un botó rodó «i» al costat del títol (`[data-hc-info]`) que obre un quadre flotant (`#hcInfo`, penja de `.hc__title-row`; es tanca amb la ×, Esc o un clic fora). La secció va dins d'un **marc blanc** amb un fons fosc propi (llum de llima des del trofeu i terracota a baix) i les tres primeres porten una franja llima. Tocar una fila fa sonar la selecció «Llista d'èxits»
 (`musicQueue.playSelection()`) a partir d'aquella cançó; en acabar continua com a ràdio de l'estil. Les cançons
 d'artistes amagats no hi surten. CSS: bloc «Llista d'èxits setmanal» al final de `css/portada.css`.
 

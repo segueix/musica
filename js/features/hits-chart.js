@@ -7,7 +7,6 @@
     if (!app?.features) return;
 
     const DATA_URL = 'data/llista-exits.json';
-    const VISIBLE = 10;
     const QUEUE_LABEL = "Llista d'èxits";
     const MONTHS = [
         'gener',
@@ -30,7 +29,7 @@
         trophy: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></svg>',
     };
 
-    const state = { chart: null, loading: null, failed: false, expanded: false, infoOpen: false };
+    const state = { chart: null, loading: null, failed: false, infoOpen: false };
     const INFO_TEXT = [
         'Cada divendres comparem les visualitzacions de YouTube de les cançons de Segueix amb les de la setmana anterior: puja qui n’ha guanyat més.',
         'El videoclip i la pista d’àudio d’una mateixa cançó sumen junts, cada artista hi pot tenir tres cançons com a màxim i la música infantil no hi entra.',
@@ -125,12 +124,9 @@
         </li>`;
     }
 
-    function sectionHtml(model, { expanded = false } = {}) {
-        const shown = expanded ? model.entries : model.entries.slice(0, VISIBLE);
-        const more =
-            model.entries.length > VISIBLE
-                ? `<button type="button" class="pt-btn pt-btn--ghost pt-btn--sm hc__more" data-hc-more aria-expanded="${expanded}">${expanded ? "Mostra'n menys" : `Mostra les ${model.entries.length}`}</button>`
-                : '';
+    // Les 40 cançons, dins d'una zona amb scroll propi (`.hc__scroll`): la capçalera (setmana, títol, «i» i
+    // «Escolta-la») queda fixa a dalt del marc blanc.
+    function sectionHtml(model) {
         return `<section class="pt-section hc" aria-labelledby="ptH-chart" data-pt-section="chart">
             <header class="pt-head">
                 <div class="pt-head__text">
@@ -152,10 +148,11 @@
                     <button type="button" class="pt-tool pt-tool--play" data-hc-play-all aria-label="Escolta la llista d'èxits">${ICONS.play}<span>Escolta-la</span></button>
                 </div>
             </header>
-            <ol class="hc__list" style="--hc-rows: ${Math.ceil(shown.length / 2)}">
-                ${shown.map((entry, index) => rowHtml(entry, index)).join('')}
-            </ol>
-            ${more ? `<div class="hc__foot">${more}</div>` : ''}
+            <div class="hc__scroll">
+                <ol class="hc__list" aria-label="Les ${model.entries.length} cançons de la llista">
+                    ${model.entries.map((entry, index) => rowHtml(entry, index)).join('')}
+                </ol>
+            </div>
         </section>`;
     }
 
@@ -207,7 +204,7 @@
         // Una pintada nova de la portada porta el quadre «Com es fa» tancat
         state.infoOpen = false;
         const model = currentModel();
-        if (model) return sectionHtml(model, { expanded: state.expanded });
+        if (model) return sectionHtml(model);
         if (!state.failed && typeof setTimeout === 'function') setTimeout(hydrate, 0);
         return placeholder();
     }
@@ -227,7 +224,7 @@
         load().then(() => {
             const model = currentModel();
             state.infoOpen = false;
-            if (model) replaceSection(sectionHtml(model, { expanded: state.expanded }));
+            if (model) replaceSection(sectionHtml(model));
         });
     }
 
@@ -296,14 +293,6 @@
             event.preventDefault();
             play(0);
             return;
-        }
-        if (target.closest('[data-hc-more]')) {
-            event.preventDefault();
-            state.expanded = !state.expanded;
-            state.infoOpen = false;
-            const model = currentModel();
-            if (model) replaceSection(sectionHtml(model, { expanded: state.expanded }));
-            window.document.querySelector('[data-hc-more]')?.focus?.({ preventScroll: true });
         }
     }
 
