@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "id": "lot-0009",
+  "status": "tancat",
+  "policy": "catala-estricte-v1",
+  "preparedAt": "2026-10-22T18:44:38.571Z",
+  "sourceUpdatedAt": "2026-10-22T18:41:13.429Z",
+  "items": [
+    {
+      "id": "B5yJDTeAUoQ",
+      "artista": "Good Jan",
+      "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+      "titol": "Camino Entre Ellos",
+      "descripcio": "Disc: Patos Gang, Vol. 1",
+      "publicada": "2022-08-22",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "goodjan",
+      "tipus": "song",
+      "obra": "goodjan::camino entre ellos",
+      "fingerprint": "a3d1a1c8e862e459c95f04ea0d7d731a4026e4ac2094ea59e6299556cdc20343",
+      "url": "https://www.youtube.com/watch?v=B5yJDTeAUoQ"
+    },
+    {
+      "id": "CSRFnj5AfLc",
+      "artista": "Good Jan",
+      "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+      "titol": "Ies Que Mai",
+      "descripcio": "Disc: Ies Que Mai",
+      "publicada": "2018-08-10",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "goodjan",
+      "tipus": "song",
+      "obra": "goodjan::ies que mai",
+      "fingerprint": "45ad880ab34b19c6c6ce5470f28c470b610b371db1f24c3337078c474df8a571",
+      "url": "https://www.youtube.com/watch?v=CSRFnj5AfLc"
+    },
+    {
+      "id": "nFrEAQcrgdo",
+      "artista": "Good Jan",
+      "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+      "titol": "No New Nais",
+      "descripcio": "Disc: No New Nais",
+      "publicada": "2022-06-09",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "goodjan",
+      "tipus": "song",
+      "obra": "goodjan::no new nais",
+      "fingerprint": "5603fa74b2763a14b4cb35976a54a6a88b5c3538da5d7e29ea9f833d60cd1d41",
+      "url": "https://www.youtube.com/watch?v=nFrEAQcrgdo"
+    },
+    {
+      "id": "7rD-IIIeJnM",
+      "artista": "Good Jan",
+      "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+      "titol": "Squad",
+      "descripcio": "Disc: Squad",
+      "publicada": "2022-05-26",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "goodjan",
+      "tipus": "song",
+      "obra": "goodjan::squad",
+      "fingerprint": "4710e6529b5d51447e32a701a280e0cdee699153be344dc258baa827d2289c75",
+      "url": "https://www.youtube.com/watch?v=7rD-IIIeJnM"
+    },
+    {
+      "id": "ADfzlHlP0K0",
+      "artista": "Good Jan",
+      "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+      "titol": "UNDOSTRES",
+      "descripcio": "Disc: UNDOSTRES",
+      "publicada": "2025-03-31",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "goodjan",
+      "tipus": "song",
+      "obra": "goodjan::undostres",
+      "fingerprint": "d54bd9c4b7c8f72cb846e39c9a321a8b2129d98337785b8bfaf6365450f3f869",
+      "url": "https://www.youtube.com/watch?v=ADfzlHlP0K0"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "B5yJDTeAUoQ",
+      "accio": "pendent",
+      "motiu": "La cerca identifica la col·laboració de Patos Gang Vol. 1, però la pàgina oberta no retorna text i no s'ha trobat una lletra completa verificable.",
+      "fonts": [
+        {
+          "url": "https://open.spotify.com/track/55xudY37mZuwjIyNhg0cvg",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": false,
+          "coincidenciaVersio": false
+        }
+      ]
+    },
+    {
+      "id": "CSRFnj5AfLc",
+      "accio": "pendent",
+      "motiu": "La fitxa oberta d'Ies Que Mai no conté la lletra d'aquest tema, només fragments d'altres cançons de Good Jan.",
+      "fonts": [
+        {
+          "url": "https://sonichits.com/video/Good_Jan/Ies_que_mai",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        }
+      ]
+    },
+    {
+      "id": "nFrEAQcrgdo",
+      "accio": "pendent",
+      "motiu": "Col·laboració de Sie777e i Good Jan identificada, però la fitxa accessible no ofereix la lletra completa. No es pot determinar la llengua de totes les parts.",
+      "fonts": [
+        {
+          "url": "https://music.apple.com/us/song/no-new-nais/1633350352",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        }
+      ]
+    },
+    {
+      "id": "7rD-IIIeJnM",
+      "accio": "pendent",
+      "motiu": "La fitxa de Squad amb Monrra Straps i Maken Row no s'ha pogut llegir. No s'hi trasllada la lletra de Squad Garrera Darrera, que és un altre enregistrament.",
+      "fonts": [
+        {
+          "url": "https://www.viasona.cat/grup/monrra-straps.good-jan.maken-row/squad",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": false,
+          "coincidenciaVersio": false
+        }
+      ]
+    },
+    {
+      "id": "ADfzlHlP0K0",
+      "accio": "conserva",
+      "metode": "lletra-completa",
+      "llengues": [
+        "ca"
+      ],
+      "motiu": "Lletra completa llegida de la col·laboració de Good Jan, Lil Guiu i Willfree. Estrofes en català amb argot i manlleus lèxics aïllats, sense estrofes en una altra llengua.",
+      "lletraCompletaLlegida": true,
+      "fonts": [
+        {
+          "url": "https://www.shazam.com/song/1524973555/undostres?tab=lyrics",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        }
+      ]
+    }
+  ],
+  "applied": {
+    "B5yJDTeAUoQ": {
+      "accio": "pendent",
+      "hash": "e676887de96a88a6f4d7d70be02561d4deb8ce3365b438e20a47f11de3ad62d7",
+      "recordHash": null,
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "B5yJDTeAUoQ",
+        "artista": "Good Jan",
+        "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+        "titol": "Camino Entre Ellos",
+        "descripcio": "Disc: Patos Gang, Vol. 1",
+        "publicada": "2022-08-22",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "goodjan",
+        "tipus": "song",
+        "obra": "goodjan::camino entre ellos"
+      },
+      "data": "2026-10-22T18:55:27.705Z"
+    },
+    "CSRFnj5AfLc": {
+      "accio": "pendent",
+      "hash": "0a1666a006e273987c75b7f47108e66a248bd558e2928c2e45ce0053c95150c4",
+      "recordHash": null,
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "CSRFnj5AfLc",
+        "artista": "Good Jan",
+        "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+        "titol": "Ies Que Mai",
+        "descripcio": "Disc: Ies Que Mai",
+        "publicada": "2018-08-10",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "goodjan",
+        "tipus": "song",
+        "obra": "goodjan::ies que mai"
+      },
+      "data": "2026-10-22T18:55:27.705Z"
+    },
+    "nFrEAQcrgdo": {
+      "accio": "pendent",
+      "hash": "ecd7bfdecf454fa55c9f77b508b038a2e6a4e99ba604579dad8726f0a851695a",
+      "recordHash": null,
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "nFrEAQcrgdo",
+        "artista": "Good Jan",
+        "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+        "titol": "No New Nais",
+        "descripcio": "Disc: No New Nais",
+        "publicada": "2022-06-09",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "goodjan",
+        "tipus": "song",
+        "obra": "goodjan::no new nais"
+      },
+      "data": "2026-10-22T18:55:27.705Z"
+    },
+    "7rD-IIIeJnM": {
+      "accio": "pendent",
+      "hash": "90f8431b676c40b8973dc5e29726996284f455ca10dd1d91f0c9e668abefe57e",
+      "recordHash": null,
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "7rD-IIIeJnM",
+        "artista": "Good Jan",
+        "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+        "titol": "Squad",
+        "descripcio": "Disc: Squad",
+        "publicada": "2022-05-26",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "goodjan",
+        "tipus": "song",
+        "obra": "goodjan::squad"
+      },
+      "data": "2026-10-22T18:55:27.705Z"
+    },
+    "ADfzlHlP0K0": {
+      "accio": "conserva",
+      "hash": "4b835d3f35ba602afc63739b603d6cb1e03971c142689da9e5374db91eabf0e8",
+      "recordHash": "9727d9e1392d925dcddb483ebb5edb3e0c9891bf827862fd70863c8a0704fd23",
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "ADfzlHlP0K0",
+        "artista": "Good Jan",
+        "canalId": "UC-rX86Ux3rfWiEHYBDAt98w",
+        "titol": "UNDOSTRES",
+        "descripcio": "Disc: UNDOSTRES",
+        "publicada": "2025-03-31",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "goodjan",
+        "tipus": "song",
+        "obra": "goodjan::undostres"
+      },
+      "data": "2026-10-22T18:55:27.705Z"
+    }
+  }
+}

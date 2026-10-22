@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "id": "lot-0010",
+  "status": "tancat",
+  "policy": "catala-estricte-v1",
+  "preparedAt": "2026-10-22T18:44:38.974Z",
+  "sourceUpdatedAt": "2026-10-22T18:41:13.429Z",
+  "items": [
+    {
+      "id": "r41nM69G8Dw",
+      "artista": "Lil Guiu",
+      "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+      "titol": "Am Bui Drugar Pro No Bui Feru",
+      "descripcio": "Disc: Am Bui Drugar Pro No Bui Feru",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "lilguiu",
+      "tipus": "song",
+      "obra": "lilguiu::am bui drugar pro no bui feru",
+      "fingerprint": "31b4fd0e3de4807b4bb573f38215aca05e0d469b7c9a80fb78c517643e7e6d5f",
+      "url": "https://www.youtube.com/watch?v=r41nM69G8Dw"
+    },
+    {
+      "id": "g1GKja3WJ6o",
+      "artista": "Lil Guiu",
+      "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+      "titol": "E Sumiat",
+      "descripcio": "Disc: E Sumiat",
+      "publicada": "2025-03-31",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "lilguiu",
+      "tipus": "song",
+      "obra": "lilguiu::e sumiat",
+      "fingerprint": "a2503a94d354bbda9859603b0af6fd954b96f787095b46adc0b0a5104cce6855",
+      "url": "https://www.youtube.com/watch?v=g1GKja3WJ6o"
+    },
+    {
+      "id": "egn_7D3btO4",
+      "artista": "Lil Guiu",
+      "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+      "titol": "Labarin",
+      "descripcio": "Disc: Labarin",
+      "publicada": "2025-03-31",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "lilguiu",
+      "tipus": "song",
+      "obra": "lilguiu::labarin",
+      "fingerprint": "136418b18cb781a815cab121cb2da7adc51436e93ffc5f311ef5ab88e644232d",
+      "url": "https://www.youtube.com/watch?v=egn_7D3btO4"
+    },
+    {
+      "id": "PNYbjRNXQvk",
+      "artista": "Lil Guiu",
+      "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+      "titol": "No Mimporta",
+      "descripcio": "Disc: No Mimporta",
+      "publicada": "2024-02-07",
+      "afegida": "2026-10-22T18:41:13.429Z",
+      "artistaId": "lilguiu",
+      "tipus": "song",
+      "obra": "lilguiu::no mimporta",
+      "fingerprint": "142fcabe8c5a431ad1a3abb0fec3dfe1773653533dadad4bcf222b0704e2a688",
+      "url": "https://www.youtube.com/watch?v=PNYbjRNXQvk"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "r41nM69G8Dw",
+      "accio": "pendent",
+      "motiu": "La fitxa del tema no publica la lletra. Enderrock el situa entre novetats en català, però aquesta selecció inclou obres plurilingües i no acredita català exclusiu de la versió.",
+      "fonts": [
+        {
+          "url": "https://sonichits.com/video/Lil_Guiu/Am_Bui_Drugar_Pro_No_Bui_Feru",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        },
+        {
+          "url": "https://www.enderrock.cat/noticia/23385/roba-estesa-99-amb-lagrimas-sangre-joan-dausa-mazoni-entre-novetats-setmana",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        }
+      ]
+    },
+    {
+      "id": "g1GKja3WJ6o",
+      "accio": "conserva",
+      "metode": "lletra-completa",
+      "llengues": [
+        "ca"
+      ],
+      "motiu": "Lletra completa del senzill de Lil Guiu i Monrra Straps, editat per Delirics el 2022. Les dues intervencions i la tornada són en català.",
+      "lletraCompletaLlegida": true,
+      "fonts": [
+        {
+          "url": "https://www.shazam.com/song/1645913424/e-sumiat",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        }
+      ]
+    },
+    {
+      "id": "egn_7D3btO4",
+      "accio": "conserva",
+      "metode": "lletra-completa",
+      "llengues": [
+        "ca"
+      ],
+      "motiu": "Lletra completa llegida de Labarin, senzill de Lil Guiu i Cervul (2020). Les dues parts són en català; s'ha comprovat la col·laboració i no s'ha usat un homònim.",
+      "lletraCompletaLlegida": true,
+      "fonts": [
+        {
+          "url": "https://sonichits.com/video/Lil_Guiu/Labarin",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": true
+        }
+      ]
+    },
+    {
+      "id": "PNYbjRNXQvk",
+      "accio": "pendent",
+      "motiu": "La fitxa de No Mimporta no inclou lletra pròpia, només lletres d'altres cançons de Lil Guiu. Falta verificar la versió amb ETM.",
+      "fonts": [
+        {
+          "url": "https://sonichits.com/video/Lil_Guiu/No_Mimporta",
+          "consultada": "2026-10-22T18:55:13.919Z",
+          "llegida": true,
+          "coincidenciaVersio": false
+        }
+      ]
+    }
+  ],
+  "applied": {
+    "r41nM69G8Dw": {
+      "accio": "pendent",
+      "hash": "55f52f00023f8976596ec237f211541a504fc9c3a295bd9d432c5cbfb0719a8f",
+      "recordHash": null,
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "r41nM69G8Dw",
+        "artista": "Lil Guiu",
+        "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+        "titol": "Am Bui Drugar Pro No Bui Feru",
+        "descripcio": "Disc: Am Bui Drugar Pro No Bui Feru",
+        "publicada": "2024-02-07",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "lilguiu",
+        "tipus": "song",
+        "obra": "lilguiu::am bui drugar pro no bui feru"
+      },
+      "data": "2026-10-22T18:55:28.199Z"
+    },
+    "g1GKja3WJ6o": {
+      "accio": "conserva",
+      "hash": "9feb979b62c19804e89908d277aa468f2a869c83331b939f47a2a635f35e913c",
+      "recordHash": "7217dc1c79a51663fb2e63aa5592fdd715d6e06c239badd95e622553b5adfce8",
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "g1GKja3WJ6o",
+        "artista": "Lil Guiu",
+        "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+        "titol": "E Sumiat",
+        "descripcio": "Disc: E Sumiat",
+        "publicada": "2025-03-31",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "lilguiu",
+        "tipus": "song",
+        "obra": "lilguiu::e sumiat"
+      },
+      "data": "2026-10-22T18:55:28.199Z"
+    },
+    "egn_7D3btO4": {
+      "accio": "conserva",
+      "hash": "2692dc7a3def65b025e3de114fd7f0ad9e51e4d91063e4d77abaf36bd0c9b08c",
+      "recordHash": "0f3be272362c6e4aab7270a1c21ca64eec751bb0585bd83ea793c6395d6fa5c1",
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "egn_7D3btO4",
+        "artista": "Lil Guiu",
+        "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+        "titol": "Labarin",
+        "descripcio": "Disc: Labarin",
+        "publicada": "2025-03-31",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "lilguiu",
+        "tipus": "song",
+        "obra": "lilguiu::labarin"
+      },
+      "data": "2026-10-22T18:55:28.199Z"
+    },
+    "PNYbjRNXQvk": {
+      "accio": "pendent",
+      "hash": "f4c61b2e37f173c3b2ef753f78f2e30d7f09c2f031477a1c38ed0a1e4b0537d6",
+      "recordHash": null,
+      "hiddenAdded": false,
+      "entryBefore": {
+        "id": "PNYbjRNXQvk",
+        "artista": "Lil Guiu",
+        "canalId": "UCjoxtmuZ82RdRdPm8Kmllww",
+        "titol": "No Mimporta",
+        "descripcio": "Disc: No Mimporta",
+        "publicada": "2024-02-07",
+        "afegida": "2026-10-22T18:41:13.429Z",
+        "artistaId": "lilguiu",
+        "tipus": "song",
+        "obra": "lilguiu::no mimporta"
+      },
+      "data": "2026-10-22T18:55:28.199Z"
+    }
+  }
+}
