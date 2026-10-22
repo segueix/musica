@@ -165,4 +165,28 @@ describe('llista blanca de vídeos per canal', () => {
     expect(rule?.avatarFromAllowedTitle).toBe(normalizeVideoTitle("Puja a L'avio"));
     expect(isChannelVideoAllowed(rules, 'UCKpscwdWlVaMqcA81vLI7OA', 'Qualsevol altra cançó')).toBe(true);
   });
+
+  it('Club Social Carme: entren soles totes les sessions, en directe, sense els avisos', () => {
+    const rules = loadChannelVideoAllowlist('data/music-channel-video-allowlist.json');
+    const id = 'UCdezTX23syEeAJJAb2oOkKA';
+    const rule = rules.get(id);
+    expect(rule.allowedVideoIds).toBeNull();
+    expect(rule.forceContentType).toBe('live_song');
+    expect(rule.guestSessions).toBe(true);
+    expect(isChannelVideoAllowed(rules, id, 'THE TYETS - SESSIÓ #08 - CLUB SOCIAL CARME', 'j-ytKJkqccQ')).toBe(true);
+    expect(isChannelVideoAllowed(rules, id, 'NOU GRUP - SESSIÓ #09 - CLUB SOCIAL CARME', 'aaaaaaaaaaa')).toBe(true);
+    for (const title of [
+      'ja disponible la sessió “Seran quatre cançons” amb @TheTyets al nostre canal de YouTube',
+      'Avui a les 20h publiquem la sessió #08 amb @TheTyets al YouTube del CSC',
+      'Demà a les 20h publiquem la sessió #05 amb @GinestàOficial al YouTube del Club Social Carme',
+      '30 de juliol del 2026',
+    ]) expect(isChannelVideoAllowed(rules, id, title, 'bbbbbbbbbbb')).toBe(false);
+  });
+  it('un tipus fix només admet cançó o directe', () => {
+    const parse = rule => loadChannelVideoAllowlist('/fake.json', {
+      readFileSync: () => JSON.stringify({ channels: { UCx: rule } }),
+    }).get('UCx');
+    expect(parse({ forceContentType: 'live_song' }).forceContentType).toBe('live_song');
+    expect(parse({ forceContentType: 'album', guestSessions: true }).forceContentType).toBeNull();
+  });
 });

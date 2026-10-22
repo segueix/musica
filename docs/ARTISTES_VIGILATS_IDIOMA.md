@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-22T10:44:42.454Z. 189 entrades vigilades i 277 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-22T20:15:28.454Z. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -55,7 +55,6 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Buhos | Buhos - Topic | `UCyR3Vf_s-Mo30j6oqN4Aq_w`, `UClt-kDY-yDORa6XkI5leFjg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Cactus Troop | Cactus, CACTUS | `UCcerGnBUfuDhx0QwW2Ua9tA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Ceaxe | Ceaxe - Topic | `UCBKjT0edCSrQhqufwWaX5Zw`, `UCu05DiznV7Z3jDMGr6w5WTQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
-| Club Social Carme | club_social_carme | `UCdezTX23syEeAJJAb2oOkKA` | Canal de diversos intèrprets: no es pot estendre la confiança d’un grup a tots els participants. | `data/artistes-musica.json` |
 | Crim | Crim - Topic | `UCJhcsyqAVHFHmghWFkmIx4w`, `UCZ7V4w0VrZPSM21CiYNuk7g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Cristina Monllau |  | `UCw1jsv2eynibpElkwzdJa2g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Daveu | DAVEU)), DAVEU - Topic, DAVEU | `UCFRzEt990b8xiMQ9soWNegw`, `UCQgDn86_83DIsAggpRadifg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
@@ -221,3 +220,6 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Terra Endins | Grup Terra Endins | `UCYOWVkZwBVSxzYQfK_khVYg` | Repertori mixt d’havaneres. Només s’admeten les gravacions amb lletra catalana verificada, enumerades a la llista tancada. Cançons pendents de verificació íntegra. | `manual-user-2026-10-21`, `genre:manual`, `https://www.youtube.com/channel/UCYOWVkZwBVSxzYQfK_khVYg` |
 | Anna Roig i l'Ombre de Ton Chien | Anna Roig i L’ombre de ton chien, Anna Roig i L'ombre de ton chien, Anna Roig, annaroigilombre | `UCFtfi1A29MUUHvDU38Dw4wg` | Repertori en català i francès. Només s'accepten les gravacions amb lletra íntegra catalana verificada; alta sense confiança global. | `docs/revisions/2026-10-22-anna-roig.json`, `https://www.annaroig.com/bio/` |
 | Bèrnia | bernia - Topic, bernia | `UC7Y0TrjWk-TcCLcoCXulf0Q`, `UCdFUlEKax2JWJ58pdL2zNvw` | Petició explícita de l'usuari el 2026-10-22: vigilància habitual d'idioma després de demanar la retirada de «Que parle la flor». Cal revisar les incorporacions; no s'atribueix una llengua a tot el repertori. | `manual-user-2026-10-22`, `docs/revisions/2026-10-22-retirada-que-parle-la-flor.json` |
+| Teuma Thug |  | `UCP_oNrTxABOWdNVpuxh_wUw` | Alta del canal Tema sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra. | `https://www.youtube.com/channel/UCP_oNrTxABOWdNVpuxh_wUw`, `https://www.suricatmusic.cat/pawngang`, `https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala` |
+| Good Jan | Goodjan | `UC-rX86Ux3rfWiEHYBDAt98w` | Alta del canal Tema sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra. | `https://www.youtube.com/channel/UC-rX86Ux3rfWiEHYBDAt98w`, `https://www.suricatmusic.cat/pawngang`, `https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala` |
+| Lil Guiu |  | `UCjoxtmuZ82RdRdPm8Kmllww` | Alta sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra. | `https://www.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww`, `https://music.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww`, `https://www.suricatmusic.cat/pawngang`, `https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala` |

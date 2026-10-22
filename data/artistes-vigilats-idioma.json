@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T18:24:10.382Z",
+  "updatedAt": "2026-10-22T20:15:28.454Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -336,20 +336,6 @@
         "scripts/ocultar_titols_castella.js",
         "docs/ARTISTES_CASTELLA.md"
       ]
-    },
-    {
-      "artista": "Club Social Carme",
-      "aliases": [
-        "club_social_carme"
-      ],
-      "canals": [
-        "UCdezTX23syEeAJJAb2oOkKA"
-      ],
-      "motiu": "Canal de diversos intèrprets: no es pot estendre la confiança d’un grup a tots els participants.",
-      "fonts": [
-        "data/artistes-musica.json"
-      ],
-      "canalCompartit": true
     },
     {
       "artista": "Crim",
@@ -3293,6 +3279,22 @@
         "UCE5UIlWPKCJ-9LJXlQB-05g",
         "UCvdm27ITzhd3bsnftrBmFUg"
       ]
+    },
+    {
+      "artista": "Club Social Carme",
+      "aliases": [
+        "club_social_carme"
+      ],
+      "canals": [
+        "UCdezTX23syEeAJJAb2oOkKA"
+      ],
+      "motiu": "22/10/2026: confiança per indicació expressa de l’usuari: totes les sessions del canal són en català. Canal de diversos intèrprets (canalCompartit): la confiança és del cicle, no s’estén als repertoris propis dels participants. Sense afirmar una verificació individual de les lletres.",
+      "fonts": [
+        "manual-user-2026-10-22",
+        "https://clubsocialcarme.com/",
+        "https://www.youtube.com/@club_social_carme"
+      ],
+      "canalCompartit": true
     },
     {
       "artista": "Companyia Elèctrica Dharma",

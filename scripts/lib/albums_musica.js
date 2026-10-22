@@ -244,10 +244,54 @@ function mergeAlbumCatalog(previous, videos, channels, { hiddenIds = new Set(), 
   return catalog;
 }
 
+// Sessions en directe d'un cicle publicades al seu canal («ARTISTA - SESSIÓ #08 - CLUB SOCIAL CARME»): cada sessió
+// es posa a la fitxa de l'artista que la protagonitza, si és a la base (el client la llegeix amb sourceChannelId).
+// Un títol que no segueix el patró o un artista desconegut no s'assigna: no s'inventa cap relació.
+const SESSION_TITLE = /^\s*(.+?)\s+[-–]\s+sessi[óo]\s*#?\s*(\d+)\b/i;
+
+function addGuestSessions(catalog, videos, channels, { sourceChannelIds = [], hiddenIds = new Set() } = {}) {
+  const sources = new Set(sourceChannelIds.map(String));
+  if (!sources.size) return catalog;
+  const artistOf = channel => String((Array.isArray(channel?.artists) && channel.artists[0]) || channel?.name || '').trim();
+  const byName = new Map();
+  for (const [channelId, channel] of Object.entries(channels || {})) {
+    if (sources.has(channelId)) continue;
+    const artist = artistOf(channel);
+    for (const name of [artist, channel?.name, ...(channel?.artists || [])]) {
+      const key = normalizeTitle(name);
+      if (key && artist && !byName.has(key)) byName.set(key, artist);
+    }
+  }
+  for (const video of videos || []) {
+    const id = String(video?.id || '');
+    if (!id || !sources.has(String(video.channelId)) || hiddenIds.has(id) || video.isShort ||
+        video.contentType !== 'live_song') continue;
+    const match = String(video.originalTitle || video.title || '').match(SESSION_TITLE);
+    const artist = match && byName.get(normalizeTitle(match[1]));
+    if (!artist) continue;
+    const entry = (catalog.artists[artist] ||= { albums: [] });
+    if (entry.albums.some(album => (album.trackIds || []).includes(id))) continue;
+    const source = channels?.[video.channelId]?.name || 'Sessió';
+    entry.albums.push({
+      id: 'live_session_' + id,
+      title: `${source} · Sessió #${String(Number(match[2])).padStart(2, '0')} (en directe)`,
+      coverVideoId: id,
+      trackIds: [id],
+      keys: [],
+      sourceChannelId: String(video.channelId),
+    });
+    for (const [channelId, channel] of Object.entries(channels || {})) {
+      if (!sources.has(channelId) && artistOf(channel) === artist) catalog.channels[channelId] = artist;
+    }
+  }
+  return catalog;
+}
+
 module.exports = {
   normalizeTitle,
   extractAlbum,
   extractOfficialAlbum,
   canonicalArtist,
   mergeAlbumCatalog,
+  addGuestSessions,
 };

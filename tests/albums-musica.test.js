@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import albumModule from '../scripts/lib/albums_musica.js';
 
-const { extractAlbum, extractOfficialAlbum, mergeAlbumCatalog } = albumModule;
+const { extractAlbum, extractOfficialAlbum, mergeAlbumCatalog, addGuestSessions } = albumModule;
 
 describe('catàleg local de discos', () => {
   it('un artista nou completa el disc amb pistes rebudes en dies diferents', () => {
@@ -139,6 +139,29 @@ describe('catàleg local de discos', () => {
     );
     expect(catalog.artists.Artista).toBeUndefined();
   });
-});
 
+  it('una sessió d’un cicle va a la fitxa de l’artista que la protagonitza, i només una vegada', () => {
+    const channels = {
+      UCcicle: { name: 'Club Social Carme', artists: ['Club Social Carme'] },
+      UCtyets: { name: 'The Tyets', artists: ['The Tyets'] },
+      UCtyetsTema: { name: 'The Tyets', artists: ['The Tyets'] },
+    };
+    const session = (id, title, extra = {}) => ({ id, title, channelId: 'UCcicle', contentType: 'live_song', ...extra });
+    const videos = [
+      session('j-ytKJkqccQ', 'THE TYETS - SESSIÓ #08 - CLUB SOCIAL CARME'),
+      session('desconegut1', 'GRUP QUE NO HI ÉS - SESSIÓ #09 - CLUB SOCIAL CARME'),
+      session('noesdirecte', 'THE TYETS - SESSIÓ #10 - CLUB SOCIAL CARME', { contentType: 'other' }),
+      { id: 'altrecanal1', title: 'THE TYETS - SESSIÓ #11', channelId: 'UCtyets', contentType: 'live_song' },
+    ];
+    const catalog = { channels: {}, artists: {} };
+    addGuestSessions(catalog, videos, channels, { sourceChannelIds: ['UCcicle'] });
+    addGuestSessions(catalog, videos, channels, { sourceChannelIds: ['UCcicle'] });
+    expect(catalog.artists['The Tyets'].albums).toEqual([{
+      id: 'live_session_j-ytKJkqccQ', title: 'Club Social Carme · Sessió #08 (en directe)', coverVideoId: 'j-ytKJkqccQ',
+      trackIds: ['j-ytKJkqccQ'], keys: [], sourceChannelId: 'UCcicle',
+    }]);
+    expect(catalog.channels).toEqual({ UCtyets: 'The Tyets', UCtyetsTema: 'The Tyets' });
+    expect(Object.keys(catalog.artists)).toEqual(['The Tyets']);
+  });
+});
 

@@ -4401,22 +4401,24 @@
     },
     "UCdezTX23syEeAJJAb2oOkKA": {
       "artist": "Club Social Carme",
-      "note": "Només sessions musicals en directe del canal oficial @club_social_carme. Les sessions són live_song a music-content-overrides.json, incloses les que superen quinze minuts. No s'accepten vídeos d'estudi, entrevistes, teasers ni contingut auxiliar.",
-      "allowedVideoIds": [
-        "QkKPvNot94g",
-        "vf0BFDzgpmo",
-        "z5CG34bAwmA",
-        "ysKfbZElXaY",
-        "wJUlrv73K2Y",
-        "vvBfCHNvQe0",
-        "dpGrzBf6iKM",
-        "j-ytKJkqccQ"
+      "note": "Només sessions musicals en directe del canal oficial @club_social_carme. Des del 2026-10-22 (petició de l’usuari) entren soles: qualsevol vídeo amb «Club Social Carme» al títol («ARTISTA - SESSIÓ #08 - CLUB SOCIAL CARME»), sense els avisos («ja disponible…», «publiquem…»), tràilers ni entrevistes. Totes són live_song encara que superin quinze minuts (forceContentType) i cada sessió surt a la fitxa de l’artista si és a la base (guestSessions → albums-musica.json). El canal no té cap estil assignat i no se n’hi ha d’assignar.",
+      "allowedTitleContains": [
+        "Club Social Carme"
+      ],
+      "deniedTitleContains": [
+        "ja disponible",
+        "publiquem",
+        "trailer",
+        "teaser",
+        "entrevista"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
         "live_song"
       ],
-      "avatarFromFirstAllowedVideo": true
+      "forceContentType": "live_song",
+      "guestSessions": true,
+      "avatarVideoId": "QkKPvNot94g"
     },
     "UC_Nx-tsTDRubDg1dbd5jwAw": {
       "artist": "Sandra Bautista",
