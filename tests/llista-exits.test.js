@@ -295,6 +295,31 @@ describe('llista d’èxits: secció d’Inici', () => {
         expect(chart.cardHtml()).toContain('hidden');
     });
 
+    it('«Com es fa» és un botó «i» rodó que obre un quadre flotant (2026-10-22)', () => {
+        const model = chart.buildModel({ from: '2026-10-15', to: '2026-10-22', entries: [entry(1)] });
+        const html = chart.sectionHtml(model);
+        expect(html).not.toContain('<details');
+        expect(html).toMatch(
+            /<button type="button" class="hc__info" data-hc-info aria-expanded="false" aria-controls="hcInfo"/
+        );
+        expect(html).toMatch(/<div class="hc__pop" id="hcInfo" role="dialog"[^>]*hidden>/);
+        expect(html).toContain('data-hc-info-close');
+        expect(html).toContain('la música infantil no hi entra');
+        // El quadre penja de la fila del títol: queda just a sota sigui quina sigui l'alçada de la capçalera
+        expect(html.indexOf('hc__title-row')).toBeLessThan(html.indexOf('hc__pop'));
+        const css = readFileSync('css/portada.css', 'utf8');
+        expect(css).toMatch(/\.hc__info span \{[^}]*border-radius: 50%/);
+        expect(css).toMatch(/\.hc__pop \{[^}]*position: absolute;[^}]*top: calc\(100% \+ 8px\)/);
+        expect(css).toMatch(/\.hc__title-row \{[^}]*position: relative/);
+    });
+
+    it('la llista té un toc propi: marc blanc i fons fosc amb llum de llima', () => {
+        const css = readFileSync('css/portada.css', 'utf8');
+        const block = css.slice(css.indexOf('/* Un toc propi'));
+        expect(block).toMatch(/#homePage \.hc \{[^}]*border: 2px solid #fff;[^}]*radial-gradient/);
+        expect(block).toMatch(/\.hc-row\.is-top \.hc-row__btn \{[^}]*inset 3px 0 0 var\(--pt-accent\)/);
+    });
+
     it('va a Inici just després d’«Acabades de sortir» i es carrega abans de la portada', () => {
         const portada = readFileSync('js/features/portada.js', 'utf8');
         const fresh = portada.indexOf('freshHtml(model.fresh');

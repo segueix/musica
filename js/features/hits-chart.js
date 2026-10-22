@@ -30,7 +30,11 @@
         trophy: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4ZM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></svg>',
     };
 
-    const state = { chart: null, loading: null, failed: false, expanded: false };
+    const state = { chart: null, loading: null, failed: false, expanded: false, infoOpen: false };
+    const INFO_TEXT = [
+        'Cada divendres comparem les visualitzacions de YouTube de les cançons de Segueix amb les de la setmana anterior: puja qui n’ha guanyat més.',
+        'El videoclip i la pista d’àudio d’una mateixa cançó sumen junts, cada artista hi pot tenir tres cançons com a màxim i la música infantil no hi entra.',
+    ];
 
     // ---------- Utilitats pures ----------
 
@@ -131,7 +135,17 @@
             <header class="pt-head">
                 <div class="pt-head__text">
                     <p class="hc__eyebrow">${ICONS.trophy}<span>${esc(model.period ? `Setmana ${model.period.charAt(0).toLowerCase()}${model.period.slice(1)}` : 'Aquesta setmana')}</span></p>
-                    <h2 class="pt-head__title" id="ptH-chart">Llista d'èxits</h2>
+                    <div class="hc__title-row">
+                        <h2 class="pt-head__title" id="ptH-chart">Llista d'èxits</h2>
+                        <button type="button" class="hc__info" data-hc-info aria-expanded="false" aria-controls="hcInfo" aria-label="Com es fa la llista d'èxits"><span aria-hidden="true">i</span></button>
+                        <div class="hc__pop" id="hcInfo" role="dialog" aria-labelledby="hcInfoTitle" tabindex="-1" hidden>
+                            <div class="hc__pop-head">
+                                <p class="hc__pop-title" id="hcInfoTitle">Com es fa</p>
+                                <button type="button" class="hc__pop-close" data-hc-info-close aria-label="Tanca">×</button>
+                            </div>
+                            ${INFO_TEXT.map(text => `<p>${esc(text)}</p>`).join('')}
+                        </div>
+                    </div>
                     <p class="pt-head__sub">Les cançons en català que més visualitzacions han guanyat aquesta setmana a YouTube.</p>
                 </div>
                 <div class="pt-head__tools">
@@ -141,13 +155,7 @@
             <ol class="hc__list" style="--hc-rows: ${Math.ceil(shown.length / 2)}">
                 ${shown.map((entry, index) => rowHtml(entry, index)).join('')}
             </ol>
-            <div class="hc__foot">
-                ${more}
-                <details class="hc__how">
-                    <summary>Com es fa</summary>
-                    <p>Cada divendres comparem les visualitzacions de YouTube de les cançons de Segueix amb les de la setmana anterior: puja qui n'ha guanyat més. El videoclip i la pista d'àudio d'una mateixa cançó sumen junts, cada artista hi pot tenir tres cançons com a màxim i la música infantil no hi entra.</p>
-                </details>
-            </div>
+            ${more ? `<div class="hc__foot">${more}</div>` : ''}
         </section>`;
     }
 
@@ -196,6 +204,8 @@
 
     // Pintada de la portada: la secció si ja hi ha dades; si no, un espai buit que s'omple en arribar.
     function cardHtml() {
+        // Una pintada nova de la portada porta el quadre «Com es fa» tancat
+        state.infoOpen = false;
         const model = currentModel();
         if (model) return sectionHtml(model, { expanded: state.expanded });
         if (!state.failed && typeof setTimeout === 'function') setTimeout(hydrate, 0);
@@ -216,6 +226,7 @@
     function hydrate() {
         load().then(() => {
             const model = currentModel();
+            state.infoOpen = false;
             if (model) replaceSection(sectionHtml(model, { expanded: state.expanded }));
         });
     }
@@ -248,9 +259,33 @@
         return ok;
     }
 
+    // Quadre flotant «Com es fa»: s'obre i es tanca amb el botó «i», la ×, Esc o un clic fora.
+    function setInfo(open, { focus = true } = {}) {
+        const doc = window.document;
+        const pop = doc?.getElementById?.('hcInfo');
+        const button = doc?.querySelector?.('[data-hc-info]');
+        if (!pop || !button) return false;
+        state.infoOpen = Boolean(open);
+        pop.hidden = !state.infoOpen;
+        button.setAttribute('aria-expanded', String(state.infoOpen));
+        if (focus) (state.infoOpen ? pop : button).focus?.({ preventScroll: true });
+        return true;
+    }
+
     function onClick(event) {
         const target = event.target;
+        if (state.infoOpen && !target?.closest?.('#hcInfo, [data-hc-info]')) setInfo(false, { focus: false });
         if (!target?.closest?.('[data-pt-section="chart"]')) return;
+        if (target.closest('[data-hc-info]')) {
+            event.preventDefault();
+            setInfo(!state.infoOpen);
+            return;
+        }
+        if (target.closest('[data-hc-info-close]')) {
+            event.preventDefault();
+            setInfo(false);
+            return;
+        }
         const row = target.closest('[data-hc-play]');
         if (row) {
             event.preventDefault();
@@ -265,14 +300,20 @@
         if (target.closest('[data-hc-more]')) {
             event.preventDefault();
             state.expanded = !state.expanded;
+            state.infoOpen = false;
             const model = currentModel();
             if (model) replaceSection(sectionHtml(model, { expanded: state.expanded }));
             window.document.querySelector('[data-hc-more]')?.focus?.({ preventScroll: true });
         }
     }
 
+    function onKeydown(event) {
+        if (event.key === 'Escape' && state.infoOpen) setInfo(false);
+    }
+
     if (typeof window.document?.addEventListener === 'function') {
         window.document.addEventListener('click', onClick);
+        window.document.addEventListener('keydown', onKeydown);
     }
 
     app.features.hitsChart = {

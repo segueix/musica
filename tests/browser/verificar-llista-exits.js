@@ -111,6 +111,47 @@ async function check(browser, width, height) {
         await section.screenshot({ path: path.join(OUT, `llista-exits-${width}.png`) });
     }
 
+    // «Com es fa»: botó «i» rodó que obre un quadre flotant; Esc i un clic fora el tanquen
+    const frame = await page.evaluate(() => {
+        const style = getComputedStyle(document.querySelector('[data-pt-section="chart"]'));
+        return { border: style.borderTopWidth + ' ' + style.borderTopColor, radius: style.borderTopLeftRadius };
+    });
+    ok(`${label}: la llista va dins d'un marc blanc`, frame.border === '2px rgb(255, 255, 255)', frame);
+    await page.click('[data-hc-info]');
+    const pop = await page.evaluate(() => {
+        const box = document.getElementById('hcInfo').getBoundingClientRect();
+        const dot = document.querySelector('.hc__info span').getBoundingClientRect();
+        return {
+            visible: !document.getElementById('hcInfo').hidden && box.height > 0,
+            expanded: document.querySelector('[data-hc-info]').getAttribute('aria-expanded'),
+            left: Math.round(box.left),
+            right: Math.round(box.right),
+            width: document.documentElement.clientWidth,
+            round: Math.round(dot.width) === Math.round(dot.height),
+            focus: document.activeElement?.id,
+        };
+    });
+    ok(
+        `${label}: el botó «i» és rodó i obre el quadre flotant`,
+        pop.visible && pop.expanded === 'true' && pop.round && pop.focus === 'hcInfo',
+        pop
+    );
+    ok(`${label}: el quadre no surt de la pantalla`, pop.left >= 0 && pop.right <= pop.width, pop);
+    if (OUT) {
+        await page.waitForTimeout(300); // l'animació d'entrada del quadre
+        const section = await page.$('[data-pt-section="chart"]');
+        await section.screenshot({ path: path.join(OUT, `llista-exits-info-${width}.png`) });
+    }
+    await page.keyboard.press('Escape');
+    const closed = await page.evaluate(() => ({
+        hidden: document.getElementById('hcInfo').hidden,
+        focus: document.activeElement?.matches?.('[data-hc-info]'),
+    }));
+    ok(`${label}: Esc el tanca i torna el focus al botó`, closed.hidden && closed.focus, closed);
+    await page.click('[data-hc-info]');
+    await page.mouse.click(5, height - 5);
+    ok(`${label}: un clic fora el tanca`, await page.evaluate(() => document.getElementById('hcInfo').hidden));
+
     await page.click('[data-hc-more]');
     const open = await page.evaluate(() => ({
         rows: document.querySelectorAll('[data-pt-section="chart"] .hc-row').length,

@@ -12554,21 +12554,175 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     margin-top: 12px;
 }
 
-.hc__how summary {
-    display: inline-flex;
+/* Botó «i»: cercle de vidre amb vora blanca al costat del títol (44 px de toc, 30 px visibles) */
+.hc__title-row {
+    position: relative;
+    display: flex;
     align-items: center;
-    min-height: 44px;
-    color: var(--pt-muted);
-    font-size: 0.875rem;
+    gap: 6px;
+}
+
+.hc__info {
+    display: inline-grid;
+    flex: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: -6px 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--pt-text);
     cursor: pointer;
 }
 
-.hc__how p {
-    max-width: 60ch;
-    margin: 0 0 4px;
-    color: var(--pt-muted);
-    font-size: 0.875rem;
+.hc__info span {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    font-family: var(--pt-brand);
+    font-size: 1.0625rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.hc__info:hover span,
+.hc__info[aria-expanded='true'] span {
+    border-color: var(--pt-accent);
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.hc__info:focus-visible {
+    outline: none;
+}
+
+.hc__info:focus-visible span {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 3px;
+}
+
+/* Quadre flotant «Com es fa»: just sota el títol, damunt de la llista (penja de .hc__title-row) */
+.hc__pop {
+    position: absolute;
+    z-index: 5;
+    top: calc(100% + 8px);
+    left: 0;
+    width: min(360px, calc(100vw - 56px));
+    padding: 14px 16px 16px;
+    border: 1.5px solid #fff;
+    border-radius: var(--pt-radius);
+    background: rgba(20, 22, 21, 0.94);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    color: var(--pt-text);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+.hc__pop[hidden] {
+    display: none;
+}
+
+.hc__pop:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+.hc__pop-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: -6px -8px 4px 0;
+}
+
+.hc__pop-title {
+    margin: 0;
+    color: var(--pt-accent);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hc__pop-close {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--pt-text);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.hc__pop-close:hover {
+    color: var(--pt-accent);
+}
+
+.hc__pop p:not(.hc__pop-title) {
+    margin: 0 0 8px;
+    font-size: 0.9375rem;
     line-height: 1.5;
+}
+
+.hc__pop p:last-child {
+    margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hc__pop:not([hidden]) {
+        animation: hc-pop-in 0.16s ease-out;
+    }
+}
+
+@keyframes hc-pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+}
+
+/* Un toc propi: la llista va dins d'un marc blanc, amb un fons fosc que s'encén de llima des del trofeu */
+#homePage .hc {
+    position: relative;
+    padding: 20px 20px 16px;
+    border: 2px solid #fff;
+    border-radius: var(--pt-radius-lg);
+    background:
+        radial-gradient(120% 90% at 0% 0%, rgba(214, 237, 132, 0.2), transparent 55%),
+        radial-gradient(80% 70% at 100% 100%, rgba(217, 138, 112, 0.14), transparent 60%),
+        #101211;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+#homePage .hc .hc-row__btn:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(244, 240, 232, 0.06);
+}
+
+/* Les tres primeres, amb una franja llima a l'esquerra */
+#homePage .hc .hc-row.is-top .hc-row__btn {
+    background: linear-gradient(90deg, rgba(214, 237, 132, 0.12), transparent 70%);
+    box-shadow: inset 3px 0 0 var(--pt-accent);
+}
+
+@media (max-width: 600px) {
+    #homePage .hc {
+        padding: 16px 12px 12px;
+    }
 }
 
 @media (max-width: 480px) {
