@@ -14,12 +14,19 @@ describe('finestra flotant a l’ordinador', () => {
         expect(body).toContain('closePip()');
     });
 
-    it('en navegar amb una cançó al reproductor, passa a la finestra flotant (només ordinador)', () => {
+    it('en navegar amb una cançó al reproductor, passa a la finestra flotant', () => {
         expect(app).toMatch(
             /if \(shouldFloatPlayerOnNavigation\(\)\) \{\s*setMiniPlayerState\(true, \{ trigger: 'navigation' \}\);/
         );
-        expect(app).toMatch(
-            /function shouldFloatPlayerOnNavigation\(\) \{[\s\S]*?isMobileView\(\)[\s\S]*?visibilityState === 'hidden'/
-        );
+        expect(app).toMatch(/function shouldFloatPlayerOnNavigation\(\) \{[\s\S]*?visibilityState === 'hidden'/);
+    });
+
+    // Mòbil (2026-10-22): si sona i vas a Inici o a una altra secció, la música continua a la finestra flotant
+    // ancorada a baix; en pausa s'atura com abans. Opt-in: tests/browser/verificar-mobil-segueix-sonant.js
+    it('al mòbil també, però només si sona (no en pausa)', () => {
+        const fn = app.slice(app.indexOf('function shouldFloatPlayerOnNavigation'));
+        const body = fn.slice(0, fn.indexOf('\n}\n'));
+        expect(body).not.toMatch(/\|\| isMobileView\(\)/);
+        expect(body).toMatch(/isMobileView\(\) \? \[1, 3\] : \[1, 2, 3\]/);
     });
 });

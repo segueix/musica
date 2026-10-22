@@ -9601,8 +9601,8 @@ function exitPlaylistModeForNavigation() {
     if (isPlaylistMode && isPersistentPlayerActive() && activePlaylistId !== '__segueix_tv_discovery__') {
         return;
     }
-    // Al mòbil, sortir de la cançó atura la ràdio/llista: se'n desa la cua perquè, si l'usuari hi torna amb
-    // «endavant» (historial del navegador), es recuperi en lloc de pintar la fitxa d'un vídeo sol.
+    // Sortir d'una cançó que no sona (al mòbil, en pausa) atura la ràdio/llista: se'n desa la cua perquè, si
+    // l'usuari hi torna amb «endavant» (historial del navegador), es recuperi en lloc de la fitxa d'un vídeo sol.
     if (isPlaylistMode && activePlaylistQueue.length && activePlaylistId !== '__segueix_tv_discovery__') {
         queueBeforeNavigation = {
             queue: [...activePlaylistQueue],
@@ -11597,12 +11597,14 @@ function preparePlayerForPlaybackLegacyImpl({ thumbnail, title }) {
     }
 }
 
-// Hi ha una cançó al reproductor (sonant o en pausa) a l'ordinador, amb la pàgina visible.
+// Hi ha una cançó al reproductor amb la pàgina visible: a l'ordinador, sonant o en pausa; al mòbil (2026-10-22),
+// només si sona (o carrega), perquè la finestreta ancorada a baix no ocupi la pantalla amb una cançó aturada.
 function shouldFloatPlayerOnNavigation() {
-    if (!videoPlayer || isMobileView() || document.visibilityState === 'hidden') return false;
+    if (!videoPlayer || document.visibilityState === 'hidden') return false;
     if (isPlaylistMode && activePlaylistId === '__segueix_tv_discovery__') return false;
     const state = Number(videoPlayer.dataset.playerState);
-    return Boolean(getLiveYouTubeIframe()) && [1, 2, 3].includes(state);
+    const states = isMobileView() ? [1, 3] : [1, 2, 3];
+    return Boolean(getLiveYouTubeIframe()) && states.includes(state);
 }
 
 function handlePlayerVisibilityOnNavigation() {
@@ -11616,8 +11618,8 @@ function handlePlayerVisibilityOnNavigation() {
         videoPlayer.style.display = 'block';
         return;
     }
-    // Ordinador: si sona una cançó i vas a una altra secció, el reproductor passa a la finestra flotant (amb els
-    // controls a sota) en lloc d'aturar-se; es continua navegant amb la música.
+    // Si sona una cançó i vas a una altra secció (també Inici), el reproductor passa a la finestra flotant (amb els
+    // controls a sota) en lloc d'aturar-se; es continua navegant amb la música. Al mòbil, des del 2026-10-22.
     if (shouldFloatPlayerOnNavigation()) {
         setMiniPlayerState(true, { trigger: 'navigation' });
         videoPlayer.style.display = 'block';

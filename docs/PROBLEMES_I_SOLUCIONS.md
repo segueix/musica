@@ -1,3 +1,11 @@
+## [2026-10-22] - Mòbil: en anar a Inici amb una ràdio sonant, la música s'aturava
+
+**Símptoma:** al mòbil, si sonava una ràdio o una llista i es tocava «Inici» (o una altra secció de la navegació inferior), la música s'aturava i es perdia la ràdio. A l'ordinador continuava a la finestra flotant.
+
+**Causa Arrel:** `handlePlayerVisibilityOnNavigation()` (cridat per `showHome()` i la resta de vistes de `navigation.js`) només passava el reproductor a la finestra flotant si `shouldFloatPlayerOnNavigation()`, i aquesta excloïa el mòbil (`isMobileView()`); al mòbil hi anava `stopVideoPlayback()` i `exitPlaylistModeForNavigation()` tancava la cua.
+
+**Solució Implementada:** `shouldFloatPlayerOnNavigation()` també val al mòbil, però només si la cançó sona o carrega (estat 1 o 3): `setMiniPlayerState(true, { trigger: 'navigation' })` la posa a la finestra flotant ancorada a baix (la mateixa que surt fent scroll, amb els controls enganxats damunt de la navegació inferior), el vídeo no es recarrega i, com que el reproductor és persistent, `exitPlaylistModeForNavigation()` conserva la ràdio. En pausa s'atura com abans (no deixa una finestreta aturada tapant mitja pantalla). El cos ja reserva l'espai de la finestra a baix (`body:has(#videoPlayer.mini-player-active)`). Proves: `tests/finestra-flotant-escriptori.test.js`; opt-in `node tests/browser/verificar-mobil-segueix-sonant.js` (mateix iframe, sonant, cua i posició conservades, «següent» i restaurar, i el cas en pausa).
+
 ## [2026-10-17] - En obrir l'app es veia un instant el disseny antic d'Inici
 
 **Símptoma:** en obrir la web, durant un moment es veia una altra versió d'Inici (la targeta de «La teva ràdio» de la primera vegada, amb els estils per triar, i caixes grises) i després apareixia la bona.
