@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T18:04:47.265Z",
+  "updatedAt": "2026-10-22T18:24:10.382Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2883,6 +2883,20 @@
       "motiu": "Alta del canal Tema sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra.",
       "fonts": [
         "https://www.youtube.com/channel/UC-rX86Ux3rfWiEHYBDAt98w",
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ]
+    },
+    {
+      "artista": "Lil Guiu",
+      "aliases": [],
+      "canals": [
+        "UCjoxtmuZ82RdRdPm8Kmllww"
+      ],
+      "motiu": "Alta sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra.",
+      "fonts": [
+        "https://www.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww",
+        "https://music.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww",
         "https://www.suricatmusic.cat/pawngang",
         "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
       ]
