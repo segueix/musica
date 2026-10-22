@@ -1,17 +1,19 @@
 {
-  "generatedAt": "2026-10-22T11:10:14.179Z",
+  "generatedAt": "2026-10-22T18:41:13.998Z",
   "polling": {
-    "requested": 389,
-    "deferred": 296,
-    "failed": 7
+    "requested": 3,
+    "deferred": 685,
+    "failed": 0
   },
   "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
-  "restrictedVideoCount": 25,
-  "restrictedVideosAdded": [],
+  "restrictedVideoCount": 26,
+  "restrictedVideosAdded": [
+    "GshzXwenCSM"
+  ],
   "deepPagesFetched": 0,
   "deepChannelCount": 19,
-  "topicChannelCount": 386,
+  "topicChannelCount": 389,
   "governedChannelCount": 125,
   "topicCoverage": [
     {
@@ -1833,7 +1835,7 @@
   ],
   "topicGovernance": "apply",
   "governedReclassified": {},
-  "topicHiddenCount": 633,
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -2830,6 +2832,13 @@
       "withClip": 0
     },
     {
+      "id": "UC-rX86Ux3rfWiEHYBDAt98w",
+      "name": "Good Jan",
+      "tracks": 5,
+      "selected": 5,
+      "withClip": 0
+    },
+    {
       "id": "UCDAuX43C1s8r_fH6-tU3SHQ",
       "name": "Gossos",
       "tracks": 344,
@@ -3317,6 +3326,13 @@
       "name": "Lídia Pujol",
       "tracks": 137,
       "selected": 40,
+      "withClip": 0
+    },
+    {
+      "id": "UCjoxtmuZ82RdRdPm8Kmllww",
+      "name": "Lil Guiu",
+      "tracks": 4,
+      "selected": 4,
       "withClip": 0
     },
     {
@@ -4223,6 +4239,13 @@
       "withClip": 0
     },
     {
+      "id": "UCP_oNrTxABOWdNVpuxh_wUw",
+      "name": "Teuma Thug",
+      "tracks": 47,
+      "selected": 40,
+      "withClip": 0
+    },
+    {
       "id": "UCZ9JPgA_kLvdtOpbIzs8Yew",
       "name": "thanatopraxy",
       "tracks": 2,
@@ -4510,46 +4533,32 @@
       "withClip": 0
     }
   ],
-  "indexedChannelCount": 685,
-  "resolvedChannelCount": 685,
-  "feedChannelCount": 685,
-  "rawPublicVideoCount": 11726,
-  "feedVideoCount": 10508,
-  "acceptedMusicCount": 11097,
-  "categoryEligibleVideoCount": 11093,
+  "indexedChannelCount": 688,
+  "resolvedChannelCount": 688,
+  "feedChannelCount": 688,
+  "rawPublicVideoCount": 7706,
+  "feedVideoCount": 7121,
+  "acceptedMusicCount": 7078,
+  "categoryEligibleVideoCount": 7074,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1,
+    "before": 0,
     "matched": 0,
-    "rejected": 1
+    "rejected": 0
   },
   "contentReviewCount": 591,
   "contentTypeCounts": {
-    "song": 10839,
-    "live_song": 254,
+    "song": 6907,
+    "live_song": 167,
     "album": 4,
-    "other": 38,
+    "other": 37,
     "review": 591
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UCf-q-2ikL2X1ZFd0HSj7Eiw",
-    "UCFI6QGe27kctP5lGeugsrhA",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UCYcAA6W7ef4ZOWat8JjaARQ",
-    "UC9i1uNb0GFrISNB2pctkvRg",
-    "UCg6lVNl78-THJI1w8dSy0bA",
-    "UCnjicJo0XLp_UQYr7QqDZzQ",
-    "UCjL17J5dAE9sMDuX4VvhP1Q",
-    "UCD_2AZugryBv83F1Ula_X3w",
-    "UCYOWVkZwBVSxzYQfK_khVYg"
-  ],
+  "channelsWithoutVideos": [],
   "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
-  "publishedFeedVideoCount": 7073,
+  "publishedFeedVideoCount": 7093,
   "publishedShortVideoCount": 0
 }

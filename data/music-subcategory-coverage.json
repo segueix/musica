@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 461,
+  "musicalArtists": 464,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -735,11 +735,14 @@
         "urban-rap",
         "rap-trap"
       ],
-      "artistCount": 2,
-      "nucleus": false,
+      "artistCount": 5,
+      "nucleus": true,
       "artists": [
         "31 FAM",
-        "Mushkaa"
+        "Mushkaa",
+        "Teuma Thug",
+        "Good Jan",
+        "Lil Guiu"
       ]
     },
     {
@@ -5663,6 +5666,36 @@
         "https://www.youtube.com/@annaroigilombre",
         "https://www.youtube.com/channel/UCFtfi1A29MUUHvDU38Dw4wg",
         "https://www.annaroig.com/bio/"
+      ]
+    },
+    {
+      "artist": "Teuma Thug",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "editorial",
+      "sources": [
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ]
+    },
+    {
+      "artist": "Good Jan",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "editorial",
+      "sources": [
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ]
+    },
+    {
+      "artist": "Lil Guiu",
+      "category": "Urban",
+      "subcategory": "urban-trap",
+      "basis": "editorial",
+      "sources": [
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
       ]
     }
   ]

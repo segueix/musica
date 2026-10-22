@@ -4327,14 +4327,35 @@
       "lastCheckedAt": "2026-10-22T11:05:13.476Z",
       "intervalDays": 3,
       "nextCheckOn": "2026-10-25"
+    },
+    "UCP_oNrTxABOWdNVpuxh_wUw": {
+      "latestPublishedAt": "2026-07-30T10:01:56.000Z",
+      "lastCheckedAt": "2026-10-22T18:41:10.293Z",
+      "intervalDays": 1,
+      "nextCheckOn": "2026-10-23",
+      "lastFullTopicAt": "2026-10-22T18:41:10.293Z"
+    },
+    "UC-rX86Ux3rfWiEHYBDAt98w": {
+      "latestPublishedAt": "2025-03-31T10:09:24.000Z",
+      "lastCheckedAt": "2026-10-22T18:41:10.293Z",
+      "intervalDays": 3,
+      "nextCheckOn": "2026-10-25",
+      "lastFullTopicAt": "2026-10-22T18:41:10.293Z"
+    },
+    "UCjoxtmuZ82RdRdPm8Kmllww": {
+      "latestPublishedAt": "2025-03-31T10:11:59.000Z",
+      "lastCheckedAt": "2026-10-22T18:41:10.293Z",
+      "intervalDays": 3,
+      "nextCheckOn": "2026-10-25",
+      "lastFullTopicAt": "2026-10-22T18:41:10.293Z"
     }
   },
-  "updatedAt": "2026-10-22T11:05:13.476Z",
+  "updatedAt": "2026-10-22T18:41:10.293Z",
   "lastRun": {
-    "indexed": 685,
-    "requested": 389,
-    "checked": 382,
-    "deferred": 296,
-    "failed": 7
+    "indexed": 688,
+    "requested": 3,
+    "checked": 3,
+    "deferred": 685,
+    "failed": 0
   }
 }
