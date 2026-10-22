@@ -1847,6 +1847,7 @@
         const canRegenerate = activePlaylistId === QUEUE_ID;
 
         // La caràtula de la cançó que sona fa de fons de la capçalera (portada.css, «Ràdio amb el llenguatge de caràtules»)
+        const supportInfoOpen = Boolean(container.querySelector?.('.mq-support details')?.open);
         const art = String(current?.thumbnail || '').replace(/["'()\\\s]/g, '');
         container.innerHTML = `
             <div class="mq${activePlaylistId === QUEUE_ID ? ' mq--radio' : ''}"${art ? ` style="--mq-art: url('${escapeText(art)}')"` : ''}>
@@ -1854,6 +1855,13 @@
                     <h2 class="mq-heading">${activePlaylistId === QUEUE_ID ? 'Ràdio' : 'Llista'}</h2>
                     ${radioNameHtml()}
                     ${canRegenerate || activePlaylistQueue.length > 1 ? `<button type="button" class="mq-regenerate mq-open-ytm" data-mq-open-ytm title="Obre aquesta cua, en el mateix ordre, a YouTube (pots desar-la i tornar-la a trobar a YouTube Music)">${ICONS.external}<span>Obre a YouTube</span></button>` : ''}
+                    ${canRegenerate ? `<div class="mq-support">
+                        <p><strong>Vols donar més suport als artistes?</strong> Pots obrir aquesta ràdio a YouTube, escoltar-la allà i seguir els seus canals.</p>
+                        <details${supportInfoOpen ? ' open' : ''}>
+                            <summary>Més informació</summary>
+                            <p>YouTube aplica criteris diferents al recompte de les reproduccions automàtiques en webs externes. Escoltar directament a YouTube evita aquesta limitació específica, tot i que YouTube valida les visualitzacions.</p>
+                        </details>
+                    </div>` : ''}
                     ${modeSelectorHtml()}
                 </div>
                 ${stylePickerHtml()}
@@ -2095,5 +2103,6 @@
         QUEUE_ID,
     };
 })(window);
+
 
 
