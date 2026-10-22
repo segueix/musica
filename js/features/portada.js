@@ -711,6 +711,7 @@
                 ${model.lead ? leadHtml(model.lead) : ''}
                 ${app.features.nearbyRadio?.cardHtml?.() || ''}
                 ${model.fresh ? freshHtml(model.fresh, Boolean(options.freshExpanded), now, model.reasons) : ''}
+                ${app.features.hitsChart?.cardHtml?.() || ''}
                 ${model.radar ? radarHtml(model.radar) : ''}
                 ${stylesHtml(model.styles, Boolean(options.stylesExpanded))}
                 ${model.live ? liveHtml(model.live, now) : ''}

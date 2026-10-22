@@ -73,3 +73,8 @@ Fonts de la configuració: [cues i concurrència](https://docs.github.com/en/act
 
 
 Validació local del canvi: 133 proves Node i 256 proves Vitest rellevants superades; les dues proves ajustades es van tornar a executar amb els seus fitxers complets (47/47). Els deu YAML es parsegen correctament, i s'han comprovat permisos, calendaris i límits. Build complet i validador estàtic correctes (12.225 fitxers, 7.160 cançons). `npm run lint` conserva els mateixos 58 errors i 715 avisos del punt de partida; cap fitxer de JS del client ha canviat. Els scripts modificats no tenen errors de lint. No s'ha alterat el catàleg ni el rendiment del client.
+
+
+## Llista d'èxits setmanal (22 d'octubre de 2026)
+
+«Actualitzar feed musical» té un pas més, després de l'arxiu: `node scripts/generar_llista_exits.js`. No consulta YouTube ni afegeix cap workflow ni cron: compara les visualitzacions del feed amb la fotografia de la setmana anterior i només escriu els divendres (`data/llista-exits.json` i `data/llista-exits-base.json`, al mateix commit de dades). Té `continue-on-error`, perquè un error no impedeixi publicar el feed. Detall: `docs/LLISTA_EXITS.md`.
