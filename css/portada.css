@@ -12794,3 +12794,17 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     margin-top: 0;
     padding-bottom: 0;
 }
+
+/* ==========================================================================
+   «Tria el teu so»: «Tots els estils» sempre just després de la darrera rajola (2026-10-22)
+   Al mòbil, «Tots els estils» i «Crea una categoria» anaven en una fila pròpia de dues columnes: amb una categoria
+   pròpia (8 estils + 1 = 9 rajoles en dues columnes) la darrera quedava sola amb un forat al costat i «Tots els
+   estils» baixava a la fila següent. Ara, com a l'ordinador, les dues rajoles entren a la graella (display:
+   contents) i «Tots els estils» és sempre la cel·la que segueix la darrera categoria, sigui un estil o una de
+   pròpia, plegat o desplegat.
+   ========================================================================== */
+@media (max-width: 768px) {
+    .pt-style-cell--actions {
+        display: contents;
+    }
+}
