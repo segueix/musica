@@ -12363,3 +12363,223 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     white-space: nowrap;
     border: 0;
 }
+
+/* ==========================================================================
+   Llista d'èxits setmanal (2026-10-22): secció d'Inici després d'«Acabades de sortir»
+   (js/features/hits-chart.js, dades a data/llista-exits.json). Files numerades: posició i moviment,
+   caràtula, títol i artista, i les visualitzacions guanyades. Al mòbil una columna; a ≥ 900 px dues
+   (1–5 i 6–10; desplegada, 1–20 i 21–40), per això el nombre de files va a --hc-rows.
+   ========================================================================== */
+.hc[hidden] {
+    display: none;
+}
+
+.hc__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 4px;
+    color: var(--pt-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hc__eyebrow svg {
+    width: 16px;
+    height: 16px;
+    flex: none;
+}
+
+.hc__list {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 900px) {
+    .hc__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(var(--hc-rows, 5), auto);
+        grid-auto-flow: column;
+        column-gap: 16px;
+    }
+}
+
+.hc-row {
+    min-width: 0;
+}
+
+.hc-row__btn {
+    display: grid;
+    grid-template-columns: 44px 56px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 68px;
+    padding: 6px 12px 6px 4px;
+    border: 1px solid transparent;
+    border-radius: var(--pt-radius-sm);
+    background: transparent;
+    color: var(--pt-text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.hc-row__btn:hover {
+    border-color: var(--pt-line);
+    background: var(--pt-surface);
+}
+
+.hc-row__btn:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+.hc-row__rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.hc-row__num {
+    font-family: var(--pt-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.hc-row.is-top .hc-row__num {
+    color: var(--pt-accent);
+    font-size: 1.75rem;
+}
+
+.hc-move {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hc-move svg {
+    width: 9px;
+    height: 9px;
+}
+
+.hc-move--up {
+    color: var(--pt-accent);
+}
+
+.hc-move--down {
+    color: var(--pt-terracotta);
+}
+
+.hc-move--same {
+    color: var(--pt-muted);
+}
+
+.hc-move--new,
+.hc-move--back {
+    padding: 2px 5px;
+    border: 1px solid var(--pt-accent);
+    border-radius: var(--pt-radius-pill);
+    font-size: 0.625rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.hc-move--new {
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+.hc-move--back {
+    color: var(--pt-accent);
+}
+
+.hc-row__cover {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--pt-radius-cover);
+    background: var(--pt-surface);
+    object-fit: cover;
+}
+
+.hc-row__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.hc-row__title,
+.hc-row__artist {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hc-row__title {
+    font-weight: 700;
+}
+
+.hc-row__artist {
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+}
+
+.hc-row__growth {
+    color: var(--pt-accent);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.hc__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8px 16px;
+    margin-top: 12px;
+}
+
+.hc__how summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.hc__how p {
+    max-width: 60ch;
+    margin: 0 0 4px;
+    color: var(--pt-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .hc-row__btn {
+        grid-template-columns: 36px 48px minmax(0, 1fr) auto;
+        gap: 10px;
+        padding-right: 8px;
+    }
+
+    .hc-row__cover {
+        width: 48px;
+        height: 48px;
+    }
+}
