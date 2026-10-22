@@ -10340,6 +10340,38 @@ body .mq .mq-head .mq-open-ytm {
     border-radius: var(--pt-radius-pill);
 }
 
+/* Suport als artistes: informació opcional al costat de l'accés a YouTube. */
+body .mq .mq-head .mq-support {
+    flex: 0 0 100%;
+    min-width: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+body .mq .mq-support p {
+    margin: 0;
+}
+
+body .mq .mq-support summary {
+    width: fit-content;
+    margin-top: 4px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+body .mq .mq-support summary:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+body .mq .mq-support details[open] p {
+    margin-top: 6px;
+}
+
 /* Els quatre modes: vidre amb vora blanca; el triat, en llima */
 body .mq .mq-head .mq-mode__opt {
     border-color: rgba(255, 255, 255, 0.55);
@@ -12753,3 +12785,4 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
         height: 48px;
     }
 }
+
