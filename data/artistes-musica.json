@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T10:01:23.704Z",
+  "updatedAt": "2026-10-22T18:24:10.382Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -41792,6 +41792,126 @@
       ],
       "lastChecked": "2026-10-22",
       "notes": "Selecció ampliada a 14 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències: docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json."
+    },
+    {
+      "name": "Teuma Thug",
+      "displayName": "Teuma Thug",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCP_oNrTxABOWdNVpuxh_wUw",
+            "handle": null,
+            "name": "Teuma Thug - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-22",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCP_oNrTxABOWdNVpuxh_wUw",
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ],
+      "lastChecked": "2026-10-22T18:04:47.265Z",
+      "notes": "Alta expressa de l’usuari del canal Tema. Projecte individual d’un membre de P.A.W.N. Gang, separat de la fitxa col·lectiva. Urban (trap), Barcelona (Gràcia). Vigilància d’idioma: cal verificar les cançons individualment; l’alta no aprova tot el repertori."
+    },
+    {
+      "name": "Good Jan",
+      "displayName": "Good Jan",
+      "aliases": [
+        "Goodjan"
+      ],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC-rX86Ux3rfWiEHYBDAt98w",
+            "handle": null,
+            "name": "Good Jan - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-22",
+        "genre:manual",
+        "https://www.youtube.com/channel/UC-rX86Ux3rfWiEHYBDAt98w",
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ],
+      "lastChecked": "2026-10-22T18:04:47.265Z",
+      "notes": "Alta expressa de l’usuari del canal Tema. Projecte individual d’un membre de P.A.W.N. Gang, separat de la fitxa col·lectiva. Urban (trap), Barcelona (Gràcia). Vigilància d’idioma: cal verificar les cançons individualment; l’alta no aprova tot el repertori."
+    },
+    {
+      "name": "Lil Guiu",
+      "displayName": "Lil Guiu",
+      "aliases": [],
+      "genres": [
+        "Urbana"
+      ],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UCjoxtmuZ82RdRdPm8Kmllww",
+            "handle": null,
+            "name": "Lil Guiu - Topic",
+            "type": "topic",
+            "primary": true
+          }
+        ]
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-22",
+        "genre:manual",
+        "https://www.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww",
+        "https://music.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww",
+        "https://www.suricatmusic.cat/pawngang",
+        "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ],
+      "lastChecked": "2026-10-22T18:24:10.382Z",
+      "notes": "Alta expressa de l’usuari. Canal Tema identificat a YouTube i YouTube Music amb el repertori de Lil Guiu (POGOS, ASTARAMBOTiCK, MALAS iNTANSiONS). Fitxa individual separada de P.A.W.N. Gang. Urban (trap), Barcelona (Gràcia). Vigilància d’idioma: cal verificar les cançons individualment; l’alta no aprova tot el repertori."
     }
   ]
 }
