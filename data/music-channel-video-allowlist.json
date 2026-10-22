@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T06:07:44Z",
+  "updatedAt": "2026-10-22T06:22:29.738Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7569,10 +7569,18 @@
     },
     "UCYRxQ_jB6vat3NkBxIOe4fQ": {
       "artist": "Port Bo",
-      "note": "Alta d’havaneres a Folk i arrel. Només pistes Tema, selecció tancada per ID i català verificat. La resta del repertori queda pendent. Evidències: docs/revisions/2026-10-21-havaneres-tema.json.",
+      "note": "Selecció ampliada a 10 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències: docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json.",
       "allowedVideoIds": [
         "fmh3WEHkmjA",
-        "SBcpZi2DkaI"
+        "SBcpZi2DkaI",
+        "zu6hH661m8U",
+        "sMCbT6P_RX4",
+        "H_83phiTQQk",
+        "E9VVMdtQ5lo",
+        "K0TdHjhUJSo",
+        "ZNwF3lxfZPQ",
+        "bmlx0FeqTWI",
+        "y32xdr1sBUs"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [
@@ -7701,12 +7709,22 @@
     },
     "UCFtfi1A29MUUHvDU38Dw4wg": {
       "artist": "Anna Roig i l'Ombre de Ton Chien",
-      "note": "Selecció catalana revisada per lletra íntegra i gravació d'estudi. Prioritat al Tema; repertori restant pendent. Evidència: docs/revisions/2026-10-22-anna-roig.json",
+      "note": "Selecció ampliada a 14 pistes Tema amb lletra catalana íntegra verificada. Resta del catàleg pendent; evidències: docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json.",
       "allowedVideoIds": [
         "glOmif7hhBM",
         "bfILfWuXxfI",
         "-8GUnKE6vTw",
-        "GaC3D6ZZDWk"
+        "GaC3D6ZZDWk",
+        "PguJ6i-K8kI",
+        "_6qXqra7kAQ",
+        "vV52j_31SI8",
+        "8ZMgYjJMbuw",
+        "iNSnFAKPR3M",
+        "JZRY6xpGutg",
+        "zu613GJkmhA",
+        "SB20Z3OYIWs",
+        "K8IlmGnjDtU",
+        "yGf_kvvqBwU"
       ],
       "acceptedMusicOnly": true,
       "allowedContentTypes": [

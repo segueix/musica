@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "request": "Ampliar les cançons en català de Port Bo i Anna Roig, començant per Port Bo i prioritzant Tema.",
+  "method": "Lectura íntegra de les lletres indicades, correspondència amb artista i edició, i identificació de la pista i canal a les llistes d'àlbum públiques de YouTube. No s'ha escoltat àudio ni s'han baixat subtítols. No s'accepten àlbums sencers ni es transfereixen decisions a altres versions.",
+  "accepted": [
+    {
+      "videoId": "zu6hH661m8U",
+      "title": "Si Fossim Gavines (Valset Mariner)",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "Arrel de Tres",
+      "source": "https://habacompo.cat/lletra-i-video-del-valset-mariner-si-fossim-gavines",
+      "basis": "Lletra completa vinculada explícitament a Port Bo, Arrel de Tres (1995).",
+      "recordingSource": "https://www.youtube.com/watch?v=zu6hH661m8U",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_kpjWI1FUnNDgDjZCsxJHgQGrQCnfGq4GE",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "sMCbT6P_RX4",
+      "title": "Lola la Tavernera",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "La Cantada. 47ª Cantada D'Havaneres de Calella de Palafrugell",
+      "source": "https://www.havanerescalella.cat/wp-content/uploads/2016/02/can%C3%A7oner_2013.pdf",
+      "basis": "Cançoner oficial de la 47a Cantada (2013), pàgina 8, Port-Bo. Metadades del Tema de la mateixa edició; no s'aplica a altres directes.",
+      "recordingSource": "https://www.youtube.com/watch?v=sMCbT6P_RX4",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "H_83phiTQQk",
+      "title": "Camins (Entreforc)",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "Entre Dones",
+      "source": "https://nuriaupi.blogspot.com/2010/06/entre-dones-el-nou-cd-del-port-bo.html?m=0",
+      "basis": "Ressenya d'Entre dones (2010) amb la lletra completa de Camins i identificació de les col·laboracions de l'edició. El text avisa d'una etiqueta errònia Barcarola al reproductor extern: s'usa la pista Camins (Entreforc) del Tema.",
+      "recordingSource": "https://www.youtube.com/watch?v=H_83phiTQQk",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nrFN6PG65r3sS_tyq5Fud9ehREgu3OKfk",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "E9VVMdtQ5lo",
+      "title": "El Capità",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "La Cobla a la Taverna (Reacoblats)",
+      "source": "https://lyricstranslate.com/en/port-bo-el-capita-lyrics",
+      "basis": "Lletra completa atribuïda a Port Bo i Cobla Montgrins, edició de la cobla de 2017; coincideix amb La Cobla a la Taverna (Reacoblats).",
+      "recordingSource": "https://www.youtube.com/watch?v=E9VVMdtQ5lo",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nv94g19mfBMt_ITMB4gpW2ihRdUkiMKXM",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "K0TdHjhUJSo",
+      "title": "El Meu Norai",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "A Mar Oberta",
+      "source": "https://lyricstranslate.com/en/port-bo-el-meu-norai-lyrics",
+      "basis": "Lletra completa atribuïda a Port Bo i A mar oberta (2012), mateix àlbum que la pista Tema.",
+      "recordingSource": "https://www.youtube.com/watch?v=K0TdHjhUJSo",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_mzyWDGrKK6B7510YWJbtGk0jaNCM3VTL8",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "ZNwF3lxfZPQ",
+      "title": "L'Havanera del Nàufrag",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "A Mar Oberta",
+      "source": "https://lyricstranslate.com/en/port-bo-lhavanera-del-naufrag-lyrics",
+      "basis": "Lletra completa atribuïda a Port Bo i A mar oberta (2012), mateix àlbum que la pista Tema.",
+      "recordingSource": "https://www.youtube.com/watch?v=ZNwF3lxfZPQ",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_mzyWDGrKK6B7510YWJbtGk0jaNCM3VTL8",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "bmlx0FeqTWI",
+      "title": "Mar Bonança",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "Essència",
+      "source": "https://lyricstranslate.com/en/port-bo-mar-de-bonanca-lyrics",
+      "basis": "Lletra completa de Mar de bonança atribuïda a Port Bo, Essència (2019); la pista del mateix àlbum figura com Mar Bonança.",
+      "recordingSource": "https://www.youtube.com/watch?v=bmlx0FeqTWI",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_noTwcRw1y03ZID-8uMcxIZT41cRya9QRs",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "y32xdr1sBUs",
+      "title": "Nadala Marinera",
+      "artist": "Port Bo",
+      "channelId": "UCYRxQ_jB6vat3NkBxIOe4fQ",
+      "album": "Quadern de Viatge - Centenari José Luis Ortega Monasterio",
+      "source": "https://lyricstranslate.com/en/port-bo-nadala-marinera-lyrics.html",
+      "basis": "Lletra completa atribuïda a Port Bo, Quadern de viatge (2018), mateixa edició del Tema.",
+      "recordingSource": "https://www.youtube.com/watch?v=y32xdr1sBUs",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nJHVIXOK_mLQ6ePQ6ngtkftqvdFNiauYo",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "PguJ6i-K8kI",
+      "title": "Capseta de Records",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Anna Roig i L’ombre de ton chien",
+      "source": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-capseta-de-records-lyrics.html",
+      "basis": "Lletra completa del grup i disc de 2009, etiquetat Je t'aime a la font; pista del debut homònim. El mot souvenirs és un manlleu, no una frase en francès.",
+      "recordingSource": "https://www.youtube.com/watch?v=PguJ6i-K8kI",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_k_Jh4tgtjXPDh3C39sx72XO_QVRLK49Uc",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "_6qXqra7kAQ",
+      "title": "Dolces Nits de Somnis Curts",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Anna Roig i L’ombre de ton chien",
+      "source": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-dolces-nits-de-somnis-curts-lyrics.html",
+      "basis": "Lletra completa del grup i disc de 2009 (Je t'aime a la font); pista del debut homònim, també contrastada al recull Cançons i lletres.",
+      "recordingSource": "https://www.youtube.com/watch?v=_6qXqra7kAQ",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_k_Jh4tgtjXPDh3C39sx72XO_QVRLK49Uc",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "vV52j_31SI8",
+      "title": "Punt de Creu",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Anna Roig i L’ombre de ton chien",
+      "source": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-punt-de-creu-lyrics.html",
+      "basis": "Lletra completa del grup i disc de 2009 (Je t'aime a la font), pista del debut homònim.",
+      "recordingSource": "https://www.youtube.com/watch?v=vV52j_31SI8",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_k_Jh4tgtjXPDh3C39sx72XO_QVRLK49Uc",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "8ZMgYjJMbuw",
+      "title": "Caputxeta Roig",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Bigoti Vermell",
+      "source": "https://noesuntimo.blogspot.com/2022/01/caputxeta-roig.html",
+      "basis": "Lletra íntegra atribuïda al grup; pista d'estudi de Bigoti Vermell (2011).",
+      "recordingSource": "https://www.youtube.com/watch?v=8ZMgYjJMbuw",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_n2M0X3UzTd1TavhxbmZCGZgxEbxpQCMcs",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "iNSnFAKPR3M",
+      "title": "Lladre de Cors, Lladre de Versos",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Bigoti Vermell",
+      "source": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "basis": "Entrada del 26/12/2021 amb la lletra íntegra atribuïda al grup; pista de Bigoti Vermell (2011).",
+      "recordingSource": "https://www.youtube.com/watch?v=iNSnFAKPR3M",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_n2M0X3UzTd1TavhxbmZCGZgxEbxpQCMcs",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "JZRY6xpGutg",
+      "title": "Ja Mai Més",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Un Pas i Neu i un Pas",
+      "source": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "basis": "Entrada del 06/12/2014 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "recordingSource": "https://www.youtube.com/watch?v=JZRY6xpGutg",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nnwFvKx8RE6HeuFx1lcZfrJKsgh8rAM5o",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "zu613GJkmhA",
+      "title": "Tocar Fusta i Menjar Ferro",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Un Pas i Neu i un Pas",
+      "source": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "basis": "Entrada del 15/07/2015 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "recordingSource": "https://www.youtube.com/watch?v=zu613GJkmhA",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nnwFvKx8RE6HeuFx1lcZfrJKsgh8rAM5o",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "SB20Z3OYIWs",
+      "title": "Així És la Vida",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Un Pas i Neu i un Pas",
+      "source": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "basis": "Entrada del 05/07/2015 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "recordingSource": "https://www.youtube.com/watch?v=SB20Z3OYIWs",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nnwFvKx8RE6HeuFx1lcZfrJKsgh8rAM5o",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "K8IlmGnjDtU",
+      "title": "Jo Voldria Saber Si els Ocells",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Un Pas i Neu i un Pas",
+      "source": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "basis": "Entrada del 05/02/2015 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "recordingSource": "https://www.youtube.com/watch?v=K8IlmGnjDtU",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_nnwFvKx8RE6HeuFx1lcZfrJKsgh8rAM5o",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    },
+    {
+      "videoId": "yGf_kvvqBwU",
+      "title": "L'Últim Petó",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "channelId": "UCFtfi1A29MUUHvDU38Dw4wg",
+      "album": "Bigoti Vermell",
+      "source": "https://noesuntimo.blogspot.com/2013/03/lultim-peto.html",
+      "basis": "Lletra íntegra atribuïda al grup; pista d'estudi de Bigoti Vermell (2011).",
+      "recordingSource": "https://www.youtube.com/watch?v=yGf_kvvqBwU",
+      "albumSource": "https://www.youtube.com/playlist?list=OLAK5uy_n2M0X3UzTd1TavhxbmZCGZgxEbxpQCMcs",
+      "decision": "conserva",
+      "language": "ca",
+      "fullLyricsRead": true
+    }
+  ],
+  "counts": {
+    "portBo": {
+      "before": 2,
+      "added": 8,
+      "total": 10
+    },
+    "annaRoig": {
+      "before": 4,
+      "added": 10,
+      "total": 14
+    }
+  },
+  "notSelected": [
+    {
+      "videoId": "iUN3s5DdeXM",
+      "title": "La vedette del teu cap",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "languages": [
+        "ca",
+        "fr"
+      ],
+      "source": "https://noesuntimo.blogspot.com/2022/01/la-vedette-del-teu-cap.html",
+      "reason": "Lletra íntegra llegida: tornada en francès. No s'incorpora a la selecció catalana estricta."
+    },
+    {
+      "videoId": "sDCjJe2f_po",
+      "title": "Trini Sánchez Mata",
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "languages": [
+        "ca",
+        "es"
+      ],
+      "source": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-trini-s%C3%A1nchez-mata-lyrics.html",
+      "reason": "Lletra íntegra llegida: inclou una frase cantada en castellà. No s'incorpora."
+    }
+  ],
+  "pending": [
+    {
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "videoId": "gqnsbiVULbY",
+      "title": "Gare de Metz",
+      "source": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "reason": "Lletra catalana llegida, però la fitxa pública de la gravació demana inici de sessió; falta completar la verificació de l'ID."
+    },
+    {
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "title": "Bigoti vermell",
+      "reason": "Lletra catalana localitzada i llegida, però la llista de l'àlbum substitueix la pista Tema per un videoclip del canal propi o segell. Falta identificar l'ID Tema adequat."
+    },
+    {
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "title": "Petons entre camions",
+      "reason": "Lletra catalana localitzada i llegida, però la llista de l'àlbum substitueix la pista Tema per un videoclip del canal propi o segell. Falta identificar l'ID Tema adequat."
+    },
+    {
+      "artist": "Anna Roig i l'Ombre de Ton Chien",
+      "title": "Que bé, ser aquí",
+      "reason": "Lletra catalana localitzada i llegida, però la llista de l'àlbum substitueix la pista Tema per un videoclip del canal propi o segell. Falta identificar l'ID Tema adequat."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "Els braus del nord — Temps perdut (1988)",
+      "reason": "Lletra completa llegida per a aquesta edició; falta identificar la pista Tema corresponent. Les versions d'altres discos no es validen per equivalència de títol."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "La sirena i la lluna — Pessigolletes al cor (2002)",
+      "reason": "Lletra completa llegida per a aquesta edició; falta identificar la pista Tema corresponent. Les versions d'altres discos no es validen per equivalència de títol."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "Barquejant — Al Palau (2005)",
+      "reason": "Lletra completa llegida per a aquesta edició; falta identificar la pista Tema corresponent. Les versions d'altres discos no es validen per equivalència de títol."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "La barca abandonada",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "Busca'm a l'Empordà",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "A cau d'orella",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "Oreneta gentil",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "La pubilleta",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "Na nena (Tornada a Menorca)",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "Pescador sóc d'una cala",
+      "reason": "Lletra consultada; pendent de vincular inequívocament la font amb l'edició concreta del Tema."
+    },
+    {
+      "artist": "Port Bo",
+      "title": "La vida és així",
+      "reason": "La font de la lletra no s'ha pogut obrir (error de servidor/temps d'espera)."
+    }
+  ],
+  "remainingScope": "Inventari de les llistes públiques de 12 àlbums de Port Bo i 3 del Tema principal d'Anna Roig. No és una revisió lingüística completa d'aquest inventari ni de tota la discografia. La resta dels grups d'havaneres queda pendent d'ampliació.",
+  "queue": "Cap entrada d'aquests dos artistes a pendents en la instantània vigent. Aquesta ampliació usa el protocol d'ingestió per allowlist i discsVerificats; no crea un lot fictici ni modifica hidden-videos.",
+  "resolvesPreviousPending": [
+    "JZRY6xpGutg",
+    "zu613GJkmhA",
+    "SB20Z3OYIWs",
+    "K8IlmGnjDtU"
+  ],
+  "publication": "Commit editorial a main; sense dispatch d'Actions, consulta de l'API de YouTube ni actualització manual del feed. Incorporació al següent torn programat de les 20 h Europe/Madrid.",
+  "validation": {
+    "artistSchema": "543 artistes; vàlid.",
+    "tests": {
+      "passed": 62,
+      "detail": "39 proves del procés de revisió, 19 de llista blanca/depurador i 4 de vigilància. La primera execució de vigilància faltava docs/ARTISTES_CASTELLA.md a la còpia parcial; s'ha recuperat de la base i les 4 proves passen."
+    },
+    "integration": "Els 18 IDs nous passen la llista blanca i updatePending els reconeix com a revisats. Els dos exemples mixtos i un ID desconegut queden fora. Cap ID recuperat de hidden-videos.",
+    "lint": {
+      "errors": 0,
+      "warnings": 178
+    },
+    "scope": "Només es modifiquen els dos artistes, les dues seleccions, s'afegeixen 18 evidències i aquest informe."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T06:07:44Z",
+  "updatedAt": "2026-10-22T06:22:29.738Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -6028,6 +6028,240 @@
       "criteri": "Lletra íntegra en català a la descripció de l'Audio Single oficial, identificat com la setena cançó d'Un Pas i Neu i un Pas. Pista Topic del mateix disc de 2014.",
       "origen": "docs/revisions/2026-10-22-anna-roig.json",
       "data": "2026-10-22T06:07:44Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "Si Fossim Gavines (Valset Mariner)",
+      "accio": "conserva",
+      "font": "https://habacompo.cat/lletra-i-video-del-valset-mariner-si-fossim-gavines",
+      "videoIds": [
+        "zu6hH661m8U"
+      ],
+      "criteri": "Lletra completa vinculada explícitament a Port Bo, Arrel de Tres (1995).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "Lola la Tavernera",
+      "accio": "conserva",
+      "font": "https://www.havanerescalella.cat/wp-content/uploads/2016/02/can%C3%A7oner_2013.pdf",
+      "videoIds": [
+        "sMCbT6P_RX4"
+      ],
+      "criteri": "Cançoner oficial de la 47a Cantada (2013), pàgina 8, Port-Bo. Metadades del Tema de la mateixa edició; no s'aplica a altres directes.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "Camins (Entreforc)",
+      "accio": "conserva",
+      "font": "https://nuriaupi.blogspot.com/2010/06/entre-dones-el-nou-cd-del-port-bo.html?m=0",
+      "videoIds": [
+        "H_83phiTQQk"
+      ],
+      "criteri": "Ressenya d'Entre dones (2010) amb la lletra completa de Camins i identificació de les col·laboracions de l'edició. El text avisa d'una etiqueta errònia Barcarola al reproductor extern: s'usa la pista Camins (Entreforc) del Tema.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "El Capità",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/port-bo-el-capita-lyrics",
+      "videoIds": [
+        "E9VVMdtQ5lo"
+      ],
+      "criteri": "Lletra completa atribuïda a Port Bo i Cobla Montgrins, edició de la cobla de 2017; coincideix amb La Cobla a la Taverna (Reacoblats).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "El Meu Norai",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/port-bo-el-meu-norai-lyrics",
+      "videoIds": [
+        "K0TdHjhUJSo"
+      ],
+      "criteri": "Lletra completa atribuïda a Port Bo i A mar oberta (2012), mateix àlbum que la pista Tema.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "L'Havanera del Nàufrag",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/port-bo-lhavanera-del-naufrag-lyrics",
+      "videoIds": [
+        "ZNwF3lxfZPQ"
+      ],
+      "criteri": "Lletra completa atribuïda a Port Bo i A mar oberta (2012), mateix àlbum que la pista Tema.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "Mar Bonança",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/port-bo-mar-de-bonanca-lyrics",
+      "videoIds": [
+        "bmlx0FeqTWI"
+      ],
+      "criteri": "Lletra completa de Mar de bonança atribuïda a Port Bo, Essència (2019); la pista del mateix àlbum figura com Mar Bonança.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Port Bo",
+      "titol": "Nadala Marinera",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/en/port-bo-nadala-marinera-lyrics.html",
+      "videoIds": [
+        "y32xdr1sBUs"
+      ],
+      "criteri": "Lletra completa atribuïda a Port Bo, Quadern de viatge (2018), mateixa edició del Tema.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Capseta de Records",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-capseta-de-records-lyrics.html",
+      "videoIds": [
+        "PguJ6i-K8kI"
+      ],
+      "criteri": "Lletra completa del grup i disc de 2009, etiquetat Je t'aime a la font; pista del debut homònim. El mot souvenirs és un manlleu, no una frase en francès.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Dolces Nits de Somnis Curts",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-dolces-nits-de-somnis-curts-lyrics.html",
+      "videoIds": [
+        "_6qXqra7kAQ"
+      ],
+      "criteri": "Lletra completa del grup i disc de 2009 (Je t'aime a la font); pista del debut homònim, també contrastada al recull Cançons i lletres.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Punt de Creu",
+      "accio": "conserva",
+      "font": "https://lyricstranslate.com/es/anna-roig-i-lombre-de-ton-chien-punt-de-creu-lyrics.html",
+      "videoIds": [
+        "vV52j_31SI8"
+      ],
+      "criteri": "Lletra completa del grup i disc de 2009 (Je t'aime a la font), pista del debut homònim.",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Caputxeta Roig",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/2022/01/caputxeta-roig.html",
+      "videoIds": [
+        "8ZMgYjJMbuw"
+      ],
+      "criteri": "Lletra íntegra atribuïda al grup; pista d'estudi de Bigoti Vermell (2011).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Lladre de Cors, Lladre de Versos",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "videoIds": [
+        "iNSnFAKPR3M"
+      ],
+      "criteri": "Entrada del 26/12/2021 amb la lletra íntegra atribuïda al grup; pista de Bigoti Vermell (2011).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Ja Mai Més",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "videoIds": [
+        "JZRY6xpGutg"
+      ],
+      "criteri": "Entrada del 06/12/2014 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Tocar Fusta i Menjar Ferro",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "videoIds": [
+        "zu613GJkmhA"
+      ],
+      "criteri": "Entrada del 15/07/2015 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Així És la Vida",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "videoIds": [
+        "SB20Z3OYIWs"
+      ],
+      "criteri": "Entrada del 05/07/2015 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "Jo Voldria Saber Si els Ocells",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/search/label/Anna%20Roig%20i%20L%E2%80%99ombre%20de%20ton%20chien",
+      "videoIds": [
+        "K8IlmGnjDtU"
+      ],
+      "criteri": "Entrada del 05/02/2015 amb la lletra íntegra; pista d'estudi d'Un Pas i Neu i un Pas (2014).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
+      "lletraIntegraVerificada": true
+    },
+    {
+      "artista": "Anna Roig i l'Ombre de Ton Chien",
+      "titol": "L'Últim Petó",
+      "accio": "conserva",
+      "font": "https://noesuntimo.blogspot.com/2013/03/lultim-peto.html",
+      "videoIds": [
+        "yGf_kvvqBwU"
+      ],
+      "criteri": "Lletra íntegra atribuïda al grup; pista d'estudi de Bigoti Vermell (2011).",
+      "origen": "docs/revisions/2026-10-22-ampliacio-port-bo-anna-roig.json",
+      "data": "2026-10-22T06:22:29.738Z",
       "lletraIntegraVerificada": true
     }
   ]
