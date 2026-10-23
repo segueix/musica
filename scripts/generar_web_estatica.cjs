@@ -171,6 +171,12 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
         for (const file of ['index.html', 'manifest.json', 'privacitat.html', 'info-youtubers.html', 'admin-musica.html', 'revisio-artistes.html', 'revisio-cancons.html', 'revisio-noms-artistes.html', 'sw.js']) {
             if (fs.existsSync(path.join(root, file))) fs.copyFileSync(path.join(root, file), path.join(staging, file));
         }
+        // Associació amb segueix.cat (scope_extensions del manifest): l'app de Música s'hi pot obrir sense la franja
+        // «fora de l'app» de Chrome a l'ordinador. Cal la carpeta .well-known a l'arrel publicada.
+        if (fs.existsSync(path.join(root, '.well-known'))) {
+            fs.cpSync(path.join(root, '.well-known'), path.join(staging, '.well-known'), { recursive: true });
+            write('_headers', '/.well-known/web-app-origin-association\n  Content-Type: application/json\n  Access-Control-Allow-Origin: *\n');
+        }
         const publicData = writePublicCatalog(root, staging, catalog);
         let index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
         // Només canvia les metadades del capçal; els enllaços editorials a Segueix es conserven.

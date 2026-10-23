@@ -254,6 +254,19 @@ async function mobileGestures(browser) {
             !/^Ràdio Barcelona/.test(zonePanel.name),
         { ...zonePanel, panel: zonePanel.panel.slice(0, 80) }
     );
+    // Tots els requadres dels artistes de la zona fan la mateixa mida (2026-10-23: a l'iPhone sortien descompensats)
+    const boxes = await page.evaluate(() =>
+        [...document.querySelectorAll('#artistMap .am-panel .am-artist')].map(b => {
+            const r = b.getBoundingClientRect();
+            return [Math.round(r.width), Math.round(r.height)];
+        })
+    );
+    if (OUT) await page.locator('#artistMap .am-panel').screenshot({ path: path.join(OUT, 'mapa-mobil-zona-panell.png') });
+    ok(
+        'mòbil: els requadres dels artistes de la zona fan tots la mateixa mida',
+        boxes.length > 1 && new Set(boxes.map(b => b.join('x'))).size === 1,
+        [...new Set(boxes.map(b => b.join('x')))].slice(0, 6)
+    );
     await page.click('#artistMap [data-am-zone-play]');
     await page.waitForTimeout(1500);
     const radio = await page.evaluate(() => ({
