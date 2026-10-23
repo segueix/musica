@@ -179,6 +179,13 @@
         lastSection = section;
         const doc = window.document;
         if (doc.body) doc.body.dataset.ptSection = section;
+        // Capçalera (ordinador i tauleta): Inici, Descobreix, Artistes i La teva música
+        doc.querySelectorAll('.app-header [data-pt-head]').forEach(item => {
+            const current = item.dataset.ptHead === section;
+            item.classList.toggle('is-current', current);
+            if (current) item.setAttribute('aria-current', 'page');
+            else item.removeAttribute('aria-current');
+        });
         doc.querySelectorAll('.pt-nav-item[data-pt-nav]').forEach(item => {
             const current = item.dataset.ptNav === section;
             item.classList.toggle('is-current', current);

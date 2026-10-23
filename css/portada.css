@@ -267,8 +267,7 @@ body {
     stroke: currentColor;
 }
 
-/* Els accessos que ja són a la navegació (Inici, Historial) no es repeteixen a la capçalera */
-.app-header .nav-trigger[data-page='home'],
+/* Historial és dins «La teva música»: no es repeteix a la capçalera */
 .app-header .nav-trigger[data-page='historial'] {
     display: none;
 }
@@ -288,12 +287,8 @@ body {
     display: none;
 }
 
-/* Escriptori: Artistes és a la barra lateral */
+/* Escriptori i tauleta: sense barra lateral (2026-10-23), --pt-side-w és 0 */
 @media (min-width: 769px) {
-    .app-header .nav-trigger[data-page='segueix'] {
-        display: none;
-    }
-
     .app-header {
         margin-left: calc(var(--pt-side-w) * -1);
         padding-left: calc(20px + var(--safe-left));
@@ -354,7 +349,8 @@ body {
         padding-bottom: 8px;
     }
 
-    .app-header .nav-trigger[data-page='llistes'] {
+    /* Inici, Descobreix i La teva música són a la navegació inferior */
+    .app-header :is(.nav-trigger[data-page='llistes'], .nav-trigger[data-page='home'], .pt-head-discover) {
         display: none;
     }
 
@@ -410,7 +406,8 @@ body {
 
 @media (min-width: 769px) {
     body .sidebar#sidebar {
-        display: flex !important;
+        /* 2026-10-23: sense barra lateral (els accessos són a la capçalera) */
+        display: none !important;
         flex-direction: column;
         position: fixed;
         top: var(--header-height);
@@ -5600,11 +5597,11 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
     }
 }
 
-/* ---------- Plegar i desplegar la navegació lateral (escriptori i tauleta) ----------
-   Botó de tres ratlles (#sidebarToggle) a l'esquerra de la capçalera. Plegada, la barra llisca cap a fora i el
-   contingut ocupa tot l'ample: `body.sidebar-collapsed` posa --pt-side-w (l'espai que ocupa la barra) a 0 i tot el que en
-   depèn (padding del cos, marge de la capçalera) s'hi adapta alhora. --pt-side-w és una propietat registrada perquè es
-   pugui animar; sense @property (navegadors vells) el canvi és instantani. La preferència es recorda (app.js). */
+/* ---------- Sense navegació lateral a l'ordinador i a la tauleta (2026-10-23) ----------
+   Abans hi havia una barra a l'esquerra (84 / 236 px) que es plegava amb un botó de tres ratlles. Ara no hi és: Inici,
+   Descobreix, Artistes i grups i La teva música són icones a dalt a la dreta (#headerActions, la secció activa en llima)
+   i el contingut ocupa tot l'ample. `body.sidebar-collapsed` es continua posant a ≥ 769 px (initDesktopSidebarPreference)
+   perquè els estils de pantalla ampla hi depenen. --pt-side-w continua registrada perquè altres blocs la fan servir. */
 @property --pt-side-w {
     syntax: '<length>';
     inherits: true;
@@ -5617,85 +5614,35 @@ body:has(#playerExternalControls.is-floating.is-above:not([hidden])) #videoPlaye
 
 @media (min-width: 769px) {
     .app-header {
-        grid-template-columns: auto auto minmax(220px, 1fr) auto;
-        grid-template-areas: 'toggle brand search actions';
+        grid-template-columns: auto minmax(220px, 1fr) auto;
+        grid-template-areas: 'brand search actions';
     }
 
-    .sidebar-toggle {
-        grid-area: toggle;
-        display: inline-grid;
-        place-items: center;
-        width: 44px;
-        height: 44px;
-        padding: 0;
-        /* Requadre blanc de vora fina amb les cantonades arrodonides, com el botó de menú de GitHub */
-        border: 1px solid rgba(244, 240, 232, 0.55);
-        border-radius: 8px;
-        background: transparent;
-        color: var(--pt-text);
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transition:
-            background-color 0.15s ease,
-            border-color 0.15s ease,
-            color 0.15s ease;
-    }
-
-    .sidebar-toggle svg {
-        width: 20px;
-        height: 20px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 2;
-        stroke-linecap: round;
-    }
-
-    .sidebar-toggle:hover {
-        border-color: var(--pt-text);
-        background: var(--pt-surface-2);
-    }
-
-    .sidebar-toggle:focus-visible {
-        outline: 2px solid var(--pt-accent);
-        outline-offset: 2px;
-    }
-
-    /* Amb la barra plegada el botó s'ha de veure «actiu» perquè se sàpiga que hi ha un menú amagat */
-    body.sidebar-collapsed .sidebar-toggle {
-        border-color: var(--pt-accent);
-        color: var(--pt-accent);
-    }
-
+    body,
     body.sidebar-collapsed {
         --pt-side-w: 0px;
     }
 
-    /* La barra no s'arronsa (el text es trencaria): llisca cap a fora i, un cop fora, deixa de ser focalitzable */
     body .sidebar#sidebar {
-        transition:
-            transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-            visibility 0s linear 0s;
+        display: none;
     }
 
-    body.sidebar-collapsed .sidebar#sidebar {
-        transform: translateX(-100%);
-        visibility: hidden;
-        transition:
-            transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-            visibility 0s linear 0.28s;
+    #headerActions {
+        gap: 4px;
     }
 
-    /* Les transicions només comencen quan l'app ja ha pintat l'estat desat (sense animar en obrir la pàgina) */
-    body.sidebar-ready {
-        transition: --pt-side-w 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    #headerActions .icon-btn[data-pt-head] {
+        border-radius: 50%;
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    body.sidebar-ready,
-    body .sidebar#sidebar,
-    body.sidebar-collapsed .sidebar#sidebar {
-        transition: none;
+    #headerActions .icon-btn[data-pt-head].is-current {
+        background: rgba(214, 237, 132, 0.16);
+        color: var(--pt-accent);
+    }
+
+    #headerActions .icon-btn[data-pt-head]:focus-visible {
+        outline: 2px solid var(--pt-accent);
+        outline-offset: 2px;
     }
 }
 
@@ -5926,14 +5873,14 @@ body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-re
 
 /* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla (també «Artistes», que només hi és al
    mòbil: abans duia el marc verd fluorescent). */
-body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn) {
+body .app-header .actions :is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn) {
     border: 0;
     background: transparent;
     box-shadow: none;
     outline: none;
 }
 
-body .app-header .actions :is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn):focus-visible {
+body .app-header .actions :is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn):focus-visible {
     color: var(--pt-icon-border);
     /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
     filter: drop-shadow(0 0 3px var(--pt-icon-border));
@@ -12800,7 +12747,7 @@ body .mq .mq-head,
     display: contents;
 }
 
-/* styles.css (≥ 1025 px) els posa a la columna 1: aquí la columna 1 és només la dels controls */
+/* styles.css (≥ 1025 px) els posa a la columna 1: aquí la columna 1 és només una part de l'esquerra */
 #watchPage .watch-main > :is(.video-placeholder, .tv-programming-panel) {
     grid-column: 1 / 3;
 }
@@ -12821,22 +12768,6 @@ body .mq .mq-head,
     grid-row: 4;
 }
 
-#watchPage .watch-main > #playerExternalControls:not(.is-docked) {
-    grid-column: 1;
-    grid-row: 5;
-}
-
-#watchPage .watch-main > .channel-info > .video-info-modern > .video-metadata-bar {
-    grid-row: 5;
-}
-
-#watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden]))
-    > .channel-info
-    > .video-info-modern
-    > .video-metadata-bar {
-    grid-column: 2;
-}
-
 #watchPage .watch-main > .video-info > .video-meta-row {
     grid-row: 6;
 }
@@ -12845,37 +12776,108 @@ body .mq .mq-head,
     grid-row: 7;
 }
 
-/* L'avís «el navegador ha aturat la reproducció automàtica» no hi cap en 212 px: la barra ocupa tota la fila i les
-   accions baixen sota seu. */
-#watchPage .watch-main:has(> #playerExternalControls:not(.is-docked) .player-autoplay-hint:not([hidden])) > #playerExternalControls {
-    grid-column: 1 / 3;
+/* Sota el vídeo, després del dia 23: res de «fitxa de l'artista» (#sidebarChannelInfo i els seus vídeos) ni vídeos
+   relacionats a cap mida: sempre sona una ràdio i la cua ja és al costat (a sota, al mòbil). */
+#watchPage :is(.watch-sidebar, .extra-related-title, .extra-related-header, .extra-videos-grid) {
+    display: none;
 }
 
-#watchPage .watch-main:has(> #playerExternalControls:not(.is-docked) .player-autoplay-hint:not([hidden])) > .channel-info > .video-info-modern > .video-metadata-bar {
-    grid-column: 1 / 3;
-    grid-row: 8;
+/* Mòbil: controls a l'esquerra i desar · comparteix · ⋯ a la dreta, en una fila sota el canal */
+@media (max-width: 768px) {
+    #watchPage .watch-main > #playerExternalControls:not(.is-docked) {
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+    #watchPage .watch-main > .channel-info > .video-info-modern > .video-metadata-bar {
+        grid-row: 5;
+    }
+
+    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden]))
+        > .channel-info
+        > .video-info-modern
+        > .video-metadata-bar {
+        grid-column: 2;
+    }
+
+    /* L'avís «el navegador ha aturat la reproducció automàtica» no hi cap en 204 px: la barra ocupa tota la fila i les
+       accions baixen sota seu. */
+    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked) .player-autoplay-hint:not([hidden])) > #playerExternalControls {
+        grid-column: 1 / 3;
+    }
+
+    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked) .player-autoplay-hint:not([hidden])) > .channel-info > .video-info-modern > .video-metadata-bar {
+        grid-column: 1 / 3;
+        grid-row: 8;
+    }
 }
 
-/* Ordinador: la cua a la dreta abasta totes les files de l'esquerra (fins al requadre de l'enllaç) */
-@media (min-width: 1025px) {
+/* Ordinador i tauleta (2026-10-23): els controls del reproductor a la dreta del títol (que s'acaba amb punts
+   suspensius si és llarg) i desar · comparteix · ⋯ a la dreta del nom de l'artista, alineats per la dreta amb els
+   controls. Sense reproductor o amb la finestra flotant, el títol ocupa tota la fila. */
+@media (min-width: 769px) {
     #watchPage .watch-main {
-        /* L'esquerra (controls + accions) fa el 55 % de l'ample fins al reproductor quadrat de 520 px */
-        grid-template-columns:
-            var(--wc-ctrl-w) clamp(96px, calc(55% - var(--wc-ctrl-w) - var(--wc-gap)), calc(520px - var(--wc-ctrl-w) - var(--wc-gap)))
-            minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) auto;
+        column-gap: 16px;
+    }
+
+    #watchPage .watch-main > #playerExternalControls:not(.is-docked) {
+        grid-column: 2;
+        grid-row: 3;
+        align-self: center;
+    }
+
+    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) > .video-info > .video-title {
+        grid-column: 1;
+    }
+
+    #watchPage .watch-main > .channel-info > .video-info-modern > .channel-header-row {
+        grid-column: 1;
+        min-width: 0;
+    }
+
+    #watchPage .watch-main > .channel-info > .video-info-modern > .video-metadata-bar {
+        grid-column: 2;
+        grid-row: 4;
+        align-self: center;
+    }
+
+    #watchPage .watch-main > .video-info > .video-title {
+        align-self: center;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Ordinador: el reproductor més ample (16:9) i la cua de la dreta més estreta; tot plegat no passa de l'alçada de la
+   finestra (el vídeo i les files de sota hi caben) */
+@media (min-width: 1025px) {
+    #watchPage {
+        --wc-q: clamp(300px, 26vw, 380px);
+    }
+
+    #watchPage .watch-main {
+        grid-template-columns: minmax(0, 1fr) auto var(--wc-q);
+        max-width: calc((100dvh - 250px) * 16 / 9 + var(--wc-q) + 40px);
+        margin-inline: auto;
+    }
+
+    #watchPage .watch-main > .video-placeholder {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        max-width: none;
+        margin: 0;
     }
 
     #watchPage .watch-main > #playlistQueueContainer,
     #watchPage .watch-main:has(> .tv-programming-panel:not(.hidden)) > #playlistQueueContainer {
         grid-column: 3;
         grid-row: 1 / span 7;
-        margin-left: clamp(16px, 2.5vw, 40px);
+        margin-left: 8px;
         /* acaba arran del requadre de la descripció */
         margin-bottom: 0;
-    }
-
-    #watchPage .watch-main > :is(.extra-related-title, .extra-related-header, .extra-videos-grid) {
-        grid-column: 1 / -1;
     }
 
     /* #watchPage retalla el que en surt (contain: content) i a sota de la fila de botons només hi ha el requadre de la
@@ -12933,6 +12935,18 @@ html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) {
     gap: var(--wc-gap);
     width: auto;
     margin: 10px 0 0;
+}
+
+@media (min-width: 769px) {
+    html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) {
+        justify-content: flex-end;
+    }
+
+    /* L'avís d'autoplay no eixampla la columna dels controls: es parteix en línies a sota dels botons */
+    html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) .player-autoplay-hint {
+        contain: inline-size;
+        text-align: right;
+    }
 }
 
 html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) .player-external-btn {
@@ -13178,8 +13192,9 @@ html body #watchPage .video-meta-row .meta-left :is(.meta-stat, .meta-views) {
     order: 3;
 }
 
+/* «Ràdio · 1/40» a l'esquerra de tot (2026-10-23) */
 #watchPage .video-meta-row .meta-left #playlistModeChip {
-    order: 4;
+    order: 0;
 }
 
 html body #watchPage #channelInfo .watch-yt-links {

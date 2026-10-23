@@ -1,3 +1,9 @@
+## [2026-10-23] - Treure la barra lateral: continuava interceptant els clics
+
+**Petició:** a l'ordinador, sense barra lateral; Inici, Descobreix, Artistes i grups i La teva música a dalt a la dreta.
+
+**Símptoma:** amb `body .sidebar#sidebar { display: none; }` la barra continuava allà (invisible a la captura però Playwright deia «`<aside id="sidebar">` intercepts pointer events» i no es podia prémer «Engega la ràdio»). **Causa:** el bloc de la capçalera de `portada.css` (`@media (min-width: 769px)`, cap a la línia 400) tenia `display: flex !important`. **Solució:** canviar aquell `!important` a `display: none !important` (no afegir-ne un altre). També calia afegir les icones noves (`[data-pt-head]`) a la regla que treu la vora fluorescent als accessos de la capçalera: `body :is(.icon-btn, …) { border: 1.5px solid var(--pt-icon-border) }` els la posava.
+
 ## [2026-10-23] - Fitxa de la cançó condensada: el menú ⋯ no es veia (mòbil) o quedava retallat (ordinador)
 
 **Petició:** botons i textos de sota el reproductor com a YouTube (lletra més petita, botons de 36 px en una fila) i treure «+ com aquesta −» de la cua, deixant-ho dins d'un menú ⋯.

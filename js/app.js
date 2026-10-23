@@ -3746,50 +3746,20 @@ function initElements() {
     initConfigElements();
 }
 
-// Plegar i desplegar la navegació lateral (botó de tres ratlles de la capçalera, #sidebarToggle). Només on la barra és
-// una columna (≥ 769 px); al mòbil hi ha la navegació inferior. L'estat es recorda. El CSS (portada.css, «Plegar i
-// desplegar la navegació lateral») fa la feina: aquí només es posa `body.sidebar-collapsed` i l'estat accessible.
 function initDesktopSidebarPreference() {
+    // 2026-10-23: a l'ordinador i a la tauleta ja no hi ha barra lateral (els accessos són a la capçalera) ni botó de
+    // tres ratlles. `body.sidebar-collapsed` es manté a ≥ 769 px perquè els estils de pantalla ampla (p. ex. les
+    // caràtules de «La teva ràdio») hi depenen; la preferència antiga ja no es fa servir.
     if (!sidebar) return;
-    const STORAGE_KEY = 'segueix_music_desktop_sidebar_collapsed';
-    const toggle = document.getElementById('sidebarToggle');
     const wide = window.matchMedia('(min-width: 769px)');
-
-    const saved = () => {
-        try {
-            return localStorage.getItem(STORAGE_KEY) === '1';
-        } catch (error) {
-            return false;
-        }
-    };
-
-    const apply = collapsed => {
-        const active = wide.matches && collapsed;
-        document.body.classList.toggle('sidebar-collapsed', active);
-        if (!toggle) return;
-        const label = active ? 'Desplega el menú lateral' : 'Plega el menú lateral';
-        toggle.setAttribute('aria-expanded', active ? 'false' : 'true');
-        toggle.setAttribute('aria-label', label);
-        toggle.title = label;
-    };
-
-    apply(saved());
-    // Les transicions s'activen un cop pintat l'estat desat: en obrir l'app amb la barra plegada no s'anima
-    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('sidebar-ready')));
-
-    toggle?.addEventListener('click', event => {
-        event.preventDefault();
-        const next = !document.body.classList.contains('sidebar-collapsed');
-        try {
-            localStorage.setItem(STORAGE_KEY, next ? '1' : '0');
-        } catch (error) {
-            // sense emmagatzematge: funciona igual, però no es recorda
-        }
-        apply(next);
-    });
-
-    // En passar d'escriptori a mòbil (i a l'inrevés) la barra es comporta com toca amb la preferència desada
-    wide.addEventListener?.('change', () => apply(saved()));
+    const apply = () => document.body.classList.toggle('sidebar-collapsed', wide.matches);
+    apply();
+    try {
+        localStorage.removeItem('segueix_music_desktop_sidebar_collapsed');
+    } catch (error) {
+        // sense emmagatzematge
+    }
+    wide.addEventListener?.('change', apply);
 }
 
 // ==================== EVENT BINDING ====================
@@ -9958,6 +9928,8 @@ function setVideoTitleText(title) {
         return;
     }
     titleElement.textContent = title || '';
+    // A l'ordinador el títol es talla amb punts suspensius (al costat hi ha els controls): el sencer, en passar-hi
+    titleElement.title = title || '';
     updatePlaylistModeBadge();
 }
 

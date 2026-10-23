@@ -70,4 +70,31 @@ describe('fitxa de la cançó condensada', () => {
         expect(css).not.toMatch(/\.mq-item\.is-active \.mq-prefs \{\s*display: flex;/);
         expect(css).toMatch(/\.mq-item\.is-open \.mq-prefs \{\s*display: flex;/);
     });
+
+    describe('ordinador (2026-10-23)', () => {
+        it('controls a la dreta del títol (amb punts suspensius) i accions a la dreta del nom de l’artista', () => {
+            const wide = block.slice(block.indexOf('/* Ordinador i tauleta (2026-10-23)'));
+            expect(wide).toMatch(/#playerExternalControls:not\(\.is-docked\) \{\s*grid-column: 2;\s*grid-row: 3;/);
+            expect(wide).toMatch(/> \.video-metadata-bar \{\s*grid-column: 2;\s*grid-row: 4;/);
+            expect(wide).toMatch(/\.video-title \{[^}]*white-space: nowrap;[^}]*text-overflow: ellipsis;/);
+            expect(app).toContain("titleElement.title = title || '';");
+        });
+
+        it('reproductor més ample (16:9) i cua més estreta', () => {
+            expect(block).toMatch(/--wc-q: clamp\(300px, 26vw, 380px\);/);
+            expect(block).toMatch(/grid-template-columns: minmax\(0, 1fr\) auto var\(--wc-q\);/);
+            expect(block).toMatch(/> \.video-placeholder \{\s*aspect-ratio: 16 \/ 9;/);
+        });
+
+        it('sense la fitxa de l’artista ni relacionats a sota', () => {
+            expect(block).toMatch(
+                /#watchPage :is\(\.watch-sidebar, \.extra-related-title, \.extra-related-header, \.extra-videos-grid\) \{\s*display: none;/
+            );
+        });
+
+        it('«Ràdio · 1/40» va a l’esquerra de tot del requadre', () => {
+            expect(block).toMatch(/\.meta-left #playlistModeChip \{\s*order: 0;/);
+            expect(block).toMatch(/\.meta-left #videoViews \{\s*order: 1;/);
+        });
+    });
 });

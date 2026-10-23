@@ -1,6 +1,7 @@
-// Verificació en navegador real de la navegació lateral plegable: botó de tres ratlles a la capçalera, la barra
-// llisca cap a fora i el contingut ocupa l'espai (escriptori 1280 px i tauleta 900 px), la preferència es recorda,
-// la barra plegada no es pot focalitzar amb el teclat i al mòbil (390 px) no hi ha botó ni barra.
+// Verificació en navegador real: sense navegació lateral a l'ordinador i a la tauleta (2026-10-23). La barra no es
+// veu ni ocupa espai, no hi ha el botó de tres ratlles, Inici · Descobreix · Artistes i grups · La teva música són a dalt
+// a la dreta (una sola vegada) i porten a la seva secció amb la icona activa en llima; al mòbil (390 px) a dalt només
+// hi ha Artistes (la resta és a la navegació inferior).
 //
 // NO forma part de `npm test`: és una eina opt-in. Requisits: playwright-core i un Chromium (CHROMIUM_PATH).
 // Ús:  node tests/browser/verificar-barra-lateral.js
@@ -54,148 +55,95 @@ const comprovar = (etiqueta, condicio, detall) => {
     if (!condicio) correcte = false;
 };
 
-async function obre(browser, width, errors, { collapsed } = {}) {
+async function obre(browser, width, errors) {
     const context = await browser.newContext({
         viewport: { width, height: 800 },
         isMobile: width <= 768,
         hasTouch: width <= 768,
         serviceWorkers: 'block',
     });
-    await context.addInitScript(
-        collapsedSaved => {
-            try {
-                // Només la primera vegada: una recàrrega no ha de desfer la preferència que s'acaba de desar
-                if (localStorage.getItem('__musica_seed')) return;
-                localStorage.setItem('__musica_seed', '1');
-                localStorage.setItem(
-                    'segueix_cookie_consent_v2',
-                    JSON.stringify({
-                        version: 1,
-                        status: 'accepted',
-                        source: 'test',
-                        updatedAt: new Date().toISOString(),
-                    })
-                );
-                if (collapsedSaved !== null)
-                    localStorage.setItem('segueix_music_desktop_sidebar_collapsed', collapsedSaved);
-            } catch (_) {}
-        },
-        collapsed === undefined ? null : collapsed ? '1' : '0'
-    );
+    await context.addInitScript(() => {
+        try {
+            localStorage.setItem(
+                'segueix_cookie_consent_v2',
+                JSON.stringify({ version: 1, status: 'accepted', source: 'test', updatedAt: new Date().toISOString() })
+            );
+            // Preferència antiga: ja no ha de fer res
+            localStorage.setItem('segueix_music_desktop_sidebar_collapsed', '0');
+        } catch (_) {}
+    });
     const page = await context.newPage();
     await page.route(/^https?:\/\/(?!localhost|127\.0\.0\.1)/, route => route.abort());
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'domcontentloaded' });
     await page.waitForSelector('.pt-sections .pt-section', { timeout: 30000 });
-    await page.waitForFunction(() => document.body.classList.contains('sidebar-ready'), null, { timeout: 10000 });
     await page.waitForTimeout(3500); // la pantalla d'obertura
     return { context, page };
 }
 
-const mesura = page =>
-    page.evaluate(() => {
-        const box = el => {
-            const r = el.getBoundingClientRect();
-            return {
-                left: Math.round(r.left),
-                right: Math.round(r.right),
-                width: Math.round(r.width),
-                top: Math.round(r.top),
-            };
-        };
-        const toggle = document.getElementById('sidebarToggle');
+const visibles = page =>
+    page.evaluate(() =>
+        [...document.querySelectorAll('.app-header .actions .icon-btn')]
+            .filter(el => getComputedStyle(el).display !== 'none')
+            .map(el => el.dataset.ptHead || el.dataset.page || el.id)
+    );
+
+async function escriptori(browser, width, errors) {
+    const etiqueta = `${width} px`;
+    const { context, page } = await obre(browser, width, errors);
+    const m = await page.evaluate(() => {
         const sidebar = document.getElementById('sidebar');
+        const main = document.getElementById('mainContent').getBoundingClientRect();
         return {
-            toggle: box(toggle),
-            toggleDisplay: getComputedStyle(toggle).display,
-            brand: box(document.querySelector('.brand')),
-            sidebar: box(sidebar),
-            visibility: getComputedStyle(sidebar).visibility,
-            main: box(document.getElementById('videosGrid')),
-            expanded: toggle.getAttribute('aria-expanded'),
-            label: toggle.getAttribute('aria-label'),
-            collapsed: document.body.classList.contains('sidebar-collapsed'),
+            barra: getComputedStyle(sidebar).display,
+            boto: Boolean(document.getElementById('sidebarToggle')),
+            main: Math.round(main.left),
             overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
         };
     });
-
-async function escriptori(browser, width, ample, errors) {
-    const etiqueta = width >= 1200 ? `escriptori (${width} px)` : `tauleta (${width} px)`;
-    const { context, page } = await obre(browser, width, errors, { collapsed: false });
-    const obert = await mesura(page);
     comprovar(
-        `${etiqueta}: el botó de tres ratlles és a l'esquerra de la capçalera, abans del logo, i la barra és oberta`,
-        obert.toggleDisplay !== 'none' &&
-            obert.toggle.left < obert.brand.left &&
-            obert.toggle.width >= 44 &&
-            obert.expanded === 'true' &&
-            obert.sidebar.left === 0 &&
-            obert.sidebar.width === ample &&
-            obert.main.left >= ample,
-        obert
+        `${etiqueta}: no hi ha barra lateral ni botó de tres ratlles i el contingut comença a l'esquerra`,
+        m.barra === 'none' && !m.boto && m.main < 40 && m.overflowX <= 0,
+        m
     );
-
-    await page.click('#sidebarToggle');
-    await page.waitForTimeout(700);
-    const plegat = await mesura(page);
+    const icones = await visibles(page);
     comprovar(
-        `${etiqueta}: plegada, la barra surt de la pantalla, no és focalitzable i el contingut ocupa tot l'ample`,
-        plegat.collapsed &&
-            plegat.sidebar.right <= 0 &&
-            plegat.visibility === 'hidden' &&
-            plegat.main.left < ample &&
-            plegat.main.width > obert.main.width &&
-            plegat.expanded === 'false' &&
-            /Desplega/.test(plegat.label) &&
-            plegat.overflowX <= 0,
-        plegat
+        `${etiqueta}: a dalt a la dreta, Inici · Descobreix · Artistes i grups · La teva música (una vegada) · contacte · configuració`,
+        icones.join() === 'home,discover,artists,library,contactBtn,backgroundBtn',
+        icones
     );
-    const focus = await page.evaluate(() => {
-        document.getElementById('sidebarToggle').focus();
-        return null;
-    });
-    await page.keyboard.press('Tab');
-    const focusDins = await page.evaluate(() => Boolean(document.activeElement?.closest('#sidebar')));
+    const seccions = {};
+    for (const section of ['discover', 'artists', 'library', 'home']) {
+        await page.click(`#headerActions [data-pt-head="${section}"]`);
+        await page.waitForTimeout(1200);
+        seccions[section] = await page.evaluate(() => ({
+            actiu: document.querySelector('#headerActions .is-current')?.dataset.ptHead,
+            pagina: ['followPage', 'playlistsPage', 'homePage'].find(id => {
+                const el = document.getElementById(id);
+                return el && !el.classList.contains('hidden') && el.offsetHeight > 0;
+            }),
+            color: getComputedStyle(document.querySelector('#headerActions .is-current')).color,
+        }));
+    }
+    const pagines = { discover: 'homePage', artists: 'followPage', library: 'playlistsPage', home: 'homePage' };
     comprovar(
-        `${etiqueta}: amb la barra plegada, el tabulador no entra a la navegació amagada`,
-        !focusDins && focus === null
-    );
-
-    await page.keyboard.press('Shift+Tab');
-    await page.keyboard.press('Enter');
-    await page.waitForTimeout(700);
-    const reobert = await mesura(page);
-    comprovar(
-        `${etiqueta}: el botó també funciona amb el teclat i la barra torna al seu lloc`,
-        !reobert.collapsed &&
-            reobert.sidebar.left === 0 &&
-            reobert.visibility === 'visible' &&
-            reobert.main.left === obert.main.left,
-        reobert
-    );
-
-    await page.click('#sidebarToggle');
-    await page.waitForTimeout(500);
-    await page.reload({ waitUntil: 'domcontentloaded' });
-    await page.waitForSelector('.pt-sections .pt-section', { timeout: 30000 });
-    await page.waitForTimeout(500);
-    const recordat = await mesura(page);
-    comprovar(
-        `${etiqueta}: la preferència es recorda en tornar a obrir l'app (plegada des del primer moment)`,
-        recordat.collapsed && recordat.sidebar.right <= 0 && recordat.expanded === 'false',
-        recordat
+        `${etiqueta}: cada icona porta a la seva secció i queda activa en llima`,
+        Object.entries(seccions).every(
+            ([section, r]) => r.actiu === section && r.pagina === pagines[section] && r.color === 'rgb(214, 237, 132)'
+        ),
+        seccions
     );
     await context.close();
 }
 
 async function mobil(browser, errors) {
-    // Amb la preferència «plegada» desada, al mòbil no hi ha botó ni barra lateral ni cap classe que la toqui
-    const { context, page } = await obre(browser, 390, errors, { collapsed: true });
-    const m = await mesura(page);
+    const { context, page } = await obre(browser, 390, errors);
+    const icones = await visibles(page);
+    const nav = await page.evaluate(() => getComputedStyle(document.getElementById('ptBottomNav')).display);
     comprovar(
-        'mòbil (390 px): no hi ha botó de tres ratlles ni espai reservat a l’esquerra, i el contingut ocupa l’ample',
-        m.toggleDisplay === 'none' && !m.collapsed && m.main.left < 40 && m.overflowX <= 0,
-        m
+        'mòbil (390 px): a dalt només Artistes, contacte i configuració; la navegació inferior hi és',
+        icones.join() === 'artists,contactBtn,backgroundBtn' && nav !== 'none',
+        { icones, nav }
     );
     await context.close();
 }
@@ -205,15 +153,15 @@ async function main() {
     const browser = await chromium.launch({ executablePath: CHROMIUM_PATH, args: ['--no-sandbox'] });
     const errors = [];
     try {
-        await escriptori(browser, 1280, 236, errors);
-        await escriptori(browser, 900, 84, errors);
+        await escriptori(browser, 1280, errors);
+        await escriptori(browser, 900, errors);
         await mobil(browser, errors);
         comprovar('cap error de JavaScript', errors.length === 0, errors.slice(0, 3));
     } finally {
         await browser.close();
         server.close();
     }
-    console.log(correcte ? '\n✅ Barra lateral plegable verificada' : '\n❌ Hi ha comprovacions fallides');
+    console.log(correcte ? '\n✅ Navegació de la capçalera verificada' : '\n❌ Hi ha comprovacions fallides');
     process.exit(correcte ? 0 : 1);
 }
 

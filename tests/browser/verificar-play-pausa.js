@@ -188,32 +188,34 @@ async function proves(browser, width, errors) {
         estructura
     );
 
-    // 1a) Escriptori (fitxa condensada, 2026-10-23): els controls i desar/compartir/⋯ van a la mateixa fila, sota el
-    //     canal; la cua de la dreta arriba fins al requadre de la descripció; les línies de l'esquerra van enganxades
+    // 1a) Escriptori (2026-10-23): els controls a la dreta del títol i desar/compartir/⋯ a la dreta del canal, alineats
+    //     per la dreta; la cua de la dreta arriba fins al requadre de la descripció
     if (!mobile) {
         const alineacio = await page.evaluate(() => {
             const box = selector => document.querySelector(selector).getBoundingClientRect();
-            const holder = box('#videoPlaceholder');
             const controls = box('#playerExternalControls');
             const title = box('#videoTitle');
             const channel = box('.channel-header-row');
             const actions = box('.video-metadata-bar');
             const desc = box('.watch-yt-links');
             const queue = box('#playlistQueueContainer');
+            const mid = r => r.top + r.height / 2;
             return {
                 cuaAcaba: Math.round(queue.bottom),
                 requadreAcaba: Math.round(desc.bottom),
-                mateixaFila: Math.abs(Math.round(controls.top - actions.top)),
-                holderTitol: Math.round(title.top - holder.bottom),
-                canalControls: Math.round(controls.top - channel.bottom),
+                controlsAlTitol: Math.round(Math.abs(mid(controls) - mid(title))),
+                accionsAlCanal: Math.round(Math.abs(mid(actions) - mid(channel))),
+                vores: Math.round(Math.abs(controls.right - actions.right)),
+                titolAbansControls: Math.round(controls.left - title.right),
             };
         });
         comprovar(
-            `${etiqueta}: controls i accions en una fila sota el canal, la cua acaba amb el requadre i les línies estan enganxades`,
+            `${etiqueta}: controls al costat del títol, accions al costat del canal (alineats a la dreta) i la cua acaba amb el requadre`,
             Math.abs(alineacio.cuaAcaba - alineacio.requadreAcaba) <= 2 &&
-                alineacio.mateixaFila <= 1 &&
-                alineacio.holderTitol <= 14 &&
-                alineacio.canalControls <= 12,
+                alineacio.controlsAlTitol <= 8 &&
+                alineacio.accionsAlCanal <= 14 &&
+                alineacio.vores <= 1 &&
+                alineacio.titolAbansControls >= 0,
             alineacio
         );
     }

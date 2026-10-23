@@ -64,7 +64,7 @@ describe('índex alfabètic dels artistes', () => {
 
     it('els botons d’accés de la capçalera (mòbil) no tenen marc', () => {
         expect(css).toContain(
-            ":is(.icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn)"
+            ":is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn)"
         );
     });
 });

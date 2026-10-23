@@ -51,7 +51,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20261018-sempre-radio">
-    <link rel="stylesheet" href="css/portada.css?v=20261023-reproductor-condensat">
+    <link rel="stylesheet" href="css/portada.css?v=20261023-sense-barra">
     <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
     <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
     <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
@@ -138,10 +138,6 @@
 
     <!-- Capçalera compacta: marca, cercador i accessos -->
     <header class="app-header">
-        <!-- Plega i desplega la navegació lateral (escriptori i tauleta; initDesktopSidebarPreference) -->
-        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="Plega el menú lateral" title="Plega el menú lateral">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg>
-        </button>
         <a class="brand" href="./" aria-label="Segueix Música: descobreix música en català, inici">
             <img class="brand-logo" src="img/icon-192.png" alt="" width="40" height="40">
             <span class="brand-copy">
@@ -169,18 +165,23 @@
             </button>
         </form>
 
-        <nav class="actions" aria-label="Accessos ràpids">
-            <a class="icon-btn nav-trigger active" href="#" data-page="home" aria-label="Inici" title="Inici">
-                <i data-lucide="home"></i>
+        <!-- Ordinador i tauleta (2026-10-23): sense barra lateral; Inici, Descobreix, Artistes i grups i La teva música són
+             aquí (data-pt-head: shell-nav.js hi posa .is-current). Al mòbil només es veu Artistes (la resta és a baix). -->
+        <nav class="actions" id="headerActions" aria-label="Accessos ràpids">
+            <a class="icon-btn nav-trigger active" href="#" data-page="home" data-pt-head="home" aria-label="Inici" title="Inici">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/></svg>
             </a>
-            <a class="icon-btn nav-trigger" href="#" data-page="llistes" aria-label="La teva música" title="La teva música">
+            <a class="icon-btn pt-head-discover" href="#" data-pt-nav="discover" data-pt-head="discover" aria-label="Descobreix" title="Descobreix">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+            </a>
+            <a class="icon-btn nav-trigger" href="#" data-page="segueix" data-pt-head="artists" aria-label="Artistes i grups" title="Artistes i grups">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </a>
+            <a class="icon-btn nav-trigger" href="#" data-page="llistes" data-pt-head="library" aria-label="La teva música" title="La teva música">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 15V6M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM12 12H3M16 6H3M12 18H3"/></svg>
             </a>
             <a class="icon-btn nav-trigger" href="#" data-page="historial" aria-label="Historial" title="Historial">
                 <i data-lucide="history"></i>
-            </a>
-            <a class="icon-btn nav-trigger" href="#" data-page="segueix" aria-label="Artistes i grups" title="Artistes i grups">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </a>
             <!-- Contacte (Telegram, correu, informació per a artistes): obre #contactModal -->
             <button class="icon-btn" id="contactBtn" type="button" aria-label="Contacte" title="Contacte" aria-haspopup="dialog">
@@ -222,7 +223,8 @@
         <button class="chip" data-cat="Seguint" type="button">Seguint</button>
     </section>
 
-    <!-- Navegació lateral (escriptori i tauleta) -->
+    <!-- Navegació lateral: ja no es mostra (2026-10-23; els accessos són a la capçalera). Es conserva perquè app.js hi
+         omple #categoriesList. -->
     <aside class="sidebar" id="sidebar" aria-label="Navegació principal">
         <nav class="sidebar-nav" aria-label="Seccions">
             <a href="#" class="nav-item pt-nav-item is-current" data-page="home" data-pt-nav="home" aria-current="page">
@@ -1058,7 +1060,7 @@
     <script defer src="js/features/drive-mode.js"></script>
     <script defer src="js/features/home-playlists.js?v=20261022-ordre-inici"></script>
     <script defer src="js/features/my-music.js?v=20261016-caratules"></script>
-    <script defer src="js/features/shell-nav.js?v=20260930-portada-1"></script>
+    <script defer src="js/features/shell-nav.js?v=20261023-capcalera-1"></script>
     <script defer src="js/features/youtube-subscribe.js?v=20261008-subscriu-4"></script>
     <script defer src="js/features/app-install.js?v=20261017-guia-sistemes"></script>
     <script defer src="js/features/nearby-radio.js?v=20261016-mapa-zona"></script>
@@ -1073,7 +1075,7 @@
     <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
 
     <!-- Main app entrypoint -->
-    <script defer src="js/app.js?v=20261023-reproductor-condensat"></script>
+    <script defer src="js/app.js?v=20261023-sense-barra"></script>
     <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
     <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
