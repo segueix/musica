@@ -272,17 +272,6 @@ body {
     display: none;
 }
 
-.pt-update-dot {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--pt-terracotta);
-    box-shadow: 0 0 0 2px var(--pt-bg);
-}
-
 .pt-search-close {
     display: none;
 }
