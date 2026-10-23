@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "cat.segueix.musica",
+      "sha256_cert_fingerprints": [
+        "FC:16:ED:43:34:7A:F0:82:A6:87:D5:B0:E1:0B:CD:83:CE:85:A1:74:96:7D:60:F9:E3:84:C3:E1:FC:67:E1:95"
+      ]
+    }
+  }
+]

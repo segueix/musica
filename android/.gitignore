@@ -1,0 +1,14 @@
+# Claus privades, configuració local i fitxers compilats.
+keystore/
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+*.password
+local.properties
+.gradle/
+**/build/
+*.apk
+*.aab
+*.idsig

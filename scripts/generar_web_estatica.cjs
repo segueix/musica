@@ -175,7 +175,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
         // «fora de l'app» de Chrome a l'ordinador. Cal la carpeta .well-known a l'arrel publicada.
         if (fs.existsSync(path.join(root, '.well-known'))) {
             fs.cpSync(path.join(root, '.well-known'), path.join(staging, '.well-known'), { recursive: true });
-            write('_headers', '/.well-known/web-app-origin-association\n  Content-Type: application/json\n  Access-Control-Allow-Origin: *\n');
+            write('_headers', '/.well-known/web-app-origin-association\n  Content-Type: application/json\n  Access-Control-Allow-Origin: *\n\n/.well-known/assetlinks.json\n  Content-Type: application/json\n  Cache-Control: public, max-age=300\n');
         }
         const publicData = writePublicCatalog(root, staging, catalog);
         let index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
