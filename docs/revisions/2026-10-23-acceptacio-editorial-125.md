@@ -1,5 +1,7 @@
 # Acceptació editorial explícita de 125 cançons
 
+**Estat actual:** [10 retirades posteriorment pel títol castellà](2026-10-23-rectificacio-125-titols-castella.md); queden **115 acceptacions vigents**. El llistat següent conserva les 125 de la petició inicial com a historial.
+
 Petició de l’editor: «Accepta aquestes 125», referida als 11 artistes de la taula següent. Aplicada només als 125 IDs pendents enumerats al JSON annex. Cua: **803 → 678**.
 
 Aprovació editorial explícita, sense afirmar que s’ha escoltat o verificat íntegrament la lletra. Es manté la vigilància dels artistes per a les futures incorporacions; no es recuperen exclusions anteriors ni es modifiquen allowlists o feed. L’aprovació lingüística no implica la incorporació d’un vídeo absent al catàleg.

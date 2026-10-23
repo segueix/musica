@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "data": "2026-10-23T21:54:04.632Z",
+  "baseCommit": "055cf5a75701bae26afbf3fd7391ed75275b29cd",
+  "peticio": "D’aquest llistat elimina les que tenen un títol clarament en castellà.",
+  "abast": 125,
+  "retirades": 10,
+  "acceptadesRestants": 115,
+  "changes": [
+    {
+      "id": "y-Hj354Uy5c",
+      "artista": "Atupa",
+      "titol": "Atupa - No más",
+      "before": {
+        "id": "y-Hj354Uy5c",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Atupa",
+        "titol": "Atupa - No más",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "y-Hj354Uy5c",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Atupa",
+        "titol": "Atupa - No más",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "f32aNOtk-44",
+      "artista": "El Nota",
+      "titol": "Perra Vida",
+      "before": {
+        "id": "f32aNOtk-44",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "El Nota",
+        "titol": "Perra Vida",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "f32aNOtk-44",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "El Nota",
+        "titol": "Perra Vida",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "rkyotqKDq4s",
+      "artista": "Enric Hernàez",
+      "titol": "Te Recuerdo Amanda",
+      "before": {
+        "id": "rkyotqKDq4s",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Enric Hernàez",
+        "titol": "Te Recuerdo Amanda",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "rkyotqKDq4s",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Enric Hernàez",
+        "titol": "Te Recuerdo Amanda",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "lbdVFGIBks4",
+      "artista": "Ia & Batiste",
+      "titol": "Sifón (En Directe)",
+      "before": {
+        "id": "lbdVFGIBks4",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Ia & Batiste",
+        "titol": "Sifón (En Directe)",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "lbdVFGIBks4",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Ia & Batiste",
+        "titol": "Sifón (En Directe)",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "WuHcp1RvnIk",
+      "artista": "La Bundu Band",
+      "titol": "Fruta Fresca",
+      "before": {
+        "id": "WuHcp1RvnIk",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "La Bundu Band",
+        "titol": "Fruta Fresca",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "WuHcp1RvnIk",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "La Bundu Band",
+        "titol": "Fruta Fresca",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "nYeE0L9qIVY",
+      "artista": "Xesco Boix",
+      "titol": "El candil",
+      "before": {
+        "id": "nYeE0L9qIVY",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Xesco Boix",
+        "titol": "El candil",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "nYeE0L9qIVY",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Xesco Boix",
+        "titol": "El candil",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "dQzMdR_s9_g",
+      "artista": "Xesco Boix",
+      "titol": "El Sol y la Luna",
+      "before": {
+        "id": "dQzMdR_s9_g",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Xesco Boix",
+        "titol": "El Sol y la Luna",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "dQzMdR_s9_g",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Xesco Boix",
+        "titol": "El Sol y la Luna",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "b3uzSarzZ_c",
+      "artista": "Xesco Boix",
+      "titol": "Estaba el Sr. Don Gato",
+      "before": {
+        "id": "b3uzSarzZ_c",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Xesco Boix",
+        "titol": "Estaba el Sr. Don Gato",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "b3uzSarzZ_c",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Xesco Boix",
+        "titol": "Estaba el Sr. Don Gato",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "2FLzqnmIHI0",
+      "artista": "Xesco Boix",
+      "titol": "Los Tres Bandidos",
+      "before": {
+        "id": "2FLzqnmIHI0",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Xesco Boix",
+        "titol": "Los Tres Bandidos",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "2FLzqnmIHI0",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Xesco Boix",
+        "titol": "Los Tres Bandidos",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    },
+    {
+      "id": "semy9-j5dgA",
+      "artista": "Xesco Boix",
+      "titol": "Mi Caballo Troton",
+      "before": {
+        "id": "semy9-j5dgA",
+        "accio": "conserva",
+        "data": "2026-10-23T21:50:34.695Z",
+        "artista": "Xesco Boix",
+        "titol": "Mi Caballo Troton",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-acceptacio-editorial-125.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-acceptacio-editorial-125.json",
+        "motiu": "L’editor demana explícitament «Accepta aquestes 125», referit a la llista de 11 artistes i recomptes documentada. Aprovació per ID, sense certificar la lletra ni canviar la vigilància de l’artista.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      },
+      "after": {
+        "id": "semy9-j5dgA",
+        "accio": "amaga",
+        "data": "2026-10-23T21:54:04.632Z",
+        "artista": "Xesco Boix",
+        "titol": "Mi Caballo Troton",
+        "font": "https://github.com/segueix/musica/blob/main/docs/revisions/2026-10-23-rectificacio-125-titols-castella.md",
+        "criteri": "aprovacio-explicita-editor",
+        "origen": "docs/revisions/2026-10-23-rectificacio-125-titols-castella.json",
+        "motiu": "Exclusió demanada explícitament per l’editor dins la llista de 125: títol clarament en castellà. Criteri de títol, sense afirmar verificació de la llengua cantada.",
+        "lletraIntegraVerificada": false,
+        "reutilitza": false
+      }
+    }
+  ]
+}
