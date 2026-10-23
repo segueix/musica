@@ -841,8 +841,8 @@ function acceptYouTubeCookiesAndResume({ resumePlayer = true, resumeShort = true
 
 function showCookieInfo() {
     openYouTubeConsentModal({
-        title: 'Com funciona el consentiment de YouTube',
-        text: "Segueix! no carrega analítica pròpia, però quan entres al reproductor incrustat YouTube pot utilitzar cookies o altres identificadors relacionats amb la reproducció, la seguretat i el recompte de visualitzacions. Si l'actives, aquesta acceptació quedarà aplicada a partir d'ara per a tots els vídeos incrustats de la plataforma fins que la canviïs a la configuració.",
+        title: 'Privacitat i cookies',
+        text: "En prémer «Acceptar» a l'avís, autoritzes YouTube per reproduir els vídeos incrustats i Google Analytics per mesurar les visites. Aquests serveis poden utilitzar cookies o altres identificadors. «Només necessàries» els manté desactivats. Pots activar o desactivar cada servei per separat a Configuració. L'autorització de YouTube s'aplica a tots els vídeos fins que la canviïs.",
         acceptLabel: 'Entesos',
         cancelLabel: 'Tancar',
     });

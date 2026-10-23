@@ -40,6 +40,7 @@
     document.querySelectorAll('[data-google-analytics-consent]').forEach(input => {
         input.addEventListener('change', () => saveConsent(input.checked));
     });
+    document.getElementById('cookieAcceptBtn')?.addEventListener('click', () => saveConsent(true));
     document.getElementById('cookieRejectBtn')?.addEventListener('click', () => saveConsent(false));
     window.addEventListener('storage', event => {
         if (event.key === key || event.key === null) applyConsent(event.newValue === 'accepted');

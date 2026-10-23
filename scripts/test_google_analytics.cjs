@@ -8,11 +8,12 @@ const source = fs.readFileSync(path.join(root, 'js/google-analytics.js'), 'utf8'
 function setup(saved, blocked = false) {
     const scripts = [], events = {}, inputs = [0, 1].map(() => ({ addEventListener(name, fn) { this[name] = fn; } }));
     const reject = { addEventListener(name, fn) { this[name] = fn; } };
+    const accept = { addEventListener(name, fn) { this[name] = fn; } };
     const storage = new Map(saved ? [['segueix_google_analytics_consent_v1', saved]] : []);
     const window = { location: new URL('https://segueix.github.io/musica/?importData=PRIVATE#secret'),
         addEventListener(name, fn) { events[name] = fn; } };
     const document = { referrer: 'https://example.org/?secret=private',
-        querySelectorAll: () => inputs, getElementById: () => reject,
+        querySelectorAll: () => inputs, getElementById: id => ({ cookieAcceptBtn: accept, cookieRejectBtn: reject })[id],
         createElement: () => ({}), head: { appendChild: el => scripts.push(el) } };
     const localStorage = {
         getItem: key => { if (blocked) throw Error('blocked'); return storage.get(key); },
@@ -20,7 +21,7 @@ function setup(saved, blocked = false) {
     };
     vm.runInNewContext(source, { window, document, localStorage, URL });
     const toggle = value => { inputs[0].checked = value; inputs[0].change(); };
-    return { window, scripts, inputs, events, reject, storage, toggle };
+    return { window, scripts, inputs, events, accept, reject, storage, toggle };
 }
 test('cap etiqueta sense consentiment, tampoc amb emmagatzematge bloquejat', () => {
     for (const ctx of [setup(), setup('rejected'), setup(null, true)]) {
@@ -50,11 +51,24 @@ test('rebuig i retirada en una altra pestanya aturen els enviaments', () => {
     assert.equal(ctx.window['ga-disable-G-4QED7E19C0'], true);
     assert.equal(ctx.scripts.length, 1);
 });
+test('Acceptar activa l’analítica sense marcar cap casella, també sense persistència', () => {
+    for (const ctx of [setup(), setup('rejected'), setup(null, true)]) {
+        ctx.accept.click();
+        ctx.accept.click();
+        assert.equal(ctx.scripts.length, 1);
+        assert.equal(ctx.window['ga-disable-G-4QED7E19C0'], false);
+        assert.equal(ctx.inputs[0].checked, true);
+        ctx.reject.click();
+        assert.equal(ctx.window['ga-disable-G-4QED7E19C0'], true);
+    }
+});
 test('el shell i el precache inclouen la integració local, no la biblioteca externa', () => {
     const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
     const sw = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
     assert.match(html, /<script defer src="js\/google-analytics.js"><\/script>/);
-    assert.equal((html.match(/data-google-analytics-consent/g) || []).length, 2);
+    assert.equal((html.match(/data-google-analytics-consent/g) || []).length, 1);
+    const banner = html.slice(html.indexOf('<div id="cookieBanner"'), html.indexOf('<script id="earlyCookieNotice"'));
+    assert.doesNotMatch(banner, /type="checkbox"/);
     assert.match(sw, /'\.\/js\/google-analytics.js'/);
     assert.doesNotMatch(sw, /googletagmanager/);
 });
