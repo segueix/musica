@@ -1,0 +1,1381 @@
+{
+  "data": "2026-10-23T22:08:52.254Z",
+  "artista": "Albert Pla",
+  "canalId": "UCd2So3hzPhKQs2Vdoo6FJuA",
+  "politica": "catala-titol-mixt-v2",
+  "abast": "Inventari del catàleg Topic (193 IDs) i revisió documental dels 12 pendents. No equival a 193 lletres verificades.",
+  "resum": {
+    "pendent-versio": 62,
+    "sense-canvis": 84,
+    "amaga": 10,
+    "ja-oculta": 36,
+    "conserva": 1
+  },
+  "pendentsGlobalsAbans": 646,
+  "pendentsGlobalsDespres": 635,
+  "limitacions": [
+    "YouTube no ha retornat les fitxes consultades; no s’han descarregat àudios ni subtítols ni gastat quota.",
+    "Les lletres d’obres s’han llegit, però no s’han equiparat reedicions o versions només pel títol.",
+    "La documentació de Miedo s’aplica als sis IDs amb disc i any identificats localment.",
+    "La documentació del CD2 de Cançons d’amor i droga no s’aplica sense verificar l’edició de cada ID."
+  ],
+  "items": [
+    {
+      "id": "ArvpUc3afR8",
+      "titol": "Mi voz",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=2648003",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "dqa08YvkMbM",
+      "titol": "El Mortadela",
+      "estat": "pendent-versio",
+      "font": "https://www.shazam.com/en-gb/song/6763036200/el-mortadela",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "Abf15-ceybM",
+      "titol": "EL CAGANER",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "DgBufWqdftg",
+      "titol": "Perdónenme",
+      "estat": "pendent-versio",
+      "font": "https://www.shazam.com/en-gb/song/1846374314/perd%C3%B3nenme",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "qAwYKnlJHHs",
+      "titol": "Todo me va bien",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=2626635",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "wIwbI0zwtmQ",
+      "titol": "Muerto",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Miedo (2018) està documentat íntegrament en castellà a l’entrevista de VilaWeb, pàgina 54. La descripció local identifica el disc i l’historial confirma l’any 2018; la pista consta al llistat de l’àlbum."
+    },
+    {
+      "id": "6lhu1yvyBTo",
+      "titol": "La Violació",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Z9bfF9eRfOY",
+      "titol": "L'home Que Ens Roba Les Nòvies",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "U3aHWM57-bQ",
+      "titol": "Ratón",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Miedo (2018) està documentat íntegrament en castellà a l’entrevista de VilaWeb, pàgina 54. La descripció local identifica el disc i l’historial confirma l’any 2018; la pista consta al llistat de l’àlbum."
+    },
+    {
+      "id": "kqiNT71yNq4",
+      "titol": "La Caixa de Música",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "0OnakUtVfdM",
+      "titol": "La Barricada del Santpaucentdeu",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "AzM5nshnHS0",
+      "titol": "Insomnio",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Lletra completa en castellà de la pista de Somiatruites (2011), llegida a la font. El disc de la cua i l’any de l’historial concorden amb la font; no hi ha fragment català ni occità."
+    },
+    {
+      "id": "rlXx1jM4hd0",
+      "titol": "Papa, Jo Vull Ser Torero",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Oo_PhGtF6wY",
+      "titol": "Mi Mano en Pena",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Mh3JtFQEnUY",
+      "titol": "Vocació de Suicida",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "_p8XNpR4nsM",
+      "titol": "La Vida D'un Gat",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "rts9PvvkE3Q",
+      "titol": "El Quarto dels Trastos",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "O_FBiC-soCY",
+      "titol": "Porque Quiero",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "ICV4GgtANPU",
+      "titol": "El Lado Más Bestia de la Vida (Walk on the Wild Side)",
+      "estat": "pendent-versio",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "La lletra castellana consultada correspon a Supone a Fonollosa; aquest ID correspon a 20 Años de la Sala Galileo Galilei. Falta verificar la lletra de la versió concreta; no es propaga la decisió pel títol."
+    },
+    {
+      "id": "MyQ22UxiJt8",
+      "titol": "El Reloj",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "bZfxRs_MncQ",
+      "titol": "Insomni",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "7EaPoz_oRgE",
+      "titol": "Papa, Jo Vull Ser Torero",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "RtN4WDl0HbY",
+      "titol": "Raro",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Lletra completa en castellà de la pista de Somiatruites (2011), llegida a la font. El disc de la cua i l’any de l’historial concorden amb la font; no hi ha fragment català ni occità."
+    },
+    {
+      "id": "5v-O3mg4Aas",
+      "titol": "Dejadme",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Miedo (2018) està documentat íntegrament en castellà a l’entrevista de VilaWeb, pàgina 54. La descripció local identifica el disc i l’historial confirma l’any 2018; la pista consta al llistat de l’àlbum."
+    },
+    {
+      "id": "iXS5piT0-Ts",
+      "titol": "Adiós Mamá",
+      "estat": "pendent-versio",
+      "font": "https://imatges.vilaweb.cat/comunitat/uploads/2018/10/free_VWPaper_18102728.pdf",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "GlwTq1eQqAs",
+      "titol": "La Platja",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "tHpvkqOzano",
+      "titol": "La Platja",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "zxXHWrutMQU",
+      "titol": "Muñeca",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "gNnV0vHWxho",
+      "titol": "Ple",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "X37Twv2uRjI",
+      "titol": "Antonia Font",
+      "estat": "conserva",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "La lletra d’Antònia Font, de Somiatruites (2011), conté català cantat. Es conserva encara que hi apareguin termes d’altres llengües."
+    },
+    {
+      "id": "7whjNgI6Blk",
+      "titol": "El Reloj",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "dCySnDx_bRE",
+      "titol": "Sexy",
+      "estat": "sense-canvis",
+      "font": "https://www.musica.com/letras.asp?letra=2311358",
+      "motiu": "La lletra consultada conté català; no s’exclou pel títol aparentment estranger. No es propaga una validació entre enregistraments."
+    },
+    {
+      "id": "04ohtyzoJiE",
+      "titol": "Demá",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "wGPbgEt16sI",
+      "titol": "La Sequia",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "9C4aURzI5pY",
+      "titol": "Circo",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Miedo (2018) està documentat íntegrament en castellà a l’entrevista de VilaWeb, pàgina 54. La descripció local identifica el disc i l’historial confirma l’any 2018; la pista consta al llistat de l’àlbum."
+    },
+    {
+      "id": "JAv24XO7-vk",
+      "titol": "Teófilo Garrido",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Lletra completa en castellà de la pista de Somiatruites (2011), llegida a la font. El disc de la cua i l’any de l’historial concorden amb la font; no hi ha fragment català ni occità."
+    },
+    {
+      "id": "lV2dvpj9d3Y",
+      "titol": "El Capellà del Poble",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "6ooQJH7Uj6U",
+      "titol": "Adiós Terrícolas",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Lletra completa en castellà de la pista de Somiatruites (2011), llegida a la font. El disc de la cua i l’any de l’historial concorden amb la font; no hi ha fragment català ni occità."
+    },
+    {
+      "id": "DfkVH8t-2VM",
+      "titol": "Sexy",
+      "estat": "sense-canvis",
+      "font": "https://www.musica.com/letras.asp?letra=2311358",
+      "motiu": "La lletra consultada conté català; no s’exclou pel títol aparentment estranger. No es propaga una validació entre enregistraments."
+    },
+    {
+      "id": "-VyTWUkUlFs",
+      "titol": "Juerga Catalana 2",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Cyo69Iqj8c4",
+      "titol": "Calaveras",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Miedo (2018) està documentat íntegrament en castellà a l’entrevista de VilaWeb, pàgina 54. La descripció local identifica el disc i l’historial confirma l’any 2018; la pista consta al llistat de l’àlbum."
+    },
+    {
+      "id": "co1IgonVlnc",
+      "titol": "La Nana de L'Antònio",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "6iSIopNeXOM",
+      "titol": "L'Eva I L'Eugeni",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "3RtmQ2PKbdQ",
+      "titol": "La Platja",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "_UKu1TUVy14",
+      "titol": "Absurda",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "N02guDL60dc",
+      "titol": "¿Os Acordáis?",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "y8xzDDLR2zg",
+      "titol": "Catalana De Jaç",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "ayR6K2FEASg",
+      "titol": "Història del 600",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "zu9TmvAkaOE",
+      "titol": "Entierro",
+      "estat": "amaga",
+      "origen": "idiomes-codex/lot-0029.json",
+      "motiu": "Miedo (2018) està documentat íntegrament en castellà a l’entrevista de VilaWeb, pàgina 54. La descripció local identifica el disc i l’historial confirma l’any 2018; la pista consta al llistat de l’àlbum."
+    },
+    {
+      "id": "5xGRDQqdVFc",
+      "titol": "Vals De La Casa Buida",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "jrLNWggnZkQ",
+      "titol": "La Fàbrica Crema",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "13zokiI3q60",
+      "titol": "El Llegat del Pastor",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "IrldOFrCxkI",
+      "titol": "Crim D'amor",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "DDehjD5DhRE",
+      "titol": "Viva El Amor",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=2311367",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "vWOyIMqixMs",
+      "titol": "Bailando",
+      "estat": "pendent-versio",
+      "font": "https://imatges.vilaweb.cat/comunitat/uploads/2018/10/free_VWPaper_18102728.pdf",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "pUVnry2XuCw",
+      "titol": "No Llores Más",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=2311344",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "6ZeXvSRIv0U",
+      "titol": "Somiatruites",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "bbOk14fT6Lg",
+      "titol": "A por Mi",
+      "estat": "pendent-versio",
+      "font": "https://imatges.vilaweb.cat/comunitat/uploads/2018/10/free_VWPaper_18102728.pdf",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "aWAwdRpUCA8",
+      "titol": "Parque",
+      "estat": "pendent-versio",
+      "font": "https://imatges.vilaweb.cat/comunitat/uploads/2018/10/free_VWPaper_18102728.pdf",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "AkUdAEiA4nU",
+      "titol": "Todo Es Mentira",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=2311362",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "amlX2WHSObM",
+      "titol": "La Gran Cascada",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Qxs5ULohlmU",
+      "titol": "Loco",
+      "estat": "sense-canvis",
+      "font": "https://www.musica.com/letras.asp?letra=2311339",
+      "motiu": "La lletra consultada conté català; no s’exclou pel títol aparentment estranger. No es propaga una validació entre enregistraments."
+    },
+    {
+      "id": "aGLaN1My1lY",
+      "titol": "Petitò",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "O-Yftr8_a-g",
+      "titol": "Cançó de la padrina",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "GdKsaBKlyhI",
+      "titol": "Experiencia Religiosa",
+      "estat": "pendent-versio",
+      "font": "https://www.shazam.com/en-gb/song/1752847742/experiencia-religiosa",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "JHgw7eZ43xQ",
+      "titol": "Bombas en Madrid",
+      "estat": "pendent-versio",
+      "font": "https://www.cifraclub.com/albert-pla/estan-cayendo-bombas-en-madrid/",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "5sPG58V9WqA",
+      "titol": "Qualsevol nit pot sortir el sol",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "4HOnPQQ8XRM",
+      "titol": "Joaquin el Necio",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809318",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "hFxsvDfmRjg",
+      "titol": "Como Una Nube",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036979",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "QIJZjDCKmQA",
+      "titol": "Devoro",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Devoro.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "Wb6esBB_d_E",
+      "titol": "Maldita Ciudad",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1920719",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "N6_pUS99IgU",
+      "titol": "Sufre Como Yo",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036976",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "09lTgG2S9ho",
+      "titol": "Mujer Mala",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036975",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "ujv9EynjGHg",
+      "titol": "El Lado Mas Bestia de la Vida",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Bestia.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "er1LLtj4zMM",
+      "titol": "Puedo Empezar",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036969",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "uQATg6ySAmA",
+      "titol": "No Quise Hacerle Daño",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/NoQuise.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "NaT7pviaqys",
+      "titol": "Mi Esqueleto",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Esqueleto.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "oBBMjLd06PQ",
+      "titol": "Añoro",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Anoro.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "kyTMXRPt0fA",
+      "titol": "El Lado Mas Bestia de la Vida",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Bestia.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "DmlNCnTN4L4",
+      "titol": "El Bar de la Esquina",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809321",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "BfKh1mn6Als",
+      "titol": "Pobre Muchacha",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036972",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "9gtuhiRM7H4",
+      "titol": "No",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "r_HKqLpCCzo",
+      "titol": "Devoro",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Devoro.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "n4qDuuAJl94",
+      "titol": "Pobre Muchacha",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "mRjvInl6WR0",
+      "titol": "Sufre Como Yo",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "cMl7KdBp65k",
+      "titol": "No Quise Hacerle Daño",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "dUSoTkTRkOU",
+      "titol": "Mi Esqueleto",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "anhjBW7O0IU",
+      "titol": "No",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "a4834EDbpGE",
+      "titol": "Mujer Mala",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "_heRlAK0eWI",
+      "titol": "Como Una Nube",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036979",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "RQ0DEFktv1Q",
+      "titol": "Maldita Ciudad",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1920719",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "L4MsDDJAGCU",
+      "titol": "Puedo Empezar",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036969",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "I6WCaCmZ-KE",
+      "titol": "El Lado Mas Bestia de la Vida",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "7avJ3n3Iioc",
+      "titol": "Añoro",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "vyBCamBSTUI",
+      "titol": "Era Perkins (Castellano)",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "vOeAxb7tT24",
+      "titol": "Pepe Botika",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "sQg4lf2GvQo",
+      "titol": "Salsa Pa'l Nene",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "qECvtxnT07E",
+      "titol": "Vallclara",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "heKRkNesqXE",
+      "titol": "Home Com Cal",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "tyFoSRa7B_4",
+      "titol": "Soy Rebelde",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "uEmV6rM4cR8",
+      "titol": "Poble De Stars",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "uiSEI5qi5ws",
+      "titol": "Nueva York",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "rtfkR1k4bZE",
+      "titol": "Lefa",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "aT-oGn5kQ-s",
+      "titol": "Que Mas Me Da Si Da O No Da",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "lHVjPmQrLb4",
+      "titol": "Cristo De Les Farmacies",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "mm1I4A4LEbE",
+      "titol": "El Bosc",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "jMFo0-yePa0",
+      "titol": "Tres Acords Contra La Sida",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "jVvVenZmoB4",
+      "titol": "Alexandre El Gran",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "hWxREVlOy9Q",
+      "titol": "Virgo Vamp",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "cgJtS8iOThg",
+      "titol": "Sicamore Tree",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "XAhbkwPd1ag",
+      "titol": "Quando Corpus Morietur",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "ZmvLd_Y_dEE",
+      "titol": "Joaquin el Necio",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "WvvhTW8hxik",
+      "titol": "El Sol De Verano",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809317",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "_D1-QEGciv4",
+      "titol": "El Bar de la Esquina",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "ZwiSgyJLdt4",
+      "titol": "El Camion De La Basura",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "YpnK2uvipDc",
+      "titol": "Era Perkins (Catalán)",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "YZfc9XpugDk",
+      "titol": "Joan Pere",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "YWnq_w4-wtk",
+      "titol": "Veintegenarios",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "Yu-lli8wAX4",
+      "titol": "San Cristo De Las Farmacias",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "XYf9iuxtsYg",
+      "titol": "Un Mal Paso Por Tirso",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "Wd3i-JpkYsQ",
+      "titol": "Cami Blanc",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "QaDBXFKcDBg",
+      "titol": "Enterrador De Cementerios",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "Nz4YskaRjOM",
+      "titol": "Marcelino Arroyo Del Charco",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "QhpNXQ_xIHE",
+      "titol": "Un As En La Manga",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "QCMhh24G4fg",
+      "titol": "Gos Blus",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "S7SrdwcUZW0",
+      "titol": "Miseria",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "F_RFtn4uGv8",
+      "titol": "Meritxell",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "HxeQYo4ye8s",
+      "titol": "Libre",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "J-jjPAQ7w90",
+      "titol": "Alboraya",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "Au4Ii_6F_0s",
+      "titol": "Espalda Rota",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "Ioffg5f2EEc",
+      "titol": "Pintada De Nit",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "EEYRV4k9_Ik",
+      "titol": "Adelaida",
+      "estat": "pendent-versio",
+      "font": "https://www.lahiguera.net/musicalia/artistas/albert_pla/disco/1079/",
+      "fontLlegida": true,
+      "abast": "llengua del disc documentada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "DgJ-JpdL7Q4",
+      "titol": "Mañana Lo Dejo",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "Cug8-wZtLV8",
+      "titol": "Moro, Moro",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "BLQouO60wFk",
+      "titol": "La Dejo O No La Dejo",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "711210ZTTZI",
+      "titol": "Nocturn",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "BE1FklbPZaY",
+      "titol": "El Gallo Eduardo Montenegro",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "CGngi_-Axgk",
+      "titol": "Diarrea Mental",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809325",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "7eNW6Wtwjts",
+      "titol": "Nuestro Jardin",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809323",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "At7cfJ8QsA0",
+      "titol": "Mi Camello",
+      "estat": "pendent-versio",
+      "font": "https://www.cifraclub.com/albert-pla/573261/letra/",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "8LlrX-iTh54",
+      "titol": "Carta Al Rey Melchor",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "7XHpdFagYcQ",
+      "titol": "Lefa'm",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "-RpqGtvEBVs",
+      "titol": "Viva Espanya",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1303168",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "0zRDcJPqxRY",
+      "titol": "La Dama De La Guadaña",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "2LfHaAejOYo",
+      "titol": "Lola La Loca",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "d4HbYwwGGU4",
+      "titol": "La Colilla",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "OAmJWa4zcfc",
+      "titol": "Fantasma",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1539682",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "Fiof3HXAyyU",
+      "titol": "La Diferencia",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "x0bQ-auKS6s",
+      "titol": "Ciego",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "umVJNU343T8",
+      "titol": "Juerga Catalana",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "Kv-NRJR_2Do",
+      "titol": "Soñando",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "wsnbzulraGM",
+      "titol": "Buscando",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "Qd659C9QbZ4",
+      "titol": "Hongos",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "-xjJShZxC4A",
+      "titol": "Corazón",
+      "estat": "ja-oculta",
+      "motiu": "Exclusió anterior conservada."
+    },
+    {
+      "id": "BBftbf4pAjc",
+      "titol": "Malos Pensamientos",
+      "estat": "pendent-versio",
+      "font": "https://www.devaneos.com/musica/albert-pla-marca-la-diferencia-letras-canciones/",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "yz1uYpglhi0",
+      "titol": "Transparente",
+      "estat": "pendent-versio",
+      "font": "https://www.devaneos.com/musica/albert-pla-marca-la-diferencia-letras-canciones/",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "LDYWRJlQf3A",
+      "titol": "L'escola dels Somiatruites",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "p6muVwCvjJI",
+      "titol": "M'encanta Paris",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "o3U1rjM8SZQ",
+      "titol": "Sa Nuvia Morta",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "5ayqgDSAkhQ",
+      "titol": "La Rambla",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "xLwDxSu5z8Y",
+      "titol": "Insolació",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "o9BxsHD2qeo",
+      "titol": "Marcianet de Mart",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "9sT02tPFPWU",
+      "titol": "Rellotge",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "A_nYd3gZ_Zo",
+      "titol": "Sequia",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "a-QCbzC4xQg",
+      "titol": "L'home Que Ens Roba les Novies",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "6rKA1eolxTA",
+      "titol": "Final Feliç",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "SZQ5whKPTVA",
+      "titol": "Hansel i Grettel",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Ek43k_-sdtQ",
+      "titol": "Juerga Catalana",
+      "estat": "sense-canvis",
+      "font": "https://www.musica.com/letras.asp?letra=1539659",
+      "motiu": "La lletra consultada conté català; no s’exclou pel títol aparentment estranger. No es propaga una validació entre enregistraments."
+    },
+    {
+      "id": "r6Z0p8mbprI",
+      "titol": "La Fada Dormilega",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "OEEK35a02UQ",
+      "titol": "El Lado Más Bestia De La Vida",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Bestia.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "_UFRbeZJBYE",
+      "titol": "La Dejo O No La Dejo",
+      "estat": "pendent-versio",
+      "font": "https://www.cifraclub.com/albert-pla/la-dejo-no-la-dejo/",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "Gddf3UOKlYY",
+      "titol": "Joaquín El Necio",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809318",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "EOHUsBIAmtI",
+      "titol": "El Bar De La Esquina",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809321",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "6dxMy5S0ubc",
+      "titol": "Primer Amor",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "4HgUoqWc_3Y",
+      "titol": "Dorm",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "xqRdRyCVBTc",
+      "titol": "Dues Dones",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "5h7MLkboUNk",
+      "titol": "El Sol De Verano",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809317",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "XQmwWP_5yDg",
+      "titol": "Qualsevol Nit Pot Sortir El Sol",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "pxMKU_bUqis",
+      "titol": "Pipi",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "xpf9tOl9u-8",
+      "titol": "Duerme Mama",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=2311314",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "rwnh9_ikJb0",
+      "titol": "Rebelde",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "_MT8RZxI3Ks",
+      "titol": "Dema",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "Ny7v_iGEybw",
+      "titol": "Somiatruites",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "bc6-0Bot7qY",
+      "titol": "El Gallo Eduardo Montenegro",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=912263",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "YmlaNsjoSxk",
+      "titol": "Insolación",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "7w7kndJ_sZw",
+      "titol": "Carta Al Rey Melchor",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=809319",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "g_odkgkbU_c",
+      "titol": "Marcelino Arroyo Del Charco",
+      "estat": "pendent-versio",
+      "font": "https://www.coveralia.com/letras/marcelino-arroyo-del-charco-albert-pla.php",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "7ahj_nsJ5WM",
+      "titol": "Añoro",
+      "estat": "pendent-versio",
+      "font": "https://persephone.cps.unizar.es/Kaos/AlPla/lyrics/Anoro.html",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "cDlSjkUTUzk",
+      "titol": "Sommis",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "IcPsI5dtJW0",
+      "titol": "Lola",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "1KAU4p_gCMk",
+      "titol": "Pipì",
+      "estat": "sense-canvis",
+      "motiu": "Entrada inventariada. Cap nova exclusió ni certificació de la lletra; es manté la situació editorial anterior."
+    },
+    {
+      "id": "F0FUtb40ebM",
+      "titol": "Mi Camello",
+      "estat": "pendent-versio",
+      "font": "https://www.cifraclub.com/albert-pla/573261/letra/",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    },
+    {
+      "id": "TEdXly6kW-g",
+      "titol": "Sufre Como Yo",
+      "estat": "pendent-versio",
+      "font": "https://www.musica.com/letras.asp?letra=1036976",
+      "fontLlegida": true,
+      "abast": "lletra de l’obra consultada",
+      "motiu": "La font apunta a una obra o edició castellana. El catàleg només conserva ID i títol; manca una correspondència suficient d’aquest enregistrament. No s’amaga ni es valida la llengua d’aquest ID."
+    }
+  ]
+}
