@@ -189,6 +189,96 @@
         reset();
     }
 
+    // ---------- Avís de les primeres vegades (mòbil) ----------
+    // Les tres primeres vegades que s'obre l'app al mòbil, a Inici i un cop ha marxat la pantalla d'espera, una mà
+    // blanca amb el dit estirat llisca cap als costats amb «Segueix! YouTubers» a sota durant uns 3 s, per explicar que
+    // lliscant el dit es canvia d'app. No bloqueja res (pointer-events: none). Només compta si s'ha arribat a mostrar.
+    const HINT_KEY = 'catube_app_switch_hint_v1';
+    const HINT_TIMES = 3;
+    const HINT_MS = 3000;
+    const HINT_WAIT_MS = 20000; // si en 20 s no s'arriba a Inici (p. ex. s'ha obert una cançó), aquesta vegada no surt
+
+    function shouldShowHint(count) {
+        const n = Number(count);
+        return !Number.isFinite(n) || n < HINT_TIMES;
+    }
+
+    function readHintCount() {
+        try {
+            return Number(window.localStorage.getItem(HINT_KEY)) || 0;
+        } catch (error) {
+            return HINT_TIMES; // sense emmagatzematge no es pot comptar: millor no repetir-lo a cada obertura
+        }
+    }
+
+    function saveHintCount(count) {
+        try {
+            window.localStorage.setItem(HINT_KEY, String(count));
+        } catch (error) {
+            // sense emmagatzematge
+        }
+    }
+
+    // Una mà amb el dit índex estirat (traç blanc; forma de la icona «pointer» de Lucide, ISC)
+    const HAND =
+        '<svg class="app-switch-hint__hand" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>';
+
+    function homeReady() {
+        const doc = window.document;
+        const home = doc.getElementById('homePage');
+        if (!home || home.classList.contains('hidden') || home.classList.contains('is-booting')) return false;
+        if (!home.classList.contains('is-portada') || !home.offsetHeight) return false;
+        const splash = doc.getElementById('intro-splash');
+        return !splash || splash.classList.contains('splash-hidden');
+    }
+
+    function showHint() {
+        const doc = window.document;
+        const hint = doc.createElement('div');
+        hint.className = 'app-switch-hint';
+        hint.setAttribute('role', 'status');
+        hint.innerHTML = `<div class="app-switch-hint__stage" aria-hidden="true"><span class="app-switch-hint__arrow app-switch-hint__arrow--left">‹</span>${HAND}<span class="app-switch-hint__arrow app-switch-hint__arrow--right">›</span></div><strong>Segueix! YouTubers</strong><span class="app-switch-hint__sr">Llisca el dit cap a un costat per anar a Segueix! dels YouTubers</span>`;
+        doc.body.appendChild(hint);
+        // Res damunt del reproductor de YouTube (la finestra flotant del mòbil): si hi tocaria, aquesta vegada no surt
+        const player = doc.getElementById('videoPlayer');
+        const box = hint.getBoundingClientRect();
+        const playerBox = player?.querySelector('iframe') ? player.getBoundingClientRect() : null;
+        if (
+            playerBox &&
+            playerBox.width > 0 &&
+            !(
+                playerBox.bottom <= box.top ||
+                playerBox.top >= box.bottom ||
+                playerBox.right <= box.left ||
+                playerBox.left >= box.right
+            )
+        ) {
+            hint.remove();
+            return false;
+        }
+        window.requestAnimationFrame(() => hint.classList.add('is-visible'));
+        window.setTimeout(() => hint.classList.remove('is-visible'), HINT_MS - 300);
+        window.setTimeout(() => hint.remove(), HINT_MS);
+        return true;
+    }
+
+    function scheduleHint() {
+        if (!isMobile() || !shouldShowHint(readHintCount())) return;
+        const started = Date.now();
+        const tick = () => {
+            if (state.leaving || !isMobile()) return;
+            if (homeReady()) {
+                // Mig segon després que Inici sigui a punt, perquè es vegi la pantalla abans
+                window.setTimeout(() => {
+                    if (homeReady() && showHint()) saveHintCount(readHintCount() + 1);
+                }, 500);
+                return;
+            }
+            if (Date.now() - started < HINT_WAIT_MS) window.setTimeout(tick, 300);
+        };
+        tick();
+    }
+
     function init() {
         const doc = window.document;
         if (!doc?.addEventListener || doc.documentElement.dataset.appSwitch === 'on') return;
@@ -205,6 +295,7 @@
                 reset({ animate: false });
             }
         });
+        scheduleHint();
     }
 
     app.features.appSwitch = {
@@ -214,6 +305,9 @@
         commitDistance,
         progress,
         shouldCommit,
+        shouldShowHint,
+        HINT_KEY,
+        HINT_TIMES,
         init,
     };
 
