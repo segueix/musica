@@ -13074,8 +13074,10 @@ html body #watchPage #channelInfo .video-metadata-bar :is(#playlistBtn, #shareBt
 }
 
 @media (min-width: 769px) {
-    html body #watchPage #channelInfo #shareBtn {
-        padding: 0 14px 0 10px;
+    /* Amb .video-metadata-bar: la regla comuna dels tres botons (padding: 0) és més específica i el deixava sense aire */
+    html body #watchPage #channelInfo .video-metadata-bar #shareBtn {
+        gap: 8px;
+        padding: 0 18px 0 14px;
     }
 
     #watchPage .watch-btn-label {

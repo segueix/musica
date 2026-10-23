@@ -80,6 +80,12 @@ describe('fitxa de la cançó condensada', () => {
             expect(app).toContain("titleElement.title = title || '';");
         });
 
+        it('«Comparteix» té aire a banda i banda (la regla comuna dels botons no el deixa a 0)', () => {
+            expect(css).toMatch(
+                /html body #watchPage #channelInfo \.video-metadata-bar #shareBtn \{[^}]*padding: 0 18px 0 14px;/
+            );
+        });
+
         it('reproductor més ample (16:9) i cua més estreta', () => {
             expect(block).toMatch(/--wc-q: clamp\(340px, 31vw, 460px\);/);
             expect(block).toMatch(/grid-template-columns: minmax\(0, 1fr\) auto var\(--wc-q\);/);
