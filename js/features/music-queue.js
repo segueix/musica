@@ -1840,6 +1840,8 @@
         const current = activePlaylistQueue[currentPlaylistIndex];
         if (!current) return false;
 
+        app.utils.publicRoutes?.syncCollection?.(String(current.id));
+
         const upcoming = activePlaylistQueue.slice(currentPlaylistIndex + 1);
         const unavailablePast = activePlaylistQueue.slice(0, currentPlaylistIndex)
             .map((video, index) => ({ video, index }))

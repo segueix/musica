@@ -25,6 +25,8 @@ describe('domini públic de totes les comparticions', () => {
                 place: { name: 'Vic', territory: 'Catalunya', coordinates: { latitude: 41.93, longitude: 2.25 } } });
             const url = new URL(codec.buildImportUrl(payload));
             expect(url.origin).toBe(origin);
+            expect(url.pathname).toBe(type === 'playlist' ? '/llista/musica-de-vic/'
+                : ['radio', 'nearby'].includes(type) ? '/radio/radio-musica-de-vic/' : '/');
             expect(codec.decodeImportPayload(url.searchParams.get('importData'))).toEqual(payload);
             for (const slug of ['radio-vic', '']) {
                 const radio = new URL(codec.buildRadioPageUrl(slug, url.href));

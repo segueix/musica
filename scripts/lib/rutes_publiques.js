@@ -16,4 +16,8 @@ function videoRewrite(base) {
     return `${base}video/:title/:id/ ${base}compartir/canco/:id 200`;
 }
 
-module.exports = { videoRoute, publicFile, videoRewrite };
+function collectionRewrites(base) {
+    return [`${base}radio/:name/ ${base} 200`, `${base}llista/:name/ ${base} 200`].join('\n');
+}
+
+module.exports = { videoRoute, publicFile, videoRewrite, collectionRewrites };

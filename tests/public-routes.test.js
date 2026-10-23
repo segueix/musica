@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { loadScript } from './setup.js';
 
-function boot({ base = '/', delayed = false, ok = true } = {}) {
+function boot({ base = '/', delayed = false, ok = true, collection = null } = {}) {
     const location = { pathname: base, search: '' };
     const pages = { watchPage: false, channelPage: false };
     const apply = (state, _, url) => {
@@ -16,9 +16,11 @@ function boot({ base = '/', delayed = false, ok = true } = {}) {
     const response = { ok, json: async () => routes };
     const fetch = vi.fn(() => delayed ? new Promise(resolve => { release = () => resolve(response); }) : Promise.resolve(response));
     const ctx = loadScript('js/utils/public-routes.js', { SEGUEIX_STATIC_SITE: true, fetch, location, history,
-        SegueixApp: { utils: { appBasePath: () => base } },
+        SegueixApp: { utils: { appBasePath: () => base,
+            shareCodecs: loadScript('js/utils/share-codecs.js').SegueixApp.utils.shareCodecs },
+            features: { musicQueue: { getShareData: () => collection } } },
         document: { getElementById: id => ({ classList: { contains: () => pages[id] } }) } });
-    return { api: ctx.SegueixApp.utils.publicRoutes, location, history, routes, pages, fetch, release: () => release() };
+    return { api: ctx.SegueixApp.utils.publicRoutes, location, history, routes, pages, fetch, release: () => release(), setCollection: value => { collection = value; } };
 }
 
 describe('navegació amb les adreces del catàleg publicat', () => {
@@ -64,5 +66,41 @@ describe('navegació amb les adreces del catàleg publicat', () => {
         const b = boot({ ok: false }); await b.api.load();
         b.api.open('videos', 'song0000001'); await b.api.load();
         expect(b.location.search).toBe('?v=song0000001');
+    });
+});
+
+
+describe('adreces amb nom de les llistes i ràdios', () => {
+    it.each(['/', '/musica/'])('manté el nom, la cançó i el punt de reproducció: %s', async base => {
+        const b = boot({ base, collection: { type: 'playlist', name: 'Cançons d’estiu', playlistId: 'list-42' } });
+        await b.api.load();
+        b.api.open('videos', 'song0000001', { startAt: 73 });
+        expect(b.location.pathname).toBe(base + 'llista/cancons-d-estiu/');
+        expect(b.location.search).toBe('?v=song0000001&playlist=list-42&t=73');
+        b.setCollection({ type: 'radio', name: 'Pop català' });
+        b.api.syncCollection('song0000001');
+        expect(b.location.pathname).toBe(base + 'radio/radio-pop-catala/');
+        expect(b.location.search).toBe('?v=song0000001&t=73');
+        expect(b.history.pushState).toHaveBeenCalledTimes(1);
+        b.api.open('videos', 'song0000002');
+        expect(b.location.pathname).toBe(base + 'radio/radio-pop-catala/');
+        expect(b.location.search).toBe('?v=song0000002');
+    });
+    it('un mapa tardà no elimina el nom de la ràdio creada per a la mateixa cançó', async () => {
+        const b = boot({ delayed: true });
+        b.api.open('videos', 'song0000001');
+        b.setCollection({ type: 'radio', name: 'Bèrnia' });
+        b.api.syncCollection('song0000001');
+        b.release(); await b.api.load();
+        expect(b.location.pathname).toBe('/radio/radio-bernia/');
+    });
+    it('no canvia l’adreça de la portada quan el reproductor és flotant', async () => {
+        const b = boot({ collection: { type: 'radio', name: 'Pop' } });
+        await b.api.load();
+        b.api.open('videos', 'song0000001');
+        b.pages.watchPage = true;
+        b.location.pathname = '/'; b.location.search = '';
+        b.api.syncCollection('song0000001');
+        expect(b.location.pathname).toBe('/');
     });
 });

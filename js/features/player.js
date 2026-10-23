@@ -479,6 +479,7 @@
         if (!isReadableVideoPath(window.location.pathname) && !params.has('v')) return;
         params.delete('v');
         params.delete('t');
+        params.delete('playlist');
         const query = params.toString();
         const hash = APP_SECTION_HASHES.has(window.location.hash) ? window.location.hash : '';
         try {

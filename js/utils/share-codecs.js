@@ -128,7 +128,14 @@
     function buildImportUrl(payload) {
         const encoded = encodeImportPayload(payload);
         if (!encoded) return null;
-        return `${SHARE_BASE_URL}?importData=${encoded}`;
+        return `${SHARE_BASE_URL}${collectionPath(payload.type, payload.name)}?importData=${encoded}`;
+    }
+
+    // La ruta porta el nom; el payload conserva els IDs i les dades de la compartició.
+    function collectionPath(type, name) {
+        if (type === 'playlist') return `llista/${radioShareSlug(name) || 'llista'}/`;
+        if (type === 'radio' || type === 'nearby') return `radio/${radioShareSlug(radioShareTitle(name)) || 'radio'}/`;
+        return '';
     }
 
     // ---------- Ràdios: títol i pàgina de previsualització ----------
@@ -197,6 +204,7 @@
         encodeImportPayload,
         decodeImportPayload,
         buildImportUrl,
+        collectionPath,
         buildAppShareUrl,
         buildEntityShareUrl,
         parseShareStartSeconds,

@@ -1083,6 +1083,13 @@ async function openPendingDeepLinkVideo() {
     deepLinkVideoHandled = true;
 
     if (restoreReloadedQueue(videoId)) return;
+    const playlistId = new URLSearchParams(window.location.search).get('playlist');
+    const storedList = playlistId && SegueixApp.features.library?.getPlaylists?.().find(list => list.id === playlistId);
+    if (storedList?.videos?.length) {
+        const index = storedList.videos.findIndex(video => String(video?.id || video) === String(videoId));
+        await startPlaylistPlayback(playlistId, Math.max(0, index), { startAt, replaceHistory: true });
+        return;
+    }
 
     try {
         let urlVideo = null;
@@ -9057,7 +9064,7 @@ function playPlaylist(playlistId) {
     startPlaylistPlayback(playlistId);
 }
 
-async function startPlaylistPlayback(playlistId, startIndex = 0) {
+async function startPlaylistPlayback(playlistId, startIndex = 0, playbackOptions = {}) {
     const playlist = await hydrateStoredPlaylist(playlistId);
     if (!playlist || !Array.isArray(playlist.videos) || playlist.videos.length === 0) {
         return;
@@ -9067,7 +9074,7 @@ async function startPlaylistPlayback(playlistId, startIndex = 0) {
     currentPlaylistIndex = Number.isInteger(startIndex) && startIndex >= 0 && startIndex < playlist.videos.length ? startIndex : 0;
     activePlaylistId = playlist.id;
     activePlaylistName = playlist.name || 'Llista';
-    loadVideoInSequence({ autoPlay: false });
+    loadVideoInSequence({ ...playbackOptions, autoPlay: false });
 }
 
 function loadVideoInSequence({ autoPlay = true, replaceHistory = false, startAt = 0 } = {}) {

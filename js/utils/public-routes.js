@@ -33,19 +33,33 @@
         const fallback = `${base()}?${video ? 'v' : 'channel'}=${encodeURIComponent(id)}`;
         const time = video && startAt > 0 ? Math.floor(startAt) : 0;
         const withTime = url => url + (time ? `${url.includes('?') ? '&' : '?'}t=${time}` : '');
-        const target = withTime(href(kind, id) || fallback);
+        const collection = video ? app.features?.musicQueue?.getShareData?.() : null;
+        const collectionPath = collection && window.SEGUEIX_STATIC_SITE
+            ? app.utils.shareCodecs?.collectionPath(collection.type, collection.name) : '';
+        const playlist = collection?.type === 'playlist' && collection.playlistId
+            ? `&playlist=${encodeURIComponent(collection.playlistId)}` : '';
+        const target = withTime(collectionPath ? `${base()}${collectionPath}?v=${encodeURIComponent(id)}${playlist}` : href(kind, id) || fallback);
         const state = { [key]: id };
         const same = window.location.pathname + window.location.search === target;
         window.history[replaceHistory || same ? 'replaceState' : 'pushState'](state, '', target);
         // Si el mapa arriba tard, només actualitzem la mateixa vista: mai la cançó següent ni la portada.
+        if (collectionPath) return;
         void load().then(() => {
             const page = window.document.getElementById(video ? 'watchPage' : 'channelPage');
             if (!page || page.classList.contains('hidden') || window.history.state?.[key] !== id) return;
+            if (window.location.pathname + window.location.search !== target) return;
             const url = href(kind, id);
             if (url) window.history.replaceState(state, '', withTime(url));
         });
     }
 
-    app.utils.publicRoutes = { load, href, open };
+    function syncCollection(id) {
+        const page = window.document.getElementById('watchPage');
+        if (!page || page.classList.contains('hidden') || window.history.state?.videoId !== id) return;
+        const params = new URLSearchParams(window.location.search);
+        open('videos', id, { startAt: Number(params.get('t')) || 0, replaceHistory: true });
+    }
+
+    app.utils.publicRoutes = { load, href, open, syncCollection };
     void load();
 })(window);
