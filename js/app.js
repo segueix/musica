@@ -4904,16 +4904,8 @@ function canAutoApplyAppUpdate() {
 }
 
 async function initAppUpdater() {
-    const updateBadge = document.getElementById('updateBadge');
-
-    const showUpdateNotice = () => {
-        if (updateBadge) updateBadge.style.display = 'block';
-    };
-
-    const hideUpdateNotice = () => {
-        if (updateBadge) updateBadge.style.display = 'none';
-    };
-
+    // 2026-10-23 (a petició de l'usuari): ja no hi ha el punt d'«hi ha una versió nova» sobre la configuració
+    // (#updateBadge). Una versió nova s'aplica sola quan l'app passa a segon pla (canAutoApplyAppUpdate()).
     refreshIcons();
 
     if (!('serviceWorker' in navigator)) return;
@@ -4922,29 +4914,23 @@ async function initAppUpdater() {
         // Si no hi havia controller en carregar, un controllerchange és la primera
         // instal·lació del SW i MAI ha de provocar una recàrrega.
         const hadControllerOnLoad = Boolean(navigator.serviceWorker.controller);
-        let userRequestedUpdate = false;
         let reloadWhenHidden = false;
 
         swRegistration = await navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' });
 
-        const applyUpdate = ({ explicit = false } = {}) => {
+        const applyUpdate = () => {
             const waiting = swRegistration?.waiting;
             if (!waiting) return false;
-            if (explicit) userRequestedUpdate = true;
             waiting.postMessage({ type: 'SKIP_WAITING' });
             return true;
         };
 
         // Política anti-refresc inesperat:
-        // - visible: mai activem el SW nou; només mostrem l'avís;
+        // - visible: mai activem el SW nou (s'espera al segon pla);
         // - ocult/segon pla: el podem activar sense interrompre l'usuari.
         const handleWaitingWorker = () => {
             if (!swRegistration?.waiting || !hadControllerOnLoad) return;
-            if (canAutoApplyAppUpdate()) {
-                applyUpdate();
-            } else {
-                showUpdateNotice();
-            }
+            if (canAutoApplyAppUpdate()) applyUpdate();
         };
 
         const bindInstallingWorker = worker => {
@@ -4962,22 +4948,10 @@ async function initAppUpdater() {
         });
 
         // Si ja hi havia una actualització esperant en obrir l'app, NO la forcem.
-        // L'usuari pot començar a tocar/fer scroll immediatament: simplement mostrem el punt.
+        // L'usuari pot començar a tocar/fer scroll immediatament: s'aplicarà quan l'app passi a segon pla.
         if (swRegistration.waiting && hadControllerOnLoad) {
             handleWaitingWorker();
         }
-
-        const updateBadgeButton = updateBadge?.closest('button');
-        updateBadgeButton?.addEventListener(
-            'click',
-            event => {
-                if (updateBadge?.style.display === 'none' || !swRegistration?.waiting) return;
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                applyUpdate({ explicit: true });
-            },
-            true
-        );
 
         const checkForUpdate = () => {
             swRegistration?.update().catch(() => {});
@@ -5005,18 +4979,13 @@ async function initAppUpdater() {
         navigator.serviceWorker.addEventListener('controllerchange', () => {
             if (isSwRefreshing) return;
 
-            if (!hadControllerOnLoad) {
-                hideUpdateNotice();
-                return;
-            }
+            if (!hadControllerOnLoad) return;
 
             isSwRefreshing = true;
-            hideUpdateNotice();
 
-            // Només recarreguem immediatament si l'usuari ho ha demanat o si l'app
-            // ja és en segon pla. Qualsevol altre controllerchange queda ajornat:
-            // cap toc, scroll, play o buffering pot fer "saltar" l'app.
-            if (userRequestedUpdate || canAutoApplyAppUpdate()) {
+            // Només recarreguem immediatament si l'app ja és en segon pla. Qualsevol altre controllerchange queda
+            // ajornat: cap toc, scroll, play o buffering pot fer "saltar" l'app.
+            if (canAutoApplyAppUpdate()) {
                 window.location.reload();
                 return;
             }

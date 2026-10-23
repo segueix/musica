@@ -1,7 +1,8 @@
 // Verificació en navegador real del pas a Segueix! dels youtubers (2026-10-23, js/features/app-switch.js):
 // - mòbil (390 px): la icona de YouTuber és a dalt de tot a la dreta; lliscar el dit cap a l'esquerra o la dreta pel mig de la pantalla obre segueix.cat; un gest curt,
 //   vertical, des de la vora o damunt d'una filera amb scroll lateral no fa res;
-// - ordinador (1280 px): la icona de YouTuber és la de més a la dreta de la capçalera i obre segueix.cat.
+// - ordinador (1280 px): la icona de YouTuber és la de més a la dreta de la capçalera i obre segueix.cat;
+// - l'avís de la mà que llisca («Segueix! YouTubers») surt les tres primeres vegades al mòbil, uns 3 s, i mai a l'ordinador.
 // segueix.cat se substitueix per una pàgina local (no es surt a la xarxa).
 //
 // NO forma part de `npm test`: és una eina opt-in. Requisits: playwright-core i un Chromium (CHROMIUM_PATH).
@@ -195,6 +196,78 @@ async function mobil(browser, errors) {
     await context.close();
 }
 
+// L'avís de les primeres vegades: una mà que llisca i «Segueix! YouTubers», uns 3 s, només les tres primeres obertures
+async function esperaAvis(page, timeout = 9000) {
+    return page
+        .waitForSelector('.app-switch-hint.is-visible', { timeout })
+        .then(() => true)
+        .catch(() => false);
+}
+
+async function avis(browser, errors) {
+    const { context, page } = await obre(browser, 390, errors);
+    // obre() ja espera 3,5 s: l'avís pot haver sortit; es torna a obrir la pàgina per mesurar-lo des del principi
+    await page.evaluate(() => localStorage.removeItem('catube_app_switch_hint_v1'));
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    const t0 = Date.now();
+    const surt = await esperaAvis(page);
+    const quan = Date.now() - t0;
+    if (SHOTS) {
+        await page.waitForTimeout(500);
+        await page.screenshot({ path: path.join(SHOTS, 'pas-avis.png') });
+    }
+    const contingut = await page.evaluate(() => {
+        const hint = document.querySelector('.app-switch-hint');
+        const hand = hint?.querySelector('.app-switch-hint__hand');
+        return {
+            text: hint?.querySelector('strong')?.textContent,
+            ma: Boolean(hand),
+            traçBlanc: hand ? getComputedStyle(hand).stroke : '',
+            esTocable: hint ? getComputedStyle(hint).pointerEvents : '',
+            animacio: hand ? getComputedStyle(hand).animationName : '',
+        };
+    });
+    const t1 = Date.now();
+    await page
+        .waitForFunction(() => !document.querySelector('.app-switch-hint'), null, { timeout: 6000 })
+        .catch(() => null);
+    const dura = Date.now() - t1 + 500;
+    comprovar(
+        'avís (mòbil): a la primera obertura surt la mà blanca que llisca amb «Segueix! YouTubers» i marxa al cap d’uns 3 s',
+        surt &&
+            contingut.text === 'Segueix! YouTubers' &&
+            contingut.ma &&
+            contingut.traçBlanc === 'rgb(255, 255, 255)' &&
+            contingut.esTocable === 'none' &&
+            contingut.animacio === 'app-switch-hint-swipe' &&
+            dura >= 2000 &&
+            dura <= 4200,
+        { quan, dura, ...contingut }
+    );
+    const vegades = [];
+    for (let i = 0; i < 3; i += 1) {
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        vegades.push(await esperaAvis(page));
+        await page
+            .waitForFunction(() => !document.querySelector('.app-switch-hint'), null, { timeout: 6000 })
+            .catch(() => null);
+    }
+    const compte = await page.evaluate(() => localStorage.getItem('catube_app_switch_hint_v1'));
+    comprovar(
+        'avís (mòbil): només les tres primeres vegades que s’obre l’app',
+        vegades.join() === 'true,true,false' && compte === '3',
+        { vegades, compte }
+    );
+    await context.close();
+
+    const ordinador = await obre(browser, 1280, errors);
+    await ordinador.page.evaluate(() => localStorage.removeItem('catube_app_switch_hint_v1'));
+    await ordinador.page.reload({ waitUntil: 'domcontentloaded' });
+    const aOrdinador = await esperaAvis(ordinador.page, 7000);
+    comprovar('avís: a l’ordinador no surt', !aOrdinador, aOrdinador);
+    await ordinador.context.close();
+}
+
 async function escriptori(browser, errors) {
     const { context, page } = await obre(browser, 1280, errors);
     const info = await page.evaluate(() => {
@@ -235,6 +308,7 @@ async function main() {
     try {
         await mobil(browser, errors);
         await escriptori(browser, errors);
+        await avis(browser, errors);
         comprovar('cap error de JavaScript', errors.length === 0, errors.slice(0, 3));
     } finally {
         await browser.close();

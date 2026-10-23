@@ -73,4 +73,19 @@ describe('pas a Segueix! dels youtubers', () => {
         expect(html).not.toContain('brand-cloud');
         expect(css).not.toContain('brand-cloud');
     });
+
+    it('avís de la mà que llisca: només les tres primeres vegades, uns 3 s, al mòbil i sense poder-lo tocar', () => {
+        expect(sw.HINT_KEY).toBe('catube_app_switch_hint_v1');
+        expect(sw.HINT_TIMES).toBe(3);
+        expect(sw.shouldShowHint(0)).toBe(true);
+        expect(sw.shouldShowHint(2)).toBe(true);
+        expect(sw.shouldShowHint(3)).toBe(false);
+        const source = readFileSync('js/features/app-switch.js', 'utf8');
+        expect(source).toContain('const HINT_MS = 3000;');
+        expect(source).toContain('<strong>Segueix! YouTubers</strong>');
+        const block = css.slice(css.indexOf("/* ---------- Avís del gest per canviar d'app"));
+        expect(block).toMatch(/\.app-switch-hint \{[^}]*pointer-events: none;/);
+        expect(block).toMatch(/\.app-switch-hint__hand \{[^}]*stroke: #fff;[^}]*animation: app-switch-hint-swipe/);
+        expect(block).toMatch(/@media \(min-width: 769px\) \{\s*\.app-switch-hint \{\s*display: none;/);
+    });
 });
