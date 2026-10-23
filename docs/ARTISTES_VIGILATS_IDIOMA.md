@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-22T20:15:28.454Z. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-23T18:16:18.374Z. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -54,7 +54,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Brams | Brams - Topic | `UCuk-lO3FpbukFk5lcPx29_g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Buhos | Buhos - Topic | `UCyR3Vf_s-Mo30j6oqN4Aq_w`, `UClt-kDY-yDORa6XkI5leFjg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Cactus Troop | Cactus, CACTUS | `UCcerGnBUfuDhx0QwW2Ua9tA` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
-| Ceaxe | Ceaxe - Topic | `UCBKjT0edCSrQhqufwWaX5Zw`, `UCu05DiznV7Z3jDMGr6w5WTQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Ceaxe | Ceaxe - Topic | `UCBKjT0edCSrQhqufwWaX5Zw`, `UCu05DiznV7Z3jDMGr6w5WTQ` | Exclusions editorials prèvies per llengua. El 2026-10-23 l’editor demana retirar EXCLUSIVAAA, Mykonos i Como Siempre i mantenir la vigilància de les noves incorporacions dels canals oficial i Tema. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Crim | Crim - Topic | `UCJhcsyqAVHFHmghWFkmIx4w`, `UCZ7V4w0VrZPSM21CiYNuk7g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Cristina Monllau |  | `UCw1jsv2eynibpElkwzdJa2g` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Daveu | DAVEU)), DAVEU - Topic, DAVEU | `UCFRzEt990b8xiMQ9soWNegw`, `UCQgDn86_83DIsAggpRadifg` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
