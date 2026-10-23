@@ -9,7 +9,7 @@
         if (!window.SEGUEIX_STATIC_SITE) return Promise.resolve(null);
         if (routes) return Promise.resolve(routes);
         if (!pending) {
-            pending = window.fetch(base() + 'data/static-routes.json', { cache: 'no-cache' })
+            pending = window.fetch(base() + 'data/static-routes.json?v=20261023-readable-routes-1', { cache: 'no-cache' })
                 .then(response => {
                     if (!response.ok) throw new Error('Rutes no disponibles');
                     return response.json();

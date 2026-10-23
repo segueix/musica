@@ -13,7 +13,7 @@ function publicFile(route) {
 }
 
 function videoRewrite(base) {
-    return `${base}video/:title/:id/ ${base}compartir/canco/:id.html 200`;
+    return `${base}video/:title/:id/ ${base}compartir/canco/:id 200`;
 }
 
 module.exports = { videoRoute, publicFile, videoRewrite };

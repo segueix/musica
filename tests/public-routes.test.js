@@ -36,7 +36,7 @@ describe('navegació amb les adreces del catàleg publicat', () => {
         expect(b.history.pushState).toHaveBeenCalledTimes(2);
         expect(b.history.replaceState).toHaveBeenCalled();
         expect(b.fetch).toHaveBeenCalledTimes(1);
-        expect(b.fetch).toHaveBeenCalledWith(base + 'data/static-routes.json', { cache: 'no-cache' });
+        expect(b.fetch).toHaveBeenCalledWith(base + 'data/static-routes.json?v=20261023-readable-routes-1', { cache: 'no-cache' });
     });
     it('el mapa tardà només reemplaça la cançó que encara està oberta', async () => {
         const b = boot({ delayed: true });

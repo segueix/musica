@@ -151,7 +151,7 @@ function build(root, options = {}) {
 <meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${escape(canonical)}">
 <meta property="og:image" content="${escape(picture || url('img/compartir.png'))}"><meta property="og:image:alt" content="${escape(title)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escape(title)}"><meta name="twitter:description" content="${escape(description)}"><meta name="twitter:image" content="${escape(picture || url('img/compartir.png'))}">
-<link rel="stylesheet" href="${basePath}css/static-seo.css"><script defer src="${basePath}js/static-seo.js"></script>
+<link rel="stylesheet" href="${basePath}css/static-seo.css"><script defer src="${basePath}js/static-seo.js?v=20261023-readable-routes-1"></script>
 ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</head>
 <body><header><a class="brand" href="${basePath}">Segueix <span>Música</span></a><nav aria-label="Principal"><a href="${basePath}creadors/">Artistes</a><a href="${basePath}novetats/">Novetats</a><a href="${basePath}descobreix/">Estils</a></nav></header>
 <main><p class="eyebrow">La teva plaça musical en català</p><h1>${escape(title)}</h1><p class="lead">${escape(description)}</p>${body}</main>

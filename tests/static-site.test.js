@@ -40,7 +40,7 @@ describe('generació estàtica de Música', () => {
         const routes = JSON.parse(readFileSync(join(out, 'data/static-routes.json')));
         expect(routes.videos.song0000001).toBe('video/canco-nova-llum/song0000001/');
         expect(routes.videos.song0000005).toBe('video/canco-nova-llum/song0000005/');
-        expect(readFileSync(join(out, '_redirects'), 'utf8')).toBe('/video/:title/:id/ /compartir/canco/:id.html 200\n');
+        expect(readFileSync(join(out, '_redirects'), 'utf8')).toBe('/video/:title/:id/ /compartir/canco/:id 200\n');
         expect(existsSync(join(out, 'video'))).toBe(false);
         const html = readFileSync(join(out, publicFile(routes.videos.song0000001)), 'utf8');
         expect(html).toContain('href="https://musica.segueix.cat/video/canco-nova-llum/song0000001/"');
