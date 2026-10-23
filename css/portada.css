@@ -13362,16 +13362,10 @@ body .mq .mq-item.is-active .mq-title {
 
 /* ==========================================================================
    Pas a Segueix! dels youtubers (2026-10-23, js/features/app-switch.js)
-   Ordinador i tauleta: una icona de YouTuber (persona + pantalla amb play) a dalt de tot a la dreta, que obre
-   segueix.cat. Mòbil: no hi és; lliscant el dit cap a un costat pel mig de la pantalla entra el panell .app-switch des
+   A totes les mides: una icona de YouTuber (persona + pantalla amb play) a dalt de tot a la dreta, que obre
+   segueix.cat. Al mòbil, a més, lliscant el dit cap a un costat pel mig de la pantalla entra el panell .app-switch des
    del costat contrari, seguint el dit, i en deixar-lo anar passat el llindar s'obre segueix.cat.
    ========================================================================== */
-@media (max-width: 768px) {
-    .app-header #appSwitchLink {
-        display: none;
-    }
-}
-
 @media (min-width: 769px) {
     #headerActions #appSwitchLink:hover {
         color: var(--pt-accent);
@@ -13458,5 +13452,130 @@ body .mq .mq-item.is-active .mq-title {
 @media (prefers-reduced-motion: reduce) {
     .app-switch {
         transition: none;
+    }
+}
+
+/* ---------- Mòbil: «Segueix!» i «Música» en dues línies i «català» en un núvol (2026-10-23) ----------
+   Amb la icona de YouTuber a dalt a la dreta, la capçalera del mòbil porta cinc icones i la marca s'havia de fer massa
+   petita. Ara «Música» va sota «Segueix!» (la marca és la meitat d'ampla), «En català» no surt i, en lloc seu, la
+   paraula «català» va en un núvol terracota que sura damunt del logo (com si el cor la pensés). Les icones de dalt
+   fan 40 px d'ample (44 d'alt) amb 2 px entre elles. A l'ordinador no canvia res. */
+.brand-cloud {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .app-header .brand {
+        position: relative;
+        overflow: visible;
+    }
+
+    .app-header .brand-copy {
+        overflow: hidden;
+    }
+
+    /* Bloc (no flex): així «Música» pot anar a la línia de sota sense separar «Segueix» de «!» */
+    .app-header .brand-name {
+        display: block;
+        font-size: min(1.0625rem, calc((100cqi - 40px) / 4.4));
+        line-height: 1.02;
+        white-space: nowrap;
+    }
+
+    .app-header .brand-name .brand-music {
+        display: block;
+        margin-left: 0;
+    }
+
+    .app-header .brand-tag {
+        display: none;
+    }
+
+    .app-header .brand-cloud {
+        position: absolute;
+        top: -9px;
+        left: -5px;
+        z-index: 1;
+        display: block;
+        padding: 1px 6px 2px;
+        border-radius: var(--pt-radius-pill);
+        background: var(--pt-terracotta);
+        color: var(--pt-bg);
+        font-size: 0.5625rem;
+        font-weight: 800;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        pointer-events: none;
+        animation: brand-cloud-float 3.6s ease-in-out infinite;
+    }
+
+    /* Les bombolletes del núvol, cap al logo */
+    .app-header .brand-cloud::before,
+    .app-header .brand-cloud::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background: var(--pt-terracotta);
+    }
+
+    .app-header .brand-cloud::before {
+        bottom: -4px;
+        left: 15px;
+        width: 5px;
+        height: 5px;
+    }
+
+    .app-header .brand-cloud::after {
+        bottom: -7px;
+        left: 19px;
+        width: 3px;
+        height: 3px;
+    }
+
+    /* 320 px: sense logo, el núvol sura just damunt de «Segueix!», sense tocar-lo */
+    @container (max-width: 109px) {
+        .app-header .brand-name {
+            font-size: min(1rem, calc(100cqi / 4.4));
+        }
+
+        .app-header .brand-cloud {
+            top: -12px;
+            left: auto;
+            right: 0;
+        }
+
+        .app-header .brand-cloud::before,
+        .app-header .brand-cloud::after {
+            content: none;
+        }
+    }
+
+    .app-header .actions {
+        gap: 2px;
+    }
+
+    .app-header .actions .icon-btn,
+    .app-header .mobile-search-toggle {
+        width: 40px;
+        min-width: 40px;
+    }
+}
+
+@keyframes brand-cloud-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-header .brand-cloud {
+        animation: none;
     }
 }

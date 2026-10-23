@@ -41,17 +41,34 @@ describe('pas a Segueix! dels youtubers', () => {
         expect(sw.progress(-500, 390)).toBe(1);
     });
 
-    it('a l’ordinador hi ha la icona de YouTuber a dalt de tot a la dreta; al mòbil no', () => {
+    it('la icona de YouTuber és a dalt de tot a la dreta, també al mòbil', () => {
         const header = html.slice(
             html.indexOf('<nav class="actions" id="headerActions"'),
             html.indexOf('</nav>', html.indexOf('id="headerActions"'))
         );
-        const link = header.indexOf('id="appSwitchLink"');
-        expect(link).toBeGreaterThan(header.indexOf('id="backgroundBtn"'));
+        expect(header.indexOf('id="appSwitchLink"')).toBeGreaterThan(header.indexOf('id="backgroundBtn"'));
         expect(header).toMatch(/id="appSwitchLink" href="https:\/\/segueix\.cat\/"/);
-        expect(css).toMatch(/@media \(max-width: 768px\) \{\s*\.app-header #appSwitchLink \{\s*display: none;/);
+        expect(header).toContain('title="Segueix! · Els nostres YouTubers"');
+        expect(css).not.toMatch(/\.app-header #appSwitchLink \{\s*display: none;/);
         expect(html).toMatch(
             /js\/features\/youtube-subscribe\.js[^"]*"><\/script>\s*<script defer src="js\/features\/app-switch\.js/
         );
+    });
+
+    it('el panell del gest diu «Els nostres YouTubers»', () => {
+        const source = readFileSync('js/features/app-switch.js', 'utf8');
+        expect(source).toContain('<span>Els nostres YouTubers</span>');
+        expect(source).not.toContain('Els youtubers en català');
+    });
+
+    it('mòbil: «Música» sota «Segueix!», sense «En català» i amb «català» en un núvol damunt del logo', () => {
+        const block = css.slice(css.indexOf('/* ---------- Mòbil: «Segueix!» i «Música» en dues línies'));
+        expect(html).toContain('<span class="brand-cloud" aria-hidden="true">català</span>');
+        expect(block).toMatch(/\.app-header \.brand-name \.brand-music \{\s*display: block;/);
+        expect(block).toMatch(/\.app-header \.brand-tag \{\s*display: none;/);
+        expect(block).toMatch(/\.app-header \.brand-cloud \{[^}]*position: absolute;[^}]*animation: brand-cloud-float/);
+        expect(block).toMatch(/prefers-reduced-motion: reduce\) \{\s*\.app-header \.brand-cloud \{\s*animation: none;/);
+        // A l'ordinador no hi ha núvol
+        expect(css).toMatch(/\.brand-cloud \{\s*display: none;\s*\}/);
     });
 });

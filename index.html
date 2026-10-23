@@ -51,7 +51,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css?v=20261018-sempre-radio">
-    <link rel="stylesheet" href="css/portada.css?v=20261023-pas-youtubers">
+    <link rel="stylesheet" href="css/portada.css?v=20261023-marca-nuvol">
     <!-- Aquests retocs ja són necessaris al primer dibuix, no després d’app.js. -->
     <link id="categoryChipStylesheet" rel="stylesheet" href="css/category-chips.css">
     <link id="typographyPolishStylesheet" rel="stylesheet" href="css/typography-polish.css">
@@ -143,6 +143,8 @@
             <span class="brand-copy">
                 <span class="brand-name">Segueix<span class="brand-bang">!</span> <span class="brand-music">Música</span></span>
                 <span class="brand-tag">En català</span>
+                <!-- Mòbil: «català» en un núvol que sura damunt del logo (portada.css, «Mòbil: «Segueix!» i «Música» en dues línies…») -->
+                <span class="brand-cloud" aria-hidden="true">català</span>
             </span>
         </a>
 
@@ -191,9 +193,9 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 8.5 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 8.5a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15.5 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9c.14.37.35.7.6 1 .3.3.69.47 1.1.5H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51.5Z"/></svg>
                 <span id="updateBadge" class="pt-update-dot" role="img" aria-label="Hi ha una versió nova: prem per actualitzar" style="display:none;"></span>
             </button>
-            <!-- Pas a Segueix! dels youtubers (js/features/app-switch.js): a l'ordinador i la tauleta, a dalt de tot a la dreta.
-                 Al mòbil no es veu: s'hi va lliscant el dit cap a un costat pel mig de la pantalla. -->
-            <a class="icon-btn pt-head-switch" id="appSwitchLink" href="https://segueix.cat/" aria-label="Segueix!: els youtubers en català (segueix.cat)" title="Segueix! · Els youtubers en català">
+            <!-- Pas a Segueix! dels youtubers (js/features/app-switch.js): a dalt de tot a la dreta, també al mòbil (on també
+                 s'hi va lliscant el dit cap a un costat pel mig de la pantalla). -->
+            <a class="icon-btn pt-head-switch" id="appSwitchLink" href="https://segueix.cat/" aria-label="Segueix!: els nostres YouTubers (segueix.cat)" title="Segueix! · Els nostres YouTubers">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="7.5" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2.5 20v-1.5A5.5 5.5 0 0 1 8 13h2"/><rect x="12.5" y="12" width="9.5" height="8" rx="2.2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="m16 14.4 3.4 1.6-3.4 1.6v-3.2Z"/></svg>
             </a>
         </nav>
@@ -1067,7 +1069,7 @@
     <script defer src="js/features/my-music.js?v=20261016-caratules"></script>
     <script defer src="js/features/shell-nav.js?v=20261023-capcalera-1"></script>
     <script defer src="js/features/youtube-subscribe.js?v=20261023-mobil-controls"></script>
-    <script defer src="js/features/app-switch.js?v=20261023-1"></script>
+    <script defer src="js/features/app-switch.js?v=20261023-2"></script>
     <script defer src="js/features/app-install.js?v=20261017-guia-sistemes"></script>
     <script defer src="js/features/nearby-radio.js?v=20261016-mapa-zona"></script>
     <script defer src="js/features/hits-chart.js?v=20261022-llista-exits-scroll"></script>

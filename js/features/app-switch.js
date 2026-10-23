@@ -1,7 +1,7 @@
 // ========== PAS A SEGUEIX! (ELS YOUTUBERS) ==========
 // Segueix! Música (musica.segueix.cat) i Segueix! dels youtubers (segueix.cat) són dues apps germanes (2026-10-23).
-// - Ordinador i tauleta: la icona de YouTuber de dalt a la dreta de la capçalera (#appSwitchLink, un enllaç normal).
-// - Mòbil: lliscar el dit cap a l'esquerra o la dreta pel mig de la pantalla fa entrar un panell «Segueix!» des del
+// - Totes les mides: la icona de YouTuber de dalt de tot a la dreta de la capçalera (#appSwitchLink, un enllaç normal).
+// - Mòbil, a més: lliscar el dit cap a l'esquerra o la dreta pel mig de la pantalla fa entrar un panell «Segueix!» des del
 //   costat que segueix el dit; si es deixa anar passat el llindar, s'obre segueix.cat (a la mateixa pestanya).
 // El gest no s'activa des de les vores (hi ha l'enrere del sistema), ni damunt de fileres amb scroll lateral, el
 // mapa, camps de text o finestres obertes, ni si el moviment és sobretot vertical (fer scroll de la pàgina).
@@ -109,7 +109,7 @@
         const panel = doc.createElement('div');
         panel.className = 'app-switch';
         panel.setAttribute('aria-hidden', 'true');
-        panel.innerHTML = `<div class="app-switch__card">${ICON}<strong>Segueix!</strong><span>Els youtubers en català</span><em class="app-switch__go">Deixa anar per anar-hi</em></div>`;
+        panel.innerHTML = `<div class="app-switch__card">${ICON}<strong>Segueix!</strong><span>Els nostres YouTubers</span><em class="app-switch__go">Deixa anar per anar-hi</em></div>`;
         doc.body.appendChild(panel);
         state.panel = panel;
         return panel;

@@ -1,6 +1,6 @@
 // Verificació en navegador real del pas a Segueix! dels youtubers (2026-10-23, js/features/app-switch.js):
-// - mòbil (390 px): lliscar el dit cap a l'esquerra o la dreta pel mig de la pantalla obre segueix.cat; un gest curt,
-//   vertical, des de la vora o damunt d'una filera amb scroll lateral no fa res; no hi ha la icona a la capçalera;
+// - mòbil (390 px): la icona de YouTuber és a dalt de tot a la dreta; lliscar el dit cap a l'esquerra o la dreta pel mig de la pantalla obre segueix.cat; un gest curt,
+//   vertical, des de la vora o damunt d'una filera amb scroll lateral no fa res;
 // - ordinador (1280 px): la icona de YouTuber és la de més a la dreta de la capçalera i obre segueix.cat.
 // segueix.cat se substitueix per una pàgina local (no es surt a la xarxa).
 //
@@ -108,8 +108,25 @@ async function mobil(browser, errors) {
     let { context, page } = await obre(browser, 390, errors);
     let cdp = await context.newCDPSession(page);
 
-    const icona = await page.evaluate(() => getComputedStyle(document.getElementById('appSwitchLink')).display);
-    comprovar('mòbil: a la capçalera no hi ha la icona de YouTuber', icona === 'none', icona);
+    const icona = await page.evaluate(() => {
+        const link = document.getElementById('appSwitchLink');
+        const box = link.getBoundingClientRect();
+        const others = [...document.querySelectorAll('.app-header .actions .icon-btn, .mobile-search-toggle')]
+            .filter(el => el !== link && getComputedStyle(el).display !== 'none')
+            .map(el => el.getBoundingClientRect().right);
+        const brand = document.querySelector('.app-header .brand').getBoundingClientRect();
+        return {
+            visible: box.width >= 40 && box.height >= 40,
+            mesALaDreta: others.every(right => right <= box.left + 1),
+            marcaNoToca: Math.min(...others, box.left) >= brand.right,
+            sobreix: document.documentElement.scrollWidth - innerWidth,
+        };
+    });
+    comprovar(
+        'mòbil: la icona de YouTuber és a dalt de tot a la dreta i la marca no toca les icones',
+        icona.visible && icona.mesALaDreta && icona.marcaNoToca && icona.sobreix <= 0,
+        icona
+    );
 
     await llisca(page, cdp, [260, 420], [220, 420]);
     comprovar('mòbil: un gest curt no fa res', !aYoutubers(page), page.url());
