@@ -1392,7 +1392,7 @@
                 ${draggable ? `<button type="button" class="mq-remove" data-mq-remove="${index}" aria-label="Treu de la ràdio">${ICONS.close}</button>` : ''}
                 ${
                     signalsApi()
-                        ? `<button type="button" class="mq-more" data-mq-more aria-expanded="${active ? 'true' : 'false'}" aria-label="Preferències d’aquesta cançó" title="Preferències">${ICONS.more}</button>
+                        ? `<button type="button" class="mq-more" data-mq-more aria-expanded="false" aria-label="Preferències d’aquesta cançó" title="Preferències">${ICONS.more}</button>
                 <div class="mq-prefs" role="group" aria-label="Com aquesta cançó">
                     <button type="button" class="mq-circle mq-circle--plus" data-mq-plus="${index}" aria-pressed="${signalsApi().isMoreLike(video.id)}" aria-label="Més com aquesta" title="Més com aquesta">${ICONS.plus}</button>
                     <span class="mq-prefs__label" aria-hidden="true">com aquesta</span>

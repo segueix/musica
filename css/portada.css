@@ -2399,8 +2399,9 @@ body .follow-btn-pill.is-followed:hover {
     padding: 4px 8px 8px 44px;
 }
 
-.mq-item.is-open .mq-prefs,
-.mq-item.is-active .mq-prefs {
+/* Només en obrir el ⋯ de la fila; la cançó que sona ja no els porta oberts (2026-10-23: ocupaven l'espai de dues
+   cançons). A la fitxa de la cançó també són al menú ⋯ de sota el reproductor. */
+.mq-item.is-open .mq-prefs {
     display: flex;
 }
 
@@ -12248,56 +12249,6 @@ body .mq .mq-head,
     background: rgba(20, 22, 21, 0.78);
 }
 
-/* ---------- Fitxa de la cançó: la fila de botons, tota junta a l'esquerra (2026-10-20) ----------
-   A l'ordinador i a la tauleta, «Canal YouTube» i comentar anaven a l'esquerra i «+» i compartir arraconats a la dreta,
-   amb un forat al mig (styles.css: justify-content: space-between). Ara van tots seguits, i una ratlla fina separa el
-   que porta a YouTube (canal, comentar) del que fa l'app (desar a una llista, compartir). Al mòbil no canvia res. */
-@media (min-width: 769px) {
-    body #watchPage .video-info-modern .video-metadata-bar {
-        justify-content: flex-start;
-        gap: 8px;
-    }
-
-    body #watchPage .video-info-modern .video-metadata-bar > .action-group:not(.action-group-left)::before {
-        content: '';
-        flex: none;
-        width: 1px;
-        height: 28px;
-        margin: 0 6px;
-        background: rgba(244, 240, 232, 0.28);
-    }
-}
-
-/* ---------- Fitxa de la cançó: colors de la fila de botons, YouTube neutre i l'app en llima (2026-10-21) ----------
-   Sobre el fons negre la vora verd fluorescent (--pt-icon-border, contrast 15:1) cridava més que les icones. A la fila
-   de sota l'artista, el que porta a YouTube («Canal YouTube», comentar) va neutre: sense fons i amb una vora crema fina;
-   el que es queda a l'app («+» per desar a una llista, compartir) va ple de llima suau amb la icona llima i, en passar-hi
-   el ratolí o amb el teclat, llima ple. Així el color explica la ratlla que separa els dos grups. Als botons de YouTube
-   la vora es canvia amb la mateixa variable: la regla comuna dels botons d'icona porta ids dins :is() i guanyaria. */
-html body #watchPage .video-info-modern .video-metadata-bar :is(.btn-pill-red, .btn-comment-youtube--desktop, .btn-comment-youtube--mobile) {
-    --pt-icon-border: rgba(244, 240, 232, 0.24);
-    background: transparent;
-    color: var(--pt-text);
-}
-
-html body #watchPage .video-info-modern .video-metadata-bar :is(.btn-pill-red, .btn-comment-youtube--desktop, .btn-comment-youtube--mobile):is(:hover, :focus-visible) {
-    --pt-icon-border: var(--pt-text);
-    background: rgba(244, 240, 232, 0.08);
-    color: var(--pt-text);
-}
-
-html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #shareBtn) {
-    border-color: transparent;
-    background: rgba(214, 237, 132, 0.14);
-    color: var(--pt-accent);
-}
-
-html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #shareBtn):is(:hover, :focus-visible) {
-    border-color: var(--pt-accent);
-    background: var(--pt-accent);
-    color: var(--pt-on-accent);
-}
-
 /* ---------- Fitxa de la cançó: «Prem ▶ al reproductor per començar» a sobre del títol (2026-10-21) ----------
    Mentre s'espera el primer ▶ dins del vídeo (isAwaitingNativePlay(), app.js), a sobre del títol s'obre una càpsula
    llima amb una fletxa que apunta al reproductor: l'alçada s'anima de 0 a la seva (grid-template-rows 0fr → 1fr), de
@@ -12809,56 +12760,506 @@ html body #watchPage .video-info-modern .video-metadata-bar :is(#playlistBtn, #s
     }
 }
 
-/* Ordinador: controls del reproductor normal a la dreta, fora del vídeo.
-   La barra flotant es trasllada a body i conserva la seva disposició horitzontal. */
-@media (min-width: 769px) {
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 60px;
-        column-gap: 16px;
-        align-items: start;
+/* ==========================================================================
+   Fitxa de la cançó condensada, com YouTube (2026-10-23)
+   Sota el vídeo: «Prem ▶» (si cal), el títol a 20 px, el canal amb «Segueix» i, en una sola fila de botons de 36 px,
+   anterior · play · següent (una càpsula) · m'agrada · flotant a l'esquerra (#playerExternalControls) i desar a una
+   llista · comparteix · ⋯ a la dreta (.video-metadata-bar de #channelInfo). A sota, un requadre petit amb les
+   visualitzacions, la data, «Ràdio · 1/40» i l'enllaç «Canal YouTube». Abans: botons rodons de 44–64 px, el títol a
+   34 px i, a l'ordinador, els controls en una columna a la dreta del vídeo (que tapava el títol).
+   Com: .video-info, #channelInfo i .video-info-modern fan `display: contents` i els seus fills es col·loquen a la
+   graella de .watch-main; la barra de controls és a la columna 1 (--wc-ctrl-w) i les accions de l'app a la 2.
+   Amb la finestra flotant (.is-docked) o abans de tenir reproductor ([hidden]) les accions ocupen tota la fila.
+   «Més / Menys com aquesta» i «Comenta a YouTube» són al menú ⋯ (initWatchMoreMenu() d'app.js).
+   ========================================================================== */
+#watchPage {
+    --wc-btn: 36px;
+    --wc-main: 44px;
+    --wc-gap: 8px;
+    --wc-ctrl-w: calc(var(--wc-btn) * 4 + var(--wc-main) + var(--wc-gap) * 2);
+    --wc-fill: rgba(244, 240, 232, 0.1);
+    --wc-fill-hover: rgba(244, 240, 232, 0.18);
+}
+
+#watchPage .watch-main {
+    display: grid;
+    grid-template-columns: var(--wc-ctrl-w) minmax(0, 1fr);
+    column-gap: var(--wc-gap);
+    align-items: start;
+}
+
+#watchPage .watch-main > *,
+#watchPage .watch-main > .video-info > *,
+#watchPage .watch-main > .channel-info > .video-info-modern > * {
+    grid-column: 1 / 3;
+}
+
+#watchPage .watch-main > .video-info,
+#watchPage .watch-main > .channel-info:not(.hidden),
+#watchPage .watch-main > .channel-info > .video-info-modern {
+    display: contents;
+}
+
+/* styles.css (≥ 1025 px) els posa a la columna 1: aquí la columna 1 és només la dels controls */
+#watchPage .watch-main > :is(.video-placeholder, .tv-programming-panel) {
+    grid-column: 1 / 3;
+}
+
+#watchPage .watch-main > .video-placeholder {
+    grid-row: 1;
+}
+
+#watchPage .watch-main > .video-info > .native-play-cue {
+    grid-row: 2;
+}
+
+#watchPage .watch-main > .video-info > .video-title {
+    grid-row: 3;
+}
+
+#watchPage .watch-main > .channel-info > .video-info-modern > .channel-header-row {
+    grid-row: 4;
+}
+
+#watchPage .watch-main > #playerExternalControls:not(.is-docked) {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+#watchPage .watch-main > .channel-info > .video-info-modern > .video-metadata-bar {
+    grid-row: 5;
+}
+
+#watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden]))
+    > .channel-info
+    > .video-info-modern
+    > .video-metadata-bar {
+    grid-column: 2;
+}
+
+#watchPage .watch-main > .video-info > .video-meta-row {
+    grid-row: 6;
+}
+
+#watchPage .watch-main > .channel-info > .video-info-modern > .watch-yt-links {
+    grid-row: 7;
+}
+
+/* L'avís «el navegador ha aturat la reproducció automàtica» no hi cap en 212 px: la barra ocupa tota la fila i les
+   accions baixen sota seu. */
+#watchPage .watch-main:has(> #playerExternalControls:not(.is-docked) .player-autoplay-hint:not([hidden])) > #playerExternalControls {
+    grid-column: 1 / 3;
+}
+
+#watchPage .watch-main:has(> #playerExternalControls:not(.is-docked) .player-autoplay-hint:not([hidden])) > .channel-info > .video-info-modern > .video-metadata-bar {
+    grid-column: 1 / 3;
+    grid-row: 8;
+}
+
+/* Ordinador: la cua a la dreta abasta totes les files de l'esquerra (fins al requadre de l'enllaç) */
+@media (min-width: 1025px) {
+    #watchPage .watch-main {
+        /* L'esquerra (controls + accions) fa el 55 % de l'ample fins al reproductor quadrat de 520 px */
+        grid-template-columns:
+            var(--wc-ctrl-w) clamp(96px, calc(55% - var(--wc-ctrl-w) - var(--wc-gap)), calc(520px - var(--wc-ctrl-w) - var(--wc-gap)))
+            minmax(0, 1fr);
     }
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) > * {
+
+    #watchPage .watch-main > #playlistQueueContainer,
+    #watchPage .watch-main:has(> .tv-programming-panel:not(.hidden)) > #playlistQueueContainer {
+        grid-column: 3;
+        grid-row: 1 / span 7;
+        margin-left: clamp(16px, 2.5vw, 40px);
+        /* acaba arran del requadre de la descripció */
+        margin-bottom: 0;
+    }
+
+    #watchPage .watch-main > :is(.extra-related-title, .extra-related-header, .extra-videos-grid) {
         grid-column: 1 / -1;
     }
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) > .video-placeholder {
-        grid-column: 1;
-        grid-row: 1;
-        width: 100%;
-        margin-inline: 0;
-    }
-    #watchPage .watch-main > #playerExternalControls:not(.is-docked):not([hidden]) {
-        grid-column: 2;
-        grid-row: 1;
-        align-self: center;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        gap: 12px;
-        width: 60px;
-        margin: 0;
-    }
-    #watchPage #playerExternalControls:not(.is-docked) .player-autoplay-hint {
-        flex: 0 0 auto;
-        width: 100%;
-        padding: 0;
-        font-size: 0.75rem;
-        overflow-wrap: anywhere;
+
+    /* #watchPage retalla el que en surt (contain: content) i a sota de la fila de botons només hi ha el requadre de la
+       descripció: mentre el menú ⋯ és obert, la pàgina s'allarga perquè hi càpiga (i s'hi pugui fer scroll). */
+    #watchPage .watch-main:has(#watchMoreMenu:not([hidden])) {
+        padding-bottom: 96px;
     }
 }
-@media (min-width: 1025px) {
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) {
-        grid-template-columns: minmax(280px, 520px) 60px minmax(240px, 1fr);
+
+/* Títol i canal: mides de YouTube */
+html body #watchPage .watch-main .video-title {
+    margin: 10px 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+html body #watchPage #channelInfo .channel-header-row {
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+html body #watchPage #channelInfo .channel-avatar-small {
+    width: 40px;
+    height: 40px;
+}
+
+html body #watchPage #channelInfo .channel-name-row {
+    gap: 12px;
+}
+
+html body #watchPage #channelInfo .channel-name-row .channel-name-modern {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+html body #watchPage #channelInfo .channel-subs-modern {
+    font-size: 0.75rem;
+    color: var(--pt-muted);
+}
+
+html body #watchPage #channelInfo .channel-name-row .follow-btn-pill {
+    min-height: 0;
+    height: var(--wc-btn);
+    padding: 0 16px;
+    font-size: 0.875rem;
+}
+
+/* Controls del reproductor (només a la fitxa; la finestra flotant conserva els seus) */
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: var(--wc-gap);
+    width: auto;
+    margin: 10px 0 0;
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) .player-external-btn {
+    width: var(--wc-btn);
+    height: var(--wc-btn);
+    border: 0;
+    border-radius: var(--pt-radius-pill);
+    background: var(--wc-fill);
+    color: var(--pt-text);
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) .player-external-btn .pec-icon {
+    width: 20px;
+    height: 20px;
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) .player-external-btn:is(:hover, :focus-visible):not(:disabled) {
+    background: var(--wc-fill-hover);
+    color: var(--pt-text);
+}
+
+/* Anterior · play · següent en una sola càpsula; m'agrada abans de la finestra flotant */
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerPrevBtn {
+    order: 1;
+    border-radius: var(--pt-radius-pill) 0 0 var(--pt-radius-pill);
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerPlayPauseBtn {
+    order: 2;
+    width: var(--wc-main);
+    margin-left: calc(var(--wc-gap) * -1);
+    border-radius: 0;
+    background: var(--pt-accent);
+    color: var(--pt-on-accent);
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerPlayPauseBtn:is(:hover,
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) :focus-visible):not(:disabled) {
+    background: var(--pt-accent-strong, #e3f59e);
+    color: var(--pt-on-accent);
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerNextBtn {
+    order: 3;
+    margin-left: calc(var(--wc-gap) * -1);
+    border-radius: 0 var(--pt-radius-pill) var(--pt-radius-pill) 0;
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerLikeBtn {
+    order: 4;
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerMiniBtn {
+    order: 5;
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) #playerLikeBtn[aria-pressed='true'] {
+    color: var(--pt-accent);
+}
+
+html body #watchPage .watch-main > #playerExternalControls:not(.is-docked) .player-autoplay-hint {
+    order: 9;
+    flex: 1 0 100%;
+    margin: 2px 0 0;
+    padding: 0;
+    font-size: 0.8125rem;
+    text-align: left;
+}
+
+/* Accions de l'app: desar a una llista, comparteix i ⋯, a la dreta de la mateixa fila */
+html body #watchPage #channelInfo .video-metadata-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--wc-gap);
+    position: relative;
+    /* El menú ⋯ passa per damunt del requadre de la descripció */
+    z-index: 30;
+    margin: 10px 0 0;
+    padding: 0;
+    border: 0;
+    overflow: visible;
+    /* styles.css (mòbil) hi posava una màscara per a l'scroll lateral: retallava el menú ⋯ */
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+html body #watchPage #channelInfo .video-metadata-bar > .action-group {
+    display: flex;
+    align-items: center;
+    gap: var(--wc-gap);
+    margin: 0;
+}
+
+html body #watchPage #channelInfo .video-metadata-bar > .action-group::before {
+    content: none;
+}
+
+html body #watchPage #channelInfo .video-metadata-bar :is(#playlistBtn, #shareBtn, #watchMoreBtn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: auto;
+    min-width: var(--wc-btn);
+    height: var(--wc-btn);
+    padding: 0;
+    border: 0;
+    border-radius: var(--pt-radius-pill);
+    background: var(--wc-fill);
+    color: var(--pt-text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+html body #watchPage #channelInfo .video-metadata-bar :is(#playlistBtn, #shareBtn, #watchMoreBtn) svg {
+    width: 20px;
+    height: 20px;
+}
+
+html body #watchPage #channelInfo .video-metadata-bar :is(#playlistBtn, #shareBtn, #watchMoreBtn):is(:hover, :focus-visible),
+html body #watchPage #channelInfo #watchMoreBtn[aria-expanded='true'] {
+    background: var(--wc-fill-hover);
+    color: var(--pt-text);
+}
+
+html body #watchPage #channelInfo .video-metadata-bar :is(#playlistBtn, #shareBtn, #watchMoreBtn):focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+#watchPage .watch-btn-label {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    html body #watchPage #channelInfo #shareBtn {
+        padding: 0 14px 0 10px;
     }
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) > .video-info {
+
+    #watchPage .watch-btn-label {
+        display: inline;
+    }
+}
+
+/* Menú ⋯ */
+#watchPage .watch-more {
+    position: relative;
+}
+
+#watchPage .watch-more__menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 40;
+    min-width: 232px;
+    padding: 6px 0;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-player);
+    background: var(--pt-surface-2);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+#watchPage .watch-more__menu[hidden] {
+    display: none;
+}
+
+#watchPage .watch-more__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 16px;
+    border: 0;
+    background: transparent;
+    color: var(--pt-text);
+    font: inherit;
+    font-size: 0.875rem;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#watchPage .watch-more__item[hidden] {
+    display: none;
+}
+
+#watchPage .watch-more__item svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    color: var(--pt-muted);
+}
+
+#watchPage .watch-more__item:is(:hover, :focus-visible) {
+    background: var(--pt-surface-3);
+    outline: none;
+}
+
+#watchPage .watch-more__item[aria-checked='true'],
+#watchPage .watch-more__item[aria-checked='true'] svg {
+    color: var(--pt-accent);
+}
+
+/* Requadre de la descripció: visualitzacions · data · «Ràdio · 1/40» i, a sota, «Canal YouTube» */
+html body #watchPage .watch-main > .video-info > .video-meta-row {
+    margin: 12px 0 0;
+    padding: 10px 12px 2px;
+    border-radius: var(--pt-radius-player) var(--pt-radius-player) 0 0;
+    background: var(--wc-fill);
+    font-size: 0.875rem;
+}
+
+html body #watchPage .video-meta-row .meta-left {
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    color: var(--pt-text);
+    font-weight: 600;
+    white-space: normal;
+}
+
+html body #watchPage .video-meta-row .meta-left :is(.meta-stat, .meta-views) {
+    color: inherit;
+    font-size: inherit;
+}
+
+#watchPage .video-meta-row .meta-left #videoViews {
+    order: 1;
+}
+
+#watchPage .video-meta-row .meta-left .meta-dot {
+    order: 2;
+}
+
+#watchPage .video-meta-row .meta-left #videoDate {
+    order: 3;
+}
+
+#watchPage .video-meta-row .meta-left #playlistModeChip {
+    order: 4;
+}
+
+html body #watchPage #channelInfo .watch-yt-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin: 0;
+    padding: 4px 12px 10px;
+    border-radius: 0 0 var(--pt-radius-player) var(--pt-radius-player);
+    background: var(--wc-fill);
+}
+
+html body #watchPage #channelInfo .watch-yt-links .btn-pill-red {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+    height: auto;
+    min-height: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+html body #watchPage #channelInfo .watch-yt-links .btn-pill-red:is(:hover, :focus-visible) {
+    background: transparent;
+    color: var(--pt-text);
+    text-decoration: underline;
+}
+
+html body #watchPage #channelInfo .watch-yt-links .btn-support-watch {
+    min-height: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 0.8125rem;
+}
+
+/* Cua: la cançó que sona continua ressaltada però ja no ocupa l'espai de dues cançons */
+body .mq .mq-item.is-active {
+    margin: 2px 0 6px;
+    padding: 6px 8px 6px 10px;
+}
+
+body .mq .mq-item.is-active .mq-cover {
+    flex-basis: 56px;
+    width: 56px;
+    height: 56px;
+}
+
+body .mq .mq-item.is-active .mq-title {
+    font-size: 1rem;
+}
+
+/* Mòbil: el mateix ordre, amb el vídeo de vora a vora; desar, comparteix i ⋯ només amb la icona */
+@media (max-width: 768px) {
+    html body #watchPage .watch-main .video-title {
+        margin-top: 8px;
+        font-size: 1.125rem;
+    }
+
+    html body #watchPage .watch-main > .video-info > .video-meta-row {
+        margin-top: 10px;
+    }
+}
+
+/* Pantalles molt estretes (< 360 px): les accions de l'app baixen sota els controls */
+@media (max-width: 359px) {
+    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden]))
+        > .channel-info
+        > .video-info-modern
+        > .video-metadata-bar {
         grid-column: 1 / 3;
-        grid-row: 2;
-    }
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) > .channel-info {
-        grid-column: 1 / 3;
-        grid-row: 3;
-    }
-    #watchPage .watch-main:has(> #playerExternalControls:not(.is-docked):not([hidden])) > #playlistQueueContainer {
-        grid-column: 3;
-        grid-row: 1 / span 3;
+        grid-row: 8;
+        justify-content: flex-start;
     }
 }
