@@ -1,11 +1,11 @@
 'use strict';
 
 // Gestió local dels lots. La lectura de fonts i el judici lingüístic els fa l'agent de la sessió.
-// No hi ha clients de xarxa, claus, models incrustats ni aprovacions pel títol.
+// No hi ha clients de xarxa, claus, models incrustats ni detecció automàtica de la llengua.
 const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
-const POLICY = 'catala-estricte-v1';
+const POLICY = 'catala-titol-mixt-v2';
 const QUEUE = 'data/revisio-idiomes.json';
 const HIDDEN = 'data/hidden-videos.json';
 const DIR = 'docs/revisions/idiomes-codex';
@@ -51,7 +51,7 @@ function batches(root) {
 }
 function cell(value) { return String(value || '').replace(/[|\r\n<>]/g, ' ').slice(0, 350); }
 function markdown(b) {
-    return `# ${b.id} — revisió des de ChatGPT/Codex\n\nEstat: **${b.status}**. Política: ${POLICY}.\n\n` +
+    return `# ${b.id} — revisió des de ChatGPT/Codex\n\nEstat: **${b.status}**. Política: ${b.policy}.\n\n` +
         'Les fonts es llegeixen a la sessió; aquest fitxer no certifica la llengua de cap cançó.\n\n' +
         '| ID | Artista | Títol | Resultat aplicat |\n|---|---|---|---|\n' +
         b.items.map(e => `| ${e.id} | ${cell(e.artista)} | ${cell(e.titol)} | ${b.applied[e.id]?.accio || 'per revisar'} |`).join('\n') +
@@ -152,7 +152,7 @@ function sourceOK(s, now, resolved = true) {
 }
 function validate(d, item, state, now) {
     assert(d && idOK(d.id) && d.id === item.id, 'ID de decisió fora del lot');
-    const allowed = ['id', 'accio', 'metode', 'llengues', 'motiu', 'fonts', 'lletraCompletaLlegida', 'fragmentCantatComprovat', 'instrumentalComprovat', 'edicio', 'correspondencia', 'decisioOrigen'];
+    const allowed = ['id', 'accio', 'metode', 'llengues', 'motiu', 'fonts', 'lletraCompletaLlegida', 'fragmentCantatComprovat', 'instrumentalComprovat', 'edicio', 'correspondencia', 'decisioOrigen', 'titolCatala'];
     assert(Object.keys(d).every(k => allowed.includes(k)), 'Camp de decisió desconegut; no hi adjuntis lletres');
     assert(['conserva', 'amaga', 'pendent'].includes(d.accio), 'Acció invàlida');
     assert(typeof d.motiu === 'string' && d.motiu.trim().length >= 12 && d.motiu.length <= 600, 'Cal un motiu entre 12 i 600 caràcters');
@@ -164,20 +164,26 @@ function validate(d, item, state, now) {
     }
     assert(d.fonts.length > 0, 'Cap decisió resolutiva sense fonts');
     d.fonts.forEach(s => sourceOK(s, now));
+    if (d.metode === 'titol-catala') {
+        assert(d.accio === 'conserva' && typeof d.titolCatala === 'string' && d.titolCatala === item.titol, 'Cal identificar el títol català inequívoc de la mateixa entrada');
+        assert(Array.isArray(d.llengues) && d.llengues.length === 0 && d.lletraCompletaLlegida !== true && d.fragmentCantatComprovat !== true, 'El títol no certifica llengües cantades ni lectura de lletra');
+        return;
+    }
+    assert(d.titolCatala === undefined, 'titolCatala només correspon al mètode titol-catala');
     assert(Array.isArray(d.llengues) && d.llengues.length && d.llengues.every(l => /^[a-z]{2,3}$/.test(l) && l !== 'und'), 'Llengües identificades requerides');
     assert(new Set(d.llengues).size === d.llengues.length, 'Llengües duplicades');
-    if (d.accio === 'conserva') assert(d.llengues.every(l => l === 'ca') || d.llengues.length === 1 && d.llengues[0] === 'zxx', 'Només català o instrumental; no llengua majoritària');
-    if (d.accio === 'amaga') assert(d.llengues.some(l => l !== 'ca' && l !== 'zxx'), 'Cal constatar una altra llengua cantada');
+    if (d.accio === 'conserva') assert(d.llengues.some(l => l === 'ca' || l === 'oc') && !d.llengues.includes('zxx') || d.llengues.length === 1 && d.llengues[0] === 'zxx', 'Cal català/occità, amb altres llengües o sense, o instrumental');
+    if (d.accio === 'amaga') assert(d.llengues.every(l => !['ca', 'oc', 'zxx'].includes(l)), 'No es pot excloure una cançó amb català o occità per barrejar llengües');
     if (d.metode === 'lletra-completa') assert(d.lletraCompletaLlegida === true && !d.llengues.includes('zxx'), 'Cal haver llegit la lletra íntegra');
-    else if (d.metode === 'fragment-no-catala') assert(d.accio === 'amaga' && d.fragmentCantatComprovat === true, 'Un fragment només resol una exclusió lingüística comprovada');
+    else if (d.metode === 'fragment-catala') assert(d.accio === 'conserva' && d.fragmentCantatComprovat === true && d.llengues.some(l => l === 'ca' || l === 'oc'), 'Cal un fragment cantat en català o occità comprovat');
     else if (d.metode === 'instrumental-documentat') assert(d.accio === 'conserva' && d.instrumentalComprovat === true && d.llengues.length === 1 && d.llengues[0] === 'zxx', 'Absència de lletra no prova instrumentalitat');
     else if (d.metode === 'disc-documentat') assert(d.edicio && typeof d.edicio === 'string' && d.edicio.length >= 12 && d.edicio.length <= 300 && !d.llengues.includes('zxx'), 'Cal identificar l’edició i la seva llengua documentada');
     else if (d.metode === 'mateix-enregistrament') {
         const previous = state.decisions.find(x => x.id === d.decisioOrigen);
-        assert(previous && previous.politica === POLICY && previous.accio === d.accio && previous.criteri !== 'confianca-artista', 'La decisió origen ha de complir la mateixa política estricta');
+        assert(previous && previous.politica === POLICY && previous.accio === d.accio && previous.criteri !== 'confianca-artista', 'La decisió origen ha de complir la mateixa política vigent');
         assert(JSON.stringify(previous.llengues) === JSON.stringify(d.llengues), 'La llengua no coincideix amb la decisió origen');
         assert(typeof d.correspondencia === 'string' && d.correspondencia.length >= 20 && d.correspondencia.length <= 400, 'Cal documentar el mateix enregistrament, no només el títol');
-    } else throw new Error('Mètode no admès; títol, biografia, cerca i confiança no validen una lletra');
+    } else throw new Error('Mètode no admès; biografia, cerca i confiança no validen una lletra');
     if (d.metode !== 'lletra-completa') assert(d.lletraCompletaLlegida !== true, 'No presentis una validació documental com a lectura de lletra íntegra');
 }
 function apply(root, id, { dryRun = false, now = new Date().toISOString() } = {}) {
@@ -210,7 +216,7 @@ function apply(root, id, { dryRun = false, now = new Date().toISOString() } = {}
         if (d.accio !== 'pendent') {
             record = { id: d.id, accio: d.accio, artista: item.artista, titol: item.titol, font: d.fonts[0].url, fonts: d.fonts.map(s => s.url),
                 data: now, origen: batchPath(id), criteri: 'revisio-codex-documentada', metode: d.metode, politica: POLICY,
-                llengues: d.llengues, lletraIntegraVerificada: d.metode === 'lletra-completa',
+                llengues: d.llengues, ...(d.metode === 'titol-catala' ? { titolCatala: d.titolCatala } : {}), lletraIntegraVerificada: d.metode === 'lletra-completa',
                 motiu: d.motiu, reutilitza: false };
             state.decisions.push(record); state.revisades.push(d.id);
             if (addedHidden) hidden.videoIds.push(d.id);

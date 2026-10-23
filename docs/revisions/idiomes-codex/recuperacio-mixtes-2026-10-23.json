@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "policy": "catala-titol-mixt-v2",
+  "data": "2026-10-23T21:41:46.599Z",
+  "motiu": "Petició de l’editor: acceptar català amb una segona llengua. Aplicat després del lot de les 35 pendents.",
+  "changes": [
+    {
+      "id": "FeZI77ORst4",
+      "before": {
+        "id": "FeZI77ORst4",
+        "accio": "amaga",
+        "artista": "Good Jan",
+        "titol": "GOOD JAN - RiAL G [ONESHOTxALBERTDiAZ] enchufe",
+        "font": "https://www.shazam.com/song/1624952509/rial-g",
+        "fonts": [
+          "https://www.shazam.com/song/1624952509/rial-g"
+        ],
+        "data": "2026-10-23T21:34:38.569Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0011.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rial G de Good Jan, edició Enchufe: frase cantada en castellà sobre els tipus Rock i Tierra a la primera estrofa. No és només un nom propi.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "FeZI77ORst4",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/song/1624952509/rial-g",
+            "consultada": "2026-10-23T21:28:03.443Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "FeZI77ORst4",
+        "accio": "conserva",
+        "artista": "Good Jan",
+        "titol": "GOOD JAN - RiAL G [ONESHOTxALBERTDiAZ] enchufe",
+        "font": "https://www.shazam.com/song/1624952509/rial-g",
+        "fonts": [
+          "https://www.shazam.com/song/1624952509/rial-g"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "hQfqOdRRI6s",
+      "before": {
+        "id": "hQfqOdRRI6s",
+        "accio": "amaga",
+        "artista": "Good Jan",
+        "titol": "GOODJAN - ENCHUFE /enchufemixtape",
+        "font": "https://www.shazam.com/song/1624952623/enchufe",
+        "fonts": [
+          "https://www.shazam.com/song/1624952623/enchufe"
+        ],
+        "data": "2026-10-23T21:34:38.569Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0011.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Enchufe de Good Jan: imperatiu cantat en anglès a la segona estrofa; la versió identificada no és exclusivament catalana.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "hQfqOdRRI6s",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/song/1624952623/enchufe",
+            "consultada": "2026-10-23T21:28:03.443Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "hQfqOdRRI6s",
+        "accio": "conserva",
+        "artista": "Good Jan",
+        "titol": "GOODJAN - ENCHUFE /enchufemixtape",
+        "font": "https://www.shazam.com/song/1624952623/enchufe",
+        "fonts": [
+          "https://www.shazam.com/song/1624952623/enchufe"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "DP5zadXdemw",
+      "before": {
+        "id": "DP5zadXdemw",
+        "accio": "amaga",
+        "artista": "Good Jan",
+        "titol": "CLUB - GOODJAN X LILGUIU prod.A.P.Kushd'up - video.CARUBA",
+        "font": "https://www.shazam.com/song/1624952632/club",
+        "fonts": [
+          "https://www.shazam.com/song/1624952632/club"
+        ],
+        "data": "2026-10-23T21:34:38.569Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0011.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Club, Good Jan amb Lil Guiu, Enchufe: vers cantat en anglès a l'estrofa posterior a la segona tornada.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "DP5zadXdemw",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/song/1624952632/club",
+            "consultada": "2026-10-23T21:28:47.435Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "DP5zadXdemw",
+        "accio": "conserva",
+        "artista": "Good Jan",
+        "titol": "CLUB - GOODJAN X LILGUIU prod.A.P.Kushd'up - video.CARUBA",
+        "font": "https://www.shazam.com/song/1624952632/club",
+        "fonts": [
+          "https://www.shazam.com/song/1624952632/club"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "OAQUZ3jCack",
+      "before": {
+        "id": "OAQUZ3jCack",
+        "accio": "amaga",
+        "artista": "Good Jan",
+        "titol": "JOVA JOUNSI // GOOD JAN X MONRRA STRAPS || SANPERAMARTIRMIXTAPE",
+        "font": "https://www.shazam.com/song/1624962076/jova-jounsi",
+        "fonts": [
+          "https://www.shazam.com/song/1624962076/jova-jounsi"
+        ],
+        "data": "2026-10-23T21:34:38.569Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0011.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Jova Jounsi amb Monrra Straps, San Pera Martir: tornada i frases completes en anglès a la intervenció de Monrra.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "OAQUZ3jCack",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/song/1624962076/jova-jounsi",
+            "consultada": "2026-10-23T21:29:15.439Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "OAQUZ3jCack",
+        "accio": "conserva",
+        "artista": "Good Jan",
+        "titol": "JOVA JOUNSI // GOOD JAN X MONRRA STRAPS || SANPERAMARTIRMIXTAPE",
+        "font": "https://www.shazam.com/song/1624962076/jova-jounsi",
+        "fonts": [
+          "https://www.shazam.com/song/1624962076/jova-jounsi"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "eeTaTwQlrqY",
+      "before": {
+        "id": "eeTaTwQlrqY",
+        "accio": "amaga",
+        "artista": "Good Jan",
+        "titol": "NASSASSITAS ASTA AM MI #GOODJAN #SUPARFISIAL",
+        "font": "https://www.shazam.com/es-es/song/1624953765/nassassitas-asta-am-mi-feat-good-jan",
+        "fonts": [
+          "https://www.shazam.com/es-es/song/1624953765/nassassitas-asta-am-mi-feat-good-jan"
+        ],
+        "data": "2026-10-23T21:34:38.569Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0011.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Nassassitas Asta Am Mi, edició Suparfisial amb Good Jan: conté una frase afirmativa completa en anglès dins la lletra, a més del català.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "eeTaTwQlrqY",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/es-es/song/1624953765/nassassitas-asta-am-mi-feat-good-jan",
+            "consultada": "2026-10-23T21:31:37.168Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "eeTaTwQlrqY",
+        "accio": "conserva",
+        "artista": "Good Jan",
+        "titol": "NASSASSITAS ASTA AM MI #GOODJAN #SUPARFISIAL",
+        "font": "https://www.shazam.com/es-es/song/1624953765/nassassitas-asta-am-mi-feat-good-jan",
+        "fonts": [
+          "https://www.shazam.com/es-es/song/1624953765/nassassitas-asta-am-mi-feat-good-jan"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i en. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "Ez6uIPpmWCo",
+      "before": {
+        "id": "Ez6uIPpmWCo",
+        "accio": "amaga",
+        "artista": "Good Jan",
+        "titol": "HOU HOU HOU // GOODJAN",
+        "font": "https://www.shazam.com/es-es/song/1625115017/hou-hou-hou",
+        "fonts": [
+          "https://www.shazam.com/es-es/song/1625115017/hou-hou-hou"
+        ],
+        "data": "2026-10-23T21:34:38.569Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0011.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "es",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Hou Hou Hou de Good Jan: el text de la cançó inclou una frase completa en castellà i un vers en anglès, a més del català.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "Ez6uIPpmWCo",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "es",
+          "en"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/es-es/song/1625115017/hou-hou-hou",
+            "consultada": "2026-10-23T21:32:07.769Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es, en. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "Ez6uIPpmWCo",
+        "accio": "conserva",
+        "artista": "Good Jan",
+        "titol": "HOU HOU HOU // GOODJAN",
+        "font": "https://www.shazam.com/es-es/song/1625115017/hou-hou-hou",
+        "fonts": [
+          "https://www.shazam.com/es-es/song/1625115017/hou-hou-hou"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "es",
+          "en"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es, en. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "-03QndP-qKA",
+      "before": {
+        "id": "-03QndP-qKA",
+        "accio": "amaga",
+        "artista": "Flashy Ice Cream",
+        "titol": "Entremaliada",
+        "font": "https://www.shazam.com/song/1790257469/entremaliada",
+        "fonts": [
+          "https://www.shazam.com/song/1790257469/entremaliada"
+        ],
+        "data": "2026-10-23T21:34:38.809Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0012.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Versió de Sempre Joves amb Dani6ix i IZZKID. La lletra inclou una frase cantada en castellà a l'estrofa posterior a la primera tornada; no compleix català estricte.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "-03QndP-qKA",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/song/1790257469/entremaliada",
+            "consultada": "2026-10-23T21:28:03.443Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "-03QndP-qKA",
+        "accio": "conserva",
+        "artista": "Flashy Ice Cream",
+        "titol": "Entremaliada",
+        "font": "https://www.shazam.com/song/1790257469/entremaliada",
+        "fonts": [
+          "https://www.shazam.com/song/1790257469/entremaliada"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    },
+    {
+      "id": "SLuAeUe7Vsc",
+      "before": {
+        "id": "SLuAeUe7Vsc",
+        "accio": "amaga",
+        "artista": "Flashy Ice Cream",
+        "titol": "Tiki Taka",
+        "font": "https://www.shazam.com/song/1790257471/tiki-taka",
+        "fonts": [
+          "https://www.shazam.com/song/1790257471/tiki-taka"
+        ],
+        "data": "2026-10-23T21:34:38.809Z",
+        "origen": "docs/revisions/idiomes-codex/lot-0012.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-no-catala",
+        "politica": "catala-estricte-v1",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Tiki Taka, Sempre Joves, amb C.faqu: estrofa extensa en castellà llegida i identificada, no compleix català estricte.",
+        "reutilitza": false
+      },
+      "decision": {
+        "id": "SLuAeUe7Vsc",
+        "accio": "conserva",
+        "metode": "fragment-catala",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "fragmentCantatComprovat": true,
+        "fonts": [
+          {
+            "url": "https://www.shazam.com/song/1790257471/tiki-taka",
+            "consultada": "2026-10-23T21:28:47.435Z",
+            "llegida": true,
+            "coincidenciaVersio": true
+          }
+        ],
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es. Es retira només l’exclusió lingüística d’aquest ID."
+      },
+      "after": {
+        "id": "SLuAeUe7Vsc",
+        "accio": "conserva",
+        "artista": "Flashy Ice Cream",
+        "titol": "Tiki Taka",
+        "font": "https://www.shazam.com/song/1790257471/tiki-taka",
+        "fonts": [
+          "https://www.shazam.com/song/1790257471/tiki-taka"
+        ],
+        "data": "2026-10-23T21:41:46.599Z",
+        "origen": "docs/revisions/idiomes-codex/recuperacio-mixtes-2026-10-23.json",
+        "criteri": "revisio-codex-documentada",
+        "metode": "fragment-catala",
+        "politica": "catala-titol-mixt-v2",
+        "llengues": [
+          "ca",
+          "es"
+        ],
+        "lletraIntegraVerificada": false,
+        "motiu": "Rectificació expressa del criteri editorial del 23/10/2026: s’accepta el català amb altres llengües. La revisió anterior ja havia comprovat català i es. Es retira només l’exclusió lingüística d’aquest ID.",
+        "reutilitza": false
+      },
+      "hiddenRemoved": true
+    }
+  ]
+}

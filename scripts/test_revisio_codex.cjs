@@ -44,16 +44,16 @@ test('aplicació parcial real i idempotent preserva la resta', t => {
     assert.equal(q.decisions[1].politica, POLICY); assert.equal(q.decisions[1].lletraIntegraVerificada, true); assert.equal(q.decisions[1].reutilitza, false);
     assert.equal(apply(r).omesesJaAplicades, 1); assert.equal(read(r, Q).decisions.length, 2);
 });
-test('cançó mixta no es pot conservar amb un percentatge majoritari', t => {
-    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { llengues: ['ca', 'es'] })]); assert.throws(() => apply(r), /Només català/);
+test('cançó mixta amb català es conserva', t => {
+    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { llengues: ['ca', 'es'] })]); assert.equal(apply(r).conservades, 1);
 });
-test('exclusió per fragment cantat comprovat afegeix només aquell ID', t => {
-    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { accio: 'amaga', metode: 'fragment-no-catala', llengues: ['es'], lletraCompletaLlegida: false, fragmentCantatComprovat: true })]);
-    assert.equal(apply(r).amagades, 1); assert.deepEqual(read(r, H).videoIds, ['hidden00001', 'video000001']); assert.equal(read(r, Q).decisions[1].lletraIntegraVerificada, false);
+test('exclusió per lletra íntegra sense català afegeix només aquell ID', t => {
+    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { accio: 'amaga', metode: 'lletra-completa', llengues: ['es'], lletraCompletaLlegida: true })]);
+    assert.equal(apply(r).amagades, 1); assert.deepEqual(read(r, H).videoIds, ['hidden00001', 'video000001']); assert.equal(read(r, Q).decisions[1].lletraIntegraVerificada, true);
 });
 for (const [name, patch, pattern] of [
     ['no permet conservar per confiança', { metode: 'confianca-artista' }, /Mètode no admès/],
-    ['no permet decidir pel títol', { metode: 'titol-catala' }, /Mètode no admès/],
+    ['no accepta títol sense identificar', { metode: 'titol-catala' }, /títol català inequívoc/],
     ['no accepta lletra incompleta com a completa', { lletraCompletaLlegida: false }, /lletra íntegra/],
     ['no accepta font no llegida', { fonts: [source({ llegida: false })] }, /llegir la font/],
     ['no accepta versió sense identificar', { fonts: [source({ coincidenciaVersio: false })] }, /comprovar la versió/],
@@ -138,4 +138,33 @@ test('opcions, IDs de lot i límits invàlids es rebutgen', t => {
 test('implementació sense clients de xarxa ni credencials d’IA', () => {
     const text = fs.readFileSync(path.join(__dirname, 'revisar_idiomes_codex.cjs'), 'utf8');
     assert.doesNotMatch(text, /\bfetch\s*\(|require\(['"](?:https?|openai|axios)['"]\)|OPENAI_API_KEY|api\.openai\.com/);
+});
+
+test('títol català resol sense inventar llengües cantades ni lletra llegida', t => {
+    const r = setup(t); prepare(r);
+    setDecisions(r, [keep(undefined, { metode: 'titol-catala', titolCatala: 'Peça 1', llengues: [], lletraCompletaLlegida: false })]);
+    assert.equal(apply(r).conservades, 1);
+    const d = read(r, Q).decisions[1]; assert.equal(d.lletraIntegraVerificada, false); assert.deepEqual(d.llengues, []); assert.equal(d.titolCatala, 'Peça 1');
+});
+test('títol català no permet afirmar lectura de lletra ni un títol diferent', t => {
+    const r = setup(t); prepare(r);
+    setDecisions(r, [keep(undefined, { metode: 'titol-catala', titolCatala: 'Peça 1', llengues: [] })]);
+    assert.throws(() => apply(r), /no certifica/);
+    setDecisions(r, [keep(undefined, { metode: 'titol-catala', titolCatala: 'Altra peça', llengues: [], lletraCompletaLlegida: false })]);
+    assert.throws(() => apply(r), /mateixa entrada/);
+});
+test('fragment català permet conservar lletra parcial amb altres llengües', t => {
+    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { metode: 'fragment-catala', llengues: ['ca', 'en'], lletraCompletaLlegida: false, fragmentCantatComprovat: true })]);
+    assert.equal(apply(r).conservades, 1); assert.equal(read(r, Q).decisions[1].lletraIntegraVerificada, false);
+});
+test('una llengua estrangera sola no aprova i un fragment estranger no exclou', t => {
+    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { llengues: ['en'] })]); assert.throws(() => apply(r), /Cal català/);
+    setDecisions(r, [keep(undefined, { accio: 'amaga', llengues: ['ca', 'en'] })]); assert.throws(() => apply(r), /No es pot excloure/);
+    setDecisions(r, [keep(undefined, { accio: 'amaga', metode: 'fragment-no-catala', llengues: ['en'], lletraCompletaLlegida: false, fragmentCantatComprovat: true })]); assert.throws(() => apply(r), /Mètode no admès/);
+});
+test('els lots històrics mantenen política i decisions sense reaplicar-les', t => {
+    const r = setup(t); prepare(r); setDecisions(r, [pending('video000001')]); apply(r);
+    const b = read(r, BP); b.policy = 'catala-estricte-v1'; write(r, BP, b);
+    assert.equal(run(['estat'], r).examinadesSenseProves, 1); assert.throws(() => apply(r), /Lot invàlid/);
+    run(['arxiva', '--lot=lot-0001'], r); assert.match(bytes(r, BP.replace('.json', '.md')), /catala-estricte-v1/);
 });
