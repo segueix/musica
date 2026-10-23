@@ -842,7 +842,7 @@ function acceptYouTubeCookiesAndResume({ resumePlayer = true, resumeShort = true
 function showCookieInfo() {
     openYouTubeConsentModal({
         title: 'Privacitat i cookies',
-        text: "En prémer «Acceptar» a l'avís, autoritzes YouTube per reproduir els vídeos incrustats i Google Analytics per mesurar les visites. Aquests serveis poden utilitzar cookies o altres identificadors. «Només necessàries» els manté desactivats. Pots activar o desactivar cada servei per separat a Configuració. L'autorització de YouTube s'aplica a tots els vídeos fins que la canviïs.",
+        text: "En prémer «Acceptar» a l'avís, autoritzes YouTube per reproduir els vídeos incrustats. No utilitzem Google Analytics ni enviem a Google les coordenades de la ràdio de proximitat. YouTube pot utilitzar cookies i rep la IP quan el navegador s'hi connecta, cosa que permet deduir una ubicació aproximada. «Només necessàries» manté el reproductor desactivat. Pots canviar el permís de YouTube a Configuració.",
         acceptLabel: 'Entesos',
         cancelLabel: 'Tancar',
     });
