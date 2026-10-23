@@ -84,7 +84,9 @@ const mesura = page =>
     page.evaluate(() => {
         const cue = document.getElementById('nativePlayCue');
         const title = document.getElementById('videoTitle').getBoundingClientRect();
-        const bar = document.getElementById('playerExternalControls').getBoundingClientRect();
+        // Respecte al vídeo (2026-10-23): els controls ja no són sempre entre el vídeo i el títol (a l'ordinador van a la
+        // dreta del títol i al mòbil la barra fa `display: contents`)
+        const video = document.getElementById('videoPlaceholder').getBoundingClientRect();
         const pill = cue.querySelector('.native-play-cue__pill');
         const hint = document.getElementById('playerNativePlayHint').getBoundingClientRect();
         return {
@@ -92,8 +94,8 @@ const mesura = page =>
             obert: cue.classList.contains('is-visible'),
             alcada: Math.round(cue.getBoundingClientRect().height),
             opacitat: Number(getComputedStyle(pill).opacity),
-            titolSotaControls: Math.round(title.top - bar.bottom),
-            sotaControls: Math.round(cue.getBoundingClientRect().top - bar.bottom),
+            titolSotaVideo: Math.round(title.top - video.bottom),
+            sotaVideo: Math.round(cue.getBoundingClientRect().top - video.bottom),
             avisAnticMida: Math.round(hint.width * hint.height),
         };
     });
@@ -150,8 +152,8 @@ async function prova(browser, width, errors) {
             obert.obert &&
             obert.alcada >= 40 &&
             obert.opacitat === 1 &&
-            obert.sotaControls >= 0 &&
-            obert.titolSotaControls >= inici.titolSotaControls + 30,
+            obert.sotaVideo >= 0 &&
+            obert.titolSotaVideo >= inici.titolSotaVideo + 30,
         { inici, obert }
     );
     comprovar(`${nom}: el text antic de la barra de controls ja no es veu`, obert.avisAnticMida <= 1, obert);
@@ -171,7 +173,7 @@ async function prova(browser, width, errors) {
         sona.esperant === 'false' &&
             !sona.obert &&
             sona.alcada === 0 &&
-            sona.titolSotaControls <= inici.titolSotaControls,
+            sona.titolSotaVideo <= inici.titolSotaVideo,
         sona
     );
     await context.close();

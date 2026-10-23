@@ -53,7 +53,7 @@ describe('llibreries del navegador a js/vendor', () => {
             app.indexOf('<div class="video-metadata-bar">'),
             app.indexOf('// ==================== POSICIÓ DEL BOTÓ DE SUPORT')
         );
-        expect(bar).toContain('btn-comment-youtube--desktop');
+        expect(bar).toContain('Comenta a YouTube');
         expect(bar).toContain('id="shareBtn"');
         expect(bar).not.toContain('data-lucide');
         expect(bar.match(/<svg/g).length).toBeGreaterThanOrEqual(4);

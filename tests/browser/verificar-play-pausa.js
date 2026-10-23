@@ -169,13 +169,17 @@ async function proves(browser, width, errors) {
     const estructura = await page.evaluate(() => {
         const player = document.getElementById('videoPlayer').getBoundingClientRect();
         const bar = document.getElementById('playerExternalControls');
-        const barBox = bar.getBoundingClientRect();
+        // Al mòbil la barra fa `display: contents` (2026-10-23): es mesuren els botons que es veuen
+        const boxes = [...bar.querySelectorAll('.player-external-btn')]
+            .filter(button => !button.hidden)
+            .map(button => button.getBoundingClientRect());
+        const top = Math.min(...boxes.map(box => box.top));
         return {
             damunt: document.querySelectorAll(
                 '#videoPlayer :is(.queue-toggle-button, .queue-next-touch-layer, .queue-next-overlay)'
             ).length,
-            visible: !bar.hidden && barBox.height > 0,
-            sota: Math.round(barBox.top - player.bottom),
+            visible: !bar.hidden && boxes.every(box => box.height > 0),
+            sota: Math.round(top - player.bottom),
             botons: [...bar.querySelectorAll('button')].filter(button => !button.hidden).map(button => button.id),
         };
     });
@@ -188,35 +192,34 @@ async function proves(browser, width, errors) {
         estructura
     );
 
-    // 1a) Escriptori: la cua de la dreta arriba fins al nivell dels botons de sota i les línies de l'esquerra estan
-    //     enganxades (sense marges de més entre reproductor, controls, títol, canal i botons)
+    // 1a) Escriptori (2026-10-23): els controls a la dreta del títol i desar/compartir/⋯ a la dreta del canal, alineats
+    //     per la dreta; la cua de la dreta arriba fins al requadre de la descripció
     if (!mobile) {
         const alineacio = await page.evaluate(() => {
             const box = selector => document.querySelector(selector).getBoundingClientRect();
-            const holder = box('#videoPlaceholder');
             const controls = box('#playerExternalControls');
-            const info = box('.video-info');
-            const channel = box('.channel-info');
+            const title = box('#videoTitle');
+            const channel = box('.channel-header-row');
             const actions = box('.video-metadata-bar');
+            const desc = box('.watch-yt-links');
             const queue = box('#playlistQueueContainer');
+            const mid = r => r.top + r.height / 2;
             return {
                 cuaAcaba: Math.round(queue.bottom),
-                botonsAcaben: Math.round(actions.bottom),
-                canalAcaba: Math.round(channel.bottom),
-                holderControls: Math.round(controls.top - holder.bottom),
-                controlsTitol: Math.round(info.top - controls.bottom),
-                canalBotons: Math.round(
-                    actions.top - document.querySelector('.channel-header-row').getBoundingClientRect().bottom
-                ),
+                requadreAcaba: Math.round(desc.bottom),
+                controlsAlTitol: Math.round(Math.abs(mid(controls) - mid(title))),
+                accionsAlCanal: Math.round(Math.abs(mid(actions) - mid(channel))),
+                vores: Math.round(Math.abs(controls.right - actions.right)),
+                titolAbansControls: Math.round(controls.left - title.right),
             };
         });
         comprovar(
-            `${etiqueta}: la cua de la dreta acaba al nivell dels botons de sota i les línies de l'esquerra estan enganxades`,
-            alineacio.cuaAcaba >= alineacio.botonsAcaben &&
-                alineacio.cuaAcaba <= alineacio.canalAcaba + 1 &&
-                alineacio.holderControls <= 12 &&
-                alineacio.controlsTitol <= 10 &&
-                alineacio.canalBotons <= 10,
+            `${etiqueta}: controls al costat del títol, accions al costat del canal (alineats a la dreta) i la cua acaba amb el requadre`,
+            Math.abs(alineacio.cuaAcaba - alineacio.requadreAcaba) <= 2 &&
+                alineacio.controlsAlTitol <= 8 &&
+                alineacio.accionsAlCanal <= 14 &&
+                alineacio.vores <= 1 &&
+                alineacio.titolAbansControls >= 0,
             alineacio
         );
     }
@@ -229,7 +232,8 @@ async function proves(browser, width, errors) {
             liniaAntiga: Boolean(document.getElementById('playlistModeBadge')),
             dinsLinia: Boolean(chip && row?.contains(chip)),
             text: chip?.textContent.trim() || '',
-            unaLinia: row ? Math.round(row.getBoundingClientRect().height) <= 26 : false,
+            // Al requadre de la descripció (2026-10-23): visualitzacions · data · etiqueta, en una línia
+            unaLinia: row ? Math.round(row.getBoundingClientRect().height) <= 40 : false,
         };
     });
     comprovar(
@@ -263,7 +267,7 @@ async function proves(browser, width, errors) {
         rebuts
     );
 
-    // 4) El centre és del botó de YouTube; els botons de la barra fan ≥ 44 px
+    // 4) El centre és del botó de YouTube; els botons de la barra fan ≥ 36 px (com YouTube, 2026-10-23; abans 44)
     const centre = await page.evaluate(() => {
         const box = document.getElementById('videoPlayer').getBoundingClientRect();
         const el = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
@@ -274,8 +278,8 @@ async function proves(browser, width, errors) {
         return { alCentre: el?.tagName?.toLowerCase(), buttons };
     });
     comprovar(
-        `${etiqueta}: al centre hi ha el reproductor (no cap botó nostre) i els botons de sota fan ≥ 44 px`,
-        centre.alCentre === 'iframe' && centre.buttons.every(item => item.w >= 44 && item.h >= 44),
+        `${etiqueta}: al centre hi ha el reproductor (no cap botó nostre) i els botons de sota fan ≥ 36 px`,
+        centre.alCentre === 'iframe' && centre.buttons.every(item => item.w >= 36 && item.h >= 36),
         centre
     );
 

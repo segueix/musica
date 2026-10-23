@@ -1899,31 +1899,46 @@ function buildWatchChannelInfoHtml(channel, avatar, watchUrl, video) {
                     ${supportBtnDesktop}
                 </div>
             </div>
+            <!-- Fila d'accions (2026-10-23, com YouTube): a la mateixa línia que anterior · play · següent · m'agrada ·
+                 flotant (#playerExternalControls, portada.css «Fitxa de la cançó condensada»). «Més / Menys com aquesta» i
+                 comentar són al menú ⋯ (initWatchMoreMenu()). -->
             <div class="video-metadata-bar">
-                <div class="action-group action-group-left">
-                    <a href="https://www.youtube.com/channel/${channel.id}" target="_blank" rel="noopener noreferrer" class="btn-pill-red">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"></path></svg>
-                        Canal YouTube
-                    </a>
-                    ${supportBtnMobile}
-                    <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--desktop" title="Comenta" aria-label="Comenta">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-                    </a>
-                </div>
                 <div class="action-group">
-                    <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="btn-round-icon btn-comment-youtube--mobile" title="Comenta" aria-label="Comenta">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
-                    </a>
-                    <button class="btn-round-icon" id="playlistBtn" title="Afegir a llista" aria-label="Afegir a llista">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
+                    <button class="btn-round-icon" id="playlistBtn" title="Desa a una llista" aria-label="Desa a una llista">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 6h12M3 12h12M3 18h8M18 15v6M15 18h6"></path></svg>
                     </button>
-                    <button class="btn-round-icon" id="shareBtn" title="Compartir" aria-label="Compartir">
+                    <button class="btn-round-icon" id="shareBtn" title="Comparteix" aria-label="Comparteix">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                        <span class="watch-btn-label" aria-hidden="true">Comparteix</span>
                     </button>
+                    <div class="watch-more">
+                        <button class="btn-round-icon watch-more__btn" id="watchMoreBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="watchMoreMenu" title="Més opcions" aria-label="Més opcions">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true" focusable="false"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></svg>
+                        </button>
+                        <div class="watch-more__menu" id="watchMoreMenu" role="menu" aria-label="Més opcions" hidden>
+                            <button type="button" class="watch-more__item" role="menuitemcheckbox" aria-checked="false" data-watch-pref="more">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"></path></svg>
+                                <span>Més com aquesta</span>
+                            </button>
+                            <button type="button" class="watch-more__item" role="menuitemcheckbox" aria-checked="false" data-watch-pref="less">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"></path></svg>
+                                <span>Menys com aquesta</span>
+                            </button>
+                            <a class="watch-more__item" role="menuitem" href="${watchUrl}" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+                                <span>Comenta a YouTube</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <!-- Enllaç al canal de YouTube, petit, dins el requadre de les visualitzacions i la data -->
+            <div class="watch-yt-links">
+                <a href="https://www.youtube.com/channel/${channel.id}" target="_blank" rel="noopener noreferrer" class="btn-pill-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"></path></svg>
+                    Canal YouTube
+                </a>
+                ${supportBtnMobile}
             </div>
         </div>
     `;
@@ -1937,7 +1952,7 @@ function repositionSupportButton() {
     if (!videoInfoModern) return;
 
     const supportBtnMobile = videoInfoModern.querySelector('.btn-support-watch--mobile');
-    const actionGroupLeft = videoInfoModern.querySelector('.action-group-left');
+    const actionGroupLeft = videoInfoModern.querySelector('.watch-yt-links');
     if (supportBtnMobile && actionGroupLeft && !actionGroupLeft.contains(supportBtnMobile)) {
         const canalBtn = actionGroupLeft.querySelector('.btn-pill-red');
         if (canalBtn) {
@@ -2941,6 +2956,96 @@ function scrollToChannelFollow() {
     channelProfileFollowBtn.focus({ preventScroll: true });
 }
 
+// ==================== MENÚ ⋯ DE LA FITXA DE LA CANÇÓ ====================
+// «Més / Menys com aquesta» i «Comenta a YouTube» (2026-10-23): abans eren cercles a la cua (la cançó que sona els
+// portava sempre oberts i ocupava l'espai de dues cançons) i un botó propi a la fila. El marcatge el fa
+// buildWatchChannelInfoHtml(); com que #channelInfo es repinta a cada cançó, els clics es reben al document.
+function currentWatchVideo() {
+    const id = String(currentVideoId || '');
+    if (!id) return null;
+    const queued = isPlaylistMode ? activePlaylistQueue[currentPlaylistIndex] : null;
+    if (queued && String(queued.id) === id) return queued;
+    const known = Array.isArray(currentFeedVideos) ? currentFeedVideos.find(video => String(video?.id) === id) : null;
+    if (known) return known;
+    const identity = document.querySelector('#channelInfo .channel-identity-modern');
+    return {
+        id,
+        title: document.getElementById('videoTitle')?.textContent || '',
+        channelId: identity?.dataset.channelId || '',
+        channelTitle: identity?.querySelector('.channel-name-modern')?.textContent || '',
+    };
+}
+
+function closeWatchMoreMenu({ focus = false } = {}) {
+    const menu = document.getElementById('watchMoreMenu');
+    const button = document.getElementById('watchMoreBtn');
+    if (!menu || menu.hidden) return;
+    menu.hidden = true;
+    button?.setAttribute('aria-expanded', 'false');
+    if (focus) button?.focus();
+}
+
+function openWatchMoreMenu() {
+    const menu = document.getElementById('watchMoreMenu');
+    const button = document.getElementById('watchMoreBtn');
+    if (!menu || !button) return;
+    const queue = SegueixApp.features.musicQueue;
+    const video = currentWatchVideo();
+    const preference = video && queue?.getPreference ? queue.getPreference(video) : '';
+    menu.querySelectorAll('[data-watch-pref]').forEach(item => {
+        item.hidden = !queue?.applyPreference;
+        item.setAttribute('aria-checked', String(item.dataset.watchPref === preference));
+    });
+    menu.hidden = false;
+    // Sempre cap avall: cap amunt quedaria damunt del vídeo (res no hi pot anar al davant). Si no hi cap, es fa scroll.
+    if (menu.getBoundingClientRect().bottom > window.innerHeight - 8) {
+        menu.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    button.setAttribute('aria-expanded', 'true');
+    menu.querySelector('.watch-more__item:not([hidden])')?.focus();
+}
+
+function initWatchMoreMenu() {
+    document.addEventListener('click', event => {
+        const button = event.target.closest('#watchMoreBtn');
+        if (button) {
+            event.stopPropagation();
+            if (document.getElementById('watchMoreMenu')?.hidden === false) closeWatchMoreMenu();
+            else openWatchMoreMenu();
+            return;
+        }
+        const pref = event.target.closest('[data-watch-pref]');
+        if (pref) {
+            event.stopPropagation();
+            const video = currentWatchVideo();
+            if (video) SegueixApp.features.musicQueue?.applyPreference?.(video, pref.dataset.watchPref);
+            closeWatchMoreMenu({ focus: true });
+            return;
+        }
+        if (event.target.closest('#watchMoreMenu a')) {
+            closeWatchMoreMenu();
+            return;
+        }
+        if (!event.target.closest('#watchMoreMenu')) closeWatchMoreMenu();
+    });
+    document.addEventListener('keydown', event => {
+        const menu = document.getElementById('watchMoreMenu');
+        if (!menu || menu.hidden) return;
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeWatchMoreMenu({ focus: true });
+            return;
+        }
+        if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+        const items = [...menu.querySelectorAll('.watch-more__item:not([hidden])')];
+        if (!items.length) return;
+        event.preventDefault();
+        const at = items.indexOf(document.activeElement);
+        const step = event.key === 'ArrowDown' ? 1 : -1;
+        items[(at + step + items.length) % items.length].focus();
+    });
+}
+
 // Setup Event Listener for the Share Button
 function setupShareButtons() {
     document.addEventListener('click', e => {
@@ -3113,6 +3218,7 @@ async function bootstrapApp() {
     initInfoPopovers();
     initInstallPrompt();
     setupShareButtons();
+    initWatchMoreMenu();
     initBackgroundModal();
     initLegalModal();
     initBackgroundPicker();
@@ -3640,50 +3746,20 @@ function initElements() {
     initConfigElements();
 }
 
-// Plegar i desplegar la navegació lateral (botó de tres ratlles de la capçalera, #sidebarToggle). Només on la barra és
-// una columna (≥ 769 px); al mòbil hi ha la navegació inferior. L'estat es recorda. El CSS (portada.css, «Plegar i
-// desplegar la navegació lateral») fa la feina: aquí només es posa `body.sidebar-collapsed` i l'estat accessible.
 function initDesktopSidebarPreference() {
+    // 2026-10-23: a l'ordinador i a la tauleta ja no hi ha barra lateral (els accessos són a la capçalera) ni botó de
+    // tres ratlles. `body.sidebar-collapsed` es manté a ≥ 769 px perquè els estils de pantalla ampla (p. ex. les
+    // caràtules de «La teva ràdio») hi depenen; la preferència antiga ja no es fa servir.
     if (!sidebar) return;
-    const STORAGE_KEY = 'segueix_music_desktop_sidebar_collapsed';
-    const toggle = document.getElementById('sidebarToggle');
     const wide = window.matchMedia('(min-width: 769px)');
-
-    const saved = () => {
-        try {
-            return localStorage.getItem(STORAGE_KEY) === '1';
-        } catch (error) {
-            return false;
-        }
-    };
-
-    const apply = collapsed => {
-        const active = wide.matches && collapsed;
-        document.body.classList.toggle('sidebar-collapsed', active);
-        if (!toggle) return;
-        const label = active ? 'Desplega el menú lateral' : 'Plega el menú lateral';
-        toggle.setAttribute('aria-expanded', active ? 'false' : 'true');
-        toggle.setAttribute('aria-label', label);
-        toggle.title = label;
-    };
-
-    apply(saved());
-    // Les transicions s'activen un cop pintat l'estat desat: en obrir l'app amb la barra plegada no s'anima
-    requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('sidebar-ready')));
-
-    toggle?.addEventListener('click', event => {
-        event.preventDefault();
-        const next = !document.body.classList.contains('sidebar-collapsed');
-        try {
-            localStorage.setItem(STORAGE_KEY, next ? '1' : '0');
-        } catch (error) {
-            // sense emmagatzematge: funciona igual, però no es recorda
-        }
-        apply(next);
-    });
-
-    // En passar d'escriptori a mòbil (i a l'inrevés) la barra es comporta com toca amb la preferència desada
-    wide.addEventListener?.('change', () => apply(saved()));
+    const apply = () => document.body.classList.toggle('sidebar-collapsed', wide.matches);
+    apply();
+    try {
+        localStorage.removeItem('segueix_music_desktop_sidebar_collapsed');
+    } catch (error) {
+        // sense emmagatzematge
+    }
+    wide.addEventListener?.('change', apply);
 }
 
 // ==================== EVENT BINDING ====================
@@ -9852,6 +9928,8 @@ function setVideoTitleText(title) {
         return;
     }
     titleElement.textContent = title || '';
+    // A l'ordinador el títol es talla amb punts suspensius (al costat hi ha els controls): el sencer, en passar-hi
+    titleElement.title = title || '';
     updatePlaylistModeBadge();
 }
 

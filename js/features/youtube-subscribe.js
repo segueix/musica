@@ -275,6 +275,8 @@
         const obstacles = [];
         if (player?.querySelector('iframe')) obstacles.push(visibleRect(player));
         obstacles.push(visibleRect(doc.getElementById('playerExternalControls')));
+        // Al mòbil la barra fa `display: contents` (els botons van a llocs diferents de la fitxa): compten els botons
+        doc.querySelectorAll('#playerExternalControls .player-external-btn').forEach(button => obstacles.push(visibleRect(button)));
         const position = choosePromptPosition({
             width: window.innerWidth,
             bottom: navRect ? navRect.top : window.innerHeight,

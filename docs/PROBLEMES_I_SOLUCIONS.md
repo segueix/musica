@@ -1,3 +1,19 @@
+## [2026-10-23] - Treure la barra lateral: continuava interceptant els clics
+
+**Petició:** a l'ordinador, sense barra lateral; Inici, Descobreix, Artistes i grups i La teva música a dalt a la dreta.
+
+**Símptoma:** amb `body .sidebar#sidebar { display: none; }` la barra continuava allà (invisible a la captura però Playwright deia «`<aside id="sidebar">` intercepts pointer events» i no es podia prémer «Engega la ràdio»). **Causa:** el bloc de la capçalera de `portada.css` (`@media (min-width: 769px)`, cap a la línia 400) tenia `display: flex !important`. **Solució:** canviar aquell `!important` a `display: none !important` (no afegir-ne un altre). També calia afegir les icones noves (`[data-pt-head]`) a la regla que treu la vora fluorescent als accessos de la capçalera: `body :is(.icon-btn, …) { border: 1.5px solid var(--pt-icon-border) }` els la posava.
+
+## [2026-10-23] - Fitxa de la cançó condensada: el menú ⋯ no es veia (mòbil) o quedava retallat (ordinador)
+
+**Petició:** botons i textos de sota el reproductor com a YouTube (lletra més petita, botons de 36 px en una fila) i treure «+ com aquesta −» de la cua, deixant-ho dins d'un menú ⋯.
+
+**Símptoma 1 (mòbil):** el menú ⋯ s'obria (`hidden = false`, mida correcta) però no es pintava ni rebia clics: `elementsFromPoint()` no el trobava. **Causa:** `styles.css` posa a `.video-info-modern .video-metadata-bar` (≤ 768 px) un `mask-image` per difuminar l'scroll lateral de la fila; una màscara retalla tot el que surt de la caixa de l'element, també els fills `position: absolute`. **Solució:** `mask-image: none` a la fila nova (que ja no fa scroll lateral).
+
+**Símptoma 2 (ordinador):** el menú quedava tallat a baix i no s'hi podia fer scroll. **Causa:** `#watchPage` té `contain: content` (inclou `paint`): el que en surt no es pinta ni allarga el document, i a sota de la fila de botons només hi ha el requadre de la descripció (la cua és a la columna del costat). Obrir-lo cap amunt el posava damunt del vídeo (prohibit per YouTube). **Solució:** sempre cap avall; mentre és obert, `.watch-main:has(#watchMoreMenu:not([hidden]))` porta `padding-bottom: 96px` (≥ 1025 px) i `openWatchMoreMenu()` fa `scrollIntoView({ block: 'nearest' })`.
+
+**Trampa (graella):** per posar els controls (`#playerExternalControls`, fill de `.watch-main`) a la mateixa fila que desar/compartir (dins `#channelInfo`, que es repinta a cada cançó) no es pot moure cap node: `.video-info`, `#channelInfo` i `.video-info-modern` fan `display: contents` i els fills van a files fixes. `styles.css` (≥ 1025 px) posa `.video-placeholder` a `grid-column: 1` amb més especificitat que `> *`: cal la regla explícita `:is(.video-placeholder, .tv-programming-panel) { grid-column: 1 / 3 }` o el vídeo queda de 204 px. Els botons de `#channelInfo` es sobreescriuen amb dos ids (`#watchPage #channelInfo …`): la regla comuna dels botons d'icona porta ids dins `:is()`.
+
 ## [2026-10-22] - Mòbil: en anar a Inici amb una ràdio sonant, la música s'aturava
 
 **Símptoma:** al mòbil, si sonava una ràdio o una llista i es tocava «Inici» (o una altra secció de la navegació inferior), la música s'aturava i es perdia la ràdio. A l'ordinador continuava a la finestra flotant.
