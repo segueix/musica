@@ -71,7 +71,7 @@ describe('Contacte i suggeriment d’artistes', () => {
         expect(app).toMatch(/contactModal\?\.classList\.contains\('active'\)\) \{\s*closeContactModal\(true\);/);
         const css = fs.readFileSync(path.join(root, 'css', 'portada.css'), 'utf8');
         expect(css).toContain('#contactModal .pt-contact {');
-        expect(css).toMatch(/\.icon-btn\[data-page='segueix'\], #contactBtn, #backgroundBtn\)/);
+        expect(css).toMatch(/\.icon-btn\[data-page='segueix'\], #contactBtn, #backgroundBtn, #appSwitchLink\)/);
     });
 
     it('«Suggereix un artista o grup» és un enllaç directe al formulari de Google (sense modal intermedi)', () => {

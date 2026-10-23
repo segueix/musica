@@ -148,7 +148,10 @@ describe('index.html de Segueix Música', () => {
     });
 
     it('no conserva textos de la web general de vídeos', () => {
-        expect(html).not.toMatch(
+        // L'enllaç cap a Segueix! dels youtubers (#appSwitchLink, 2026-10-23) sí que diu «Els nostres YouTubers»
+        const start = html.indexOf('<a class="icon-btn pt-head-switch" id="appSwitchLink"');
+        const page = start < 0 ? html : html.slice(0, start) + html.slice(html.indexOf('</a>', start) + 4);
+        expect(page).not.toMatch(
             /Els nostres YouTubers|Vídeos i creadors|Recomanat per a tu<\/h1>[\s\S]{0,5}<div class="category-keywords/
         );
         expect(html).not.toContain('Afegeix un YouTuber');

@@ -5873,14 +5873,14 @@ body #watchPage .video-info-modern :is(.btn-round-icon, .btn-heart, .btn-pill-re
 
 /* Accessos superiors: icones directament sobre el fons, sense marc ni pastilla (també «Artistes», que només hi és al
    mòbil: abans duia el marc verd fluorescent). */
-body .app-header .actions :is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn) {
+body .app-header .actions :is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn, #appSwitchLink) {
     border: 0;
     background: transparent;
     box-shadow: none;
     outline: none;
 }
 
-body .app-header .actions :is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn):focus-visible {
+body .app-header .actions :is(.icon-btn[data-pt-head], .icon-btn[data-page='llistes'], .icon-btn[data-page='segueix'], #contactBtn, #backgroundBtn, #appSwitchLink):focus-visible {
     color: var(--pt-icon-border);
     /* El focus de teclat es ressalta a la icona, sense dibuixar un marc. */
     filter: drop-shadow(0 0 3px var(--pt-icon-border));
@@ -13357,5 +13357,162 @@ body .mq .mq-item.is-active .mq-title {
 
     html body #watchPage .watch-main > .video-info > .video-meta-row {
         margin-top: 10px;
+    }
+}
+
+/* ==========================================================================
+   Pas a Segueix! dels youtubers (2026-10-23, js/features/app-switch.js)
+   A totes les mides: una icona de YouTuber (persona + pantalla amb play) a dalt de tot a la dreta, que obre
+   segueix.cat. Al mòbil, a més, lliscant el dit cap a un costat pel mig de la pantalla entra el panell .app-switch des
+   del costat contrari, seguint el dit, i en deixar-lo anar passat el llindar s'obre segueix.cat.
+   ========================================================================== */
+@media (min-width: 769px) {
+    #headerActions #appSwitchLink:hover {
+        color: var(--pt-accent);
+    }
+}
+
+.app-switch {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    display: none;
+    place-items: center;
+    padding: 24px;
+    background: color-mix(in srgb, var(--color-background, var(--pt-bg)) 92%, #000);
+    color: var(--pt-text);
+    box-shadow: 0 0 48px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.app-switch.is-active {
+    display: grid;
+}
+
+.app-switch__card {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.app-switch__card svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 6px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.app-switch__card svg .app-switch-fill {
+    fill: currentColor;
+    stroke: none;
+}
+
+.app-switch__card strong {
+    font-family: var(--pt-brand);
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.app-switch__card span {
+    color: var(--pt-muted);
+    font-size: 0.9375rem;
+}
+
+/* «Deixa anar per anar-hi» quan ja s'ha passat el llindar; tot en llima */
+.app-switch__go {
+    margin-top: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--pt-line);
+    border-radius: var(--pt-radius-pill);
+    color: var(--pt-muted);
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.app-switch.is-ready {
+    color: var(--pt-accent);
+}
+
+.app-switch.is-ready .app-switch__go {
+    border-color: var(--pt-accent);
+    color: var(--pt-accent);
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-switch {
+        transition: none;
+    }
+}
+
+/* ---------- Mòbil: «Segueix!» i «Música» en dues línies i «en / català» al costat de «Música» (2026-10-23) ----------
+   Amb la icona de YouTuber a dalt a la dreta, la capçalera del mòbil porta cinc icones i la marca s'havia de fer massa
+   petita. Ara «Música» va sota «Segueix!» (la marca és la meitat d'ampla), «En català» de sota no surt i, en lloc seu,
+   al costat de «Música» hi ha «en / català» en dues línies petites i blanques (opció C de les quatre que es van
+   provar: és la que deixa «Segueix!» i «Música» més grans a 360 i 320 px). El text és un ::after de .brand-music, en
+   em: creix i s'encongeix amb la marca. La lletra es calcula amb l'ample de la marca (cqi): la línia més llarga fa
+   ~4,8 em («Música» + «en / català»). Les icones de dalt fan 40 px d'ample (44 d'alt) amb 2 px entre elles. A
+   l'ordinador no canvia res. */
+@media (max-width: 768px) {
+    .app-header .brand-copy {
+        overflow: hidden;
+    }
+
+    /* Bloc (no flex): així «Música» pot anar a la línia de sota sense separar «Segueix» de «!» */
+    .app-header .brand-name {
+        display: block;
+        font-size: min(1.0625rem, calc((100cqi - 40px) / 4.8));
+        line-height: 1.02;
+        white-space: nowrap;
+    }
+
+    .app-header .brand-name .brand-music {
+        display: block;
+        margin-left: 0;
+    }
+
+    .app-header .brand-name .brand-music::after {
+        content: 'en\A català';
+        display: inline-block;
+        margin-left: 0.25em;
+        color: #fff;
+        font-family: var(--pt-body);
+        font-size: 0.47em;
+        font-weight: 700;
+        line-height: 1;
+        text-align: left;
+        vertical-align: -0.1em;
+        white-space: pre;
+    }
+
+    .app-header .brand-tag {
+        display: none;
+    }
+
+    /* 320 px: sense logo, la lletra es calcula amb tot l'ample de la marca */
+    @container (max-width: 109px) {
+        .app-header .brand-name {
+            font-size: min(1rem, calc(100cqi / 4.8));
+        }
+    }
+
+    .app-header .actions {
+        gap: 2px;
+    }
+
+    .app-header .actions .icon-btn,
+    .app-header .mobile-search-toggle {
+        width: 40px;
+        min-width: 40px;
     }
 }
