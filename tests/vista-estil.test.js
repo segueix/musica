@@ -67,4 +67,11 @@ describe('vista d’un estil', () => {
             /@media \(max-width: 768px\) \{\s*:is\(#homePage\.is-style-view #videosGrid, #homePage \.search-results \.videos-grid\) \{\s*grid-template-columns: minmax\(0, 1fr\);/
         );
     });
+
+    it('a l’ordinador la cançó destacada és baixa perquè es vegi la primera filera d’artistes (2026-10-23)', () => {
+        const css = fs.readFileSync('css/portada.css', 'utf8');
+        expect(css).toMatch(
+            /@media \(min-width: 769px\) \{\s*#homePage\.is-style-view \.hero \{\s*min-height: clamp\(220px, 32vh, 300px\);/
+        );
+    });
 });

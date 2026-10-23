@@ -9167,6 +9167,32 @@ body :is(#followPage, .search-results) .follow-card .follow-toggle-btn.is-follow
     margin-top: 12px;
 }
 
+/* Ordinador i tauleta (2026-10-23): la caixa més baixa perquè a la primera pantalla es vegi la primera filera
+   d'artistes (#categoryArtists). L'alçada depèn de la de la finestra (32vh, entre 220 i 300 px; abans 340–460 px) i
+   el text, una mica més petit, hi cap igual. */
+@media (min-width: 769px) {
+    #homePage.is-style-view .hero {
+        min-height: clamp(220px, 32vh, 300px);
+    }
+
+    #homePage.is-style-view .hero-content {
+        gap: 4px;
+        padding: 20px 24px;
+    }
+
+    #homePage.is-style-view .hero-title {
+        font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+    }
+
+    #homePage.is-style-view .hero-channel {
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+    }
+
+    #homePage.is-style-view .hero-actions {
+        margin-top: 8px;
+    }
+}
+
 @media (max-width: 768px) {
     #homePage.is-style-view .hero {
         min-height: min(110vw, 440px);
