@@ -1,34 +1,26 @@
 {
-  "generatedAt": "2026-10-23T20:57:38.292Z",
-  "rawPublicVideoCount": 11823,
-  "feedVideoCount": 10594,
-  "acceptedMusicCount": 11196,
-  "categoryEligibleVideoCount": 11192,
+  "generatedAt": "2026-10-23T20:57:59.633Z",
+  "rawPublicVideoCount": 7682,
+  "feedVideoCount": 7098,
+  "acceptedMusicCount": 7056,
+  "categoryEligibleVideoCount": 7052,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1,
+    "before": 0,
     "matched": 0,
-    "rejected": 1
+    "rejected": 0
   },
-  "rejectedOrReviewCount": 627,
+  "rejectedOrReviewCount": 626,
   "reviewCount": 591,
   "typeCounts": {
-    "song": 10937,
-    "live_song": 255,
+    "song": 6884,
+    "live_song": 168,
     "album": 4,
-    "other": 36,
+    "other": 35,
     "review": 591
   },
   "channelsWithoutAcceptedMusic": [],
-  "rejectedSamples": [
-    {
-      "id": "LjP2A2RvHkE",
-      "title": "Anuncis per paraules",
-      "channelTitle": "Quico Pi de la Serra",
-      "durationSeconds": 250,
-      "musicReason": "contingut no musical explícit"
-    }
-  ],
+  "rejectedSamples": [],
   "publishedFeedVideoCount": 7098,
   "publishedShortVideoCount": 0
 }
