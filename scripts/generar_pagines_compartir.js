@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { cleanTitle } = require('../js/song-title.js');
-const BASE = 'https://segueix.github.io/musica/';
+const BASE = 'https://musica.segueix.cat/';
 const escape = value => String(value || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const validId = id => /^[A-Za-z0-9_-]+$/.test(id);
 function imageUrl(value, fallback) {

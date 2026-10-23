@@ -8,7 +8,7 @@ const { generate, render } = createRequire(import.meta.url)('../scripts/generar_
 const codec = loadScript('js/utils/share-codecs.js').SegueixApp.utils.shareCodecs;
 describe('previsualitzacions estàtiques de Música', () => {
     it('genera URL pròpies i rebutja rutes arbitràries', () => {
-        expect(codec.buildEntityShareUrl('canco', 'song_123-45')).toBe('https://segueix.github.io/musica/compartir/canco/song_123-45.html');
+        expect(codec.buildEntityShareUrl('canco', 'song_123-45')).toBe('https://musica.segueix.cat/compartir/canco/song_123-45.html');
         expect(codec.buildEntityShareUrl('artista', 'UC123')).toContain('/artista/UC123.html');
         expect(codec.buildEntityShareUrl('canco', '../secret')).toBe(codec.SHARE_BASE_URL);
     });
@@ -16,7 +16,7 @@ describe('previsualitzacions estàtiques de Música', () => {
         const html = render({ kind: 'canco', id: 'abc123', title: 'Cançó "nova" <script>', description: 'A & B', image: 'https://example.test/a.jpg' });
         expect(html).toContain('property="og:title" content="Cançó &quot;nova&quot; &lt;script&gt;"');
         expect(html).toContain('name="twitter:image" content="https://example.test/a.jpg"');
-        expect(html).toContain('https://segueix.github.io/musica/?v=abc123');
+        expect(html).toContain('https://musica.segueix.cat/?v=abc123');
         expect(html).not.toContain('http-equiv="refresh"');
     });
     it('cobreix feed, arxiu i artistes sense recuperar vídeos ocults o canals retirats', () => {
@@ -42,10 +42,10 @@ describe('previsualitzacions estàtiques de Música', () => {
         expect(codec.radioShareTitle('La teva ràdio')).toBe('La teva ràdio');
         expect(codec.radioShareSlug('Ràdio L’Hospitalet de Llobregat')).toBe('radio-l-hospitalet-de-llobregat');
         expect(codec.radioShareSlug('Ràdio Sant Martí de Tous · Cel·la')).toBe('radio-sant-marti-de-tous-cella');
-        expect(codec.buildRadioPageUrl('radio-vic', 'https://segueix.github.io/musica/?importData=ABC')).toBe(
-            'https://segueix.github.io/musica/compartir/radio/radio-vic.html?importData=ABC'
+        expect(codec.buildRadioPageUrl('radio-vic', 'https://musica.segueix.cat/?importData=ABC')).toBe(
+            'https://musica.segueix.cat/compartir/radio/radio-vic.html?importData=ABC'
         );
-        expect(codec.buildRadioPageUrl('', 'https://segueix.github.io/musica/?importData=ABC')).toContain('/compartir/radio/index.html?importData=ABC');
+        expect(codec.buildRadioPageUrl('', 'https://musica.segueix.cat/?importData=ABC')).toContain('/compartir/radio/index.html?importData=ABC');
         const root = mkdtempSync(join(tmpdir(), 'music-radio-'));
         try {
             mkdirSync(join(root, 'data'), { recursive: true });

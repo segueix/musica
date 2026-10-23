@@ -9,9 +9,9 @@
     const app = window.SegueixApp || (window.SegueixApp = {});
     app.utils = app.utils || {};
 
-    // Els enllaços de compartició obren Segueix Música, no la web de Segueix youtubers.
-    // El paquet estàtic injecta el domini escollit durant la generació.
-    const SHARE_BASE_URL = window.SEGUEIX_PUBLIC_URL || 'https://segueix.github.io/musica/';
+    // Compartim sempre el domini públic, també des de previsualitzacions o altres allotjaments.
+    // SEGUEIX_PUBLIC_URL continua identificant la base del paquet estàtic, no la compartició.
+    const SHARE_BASE_URL = 'https://musica.segueix.cat/';
     const PAYLOAD_VERSION = 1;
     const MAX_SHARE_START_SECONDS = 24 * 60 * 60;
 

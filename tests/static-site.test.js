@@ -18,7 +18,7 @@ function fixture() {
         mkdirSync(join(root, file, '..'), { recursive: true }); cpSync(file, join(root, file));
     }
     mkdirSync(join(root, 'img')); mkdirSync(join(root, 'data/archive/channels'), { recursive: true });
-    put('index.html', '<!doctype html><html><head><link rel="canonical" href="https://segueix.cat/"><link rel="stylesheet" href="css/static-seo.css"></head><body>App</body></html>');
+    put('index.html', '<!doctype html><html><head><link rel="canonical" href="https://musica.segueix.cat/"><link rel="stylesheet" href="css/static-seo.css"></head><body>App</body></html>');
     const channels = [{ id: C1, name: 'Grup', primary: true, type: 'official' }, { id: C2, name: 'Grup - Topic', type: 'topic' }, { id: C3, name: 'Grup' }];
     put('js/channels-ca.json', { channels });
     put('data/artistes-musica.json', { artists: [
@@ -84,7 +84,9 @@ describe('generació estàtica de Música', () => {
 
     it('genera metadades i HTML llegible sense JavaScript, amb escapament de text', () => {
         const { root, out } = fixture(); build(root);
+        expect(readFileSync(join(out, 'index.html'), 'utf8')).toContain('href="https://musica.segueix.cat/"');
         const html = readFileSync(join(out, 'compartir/canco/song0000001.html'), 'utf8');
+        expect(html).toContain('content="https://musica.segueix.cat/compartir/canco/song0000001.html"');
         expect(html).toContain('Cançó &lt;nova&gt; &amp; &quot;llum&quot;');
         expect(html).toContain('property="og:url"');
         expect(html).toContain('name="twitter:card"');

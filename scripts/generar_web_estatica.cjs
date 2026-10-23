@@ -7,7 +7,7 @@ const { cleanTitle } = require('../js/song-title.js');
 const { CATEGORY_GROUPS } = require('../js/music-categories.js');
 const { generate: generateSharing } = require('./generar_pagines_compartir.js');
 const { loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal.js');
-const DEFAULT_URL = 'https://segueix.github.io/musica/';
+const DEFAULT_URL = 'https://musica.segueix.cat/';
 const MARKER = '.segueix-static-output';
 const VIDEO_ID = /^[A-Za-z0-9_-]{11}$/;
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -172,7 +172,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
         let index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
         // Només canvia les metadades del capçal; els enllaços editorials a Segueix es conserven.
         const headEnd = index.indexOf('</head>');
-        index = index.slice(0, headEnd).replaceAll('https://segueix.github.io/musica/', base).replaceAll('https://segueix.cat/', base) + index.slice(headEnd);
+        index = index.slice(0, headEnd).replaceAll(DEFAULT_URL, base).replaceAll('https://segueix.github.io/musica/', base).replaceAll('https://segueix.cat/', base) + index.slice(headEnd);
         index = index.replace('</head>', `<script>window.SEGUEIX_STATIC_SITE=true;window.SEGUEIX_CATALOG_POLICY=1;window.SEGUEIX_PUBLIC_URL=${json(base)};</script></head>`);
         write('index.html', index);
 

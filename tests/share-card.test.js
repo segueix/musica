@@ -109,15 +109,15 @@ describe('QR amb la icona al mig', () => {
     });
 
     it('un enllaç massa llarg no es converteix en QR', () => {
-        expect(card.canEncode('https://segueix.github.io/musica/?importData=abc')).toBe(true);
+        expect(card.canEncode('https://musica.segueix.cat/?importData=abc')).toBe(true);
         expect(card.canEncode('x'.repeat(card.MAX_QR_URL_LENGTH))).toBe(true);
         expect(card.canEncode('x'.repeat(card.MAX_QR_URL_LENGTH + 1))).toBe(false);
         expect(card.canEncode('')).toBe(false);
     });
 
     it('mòduls foscos sobre crema (contrast màxim), cantonades arrodonides i la icona de Segueix Música', () => {
-        const config = card.buildQrConfig('https://segueix.github.io/musica/?importData=abc', 380, '/img/icon-512.png');
-        expect(config.data).toBe('https://segueix.github.io/musica/?importData=abc');
+        const config = card.buildQrConfig('https://musica.segueix.cat/?importData=abc', 380, '/img/icon-512.png');
+        expect(config.data).toBe('https://musica.segueix.cat/?importData=abc');
         expect(config.width).toBe(380);
         expect(config.image).toBe('/img/icon-512.png');
         expect(config.imageOptions.hideBackgroundDots).toBe(true);
@@ -153,19 +153,19 @@ describe('marca', () => {
     it('no hi queda res de Segueix youtubers (caràtula, vermell, segueix.cat)', () => {
         for (const file of ['js/utils/share-card.js', 'js/utils/qr-share.js', 'js/utils/share-codecs.js']) {
             const source = read(file);
-            expect(source, file).not.toMatch(/caratula|#e94560|#1a1a2e|segueix\.cat/);
+            expect(source, file).not.toMatch(/caratula|#e94560|#1a1a2e|https:\/\/segueix\.cat/);
         }
     });
 
-    it('els enllaços de compartició apunten a Segueix Música a GitHub Pages', () => {
+    it('els enllaços de compartició apunten a Segueix Música al domini públic', () => {
         expect(read('js/utils/share-codecs.js')).toContain(
-            "const SHARE_BASE_URL = window.SEGUEIX_PUBLIC_URL || 'https://segueix.github.io/musica/'"
+            "const SHARE_BASE_URL = 'https://musica.segueix.cat/'"
         );
     });
 
     it('la imatge estàtica de les previsualitzacions existeix i és la d’index.html', () => {
         const html = read('index.html');
-        expect(html).toContain('content="https://segueix.github.io/musica/img/compartir.png"');
+        expect(html).toContain('content="https://musica.segueix.cat/img/compartir.png"');
         expect(html).toContain('<meta property="og:image:width" content="1200">');
         expect(html).toContain('<meta property="og:image:height" content="630">');
         const png = readFileSync(new URL('../img/compartir.png', import.meta.url));
