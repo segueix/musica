@@ -15,6 +15,9 @@
      limitations under the License.
 -->
 <resources>
+  <string-array name="additional_trusted_origins">
+    <item>https://segueix.cat</item>
+  </string-array>
 
 
   <!--
@@ -35,6 +38,12 @@
         \"target\": {
             \"namespace\": \"web\",
             \"site\": \"https://musica.segueix.cat\"
+        }
+    }, {
+        \"relation\": [\"delegate_permission/common.handle_all_urls\"],
+        \"target\": {
+            \"namespace\": \"web\",
+            \"site\": \"https://segueix.cat\"
         }
     }]
 

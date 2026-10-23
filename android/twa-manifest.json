@@ -1,8 +1,8 @@
 {
   "packageId": "cat.segueix.musica",
   "host": "musica.segueix.cat",
-  "name": "Segueix Música",
-  "launcherName": "Segueix Música",
+  "name": "Segueix",
+  "launcherName": "Segueix",
   "display": "standalone",
   "themeColor": "#141615",
   "themeColorDark": "#000000",
@@ -20,8 +20,8 @@
     "path": "keystore/segueix-musica.jks",
     "alias": "segueix-musica"
   },
-  "appVersionName": "1.0.0",
-  "appVersionCode": 1,
+  "appVersionName": "1.1.0",
+  "appVersionCode": 2,
   "shortcuts": [],
   "generatorApp": "bubblewrap",
   "webManifestUrl": "https://musica.segueix.cat/manifest.json",
@@ -42,11 +42,11 @@
       "value": "FC:16:ED:43:34:7A:F0:82:A6:87:D5:B0:E1:0B:CD:83:CE:85:A1:74:96:7D:60:F9:E3:84:C3:E1:FC:67:E1:95"
     }
   ],
-  "additionalTrustedOrigins": [],
+  "additionalTrustedOrigins": ["segueix.cat"],
   "retainedBundles": [],
   "protocolHandlers": [],
   "fileHandlers": [],
   "launchHandlerClientMode": "",
   "displayOverride": [],
-  "appVersion": "1.0.0"
+  "appVersion": "1.1.0"
 }

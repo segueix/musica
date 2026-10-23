@@ -21,6 +21,25 @@ test('l’embolcall no afegeix permisos sensibles ni analítica', () => {
     assert.doesNotMatch(read('android/app/build.gradle'), /firebase|play-services-analytics|appsflyer/i);
     assert.equal(JSON.parse(read('android/twa-manifest.json')).enableNotifications, false);
 });
+test('Música i Segueix tenen declaracions Android vàlides dins de la mateixa app', () => {
+    const config = JSON.parse(read('android/twa-manifest.json'));
+    const strings = read('android/app/src/main/res/values/strings.xml');
+    const statements = JSON.parse(strings.match(/<string name="assetStatements">([\s\S]*?)<\/string>/)[1].replace(/\\"/g, '"'));
+    assert.deepEqual(statements.map(entry => entry.target.site), ['https://musica.segueix.cat', 'https://segueix.cat']);
+    for (const entry of statements) {
+        assert.equal(entry.target.namespace, 'web');
+        assert.deepEqual(entry.relation, ['delegate_permission/common.handle_all_urls']);
+    }
+    assert.deepEqual(config.additionalTrustedOrigins, ['segueix.cat']);
+    assert.match(strings, /<string-array name="additional_trusted_origins">\s*<item>https:\/\/segueix\.cat<\/item>/);
+    const manifest = read('android/app/src/main/AndroidManifest.xml');
+    assert.match(manifest, /ADDITIONAL_TRUSTED_ORIGINS"\s+android:resource="@array\/additional_trusted_origins"/);
+    assert.match(manifest, /android:host="segueix\.cat"/);
+    const gradle = read('android/app/build.gradle');
+    assert.match(gradle, new RegExp(`versionCode ${config.appVersionCode}\\b`));
+    assert.ok(gradle.includes(`versionName "${config.appVersionName}"`));
+    assert.ok(config.appVersionCode > 1, 'ha de poder actualitzar la primera APK');
+});
 test('les claus privades i els resultats de compilació queden exclosos de git', () => {
     const ignore = read('android/.gitignore');
     for (const entry of ['keystore/', '*.jks', '*.keystore', '*.apk', '*.aab', 'local.properties']) assert.ok(ignore.includes(entry));
