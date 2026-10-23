@@ -27,8 +27,8 @@
         return runtime.hooks.toggleFollowChannelImpl?.(channelId);
     }
 
-    async function openChannelProfile(channelId) {
-        return runtime.hooks.openChannelProfileImpl?.(channelId);
+    async function openChannelProfile(channelId, options = {}) {
+        return runtime.hooks.openChannelProfileImpl?.(channelId, options);
     }
 
     function renderChannelVideos(query = '') {
@@ -114,6 +114,8 @@
         const normalizedId = String(channelId || '').trim();
         const base = app.utils?.appBasePath?.() || '/';
         if (!normalizedId) return `${base}creadors/`;
+        const published = app.utils?.publicRoutes?.href('artists', normalizedId);
+        if (published) return published;
         const slug = creatorSeo.slugByChannelId.get(normalizedId);
         return `${base}creador/${encodeURIComponent(slug || normalizedId)}${window.SEGUEIX_STATIC_SITE ? '/' : ''}`;
     }

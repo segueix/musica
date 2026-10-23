@@ -3,22 +3,30 @@ import vm from 'node:vm';
 import { describe, it, expect, vi } from 'vitest';
 
 const source = readFileSync(new URL('../js/static-seo.js', import.meta.url), 'utf8');
-function boot({ pathname = '/musica/', search = '', recovery = false, redirect = '', routes = {} } = {}) {
+function boot({ pathname = '/musica/', search = '', recovery = false, redirect = '', canonical = '', routes = {} } = {}) {
     const location = { origin: 'https://music.example', pathname, search, hash: '#punt', replace: vi.fn() };
     const button = { dataset: { videoId: 'song0000001' }, addEventListener: vi.fn() };
     const frame = { focus: vi.fn() };
     const container = { replaceChildren: vi.fn() };
     const appLink = { href: 'https://music.example/musica/?v=song0000001' };
-    const elements = { '[data-video-id]': button, '[data-static-player]': container, '[data-app-video]': appLink,
+    const elements = { 'link[rel="canonical"]': canonical ? { href: canonical } : null, '[data-video-id]': button, '[data-static-player]': container, '[data-app-video]': appLink,
         h1: { textContent: 'Cançó' }, '[data-static-recovery]': recovery ? { dataset: { base: '/musica/' } } : null,
         '[data-static-redirect]': redirect ? { href: redirect } : null };
     const document = { querySelector: selector => elements[selector], createElement: vi.fn(() => frame) };
     const fetch = vi.fn(async () => ({ ok: true, json: async () => routes }));
-    vm.runInNewContext(source, { window: { location }, location, document, fetch, URL, URLSearchParams });
-    return { location, document, fetch, button, frame, container, appLink };
+    const history = { state: null, replaceState: vi.fn() };
+    vm.runInNewContext(source, { window: { location, history }, location, document, fetch, URL, URLSearchParams });
+    return { location, history, document, fetch, button, frame, container, appLink };
 }
 
 describe('comportament de les pàgines estàtiques', () => {
+    it('un enllaç antic mostra el títol a la barra i conserva el segon inicial', () => {
+        const app = boot({ pathname: '/musica/compartir/canco/song0000001.html', search: '?t=73',
+            canonical: 'https://music.example/musica/video/canco/song0000001/' });
+        expect(app.history.replaceState).toHaveBeenCalledWith(null, '', 'https://music.example/musica/video/canco/song0000001/?t=73#punt');
+        expect(app.location.replace).not.toHaveBeenCalled();
+    });
+
     it('només crea el reproductor després del clic i conserva el segon inicial', () => {
         const app = boot({ search: '?t=73' });
         expect(app.document.createElement).not.toHaveBeenCalled();

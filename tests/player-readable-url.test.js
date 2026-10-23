@@ -46,6 +46,7 @@ function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', 
 
     const window = {
         SEGUEIX_STATIC_SITE: staticSite,
+        fetch: vi.fn(async () => ({ ok: true, json: async () => ({ videos: { song0000001: 'video/canco-de-prova/song0000001/' } }) })),
         SegueixApp: { state: { player: {} }, features: {}, utils: base ? { appBasePath: () => base } : {} },
         document,
         location,
@@ -56,6 +57,7 @@ function bootPlayer({ title = 'À Punt Mèdia: vídeo de prova', hostname = '', 
         addEventListener: vi.fn(),
     };
 
+    if (staticSite) vm.runInNewContext(readFileSync(new URL('../js/utils/public-routes.js', import.meta.url), 'utf8'), { window });
     vm.runInNewContext(playerSource, { window });
     return { window, history, elements };
 }
@@ -122,16 +124,20 @@ describe('URL llegible del vídeo dins la PWA', () => {
         expect(window.location.search).toBe(`?v=${videoId}`);
     });
 
-    it('en una web estàtica amb domini propi conserva la URL de l’app', () => {
+    it('en una web estàtica mostra la ruta publicada del vídeo i la retira en sortir del reproductor', async () => {
         const { window, history } = bootPlayer({ hostname: 'musica.example', pathname: '/musica/', base: '/musica/', staticSite: true });
+        await window.SegueixApp.utils.publicRoutes.load();
         window.SegueixApp.features.player.registerRuntime({ showVideoImpl(id) {
             window.SegueixApp.state.player.currentVideoId = id;
-            history.pushState({ videoId: id }, '', `?v=${id}`);
+            window.SegueixApp.utils.publicRoutes.open('videos', id);
         } });
         window.SegueixApp.features.player.showVideo('song0000001');
-        expect(history.replaceState).not.toHaveBeenCalled();
+        expect(history.pushState).toHaveBeenCalledTimes(1);
+        expect(window.location.pathname).toBe('/musica/video/canco-de-prova/song0000001/');
+        expect(window.location.search).toBe('');
+        window.document.getElementById('watchPage').classList.contains = () => true;
+        window.addEventListener.mock.calls.find(([event]) => event === 'popstate')[1]();
         expect(window.location.pathname).toBe('/musica/');
-        expect(window.location.search).toBe('?v=song0000001');
     });
 
     it("conserva la carpeta de l'app en reproduir", () => {

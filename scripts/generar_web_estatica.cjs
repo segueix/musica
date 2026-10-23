@@ -7,6 +7,7 @@ const { cleanTitle } = require('../js/song-title.js');
 const { CATEGORY_GROUPS } = require('../js/music-categories.js');
 const { generate: generateSharing } = require('./generar_pagines_compartir.js');
 const { loadChannelVideoAllowlist, isChannelVideoAllowed } = require('./lib/filtre_videos_canal.js');
+const { videoRoute, videoRewrite } = require('./lib/rutes_publiques.js');
 const DEFAULT_URL = 'https://musica.segueix.cat/';
 const MARKER = '.segueix-static-output';
 const VIDEO_ID = /^[A-Za-z0-9_-]{11}$/;
@@ -133,7 +134,9 @@ function build(root, options = {}) {
     };
     const url = file => base + file;
     const artistPath = artist => `creador/${artist.slug}/`;
-    const songPath = song => `compartir/canco/${song.id}.html`;
+    // GitHub Pages no interpreta _redirects; conserva les pàgines físiques en aquell allotjament.
+    const readableVideos = !new URL(base).hostname.endsWith('.github.io');
+    const songPath = song => readableVideos ? videoRoute(song) : `compartir/canco/${song.id}.html`;
     const routes = { base: basePath, artists: {}, videos: {}, sections: {} };
     const pages = [base];
     const image = (value, fallback) => {
@@ -173,6 +176,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
         // Només canvia les metadades del capçal; els enllaços editorials a Segueix es conserven.
         const headEnd = index.indexOf('</head>');
         index = index.slice(0, headEnd).replaceAll(DEFAULT_URL, base).replaceAll('https://segueix.github.io/musica/', base).replaceAll('https://segueix.cat/', base) + index.slice(headEnd);
+        index = index.replace('<head>', `<head><base href="${basePath}">`);
         index = index.replace('</head>', `<script>window.SEGUEIX_STATIC_SITE=true;window.SEGUEIX_CATALOG_POLICY=1;window.SEGUEIX_PUBLIC_URL=${json(base)};</script></head>`);
         write('index.html', index);
 
@@ -246,6 +250,7 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ''}</
             aliases(old + '/index.html', target, 'Segueix Música'); routes.sections[old] = target;
         }
         write('data/static-routes.json', JSON.stringify(routes));
+        if (readableVideos) write('_redirects', videoRewrite(basePath) + '\n');
         write('data/video-channels.json', JSON.stringify(Object.fromEntries(songs.map(song => [song.id, song.channelId]))));
         write('404.html', layout({ title: 'Aquesta pàgina no està disponible', description: 'Pots tornar a Música o explorar els artistes.', canonical: base, noindex: true,
             body: `<div data-static-recovery data-base="${basePath}"><a class="button" href="${basePath}">Torna a Música</a></div>` }));

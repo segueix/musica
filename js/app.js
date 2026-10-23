@@ -2746,7 +2746,7 @@ function buildAppShareUrl(query = '', hash = '') {
 
 async function getShareImageFile() {
     try {
-        const shareImageUrl = new URL(`img/${SHARE_IMAGE_NAME}`, window.location.href);
+        const shareImageUrl = new URL(`${appBasePath()}img/${SHARE_IMAGE_NAME}`, window.location.origin);
         const response = await fetch(shareImageUrl);
         if (!response.ok) {
             return null;
@@ -12263,15 +12263,15 @@ async function showVideoFromAPILegacyImpl(videoId, options = {}) {
 
     // Actualitzar URL
     const startAt = Math.max(0, Math.floor(Number(options.startAt) || 0));
-    const videoUrl = `?v=${videoId}${startAt > 0 ? `&t=${startAt}` : ''}`;
+    const updateVideoUrl = replaceHistory => SegueixApp.utils.publicRoutes.open('videos', videoId, { startAt, replaceHistory });
     if (keepPage) {
         // Fora de la pàgina del vídeo, la URL es queda a la secció on és l'usuari; a la pàgina del
         // vídeo només s'actualitza (sense afegir entrades a l'historial)
-        if (!watchWasHidden) history.replaceState({ videoId }, '', videoUrl);
+        if (!watchWasHidden) updateVideoUrl(true);
     } else if (options.replaceHistory) {
-        history.replaceState({ videoId }, '', videoUrl);
+        updateVideoUrl(true);
     } else {
-        history.pushState({ videoId }, '', videoUrl);
+        updateVideoUrl(false);
     }
 
     const launchedFromHistoryPage = Boolean(historyPage && !historyPage.classList.contains('hidden'));
@@ -12791,12 +12791,7 @@ function showVideoLegacyImpl(videoId, options = {}) {
     });
 
     const startAt = Math.max(0, Math.floor(Number(options.startAt) || 0));
-    const videoUrlWithTime = `?v=${videoId}${startAt > 0 ? `&t=${startAt}` : ''}`;
-    if (options.replaceHistory) {
-        history.replaceState({ videoId }, '', videoUrlWithTime);
-    } else {
-        history.pushState({ videoId }, '', videoUrlWithTime);
-    }
+    SegueixApp.utils.publicRoutes.open('videos', videoId, { startAt, replaceHistory: options.replaceHistory });
 
     const launchedFromHistoryPage = Boolean(historyPage && !historyPage.classList.contains('hidden'));
 
@@ -13342,11 +13337,11 @@ function initSuggestFormLink() {
     });
 }
 
-async function openChannelProfile(channelId) {
-    return SegueixApp.features.channel?.openChannelProfile?.(channelId);
+async function openChannelProfile(channelId, options = {}) {
+    return SegueixApp.features.channel?.openChannelProfile?.(channelId, options);
 }
 
-async function openChannelProfileLegacyImpl(channelId) {
+async function openChannelProfileLegacyImpl(channelId, options = {}) {
     if (!channelId) {
         return;
     }
@@ -13397,6 +13392,7 @@ async function openChannelProfileLegacyImpl(channelId) {
     channelPage.classList.remove('channel-page--program-profile');
 
     const channelName = channel?.name || channel?.title || 'Canal';
+    SegueixApp.utils.publicRoutes.open('artists', profileId, options);
     const channelAvatar =
         channel?.avatar || channel?.thumbnail || getFollowChannelAvatar(profileId) || 'img/icon-192.png';
     if (channelProfileAvatar) {
@@ -13695,7 +13691,7 @@ window.addEventListener('popstate', e => {
         return;
     }
 
-    if (isAuxiliaryPageVisible()) {
+    if (isAuxiliaryPageVisible() && !e.state?.videoId && !e.state?.channelId) {
         showHomeNovetats();
         return;
     }
@@ -13709,6 +13705,8 @@ window.addEventListener('popstate', e => {
         } else {
             showVideo(e.state.videoId, { startAt: popStartAt, replaceHistory: true });
         }
+    } else if (e.state && e.state.channelId) {
+        openChannelProfile(e.state.channelId, { replaceHistory: true });
     } else if (e.state && e.state.category) {
         // Restaurar la categoria anterior al tornar enrere
         activateCategory(e.state.category);

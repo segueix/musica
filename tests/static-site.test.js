@@ -4,6 +4,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, cpSync, existsSync
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 const { build, siteBase } = createRequire(import.meta.url)('../scripts/generar_web_estatica.cjs');
+const { publicFile } = createRequire(import.meta.url)('../scripts/lib/rutes_publiques.js');
 const { validate } = createRequire(import.meta.url)('../scripts/validar_paquet_estatic.cjs');
 const dirs = [];
 afterEach(() => { for (const dir of dirs.splice(0)) rmSync(dir, { recursive: true, force: true }); });
@@ -34,6 +35,27 @@ function fixture() {
 }
 
 describe('generació estàtica de Música', () => {
+    it('publica títols llegibles sense duplicar fitxers i conserva els enllaços antics', () => {
+        const { root, out } = fixture(); build(root);
+        const routes = JSON.parse(readFileSync(join(out, 'data/static-routes.json')));
+        expect(routes.videos.song0000001).toBe('video/canco-nova-llum/song0000001/');
+        expect(routes.videos.song0000005).toBe('video/canco-nova-llum/song0000005/');
+        expect(readFileSync(join(out, '_redirects'), 'utf8')).toBe('/video/:title/:id/ /compartir/canco/:id.html 200\n');
+        expect(existsSync(join(out, 'video'))).toBe(false);
+        const html = readFileSync(join(out, publicFile(routes.videos.song0000001)), 'utf8');
+        expect(html).toContain('href="https://musica.segueix.cat/video/canco-nova-llum/song0000001/"');
+        expect(html).toContain('"url":"https://musica.segueix.cat/video/canco-nova-llum/song0000001/"');
+        expect(readFileSync(join(out, 'sitemaps/pages-1.xml'), 'utf8')).toContain('https://musica.segueix.cat/video/canco-nova-llum/song0000001/');
+        expect(readFileSync(join(out, 'index.html'), 'utf8')).toContain('<base href="/">');
+    });
+
+    it('manté pàgines físiques en allotjaments GitHub Pages sense regles de Cloudflare', () => {
+        const { root, out } = fixture(); build(root, { siteUrl: 'https://segueix.github.io/musica/' });
+        const routes = JSON.parse(readFileSync(join(out, 'data/static-routes.json')));
+        expect(routes.videos.song0000001).toBe('compartir/canco/song0000001.html');
+        expect(existsSync(join(out, '_redirects'))).toBe(false);
+    });
+
     it('el mateix límit arriba al feed, arxiu, cerca, ràdios, pàgines i rutes; no altera les dades mestres', () => {
         const { root, out, put } = fixture();
         const popular = Array.from({ length: 23 }, (_, i) => song(`rank${String(i).padStart(7, '0')}`,
@@ -86,7 +108,7 @@ describe('generació estàtica de Música', () => {
         const { root, out } = fixture(); build(root);
         expect(readFileSync(join(out, 'index.html'), 'utf8')).toContain('href="https://musica.segueix.cat/"');
         const html = readFileSync(join(out, 'compartir/canco/song0000001.html'), 'utf8');
-        expect(html).toContain('content="https://musica.segueix.cat/compartir/canco/song0000001.html"');
+        expect(html).toContain('content="https://musica.segueix.cat/video/canco-nova-llum/song0000001/"');
         expect(html).toContain('Cançó &lt;nova&gt; &amp; &quot;llum&quot;');
         expect(html).toContain('property="og:url"');
         expect(html).toContain('name="twitter:card"');
@@ -102,14 +124,14 @@ describe('generació estàtica de Música', () => {
         const routes = JSON.parse(readFileSync(join(out, 'data/static-routes.json')));
         expect(routes.base).toBe(new URL(base).pathname);
         for (const target of [...Object.values(routes.artists), ...Object.values(routes.videos), ...Object.values(routes.sections)]) {
-            expect(existsSync(join(out, target, target.endsWith('/') ? 'index.html' : ''))).toBe(true);
+            expect(existsSync(join(out, publicFile(target)))).toBe(true);
         }
         for (const file of readdirSync(join(out, 'sitemaps'))) {
             const xml = readFileSync(join(out, 'sitemaps', file), 'utf8');
             for (const match of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
                 expect(match[1].startsWith(base)).toBe(true);
                 const relative = match[1].slice(base.length);
-                expect(existsSync(join(out, relative, !relative || relative.endsWith('/') ? 'index.html' : ''))).toBe(true);
+                expect(existsSync(join(out, publicFile(relative)))).toBe(true);
             }
         }
         const index = readFileSync(join(out, 'index.html'), 'utf8');

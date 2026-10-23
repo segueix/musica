@@ -4,6 +4,16 @@
     const params = new URLSearchParams(window.location.search);
     const start = Number(params.get('t'));
     const startAt = Number.isInteger(start) && start > 0 && start <= 86400 ? start : 0;
+    // Els enllaços antics mostren també l'adreça canònica, mantenint el temps i el fragment.
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical && document.querySelector('[data-video-id]')) {
+        const target = new URL(canonical.href);
+        if (target.origin === location.origin && target.pathname !== location.pathname) {
+            target.search = location.search;
+            target.hash = location.hash;
+            window.history.replaceState(window.history.state, '', target.href);
+        }
+    }
     const appLink = document.querySelector('[data-app-video]');
     if (appLink && startAt) {
         const target = new URL(appLink.href);

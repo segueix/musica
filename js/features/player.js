@@ -4,7 +4,7 @@
 
     const runtime = { hooks: {} };
     const VIDEO_ID_PATTERN = /^[A-Za-z0-9_-]{11}$/;
-    const VIDEO_PATH_PATTERN = /^\/video\/[^/]+$/;
+    const VIDEO_PATH_PATTERN = /^\/video\/[^/]+(?:\/[A-Za-z0-9_-]{11})?\/?$/;
     const APP_SECTION_HASHES = new Set(['#historial', '#llistes', '#segueix']);
     // Respecte a la carpeta de l'app (appBasePath()), mai relativa: la URL canvia en reproduir
     const DEFAULT_VIDEO_THUMBNAIL_FILE = 'img/caratula.webp';

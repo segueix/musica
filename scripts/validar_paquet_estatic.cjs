@@ -4,6 +4,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { publicFile, videoRewrite } = require('./lib/rutes_publiques.js');
 
 function validate(outDir, options = {}) {
     const root = path.resolve(outDir);
@@ -49,7 +50,9 @@ function validate(outDir, options = {}) {
         const url = new URL(value, base);
         if (url.origin !== base.origin || !url.pathname.startsWith(base.pathname)) fail(`URL fora de la destinació: ${value}`);
         const relative = decodeURIComponent(url.pathname.slice(base.pathname.length));
-        return file(relative + (!relative || relative.endsWith('/') ? 'index.html' : ''));
+        const physical = publicFile(relative);
+        if (physical.startsWith('compartir/canco/') && relative.startsWith('video/') && !read('_redirects').split('\n').includes(videoRewrite(base.pathname))) fail('falta la regla de les URL llegibles');
+        return file(physical);
     };
     const routes = json('data/static-routes.json');
     const channels = json('data/video-channels.json');
