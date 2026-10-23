@@ -4,6 +4,12 @@
     "description": "Escolta, retroba i descobreix música en català.",
     "start_url": "./",
     "scope": "./",
+    "scope_extensions": [
+        {
+            "type": "origin",
+            "origin": "https://segueix.cat"
+        }
+    ],
     "display": "standalone",
     "background_color": "#141615",
     "theme_color": "#141615",

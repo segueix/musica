@@ -13634,3 +13634,29 @@ body .mq .mq-item.is-active .mq-title {
         transition: none;
     }
 }
+
+/* ---------- Mapa: tots els requadres dels artistes fan la mateixa mida (2026-10-23) ----------
+   Amb una zona dibuixada (o la zona desada), cada artista porta el lloc i, de vegades, «Vinculat»: abans eren dues
+   línies més i els requadres sortien de 59 i de 78 px d'alt (a l'iPhone es veien descompensats). Ara la línia de sota
+   el nom és una sola («Vic · Vinculat», artistItems() d'artist-map.js), el nom i aquesta línia es tallen amb punts
+   suspensius i cada fila de la graella fa 60 px. */
+.am-artists {
+    grid-auto-rows: 60px;
+}
+.am-artists > li {
+    min-width: 0;
+    height: 60px;
+}
+.am-artist {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+.am-artist span {
+    flex: 1 1 auto;
+}
+.am-artist small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

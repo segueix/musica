@@ -294,13 +294,17 @@
             <g class="am-layer">${shapes}${insetHtml}<path class="am-lasso" d="${polygonPath(zone?.polygon)}"></path><g class="am-dots">${dots}</g></g></svg>`;
     }
 
+    // Una sola línia sota el nom («Vic · Vinculat»): així tots els requadres fan la mateixa alçada (2026-10-23)
     function artistItems(artists, withPlace = false) {
         return artists
-            .map(
-                artist => `<li><button type="button" class="am-artist" data-am-artist="${esc(artist.channelId)}">
+            .map(artist => {
+                const meta = [withPlace && artist.place, artist.relation === 'associated' && 'Vinculat']
+                    .filter(Boolean)
+                    .join(' · ');
+                return `<li><button type="button" class="am-artist" data-am-artist="${esc(artist.channelId)}">
                     <img src="${esc(artist.avatar || FALLBACK_AVATAR)}" alt="" loading="lazy" decoding="async" width="40" height="40">
-                    <span><strong>${esc(artist.name)}</strong>${withPlace && artist.place ? `<small class="am-artist__place">${esc(artist.place)}</small>` : ''}${artist.relation === 'associated' ? '<small>Vinculat</small>' : ''}</span></button></li>`
-            )
+                    <span><strong>${esc(artist.name)}</strong>${meta ? `<small class="am-artist__place">${esc(meta)}</small>` : ''}</span></button></li>`;
+            })
             .join('');
     }
 
