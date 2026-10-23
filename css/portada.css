@@ -13455,21 +13455,15 @@ body .mq .mq-item.is-active .mq-title {
     }
 }
 
-/* ---------- Mòbil: «Segueix!» i «Música» en dues línies i «català» en un núvol (2026-10-23) ----------
+/* ---------- Mòbil: «Segueix!» i «Música» en dues línies i «en / català» al costat de «Música» (2026-10-23) ----------
    Amb la icona de YouTuber a dalt a la dreta, la capçalera del mòbil porta cinc icones i la marca s'havia de fer massa
-   petita. Ara «Música» va sota «Segueix!» (la marca és la meitat d'ampla), «En català» no surt i, en lloc seu, la
-   paraula «català» va en un núvol terracota que sura damunt del logo (com si el cor la pensés). Les icones de dalt
-   fan 40 px d'ample (44 d'alt) amb 2 px entre elles. A l'ordinador no canvia res. */
-.brand-cloud {
-    display: none;
-}
-
+   petita. Ara «Música» va sota «Segueix!» (la marca és la meitat d'ampla), «En català» de sota no surt i, en lloc seu,
+   al costat de «Música» hi ha «en / català» en dues línies petites i blanques (opció C de les quatre que es van
+   provar: és la que deixa «Segueix!» i «Música» més grans a 360 i 320 px). El text és un ::after de .brand-music, en
+   em: creix i s'encongeix amb la marca. La lletra es calcula amb l'ample de la marca (cqi): la línia més llarga fa
+   ~4,8 em («Música» + «en / català»). Les icones de dalt fan 40 px d'ample (44 d'alt) amb 2 px entre elles. A
+   l'ordinador no canvia res. */
 @media (max-width: 768px) {
-    .app-header .brand {
-        position: relative;
-        overflow: visible;
-    }
-
     .app-header .brand-copy {
         overflow: hidden;
     }
@@ -13477,7 +13471,7 @@ body .mq .mq-item.is-active .mq-title {
     /* Bloc (no flex): així «Música» pot anar a la línia de sota sense separar «Segueix» de «!» */
     .app-header .brand-name {
         display: block;
-        font-size: min(1.0625rem, calc((100cqi - 40px) / 4.4));
+        font-size: min(1.0625rem, calc((100cqi - 40px) / 4.8));
         line-height: 1.02;
         white-space: nowrap;
     }
@@ -13487,68 +13481,28 @@ body .mq .mq-item.is-active .mq-title {
         margin-left: 0;
     }
 
+    .app-header .brand-name .brand-music::after {
+        content: 'en\A català';
+        display: inline-block;
+        margin-left: 0.25em;
+        color: #fff;
+        font-family: var(--pt-body);
+        font-size: 0.47em;
+        font-weight: 700;
+        line-height: 1;
+        text-align: left;
+        vertical-align: -0.1em;
+        white-space: pre;
+    }
+
     .app-header .brand-tag {
         display: none;
     }
 
-    .app-header .brand-cloud {
-        position: absolute;
-        top: -9px;
-        left: -5px;
-        z-index: 1;
-        display: block;
-        padding: 1px 6px 2px;
-        border-radius: var(--pt-radius-pill);
-        background: var(--pt-terracotta);
-        color: var(--pt-bg);
-        font-size: 0.5625rem;
-        font-weight: 800;
-        line-height: 1.25;
-        letter-spacing: 0.03em;
-        white-space: nowrap;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-        pointer-events: none;
-        animation: brand-cloud-float 3.6s ease-in-out infinite;
-    }
-
-    /* Les bombolletes del núvol, cap al logo */
-    .app-header .brand-cloud::before,
-    .app-header .brand-cloud::after {
-        content: '';
-        position: absolute;
-        border-radius: 50%;
-        background: var(--pt-terracotta);
-    }
-
-    .app-header .brand-cloud::before {
-        bottom: -4px;
-        left: 15px;
-        width: 5px;
-        height: 5px;
-    }
-
-    .app-header .brand-cloud::after {
-        bottom: -7px;
-        left: 19px;
-        width: 3px;
-        height: 3px;
-    }
-
-    /* 320 px: sense logo, el núvol sura just damunt de «Segueix!», sense tocar-lo */
+    /* 320 px: sense logo, la lletra es calcula amb tot l'ample de la marca */
     @container (max-width: 109px) {
         .app-header .brand-name {
-            font-size: min(1rem, calc(100cqi / 4.4));
-        }
-
-        .app-header .brand-cloud {
-            top: -12px;
-            left: auto;
-            right: 0;
-        }
-
-        .app-header .brand-cloud::before,
-        .app-header .brand-cloud::after {
-            content: none;
+            font-size: min(1rem, calc(100cqi / 4.8));
         }
     }
 
@@ -13560,22 +13514,5 @@ body .mq .mq-item.is-active .mq-title {
     .app-header .mobile-search-toggle {
         width: 40px;
         min-width: 40px;
-    }
-}
-
-@keyframes brand-cloud-float {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-2px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .app-header .brand-cloud {
-        animation: none;
     }
 }

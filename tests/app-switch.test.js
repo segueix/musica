@@ -61,14 +61,16 @@ describe('pas a Segueix! dels youtubers', () => {
         expect(source).not.toContain('Els youtubers en català');
     });
 
-    it('mòbil: «Música» sota «Segueix!», sense «En català» i amb «català» en un núvol damunt del logo', () => {
+    it('mòbil: «Música» sota «Segueix!» i «en / català» al costat, petit i en blanc (opció C)', () => {
         const block = css.slice(css.indexOf('/* ---------- Mòbil: «Segueix!» i «Música» en dues línies'));
-        expect(html).toContain('<span class="brand-cloud" aria-hidden="true">català</span>');
         expect(block).toMatch(/\.app-header \.brand-name \.brand-music \{\s*display: block;/);
+        expect(block).toMatch(
+            /\.brand-music::after \{\s*content: 'en\\A català';[^}]*color: #fff;[^}]*font-size: 0\.47em;[^}]*white-space: pre;/
+        );
+        expect(block).toMatch(/font-size: min\(1\.0625rem, calc\(\(100cqi - 40px\) \/ 4\.8\)\);/);
         expect(block).toMatch(/\.app-header \.brand-tag \{\s*display: none;/);
-        expect(block).toMatch(/\.app-header \.brand-cloud \{[^}]*position: absolute;[^}]*animation: brand-cloud-float/);
-        expect(block).toMatch(/prefers-reduced-motion: reduce\) \{\s*\.app-header \.brand-cloud \{\s*animation: none;/);
-        // A l'ordinador no hi ha núvol
-        expect(css).toMatch(/\.brand-cloud \{\s*display: none;\s*\}/);
+        // Ja no hi ha el núvol de sobre «Segueix!»
+        expect(html).not.toContain('brand-cloud');
+        expect(css).not.toContain('brand-cloud');
     });
 });
