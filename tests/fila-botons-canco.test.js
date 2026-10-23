@@ -22,13 +22,19 @@ describe('fitxa de la cançó condensada', () => {
         expect(css).not.toMatch(/flex-direction: column;\s*flex-wrap: nowrap;\s*gap: 12px;\s*width: 60px;/);
     });
 
-    it('els controls i les accions de l’app comparteixen la fila 5 de la graella', () => {
+    it('mòbil: anterior · play · següent a la dreta del títol; m’agrada i flotant amb desar · comparteix · ⋯ a sota', () => {
         expect(block).toMatch(/--wc-btn: 36px;/);
-        expect(block).toMatch(
-            /#watchPage \.watch-main > #playerExternalControls:not\(\.is-docked\) \{\s*grid-column: 1;\s*grid-row: 5;/
-        );
-        expect(block).toMatch(/> \.video-metadata-bar \{\s*grid-row: 5;/);
-        expect(block).toMatch(/> \.video-metadata-bar \{\s*grid-column: 2;/);
+        const mobile = block.slice(block.indexOf('/* Mòbil (2026-10-23, 2a)'));
+        expect(mobile).toMatch(/grid-template-columns: auto auto minmax\(0, 1fr\) auto auto auto;/);
+        // La barra deixa de ser una caixa: cada botó va a la seva cel·la
+        expect(mobile).toMatch(/#playerExternalControls:not\(\.is-docked\):not\(\[hidden\]\) \{\s*display: contents;/);
+        expect(mobile).toMatch(/> \.video-info > \.video-title \{\s*grid-column: 1 \/ 4;/);
+        expect(mobile).toMatch(/:is\(#playerPrevBtn, #playerPlayPauseBtn, #playerNextBtn\) \{\s*grid-row: 3;/);
+        expect(mobile).toMatch(/#playerNextBtn \{\s*grid-column: 6;/);
+        expect(mobile).toMatch(/:is\(#playerLikeBtn, #playerMiniBtn\) \{\s*grid-row: 5;/);
+        expect(mobile).toMatch(/> \.video-metadata-bar \{\s*grid-column: 3 \/ -1;/);
+        // Botons de 44 px per al tàctil
+        expect(mobile).toMatch(/:is\(#playlistBtn, #shareBtn, #watchMoreBtn\) \{\s*width: 44px;/);
         // .video-info, #channelInfo i .video-info-modern s'aplanen per col·locar els seus fills a la graella
         expect(block).toMatch(/> \.channel-info:not\(\.hidden\),[\s\S]*?display: contents;/);
     });

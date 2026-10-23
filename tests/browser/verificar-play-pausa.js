@@ -169,13 +169,17 @@ async function proves(browser, width, errors) {
     const estructura = await page.evaluate(() => {
         const player = document.getElementById('videoPlayer').getBoundingClientRect();
         const bar = document.getElementById('playerExternalControls');
-        const barBox = bar.getBoundingClientRect();
+        // Al mòbil la barra fa `display: contents` (2026-10-23): es mesuren els botons que es veuen
+        const boxes = [...bar.querySelectorAll('.player-external-btn')]
+            .filter(button => !button.hidden)
+            .map(button => button.getBoundingClientRect());
+        const top = Math.min(...boxes.map(box => box.top));
         return {
             damunt: document.querySelectorAll(
                 '#videoPlayer :is(.queue-toggle-button, .queue-next-touch-layer, .queue-next-overlay)'
             ).length,
-            visible: !bar.hidden && barBox.height > 0,
-            sota: Math.round(barBox.top - player.bottom),
+            visible: !bar.hidden && boxes.every(box => box.height > 0),
+            sota: Math.round(top - player.bottom),
             botons: [...bar.querySelectorAll('button')].filter(button => !button.hidden).map(button => button.id),
         };
     });
