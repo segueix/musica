@@ -30,8 +30,9 @@ test('Música i Segueix tenen declaracions Android vàlides dins de la mateixa a
         assert.equal(entry.target.namespace, 'web');
         assert.deepEqual(entry.relation, ['delegate_permission/common.handle_all_urls']);
     }
-    assert.deepEqual(config.additionalTrustedOrigins, ['segueix.cat']);
-    assert.match(strings, /<string-array name="additional_trusted_origins">\s*<item>https:\/\/segueix\.cat<\/item>/);
+    assert.deepEqual(config.additionalTrustedOrigins, ['musica.segueix.cat', 'segueix.cat']);
+    const origins = strings.match(/<string-array name="additional_trusted_origins">([\s\S]*?)<\/string-array>/)[1];
+    assert.deepEqual([...origins.matchAll(/<item>(.*?)<\/item>/g)].map(match => match[1]), statements.map(entry => entry.target.site));
     const manifest = read('android/app/src/main/AndroidManifest.xml');
     assert.match(manifest, /ADDITIONAL_TRUSTED_ORIGINS"\s+android:resource="@array\/additional_trusted_origins"/);
     assert.match(manifest, /android:host="segueix\.cat"/);

@@ -52,8 +52,10 @@ es resolen des de Google Maven i Maven Central.
 El manifest de Bubblewrap és `twa-manifest.json`. El projecte Android generat és
 versionat per poder-lo revisar. Si es regenera amb `bubblewrap update`, revisar el
 canvi i conservar `mavenCentral()` en lloc de l’antic `jcenter()` de la plantilla.
-`additionalTrustedOrigins` conté `segueix.cat` (sense esquema: la plantilla 1.27.0
-hi afegeix `https://`). Conservar les declaracions de tots dos orígens a
+`additionalTrustedOrigins` conté `musica.segueix.cat` i `segueix.cat` (sense esquema:
+la plantilla 1.27.0 hi afegeix `https://`). Cal incloure-hi també Música perquè un
+enllaç extern pot iniciar l'app directament a Segueix i després tornar a Música.
+Conservar les declaracions de tots dos orígens a
 `strings.xml`, l'entrada `ADDITIONAL_TRUSTED_ORIGINS` i el filtre d'enllaços de
 `segueix.cat` a `AndroidManifest.xml`. La plantilla 1.27.0 pot generar diversos
 arrays consecutius a `assetStatements`; ha de ser **un únic array JSON** amb els
