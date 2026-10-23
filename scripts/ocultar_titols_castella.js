@@ -161,6 +161,8 @@ afegeix('Sílvia Pérez Cruz', [
     'Sólo Se Trata de Vivir',
     'La Nochera',
 ]);
+// Baixes explícites de l’editor, 2026-10-23; no inferides només pel títol.
+afegeix(['Ceaxe', 'Ceaxe - Topic', 'Ceaxe - Tema'], ['EXCLUSIVAAA', 'Mykonos', 'Como Siempre']);
 afegeix('Ceaxe', [
     'SE REVELÓ',
     'POR LO NUESTRO',

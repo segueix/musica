@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T10:01:23.704Z",
+  "updatedAt": "2026-10-23T18:16:18.374Z",
   "description": "Llista blanca per a canals on Segueix Música només ha d'ingerir vídeos concrets. Admet títols exactes, fragments obligatoris i fragments exclosos.",
   "channels": {
     "UCKpscwdWlVaMqcA81vLI7OA": {
@@ -7873,6 +7873,24 @@
         "YjwMfW8VMiA": "UCjpwjXxxdEI-sKxp4KT0oTA"
       },
       "acceptedMusicOnly": true
+    },
+    "UCBKjT0edCSrQhqufwWaX5Zw": {
+      "artist": "Ceaxe",
+      "note": "Baixa expressa de l’editor el 2026-10-23: EXCLUSIVAAA, Mykonos i Como Siempre. Ceaxe continua en vigilància d’idioma al canal oficial i Tema; no s’exclou la resta del repertori.",
+      "deniedTitleContains": [
+        "EXCLUSIVAAA",
+        "Mykonos",
+        "Como Siempre"
+      ]
+    },
+    "UCu05DiznV7Z3jDMGr6w5WTQ": {
+      "artist": "Ceaxe",
+      "note": "Baixa expressa de l’editor el 2026-10-23: EXCLUSIVAAA, Mykonos i Como Siempre. Ceaxe continua en vigilància d’idioma al canal oficial i Tema; no s’exclou la resta del repertori.",
+      "deniedTitleContains": [
+        "EXCLUSIVAAA",
+        "Mykonos",
+        "Como Siempre"
+      ]
     }
   }
 }
