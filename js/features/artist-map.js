@@ -395,24 +395,6 @@
                     )
                     .join('')}</details>`
             : '';
-        // Alternativa al mapa: la mateixa informació en una llista per territori
-        const byTerritory = new Map();
-        model.points.forEach(point => {
-            if (!byTerritory.has(point.territory)) byTerritory.set(point.territory, []);
-            byTerritory.get(point.territory).push(point);
-        });
-        const list = [...byTerritory.entries()]
-            .map(
-                ([territory, points]) =>
-                    `<h4>${esc(territory)}</h4><ul>${points
-                        .sort((a, b) => a.name.localeCompare(b.name, 'ca'))
-                        .map(
-                            point =>
-                                `<li><button type="button" class="am-link" data-am-place="${esc(point.id)}">${esc(point.name)}</button> · ${artistsLabel(point.artists.length)}</li>`
-                        )
-                        .join('')}</ul>`
-            )
-            .join('');
         return `
             <div class="am-head">
                 <div><p class="pt-eyebrow">Descobreix</p><h2 class="am-title">Música d'arreu</h2>
@@ -443,8 +425,7 @@
                 </div>
                 <div class="am-panel" aria-live="polite">${zone && !selected ? zonePanelHtml(zone, home) : panelHtml(selected, home)}</div>
             </div>
-            ${outside}
-            <details class="am-list"><summary>Llista per territoris</summary>${list}</details>`;
+            ${outside}`;
     }
 
     // ---------- DOM ----------

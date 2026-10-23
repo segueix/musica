@@ -81,7 +81,7 @@ describe('fitxa de la cançó condensada', () => {
         });
 
         it('reproductor més ample (16:9) i cua més estreta', () => {
-            expect(block).toMatch(/--wc-q: clamp\(300px, 26vw, 380px\);/);
+            expect(block).toMatch(/--wc-q: clamp\(340px, 31vw, 460px\);/);
             expect(block).toMatch(/grid-template-columns: minmax\(0, 1fr\) auto var\(--wc-q\);/);
             expect(block).toMatch(/> \.video-placeholder \{\s*aspect-ratio: 16 \/ 9;/);
         });
