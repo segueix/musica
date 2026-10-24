@@ -1,15 +1,17 @@
 # Revisió de pendents des de ChatGPT/Codex, sense API d’IA
 
-## Criteri editorial vigent (23/10/2026)
+## Criteri editorial vigent (24/10/2026): màxim una estrofa en una altra llengua
 
-**Rectificació del 24/10/2026:** l’editor ha revocat les aprovacions bilingües/multilingües identificades a `revisions/2026-10-24-miki-nunez-i-bilingues.json`. Les decisions explícites de retirada prevalen sobre la norma general següent; no les recupereu per títol català ni per fragment català. No es reescriuen els lots històrics. Miki Núñez queda sota vigilància amb exclusió de peces no catalanes i bilingües, tant al canal oficial com al Tema.
+Aquesta precisió de l’editor substitueix l’acceptació sense límits del 23/10 i la retirada absoluta de bilingües del primer encàrrec del 24/10.
 
-Per indicació expressa de l’editor, aquestes regles substitueixen el criteri antic de català estricte, inclosa qualsevol indicació incompatible de la rutina `.agents/skills/revisar-idiomes/SKILL.md`:
+1. **Base catalana, amb una excepció limitada.** Es conserva una peça en català amb, com a màxim, una estrofa en una altra llengua en tota la cançó. La resta, inclosa la tornada, ha de ser en català. Dues estrofes estrangeres, alternança sostinguda de llengües o una tornada en una altra llengua queden excloses. La mateixa regla s’aplica a l’occità/aranès; es mantenen els instrumentals documentats.
+2. **Comptar sobre la peça sencera.** Per acceptar o excloure una mescla coneguda cal llegir la lletra completa de l’enregistrament concret i registrar `mescla`: `llenguaPrincipal`, `estrofesAltresLlengues`, `tornadaAltresLlengues`, `restaEnLlenguaPrincipal` i `estructuraCompletaVerificada:true`. Compta els blocs cantats estrangers de tota la peça, també si es repeteixen; un fragment cantat més curt que una estrofa compta com un bloc. Noms propis, crèdits o préstecs lèxics aïllats no són estrofes. Si la segmentació és dubtosa, deixa-ho pendent; no inventis un recompte.
+3. **L’etiqueta d’idioma no basta.** `llengues:["ca","es"]` identifica les llengües, però no quantifica l’estructura. Sense recompte verificat, una mescla no s’aprova ni es declara que supera el límit. `fragment-catala` deixa de ser resolutiu: una frase catalana no acredita la resta de la cançó.
+4. **Títols catalans i confiança.** Es manté l’acceptació directa pel títol inequívocament català quan no hi ha prova contrària, amb `llengues:[]` i sense afirmar verificació. No serveix per eludir una mescla ja coneguda ni una exclusió explícita. La confiança en un artista tampoc certifica la lletra.
 
-1. **Títol inequívocament català: acceptació directa.** No cal buscar la lletra. S’admet la grafia informal o fonètica quan el significat català és inequívoc; cal explicar-lo. Noms propis o títols ambigus no basten. Registra `titol-catala`, el títol exacte i la font de les metadades de l’ID. Aquesta acceptació no verifica la lletra ni les llengües cantades.
-2. **Català amb altres llengües: acceptació.** S’admeten anglès, castellà o qualsevol altra llengua com a segona llengua, incloses estrofes senceres; no cal cap percentatge mínim de català. Si el títol no resol, un fragment cantat en català comprovat en la versió concreta és suficient (`fragment-catala`). Una frase en una altra llengua no justifica amagar la peça.
+Política operativa: `catala-una-estrofa-v3`. Els lots antics conserven la política i les decisions originals com a historial. No reutilitzis aprovacions de v2 per certificar el límit nou. Les 36 retirades multilingües de la revisió anterior tenen les llengües registrades, però no aquest recompte: continuen ocultes mentre es comprova l’excepció; la revisió queda registrada a `docs/revisions/2026-10-24-criteri-una-estrofa.json`. No recuperis cap ID només per l’etiqueta. La nova petició autoritza recuperar els casos que es comprovin compatibles, conservant la traçabilitat i sense anul·lar altres exclusions.
 
-Es mantenen les acceptacions d’occità/aranès i d’instrumentals documentats. Les peces exclusivament en altres llengües no entren per la regla de bilingüisme; cal lletra íntegra o documentació de l’edició per excloure-les. Els casos sense títol clar ni prova lingüística es mantenen pendents. No inventis una escolta o lectura. Els lots antics conserven `catala-estricte-v1` com a historial; les revisions noves usen `catala-titol-mixt-v2` i no alteren decisions aplicades dels lots antics.
+Miki Núñez continua com a sospitós habitual, amb la mateixa excepció d’una estrofa i revisió tant del canal oficial com del Tema. No confonguis «Celébrate» amb «Celebrem».
 
 ## Funcionament
 
@@ -92,12 +94,12 @@ Una font consultada sense èxit també es pot registrar en un pendent, amb `lleg
 |---|---|
 | `lletra-completa` | `lletraCompletaLlegida:true`; lectura íntegra real, font llegida i versió identificada. |
 | `titol-catala` | Només `conserva`; `titolCatala` igual al títol de l’entrada; `llengues:[]`; font de metadades llegida, també vàlida una còpia versionada del repositori. No afirma lectura de lletra. |
-| `fragment-catala` | Només `conserva`; `fragmentCantatComprovat:true`; català o occità cantat comprovat en la versió concreta. Admet altres llengües i transcripcions parcials. |
+| `fragment-catala` | Històric, no resolutiu amb v3. Una transcripció parcial no acredita el límit d’una estrofa. |
 | `disc-documentat` | `edicio` identifica inequívocament edició i correspondència de l’ID. La font n’acredita la llengua, no només l’existència. |
 | `instrumental-documentat` | `instrumentalComprovat:true`, `llengues:["zxx"]`, acció `conserva`; prova positiva sobre aquella versió. |
-| `mateix-enregistrament` | `decisioOrigen` apunta a una decisió anterior de la política vigent `catala-titol-mixt-v2`; `correspondencia` descriu la prova del mateix enregistrament; mateixa acció i llengües. |
+| `mateix-enregistrament` | `decisioOrigen` apunta a una decisió anterior de la política vigent `catala-una-estrofa-v3`; `correspondencia` descriu la prova del mateix enregistrament; mateixa acció, llengües i estructura `mescla`. |
 
-Conservar admet `ca` o `oc` amb altres llengües, instrumental `zxx`, o el mètode independent `titol-catala` amb `llengues:[]`. Ocultar exigeix una lletra íntegra o documentació de la versió sense català ni occità; `fragment-no-catala` ja no és resolutiu. Per mètodes documentals, títols o fragments no es pot afirmar `lletraCompletaLlegida:true`. El camp editorial `lletraIntegraVerificada` només es posa amb `lletra-completa`.
+Conservar admet `ca` o `oc`, instrumental `zxx`, el mètode independent `titol-catala` amb `llengues:[]` o una mescla que compleixi el límit documentat d’una estrofa. Per a una mescla cal `lletra-completa` (o `mateix-enregistrament` ja comprovat amb v3) i l’objecte `mescla`; si supera el límit s’amaga, si manca informació continua pendent. `fragment-no-catala` tampoc és resolutiu. Per mètodes documentals, títols o fragments no es pot afirmar `lletraCompletaLlegida:true`. El camp editorial `lletraIntegraVerificada` només es posa amb `lletra-completa`.
 
 **El validador comprova estructura, identitats i coherència; no demostra que una URL digui el que l’agent afirma ni detecta per si mateix la llengua.** És obligació de l’agent llegir, contrastar i no inventar. Una prova que passa no substitueix aquesta revisió. Davant dubtes, `pendent`.
 

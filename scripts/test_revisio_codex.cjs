@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const { run, POLICY } = require('./revisar_idiomes_codex.cjs');
+const { run, validate, POLICY } = require('./revisar_idiomes_codex.cjs');
 const Q = 'data/revisio-idiomes.json', H = 'data/hidden-videos.json';
 const BP = 'docs/revisions/idiomes-codex/lot-0001.json';
 const write = (r, p, x) => { fs.mkdirSync(path.dirname(path.join(r, p)), { recursive: true }); fs.writeFileSync(path.join(r, p), JSON.stringify(x, null, 2) + '\n'); };
@@ -44,8 +44,31 @@ test('aplicació parcial real i idempotent preserva la resta', t => {
     assert.equal(q.decisions[1].politica, POLICY); assert.equal(q.decisions[1].lletraIntegraVerificada, true); assert.equal(q.decisions[1].reutilitza, false);
     assert.equal(apply(r).omesesJaAplicades, 1); assert.equal(read(r, Q).decisions.length, 2);
 });
-test('cançó mixta amb català es conserva', t => {
-    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { llengues: ['ca', 'es'] })]); assert.equal(apply(r).conservades, 1);
+const mixture = (extra = {}) => ({ llenguaPrincipal: 'ca', estrofesAltresLlengues: 1, tornadaAltresLlengues: false, restaEnLlenguaPrincipal: true, estructuraCompletaVerificada: true, ...extra });
+test('una sola estrofa estrangera comprovada es conserva i desa l’estructura', t => {
+    const r = setup(t); prepare(r); const mescla = mixture();
+    setDecisions(r, [keep(undefined, { llengues: ['ca', 'es'], mescla })]);
+    assert.equal(apply(r).conservades, 1); assert.deepEqual(read(r, Q).decisions[1].mescla, mescla);
+});
+for (const mescla of [mixture({ estrofesAltresLlengues: 2 }), mixture({ tornadaAltresLlengues: true }), mixture({ llenguaPrincipal: 'es' }), mixture({ restaEnLlenguaPrincipal: false })]) {
+    test('exclou una mescla que supera el límit: ' + JSON.stringify(mescla), t => {
+        const r = setup(t); prepare(r);
+        setDecisions(r, [keep(undefined, { llengues: ['ca', 'es'], mescla })]);
+        assert.throws(() => apply(r), /supera l’excepció/);
+        setDecisions(r, [keep(undefined, { accio: 'amaga', llengues: ['ca', 'es'], mescla })]);
+        assert.equal(apply(r).amagades, 1); assert(read(r,H).videoIds.includes('video000001'));
+    });
+}
+for (const mescla of [undefined, mixture({ estrofesAltresLlengues: 0 }), mixture({ estrofesAltresLlengues: -1 }), mixture({ estrofesAltresLlengues: 1.5 }), mixture({ estructuraCompletaVerificada: false }), { ...mixture(), lyrics: 'no' }]) {
+    test('no decideix una mescla sense estructura vàlida: ' + JSON.stringify(mescla), t => {
+        const r = setup(t); prepare(r); const before = bytes(r,Q);
+        setDecisions(r, [keep(undefined, { llengues: ['ca', 'en'], ...(mescla ? { mescla } : {}) })]);
+        assert.throws(() => apply(r), /estructura|Estructura/); assert.equal(bytes(r,Q),before);
+    });
+}
+test('no amaga una cançó que compleix l’excepció documentada', t => {
+    const r=setup(t); prepare(r); setDecisions(r,[keep(undefined,{accio:'amaga',llengues:['ca','es'],mescla:mixture()})]);
+    assert.throws(()=>apply(r),/compleix l’excepció/);
 });
 test('exclusió per lletra íntegra sense català afegeix només aquell ID', t => {
     const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { accio: 'amaga', metode: 'lletra-completa', llengues: ['es'], lletraCompletaLlegida: true })]);
@@ -153,13 +176,29 @@ test('títol català no permet afirmar lectura de lletra ni un títol diferent',
     setDecisions(r, [keep(undefined, { metode: 'titol-catala', titolCatala: 'Altra peça', llengues: [], lletraCompletaLlegida: false })]);
     assert.throws(() => apply(r), /mateixa entrada/);
 });
-test('fragment català permet conservar lletra parcial amb altres llengües', t => {
-    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { metode: 'fragment-catala', llengues: ['ca', 'en'], lletraCompletaLlegida: false, fragmentCantatComprovat: true })]);
-    assert.equal(apply(r).conservades, 1); assert.equal(read(r, Q).decisions[1].lletraIntegraVerificada, false);
+test('un fragment català no permet aprovar ni certificar l’absència d’altres llengües', t => {
+    const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { metode: 'fragment-catala', llengues: ['ca'], lletraCompletaLlegida: false, fragmentCantatComprovat: true })]);
+    assert.throws(() => apply(r), /fragment català/);
+});
+test('el títol català no anul·la una mescla coneguda', () => {
+    const d=keep(undefined,{metode:'titol-catala',titolCatala:'Peça 1',llengues:[],lletraCompletaLlegida:false});
+    assert.throws(()=>validate(d,{id:d.id,titol:'Peça 1'},{decisions:[{id:d.id,llengues:['ca','es']}]},new Date().toISOString()),/no pot esquivar/);
+});
+test('una font d’un disc no substitueix el recompte d’estrofes de la peça',t=>{
+    const r=setup(t);prepare(r);setDecisions(r,[keep(undefined,{metode:'disc-documentat',edicio:'Edició documentada del disc',llengues:['ca','es'],mescla:mixture(),lletraCompletaLlegida:false})]);
+    assert.throws(()=>apply(r),/comptar estrofes/);
+});
+test('el mateix enregistrament exigeix la mateixa estructura amb la política nova', t => {
+    const r=setup(t);prepare(r);const q=read(r,Q);
+    q.decisions[0]={id:'existing001',accio:'conserva',politica:POLICY,llengues:['ca','es'],mescla:mixture(),criteri:'revisio-codex-documentada'};write(r,Q,q);
+    const d=keep(undefined,{metode:'mateix-enregistrament',llengues:['ca','es'],mescla:mixture(),lletraCompletaLlegida:false,decisioOrigen:'existing001',correspondencia:'Mateix enregistrament: coincideixen ISRC i edició publicada.'});
+    setDecisions(r,[d]);assert.equal(apply(r,['--dry-run']).conservades,1);
+    q.decisions[0].mescla.estrofesAltresLlengues=2;write(r,Q,q);
+    assert.throws(()=>apply(r),/estructura de la mescla no coincideix/);
 });
 test('una llengua estrangera sola no aprova i un fragment estranger no exclou', t => {
     const r = setup(t); prepare(r); setDecisions(r, [keep(undefined, { llengues: ['en'] })]); assert.throws(() => apply(r), /Cal català/);
-    setDecisions(r, [keep(undefined, { accio: 'amaga', llengues: ['ca', 'en'] })]); assert.throws(() => apply(r), /No es pot excloure/);
+    setDecisions(r, [keep(undefined, { accio: 'amaga', llengues: ['ca', 'en'] })]); assert.throws(() => apply(r), /estructura de la mescla/);
     setDecisions(r, [keep(undefined, { accio: 'amaga', metode: 'fragment-no-catala', llengues: ['en'], lletraCompletaLlegida: false, fragmentCantatComprovat: true })]); assert.throws(() => apply(r), /Mètode no admès/);
 });
 test('els lots històrics mantenen política i decisions sense reaplicar-les', t => {

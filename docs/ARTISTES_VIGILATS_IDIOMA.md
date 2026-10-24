@@ -2,11 +2,11 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-24T07:39:29.190Z. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-24T07:48:57.710854+00:00. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
-- Només les cançons noves dels artistes vigilats entren a `pendents`. Català, occità/aranès i instrumentals es poden conservar; les expressions breus no equivalen a estrofes en altres llengües.
+- Només les cançons noves dels artistes vigilats entren a `pendents`. Català, occità/aranès i instrumentals es poden conservar. Criteri del 24/10/2026: una peça de base catalana/occitana pot tenir com a màxim una estrofa en una altra llengua, amb la resta i la tornada en la llengua principal; cal estructura completa verificada. Sense recompte, una mescla coneguda queda pendent. Vegeu `REVISIO_AUTOMATICA_IDIOMES.md`.
 - La resta del catàleg classificat s’accepta per confiança en l’artista, registrada a `acceptadesPerArtista`. Això no certifica la lletra de cada cançó. Pot passar alguna excepció.
 - Un artista desconegut genera una sola entrada a `artistesPendents`, sense una cua per cadascuna de les seves cançons. Es classifica una vegada afegint-lo a `confianca` o `vigilats` amb els canals i àlies. La classificació no oculta contingut.
 - Els IDs de canal prevalen sobre els noms. Les assignacions oficial/Topic de la base d’artistes comparteixen política. Un ID desconegut no hereta confiança d’un homònim.
@@ -106,7 +106,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Mariona Escoda i Sendra | Mariona Escoda, Mariona Escoda - Topic | `UC_97DSVzzRp28ew8nKB255g`, `UC82RhPbZ6uly1CbqivbZqxQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | MARLENA |  | Sense canal assignat | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js` |
 | Mazoni | Mazoni - Topic | `UCwg6xDQi5POlksfrsjjwFyA` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
-| Miki Núñez | Miki Nuñez, Miki Núñez - Topic | `UCSw_OmWJnY0Dz311MEzdHFA`, `UCJ_erOhxsuzi3KYLngXMeJw` | Sospitós habitual, confirmat per l’editor el 24/10/2026: repertori en català i altres llengües. Revisar canals oficial i Tema; retirar peces no catalanes i bilingües. Celébrate és en castellà; no confondre amb Celebrem. Les exclusions explícites prevalen sobre aprovacions pel títol o per llengües mixtes. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md`, `docs/revisions/2026-10-24-miki-nunez-i-bilingues.json` |
+| Miki Núñez | Miki Nuñez, Miki Núñez - Topic | `UCSw_OmWJnY0Dz311MEzdHFA`, `UCJ_erOhxsuzi3KYLngXMeJw` | Sospitós habitual, confirmat per l’editor el 24/10/2026: repertori en català i altres llengües. Revisar oficial i Tema. Criteri precisat: peça de base catalana amb com a màxim una estrofa estrangera verificada, resta i tornada en català; sense estructura documentada, pendent. Celébrate és en castellà; no confondre amb Celebrem. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md`, `docs/revisions/2026-10-24-miki-nunez-i-bilingues.json` |
 | miquel |  | `UC7Hb62h0GUUgaPe0v0kdY3A` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Mishima | Mishima - Topic, MISHIMA | `UCG2FXKF44MdeDbLb66yb-rQ`, `UC_z4NPeGNySemAwaAihgbaQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Montse Castellà | Montse Castellà - Cantautora, Montse Castellà - Topic | `UCCQqI6aPYDi_aGJsfDr_gqA`, `UCQXQh0zJqh0smX0vvOLNxag` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |

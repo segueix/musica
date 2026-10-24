@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "policy": "catala-una-estrofa-v3",
+  "data": "2026-10-24T07:48:57.710854+00:00",
+  "criteri": "Català com a base; màxim una estrofa en una altra llengua; resta i tornada en català. Sense estructura verificada, pendent.",
+  "idiomesRegistrats": {
+    "videosRetiratsRevisioAnterior": 51,
+    "ambLlengues": 51,
+    "multilinguesSenseRecompte": 36,
+    "totalDecisionsRegistre": 3694,
+    "decisionsAmbLlengues": 166
+  },
+  "nota": "Aquest recompte és del registre de decisions, no de tot el catàleg. No s’ha tornat a llegir la lletra dels 36 vídeos en aquest canvi de política; no s’inventa el nombre d’estrofes ni es desfan automàticament les baixes.",
+  "revisioEstructuraPendent": [
+    {
+      "id": "FeZI77ORst4",
+      "artista": "Good Jan",
+      "titol": "GOOD JAN - RiAL G [ONESHOTxALBERTDiAZ] enchufe",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1624952509/rial-g",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "hQfqOdRRI6s",
+      "artista": "Good Jan",
+      "titol": "GOODJAN - ENCHUFE /enchufemixtape",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1624952623/enchufe",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "DP5zadXdemw",
+      "artista": "Good Jan",
+      "titol": "CLUB - GOODJAN X LILGUIU prod.A.P.Kushd'up - video.CARUBA",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1624952632/club",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "OAQUZ3jCack",
+      "artista": "Good Jan",
+      "titol": "JOVA JOUNSI // GOOD JAN X MONRRA STRAPS || SANPERAMARTIRMIXTAPE",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1624962076/jova-jounsi",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "eeTaTwQlrqY",
+      "artista": "Good Jan",
+      "titol": "NASSASSITAS ASTA AM MI #GOODJAN #SUPARFISIAL",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/es-es/song/1624953765/nassassitas-asta-am-mi-feat-good-jan",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "Ez6uIPpmWCo",
+      "artista": "Good Jan",
+      "titol": "HOU HOU HOU // GOODJAN",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/es-es/song/1625115017/hou-hou-hou",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "-03QndP-qKA",
+      "artista": "Flashy Ice Cream",
+      "titol": "Entremaliada",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1790257469/entremaliada",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "SLuAeUe7Vsc",
+      "artista": "Flashy Ice Cream",
+      "titol": "Tiki Taka",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1790257471/tiki-taka",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "BX0XrZNyTVw",
+      "artista": "Skaparapid",
+      "titol": "Kolors",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.musica.com/letras.asp?letra=1053690",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "ylMypDE2ANk",
+      "artista": "Skaparapid",
+      "titol": "Kolors",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.musica.com/letras.asp?letra=1053690",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "Qerqpaxhpwg",
+      "artista": "BTZ",
+      "titol": "COSMOS",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605273/cosmos",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "Sy2FY3nQ8Gk",
+      "artista": "BTZ",
+      "titol": "BTZ - COSMOS ( Visualizer )",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605273/cosmos",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "oGTv_dizigw",
+      "artista": "BTZ",
+      "titol": "STEP BY STEP",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605289/step-by-step",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "JNyIFKA-i9s",
+      "artista": "BTZ",
+      "titol": "BTZ - STEP BY STEP ( Visualizer )",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605289/step-by-step",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "Cs6BsdZBQYs",
+      "artista": "BTZ",
+      "titol": "COME BACK",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605286/come-back",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "_YFWkgsdXxE",
+      "artista": "BTZ",
+      "titol": "BTZ - COME BACK ( Visualizer )",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605286/come-back",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "333X9TKkGLI",
+      "artista": "BTZ",
+      "titol": "ATMOS",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/en-gb/song/1741757927/atmos",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "pCn_SGykBj8",
+      "artista": "BTZ",
+      "titol": "ATMOS",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/en-gb/song/1741757927/atmos",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "jmtCMEcc-Gs",
+      "artista": "BTZ",
+      "titol": "BTZ - ATMOS (Official Visualizer) #COSMOS",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/en-gb/song/1741757927/atmos",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "AsOLnHNlMqc",
+      "artista": "BTZ",
+      "titol": "DEMONS",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605295/demons",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "mPjFs14hR6s",
+      "artista": "BTZ",
+      "titol": "BTZ - DEMONS ( Visualizer )",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1800605295/demons",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "oX42GVjF3Cg",
+      "artista": "BTZ",
+      "titol": "CHERE",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1786663895/chere",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "x43Oc59IZrM",
+      "artista": "BTZ",
+      "titol": "CHERE",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1786663895/chere",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "6r-MObY5B68",
+      "artista": "BTZ",
+      "titol": "BTZ X CLOE - CHERE (Official Visualizer) #COSMOS",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1786663895/chere",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "xX-cD2GUR68",
+      "artista": "BTZ",
+      "titol": "FENIX",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1730540393/fenix",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "xsLcID2l5lI",
+      "artista": "BTZ",
+      "titol": "FENIX",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1730540393/fenix",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "3F-ZzEA6Le0",
+      "artista": "BTZ",
+      "titol": "FENIX - BTZ (Official Visualizer) #COSMOS",
+      "llengues": [
+        "ca",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1730540393/fenix",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "LMuHaaNHxuQ",
+      "artista": "Skaparapid",
+      "titol": "Obsesiónat",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://chords.lacuerda.net/skaparapid/obsesionat",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "bPwsqlrwp68",
+      "artista": "Mushkaa",
+      "titol": "FLOW BALOTELLI",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.letrasboom.com/letra/flow-balotelli-mushkaa",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "fFoWkcvDPZg",
+      "artista": "Mushkaa",
+      "titol": "LOTUS",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.letrasboom.com/letra/lotus-mushkaa",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "z1QA9FA0aGI",
+      "artista": "Mushkaa",
+      "titol": "Mamipuladora",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.letrasboom.com/letra/mamipuladora-mushkaa",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "wJk6PicCymg",
+      "artista": "Mushkaa",
+      "titol": "MIMENINA",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.letrasboom.com/letra/mimenina-mushkaa",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "A5Ppvc3GLnE",
+      "artista": "Mushkaa",
+      "titol": "MUSHKINHA LET'S PLAY SAMBA",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.letrasboom.com/letra/mushkinha-let-s-play-samba-mushkaa",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "tdY-fWc-_fA",
+      "artista": "Mushkaa",
+      "titol": "Turra Malvada",
+      "llengues": [
+        "ca",
+        "es"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/es-es/song/1736723324/turra-malvada",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "Y4kjNEDxmQc",
+      "artista": "Julieta",
+      "titol": "Taxi",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.youtube.com/watch?v=ObMgtDrRZ_w",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    },
+    {
+      "id": "IqexEeMWySQ",
+      "artista": "Julieta",
+      "titol": "TaKushii TaXXXii Kinara Remix (by BERSHKA Music)",
+      "llengues": [
+        "ca",
+        "es",
+        "en"
+      ],
+      "estat": "pendent-estructura",
+      "ocult": true,
+      "font": "https://www.shazam.com/song/1805850456/takushii-taxxxii-kinara-remix-by-bershka-music",
+      "decisioAnterior": "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
+    }
+  ],
+  "validacio": {
+    "provesCodex": 58,
+    "provesRellevants": 29,
+    "lintErrors": 0,
+    "lintAvisos": 180,
+    "nota": "La suite general reporta els mateixos sis errors ja reproduïts a la base en la revisió anterior; no es presenta com a superada."
+  }
+}

@@ -15,7 +15,7 @@ const text = [
     '',
     '## Política',
     '',
-    '- Només les cançons noves dels artistes vigilats entren a `pendents`. Català, occità/aranès i instrumentals es poden conservar; les expressions breus no equivalen a estrofes en altres llengües.',
+    '- Només les cançons noves dels artistes vigilats entren a `pendents`. Català, occità/aranès i instrumentals es poden conservar. Criteri del 24/10/2026: una peça de base catalana/occitana pot tenir com a màxim una estrofa en una altra llengua, amb la resta i la tornada en la llengua principal; cal estructura completa verificada. Sense recompte, una mescla coneguda queda pendent. Vegeu `REVISIO_AUTOMATICA_IDIOMES.md`.',
     '- La resta del catàleg classificat s’accepta per confiança en l’artista, registrada a `acceptadesPerArtista`. Això no certifica la lletra de cada cançó. Pot passar alguna excepció.',
     '- Un artista desconegut genera una sola entrada a `artistesPendents`, sense una cua per cadascuna de les seves cançons. Es classifica una vegada afegint-lo a `confianca` o `vigilats` amb els canals i àlies. La classificació no oculta contingut.',
     '- Els IDs de canal prevalen sobre els noms. Les assignacions oficial/Topic de la base d’artistes comparteixen política. Un ID desconegut no hereta confiança d’un homònim.',

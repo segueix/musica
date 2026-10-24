@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T07:39:29.190Z",
+  "updatedAt": "2026-10-24T07:48:57.710854+00:00",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -1067,7 +1067,7 @@
         "UCSw_OmWJnY0Dz311MEzdHFA",
         "UCJ_erOhxsuzi3KYLngXMeJw"
       ],
-      "motiu": "Sospitós habitual, confirmat per l’editor el 24/10/2026: repertori en català i altres llengües. Revisar canals oficial i Tema; retirar peces no catalanes i bilingües. Celébrate és en castellà; no confondre amb Celebrem. Les exclusions explícites prevalen sobre aprovacions pel títol o per llengües mixtes.",
+      "motiu": "Sospitós habitual, confirmat per l’editor el 24/10/2026: repertori en català i altres llengües. Revisar oficial i Tema. Criteri precisat: peça de base catalana amb com a màxim una estrofa estrangera verificada, resta i tornada en català; sense estructura documentada, pendent. Celébrate és en castellà; no confondre amb Celebrem.",
       "fonts": [
         "scripts/ocultar_titols_castella.js",
         "docs/ARTISTES_CASTELLA.md",
