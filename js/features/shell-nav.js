@@ -102,7 +102,27 @@
         return true;
     }
 
+    // Nom exacte de l'estil tal com és a la barra d'estils (l'enllaç pot venir amb majúscules diferents)
+    function styleLabel(value) {
+        const wanted = String(value || '').trim().toLowerCase();
+        if (!wanted) return '';
+        const chip = Array.from(window.document.querySelectorAll('.chips-bar .chip[data-cat]')).find(
+            item => String(item.dataset.cat || '').toLowerCase() === wanted
+        );
+        return chip?.dataset.cat || '';
+    }
+
+    // Enllaç compartit d'un estil (?escolta=Pop, 2026-10-24): hi engega la ràdio de l'estil amb «Els meus de sempre»
+    // de qui l'obre (el seu gust dins d'aquell estil). Si no es pot fer la ràdio, s'obre l'estil.
+    function listenToStyle(value) {
+        const style = styleLabel(value);
+        if (!style) return;
+        const started = app.features.musicQueue?.startStyleRadio?.([style], { mode: 'home' }) === true;
+        if (!started) openStyle(style);
+    }
+
     // Enllaços del peu amb URL pròpia (?estil=Pop, ?seccio=artistes): també funcionen en obrir-los en una pestanya nova.
+    // I l'enllaç curt d'un estil compartit (?escolta=Pop).
     function openFromUrl() {
         let params;
         try {
@@ -112,9 +132,11 @@
         }
         const style = params.get('estil');
         const section = params.get('seccio');
-        if (!style && section !== 'artistes') return;
+        const listen = params.get('escolta');
+        if (!style && !listen && section !== 'artistes') return;
         params.delete('estil');
         params.delete('seccio');
+        params.delete('escolta');
         const query = params.toString();
         window.history?.replaceState?.(
             window.history.state,
@@ -129,7 +151,11 @@
             if (!ready && tries < 50) return;
             window.clearInterval(timer);
             // Un moment més: l'app acaba de restaurar la vista inicial just després de pintar els xips
-            window.setTimeout(() => (section === 'artistes' ? ACTIONS.artists() : openStyle(style)), 400);
+            window.setTimeout(() => {
+                if (listen) listenToStyle(listen);
+                else if (section === 'artistes') ACTIONS.artists();
+                else openStyle(style);
+            }, 400);
         }, 200);
     }
 

@@ -8069,6 +8069,9 @@ const STYLE_RADIO_EXCLUDED_VIEWS = new Set(['Novetats', 'Tot', 'Descobreix', 'Ra
 const STYLE_RADIO_ICON =
     '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.9 19.1a10 10 0 0 1 0-14.2M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M19.1 4.9a10 10 0 0 1 0 14.2M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>';
 
+const STYLE_SHARE_ICON =
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+
 function isStyleRadioCategory(category) {
     const name = normalizeCustomTag(category);
     return Boolean(name) && !STYLE_RADIO_EXCLUDED_VIEWS.has(name) && isStandardCategory(name);
@@ -8083,9 +8086,35 @@ function renderStyleRadioHeader(category) {
             <span class="page-title__query uc-page__name">${escapeHtml(category)}</span>
             <span class="uc-page__actions">
                 <button type="button" class="pt-btn pt-btn--primary style-page__radio" data-style-radio="${escapeHtml(category)}">${STYLE_RADIO_ICON}<span>Ràdio</span></button>
+                <button type="button" class="uc-icon-btn style-page__share" data-style-share aria-label="Comparteix ${escapeHtml(category)}" title="Comparteix ${escapeHtml(category)}">${STYLE_SHARE_ICON}</button>
             </span>
         </span>`;
     pageTitle.querySelector('[data-style-radio]')?.addEventListener('click', () => startGenreRadio(category));
+    pageTitle.querySelector('[data-style-share]')?.addEventListener('click', () => shareStyleRadio(category));
+}
+
+// Compartir un estil (2026-10-24): un enllaç curt (compartir/estil/pop.html) amb el text «Escolta Pop a Segueix!»;
+// qui l'obre hi té la ràdio de l'estil amb els seus artistes de sempre. No porta cap cançó: no cal un enllaç llarg.
+async function shareStyleRadio(style) {
+    const codecs = SegueixApp.utils.shareCodecs;
+    const toast = SegueixApp.features.shellNav?.toast;
+    const url = codecs?.buildStyleShareUrl?.(style);
+    const text = codecs?.styleShareTitle?.(style) || `Escolta ${style} a Segueix!`;
+    if (!url) return;
+    if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+        try {
+            await navigator.share({ title: text, text, url });
+        } catch (_error) {
+            /* cancel·lat per l'usuari */
+        }
+        return;
+    }
+    try {
+        await navigator.clipboard.writeText(`${text} ${url}`);
+        toast?.(`Enllaç copiat: «${text}»`);
+    } catch (_error) {
+        toast?.("No s'ha pogut copiar l'enllaç.");
+    }
 }
 
 function renderCategoryActions(category) {

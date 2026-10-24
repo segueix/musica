@@ -74,6 +74,53 @@ function renderRadio({ slug, title, description, baseUrl = BASE }) {
 <script>const target=new URL(${JSON.stringify(baseUrl)});target.search=location.search;target.hash=location.hash;location.replace(target.href);</script>
 </body></html>\n`;
 }
+// Pàgina d'un estil (2026-10-24): «Escolta Pop a Segueix!» a la previsualització i, en obrir-la, l'app amb
+// ?escolta=Pop, que hi engega la ràdio de l'estil amb «Els meus de sempre» de qui l'obre. L'enllaç no porta cançons.
+function renderStyle({ slug, style, title, baseUrl = BASE }) {
+    const url = `${baseUrl}compartir/estil/${slug}.html`;
+    const image = `${baseUrl}img/compartir.png`;
+    const description = `Una ràdio de ${style} en català amb els teus artistes de sempre, a Segueix Música.`;
+    const target = `${baseUrl}?escolta=${encodeURIComponent(style)}`;
+    const safeTarget = JSON.stringify(target).replace(/</g, '\\u003c');
+    return `<!doctype html>
+<html lang="ca"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${escape(title)}</title>
+<meta name="description" content="${escape(description)}">
+<meta property="og:type" content="music.radio_station">
+<meta property="og:site_name" content="Segueix Música">
+<meta property="og:title" content="${escape(title)}">
+<meta property="og:description" content="${escape(description)}">
+<meta property="og:url" content="${escape(url)}">
+<meta property="og:image" content="${escape(image)}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${escape(title)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escape(title)}">
+<meta name="twitter:description" content="${escape(description)}">
+<meta name="twitter:image" content="${escape(image)}">
+<meta name="robots" content="noindex">
+</head><body><h1>${escape(title)}</h1>
+<p><a href="${escape(target)}">Obre Segueix Música</a></p>
+<script>location.replace(${safeTarget});</script>
+</body></html>\n`;
+}
+function generateStyles(out, baseUrl = BASE) {
+    const codecs = shareCodecs();
+    let styles = [];
+    try { styles = require(path.join(__dirname, '..', 'js/music-categories.js')).CATEGORY_GROUPS.map(group => group.label); } catch { /* sense estils */ }
+    const dir = path.join(out, 'estil');
+    fs.mkdirSync(dir, { recursive: true });
+    let count = 0;
+    for (const style of styles) {
+        const slug = codecs.radioShareSlug(style);
+        if (!slug) continue;
+        fs.writeFileSync(path.join(dir, `${slug}.html`), renderStyle({ slug, style, title: codecs.styleShareTitle(style), baseUrl }));
+        count++;
+    }
+    return count;
+}
 function generateRadios(root, out, channels, baseUrl = BASE) {
     const read = file => {
         try { return JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')); } catch { return null; }
@@ -147,8 +194,9 @@ function generate(root, options = {}) {
         songs++;
     }
     const radios = generateRadios(root, out, channels, baseUrl);
-    return { artists: Object.keys(channels).length, songs, radios };
+    const styles = generateStyles(out, baseUrl);
+    return { artists: Object.keys(channels).length, songs, radios, styles };
 }
-module.exports = { render, renderRadio, generate };
+module.exports = { render, renderRadio, renderStyle, generateStyles, generate };
 if (require.main === module) console.log(generate(path.resolve(__dirname, '..')));
 
