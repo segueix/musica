@@ -1523,3 +1523,70 @@ it('Ràdio nova conserva la memòria de cues i arrencades entre visites', () => 
     expect(starts.slice(-5)).not.toContain(next.ctx.activePlaylistQueue[0].id);
     expect(next.ctx.activePlaylistQueue.filter(v => queues.at(-1).includes(v.id)).length).toBeLessThanOrEqual(12);
 });
+
+describe('Heavy / Metal i Punk només hi surten si en segueixes algun grup (2026-10-24)', () => {
+    const catalog = () => [
+        ...Array.from({ length: 20 }, (_, a) => [0, 1, 2].map(i => song(`pop${a}`, 0.3 + i))).flat(),
+        ...Array.from({ length: 6 }, (_, a) =>
+            [0, 1, 2].map(i => song(`punk${a}`, 0.3 + i, { categories: ['Punk'], viewCount: 900000 + a * 10 + i }))
+        ).flat(),
+        ...Array.from({ length: 6 }, (_, a) =>
+            [0, 1, 2].map(i =>
+                song(`heavy${a}`, 0.3 + i, { categories: ['Heavy / Metal'], viewCount: 900000 + a * 10 + i })
+            )
+        ).flat(),
+    ];
+    const feedOf = list => ({
+        channels: [...new Set(list.map(v => v.channelId))].map(id => ({
+            id,
+            categories: id.startsWith('punk') ? ['Punk'] : id.startsWith('heavy') ? ['Heavy / Metal'] : ['Pop'],
+        })),
+    });
+    const stylesIn = env => new Set(env.ctx.activePlaylistQueue.flatMap(video => video.categories));
+
+    it('pures: quins estils es treuen i quines cançons queden', () => {
+        const env = setup({ catalog: [] });
+        expect(env.queue.blockedOptInStyles([], [])).toEqual(['Heavy / Metal', 'Punk']);
+        expect(env.queue.blockedOptInStyles(['Punk', 'Pop'], [])).toEqual(['Heavy / Metal']);
+        expect(env.queue.blockedOptInStyles([], ['Heavy / Metal'])).toEqual(['Punk']);
+        expect(env.queue.blockedOptInStyles(['Punk'], ['Heavy / Metal'])).toEqual([]);
+        const list = [{ categories: ['Pop'] }, { categories: ['Punk'] }, { categories: ['Heavy / Metal'] }];
+        const has = (video, style) => video.categories.includes(style);
+        expect(env.queue.withoutOptInStyles(list, ['Punk', 'Heavy / Metal'], has)).toEqual([list[0]]);
+        expect(env.queue.withoutOptInStyles(list, [], has)).toEqual(list);
+    });
+
+    it('«La teva ràdio» sense cap grup seguit no porta ni heavy ni punk', () => {
+        const list = catalog();
+        const env = setup({ catalog: list, extra: { currentFeedData: feedOf(list) } });
+        expect(env.queue.startDiscovery().started).toBe(true);
+        const styles = stylesIn(env);
+        expect(styles.has('Punk')).toBe(false);
+        expect(styles.has('Heavy / Metal')).toBe(false);
+        expect(env.ctx.activePlaylistQueue.length).toBeGreaterThan(10);
+    });
+
+    it('si segueixes un grup de punk, el punk hi pot sortir (el heavy, no)', () => {
+        const list = catalog();
+        const punk = list.filter(v => v.channelId === 'punk0');
+        const env = setup({
+            catalog: list,
+            followed: ['punk0'],
+            liked: punk,
+            extra: { currentFeedData: feedOf(list) },
+        });
+        expect(env.queue.startDiscovery().started).toBe(true);
+        const styles = stylesIn(env);
+        expect(styles.has('Punk')).toBe(true);
+        expect(styles.has('Heavy / Metal')).toBe(false);
+    });
+
+    it('si afegeixes la categoria a mà, hi surt encara que no en segueixis cap grup', () => {
+        const list = catalog();
+        const env = setup({ catalog: list, extra: { currentFeedData: feedOf(list) } });
+        expect(env.queue.startDiscovery({ categories: ['Heavy / Metal'] }).started).toBe(true);
+        const styles = stylesIn(env);
+        expect(styles.has('Heavy / Metal')).toBe(true);
+        expect(styles.has('Punk')).toBe(false);
+    });
+});

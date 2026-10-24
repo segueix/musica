@@ -893,7 +893,48 @@
     }
 
     // Manté el gust propi i amplia només amb els seus estils o els que s'afegeixen explícitament.
+    // ---------- Estils que només surten si els segueixes (2026-10-24) ----------
+    // Petició de l'usuari: a «La teva ràdio» i a les ràdios de temporada, Heavy / Metal i Punk només hi surten si
+    // segueixes algun grup d'aquell estil, o si l'afegeixes expressament a la ràdio («Afegeix una categoria»).
+    const OPT_IN_STYLES = ['Heavy / Metal', 'Punk'];
+
+    // Pura: els estils d'OPT_IN_STYLES que cal treure, segons els estils dels grups seguits i els afegits a mà.
+    function blockedOptInStyles(followedStyles = [], added = []) {
+        const own = new Set([...followedStyles, ...added].map(style => String(style || '').toLowerCase()));
+        return OPT_IN_STYLES.filter(style => !own.has(style.toLowerCase()));
+    }
+
+    // Pura: treu les cançons dels estils bloquejats (`matches(video, estil)`, com matchesCategory).
+    function withoutOptInStyles(videos, blocked, matches = matchesCategory) {
+        const list = Array.isArray(videos) ? videos : [];
+        if (!blocked.length) return list;
+        return list.filter(video => !blocked.some(style => matches(video, style)));
+    }
+
+    // Estils dels grups que segueix l'usuari: els de la base d'artistes i, si no n'hi ha, els del feed.
+    function followedStyles() {
+        let ids = [];
+        try {
+            ids = typeof getFollowedChannelIds === 'function' ? getFollowedChannelIds() : [];
+        } catch (error) {
+            ids = [];
+        }
+        const music = window.SegueixMusicCategories;
+        const raw = feedChannels();
+        const channels = Array.isArray(raw) ? raw : Object.entries(raw || {}).map(([id, item]) => ({ id, ...item }));
+        return (Array.isArray(ids) ? ids : []).flatMap(id => {
+            const fromBase = music?.categoriesForChannel?.(String(id)) || [];
+            const channel = channels.find(item => String(item?.id) === String(id));
+            return [...fromBase, ...(Array.isArray(channel?.categories) ? channel.categories : [])];
+        });
+    }
+
+    function filterOptInStyles(videos, added = []) {
+        return withoutOptInStyles(videos, blockedOptInStyles(followedStyles(), asCategories(added)));
+    }
+
     function personalCandidates(candidates, extra = []) {
+        candidates = filterOptInStyles(candidates, extra);
         const discovery = app.features.discovery;
         const taste = recentTasteNow();
         const channels = discovery?.normalizeChannels?.(feedChannels());
@@ -2066,6 +2107,10 @@
     }
 
     app.features.musicQueue = {
+        OPT_IN_STYLES,
+        blockedOptInStyles,
+        withoutOptInStyles,
+        filterOptInStyles,
         handleUnavailableVideo,
         captureSession,
         persistLastRadio,

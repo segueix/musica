@@ -49,6 +49,15 @@ describe('ràdio de tardor: dades', () => {
 });
 
 describe('ràdio de tardor: targeta d’Inici', () => {
+    it('sense cap grup de heavy ni de punk seguit, no en porta cap cançó', () => {
+        const heavyPunk = video => ['Heavy / Metal', 'Punk'].some(style => (video.categories || []).includes(style));
+        expect(tardor.videos.some(heavyPunk)).toBe(true);
+        const model = season.buildModel(tardor, { filter: list => list.filter(video => !heavyPunk(video)) });
+        expect(model.videos.some(heavyPunk)).toBe(false);
+        expect(model.count).toBe(tardor.videos.filter(video => !heavyPunk(video)).length);
+        expect(readFileSync('js/features/season-radio.js', 'utf8')).toMatch(/queue\.filterOptInStyles\(list\)/);
+    });
+
     it('treu els artistes amagats i té de fons el dibuix de fulles, no caràtules', () => {
         const hidden = tardor.videos[0].channelId;
         const model = season.buildModel(tardor, { hiddenChannels: [hidden] });
