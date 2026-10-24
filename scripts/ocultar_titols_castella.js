@@ -941,7 +941,7 @@ for (const canal of ['Malánima', 'Malànima', 'MALÁNIMA', 'Malánima - Topic',
 // 2026-10-24: les exclusions del canal oficial també regeixen al Tema.
 // Les dues grafies havien acumulat llistes diferents i deixaven passar Celébrate.
 const reglesMiki = ['Miki Nuñez', 'Miki Núñez'].map(nom => REGLES[nom].titols);
-const reglaMiki = { titols: { test: titol => reglesMiki.some(regla => regla.test(titol)) || llista('Suerte', 'La Mitad').test(titol) } };
+const reglaMiki = { titols: { test: titol => reglesMiki.some(regla => regla.test(titol)) || llista('Suerte', 'La Mitad', 'Cucu-pido').test(titol) } };
 for (const nom of ['Miki Nuñez', 'Miki Núñez', 'Miki Núñez - Topic', 'Miki Nuñez - Topic']) {
     REGLES[nom] = reglaMiki;
 }

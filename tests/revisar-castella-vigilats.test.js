@@ -48,7 +48,7 @@ describe("llista d'artistes vigilats (registre únic)", () => {
 
     it('aplica les exclusions de Miki a oficial i Tema sense confondre Celebrem', () => {
         for (const name of ['Miki Nuñez', 'Miki Núñez', 'Miki Núñez - Topic', 'Miki Nuñez - Topic']) {
-            for (const title of ['Celébrate', 'Me Vale', '10 Minutos', 'Suerte', 'La Mitad', 'Encender Las Calles']) {
+            for (const title of ['Celébrate', 'Me Vale', '10 Minutos', 'Suerte', 'La Mitad', 'Encender Las Calles', 'Cucu-pido', 'Cucu-pido (Setlist - Gira 121)']) {
                 expect(REGLES[name].titols.test(title), `${name}: ${title}`).toBe(true);
             }
             for (const title of ['Celebrem', 'Escriurem', 'Per Tu', 'Electricitat', 'Gelat']) {
