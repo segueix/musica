@@ -319,6 +319,11 @@ const likes = ctx2.SegueixApp.features.likes;
 - **Ràdio de l'estil:** `musicQueue.startStyleRadio(estils)`: la ràdio d'estil de sempre (estils barrejats a parts iguals, antiguitat, un artista per vegada, descans, mode) amb **els estils de l'artista** (principal primer, màxim 3, sense «Altres estils» ni vistes generals: `artistStyles()`). Comença amb la cançó que tria el motor entre les d'aquells estils.
 - Detall i trampes: `docs/PROBLEMES_I_SOLUCIONS.md` (2026-10-01, «Fitxa d'artista»). Proves: `tests/artist-page.test.js` i `tests/music-queue-selection.test.js`.
 
+### Compartir un estil: «Escolta Pop a Segueix!» (2026-10-24)
+
+- A la vista de cada estil (Pop, Rock…), **al costat de «Ràdio» hi ha «Comparteix»** (`[data-style-share]`, `.uc-icon-btn`, `renderStyleRadioHeader()` → `shareStyleRadio()` d'`app.js`): envia el text **«Escolta Pop a Segueix!»** i l'enllaç curt **`https://musica.segueix.cat/compartir/estil/pop.html`** (`styleShareTitle()` / `buildStyleShareUrl()` de `share-codecs.js`; amb `navigator.share` o, sense, el copia amb un avís). **L'enllaç no porta cap cançó** (a diferència de la ràdio compartida, `?importData=`).
+- La pàgina `compartir/estil/<slug>.html` (`renderStyle()` / `generateStyles()` de `scripts/generar_pagines_compartir.js`, per a tots els estils de `CATEGORY_GROUPS`; també es genera al paquet estàtic) porta el títol per a WhatsApp i redirigeix a l'app amb **`?escolta=<estil>`**. `openFromUrl()` de `shell-nav.js` el treu de l'adreça i, quan hi ha els xips, `listenToStyle()` engega **la ràdio d'aquell estil amb «Els meus de sempre»** de qui l'obre (`musicQueue.startStyleRadio([estil], { mode: 'home' })`; no canvia el mode desat; si no es pot fer la ràdio, obre l'estil). Les categories pròpies es continuen compartint com abans (porten els grups). Proves: `tests/compartir-estil.test.js`; opt-in `node tests/browser/verificar-compartir-estil.js`.
+
 ### Les teves categories (2026-10-04)
 
 - L'usuari crea **categories pròpies de grups** (`js/features/user-categories.js`, patró 2): `catube_music_user_categories` = `[{ id, name, artists: [channelId] }]`. **No** fan servir `catube_custom_tags` / `catube_channel_custom_categories` (herència de Segueix youtubers: «Canal Jove», paraules clau…), que ja no surten a la barra d'estils.
