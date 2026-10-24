@@ -13009,9 +13009,11 @@ function saveHistoryItems(items) {
     invalidateHistoryCache();
 }
 
+// Cançons que les vistes amaguen per ja escoltades: només les darreres (HISTORY_HIDE_RECENT), encara que
+// l'historial en guardi més.
 function getHistoryVideoIdSet() {
     if (_historyIdSetCache) return _historyIdSetCache;
-    _historyIdSetCache = new Set(getHistoryItems().map(item => String(item.id)));
+    _historyIdSetCache = new Set(getHistoryItems().slice(0, HISTORY_HIDE_RECENT).map(item => String(item.id)));
     return _historyIdSetCache;
 }
 

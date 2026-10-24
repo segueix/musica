@@ -153,6 +153,72 @@
         };
     }
 
+    // Importar una còpia la SUMA a les dades de l'aparell (2026-10-24, a petició de l'usuari): no s'hi esborra res
+    // i, després, l'exportació ho porta tot. Cada cançó de l'historial es queda amb l'escolta més recent; les
+    // llistes i les categories amb el mateix identificador o el mateix nom s'ajunten; en l'aspecte (fons, lletra,
+    // ordre dels estils), el mode i els estils de la primera vegada mana l'aparell. Les preferències i les
+    // estadístiques es fusionen amb les regles de musicSignals (`mergePrefs`, `mergeStats`: importar dues vegades
+    // el mateix fitxer no suma res); sense aquestes funcions, unió simple amb l'aparell al davant.
+    // Mateix límit que l'historial de l'app (HISTORY_LIMIT, js/utils/storage.js); fora de l'app, 500.
+    const historyLimit = () => (typeof HISTORY_LIMIT === 'number' && HISTORY_LIMIT > 0 ? HISTORY_LIMIT : 500);
+    const viewedTime = (v) => Date.parse(v?.viewedAt) || 0;
+    const sameName = (a, b) => str(a).trim().toLowerCase() === str(b).trim().toLowerCase();
+
+    function unionVideos(local, incoming) {
+        const seen = new Set(local.map((v) => v.id));
+        return [...local, ...incoming.filter((v) => !seen.has(v.id) && seen.add(v.id))];
+    }
+
+    function mergeHistory(local, incoming) {
+        const byId = new Map();
+        [...local, ...incoming].forEach((v) => {
+            const old = byId.get(v.id);
+            if (!old || viewedTime(v) > viewedTime(old)) byId.set(v.id, v);
+        });
+        return [...byId.values()].sort((a, b) => viewedTime(b) - viewedTime(a)).slice(0, historyLimit());
+    }
+
+    // Llistes (cançons) i categories (grups): mateix identificador o mateix nom → una sola, amb tot.
+    function mergeGroups(local, incoming, field, join) {
+        const out = local.map((item) => ({ ...item, [field]: [...item[field]] }));
+        incoming.forEach((item) => {
+            const same = out.find((o) => o.id === item.id) || out.find((o) => sameName(o.name, item.name));
+            if (same) same[field] = join(same[field], item[field]);
+            else out.push({ ...item, [field]: [...item[field]] });
+        });
+        return out;
+    }
+
+    const unionPrefs = (a, b) => ({
+        v: 1,
+        lessLike: { ...b.lessLike, ...a.lessLike },
+        moreLike: { ...b.moreLike, ...a.moreLike },
+        blocked: { ...b.blocked, ...a.blocked },
+    });
+    const unionStats = (a, b) => ({
+        v: 1,
+        songs: { ...b.songs, ...a.songs },
+        artists: { ...b.artists, ...a.artists },
+        recent: a.recent.length ? a.recent : b.recent,
+    });
+
+    function merge(local, incoming, { mergePrefs = unionPrefs, mergeStats = unionStats } = {}) {
+        const a = validate({ product: 'segueix-musica', v: 1, data: local }).data;
+        const b = validate({ product: 'segueix-musica', v: 1, data: incoming }).data;
+        return {
+            history: mergeHistory(a.history, b.history),
+            likes: unionVideos(a.likes, b.likes),
+            follows: unique([...a.follows, ...b.follows]),
+            playlists: mergeGroups(a.playlists, b.playlists, 'videos', unionVideos),
+            categories: mergeGroups(a.categories, b.categories, 'artists', (x, y) => unique([...x, ...y])),
+            prefs: mergePrefs(a.prefs, b.prefs),
+            stats: mergeStats(a.stats, b.stats),
+            styles: a.styles.length ? a.styles : b.styles,
+            mode: a.mode || b.mode,
+            settings: { ...b.settings, ...a.settings },
+        };
+    }
+
     function read(storage, key, fallback) {
         try {
             return JSON.parse(storage.getItem(key)) ?? fallback;
@@ -222,8 +288,8 @@
         const decorate = (list) =>
             list.map((v) => ({ ...v, thumbnail: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`, source: 'api' }));
         clean.history = decorate(clean.history)
-            .sort((a, b) => (Date.parse(b.viewedAt) || 0) - (Date.parse(a.viewedAt) || 0))
-            .slice(0, 50);
+            .sort((a, b) => viewedTime(b) - viewedTime(a))
+            .slice(0, historyLimit());
         clean.likes = decorate(clean.likes);
         clean.playlists.forEach((p) => {
             p.videos = decorate(p.videos);
@@ -254,6 +320,6 @@
         }
         return clean;
     }
-    app.utils.musicData = { KEYS, collect, validate, apply, writeStorage };
+    app.utils.musicData = { KEYS, collect, validate, merge, apply, writeStorage };
 })(window);
 

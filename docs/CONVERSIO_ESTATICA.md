@@ -22,9 +22,9 @@ Petició del 16/10/2026. La retirada de Drive i analítiques és la primera fase
 
 ## Còpies JSON
 
-Format `product: segueix-musica`, `v: 1`, amb data i camps musicals explícits. Inclou historial (fins al límit de 50 de l’app), m’agrada, seguits, llistes, categories, gustos, senyals musicals locals i opcions d’aspecte. No inclou credencials, consentiments, memòria cau ni la cua activa. No s’importa automàticament una còpia de l’app Segueix de YouTubers.
+Format `product: segueix-musica`, `v: 1`, amb data i camps musicals explícits. Inclou historial (fins al límit de 500 de l’app; abans 50), m’agrada, seguits, llistes, categories, gustos, senyals musicals locals i opcions d’aspecte. No inclou credencials, consentiments, memòria cau ni la cua activa. No s’importa automàticament una còpia de l’app Segueix de YouTubers.
 
-Importar substitueix les dades musicals després de validar-les i demanar confirmació. Si fallen les escriptures, es restaura l’estat anterior; només es pot alliberar memòria cau regenerable. La música no es recarrega. La preferència de YouTube es conserva al mateix aparell. Les còpies antigues a Drive no s’esborren remotament.
+Importar **suma** la còpia a les dades musicals de l’aparell després de validar-la i demanar confirmació (2026-10-24; abans les substituïa): no s’esborra res, cada cançó de l’historial es queda amb l’escolta més recent, les llistes i categories amb el mateix nom s’ajunten i una exportació posterior ho porta tot. Importar dues vegades el mateix fitxer no duplica res. Detall a `CLAUDE.md` («Passar la música a un altre aparell»). Si fallen les escriptures, es restaura l’estat anterior; només es pot alliberar memòria cau regenerable. La música no es recarrega. La preferència de YouTube es conserva al mateix aparell. Les còpies antigues a Drive no s’esborren remotament.
 
 En canviar de domini, el navegador utilitza un emmagatzematge diferent: cal descarregar la còpia al domini antic i importar-la al nou. Això forma part de la migració.
 

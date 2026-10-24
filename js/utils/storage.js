@@ -6,7 +6,10 @@
 const LAST_CATEGORY_STORAGE_KEY = 'catube_last_category';
 const VIEW_STATE_STORAGE_KEY = 'catube_view_state';
 const HISTORY_STORAGE_KEY = 'catube_history';
-const HISTORY_LIMIT = 50;
+// Fins a 500 cançons (2026-10-24; abans 50): importar una còpia la suma a la de l'aparell i no se n'ha de perdre
+// res. Les vistes que amaguen les cançons ja escoltades només en miren les 50 darreres, com abans.
+const HISTORY_LIMIT = 500;
+const HISTORY_HIDE_RECENT = 50;
 const PLAYLIST_STORAGE_KEY = 'catube_playlists';
 const FOLLOW_STORAGE_KEY = 'catube_follows';
 const HIDDEN_CHANNELS_STORAGE_KEY = 'catube_hidden_channels';
