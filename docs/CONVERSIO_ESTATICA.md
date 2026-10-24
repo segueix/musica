@@ -20,6 +20,15 @@ Petició del 16/10/2026. La retirada de Drive i analítiques és la primera fase
 | 5. Validació i rendiment | Provar cerca, artistes/discos, mapa, ràdios, llistes, reproducció, JSON, enllaços compartits i actualització d’una PWA antiga. Mesurar càrrega mòbil i corregir coll d’ampolla amb dades. | Optimitzacions i comprovacions locals implementades: vegeu RENDIMENT_ESTATIC.md. Queden pendents PWA antiga, reproducció real i PageSpeed públic després de publicar. |
 | 6. Cloudflare | Preparar un desplegament de prova amb l’artefacte estàtic; configurar domini, redireccions i memòria cau; comprovar que no es desplegui cap Function/Worker. Fer el canvi públic després de validar-lo. | Mateix funcionament al domini final i pla de retorn a la versió anterior. |
 
+### Cloudflare: el que s’ha vist a musica.segueix.cat (2026-10-24)
+
+`musica.segueix.cat` ja és un projecte de Cloudflare Pages que publica el mateix paquet estàtic que GitHub, construït amb l’adreça del domini. Respecte de GitHub Pages, hi ha tres diferències:
+- `/index.html` respon amb un **308 cap a `/`** (adreces sense `.html`);
+- el codi (JS, CSS i `sw.js`) va amb **`max-age=14400`** (el «Browser Cache TTL» de 4 hores de la zona);
+- l’«Email Address Obfuscation» reescriu el correu del contacte.
+
+Les dues primeres van deixar l’app negra en obrir-la sense xarxa: el service worker havia desat la portada redirigida. S’ha arreglat al `sw.js` (vegeu `docs/PROBLEMES_I_SOLUCIONS.md`, 2026-10-24). És recomanable, tot i que ja no imprescindible, posar el Browser Cache TTL a «Respect Existing Headers» i desactivar l’ofuscació del correu. Prova opt-in amb un servidor que fa com Cloudflare: `node tests/browser/verificar-sw-cloudflare.js`.
+
 ## Còpies JSON
 
 Format `product: segueix-musica`, `v: 1`, amb data i camps musicals explícits. Inclou historial (fins al límit de 500 de l’app; abans 50), m’agrada, seguits, llistes, categories, gustos, senyals musicals locals i opcions d’aspecte. No inclou credencials, consentiments, memòria cau ni la cua activa. No s’importa automàticament una còpia de l’app Segueix de YouTubers.

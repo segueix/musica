@@ -13,7 +13,7 @@ function worker(base = 'https://example.test/musica/') {
     const fetch = vi.fn();
     const self = { location: new URL('sw.js', base), addEventListener: (name, callback) => { events[name] = callback; }, skipWaiting: vi.fn(), clients: { claim: vi.fn() } };
     const caches = { open, match: async request => { for (const store of stores.values()) if (store.has(key(request))) return store.get(key(request)); }, keys: async () => [...stores.keys()], delete: async name => stores.delete(name) };
-    class WorkerRequest { constructor(request, options) { Object.assign(this, request, options); } }
+    class WorkerRequest { constructor(request, options) { Object.assign(this, typeof request === 'string' ? { url: request } : request, options); } }
     vm.runInNewContext(readFileSync('sw.js', 'utf8'), { self, caches, fetch, URL, Request: WorkerRequest, Response, console });
     const response = text => ({ status: 200, type: 'basic', text, clone() { return this; } });
     async function get(relative, mode = 'navigate') {
@@ -61,6 +61,7 @@ describe('cache de la web estàtica', () => {
     it('retira el cache antic i espera l’activació demanada', async () => {
         const w = worker();
         await w.caches.open('static-antic');
+        w.fetch.mockResolvedValue(w.response('codi'));
         let pending;
         w.events.install({ waitUntil: promise => { pending = promise; } }); await pending;
         expect(w.self.skipWaiting).not.toHaveBeenCalled();
@@ -69,5 +70,60 @@ describe('cache de la web estàtica', () => {
         w.events.message({ data: { type: 'SKIP_WAITING' } });
         expect(w.self.skipWaiting).toHaveBeenCalledOnce();
     });
-});
 
+    // 2026-10-24: a musica.segueix.cat (Cloudflare Pages) /index.html respon amb un 308 cap a /. La còpia de la portada
+    // es desava redirigida i, en obrir l'app sense xarxa, el navegador la rebutjava: pantalla negra a l'iPhone.
+    describe('la portada no es desa ni se serveix redirigida (Cloudflare)', () => {
+        const redirected = text => ({
+            status: 200,
+            type: 'basic',
+            redirected: true,
+            statusText: 'OK',
+            headers: { 'content-type': 'text/html' },
+            blob: async () => new Blob([text]),
+            clone() { return this; },
+        });
+        const install = async w => {
+            let pending;
+            w.events.install({ waitUntil: promise => { pending = promise; } });
+            await pending;
+        };
+        const textOf = async response => (typeof response.text === 'function' ? response.text() : response.text);
+        const STATIC = `static-v4-${readFileSync('sw.js', 'utf8').match(/CACHE_VERSION = '([^']+)'/)[1]}`;
+
+        it('la precàrrega en desa una còpia neta i sense xarxa obre l’app', async () => {
+            const w = worker('https://musica.example/');
+            w.fetch.mockImplementation(async request => (/index\.html$/.test(request.url) ? redirected('app') : w.response('codi')));
+            await install(w);
+            // Es baixa de la xarxa, no de la memòria cau del navegador (Cloudflare la guarda 4 hores)
+            expect(w.fetch.mock.calls.every(([request]) => request.cache === 'reload')).toBe(true);
+            w.fetch.mockReset();
+            w.fetch.mockRejectedValue(new Error('offline'));
+            const page = await w.get('');
+            expect(page.redirected).toBe(false);
+            expect(await textOf(page)).toBe('app');
+        });
+
+        it('una còpia redirigida d’una versió anterior se serveix neta', async () => {
+            const w = worker('https://musica.example/');
+            const cache = await w.caches.open(STATIC);
+            await cache.put('https://musica.example/index.html', redirected('app antiga'));
+            w.fetch.mockRejectedValue(new Error('offline'));
+            const page = await w.get('?v=canco');
+            expect(page.redirected).toBe(false);
+            expect(await textOf(page)).toBe('app antiga');
+        });
+
+        it('sense la còpia de la portada, l’arrel de l’app; i el codi que falta es revalida', async () => {
+            const w = worker('https://musica.example/');
+            const cache = await w.caches.open(STATIC);
+            await cache.put('https://musica.example/', w.response('arrel'));
+            w.fetch.mockRejectedValue(new Error('offline'));
+            expect((await w.get('index.html')).text).toBe('arrel');
+            w.fetch.mockReset();
+            w.fetch.mockResolvedValue(w.response('codi'));
+            await w.get('js/nou.js?v=1', 'no-cors');
+            expect(w.fetch.mock.calls[0][0].cache).toBe('no-cache');
+        });
+    });
+});

@@ -158,7 +158,9 @@ describe('Instal·la l’app: oberta com a app instal·lada', () => {
     });
 
     it('la versió nova del service worker esborra les còpies de codi anteriors', () => {
-        expect(sw).toContain('const STATIC_CACHE = `static-v3-${CACHE_VERSION}`;');
+        // v3 (2026-10-17) o posterior: v4 (2026-10-24) esborra la portada desada redirigida a Cloudflare
+        const version = Number(sw.match(/const STATIC_CACHE = `static-v(\d+)-\$\{CACHE_VERSION\}`;/)?.[1]);
+        expect(version).toBeGreaterThanOrEqual(3);
     });
 });
 
