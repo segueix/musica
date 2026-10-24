@@ -29,14 +29,25 @@ const snapshot = (videos, at) => ({
 });
 
 describe('llista d’èxits: dades', () => {
-    it('publica la primera vegada, els divendres i, si se n’ha saltat un, als vuit dies', () => {
-        expect(exits.shouldPublish({ now: NOW })).toBe(true);
-        expect(exits.shouldPublish({ now: NOW, lastAt: new Date(NOW - 7 * DAY).toISOString() })).toBe(true);
-        // Divendres, però la darrera fa només tres dies
-        expect(exits.shouldPublish({ now: NOW, lastAt: new Date(NOW - 3 * DAY).toISOString() })).toBe(false);
-        // Dijous: no toca
-        expect(exits.shouldPublish({ now: NOW - DAY, lastAt: new Date(NOW - 7 * DAY).toISOString() })).toBe(false);
-        expect(exits.shouldPublish({ now: NOW - DAY, lastAt: new Date(NOW - 9 * DAY).toISOString() })).toBe(true);
+    it('publica la primera vegada, els diumenges i, si se n’ha saltat un, als vuit dies', () => {
+        const SUNDAY = Date.parse('2026-11-01T16:13:00Z'); // diumenge a la tarda a Madrid
+        expect(exits.shouldPublish({ now: SUNDAY })).toBe(true);
+        expect(exits.shouldPublish({ now: SUNDAY, lastAt: new Date(SUNDAY - 7 * DAY).toISOString() })).toBe(true);
+        // Diumenge, però la darrera fa només tres dies
+        expect(exits.shouldPublish({ now: SUNDAY, lastAt: new Date(SUNDAY - 3 * DAY).toISOString() })).toBe(false);
+        // Divendres: ja no toca
+        expect(exits.shouldPublish({ now: NOW, lastAt: new Date(NOW - 7 * DAY).toISOString() })).toBe(false);
+        expect(exits.shouldPublish({ now: NOW, lastAt: new Date(NOW - 9 * DAY).toISOString() })).toBe(true);
+    });
+
+    it('la setmana de la llista va de dilluns a diumenge', () => {
+        const week = { from: '2026-10-26', to: '2026-11-01' };
+        expect(exits.chartWeek(Date.parse('2026-11-01T16:13:00Z'))).toEqual(week); // diumenge a la tarda
+        expect(exits.chartWeek(NOW)).toEqual(week); // divendres
+        expect(exits.chartWeek(Date.parse('2026-10-27T10:00:00Z'))).toEqual(week); // dimarts
+        // Un dilluns (un diumenge que no s'ha pogut fer): la setmana que acaba de tancar
+        expect(exits.chartWeek(Date.parse('2026-11-02T10:00:00Z'))).toEqual(week);
+        expect(exits.chartWeek(Date.parse('2026-12-31T12:00:00Z'))).toEqual({ from: '2026-12-28', to: '2027-01-03' });
     });
 
     it('la fotografia porta l’hora real de la lectura de cada canal', () => {
@@ -121,8 +132,8 @@ describe('llista d’èxits: dades', () => {
         expect(chart.entries.map(entry => entry.rank)).toEqual(chart.entries.map((_, i) => i + 1));
         expect(chart.first).toBe(true);
         expect(chart.entries.every(entry => entry.status === 'new' && entry.weeks === 1)).toBe(true);
-        expect(chart.from).toBe('2026-10-23');
-        expect(chart.to).toBe('2026-10-30');
+        expect(chart.from).toBe('2026-10-26');
+        expect(chart.to).toBe('2026-11-01');
         expect(chart.entries[0].video).toMatchObject({ id: 'clip', channelTitle: 'Artista a', channelId: 'ch-a' });
     });
 
@@ -173,14 +184,19 @@ describe('llista d’èxits: dades', () => {
         expect(Object.keys(base.history)).toHaveLength(2);
     });
 
-    it('el workflow diari la fa sense API i sense aturar la publicació del feed', () => {
-        const workflow = readFileSync('.github/workflows/actualitzar-feed-musica.yml', 'utf8');
-        const step = workflow.slice(workflow.indexOf("- name: Llista d'èxits setmanal"));
-        expect(step).toMatch(/continue-on-error: true\s+run: node scripts\/generar_llista_exits\.js/);
-        expect(workflow.indexOf("Llista d'èxits setmanal")).toBeGreaterThan(
-            workflow.indexOf('node scripts/update_music_feed.js')
+    it('té acció pròpia els diumenges a la tarda, sense API, i el feed diari ja no la fa', () => {
+        const workflow = readFileSync('.github/workflows/llista-exits-setmanal.yml', 'utf8');
+        expect(workflow).toMatch(/cron: "13 17 \* \* 0"\s+timezone: "Europe\/Madrid"/);
+        expect(workflow.indexOf('node scripts/generar_llista_exits.js')).toBeLessThan(
+            workflow.indexOf('scripts/publicar_dades.sh')
         );
-        expect(workflow.indexOf("Llista d'èxits setmanal")).toBeLessThan(workflow.indexOf('scripts/publicar_dades.sh'));
+        expect(workflow).toMatch(/data\/llista-exits\.json data\/llista-exits-base\.json/);
+        expect(workflow).not.toMatch(/secrets\.|YOUTUBE_API/);
+        expect(readFileSync('.github/workflows/actualitzar-feed-musica.yml', 'utf8')).not.toMatch(/generar_llista_exits/);
+        // La web es torna a publicar en acabar, perquè la llista nova surti de seguida
+        expect(readFileSync('.github/workflows/publicar-comparticio-musica.yml', 'utf8')).toContain(
+            `"Llista d'èxits setmanal"`
+        );
         const script = readFileSync('scripts/generar_llista_exits.js', 'utf8');
         expect(script).not.toMatch(/YOUTUBE_API|googleapis/);
     });

@@ -32,7 +32,7 @@ on:
   workflow_run:
     branches: [main]
     # Una sola publicació després del torn diari o d'una actualització MANUAL demanada.
-    workflows: ['Actualitzar feed musical', 'Actualitzar feed només dels grups nous', 'Manteniment musical manual']
+    workflows: ['Actualitzar feed musical', 'Actualitzar feed només dels grups nous', 'Manteniment musical manual', "Llista d'èxits setmanal"]
     types: [completed]
   workflow_dispatch:
 

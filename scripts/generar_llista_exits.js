@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 
-// Llista d'èxits setmanal (docs/LLISTA_EXITS.md). S'executa cada dia dins «Actualitzar feed musical», després del
-// feed i de l'arxiu, però només publica una llista nova els divendres: els altres dies no fa res. No consulta YouTube.
+// Llista d'èxits setmanal (docs/LLISTA_EXITS.md), de dilluns a diumenge. L'executa cada diumenge a la tarda l'acció
+// «Llista d'èxits setmanal» (.github/workflows/llista-exits-setmanal.yml); els altres dies no fa res. No consulta YouTube.
 //
-//   node scripts/generar_llista_exits.js                 torn normal (divendres)
+//   node scripts/generar_llista_exits.js                 torn normal (diumenge)
 //   node scripts/generar_llista_exits.js --force         publica ara, sigui quin sigui el dia
-//   node scripts/generar_llista_exits.js --base-ref=REF  primera edició: la setmana anterior surt del feed de REF (git)
+//   node scripts/generar_llista_exits.js --base-ref=REF  la setmana anterior surt del feed de REF (git); conserva els
+//                                                        moviments i l'historial de les llistes anteriors, si n'hi ha
 //   node scripts/generar_llista_exits.js --dry-run       mostra la llista sense escriure res
 
 const fs = require('node:fs');
@@ -53,7 +54,7 @@ function main() {
                   fromGit(baseRef, 'data/music-channel-polling.json'),
                   now
               ),
-              history: {},
+              history: saved?.history || {},
               chartAt: null,
           }
         : saved;
@@ -67,7 +68,7 @@ function main() {
         return;
     }
     if (!flag('force') && !baseRef && !exits.shouldPublish({ now, lastAt: base.chartAt || base.takenAt })) {
-        console.log('⏭️  Avui no toca llista d’èxits (es publica els divendres).');
+        console.log('⏭️  Avui no toca llista d’èxits (es publica els diumenges a la tarda).');
         return;
     }
 
@@ -76,7 +77,7 @@ function main() {
         const artist = catalog.artistByChannel.get(song.channelId);
         return { ...song, artistId: artist?.id || song.channelId, artist: artist?.name || song.artist };
     });
-    const previous = baseRef ? null : readJson(CHART_FILE);
+    const previous = readJson(CHART_FILE);
     const { chart, history } = exits.buildChart({ songs, current, base, previous, history: base.history || {}, now });
 
     console.log(`🏆 Llista d'èxits del ${chart.from} al ${chart.to}: ${chart.size} cançons`);

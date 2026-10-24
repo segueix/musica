@@ -28,6 +28,7 @@ El cron del feed és únic: `0 20 * * *`, amb `timezone: Europe/Madrid`. La peti
 | Actualitzar visualitzacions historial musical | Només manual durant l’estalvi d’octubre |
 | Actualitzar feed només dels grups nous | Només petició manual expressa |
 | Manteniment musical manual | Una tasca triada expressament: arxiu, afinitats, ocults, aprimament o auditoria |
+| Llista d'èxits setmanal | Diumenges a les 17:13 Europe/Madrid o manual; sense API (des del 24/10) |
 
 Arxivament i afinitats es fan dins de l'actualització diària; l'aprimament ja forma part del generador. Service Worker, previsualitzacions i desplegament es fan dins de la mateixa feina de publicació. La fase 4 de la conversió estàtica genera i valida `_site/` a partir d’un únic checkout abans de pujar-lo, sense commits automàtics del publicador; els disparadors i la ingesta es conserven. No es creen cadenes posteriors d'arxiu, aprimament, auditoria o cobertura. L'auditoria consulta Wikidata i queda només manual, no s'ha convertit en una feina local diària.
 
@@ -78,3 +79,12 @@ Validació local del canvi: 133 proves Node i 256 proves Vitest rellevants super
 ## Llista d'èxits setmanal (22 d'octubre de 2026)
 
 «Actualitzar feed musical» té un pas més, després de l'arxiu: `node scripts/generar_llista_exits.js`. No consulta YouTube ni afegeix cap workflow ni cron: compara les visualitzacions del feed amb la fotografia de la setmana anterior i només escriu els divendres (`data/llista-exits.json` i `data/llista-exits-base.json`, al mateix commit de dades). Té `continue-on-error`, perquè un error no impedeixi publicar el feed. Detall: `docs/LLISTA_EXITS.md`.
+
+
+## Llista d'èxits: acció pròpia els diumenges (24 d'octubre de 2026)
+
+A petició de l'usuari, la llista d'èxits (setmana de dilluns a diumenge) ja no es fa dins del feed diari: té l'acció
+**«Llista d'èxits setmanal»** (`llista-exits-setmanal.yml`), amb un segon cron, `13 17 * * 0` Europe/Madrid, i entrada
+manual. No consulta YouTube ni fa servir secrets: llegeix el feed publicat, escriu dos fitxers de dades amb
+`publicar_dades.sh` (cua `music-data-writer`) i «Publicar web estàtica Música» l'escolta per desplegar-la. Són una
+execució més per setmana (i la seva publicació). Detall: `docs/LLISTA_EXITS.md`.

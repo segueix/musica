@@ -13,7 +13,7 @@ const read = name => fs.readFileSync(path.join(dir, name), 'utf8');
 const approved = [
     'actualitzar-feed-musica.yml', 'actualitzar-feed-nous-grups.yml',
     'actualitzar-visualitzacions-historial.yml', 'cercar-canals-youtube.yml', 'descobrir-musica.yml',
-    'enriquir-generes.yml', 'manteniment-manual.yml', 'publicar-comparticio-musica.yml',
+    'enriquir-generes.yml', 'llista-exits-setmanal.yml', 'manteniment-manual.yml', 'publicar-comparticio-musica.yml',
     'revisar_shorts.yml', 'validar-musica.yml',
 ].sort();
 function onBlock(source) {
@@ -53,7 +53,7 @@ function selected(file, list) {
     return result;
 }
 
-test('només queden els deu workflows del sistema aprovats', () => {
+test('només queden els onze workflows del sistema aprovats', () => {
     assert.deepEqual(fs.readdirSync(dir).filter(n => /\.ya?ml$/.test(n)).sort(), approved);
 });
 for (const name of approved) {
@@ -150,11 +150,14 @@ test('una sola feina CI, cancel·lació de versions antigues i cap comparativa d
     assert.equal((validator.match(/runs-on:/g) || []).length, 1);
     assert.equal((validator.match(/npx vitest run/g) || []).length, 1);
 });
-test('durant l’estalvi només el feed conserva un calendari automàtic', () => {
+test('durant l’estalvi només el feed i la llista d’èxits (diumenge, sense API) tenen calendari automàtic', () => {
     const scheduled = approved.filter(name => /^ {2}schedule:/m.test(onBlock(read(name))));
-    assert.deepEqual(scheduled, [
-        'actualitzar-feed-musica.yml',
-    ]);
+    assert.deepEqual(scheduled, ['actualitzar-feed-musica.yml', 'llista-exits-setmanal.yml']);
+    const chart = read('llista-exits-setmanal.yml');
+    assert.equal((onBlock(chart).match(/cron:/g) || []).length, 1);
+    assert.match(chart, /cron: "13 17 \* \* 0"\n\s+timezone: "Europe\/Madrid"/);
+    assert.doesNotMatch(chart, /secrets\.|YOUTUBE_API/);
+    assert.doesNotMatch(read('actualitzar-feed-musica.yml'), /generar_llista_exits/);
 });
 
 

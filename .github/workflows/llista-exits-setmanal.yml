@@ -1,0 +1,44 @@
+name: Llista d'èxits setmanal
+
+# Petició del 24/10/2026: la llista d'èxits (de dilluns a diumenge) es regenera sola cada diumenge a la tarda.
+# No consulta YouTube: compara les visualitzacions del feed amb la fotografia de la setmana anterior
+# (docs/LLISTA_EXITS.md). Si ja hi ha la llista d'aquesta setmana, no escriu res.
+on:
+  schedule:
+    - cron: "13 17 * * 0"
+      timezone: "Europe/Madrid"
+  workflow_dispatch:
+
+concurrency:
+  group: music-data-writer
+  queue: max
+  cancel-in-progress: false
+
+jobs:
+  llista:
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Sincronitza main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Genera la llista de la setmana
+        run: node scripts/generar_llista_exits.js
+
+      - name: Publica la llista si ha canviat
+        run: >-
+          bash scripts/publicar_dades.sh "data: llista d'èxits setmanal"
+          data/llista-exits.json data/llista-exits-base.json
