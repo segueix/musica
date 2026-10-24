@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T16:47:51.808Z",
+  "updatedAt": "2026-10-24T22:05:01.879Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -2723,6 +2723,19 @@
       "source": "https://geocoding-api.open-meteo.com/v1/search?name=Castell-Platja+d%27Aro&count=5&language=ca&format=json&countryCode=ES",
       "checkedOn": "2026-10-24",
       "coordinateNote": "El punt de GeoNames del municipi és al nucli de Platja d'Aro."
+    },
+    "geonames:3110100": {
+      "name": "Sant Quirze Safaja",
+      "type": "municipality",
+      "geonamesId": 3110100,
+      "coordinates": {
+        "latitude": 41.73333,
+        "longitude": 2.15,
+        "precision": "settlement_reference"
+      },
+      "territory": "Catalunya",
+      "source": "https://geocoding-api.open-meteo.com/v1/search?name=Sant%20Quirze%20Safaja&count=5&language=ca&format=json&countryCode=ES",
+      "checkedOn": "2026-10-25"
     }
   },
   "artists": {
@@ -17960,17 +17973,18 @@
     "artist:marc-parrot": {
       "name": "Marc Parrot",
       "status": "validated",
-      "relation": "origin",
+      "relation": "associated",
       "placeIds": [
-        "geonames:3128760"
+        "geonames:3110100"
       ],
       "confidence": "alta",
-      "basis": "La biografia oficial identifica Marc Parrot com a músic barceloní.",
+      "basis": "Resident a Sant Quirze Safaja, per indicació expressa de l’usuari. La localitat correspon a la seva residència i activitat musical.",
       "sources": [
-        "https://marcparrot.com/bio/"
+        "manual-user-2026-10-25",
+        "https://www.chefcaprabo.com/ca/mundo-cocina/inspiraciones/Marc-Parrot/"
       ],
-      "reviewedOn": "2026-10-24",
-      "assignmentSource": "manual-review",
+      "reviewedOn": "2026-10-25",
+      "assignmentSource": "user-correction",
       "locked": true,
       "officialLinks": {
         "website": {
