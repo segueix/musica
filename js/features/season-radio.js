@@ -10,7 +10,6 @@
 
     const DATA_URL = 'data/radios-temporada.json';
     const TIME_ZONE = 'Europe/Madrid';
-    const COVERS = 4;
     const ICONS = {
         play: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z"/></svg>',
         leaf: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
@@ -45,23 +44,14 @@
         );
     }
 
-    // Les cançons que es poden fer sonar (sense els artistes amagats) i les caràtules del fons: les més escoltades,
-    // d'artistes diferents.
+    // Les cançons que es poden fer sonar (sense els artistes amagats). El fons de la targeta és un dibuix de l'època
+    // (la de tardor, fulles sobre marró clar: `.pt-season--tardor` a css/portada.css), no caràtules.
     function buildModel(radio, { hiddenChannels = [] } = {}) {
         if (!radio) return null;
         const hidden = new Set(hiddenChannels.map(String));
         const videos = (radio.videos || []).filter(video => video?.id && !hidden.has(String(video.channelId)));
         if (videos.length < 2) return null;
         const artists = new Set(videos.map(video => String(video.channelId)));
-        const covers = [];
-        const used = new Set();
-        for (const video of [...videos].sort((a, b) => (Number(b.viewCount) || 0) - (Number(a.viewCount) || 0))) {
-            if (used.has(String(video.channelId))) continue;
-            used.add(String(video.channelId));
-            // hqdefault sempre hi és (maxresdefault no: hi sortia un forat negre)
-            covers.push(`https://i.ytimg.com/vi/${encodeURIComponent(video.id)}/hqdefault.jpg`);
-            if (covers.length === COVERS) break;
-        }
         return {
             id: String(radio.id || ''),
             name: String(radio.name || 'Ràdio de temporada'),
@@ -71,7 +61,6 @@
             text: String(radio.text || ''),
             count: videos.length,
             artists: artists.size,
-            covers,
             videos,
         };
     }
@@ -79,10 +68,8 @@
     function sectionHtml(model) {
         if (!model) return placeholder();
         const titleId = `ptH-season-${esc(model.id)}`;
-        return `<section class="pt-section pt-season" data-pt-section="season" data-season="${esc(model.id)}" aria-labelledby="${titleId}">
-            <ul class="pt-season__covers" aria-hidden="true">
-                ${model.covers.map(src => `<li><img src="${esc(src)}" alt="" loading="lazy" decoding="async" width="480" height="360"></li>`).join('')}
-            </ul>
+        const theme = String(model.id).replace(/[^a-z0-9-]/g, '');
+        return `<section class="pt-section pt-season pt-season--${theme}" data-pt-section="season" data-season="${esc(model.id)}" aria-labelledby="${titleId}">
             <div class="pt-season__body">
                 <p class="pt-eyebrow pt-season__eyebrow">${ICONS.leaf}<span>${esc(model.eyebrow)}</span></p>
                 <h2 class="pt-season__title" id="${titleId}">${esc(model.name)}</h2>

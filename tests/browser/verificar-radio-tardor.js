@@ -8,7 +8,7 @@
 // Ús:  node tests/browser/verificar-radio-tardor.js   (amb TARDOR_SHOTS=<carpeta> fa captures)
 //
 // Comprova, al mòbil i a l'ordinador, amb el rellotge de l'app al 24/10/2026:
-//   1) A Inici hi ha la targeta «Ràdio de tardor», al davant d'«Acabades de sortir», amb quatre caràtules de fons.
+//   1) A Inici hi ha la targeta «Ràdio de tardor», al davant d'«Acabades de sortir», amb el dibuix de fulles de fons.
 //   2) «Engega la ràdio» engega «Ràdio de tardor» amb cançons de la selecció.
 
 const http = require('http');
@@ -97,14 +97,16 @@ async function check(browser, width, height, label) {
         const section = document.querySelector('.pt-season[data-season="tardor"]');
         const fresh = document.querySelector('[data-pt-section="fresh"]');
         const box = section.getBoundingClientRect();
-        const covers = [...section.querySelectorAll('.pt-season__covers img')];
+        const style = getComputedStyle(section);
         const button = section.querySelector('[data-season-play]').getBoundingClientRect();
         return {
             title: section.querySelector('.pt-season__title')?.textContent,
             count: section.querySelector('.pt-season__count')?.textContent,
             beforeFresh: !fresh || Boolean(section.compareDocumentPosition(fresh) & Node.DOCUMENT_POSITION_FOLLOWING),
-            covers: covers.length,
-            coversFill: covers.every(img => img.getBoundingClientRect().width > 40),
+            images: section.querySelectorAll('img').length,
+            leaves: /fulles-tardor\.svg/.test(style.backgroundImage),
+            repeat: style.backgroundRepeat,
+            color: style.backgroundColor,
             inside: box.left >= 0 && box.right <= window.innerWidth + 1,
             button: [Math.round(button.width), Math.round(button.height)],
             top: Math.round(box.top + window.scrollY),
@@ -117,8 +119,12 @@ async function check(browser, width, height, label) {
     );
     ok(`${label}: al davant d'«Acabades de sortir»`, card.beforeFresh, card);
     ok(
-        `${label}: quatre caràtules de fons i dins de la pantalla`,
-        card.covers === 4 && card.coversFill && card.inside,
+        `${label}: fons de fulles de tardor sobre marró clar, repetit per tota la caixa, sense caràtules`,
+        card.leaves &&
+            /repeat/.test(card.repeat.split(',').pop()) &&
+            card.color === 'rgb(220, 192, 154)' &&
+            card.images === 0 &&
+            card.inside,
         card
     );
     ok(`${label}: botó tàctil`, card.button[1] >= 44, card.button);

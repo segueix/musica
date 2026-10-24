@@ -14,8 +14,8 @@ const madrid = (date, hour = 12) => Date.parse(`${date}T${String(hour).padStart(
 describe('ràdio de tardor: dades', () => {
     it('té prou cançons i artistes perquè no es repeteixi', () => {
         expect(tardor.name).toBe('Ràdio de tardor');
-        expect(tardor.videos.length).toBeGreaterThanOrEqual(50);
-        expect(new Set(tardor.videos.map(video => video.channelId)).size).toBeGreaterThanOrEqual(40);
+        expect(tardor.videos.length).toBeGreaterThanOrEqual(100);
+        expect(new Set(tardor.videos.map(video => video.channelId)).size).toBeGreaterThanOrEqual(80);
         // Cada cançó triada té les seves dades, sense repetir-ne cap
         expect(tardor.videos.map(video => video.id)).toEqual(tardor.songs.map(song => song.id));
         expect(new Set(tardor.songs.map(song => song.id)).size).toBe(tardor.songs.length);
@@ -49,18 +49,39 @@ describe('ràdio de tardor: dades', () => {
 });
 
 describe('ràdio de tardor: targeta d’Inici', () => {
-    it('treu els artistes amagats i fa el fons amb quatre caràtules d’artistes diferents', () => {
+    it('treu els artistes amagats i té de fons el dibuix de fulles, no caràtules', () => {
         const hidden = tardor.videos[0].channelId;
         const model = season.buildModel(tardor, { hiddenChannels: [hidden] });
         expect(model.videos.some(video => video.channelId === hidden)).toBe(false);
-        expect(model.covers).toHaveLength(4);
-        expect(new Set(model.covers).size).toBe(4);
         expect(model.short).toBe('Tardor');
         const html = season.sectionHtml(model);
         expect(html).toContain('data-pt-section="season"');
+        expect(html).toContain('pt-season--tardor');
+        expect(html).not.toMatch(/<img|ytimg/);
         expect(html).toContain('Ràdio de tardor');
         expect(html).toContain('data-season-play="tardor"');
         expect(html).toContain(`${model.count} cançons · ${model.artists} artistes`);
+        // Fulles de tardor sobre marró clar, que omplen tota la caixa (mosaic que es repeteix)
+        const css = readFileSync('css/portada.css', 'utf8');
+        const block = css.slice(css.indexOf('.pt-season--tardor {'));
+        expect(block).toMatch(/url\('\.\.\/img\/fulles-tardor\.svg'\)/);
+        expect(block).toMatch(/background-repeat: no-repeat, repeat;/);
+        expect(css).toMatch(/\.pt-season \{[^}]*--season-bg: #dcc09a;/);
+        expect(readFileSync('img/fulles-tardor.svg', 'utf8')).toMatch(/<symbol id="auro"/);
+    });
+
+    it('fa una excepció: cançons fora del límit de 21 i de les discografies «Tema», sempre filtrades', () => {
+        expect(tardor.outsideCatalog?.motiu).toMatch(/Petició de l’usuari/);
+        const titles = tardor.videos.map(video => `${video.channelTitle} — ${video.title}`);
+        // Fora del límit de 21 per artista
+        expect(titles).toContain('Obrint Pas — Novembre');
+        expect(titles).toContain('Joan Manuel Serrat — Temps de Pluja');
+        // Discografies «Tema»: artistes de confiança de llengua i Xesco Boix (languageOk)
+        expect(titles).toContain('Clara Peya — Tardor');
+        expect(titles).toContain('Xesco Boix — Plou I Fa Sol');
+        expect(tardor.outsideCatalog.languageOk.map(item => item.channelId)).toEqual([XESCO_BOIX]);
+        const hidden = new Set(JSON.parse(readFileSync('data/hidden-videos.json', 'utf8')).videoIds);
+        expect(tardor.videos.some(video => hidden.has(video.id))).toBe(false);
     });
 
     it('va a Inici al davant d’«Acabades de sortir» i engega una ràdio tancada amb el seu nom', () => {
@@ -80,6 +101,6 @@ describe('ràdio de tardor: targeta d’Inici', () => {
         );
         expect(index.indexOf('js/features/season-radio.js')).toBeLessThan(index.indexOf('js/features/portada.js'));
         expect(readFileSync('sw.js', 'utf8')).toContain("'./js/features/season-radio.js'");
-        expect(readFileSync('css/portada.css', 'utf8')).toContain('.pt-season__covers');
+        expect(readFileSync('css/portada.css', 'utf8')).toContain('.pt-season--tardor');
     });
 });

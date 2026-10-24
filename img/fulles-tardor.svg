@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480">
+  <!-- Fulles de tardor per al fons de la «Ràdio de tardor» d'Inici (css/portada.css, .pt-season). Mosaic que es
+       repeteix: cap fulla no toca la vora del quadre. Sense fons: el color marró clar el posa el CSS. -->
+  <defs>
+    <symbol id="auro" viewBox="0 0 100 100" overflow="visible">
+      <path d="M50 4 L57 24 L68 17 L66 34 L84 28 L78 44 L95 50 L76 58 L82 72 L62 68 L54 86 L50 80 L46 86 L38 68 L18 72 L24 58 L5 50 L22 44 L16 28 L34 34 L32 17 L43 24 Z"/>
+      <path d="M50 80 L50 99 M50 80 L50 20 M50 62 L79 37 M50 62 L21 37 M50 70 L74 62 M50 70 L26 62" fill="none" stroke="rgba(60,25,8,.35)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="roure" viewBox="0 0 100 100" overflow="visible">
+      <path d="M50 4 C60 8 56 18 64 20 C74 22 70 32 78 36 C88 40 78 50 84 56 C90 64 76 66 74 74 C72 82 60 78 56 86 L50 92 L44 86 C40 78 28 82 26 74 C24 66 10 64 16 56 C22 50 12 40 22 36 C30 32 26 22 36 20 C44 18 40 8 50 4 Z"/>
+      <path d="M50 8 L50 99 M50 32 L68 26 M50 32 L32 26 M50 50 L74 46 M50 50 L26 46 M50 68 L68 66 M50 68 L32 66" fill="none" stroke="rgba(60,25,8,.33)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="fulla" viewBox="0 0 100 100" overflow="visible">
+      <path d="M50 4 C78 22 84 62 50 94 C16 62 22 22 50 4 Z"/>
+      <path d="M50 8 L50 99 M50 34 L68 24 M50 34 L32 24 M50 52 L72 42 M50 52 L28 42 M50 70 L68 62 M50 70 L32 62" fill="none" stroke="rgba(60,25,8,.33)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+  <use href="#auro" x="40" y="30" width="110" height="110" fill="#c2410c" transform="rotate(-18 95 85)"/>
+  <use href="#fulla" x="210" y="40" width="70" height="70" fill="#d97706" transform="rotate(32 245 75)"/>
+  <use href="#roure" x="330" y="50" width="100" height="100" fill="#9a3412" transform="rotate(14 380 100)"/>
+  <use href="#fulla" x="70" y="200" width="80" height="80" fill="#b45309" transform="rotate(-48 110 240)"/>
+  <use href="#auro" x="190" y="160" width="130" height="130" fill="#ea580c" transform="rotate(22 255 225)"/>
+  <use href="#fulla" x="360" y="200" width="70" height="70" fill="#ca8a04" transform="rotate(70 395 235)"/>
+  <use href="#roure" x="40" y="340" width="90" height="90" fill="#d97706" transform="rotate(-30 85 385)"/>
+  <use href="#fulla" x="190" y="345" width="60" height="60" fill="#9a3412" transform="rotate(-12 220 375)"/>
+  <use href="#auro" x="290" y="320" width="110" height="110" fill="#b45309" transform="rotate(40 345 375)"/>
+</svg>
