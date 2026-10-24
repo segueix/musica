@@ -1,5 +1,5 @@
 {
-  "musicalArtists": 464,
+  "musicalArtists": 465,
   "minimumArtists": 5,
   "subcategories": [
     {
@@ -1052,7 +1052,7 @@
         "autor-folk",
         "autor-pop"
       ],
-      "artistCount": 46,
+      "artistCount": 47,
       "nucleus": true,
       "artists": [
         "Adrià Puntí",
@@ -1100,7 +1100,8 @@
         "Joan Pau Giné",
         "Pere Figueres",
         "Gisela Bellsolà",
-        "Anna Roig i l'Ombre de Ton Chien"
+        "Anna Roig i l'Ombre de Ton Chien",
+        "Marc Parrot"
       ]
     },
     {
@@ -5696,6 +5697,17 @@
       "sources": [
         "https://www.suricatmusic.cat/pawngang",
         "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ]
+    },
+    {
+      "artist": "Marc Parrot",
+      "category": "Cançó d'autor",
+      "subcategory": "autor-general",
+      "basis": "category-fallback",
+      "sources": [
+        "https://www.youtube.com/@marcparrotvideo",
+        "https://marcparrot.com/bio/",
+        "https://www.batall.com/artistes.php?id=136"
       ]
     }
   ]
