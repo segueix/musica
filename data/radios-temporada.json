@@ -1,0 +1,2413 @@
+{
+  "version": 1,
+  "nota": "Ràdios de temporada d’Inici (js/features/season-radio.js). La selecció (songs) és manual; els vídeos els escriu node scripts/generar_radios_temporada.js a partir del catàleg públic. Detall: docs/RADIOS_TEMPORADA.md.",
+  "radios": [
+    {
+      "id": "tardor",
+      "name": "Ràdio de tardor",
+      "short": "Tardor",
+      "eyebrow": "Ràdio de temporada",
+      "text": "Pluja, boira, fulles que cauen, castanyes i bolets: cançons en català per a la tardor.",
+      "from": "09-23",
+      "to": "11-30",
+      "allowInfantil": [
+        "UC5DkIn4ZKBgGKqvpa0JyZlg"
+      ],
+      "outsideCatalog": {
+        "motiu": "Petició de l’usuari (24/10/2026): per a aquesta ràdio, també cançons fora del límit de 21 per artista i pistes dels canals «Tema» (artistes de confiança de llengua o a languageOk). Mantenen els filtres d’amagades, restringides, Shorts i artistes rebutjats.",
+        "languageOk": [
+          {
+            "channelId": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+            "artista": "Xesco Boix",
+            "motiu": "«Plou i fa sol», cançó popular catalana; l’usuari demana Xesco Boix a la ràdio de tardor (24/10/2026)."
+          }
+        ]
+      },
+      "songs": [
+        {
+          "id": "Xd984ELDRMI",
+          "cancó": "Joan Dausà — OCTUBRE DEL 24 - JOAN DAUSÀ & PAULA KOOPS",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "PBeWyu6IUOs",
+          "cancó": "Umpah-Pah — Novembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "3x5zoqFFB4Q",
+          "cancó": "Pirat's Sound Sistema — Octubre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "mb3uuYz--vo",
+          "cancó": "Al Tall — Darrer Diumenge D'Octubre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "X5yVuXmngLE",
+          "cancó": "Socunbohemio — Conte de Tardor",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "TVep3HEAIEw",
+          "cancó": "Enric Hernàez — La Tardor a Pekin",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "HGDOBirCVQo",
+          "cancó": "Artur Àlvarez — TARDORAL (Bernat Artola)-ARTUR ÁLVAREZ",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "rA0HLWfKXz8",
+          "cancó": "Artur Àlvarez — Era tardor (feat. Poema de Joan Fuster)",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "6oKL_QClwlw",
+          "cancó": "Hèctor Vila — Lluna de Setembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "dl0x69eBJAI",
+          "cancó": "Joan Isaac — Setembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "d1i1z85KyKo",
+          "cancó": "Els Pets — Vespre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "5cigS2GyxX0",
+          "cancó": "Gisela Bellsolà — Vent de la Tarda",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "KdkxKfSJEO0",
+          "cancó": "Obrint Pas — Novembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "64mTSD-H4RY",
+          "cancó": "Els Pets — Setembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "jJDCEFm6Ui4",
+          "cancó": "Blaumut — Octubre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "1zgB4NDPvlM",
+          "cancó": "Mishima — En arribar la tardor",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "jbpBn1k3axE",
+          "cancó": "La Ludwig Band — La tardor que ens vam conèixer",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "cgypsYinPGk",
+          "cancó": "Marina Rossell — Les Fulles Mortes",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "vW_SJGBLwOE",
+          "cancó": "Marina Rossell — Claror de Tardor",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "t7jGnTiLYzU",
+          "cancó": "UC — Setembre-Octubre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "hj0k51ZMdzs",
+          "cancó": "Artur Àlvarez — Vespre de Tardor",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "l2kCbk2Ivjo",
+          "cancó": "Artur Àlvarez — La Tardor als Ports",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "p9KN8lJr4Ok",
+          "cancó": "Enric Barbat — Núvols de Setembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "v95gXfCVL8k",
+          "cancó": "La Tour de Carol — SETEMBRE",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "cY08s0gdmW4",
+          "cancó": "Maria Jaume — Potser fins setembre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "G5BblBAvz4Q",
+          "cancó": "Clara Peya — Tardor",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "AjdWzqK19A8",
+          "cancó": "Clara Peya — NOVEMBRE",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "ybDG-BFuFuY",
+          "cancó": "Clara Peya — OCTUBRE",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "HdAWhvmWE_I",
+          "cancó": "Maria Betriu — Les Fulles Mortes",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "4TSoMAKwkUQ",
+          "cancó": "Saïm — Octubre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "nc8XUqlgfGs",
+          "cancó": "Da Souza — Octubre",
+          "grup": "Mesos i colors de la tardor"
+        },
+        {
+          "id": "r4iXTE34wss",
+          "cancó": "Orella d'Ós — Fulles de roure (versió acústica)",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "JypDxBbx2YU",
+          "cancó": "Ernest Crusats — Fulles als ulls",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "w_K6XuaPPXI",
+          "cancó": "miquel — Vas anar-te'n amb les fulles (¨)",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "NTJE2hmYGhw",
+          "cancó": "Frans Cuspinera — Les Fulles",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "i64xQ2vLjjQ",
+          "cancó": "Mazoni — Perduts en la boira",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "_CkHurmPY6U",
+          "cancó": "Sangtraït — Somnis Entre Boires",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "LkPreOjy3HY",
+          "cancó": "Les Cruet — Una boira",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "K5-G5bPAhYQ",
+          "cancó": "Daltabaix — Massa boira",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "RlLcEI3ug-M",
+          "cancó": "UC — Roseret de mil nou fulles",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "uXIjEP1RCkc",
+          "cancó": "UC — En una boira espessa",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "DEoW37Q8TII",
+          "cancó": "Isaak Aguilà — Viatger Davant un Mar de Boira",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "4-EKGpmB0jY",
+          "cancó": "Clara Peya — BOIRA",
+          "grup": "Fulles i boira"
+        },
+        {
+          "id": "Vc6-i1buMbU",
+          "cancó": "Vicens Martín Dream Big Band — Agavé i les castanyes",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "cAjS4AoKPO4",
+          "cancó": "Aina Koda — Moniatos [PERCAL]",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "Ng_eGSCXvzM",
+          "cancó": "La Banda del Yuyu — Tots Sants",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "IZGr0XY8q5E",
+          "cancó": "En Rick — Tocat del Bolet | En Rick",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "hsdlz5UHID4",
+          "cancó": "Herois de la Katalunya Interior — Bolets",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "5gTFoR_qCVk",
+          "cancó": "Mr. Freak Ska — Bolets",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "oZiKogQp-aA",
+          "cancó": "Assot — Tocats pel Bolet",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "t3l7knj_ZNQ",
+          "cancó": "Sisa — Boletaires",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "kXOf-UOCXHU",
+          "cancó": "Terratombats — Tocat del bolet",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "4AIEcosIm1s",
+          "cancó": "Jo Jet i Maria Ribot — BOLETA",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "a7AuBeS2gdQ",
+          "cancó": "Panellet — Amic Boletaire",
+          "grup": "Castanyada, Tots Sants i bolets"
+        },
+        {
+          "id": "ujjziJ8SWq0",
+          "cancó": "The Tyets — A Fora Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "sOgLLdtr-Dc",
+          "cancó": "Adala — No Plou [Ona EP]",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "c1o1ahJK30c",
+          "cancó": "Adala — 6 Quantes Pluges [Cel LP]",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "W_Pe8yK4oX4",
+          "cancó": "Marina Rossell — Morir d'un llamp",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "YfnARofULRg",
+          "cancó": "Roger Mas — I la pluja es va assecar...",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "f8T0nz_Yg84",
+          "cancó": "Tomeu Penya — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "UbK5UdZ5Hck",
+          "cancó": "Apologia — Amb pluja i amb fred",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "HvX0gq2wrrU",
+          "cancó": "Boom Boom Fighters — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "5s4OeYEX1W0",
+          "cancó": "Senyor Oca — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "Gv75MHGDsKA",
+          "cancó": "MASSAVIU — dies de pluja",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "ty2XVyX2XFc",
+          "cancó": "Celobert — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "favZ3dgZBys",
+          "cancó": "Guineu — No ha parat de ploure (2023) 'Una sacsejada' àlbum",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "aWWsDl55lXE",
+          "cancó": "Judit Neddermann — em plou a dins",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "t-RYM6DuJCE",
+          "cancó": "La Xica — Ja no plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "hU-naKIJK58",
+          "cancó": "El Belda i el Conjunt Badabadoc — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "PzIuriTniYA",
+          "cancó": "Raimon — Al Meu País la Pluja (Directe)",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "9pvGofXSN5U",
+          "cancó": "Cesk Freixas — Una Pluja Sense Fi",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "AFQK8RkQRGk",
+          "cancó": "Núria Feliu — Gotes de Pluja Van Caient",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "VL0lpK8LGWw",
+          "cancó": "Falç de Fetillera — Falç de Metzinera - La Tempesta | Falç de Fetillera",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "EzrS6eznCY4",
+          "cancó": "Sota Terra — La tempesta",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "eCaNFcRrx-w",
+          "cancó": "Joan Manuel Serrat — Temps de Pluja",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "0eHmrCQg9_Y",
+          "cancó": "Manu Guix — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "-16_1agNZro",
+          "cancó": "Tomeu Penya — Has vist ploure mai? (Have you ever seen the rain)",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "iLGvRQwgtUQ",
+          "cancó": "Mazoni — Sense pluja però amb diluvi",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "lsTZL1-wHME",
+          "cancó": "Toti Soler — La Pluja",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "CktEQg0LgsM",
+          "cancó": "Dan Peralbo i El Comboi — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "y6eqy4YwGrw",
+          "cancó": "Joan Miquel Oliver — Plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "fwuyaIsSnIY",
+          "cancó": "Roger Mas — Després de la Tempesta",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "lyEnIdB4Ym8",
+          "cancó": "Núria Feliu — Un Dia de Pluja",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "1_tYJhHV6rI",
+          "cancó": "Enric Barbat — Plou Silenci Lentament",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "QosgLjo7mPM",
+          "cancó": "Pau Vallvé — Tempesta",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "hEY1nShz9-0",
+          "cancó": "La Banda del Yuyu — Plou per Mi",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "4UiauxLsQW4",
+          "cancó": "Gossos — Plou al Carrer",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "Qz1H3KMHHeE",
+          "cancó": "Clara Peya — M'és igual si avui plou",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "VbPLIrly7xI",
+          "cancó": "Antònia Font — Aquesta pluja",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "pQw32YXh8os",
+          "cancó": "Josep Tero — Plou I Fa Sol",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "IHVXFqZtEOk",
+          "cancó": "El Pont d'Arcalís — Pregària Per Fer Ploure",
+          "grup": "Pluja i tempesta"
+        },
+        {
+          "id": "ixq_pkb5zJg",
+          "cancó": "Glaucs — Món Gris",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "dE5dPnEJ6yI",
+          "cancó": "Júlia Cruz — Fred",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "tZiGGTa029E",
+          "cancó": "Els Pets — No T'enyoro",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "cYlrpLTdbx0",
+          "cancó": "Lluís Llach — Cant de l'Enyor",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "sR6p7OKg64o",
+          "cancó": "Toti Soler — L'enyor",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "WxYAnyFCTN4",
+          "cancó": "Júlia Cruz — Enyor",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "VZe1NhkBk0Y",
+          "cancó": "Tomeu Penya — Llavors t'enyor",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "fL-xsTbNEms",
+          "cancó": "Joan Miquel Oliver — Avui t'enyor",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "adNu6ITFkFY",
+          "cancó": "Pantaleó — Dies Que Enyoro",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "CiaBoRF9vfg",
+          "cancó": "Avalot — Melangia",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "E85_hc6WyDg",
+          "cancó": "Mascarats — Reductes d'enyorança",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "nkReUZ03ADg",
+          "cancó": "Ginestà — Nostàlgia",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "hc_7HM0Twto",
+          "cancó": "Marina Rossell — Cant de l'enyor (Camp Nou de Barcelona, 1985)",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "hmjdddbHIxY",
+          "cancó": "Quimi Portet — No fa el fred d'abans",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "GsX8lu42Arc",
+          "cancó": "Núria Feliu — Tot És Gris",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "gDlEliTuFcc",
+          "cancó": "Ovidi Montllor — Tot L'enyor de Demà",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "Xb8DTnJlBEU",
+          "cancó": "Joan Colomo — Himne de la melangia",
+          "grup": "Fred, grisor i enyor"
+        },
+        {
+          "id": "isvoRcXcxN8",
+          "cancó": "Mar Pujol — El Vent Porta El Seu Cos",
+          "grup": "Vent"
+        },
+        {
+          "id": "BV1i72W_0yw",
+          "cancó": "Socunbohemio — Ses paraules s'emporta el vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "oiH5E9a2BI4",
+          "cancó": "Mariona Escoda — Allà on bufi el vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "0gjPNLBOvVQ",
+          "cancó": "Grup de Folk — Escolta-ho en el Vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "GdE4GfH7mTw",
+          "cancó": "Guillem Ramisa — La Direcció del Vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "Ri0-IdLST_E",
+          "cancó": "Obrint Pas — Se'n va amb el vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "AQ8xvLeU-u0",
+          "cancó": "Blaumut — Vent que mou el temps",
+          "grup": "Vent"
+        },
+        {
+          "id": "hKvpbq48uwU",
+          "cancó": "Quimi Portet — Vent boig",
+          "grup": "Vent"
+        },
+        {
+          "id": "KPIDRsz6mFw",
+          "cancó": "Feliu Ventura — Tot el que arriba amb el vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "jxoMbfuaZLA",
+          "cancó": "La Troba Kung-Fú — Bufa El Vent",
+          "grup": "Vent"
+        },
+        {
+          "id": "cgdCJUoO2Sc",
+          "cancó": "Xesco Boix — Bon vent ve",
+          "grup": "Xesco Boix (petició de l’usuari)"
+        },
+        {
+          "id": "rHUeajncq_o",
+          "cancó": "Xesco Boix — A dins del bosc",
+          "grup": "Xesco Boix (petició de l’usuari)"
+        },
+        {
+          "id": "EG0x_BhcFJc",
+          "cancó": "Xesco Boix — sense vent",
+          "grup": "Xesco Boix (petició de l’usuari)"
+        },
+        {
+          "id": "RExrGMyRDYs",
+          "cancó": "Xesco Boix — Plou I Fa Sol",
+          "grup": "Xesco Boix (petició de l’usuari)"
+        }
+      ],
+      "videos": [
+        {
+          "id": "Xd984ELDRMI",
+          "title": "OCTUBRE DEL 24 - JOAN DAUSÀ & PAULA KOOPS",
+          "channelId": "UCxV6tncwBxl3K7SsUn7YyjA",
+          "channelTitle": "Joan Dausà",
+          "thumbnail": "https://i.ytimg.com/vi/Xd984ELDRMI/maxresdefault.jpg",
+          "publishedAt": "2024-08-29T21:08:34Z",
+          "durationSeconds": 206,
+          "viewCount": 851927,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "PBeWyu6IUOs",
+          "title": "Novembre",
+          "channelId": "UCeza8RPly8qpRBT2VyPBhRQ",
+          "channelTitle": "Umpah-Pah",
+          "thumbnail": "https://i.ytimg.com/vi/PBeWyu6IUOs/maxresdefault.jpg",
+          "publishedAt": "2018-07-26T11:35:14Z",
+          "durationSeconds": 287,
+          "viewCount": 13861,
+          "categories": [
+            "Rock"
+          ],
+          "contentType": "song",
+          "originalYear": 1994
+        },
+        {
+          "id": "3x5zoqFFB4Q",
+          "title": "Octubre",
+          "channelId": "UC8r4joFv4Q0LczFyYvW7Lsg",
+          "channelTitle": "Pirat's Sound Sistema",
+          "thumbnail": "https://i.ytimg.com/vi/3x5zoqFFB4Q/maxresdefault.jpg",
+          "publishedAt": "2019-06-06T10:15:54Z",
+          "durationSeconds": 245,
+          "viewCount": 8059,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song",
+          "originalYear": 2019
+        },
+        {
+          "id": "mb3uuYz--vo",
+          "title": "Darrer Diumenge D'Octubre",
+          "channelId": "UCrQY3EI5TJXNbCwkXcDLp7A",
+          "channelTitle": "Al Tall",
+          "thumbnail": "https://i.ytimg.com/vi/mb3uuYz--vo/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:11:07Z",
+          "durationSeconds": 190,
+          "viewCount": 3515,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 1976
+        },
+        {
+          "id": "X5yVuXmngLE",
+          "title": "Conte de Tardor",
+          "channelId": "UCu7TLBQJJLaaxlhD_li0BcA",
+          "channelTitle": "Socunbohemio",
+          "thumbnail": "https://i.ytimg.com/vi/X5yVuXmngLE/hqdefault.jpg",
+          "publishedAt": "2023-03-07T22:41:03Z",
+          "durationSeconds": 266,
+          "viewCount": 6533,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2021
+        },
+        {
+          "id": "TVep3HEAIEw",
+          "title": "La Tardor a Pekin",
+          "channelId": "UCpdGiiitzh2ypWsOaSyvL0A",
+          "channelTitle": "Enric Hernàez",
+          "thumbnail": "https://i.ytimg.com/vi/TVep3HEAIEw/maxresdefault.jpg",
+          "publishedAt": "2014-12-13T13:40:28Z",
+          "durationSeconds": 291,
+          "viewCount": 1311,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2014
+        },
+        {
+          "id": "HGDOBirCVQo",
+          "title": "TARDORAL (Bernat Artola)-ARTUR ÁLVAREZ",
+          "channelId": "UCl7wAYdirfC_DZ26TdXBIDw",
+          "channelTitle": "Artur Àlvarez",
+          "thumbnail": "https://i.ytimg.com/vi/HGDOBirCVQo/hqdefault.jpg",
+          "publishedAt": "2023-09-23T10:06:08Z",
+          "durationSeconds": 233,
+          "viewCount": 140,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "rA0HLWfKXz8",
+          "title": "Era tardor (feat. Poema de Joan Fuster)",
+          "channelId": "UCVYpBf3wwqOh8qNLR8wwK0w",
+          "channelTitle": "Artur Àlvarez",
+          "thumbnail": "https://i.ytimg.com/vi/rA0HLWfKXz8/maxresdefault.jpg",
+          "publishedAt": "2026-07-14T06:15:14Z",
+          "durationSeconds": 180,
+          "viewCount": 5,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2026
+        },
+        {
+          "id": "6oKL_QClwlw",
+          "title": "Lluna de Setembre",
+          "channelId": "UCfY137sqCUb5DJNrjiiy6iQ",
+          "channelTitle": "Hèctor Vila",
+          "thumbnail": "https://i.ytimg.com/vi/6oKL_QClwlw/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:09:17Z",
+          "durationSeconds": 222,
+          "viewCount": 248,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1985
+        },
+        {
+          "id": "dl0x69eBJAI",
+          "title": "Setembre",
+          "channelId": "UCcDS4PowmsXc6R3ACE7Vgfg",
+          "channelTitle": "Joan Isaac",
+          "thumbnail": "https://i.ytimg.com/vi/dl0x69eBJAI/maxresdefault.jpg",
+          "publishedAt": "2026-02-26T10:04:53Z",
+          "durationSeconds": 241,
+          "viewCount": 109,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2026
+        },
+        {
+          "id": "d1i1z85KyKo",
+          "title": "Vespre",
+          "channelId": "UCLyS6_AjQKIbL4C2BByWjmQ",
+          "channelTitle": "Els Pets",
+          "thumbnail": "https://i.ytimg.com/vi/d1i1z85KyKo/maxresdefault.jpg",
+          "publishedAt": "2021-08-02T08:54:30Z",
+          "durationSeconds": 236,
+          "viewCount": 150509,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2002
+        },
+        {
+          "id": "5cigS2GyxX0",
+          "title": "Vent de la Tarda",
+          "channelId": "UCKKjvjnD71ll8kMq2pqQhcg",
+          "channelTitle": "Gisela Bellsolà",
+          "thumbnail": "https://i.ytimg.com/vi/5cigS2GyxX0/maxresdefault.jpg",
+          "publishedAt": "2016-03-18T00:04:43Z",
+          "durationSeconds": 172,
+          "viewCount": 150,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1987
+        },
+        {
+          "id": "KdkxKfSJEO0",
+          "title": "Novembre",
+          "channelId": "UCPMX7e8_PQtgqcDHzzbfX7g",
+          "channelTitle": "Obrint Pas",
+          "thumbnail": "https://i.ytimg.com/vi/KdkxKfSJEO0/hqdefault.jpg",
+          "publishedAt": "2014-12-31T15:12:43Z",
+          "durationSeconds": 179,
+          "viewCount": 27068,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song",
+          "originalYear": 2006
+        },
+        {
+          "id": "64mTSD-H4RY",
+          "title": "Setembre",
+          "channelId": "UCLyS6_AjQKIbL4C2BByWjmQ",
+          "channelTitle": "Els Pets",
+          "thumbnail": "https://i.ytimg.com/vi/64mTSD-H4RY/hqdefault.jpg",
+          "publishedAt": "2019-05-28T16:33:10Z",
+          "durationSeconds": 128,
+          "viewCount": 13449,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2018
+        },
+        {
+          "id": "jJDCEFm6Ui4",
+          "title": "Octubre",
+          "channelId": "UCs5SsCyZ5g5q3dGMBI3NS8w",
+          "channelTitle": "Blaumut",
+          "thumbnail": "https://i.ytimg.com/vi/jJDCEFm6Ui4/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:07:02Z",
+          "durationSeconds": 428,
+          "viewCount": 601,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2012
+        },
+        {
+          "id": "1zgB4NDPvlM",
+          "title": "En arribar la tardor",
+          "channelId": "UC_z4NPeGNySemAwaAihgbaQ",
+          "channelTitle": "Mishima",
+          "thumbnail": "https://i.ytimg.com/vi/1zgB4NDPvlM/hqdefault.jpg",
+          "publishedAt": "2024-02-01T11:39:40Z",
+          "durationSeconds": 172,
+          "viewCount": 692,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2010
+        },
+        {
+          "id": "jbpBn1k3axE",
+          "title": "La tardor que ens vam conèixer",
+          "channelId": "UCdtYbFDkfHhAQgY8AzDMVwQ",
+          "channelTitle": "La Ludwig Band",
+          "thumbnail": "https://i.ytimg.com/vi/jbpBn1k3axE/hqdefault.jpg",
+          "publishedAt": "2024-02-07T22:27:37Z",
+          "durationSeconds": 224,
+          "viewCount": 3459,
+          "categories": [
+            "Rock"
+          ],
+          "contentType": "song",
+          "originalYear": 2021
+        },
+        {
+          "id": "cgypsYinPGk",
+          "title": "Les Fulles Mortes",
+          "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+          "channelTitle": "Marina Rossell",
+          "thumbnail": "https://i.ytimg.com/vi/cgypsYinPGk/hqdefault.jpg",
+          "publishedAt": "2014-09-29T18:54:01Z",
+          "durationSeconds": 226,
+          "viewCount": 4612,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1982
+        },
+        {
+          "id": "vW_SJGBLwOE",
+          "title": "Claror de Tardor",
+          "channelId": "UC5sHcbjiKxYUZ3G_0BQNBYQ",
+          "channelTitle": "Marina Rossell",
+          "thumbnail": "https://i.ytimg.com/vi/vW_SJGBLwOE/hqdefault.jpg",
+          "publishedAt": "2014-11-06T18:53:10Z",
+          "durationSeconds": 149,
+          "viewCount": 3161,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1985
+        },
+        {
+          "id": "t7jGnTiLYzU",
+          "title": "Setembre-Octubre",
+          "channelId": "UCViiIPCMCLZHQSUP16yQuKA",
+          "channelTitle": "UC",
+          "thumbnail": "https://i.ytimg.com/vi/t7jGnTiLYzU/hqdefault.jpg",
+          "publishedAt": "2014-11-16T05:43:32Z",
+          "durationSeconds": 357,
+          "viewCount": 486,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2008
+        },
+        {
+          "id": "hj0k51ZMdzs",
+          "title": "Vespre de Tardor",
+          "channelId": "UCVYpBf3wwqOh8qNLR8wwK0w",
+          "channelTitle": "Artur Àlvarez",
+          "thumbnail": "https://i.ytimg.com/vi/hj0k51ZMdzs/hqdefault.jpg",
+          "publishedAt": "2024-01-29T20:21:00Z",
+          "durationSeconds": 163,
+          "viewCount": 54,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2011
+        },
+        {
+          "id": "l2kCbk2Ivjo",
+          "title": "La Tardor als Ports",
+          "channelId": "UCVYpBf3wwqOh8qNLR8wwK0w",
+          "channelTitle": "Artur Àlvarez",
+          "thumbnail": "https://i.ytimg.com/vi/l2kCbk2Ivjo/hqdefault.jpg",
+          "publishedAt": "2024-01-28T23:22:19Z",
+          "durationSeconds": 341,
+          "viewCount": 39,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2010
+        },
+        {
+          "id": "p9KN8lJr4Ok",
+          "title": "Núvols de Setembre",
+          "channelId": "UCc-fcN1V8NLdND4zBDMBrnA",
+          "channelTitle": "Enric Barbat",
+          "thumbnail": "https://i.ytimg.com/vi/p9KN8lJr4Ok/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:04:05Z",
+          "durationSeconds": 255,
+          "viewCount": 71,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1976
+        },
+        {
+          "id": "v95gXfCVL8k",
+          "title": "SETEMBRE",
+          "channelId": "UC8DHU0fP67z2wgVm7Lkvrzw",
+          "channelTitle": "La Tour de Carol",
+          "thumbnail": "https://i.ytimg.com/vi/v95gXfCVL8k/hqdefault.jpg",
+          "publishedAt": "2024-09-12T10:05:01Z",
+          "durationSeconds": 176,
+          "viewCount": 199,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2024
+        },
+        {
+          "id": "cY08s0gdmW4",
+          "title": "Potser fins setembre",
+          "channelId": "UC3QJ1xC8aCwQdvTy-HTRwew",
+          "channelTitle": "Maria Jaume",
+          "thumbnail": "https://i.ytimg.com/vi/cY08s0gdmW4/hqdefault.jpg",
+          "publishedAt": "2020-09-03T10:01:03Z",
+          "durationSeconds": 138,
+          "viewCount": 1428,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2020
+        },
+        {
+          "id": "G5BblBAvz4Q",
+          "title": "Tardor",
+          "channelId": "UC52R4wjmZztT-anyAJpU18A",
+          "channelTitle": "Clara Peya",
+          "thumbnail": "https://i.ytimg.com/vi/G5BblBAvz4Q/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "AjdWzqK19A8",
+          "title": "NOVEMBRE",
+          "channelId": "UC52R4wjmZztT-anyAJpU18A",
+          "channelTitle": "Clara Peya",
+          "thumbnail": "https://i.ytimg.com/vi/AjdWzqK19A8/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "ybDG-BFuFuY",
+          "title": "OCTUBRE",
+          "channelId": "UC52R4wjmZztT-anyAJpU18A",
+          "channelTitle": "Clara Peya",
+          "thumbnail": "https://i.ytimg.com/vi/ybDG-BFuFuY/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "HdAWhvmWE_I",
+          "title": "Les Fulles Mortes",
+          "channelId": "UC18hp60b-j4DdzwEcWe9wrw",
+          "channelTitle": "Maria Betriu",
+          "thumbnail": "https://i.ytimg.com/vi/HdAWhvmWE_I/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "4TSoMAKwkUQ",
+          "title": "Octubre",
+          "channelId": "UCiUT6UwoOJsthloLMK0pSig",
+          "channelTitle": "Saïm",
+          "thumbnail": "https://i.ytimg.com/vi/4TSoMAKwkUQ/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Punk"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "nc8XUqlgfGs",
+          "title": "Octubre",
+          "channelId": "UC9qAJ8qxZth4Ic8D-OV52RQ",
+          "channelTitle": "Da Souza",
+          "thumbnail": "https://i.ytimg.com/vi/nc8XUqlgfGs/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Indie"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "r4iXTE34wss",
+          "title": "Fulles de roure (versió acústica)",
+          "channelId": "UCy3TyYTl8wJh8Ana3CP0QeA",
+          "channelTitle": "Orella d'Ós",
+          "thumbnail": "https://i.ytimg.com/vi/r4iXTE34wss/maxresdefault.jpg",
+          "publishedAt": "2026-01-15T23:01:12Z",
+          "durationSeconds": 295,
+          "viewCount": 14746,
+          "categories": [
+            "Rock"
+          ],
+          "contentType": "live_song"
+        },
+        {
+          "id": "JypDxBbx2YU",
+          "title": "Fulles als ulls",
+          "channelId": "UCl3RfIF60BFTx93il4D11nQ",
+          "channelTitle": "Ernest Crusats",
+          "thumbnail": "https://i.ytimg.com/vi/JypDxBbx2YU/maxresdefault.jpg",
+          "publishedAt": "2022-10-06T10:09:58Z",
+          "durationSeconds": 201,
+          "viewCount": 797,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2022
+        },
+        {
+          "id": "w_K6XuaPPXI",
+          "title": "Vas anar-te'n amb les fulles (¨)",
+          "channelId": "UC7Hb62h0GUUgaPe0v0kdY3A",
+          "channelTitle": "miquel",
+          "thumbnail": "https://i.ytimg.com/vi/w_K6XuaPPXI/hqdefault.jpg",
+          "publishedAt": "2022-11-03T23:00:36Z",
+          "durationSeconds": 184,
+          "viewCount": 1322,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "NTJE2hmYGhw",
+          "title": "Les Fulles",
+          "channelId": "UCOGyDtQsutPHkVRfp0mJ_GQ",
+          "channelTitle": "Frans Cuspinera",
+          "thumbnail": "https://i.ytimg.com/vi/NTJE2hmYGhw/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:09:57Z",
+          "durationSeconds": 201,
+          "viewCount": 2,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2017
+        },
+        {
+          "id": "i64xQ2vLjjQ",
+          "title": "Perduts en la boira",
+          "channelId": "UCwg6xDQi5POlksfrsjjwFyA",
+          "channelTitle": "Mazoni",
+          "thumbnail": "https://i.ytimg.com/vi/i64xQ2vLjjQ/maxresdefault.jpg",
+          "publishedAt": "2014-11-09T05:01:00Z",
+          "durationSeconds": 248,
+          "viewCount": 6476,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2006
+        },
+        {
+          "id": "_CkHurmPY6U",
+          "title": "Somnis Entre Boires",
+          "channelId": "UC6a_paoSt1YYKOFZwPGdEYw",
+          "channelTitle": "Sangtraït",
+          "thumbnail": "https://i.ytimg.com/vi/_CkHurmPY6U/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:04:51Z",
+          "durationSeconds": 230,
+          "viewCount": 19081,
+          "categories": [
+            "Heavy / Metal"
+          ],
+          "contentType": "song",
+          "originalYear": 1991
+        },
+        {
+          "id": "LkPreOjy3HY",
+          "title": "Una boira",
+          "channelId": "UCQgZIJD-VO5fH80azRymksg",
+          "channelTitle": "Les Cruet",
+          "thumbnail": "https://i.ytimg.com/vi/LkPreOjy3HY/maxresdefault.jpg",
+          "publishedAt": "2026-04-09T10:04:43Z",
+          "durationSeconds": 171,
+          "viewCount": 65,
+          "categories": [
+            "Punk"
+          ],
+          "contentType": "song",
+          "originalYear": 2026
+        },
+        {
+          "id": "K5-G5bPAhYQ",
+          "title": "Massa boira",
+          "channelId": "UCke5e6w0YsmcfxvngW4An3A",
+          "channelTitle": "Daltabaix",
+          "thumbnail": "https://i.ytimg.com/vi/K5-G5bPAhYQ/maxresdefault.jpg",
+          "publishedAt": "2025-12-18T15:38:33Z",
+          "durationSeconds": 123,
+          "viewCount": 20,
+          "categories": [
+            "Punk"
+          ],
+          "contentType": "song",
+          "originalYear": 2025
+        },
+        {
+          "id": "RlLcEI3ug-M",
+          "title": "Roseret de mil nou fulles",
+          "channelId": "UCViiIPCMCLZHQSUP16yQuKA",
+          "channelTitle": "UC",
+          "thumbnail": "https://i.ytimg.com/vi/RlLcEI3ug-M/hqdefault.jpg",
+          "publishedAt": "2014-11-16T04:26:40Z",
+          "durationSeconds": 227,
+          "viewCount": 3041,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2008
+        },
+        {
+          "id": "uXIjEP1RCkc",
+          "title": "En una boira espessa",
+          "channelId": "UCViiIPCMCLZHQSUP16yQuKA",
+          "channelTitle": "UC",
+          "thumbnail": "https://i.ytimg.com/vi/uXIjEP1RCkc/hqdefault.jpg",
+          "publishedAt": "2014-11-16T04:40:30Z",
+          "durationSeconds": 118,
+          "viewCount": 1971,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2008
+        },
+        {
+          "id": "DEoW37Q8TII",
+          "title": "Viatger Davant un Mar de Boira",
+          "channelId": "UCS9aWKrOcJsSqsJqBEouqAg",
+          "channelTitle": "Isaak Aguilà",
+          "thumbnail": "https://i.ytimg.com/vi/DEoW37Q8TII/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:11:12Z",
+          "durationSeconds": 314,
+          "viewCount": 5,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2018
+        },
+        {
+          "id": "4-EKGpmB0jY",
+          "title": "BOIRA",
+          "channelId": "UC52R4wjmZztT-anyAJpU18A",
+          "channelTitle": "Clara Peya",
+          "thumbnail": "https://i.ytimg.com/vi/4-EKGpmB0jY/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "Vc6-i1buMbU",
+          "title": "Agavé i les castanyes",
+          "channelId": "UCpj14cymb-6wmeXwI4hmFxA",
+          "channelTitle": "Vicens Martín Dream Big Band",
+          "thumbnail": "https://i.ytimg.com/vi/Vc6-i1buMbU/maxresdefault.jpg",
+          "publishedAt": "2014-07-19T15:35:13Z",
+          "durationSeconds": 433,
+          "viewCount": 320,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song",
+          "originalYear": 2014
+        },
+        {
+          "id": "cAjS4AoKPO4",
+          "title": "Moniatos [PERCAL]",
+          "channelId": "UCgcep1Xo6pgoWcfV0eYZIpQ",
+          "channelTitle": "Aina Koda",
+          "thumbnail": "https://i.ytimg.com/vi/cAjS4AoKPO4/hqdefault.jpg",
+          "publishedAt": "2023-03-13T23:01:31Z",
+          "durationSeconds": 169,
+          "viewCount": 243,
+          "categories": [
+            "Rap / Hip-hop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "Ng_eGSCXvzM",
+          "title": "Tots Sants",
+          "channelId": "UCSJ3UWpeU4pVvvuK0flmaeg",
+          "channelTitle": "La Banda del Yuyu",
+          "thumbnail": "https://i.ytimg.com/vi/Ng_eGSCXvzM/maxresdefault.jpg",
+          "publishedAt": "2015-05-20T12:51:23Z",
+          "durationSeconds": 232,
+          "viewCount": 120,
+          "categories": [
+            "Rumba / Mestissatge"
+          ],
+          "contentType": "song",
+          "originalYear": 2011
+        },
+        {
+          "id": "IZGr0XY8q5E",
+          "title": "Tocat del Bolet | En Rick",
+          "channelId": "UC6qcca_Zv5qzn-Iw32etw1A",
+          "channelTitle": "En Rick",
+          "thumbnail": "https://i.ytimg.com/vi/IZGr0XY8q5E/maxresdefault.jpg",
+          "publishedAt": "2025-03-21T17:00:17Z",
+          "durationSeconds": 180,
+          "viewCount": 1215,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "hsdlz5UHID4",
+          "title": "Bolets",
+          "channelId": "UCy8MYPwq8ezeihgBh4dgEdg",
+          "channelTitle": "Herois de la Katalunya Interior",
+          "thumbnail": "https://i.ytimg.com/vi/hsdlz5UHID4/maxresdefault.jpg",
+          "publishedAt": "2024-08-02T17:01:48Z",
+          "durationSeconds": 286,
+          "viewCount": 1572,
+          "categories": [
+            "Electrònica"
+          ],
+          "contentType": "song",
+          "originalYear": 2024
+        },
+        {
+          "id": "5gTFoR_qCVk",
+          "title": "Bolets",
+          "channelId": "UCElR_cmETBNoC7Rs6STl0BA",
+          "channelTitle": "Mr. Freak Ska",
+          "thumbnail": "https://i.ytimg.com/vi/5gTFoR_qCVk/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:05:05Z",
+          "durationSeconds": 190,
+          "viewCount": 192,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song",
+          "originalYear": 2011
+        },
+        {
+          "id": "oZiKogQp-aA",
+          "title": "Tocats pel Bolet",
+          "channelId": "UCgAPpOaGsoDsXdEQKLB6gnQ",
+          "channelTitle": "Assot",
+          "thumbnail": "https://i.ytimg.com/vi/oZiKogQp-aA/hqdefault.jpg",
+          "publishedAt": "2025-06-12T10:03:55Z",
+          "durationSeconds": 160,
+          "viewCount": 41,
+          "categories": [
+            "Heavy / Metal"
+          ],
+          "contentType": "song",
+          "originalYear": 2014
+        },
+        {
+          "id": "t3l7knj_ZNQ",
+          "title": "Boletaires",
+          "channelId": "UCr9ukjgwk2JtABN23sPiPGQ",
+          "channelTitle": "Sisa",
+          "thumbnail": "https://i.ytimg.com/vi/t3l7knj_ZNQ/hqdefault.jpg",
+          "publishedAt": "2023-06-16T18:18:57Z",
+          "durationSeconds": 338,
+          "viewCount": 1171,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2000
+        },
+        {
+          "id": "kXOf-UOCXHU",
+          "title": "Tocat del bolet",
+          "channelId": "UCrAazkwonIdGi_TGkzXkoCw",
+          "channelTitle": "Terratombats",
+          "thumbnail": "https://i.ytimg.com/vi/kXOf-UOCXHU/maxresdefault.jpg",
+          "publishedAt": "2024-03-21T01:36:58Z",
+          "durationSeconds": 204,
+          "viewCount": 36,
+          "categories": [
+            "Rumba / Mestissatge"
+          ],
+          "contentType": "song",
+          "originalYear": 2012
+        },
+        {
+          "id": "4AIEcosIm1s",
+          "title": "BOLETA",
+          "channelId": "UCzQX193kQwe6E3QbRLPz59g",
+          "channelTitle": "Jo Jet i Maria Ribot",
+          "thumbnail": "https://i.ytimg.com/vi/4AIEcosIm1s/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:12:43Z",
+          "durationSeconds": 217,
+          "viewCount": 64,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2022
+        },
+        {
+          "id": "a7AuBeS2gdQ",
+          "title": "Amic Boletaire",
+          "channelId": "UCDX2tkKsA-KRAxfE6p_kVuQ",
+          "channelTitle": "Panellet",
+          "thumbnail": "https://i.ytimg.com/vi/a7AuBeS2gdQ/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Punk"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "ujjziJ8SWq0",
+          "title": "A Fora Plou",
+          "channelId": "UC--8TyZ2PM0NFHWXCzQrUqw",
+          "channelTitle": "The Tyets",
+          "thumbnail": "https://i.ytimg.com/vi/ujjziJ8SWq0/maxresdefault.jpg",
+          "publishedAt": "2025-03-06T23:00:06Z",
+          "durationSeconds": 296,
+          "viewCount": 214358,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "sOgLLdtr-Dc",
+          "title": "No Plou [Ona EP]",
+          "channelId": "UC-JNcJrzWSw2RtL-3TqYoeQ",
+          "channelTitle": "Adala",
+          "thumbnail": "https://i.ytimg.com/vi/sOgLLdtr-Dc/maxresdefault.jpg",
+          "publishedAt": "2018-01-30T07:43:16Z",
+          "durationSeconds": 192,
+          "viewCount": 90021,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "c1o1ahJK30c",
+          "title": "6 Quantes Pluges [Cel LP]",
+          "channelId": "UC-JNcJrzWSw2RtL-3TqYoeQ",
+          "channelTitle": "Adala",
+          "thumbnail": "https://i.ytimg.com/vi/c1o1ahJK30c/maxresdefault.jpg",
+          "publishedAt": "2017-01-26T10:51:09Z",
+          "durationSeconds": 214,
+          "viewCount": 82164,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "W_Pe8yK4oX4",
+          "title": "Morir d'un llamp",
+          "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
+          "channelTitle": "Marina Rossell",
+          "thumbnail": "https://i.ytimg.com/vi/W_Pe8yK4oX4/hqdefault.jpg",
+          "publishedAt": "2022-10-21T10:49:29Z",
+          "durationSeconds": 184,
+          "viewCount": 83517,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "YfnARofULRg",
+          "title": "I la pluja es va assecar...",
+          "channelId": "UCTnoklTTyDXYYtT5_nmxUVQ",
+          "channelTitle": "Roger Mas",
+          "thumbnail": "https://i.ytimg.com/vi/YfnARofULRg/hqdefault.jpg",
+          "publishedAt": "2007-07-26T10:12:30Z",
+          "durationSeconds": 208,
+          "viewCount": 67772,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "f8T0nz_Yg84",
+          "title": "Plou",
+          "channelId": "UCsOxXt5l7XmAc6AvMQDRV4A",
+          "channelTitle": "Tomeu Penya",
+          "thumbnail": "https://i.ytimg.com/vi/f8T0nz_Yg84/maxresdefault.jpg",
+          "publishedAt": "2014-11-21T19:08:10Z",
+          "durationSeconds": 316,
+          "viewCount": 60899,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2010
+        },
+        {
+          "id": "UbK5UdZ5Hck",
+          "title": "Amb pluja i amb fred",
+          "channelId": "UCkIaaBrbzpnm0jbPXxNGwPw",
+          "channelTitle": "Apologia",
+          "thumbnail": "https://i.ytimg.com/vi/UbK5UdZ5Hck/hqdefault.jpg",
+          "publishedAt": "2019-10-01T10:30:18Z",
+          "durationSeconds": 250,
+          "viewCount": 12626,
+          "categories": [
+            "Punk"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "HvX0gq2wrrU",
+          "title": "Plou",
+          "channelId": "UCMIJ1Y_N61x72rTIAeyzRKA",
+          "channelTitle": "Boom Boom Fighters",
+          "thumbnail": "https://i.ytimg.com/vi/HvX0gq2wrrU/maxresdefault.jpg",
+          "publishedAt": "2024-02-07T22:38:29Z",
+          "durationSeconds": 181,
+          "viewCount": 9054,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song",
+          "originalYear": 2022
+        },
+        {
+          "id": "5s4OeYEX1W0",
+          "title": "Plou",
+          "channelId": "UCWdaWh8h5Uov97df5vX4RCw",
+          "channelTitle": "Senyor Oca",
+          "thumbnail": "https://i.ytimg.com/vi/5s4OeYEX1W0/maxresdefault.jpg",
+          "publishedAt": "2020-12-09T10:07:04Z",
+          "durationSeconds": 243,
+          "viewCount": 4791,
+          "categories": [
+            "Rap / Hip-hop"
+          ],
+          "contentType": "song",
+          "originalYear": 2020
+        },
+        {
+          "id": "Gv75MHGDsKA",
+          "title": "dies de pluja",
+          "channelId": "UCh1_-QpgzIdG-3QfCMfZi6w",
+          "channelTitle": "MASSAVIU",
+          "thumbnail": "https://i.ytimg.com/vi/Gv75MHGDsKA/maxresdefault.jpg",
+          "publishedAt": "2020-01-28T18:00:11Z",
+          "durationSeconds": 775,
+          "viewCount": 2171,
+          "categories": [
+            "Urban"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "ty2XVyX2XFc",
+          "title": "Plou",
+          "channelId": "UCwjV0xSIDOp3SqY9A9dCsZA",
+          "channelTitle": "Celobert",
+          "thumbnail": "https://i.ytimg.com/vi/ty2XVyX2XFc/sddefault.jpg",
+          "publishedAt": "2024-04-18T22:00:16Z",
+          "durationSeconds": 166,
+          "viewCount": 1757,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "favZ3dgZBys",
+          "title": "No ha parat de ploure (2023) 'Una sacsejada' àlbum",
+          "channelId": "UC_IYrpsrhfYwUw70rJAqzvA",
+          "channelTitle": "Guineu",
+          "thumbnail": "https://i.ytimg.com/vi/favZ3dgZBys/hqdefault.jpg",
+          "publishedAt": "2023-02-17T07:07:52Z",
+          "durationSeconds": 181,
+          "viewCount": 1699,
+          "categories": [
+            "Indie"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "aWWsDl55lXE",
+          "title": "em plou a dins",
+          "channelId": "UC4EQHZ_4xtQoX1fBGtTQPGg",
+          "channelTitle": "Judit Neddermann",
+          "thumbnail": "https://i.ytimg.com/vi/aWWsDl55lXE/hqdefault.jpg",
+          "publishedAt": "2025-03-20T10:01:03Z",
+          "durationSeconds": 177,
+          "viewCount": 1654,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2025
+        },
+        {
+          "id": "t-RYM6DuJCE",
+          "title": "Ja no plou",
+          "channelId": "UCy5b5j1mswlPfnHGDbnnkjQ",
+          "channelTitle": "La Xica",
+          "thumbnail": "https://i.ytimg.com/vi/t-RYM6DuJCE/maxresdefault.jpg",
+          "publishedAt": "2025-11-11T23:00:06Z",
+          "durationSeconds": 159,
+          "viewCount": 1394,
+          "categories": [
+            "Electrònica"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "hU-naKIJK58",
+          "title": "Plou",
+          "channelId": "UCcgwj-7qGY9B03WX55ZzeXw",
+          "channelTitle": "El Belda i el Conjunt Badabadoc",
+          "thumbnail": "https://i.ytimg.com/vi/hU-naKIJK58/maxresdefault.jpg",
+          "publishedAt": "2020-06-15T16:38:04Z",
+          "durationSeconds": 163,
+          "viewCount": 1092,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2020
+        },
+        {
+          "id": "PzIuriTniYA",
+          "title": "Al Meu País la Pluja (Directe)",
+          "channelId": "UCljKJq4zWfaxTUdptZgtTQA",
+          "channelTitle": "Raimon",
+          "thumbnail": "https://i.ytimg.com/vi/PzIuriTniYA/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:09:47Z",
+          "durationSeconds": 140,
+          "viewCount": 1018,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2018
+        },
+        {
+          "id": "9pvGofXSN5U",
+          "title": "Una Pluja Sense Fi",
+          "channelId": "UCP621eWrPlC6uLrXE1tm99w",
+          "channelTitle": "Cesk Freixas",
+          "thumbnail": "https://i.ytimg.com/vi/9pvGofXSN5U/hqdefault.jpg",
+          "publishedAt": "2021-03-01T10:01:36Z",
+          "durationSeconds": 303,
+          "viewCount": 898,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2021
+        },
+        {
+          "id": "AFQK8RkQRGk",
+          "title": "Gotes de Pluja Van Caient",
+          "channelId": "UCjqasQj33NeNED2MJNHThjA",
+          "channelTitle": "Núria Feliu",
+          "thumbnail": "https://i.ytimg.com/vi/AFQK8RkQRGk/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:09:57Z",
+          "durationSeconds": 167,
+          "viewCount": 770,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song",
+          "originalYear": 1987
+        },
+        {
+          "id": "VL0lpK8LGWw",
+          "title": "Falç de Metzinera - La Tempesta | Falç de Fetillera",
+          "channelId": "UCgVBViL3I9YWFVBHIyvcpjg",
+          "channelTitle": "Falç de Fetillera",
+          "thumbnail": "https://i.ytimg.com/vi/VL0lpK8LGWw/maxresdefault.jpg",
+          "publishedAt": "2022-12-21T09:00:16Z",
+          "durationSeconds": 197,
+          "viewCount": 6854,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "EzrS6eznCY4",
+          "title": "La tempesta",
+          "channelId": "UCUTor5MG45HnmxOEc2HrUhA",
+          "channelTitle": "Sota Terra",
+          "thumbnail": "https://i.ytimg.com/vi/EzrS6eznCY4/hqdefault.jpg",
+          "publishedAt": "2021-10-05T12:09:52Z",
+          "durationSeconds": 165,
+          "viewCount": 12,
+          "categories": [
+            "Punk"
+          ],
+          "contentType": "song",
+          "originalYear": 2017
+        },
+        {
+          "id": "eCaNFcRrx-w",
+          "title": "Temps de Pluja",
+          "channelId": "UC9twmdozj_iXRhX_FRZMwzw",
+          "channelTitle": "Joan Manuel Serrat",
+          "thumbnail": "https://i.ytimg.com/vi/eCaNFcRrx-w/hqdefault.jpg",
+          "publishedAt": "2015-09-24T20:07:09Z",
+          "durationSeconds": 183,
+          "viewCount": 10016,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1970
+        },
+        {
+          "id": "0eHmrCQg9_Y",
+          "title": "Plou",
+          "channelId": "UCktEHtqRuLsGxFCQAG8dRtQ",
+          "channelTitle": "Manu Guix",
+          "thumbnail": "https://i.ytimg.com/vi/0eHmrCQg9_Y/hqdefault.jpg",
+          "publishedAt": "2014-11-16T02:42:21Z",
+          "durationSeconds": 166,
+          "viewCount": 31460,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2011
+        },
+        {
+          "id": "-16_1agNZro",
+          "title": "Has vist ploure mai? (Have you ever seen the rain)",
+          "channelId": "UCsOxXt5l7XmAc6AvMQDRV4A",
+          "channelTitle": "Tomeu Penya",
+          "thumbnail": "https://i.ytimg.com/vi/-16_1agNZro/hqdefault.jpg",
+          "publishedAt": "2024-12-18T10:04:55Z",
+          "durationSeconds": 283,
+          "viewCount": 8621,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2024
+        },
+        {
+          "id": "iLGvRQwgtUQ",
+          "title": "Sense pluja però amb diluvi",
+          "channelId": "UCwg6xDQi5POlksfrsjjwFyA",
+          "channelTitle": "Mazoni",
+          "thumbnail": "https://i.ytimg.com/vi/iLGvRQwgtUQ/hqdefault.jpg",
+          "publishedAt": "2023-02-06T10:03:40Z",
+          "durationSeconds": 187,
+          "viewCount": 1222,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2023
+        },
+        {
+          "id": "lsTZL1-wHME",
+          "title": "La Pluja",
+          "channelId": "UCGCmSXoJ_f046wxT7OHUDMA",
+          "channelTitle": "Toti Soler",
+          "thumbnail": "https://i.ytimg.com/vi/lsTZL1-wHME/hqdefault.jpg",
+          "publishedAt": "2016-10-27T13:50:15Z",
+          "durationSeconds": 350,
+          "viewCount": 1072,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2016
+        },
+        {
+          "id": "CktEQg0LgsM",
+          "title": "Plou",
+          "channelId": "UCwtCbak4LIxDWURhumzu7Ng",
+          "channelTitle": "Dan Peralbo i El Comboi",
+          "thumbnail": "https://i.ytimg.com/vi/CktEQg0LgsM/hqdefault.jpg",
+          "publishedAt": "2022-05-26T21:50:34Z",
+          "durationSeconds": 176,
+          "viewCount": 1044,
+          "categories": [
+            "Rock"
+          ],
+          "contentType": "review"
+        },
+        {
+          "id": "y6eqy4YwGrw",
+          "title": "Plou",
+          "channelId": "UCEV_8wEQansDoZnwNW1Z1Vw",
+          "channelTitle": "Joan Miquel Oliver",
+          "thumbnail": "https://i.ytimg.com/vi/y6eqy4YwGrw/hqdefault.jpg",
+          "publishedAt": "2025-04-02T10:01:58Z",
+          "durationSeconds": 187,
+          "viewCount": 207,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2025
+        },
+        {
+          "id": "fwuyaIsSnIY",
+          "title": "Després de la Tempesta",
+          "channelId": "UC7kOHFUIoTiH9RrPznoJDEQ",
+          "channelTitle": "Roger Mas",
+          "thumbnail": "https://i.ytimg.com/vi/fwuyaIsSnIY/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:11:23Z",
+          "durationSeconds": 241,
+          "viewCount": 173,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2001
+        },
+        {
+          "id": "lyEnIdB4Ym8",
+          "title": "Un Dia de Pluja",
+          "channelId": "UCjqasQj33NeNED2MJNHThjA",
+          "channelTitle": "Núria Feliu",
+          "thumbnail": "https://i.ytimg.com/vi/lyEnIdB4Ym8/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:12:04Z",
+          "durationSeconds": 180,
+          "viewCount": 82,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song",
+          "originalYear": 2015
+        },
+        {
+          "id": "1_tYJhHV6rI",
+          "title": "Plou Silenci Lentament",
+          "channelId": "UCc-fcN1V8NLdND4zBDMBrnA",
+          "channelTitle": "Enric Barbat",
+          "thumbnail": "https://i.ytimg.com/vi/1_tYJhHV6rI/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:05:24Z",
+          "durationSeconds": 252,
+          "viewCount": 40,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2012
+        },
+        {
+          "id": "QosgLjo7mPM",
+          "title": "Tempesta",
+          "channelId": "UCeYxr0JNg6FD1jeBPiERkZQ",
+          "channelTitle": "Pau Vallvé",
+          "thumbnail": "https://i.ytimg.com/vi/QosgLjo7mPM/hqdefault.jpg",
+          "publishedAt": "2024-09-04T23:03:54Z",
+          "durationSeconds": 143,
+          "viewCount": 34,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2009
+        },
+        {
+          "id": "hEY1nShz9-0",
+          "title": "Plou per Mi",
+          "channelId": "UCSJ3UWpeU4pVvvuK0flmaeg",
+          "channelTitle": "La Banda del Yuyu",
+          "thumbnail": "https://i.ytimg.com/vi/hEY1nShz9-0/hqdefault.jpg",
+          "publishedAt": "2015-05-20T12:57:15Z",
+          "durationSeconds": 278,
+          "viewCount": 29,
+          "categories": [
+            "Rumba / Mestissatge"
+          ],
+          "contentType": "song",
+          "originalYear": 2008
+        },
+        {
+          "id": "4UiauxLsQW4",
+          "title": "Plou al Carrer",
+          "channelId": "UCDAuX43C1s8r_fH6-tU3SHQ",
+          "channelTitle": "Gossos",
+          "thumbnail": "https://i.ytimg.com/vi/4UiauxLsQW4/hqdefault.jpg",
+          "publishedAt": "2024-09-04T22:16:43Z",
+          "durationSeconds": 235,
+          "viewCount": 97,
+          "categories": [
+            "Rock"
+          ],
+          "contentType": "song",
+          "originalYear": 2010
+        },
+        {
+          "id": "Qz1H3KMHHeE",
+          "title": "M'és igual si avui plou",
+          "channelId": "UC52R4wjmZztT-anyAJpU18A",
+          "channelTitle": "Clara Peya",
+          "thumbnail": "https://i.ytimg.com/vi/Qz1H3KMHHeE/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "VbPLIrly7xI",
+          "title": "Aquesta pluja",
+          "channelId": "UCALf4AsnFm6WhQSD6RGV5pg",
+          "channelTitle": "Antònia Font",
+          "thumbnail": "https://i.ytimg.com/vi/VbPLIrly7xI/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "pQw32YXh8os",
+          "title": "Plou I Fa Sol",
+          "channelId": "UC7ixOUPG3ydQjkUZ4pPqvhA",
+          "channelTitle": "Josep Tero",
+          "thumbnail": "https://i.ytimg.com/vi/pQw32YXh8os/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "IHVXFqZtEOk",
+          "title": "Pregària Per Fer Ploure",
+          "channelId": "UChRlRycsUvrvZZ-upnGunLw",
+          "channelTitle": "El Pont d'Arcalís",
+          "thumbnail": "https://i.ytimg.com/vi/IHVXFqZtEOk/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "ixq_pkb5zJg",
+          "title": "Món Gris",
+          "channelId": "UCwCawZz1QtCvPzADHbcdvlQ",
+          "channelTitle": "Glaucs",
+          "thumbnail": "https://i.ytimg.com/vi/ixq_pkb5zJg/hqdefault.jpg",
+          "publishedAt": "2017-07-20T11:30:30Z",
+          "durationSeconds": 269,
+          "viewCount": 874,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 1996
+        },
+        {
+          "id": "dE5dPnEJ6yI",
+          "title": "Fred",
+          "channelId": "UCNKGOTgFuVUOWK2djkKi3DQ",
+          "channelTitle": "Júlia Cruz",
+          "thumbnail": "https://i.ytimg.com/vi/dE5dPnEJ6yI/maxresdefault.jpg",
+          "publishedAt": "2026-04-23T10:03:02Z",
+          "durationSeconds": 191,
+          "viewCount": 528,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2026
+        },
+        {
+          "id": "tZiGGTa029E",
+          "title": "No T'enyoro",
+          "channelId": "UCLyS6_AjQKIbL4C2BByWjmQ",
+          "channelTitle": "Els Pets",
+          "thumbnail": "https://i.ytimg.com/vi/tZiGGTa029E/hqdefault.jpg",
+          "publishedAt": "2014-11-20T13:11:19Z",
+          "durationSeconds": 131,
+          "viewCount": 18384,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2008
+        },
+        {
+          "id": "cYlrpLTdbx0",
+          "title": "Cant de l'Enyor",
+          "channelId": "UCRorZVV2oAZON-OvXaQQD2g",
+          "channelTitle": "Lluís Llach",
+          "thumbnail": "https://i.ytimg.com/vi/cYlrpLTdbx0/maxresdefault.jpg",
+          "publishedAt": "2024-03-20T23:41:38Z",
+          "durationSeconds": 242,
+          "viewCount": 14414,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1984
+        },
+        {
+          "id": "sR6p7OKg64o",
+          "title": "L'enyor",
+          "channelId": "UCGCmSXoJ_f046wxT7OHUDMA",
+          "channelTitle": "Toti Soler",
+          "thumbnail": "https://i.ytimg.com/vi/sR6p7OKg64o/maxresdefault.jpg",
+          "publishedAt": "2015-12-03T14:58:42Z",
+          "durationSeconds": 327,
+          "viewCount": 6321,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2006
+        },
+        {
+          "id": "WxYAnyFCTN4",
+          "title": "Enyor",
+          "channelId": "UCAwpv0YEBlWCi9OeqTCw4FA",
+          "channelTitle": "Júlia Cruz",
+          "thumbnail": "https://i.ytimg.com/vi/WxYAnyFCTN4/maxresdefault.jpg",
+          "publishedAt": "2021-04-29T21:45:15Z",
+          "durationSeconds": 202,
+          "viewCount": 3349,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "VZe1NhkBk0Y",
+          "title": "Llavors t'enyor",
+          "channelId": "UCsOxXt5l7XmAc6AvMQDRV4A",
+          "channelTitle": "Tomeu Penya",
+          "thumbnail": "https://i.ytimg.com/vi/VZe1NhkBk0Y/maxresdefault.jpg",
+          "publishedAt": "2025-11-20T10:04:38Z",
+          "durationSeconds": 268,
+          "viewCount": 3284,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2025
+        },
+        {
+          "id": "fL-xsTbNEms",
+          "title": "Avui t'enyor",
+          "channelId": "UCEV_8wEQansDoZnwNW1Z1Vw",
+          "channelTitle": "Joan Miquel Oliver",
+          "thumbnail": "https://i.ytimg.com/vi/fL-xsTbNEms/maxresdefault.jpg",
+          "publishedAt": "2026-04-29T10:01:57Z",
+          "durationSeconds": 188,
+          "viewCount": 380,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2026
+        },
+        {
+          "id": "adNu6ITFkFY",
+          "title": "Dies Que Enyoro",
+          "channelId": "UCgYkYD0ZgH2zk3Cnhh_belA",
+          "channelTitle": "Pantaleó",
+          "thumbnail": "https://i.ytimg.com/vi/adNu6ITFkFY/hqdefault.jpg",
+          "publishedAt": "2024-08-20T16:17:04Z",
+          "durationSeconds": 251,
+          "viewCount": 33,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2017
+        },
+        {
+          "id": "CiaBoRF9vfg",
+          "title": "Melangia",
+          "channelId": "UCcG2ayuF3B2xDZIVH2LNefg",
+          "channelTitle": "Avalot",
+          "thumbnail": "https://i.ytimg.com/vi/CiaBoRF9vfg/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:07:18Z",
+          "durationSeconds": 314,
+          "viewCount": 39,
+          "categories": [
+            "Heavy / Metal"
+          ],
+          "contentType": "song",
+          "originalYear": 2010
+        },
+        {
+          "id": "E85_hc6WyDg",
+          "title": "Reductes d'enyorança",
+          "channelId": "UCd8BT2JBV0_DQOKbseg7_4w",
+          "channelTitle": "Mascarats",
+          "thumbnail": "https://i.ytimg.com/vi/E85_hc6WyDg/hqdefault.jpg",
+          "publishedAt": "2014-08-07T19:30:10Z",
+          "durationSeconds": 189,
+          "viewCount": 846,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song"
+        },
+        {
+          "id": "nkReUZ03ADg",
+          "title": "Nostàlgia",
+          "channelId": "UCn3FfkjgKlzE1oNSnOM67BQ",
+          "channelTitle": "Ginestà",
+          "thumbnail": "https://i.ytimg.com/vi/nkReUZ03ADg/hqdefault.jpg",
+          "publishedAt": "2018-11-30T07:16:16Z",
+          "durationSeconds": 188,
+          "viewCount": 9429,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2018
+        },
+        {
+          "id": "hc_7HM0Twto",
+          "title": "Cant de l'enyor (Camp Nou de Barcelona, 1985)",
+          "channelId": "UCtFrz4JJnpJq7dhxLNRwkdA",
+          "channelTitle": "Marina Rossell",
+          "thumbnail": "https://i.ytimg.com/vi/hc_7HM0Twto/hqdefault.jpg",
+          "publishedAt": "2020-01-08T16:35:35Z",
+          "durationSeconds": 308,
+          "viewCount": 192013,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "other"
+        },
+        {
+          "id": "hmjdddbHIxY",
+          "title": "No fa el fred d'abans",
+          "channelId": "UCD-JAmWvBJA0pW83zFtheiQ",
+          "channelTitle": "Quimi Portet",
+          "thumbnail": "https://i.ytimg.com/vi/hmjdddbHIxY/hqdefault.jpg",
+          "publishedAt": "2018-04-05T10:03:49Z",
+          "durationSeconds": 164,
+          "viewCount": 1171,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2018
+        },
+        {
+          "id": "GsX8lu42Arc",
+          "title": "Tot És Gris",
+          "channelId": "UCjqasQj33NeNED2MJNHThjA",
+          "channelTitle": "Núria Feliu",
+          "thumbnail": "https://i.ytimg.com/vi/GsX8lu42Arc/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:07:32Z",
+          "durationSeconds": 256,
+          "viewCount": 33,
+          "categories": [
+            "Jazz / Blues"
+          ],
+          "contentType": "song",
+          "originalYear": 2009
+        },
+        {
+          "id": "gDlEliTuFcc",
+          "title": "Tot L'enyor de Demà",
+          "channelId": "UC4Ub0k-i6pWS76AUXOBf_6w",
+          "channelTitle": "Ovidi Montllor",
+          "thumbnail": "https://i.ytimg.com/vi/gDlEliTuFcc/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:07:29Z",
+          "durationSeconds": 284,
+          "viewCount": 860,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 1976
+        },
+        {
+          "id": "Xb8DTnJlBEU",
+          "title": "Himne de la melangia",
+          "channelId": "UCsNO9JMYvNgA6hEWFuhBk_w",
+          "channelTitle": "Joan Colomo",
+          "thumbnail": "https://i.ytimg.com/vi/Xb8DTnJlBEU/hqdefault.jpg",
+          "publishedAt": "2021-05-10T10:46:51Z",
+          "durationSeconds": 152,
+          "viewCount": 810,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2021
+        },
+        {
+          "id": "isvoRcXcxN8",
+          "title": "El Vent Porta El Seu Cos",
+          "channelId": "UCrkGlLnid_710UIFOrWVpAQ",
+          "channelTitle": "Mar Pujol",
+          "thumbnail": "https://i.ytimg.com/vi/isvoRcXcxN8/maxresdefault.jpg",
+          "publishedAt": "2022-07-14T21:56:31Z",
+          "durationSeconds": 191,
+          "viewCount": 5878,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2022
+        },
+        {
+          "id": "BV1i72W_0yw",
+          "title": "Ses paraules s'emporta el vent",
+          "channelId": "UCu7TLBQJJLaaxlhD_li0BcA",
+          "channelTitle": "Socunbohemio",
+          "thumbnail": "https://i.ytimg.com/vi/BV1i72W_0yw/maxresdefault.jpg",
+          "publishedAt": "2023-02-16T10:01:50Z",
+          "durationSeconds": 223,
+          "viewCount": 8586,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2023
+        },
+        {
+          "id": "oiH5E9a2BI4",
+          "title": "Allà on bufi el vent",
+          "channelId": "UC82RhPbZ6uly1CbqivbZqxQ",
+          "channelTitle": "Mariona Escoda",
+          "thumbnail": "https://i.ytimg.com/vi/oiH5E9a2BI4/maxresdefault.jpg",
+          "publishedAt": "2024-07-30T20:18:30Z",
+          "durationSeconds": 178,
+          "viewCount": 2240,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2023
+        },
+        {
+          "id": "0gjPNLBOvVQ",
+          "title": "Escolta-ho en el Vent",
+          "channelId": "UC8efMlZQ7vQ1cTO6MbspafA",
+          "channelTitle": "Grup de Folk",
+          "thumbnail": "https://i.ytimg.com/vi/0gjPNLBOvVQ/maxresdefault.jpg",
+          "publishedAt": "2025-03-31T10:02:18Z",
+          "durationSeconds": 165,
+          "viewCount": 1082,
+          "categories": [
+            "Folk i arrel"
+          ],
+          "contentType": "song",
+          "originalYear": 2006
+        },
+        {
+          "id": "GdE4GfH7mTw",
+          "title": "La Direcció del Vent",
+          "channelId": "UCtEZ1MK5EscjssXcqEYGOng",
+          "channelTitle": "Guillem Ramisa",
+          "thumbnail": "https://i.ytimg.com/vi/GdE4GfH7mTw/hqdefault.jpg",
+          "publishedAt": "2025-03-31T10:12:12Z",
+          "durationSeconds": 219,
+          "viewCount": 132,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2019
+        },
+        {
+          "id": "Ri0-IdLST_E",
+          "title": "Se'n va amb el vent",
+          "channelId": "UCPMX7e8_PQtgqcDHzzbfX7g",
+          "channelTitle": "Obrint Pas",
+          "thumbnail": "https://i.ytimg.com/vi/Ri0-IdLST_E/hqdefault.jpg",
+          "publishedAt": "2014-11-09T05:26:55Z",
+          "durationSeconds": 212,
+          "viewCount": 27514,
+          "categories": [
+            "Ska / Reggae"
+          ],
+          "contentType": "song",
+          "originalYear": 2011
+        },
+        {
+          "id": "AQ8xvLeU-u0",
+          "title": "Vent que mou el temps",
+          "channelId": "UCs5SsCyZ5g5q3dGMBI3NS8w",
+          "channelTitle": "Blaumut",
+          "thumbnail": "https://i.ytimg.com/vi/AQ8xvLeU-u0/maxresdefault.jpg",
+          "publishedAt": "2015-04-18T12:17:24Z",
+          "durationSeconds": 216,
+          "viewCount": 61516,
+          "categories": [
+            "Pop"
+          ],
+          "contentType": "song",
+          "originalYear": 2015
+        },
+        {
+          "id": "hKvpbq48uwU",
+          "title": "Vent boig",
+          "channelId": "UCD-JAmWvBJA0pW83zFtheiQ",
+          "channelTitle": "Quimi Portet",
+          "thumbnail": "https://i.ytimg.com/vi/hKvpbq48uwU/maxresdefault.jpg",
+          "publishedAt": "2025-11-24T17:49:18Z",
+          "durationSeconds": 273,
+          "viewCount": 370,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2001
+        },
+        {
+          "id": "KPIDRsz6mFw",
+          "title": "Tot el que arriba amb el vent",
+          "channelId": "UC-1A04_-NE4nuEor7HG7aSg",
+          "channelTitle": "Feliu Ventura",
+          "thumbnail": "https://i.ytimg.com/vi/KPIDRsz6mFw/hqdefault.jpg",
+          "publishedAt": "2016-01-05T18:17:44Z",
+          "durationSeconds": 221,
+          "viewCount": 667,
+          "categories": [
+            "Cançó d'autor"
+          ],
+          "contentType": "song",
+          "originalYear": 2006
+        },
+        {
+          "id": "jxoMbfuaZLA",
+          "title": "Bufa El Vent",
+          "channelId": "UC63BTrp525uyzMd-YTMAt_w",
+          "channelTitle": "La Troba Kung-Fú",
+          "thumbnail": "https://i.ytimg.com/vi/jxoMbfuaZLA/hqdefault.jpg",
+          "publishedAt": "2018-05-01T05:00:07Z",
+          "durationSeconds": 230,
+          "viewCount": 1575,
+          "categories": [
+            "Rumba / Mestissatge"
+          ],
+          "contentType": "song",
+          "originalYear": 2007
+        },
+        {
+          "id": "cgdCJUoO2Sc",
+          "title": "Bon vent ve",
+          "channelId": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+          "channelTitle": "Xesco Boix",
+          "thumbnail": "https://i.ytimg.com/vi/cgdCJUoO2Sc/hqdefault.jpg",
+          "publishedAt": "2015-04-05T13:20:58Z",
+          "durationSeconds": 188,
+          "viewCount": 1892,
+          "categories": [
+            "Infantil"
+          ],
+          "contentType": "song",
+          "originalYear": 2015
+        },
+        {
+          "id": "rHUeajncq_o",
+          "title": "A dins del bosc",
+          "channelId": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+          "channelTitle": "Xesco Boix",
+          "thumbnail": "https://i.ytimg.com/vi/rHUeajncq_o/hqdefault.jpg",
+          "publishedAt": "2015-04-05T13:25:25Z",
+          "durationSeconds": 134,
+          "viewCount": 2856,
+          "categories": [
+            "Infantil"
+          ],
+          "contentType": "song",
+          "originalYear": 2015
+        },
+        {
+          "id": "EG0x_BhcFJc",
+          "title": "sense vent",
+          "channelId": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+          "channelTitle": "Xesco Boix",
+          "thumbnail": "https://i.ytimg.com/vi/EG0x_BhcFJc/hqdefault.jpg",
+          "publishedAt": "2015-10-06T02:16:41Z",
+          "durationSeconds": 141,
+          "viewCount": 1134,
+          "categories": [
+            "Infantil"
+          ],
+          "contentType": "song",
+          "originalYear": 1986
+        },
+        {
+          "id": "RExrGMyRDYs",
+          "title": "Plou I Fa Sol",
+          "channelId": "UC5DkIn4ZKBgGKqvpa0JyZlg",
+          "channelTitle": "Xesco Boix",
+          "thumbnail": "https://i.ytimg.com/vi/RExrGMyRDYs/hqdefault.jpg",
+          "viewCount": 0,
+          "categories": [
+            "Infantil"
+          ],
+          "contentType": "song"
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-10-24T11:27:14.498Z"
+}

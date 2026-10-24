@@ -716,6 +716,7 @@
                 ${newcomer ? styles : ''}
                 ${model.lead ? leadHtml(model.lead) : ''}
                 ${app.features.homePlaylists?.sectionHtml?.() || ''}
+                ${app.features.seasonRadio?.cardHtml?.() || ''}
                 ${model.fresh ? freshHtml(model.fresh, Boolean(options.freshExpanded), now, model.reasons) : ''}
                 ${app.features.hitsChart?.cardHtml?.() || ''}
                 ${model.live ? liveHtml(model.live, now) : ''}

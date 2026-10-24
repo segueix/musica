@@ -105,6 +105,9 @@ function loadCatalog(root, options = {}) {
         for (const channel of group) artistByChannel.set(channel.id, artist);
     }
     artists.sort((a, b) => a.name.localeCompare(b.name, 'ca'));
+    // `unlimited`: les cançons que passen tots els filtres (amagades, restringides, Shorts, artistes rebutjats) però
+    // sense el límit de 21 per artista; només per a seleccions editorials (les ràdios de temporada).
+    if (options.unlimited) return { channels, artists, artistByChannel, songs };
     const albumFile = path.join(root, 'data/albums-musica.json');
     return selectCatalog({ channels, artists, artistByChannel, songs }, {
         now: options.now ?? Date.now(), albums: fs.existsSync(albumFile) ? read(root, 'data/albums-musica.json') : null,
