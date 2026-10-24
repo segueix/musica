@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T13:33:19.649Z",
+  "updatedAt": "2026-10-24T16:47:51.808Z",
   "attribution": {
     "text": "Coordenades de referència: GeoNames, via Open-Meteo. CC BY 4.0.",
     "sources": [
@@ -17956,6 +17956,34 @@
       "reviewedOn": "2026-10-24",
       "assignmentSource": "manual-review",
       "locked": true
+    },
+    "artist:marc-parrot": {
+      "name": "Marc Parrot",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "confidence": "alta",
+      "basis": "La biografia oficial identifica Marc Parrot com a músic barceloní.",
+      "sources": [
+        "https://marcparrot.com/bio/"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "officialLinks": {
+        "website": {
+          "url": "https://marcparrot.com/",
+          "status": "verified",
+          "checkedOn": "2026-10-24",
+          "method": "manual-review",
+          "sources": [
+            "https://marcparrot.com/bio/"
+          ],
+          "basis": "Web oficial de Marc Parrot."
+        }
+      }
     }
   },
   "channels": {
@@ -18646,7 +18674,8 @@
     "UCuZ3VZ2TMeFeV6pZvG9SueQ": "artist:peix-fregit",
     "UCYRxQ_jB6vat3NkBxIOe4fQ": "artist:port-bo",
     "UCYOWVkZwBVSxzYQfK_khVYg": "artist:terra-endins",
-    "UCJ-dDO2z5WvGEv9RzhlYkeA": "artist:tornaveus"
+    "UCJ-dDO2z5WvGEv9RzhlYkeA": "artist:tornaveus",
+    "UC2Kr7FYctQfq-GK22qPdxig": "artist:marc-parrot"
   },
   "excludedProfiles": {
     "UCdezTX23syEeAJJAb2oOkKA": {

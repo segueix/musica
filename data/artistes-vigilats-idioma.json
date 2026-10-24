@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-24T07:48:57.710854+00:00",
+  "updatedAt": "2026-10-24T16:47:51.808Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -2886,6 +2886,21 @@
         "https://music.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww",
         "https://www.suricatmusic.cat/pawngang",
         "https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala"
+      ]
+    },
+    {
+      "artista": "Marc Parrot",
+      "aliases": [
+        "marcparrotvideo"
+      ],
+      "canals": [
+        "UC2Kr7FYctQfq-GK22qPdxig"
+      ],
+      "motiu": "Repertori en català i castellà. Revisar cada incorporació; no s’aproven globalment les cançons amb l’alta del canal.",
+      "fonts": [
+        "https://mangrana.cat/artistes/marc-parrot/",
+        "https://marcparrot.com/bio/",
+        "https://www.youtube.com/@marcparrotvideo"
       ]
     }
   ],

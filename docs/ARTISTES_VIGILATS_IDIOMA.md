@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-24T07:48:57.710854+00:00. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-24T16:47:51.808Z. 192 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -223,3 +223,4 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Teuma Thug |  | `UCP_oNrTxABOWdNVpuxh_wUw` | Alta del canal Tema sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra. | `https://www.youtube.com/channel/UCP_oNrTxABOWdNVpuxh_wUw`, `https://www.suricatmusic.cat/pawngang`, `https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala` |
 | Good Jan | Goodjan | `UC-rX86Ux3rfWiEHYBDAt98w` | Alta del canal Tema sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra. | `https://www.youtube.com/channel/UC-rX86Ux3rfWiEHYBDAt98w`, `https://www.suricatmusic.cat/pawngang`, `https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala` |
 | Lil Guiu |  | `UCjoxtmuZ82RdRdPm8Kmllww` | Alta sol·licitada per l’usuari. Només català estricte o instrumental documentat; sense aprovació global del repertori. Revisar cada gravació i les col·laboracions amb fonts de lletra. | `https://www.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww`, `https://music.youtube.com/channel/UCjoxtmuZ82RdRdPm8Kmllww`, `https://www.suricatmusic.cat/pawngang`, `https://www.enderrock.cat/noticia/11811/bad-gyal-nou-trap-catala` |
+| Marc Parrot | marcparrotvideo | `UC2Kr7FYctQfq-GK22qPdxig` | Repertori en català i castellà. Revisar cada incorporació; no s’aproven globalment les cançons amb l’alta del canal. | `https://mangrana.cat/artistes/marc-parrot/`, `https://marcparrot.com/bio/`, `https://www.youtube.com/@marcparrotvideo` |

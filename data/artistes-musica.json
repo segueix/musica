@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T18:24:10.382Z",
+  "updatedAt": "2026-10-24T16:47:51.808Z",
   "artists": [
     {
       "name": "2 Princeses Barbudes",
@@ -41912,6 +41912,50 @@
       ],
       "lastChecked": "2026-10-22T18:24:10.382Z",
       "notes": "Alta expressa de l’usuari. Canal Tema identificat a YouTube i YouTube Music amb el repertori de Lil Guiu (POGOS, ASTARAMBOTiCK, MALAS iNTANSiONS). Fitxa individual separada de P.A.W.N. Gang. Urban (trap), Barcelona (Gràcia). Vigilància d’idioma: cal verificar les cançons individualment; l’alta no aprova tot el repertori."
+    },
+    {
+      "name": "Marc Parrot",
+      "displayName": "Marc Parrot",
+      "aliases": [
+        "marcparrotvideo"
+      ],
+      "genres": [
+        "Cançó d'autor"
+      ],
+      "genresRaw": [],
+      "territories": [
+        "Catalunya"
+      ],
+      "languages": [
+        "ca",
+        "es"
+      ],
+      "wikidataId": null,
+      "musicbrainzId": null,
+      "youtube": {
+        "channels": [
+          {
+            "id": "UC2Kr7FYctQfq-GK22qPdxig",
+            "handle": "@marcparrotvideo",
+            "name": "Marc Parrot",
+            "type": "official",
+            "primary": true
+          }
+        ],
+        "searchCandidates": []
+      },
+      "confidence": "alta",
+      "reviewStatus": "aprovat",
+      "active": true,
+      "sources": [
+        "manual-user-2026-10-24",
+        "genre:manual",
+        "https://www.youtube.com/@marcparrotvideo",
+        "https://marcparrot.com/bio/",
+        "https://www.batall.com/artistes.php?id=136"
+      ],
+      "lastChecked": "2026-10-24T16:47:51.808Z",
+      "notes": "Alta expressa del canal @marcparrotvideo. Cançó d’autor, Barcelona. Repertori en català i castellà: revisió d’idioma de les cançons, sense aprovació global. Ingesta al torn programat habitual."
     }
   ]
 }
