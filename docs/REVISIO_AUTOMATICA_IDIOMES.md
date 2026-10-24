@@ -2,6 +2,8 @@
 
 ## Criteri editorial vigent (23/10/2026)
 
+**Rectificació del 24/10/2026:** l’editor ha revocat les aprovacions bilingües/multilingües identificades a `revisions/2026-10-24-miki-nunez-i-bilingues.json`. Les decisions explícites de retirada prevalen sobre la norma general següent; no les recupereu per títol català ni per fragment català. No es reescriuen els lots històrics. Miki Núñez queda sota vigilància amb exclusió de peces no catalanes i bilingües, tant al canal oficial com al Tema.
+
 Per indicació expressa de l’editor, aquestes regles substitueixen el criteri antic de català estricte, inclosa qualsevol indicació incompatible de la rutina `.agents/skills/revisar-idiomes/SKILL.md`:
 
 1. **Títol inequívocament català: acceptació directa.** No cal buscar la lletra. S’admet la grafia informal o fonètica quan el significat català és inequívoc; cal explicar-lo. Noms propis o títols ambigus no basten. Registra `titol-catala`, el títol exacte i la font de les metadades de l’ID. Aquesta acceptació no verifica la lletra ni les llengües cantades.

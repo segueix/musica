@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-23T18:16:18.374Z",
+  "updatedAt": "2026-10-24T07:39:29.190Z",
   "criteri": "Només els artistes vigilats passen per revisió de cançons. Confiança editorial del catàleg existent, no verificació individual de lletres. Les altes noves es classifiquen una vegada.",
   "vigilats": [
     {
@@ -1067,10 +1067,11 @@
         "UCSw_OmWJnY0Dz311MEzdHFA",
         "UCJ_erOhxsuzi3KYLngXMeJw"
       ],
-      "motiu": "Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions.",
+      "motiu": "Sospitós habitual, confirmat per l’editor el 24/10/2026: repertori en català i altres llengües. Revisar canals oficial i Tema; retirar peces no catalanes i bilingües. Celébrate és en castellà; no confondre amb Celebrem. Les exclusions explícites prevalen sobre aprovacions pel títol o per llengües mixtes.",
       "fonts": [
         "scripts/ocultar_titols_castella.js",
-        "docs/ARTISTES_CASTELLA.md"
+        "docs/ARTISTES_CASTELLA.md",
+        "docs/revisions/2026-10-24-miki-nunez-i-bilingues.json"
       ]
     },
     {

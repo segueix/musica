@@ -4,6 +4,8 @@ Consulta `CLAUDE.md` per les convencions generals del projecte. Abans de corregi
 
 ## Revisar cançons pendents des de la sessió
 
+**Rectificació expressa del 24/10/2026:** s’han revocat les aprovacions bilingües/multilingües identificades a `docs/revisions/2026-10-24-miki-nunez-i-bilingues.json`. No les recupereu amb la regla del 23/10 ni pel títol català. Miki Núñez queda com a sospitós habitual: excloure les peces no catalanes i bilingües, revisar oficial i Tema i mantenir separades «Celébrate» i «Celebrem». Les baixes explícites prevalen sobre les regles generals següents.
+
 Quan l’usuari demani revisar/validar pendents d’idioma, fer un lot o continuar aquesta feina, llegeix `.agents/skills/revisar-idiomes/SKILL.md` i `docs/REVISIO_AUTOMATICA_IDIOMES.md`.
 
 - La recerca i el judici lingüístic els fa l’agent dins la sessió de ChatGPT/Codex, amb les eines de consulta que realment tingui. No cridis una API d’IA, no demanis claus, no facis servir credencials de sessió en scripts i no canviïs el model de l’usuari.

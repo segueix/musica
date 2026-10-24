@@ -2,7 +2,7 @@
 
 Document generat de `data/artistes-vigilats-idioma.json`, l’única font operativa. No editeu la taula a mà.
 
-Actualitzat: 2026-10-23T18:16:18.374Z. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
+Actualitzat: 2026-10-24T07:39:29.190Z. 191 entrades vigilades i 278 artistes de confiança editorial. Inclou antecedents sense canal actiu, per si es reincorporen.
 
 ## Política
 
@@ -106,7 +106,7 @@ La revisió només resol els IDs indicats: la resta queda pendent. Afegiu `--mat
 | Mariona Escoda i Sendra | Mariona Escoda, Mariona Escoda - Topic | `UC_97DSVzzRp28ew8nKB255g`, `UC82RhPbZ6uly1CbqivbZqxQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | MARLENA |  | Sense canal assignat | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js` |
 | Mazoni | Mazoni - Topic | `UCwg6xDQi5POlksfrsjjwFyA` | Antecedents d’exclusions o dubtes de llengua documentats; no implica que tot el repertori sigui multilingüe. | `docs/ARTISTES_CASTELLA.md` |
-| Miki Núñez | Miki Nuñez, Miki Núñez - Topic | `UCSw_OmWJnY0Dz311MEzdHFA`, `UCJ_erOhxsuzi3KYLngXMeJw` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
+| Miki Núñez | Miki Nuñez, Miki Núñez - Topic | `UCSw_OmWJnY0Dz311MEzdHFA`, `UCJ_erOhxsuzi3KYLngXMeJw` | Sospitós habitual, confirmat per l’editor el 24/10/2026: repertori en català i altres llengües. Revisar canals oficial i Tema; retirar peces no catalanes i bilingües. Celébrate és en castellà; no confondre amb Celebrem. Les exclusions explícites prevalen sobre aprovacions pel títol o per llengües mixtes. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md`, `docs/revisions/2026-10-24-miki-nunez-i-bilingues.json` |
 | miquel |  | `UC7Hb62h0GUUgaPe0v0kdY3A` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Mishima | Mishima - Topic, MISHIMA | `UCG2FXKF44MdeDbLb66yb-rQ`, `UC_z4NPeGNySemAwaAihgbaQ` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |
 | Montse Castellà | Montse Castellà - Cantautora, Montse Castellà - Topic | `UCCQqI6aPYDi_aGJsfDr_gqA`, `UCQXQh0zJqh0smX0vvOLNxag` | Exclusions editorials prèvies per llengua; cal revisar les noves incorporacions. | `scripts/ocultar_titols_castella.js`, `docs/ARTISTES_CASTELLA.md` |

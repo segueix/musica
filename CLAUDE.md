@@ -382,6 +382,8 @@ const likes = ctx2.SegueixApp.features.likes;
 
 ## Criteri editorial vigent (23/10/2026)
 
+**Rectificació del 24/10/2026:** retirada expressa de les aprovacions bilingües/multilingües documentades a `docs/revisions/2026-10-24-miki-nunez-i-bilingues.json`. Aquestes exclusions no es poden desfer per la regla general de llengües mixtes ni per un títol català. Miki Núñez és sospitós habitual; revisar oficial i Tema i excloure peces no catalanes o bilingües. «Celébrate» i «Celebrem» són versions lingüístiques diferents. La versió de «Cucu-pido» de Setlist - Gira 121 continua pendent de prova de l’edició concreta.
+
 Per indicació expressa de l’editor, aquestes regles substitueixen el criteri antic de català estricte, inclosa qualsevol indicació incompatible de la rutina `.agents/skills/revisar-idiomes/SKILL.md`:
 
 1. **Títol inequívocament català: acceptació directa.** No cal buscar la lletra. S’admet la grafia informal o fonètica quan el significat català és inequívoc; cal explicar-lo. Noms propis o títols ambigus no basten. Registra `titol-catala`, el títol exacte i la font de les metadades de l’ID. Aquesta acceptació no verifica la lletra ni les llengües cantades.
