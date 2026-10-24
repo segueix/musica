@@ -1,5 +1,5 @@
 // Llista d'èxits setmanal (2026-10-22): secció d'Inici, després d'«Acabades de sortir». Les dades les fa cada
-// divendres scripts/generar_llista_exits.js (data/llista-exits.json): les cançons en català que més visualitzacions
+// diumenge a la tarda scripts/generar_llista_exits.js (data/llista-exits.json): les cançons en català que més visualitzacions
 // han guanyat a YouTube aquella setmana. Model i HTML purs; la secció es pinta buida i s'omple quan arriben les dades
 // (com la targeta d'«A prop teu»). Detall: docs/LLISTA_EXITS.md.
 (function (window) {
@@ -31,7 +31,7 @@
 
     const state = { chart: null, loading: null, failed: false, infoOpen: false };
     const INFO_TEXT = [
-        'Cada divendres comparem les visualitzacions de YouTube de les cançons de Segueix amb les de la setmana anterior: puja qui n’ha guanyat més.',
+        'Cada diumenge a la tarda comparem les visualitzacions de YouTube de les cançons de Segueix amb les de la setmana anterior: puja qui n’ha guanyat més. La setmana va de dilluns a diumenge.',
         'El videoclip i la pista d’àudio d’una mateixa cançó sumen junts, cada artista hi pot tenir tres cançons com a màxim i la música infantil no hi entra.',
     ];
 

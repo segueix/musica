@@ -71,12 +71,7 @@ jobs:
         run: |
           node scripts/archivar_feed_musical.js
           node scripts/generar_afinitats_musica.js --repair-catalog
-      # Llista d'èxits setmanal: només els divendres (els altres dies no fa res); sense API (docs/LLISTA_EXITS.md).
-      # Un error no ha d'impedir publicar el feed.
-      - name: Llista d'èxits setmanal
-        if: steps.scope.outputs.work == 'true'
-        continue-on-error: true
-        run: node scripts/generar_llista_exits.js
+      # La llista d'èxits té acció pròpia, els diumenges a la tarda (llista-exits-setmanal.yml, docs/LLISTA_EXITS.md).
       - name: Regenera la cerca i comprova la cobertura
         if: steps.scope.outputs.work == 'true'
         run: |

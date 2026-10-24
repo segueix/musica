@@ -16,7 +16,7 @@ const PER_ARTIST = 3; // cap artista no hi pot posar més de tres cançons
 const MIN_GROWTH = 100; // visualitzacions setmanals mínimes per entrar a la llista
 const MIN_SPAN = DAY; // dues lectures separades menys d'un dia no diuen res del creixement
 const SCALE_LIMITS = [0.5, 2]; // una lectura de 3,5 a 14 dies es porta a set dies, no més
-const PUBLISH_WEEKDAY = 5; // divendres, el dia de les estrenes
+const PUBLISH_WEEKDAY = 0; // diumenge a la tarda (acció «Llista d'èxits setmanal»), en tancar la setmana
 const HISTORY_WEEKS = 26;
 // La música infantil se sent en bucle (els pares la deixen sonar) i ompliria la llista: no hi entra.
 const EXCLUDED_CATEGORIES = ['Infantil'];
@@ -38,7 +38,7 @@ function madridDate(time) {
     return { date: `${get('year')}-${get('month')}-${get('day')}`, weekday };
 }
 
-// Toca publicar: la primera vegada, cada divendres (si fa almenys cinc dies de l'anterior) o, si un divendres no
+// Toca publicar: la primera vegada, cada diumenge (si fa almenys cinc dies de l'anterior) o, si un diumenge no
 // s'ha pogut fer, en passar-ne vuit.
 function shouldPublish({ now = Date.now(), lastAt = null } = {}) {
     const last = stamp(lastAt);
@@ -46,6 +46,17 @@ function shouldPublish({ now = Date.now(), lastAt = null } = {}) {
     const elapsed = now - last;
     if (elapsed >= 8 * DAY) return true;
     return elapsed >= 5 * DAY && madridDate(now).weekday === PUBLISH_WEEKDAY;
+}
+
+// Setmana de la llista, de dilluns a diumenge (2026-10-24). Es mira el dia anterior: el diumenge a la tarda i
+// qualsevol dia entre setmana donen la setmana en curs; un dilluns (un diumenge que no s'ha pogut fer), la que
+// acaba de tancar.
+function chartWeek(now = Date.now()) {
+    const { date, weekday } = madridDate(now - DAY);
+    const [year, month, day] = date.split('-').map(Number);
+    const monday = Date.UTC(year, month - 1, day - ((weekday + 6) % 7));
+    const iso = time => new Date(time).toISOString().slice(0, 10);
+    return { from: iso(monday), to: iso(monday + 6 * DAY) };
 }
 
 // Fotografia de les visualitzacions: { id: [visualitzacions, segons de la lectura] }. L'hora és la de l'última
@@ -158,8 +169,7 @@ function buildChart({ songs, current, base, previous = null, history = {}, now =
             generatedAt: at,
             // Primera edició: encara no hi ha moviments per mostrar
             first: !previous,
-            from: madridDate(stamp(base?.takenAt) || now - WEEK).date,
-            to: madridDate(now).date,
+            ...chartWeek(now),
             size: entries.length,
             entries,
         },
@@ -211,6 +221,7 @@ module.exports = {
     PER_ARTIST,
     MIN_GROWTH,
     madridDate,
+    chartWeek,
     shouldPublish,
     takeSnapshot,
     weeklyGrowth,

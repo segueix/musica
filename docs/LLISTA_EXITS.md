@@ -25,17 +25,26 @@ cançons en català de Segueix que més visualitzacions han guanyat a YouTube en
 
 ## Quan es publica
 
-`scripts/generar_llista_exits.js` s'executa cada dia dins «Actualitzar feed musical», després del feed i de l'arxiu,
-amb `continue-on-error` (un error no impedeix publicar el feed). Només fa una llista nova **els divendres** (si fa
-almenys cinc dies de l'anterior) o, si un divendres no s'ha pogut fer, en passar-ne vuit (`shouldPublish()`). Els altres
-dies no escriu res. Els dos fitxers van al mateix commit de dades.
+**Des del 24/10/2026, la setmana va de dilluns a diumenge i la llista es regenera sola cada diumenge a la tarda**
+(petició de l'usuari: la llista del 15 al 22 d'octubre encara sortia el 24). Ho fa l'acció **«Llista d'èxits
+setmanal»** (`.github/workflows/llista-exits-setmanal.yml`, `13 17 * * 0` Europe/Madrid, també manual), que executa
+`scripts/generar_llista_exits.js` i publica `data/llista-exits.json` i `data/llista-exits-base.json` amb
+`publicar_dades.sh`; en acabar es torna a publicar la web («Publicar web estàtica Música» l'escolta). No fa servir cap
+secret ni consulta YouTube: fa servir les visualitzacions del darrer feed diari (el de dissabte a les 20 h). El feed diari
+ja no la fa.
+
+`shouldPublish()` publica un diumenge si fa almenys cinc dies de l'anterior o, si un diumenge no s'ha pogut fer, en passar-ne
+vuit. `chartWeek()` dona el període (`from` = dilluns, `to` = diumenge): mira el dia anterior, de manera que un diumenge a
+la tarda o un dia entre setmana donen la setmana en curs i un dilluns, la que acaba de tancar. La llista del 19 al 25
+d'octubre es va fer el dissabte 24 amb `--base-ref=5e1be6e1` (feed del dilluns 19); l'acció la torna a fer el diumenge
+1 de novembre (del 26 d'octubre a l'1 de novembre).
 
 Ordres manuals:
 
 ```bash
 node scripts/generar_llista_exits.js --dry-run                # mostra la llista sense escriure res
 node scripts/generar_llista_exits.js --force                  # la publica ara
-node scripts/generar_llista_exits.js --base-ref=<commit>      # setmana anterior = feed d'aquell commit (git)
+node scripts/generar_llista_exits.js --base-ref=<commit>      # setmana anterior = feed d'aquell commit (git); conserva els moviments
 LLISTA_MOSTRA=40 node scripts/generar_llista_exits.js --dry-run
 ```
 
