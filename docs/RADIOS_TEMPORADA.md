@@ -46,6 +46,13 @@ qualsevol mida (`.pt-season--tardor`: 420 px a l'ordinador, 320 px al mòbil). E
 `node scripts/dibuix_fulles_tardor.cjs` (l'auró està dibuixat a mà, meitat i mirall): no l'editis a mà. Un vel del mateix
 cacau (a l'esquerra a l'ordinador, a baix al mòbil) fa que el text crema es llegeixi; el botó és crema amb text marró.
 
+## Heavy / Metal i Punk
+
+A petició de l'usuari (24/10/2026), les cançons de Heavy / Metal i de Punk de la selecció (Sangtraït, Avalot, Forja,
+Apologia, Les Cruet, Daltabaix, Sota Terra…) **només surten si l'usuari segueix algun grup d'aquell estil**. Es treuen
+en el moment (`musicQueue.filterOptInStyles()`, el mateix filtre que «La teva ràdio»): la llista de `songs` no canvia
+i la targeta compta les cançons que quedaran.
+
 ## Afegir o treure cançons
 
 1. Edita `songs` de la ràdio a `data/radios-temporada.json` (l'ID de YouTube; `cancó` i `grup` només són per llegir-ho).

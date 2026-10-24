@@ -46,10 +46,12 @@
 
     // Les cançons que es poden fer sonar (sense els artistes amagats). El fons de la targeta és un dibuix de l'època
     // (la de tardor, fulles sobre marró clar: `.pt-season--tardor` a css/portada.css), no caràtules.
-    function buildModel(radio, { hiddenChannels = [] } = {}) {
+    // `filter`: Heavy / Metal i Punk només hi surten si l'usuari segueix algun grup d'aquell estil
+    // (`musicQueue.filterOptInStyles`).
+    function buildModel(radio, { hiddenChannels = [], filter = list => list } = {}) {
         if (!radio) return null;
         const hidden = new Set(hiddenChannels.map(String));
-        const videos = (radio.videos || []).filter(video => video?.id && !hidden.has(String(video.channelId)));
+        const videos = filter((radio.videos || []).filter(video => video?.id && !hidden.has(String(video.channelId))));
         if (videos.length < 2) return null;
         const artists = new Set(videos.map(video => String(video.channelId)));
         return {
@@ -93,7 +95,11 @@
     }
 
     function currentModel(now = Date.now()) {
-        return state.data ? buildModel(activeRadio(state.data, now), { hiddenChannels: hiddenChannels() }) : null;
+        const queue = app.features.musicQueue;
+        const filter = list => (queue?.filterOptInStyles ? queue.filterOptInStyles(list) : list);
+        return state.data
+            ? buildModel(activeRadio(state.data, now), { hiddenChannels: hiddenChannels(), filter })
+            : null;
     }
 
     async function load() {

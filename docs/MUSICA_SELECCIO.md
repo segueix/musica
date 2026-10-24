@@ -333,3 +333,12 @@ La secció de portada agrupa el canal oficial i el Tema amb `SegueixMusicCategor
 La familiaritat suma les escoltes, cors i seguiments dels canals del grup. Així el Tema d'un grup ja conegut no torna a presentar-lo com si fos un altre artista; un canal que arriba al límit de presència a la portada també exclou els germans del radar. Si no hi ha agrupació editorial, cada canal conserva la seva identitat i dos homònims no es fusionen per coincidència de nom. Aquest canvi és de la secció del radar, no del motor de selecció de cançons de la ràdio.
 
 Regressions locals: `tests/discovery.test.js` (agrupació, senyals creuats, límits i homònims), `tests/portada.test.js` (secció de tres grups amb quatre canals) i `tests/music-queue-selection.test.js` (cap avís de familiaritat ni historial, amb reproducció i canvi de mode conservats).
+
+
+## Heavy / Metal i Punk a «La teva ràdio» (24/10/2026)
+
+A petició de l'usuari, la ràdio personal (i les ràdios de temporada) no porten cançons de Heavy / Metal ni de Punk si
+l'usuari no segueix cap grup d'aquell estil o no l'ha afegit a la ràdio. El filtre (`filterOptInStyles()` de
+`music-queue.js`) actua sobre les candidates abans del motor (`personalCandidates()`), de manera que el motor no hi ha
+de fer res i les restriccions de varietat continuen igual. Cada estil va per separat. Les ràdios d'estil, d'artista i
+de cerca no hi intervenen.
