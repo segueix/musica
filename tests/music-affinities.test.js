@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
 import { loadScript } from './setup.js';
+import { expectMovedByUser } from './afinitats-cataleg.js';
 
 const app = loadScript('js/features/music-affinities.js').SegueixApp;
 const A = app.features.musicAffinities;
@@ -21,8 +21,7 @@ function select(videos, extra = {}) {
 }
 
 describe('pilot editorial Ska / Reggae', () => {
-    it('conserva els 14 perfils històrics i respecta el trasllat de Txarango a Mestissatge', () => {
-        const channels = JSON.parse(readFileSync('js/channels-ca.json', 'utf8')).channels;
+    it("conserva els 14 perfils històrics i respecta els canvis de categoria de l'usuari", () => {
         const ids = profiles.flatMap(p => p.channelIds);
         expect(profiles).toHaveLength(14);
         expect(new Set(ids).size).toBe(22);
@@ -30,13 +29,9 @@ describe('pilot editorial Ska / Reggae', () => {
             expect(p.facets.length).toBeGreaterThan(0);
             expect(p.sources.every(url => url.startsWith('https://'))).toBe(true);
             expect(p.reviewedAt).toBe('2026-10-13');
-            for (const id of p.channelIds) {
-                const categories = channels.find(c => c.id === id)?.categories;
-                if (p.artist === 'Txarango') {
-                    expect(categories).toEqual(['Rumba / Mestissatge']);
-                } else expect(categories).toContain(A.category);
-            }
         }
+        // Txarango, La Pegatina i Pepet i Marieta són a Mestissatge i Brams a Rock (decisions de l'usuari)
+        expectMovedByUser(expect, profiles, A.category);
         expect(A.profileOf({ channelId: 'UC-N1gUYe6UmwHOSQAUPH2-A' })).toBeNull();
     });
     it('distingeix afinitats documentades i és simètric', () => {

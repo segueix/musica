@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
 import { loadScript } from './setup.js';
+import { expectMovedByUser } from './afinitats-cataleg.js';
 const app = loadScript('js/features/music-affinities.js').SegueixApp;
 const A = app.features.musicAffinities;
 const E = loadScript('js/features/music-selection.js', { SegueixApp: app }).SegueixApp.features.musicSelection;
@@ -17,11 +17,11 @@ function select(videos, extra = {}) {
 describe('afinitats Heavy / Metal', () => {
     it('documenta 23 artistes i tots els 35 canals, amb identitats no duplicades', () => {
         expect(profiles).toHaveLength(23);
-        const channels=JSON.parse(readFileSync('js/channels-ca.json','utf8')).channels;
         const ids=profiles.flatMap(p=>p.channelIds);
         expect(ids.length).toBe(35);
         expect(new Set(ids).size).toBe(35);
-        expect(ids.sort()).toEqual(channels.filter(c=>c.categories.includes(category)).map(c=>c.id).sort());
+        // Bestiari (a Punk) i Falç de Fetillera (a Folk i arrel) ja no són a Heavy: decisió de l'usuari del 2026-10-19
+        expectMovedByUser(expect,profiles,category);
         for(const p of profiles){
             expect(p.sources.length).toBeGreaterThan(0);
             expect(p.reviewedAt).toBe('2026-10-13');
