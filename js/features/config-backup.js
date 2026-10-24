@@ -24,6 +24,23 @@
         return dataApi.validate(raw);
     }
 
+    // Què hi ha de nou després de sumar la còpia: «12 cançons més a l’historial, 3 m’agrada i 1 artista seguit».
+    function importSummary(previous, applied) {
+        const added = key => {
+            const before = new Set((previous[key] || []).map(item => String(item?.id ?? item)));
+            return (applied[key] || []).filter(item => !before.has(String(item?.id ?? item))).length;
+        };
+        const parts = [
+            [added('history'), n => (n === 1 ? '1 cançó més a l’historial' : `${n} cançons més a l’historial`)],
+            [added('likes'), n => `${n} m’agrada`],
+            [added('follows'), n => (n === 1 ? '1 artista seguit' : `${n} artistes seguits`)],
+            [added('playlists'), n => (n === 1 ? '1 llista' : `${n} llistes`)],
+            [added('categories'), n => (n === 1 ? '1 categoria' : `${n} categories`)],
+        ].filter(([n]) => n > 0).map(([n, text]) => text(n));
+        if (!parts.length) return '';
+        return parts.length === 1 ? parts[0] : `${parts.slice(0, -1).join(', ')} i ${parts[parts.length - 1]}`;
+    }
+
     function exportManual() {
         try {
             const blob = new Blob([JSON.stringify(collect(), null, 2)], { type: 'application/json' });
@@ -60,18 +77,26 @@
                 throw new Error('No s’ha pogut llegir el fitxer. Ha de contenir un JSON vàlid.');
             }
             const backup = validateBackup(raw);
-            if (!confirm('La còpia substituirà l’historial, els favorits, els artistes seguits, les llistes, les categories i les preferències d’aquest aparell. Vols importar-la?')) return;
+            if (!confirm('Les dades de la còpia s’afegiran a les d’aquest aparell: historial, m’agrada, artistes seguits, llistes, categories i preferències. No s’esborrarà res del que ja hi ha. Vols importar-la?')) return;
+            // La còpia se suma al que ja hi ha (no ho substitueix): una exportació posterior ho porta tot.
             const previous = collect().data;
-            const applied = dataApi.apply(backup.data);
-            app.features.musicSignals?.replaceSynchronizedData?.(applied);
+            const signals = app.features.musicSignals;
+            const merged = dataApi.merge(previous, backup.data, {
+                ...(signals?.mergePrefs ? { mergePrefs: signals.mergePrefs } : {}),
+                ...(signals?.mergeStats ? { mergeStats: signals.mergeStats } : {}),
+            });
+            const applied = dataApi.apply(merged);
+            signals?.replaceSynchronizedData?.(applied);
+            const summary = importSummary(previous, applied);
+            const done = summary ? `✓ Còpia sumada a aquest aparell: ${summary}.` : '✓ Còpia sumada a aquest aparell.';
             // La importació ja està desada encara que una vista no es pugui repintar.
             try {
                 await refreshView?.(applied, previous);
             } catch (_) {
-                showFeedback('configManualFeedback', '✓ Còpia importada. Torna a obrir Música per actualitzar la vista.', 'success');
+                showFeedback('configManualFeedback', `${done} Torna a obrir Música per actualitzar la vista.`, 'success');
                 return;
             }
-            showFeedback('configManualFeedback', '✓ Còpia importada. Les dades d’aquest aparell ja estan actualitzades.', 'success');
+            showFeedback('configManualFeedback', done, 'success');
         } catch (error) {
             const message = error.name === 'QuotaExceededError'
                 ? 'No hi ha prou espai al navegador. S’han conservat les dades anteriors.'
@@ -127,6 +152,7 @@
         registerRuntime(runtime) { refreshView = runtime.refreshView; },
         exportManual,
         handleFileImport,
+        importSummary,
         validateBackup,
         clearAllData,
     };

@@ -834,7 +834,7 @@
                         <button class="config-sync-btn" id="importConfigManualBtn" type="button">Importar .json</button>
                     </div>
                     <input type="file" id="configManualFileInput" accept=".json,application/json" hidden>
-                    <p class="modal-description">Importar substitueix les dades d’aquest aparell per les de la còpia. Descarrega’n una abans si les vols conservar.</p>
+                    <p class="modal-description">Importar suma la còpia a les dades d’aquest aparell: no s’esborra res. Si després en descarregues una altra, ho porta tot, el que ja hi havia i el que has importat.</p>
                     <div id="configManualFeedback" class="config-sync-feedback hidden" role="status" aria-live="polite"></div>
                 </div>
                 <div class="settings-section">
@@ -1028,11 +1028,11 @@
 
     <!-- Shared utils used by features and app.js -->
     <script defer src="js/utils/helpers.js"></script>
-    <script defer src="js/utils/storage.js"></script>
+    <script defer src="js/utils/storage.js?v=20261024-sumar"></script>
     <script defer src="js/utils/id-codecs.js"></script>
     <script defer src="js/utils/public-routes.js?v=20261023-collections-controls-1"></script>
     <script defer src="js/utils/share-codecs.js?v=20261024-escolta"></script>
-    <script defer src="js/utils/music-data.js?v=20261016-json-1"></script>
+    <script defer src="js/utils/music-data.js?v=20261024-sumar"></script>
     <script defer src="js/utils/share-card.js"></script>
     <script defer src="js/utils/qr-share.js"></script>
     <script defer src="js/utils/config-feedback.js"></script>
@@ -1074,10 +1074,10 @@
     <script defer src="js/features/category-artists.js?v=20261005-artistes-categoria-1"></script>
     <script defer src="js/features/discover-loader.js?v=20261023-requadres"></script>
     <script defer src="js/features/shared-playlists.js"></script>
-    <script defer src="js/features/config-backup.js?v=20261016-json-1"></script>
+    <script defer src="js/features/config-backup.js?v=20261024-sumar"></script>
 
     <!-- Main app entrypoint -->
-    <script defer src="js/app.js?v=20261024-escolta"></script>
+    <script defer src="js/app.js?v=20261024-sumar"></script>
     <script defer src="js/features/tv-learning.js?v=20260924-learning-v1"></script>
     <script defer src="js/features/smart-feed.js?v=20261016-json-1"></script>
     <script defer src="js/features/tv-live-queue.js?v=20260924-live-session-v1"></script>
