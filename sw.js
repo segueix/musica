@@ -1,6 +1,6 @@
 // Service Worker per PWA — dos caches amb cicles de vida separats:
 //
-//   · static-v2-<hash>  Shell de codi (HTML, CSS, JS, manifest, icones). Versionat pel
+//   · static-v4-<hash>  Shell de codi (HTML, CSS, JS, manifest, icones). Versionat pel
 //                    CONTINGUT real dels fitxers via scripts/actualitzar_versio_sw.js.
 //                    Cache-first: resposta instantània, xarxa només quan hi ha versió
 //                    nova de codi.
@@ -107,18 +107,48 @@ const STATIC_ASSETS = [
 // v2 retira les còpies antigues on una fitxa podia sobreescriure la portada.
 // v3 (2026-10-17): en activar-se esborra totes les còpies de codi anteriors, perquè tothom vegi «Comparteix l'app»
 // i la fila nova de «Continua escoltant» encara que tingués una versió antiga desada.
-const STATIC_CACHE = `static-v3-${CACHE_VERSION}`;
+// v4 (2026-10-24): esborra la còpia de la portada desada redirigida a musica.segueix.cat (vegeu precache()).
+const STATIC_CACHE = `static-v4-${CACHE_VERSION}`;
 const DATA_CACHE = 'data-v1';
 
 // Només l’arrel de l’app i index.html comparteixen la clau, independentment de la query.
 const SHELL_URL = new URL('./index.html', self.location.href).toString();
-const APP_PATH = new URL('./', self.location.href).pathname;
+const APP_URL = new URL('./', self.location.href).toString();
+const APP_PATH = new URL(APP_URL).pathname;
+
+// Una resposta que ha passat per una redirecció no es pot servir per obrir una pàgina: el navegador la rebutja
+// («This site can't be reached»; a l'iPhone, l'app instal·lada queda negra). Cloudflare Pages respon
+// /index.html amb un 308 cap a /, i la còpia de la portada que es desava era redirigida. Se'n fa una còpia neta.
+async function withoutRedirect(response) {
+    if (!response?.redirected) return response;
+    return new Response(await response.blob(), {
+        status: response.status,
+        statusText: response.statusText,
+        headers: response.headers,
+    });
+}
+
+// Precàrrega del codi (abans `cache.addAll`): de la xarxa i no de la memòria cau del navegador, que a
+// musica.segueix.cat (Cloudflare, «Browser Cache TTL») guarda el codi 4 hores, i sense redireccions.
+// Primer es baixa tot i després es desa: si un fitxer falla, la instal·lació falla sencera, com abans.
+async function precache() {
+    const entries = await Promise.all(
+        STATIC_ASSETS.map(async (asset) => {
+            const url = new URL(asset, self.location.href).toString();
+            const response = await fetch(new Request(url, { cache: 'reload' }));
+            if (!response || response.status !== 200) {
+                throw new Error(`No s'ha pogut precarregar ${asset}`);
+            }
+            return [url, await withoutRedirect(response)];
+        })
+    );
+    const cache = await caches.open(STATIC_CACHE);
+    await Promise.all(entries.map(([url, response]) => cache.put(url, response)));
+}
 
 // ==================== INSTALL ====================
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(STATIC_CACHE).then((cache) => cache.addAll(STATIC_ASSETS))
-    );
+    event.waitUntil(precache());
     // IMPORTANT: una actualització MAI pren el control tota sola mentre l'app és oberta.
     // El SW nou queda en espera. app.js l'activa només quan la pàgina passa a segon pla
     // o quan l'usuari demana explícitament actualitzar. Això evita recàrregues sobtades
@@ -217,7 +247,9 @@ async function navigationNetworkFirst(request, isShell) {
         }
         return response;
     } catch (error) {
-        return (await cache.match(key)) || Response.error();
+        // Sense xarxa: la còpia de la pàgina (la portada, o l'arrel de l'app si no n'hi ha), mai redirigida.
+        const cached = (await cache.match(key)) || (isShell ? await cache.match(APP_URL) : undefined);
+        return cached ? withoutRedirect(cached) : Response.error();
     }
 }
 
@@ -243,7 +275,8 @@ async function cacheFirst(request, cacheName) {
     if (cached) {
         return cached;
     }
-    const response = await fetch(request);
+    // Revalida amb el servidor: una còpia de fins a 4 hores del navegador (Cloudflare) quedaria desada aquí.
+    const response = await fetch(new Request(request, { cache: 'no-cache' }));
     if (response && response.status === 200 && response.type === 'basic') {
         const cache = await caches.open(cacheName);
         cache.put(request, response.clone());

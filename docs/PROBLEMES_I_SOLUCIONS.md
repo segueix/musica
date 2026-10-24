@@ -1,3 +1,28 @@
+## [2026-10-24] - musica.segueix.cat (Cloudflare) es quedava negra; a GitHub funcionava
+
+**Símptoma:** l'usuari veia la pantalla negra a `musica.segueix.cat`, i en canvi `segueix.github.io/musica/` funcionava. Amb un navegador net, les dues adreces obrien l'app bé, també al mòbil i en tornar-hi amb el service worker actiu.
+
+**Diagnosi:** `musica.segueix.cat` és un projecte de **Cloudflare Pages** que publica el mateix paquet estàtic que GitHub (`npm run build:static` amb l'adreça del domini). Hi ha tres diferències de Cloudflare:
+1. **`/index.html` respon amb un 308 cap a `/`** (Cloudflare Pages treu el `.html` de les adreces). A GitHub respon 200.
+2. El codi (JS, CSS i el mateix `sw.js`) es serveix amb **`cache-control: public, max-age=14400`** (el «Browser Cache TTL» de 4 hores de la zona de Cloudflare, que passa per sobre del `max-age=0` de Pages). A GitHub, `max-age=600`. El nostre `_headers` només toca `.well-known`.
+3. L'«Email Address Obfuscation» de Cloudflare reescriu el correu del modal de contacte i hi injecta `email-decode.min.js`. És inofensiu.
+
+**Causa:** la precàrrega del service worker (`cache.addAll(STATIC_ASSETS)`) desava la còpia de `./index.html` tal com la rebia, **redirigida** (`response.redirected === true`). En obrir l'app, si la petició de la pàgina fallava (sense xarxa, o la xarxa que falla un moment en obrir l'app instal·lada al mòbil), `navigationNetworkFirst()` servia aquella còpia. **Un navegador no accepta una resposta redirigida per obrir una pàgina:** Chrome dona «This site can't be reached» (`net::ERR_FAILED`) i a l'iPhone l'app instal·lada (fons `#141615`) queda negra. A GitHub la còpia no era redirigida i l'app s'obria amb la còpia desada. Reproduït amb Chromium contra els dos dominis i amb un servidor local que fa com Cloudflare.
+
+**Solució (`sw.js`):**
+- `precache()` substitueix `cache.addAll()`: baixa cada fitxer de la xarxa amb `cache: 'reload'` (no de la memòria cau del navegador, que a Cloudflare guarda el codi 4 hores) i en desa una **còpia neta** si ha estat redirigida (`withoutRedirect()`: `new Response(await response.blob(), …)`). Primer ho baixa tot i després ho desa, i si un fitxer falla, la instal·lació falla sencera, com feia `addAll`.
+- La reserva de `navigationNetworkFirst()` no torna mai una resposta redirigida (`withoutRedirect()`) i, si no hi ha la còpia de `index.html`, fa servir la de l'arrel (`APP_URL`).
+- `cacheFirst()`: el que no és a la memòria cau es baixa amb `cache: 'no-cache'` (revalida amb el servidor; abans podia desar una còpia de fins a 4 hores del navegador).
+- `STATIC_CACHE` passa a `static-v4-…`: en activar-se, el service worker nou esborra les còpies v3 (amb la portada redirigida).
+
+**Qui ja tenia la versió antiga:** amb connexió, la primera càrrega bona torna a desar la portada neta, i el service worker nou s'instal·la i s'activa quan l'app passa a segon pla. No cal esborrar res a mà.
+
+**Cloudflare (opcional, al tauler de la zona):** Caching → Configuration → Browser Cache TTL → «Respect Existing Headers» (el codi deixarà de quedar 4 hores al navegador), i Scrape Shield → Email Address Obfuscation desactivat (deixarà de reescriure l'HTML). Amb l'arranjament del service worker ja no és imprescindible.
+
+**Trampes:** (1) Una resposta amb `redirected: true` serveix per a un `<script>` o un `fetch()`, però **mai** per a una navegació: si es desa una pàgina, que sigui neta. (2) Una petició de navegació feta des del service worker té `redirect: 'manual'`: un 308 torna com a `opaqueredirect` i el navegador el segueix. Per això `/index.html` amb connexió funcionava i només fallava la còpia desada. (3) `npm run sw:version` no canvia `CACHE_VERSION` quan només canvia la lògica de `sw.js` (el hash no inclou `sw.js`): per esborrar còpies velles cal pujar el prefix (`static-v4`). (4) La prova de la precàrrega necessita que el `Request` simulat de l'arnès accepti una adreça en text.
+
+**Proves:** `tests/static-service-worker.test.js` (precàrrega neta i amb `cache: 'reload'`, còpia redirigida servida neta, reserva de l'arrel, revalidació); opt-in `node tests/browser/verificar-sw-cloudflare.js`, amb un servidor que fa com Cloudflare (308 i 4 hores). Amb el `sw.js` anterior falla («ERR_FAILED» sense xarxa) i amb l'arranjat passa. Amb `SW_CF_ROOT=<carpeta>` serveix el paquet construït (`npm run build:static -- --site-url=https://musica.segueix.cat/ --out=<carpeta>`).
+
 ## [2026-10-23] - Treure la barra lateral: continuava interceptant els clics
 
 **Petició:** a l'ordinador, sense barra lateral; Inici, Descobreix, Artistes i grups i La teva música a dalt a la dreta.
