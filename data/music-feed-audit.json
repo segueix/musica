@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T20:07:14.643Z",
+  "generatedAt": "2026-10-24T20:20:08.370Z",
   "polling": {
-    "requested": 372,
-    "deferred": 317,
+    "requested": 7,
+    "deferred": 682,
     "failed": 7
   },
-  "retainedVideoCount": 681,
+  "retainedVideoCount": 0,
   "unverifiedVideoCount": 0,
   "restrictedVideoCount": 26,
   "restrictedVideosAdded": [],
@@ -1743,6 +1743,22 @@
       "governs": false
     },
     {
+      "id": "UCfMqjIyA0G1cVGNlFXXoJhA",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
+      "id": "UC7IUL5Ba9dhBVPnTLe9RHhQ",
+      "name": "",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UCJXKRxaUXEg0kpgb-Kd8uDg",
       "name": "Bonestorm",
       "songs": 2,
@@ -1975,6 +1991,14 @@
       "governs": false
     },
     {
+      "id": "UCXa6Mb5QgzYjRV_D1VlYoKQ",
+      "name": "silviaperezcruz",
+      "songs": 0,
+      "matched": 0,
+      "coverage": 0,
+      "governs": false
+    },
+    {
       "id": "UC4S5WcSVzMhUd-UwKKpKp5w",
       "name": "Teràpia De Shock",
       "songs": 0,
@@ -2000,11 +2024,8 @@
     }
   ],
   "topicGovernance": "apply",
-  "governedReclassified": {
-    "other": 149,
-    "song": 15
-  },
-  "topicHiddenCount": 305,
+  "governedReclassified": {},
+  "topicHiddenCount": 0,
   "topicChannels": [
     {
       "id": "UCnjicJo0XLp_UQYr7QqDZzQ",
@@ -4705,48 +4726,28 @@
   "indexedChannelCount": 689,
   "resolvedChannelCount": 689,
   "feedChannelCount": 689,
-  "rawPublicVideoCount": 11886,
-  "feedVideoCount": 10054,
-  "acceptedMusicCount": 10390,
-  "categoryEligibleVideoCount": 10338,
+  "rawPublicVideoCount": 7644,
+  "feedVideoCount": 7043,
+  "acceptedMusicCount": 7006,
+  "categoryEligibleVideoCount": 7002,
   "shortVideoCount": 0,
   "shortCatalogFilter": {
-    "before": 1029,
+    "before": 0,
     "matched": 0,
-    "rejected": 1029
+    "rejected": 0
   },
   "contentReviewCount": 604,
   "contentTypeCounts": {
-    "song": 10004,
-    "live_song": 334,
-    "album": 52,
-    "other": 892,
+    "song": 6819,
+    "live_song": 183,
+    "album": 4,
+    "other": 34,
     "review": 604
   },
   "unresolvedChannelIds": [],
   "channelsWithoutUploads": [],
-  "channelsWithoutVideos": [
-    "UCmwGTBibm2bt9oF-P7ECSmQ",
-    "UCOEzuNu9yvO0AFTnSVKk4LQ",
-    "UCRLHVqJybtjS5ODPP5iAv4w",
-    "UCvdm27ITzhd3bsnftrBmFUg",
-    "UC8hpq3EHqyG09og9xy3qOFg",
-    "UCRdGqpbhydDXIl83A9E8-2Q",
-    "UCr8kBnuIa6LPmhZSxbwVs7w",
-    "UC1yaXYiC2Ab3tus3lTDljtw",
-    "UCwYR6Axoc2mEKz89P8t4N5Q",
-    "UCQAWPZGGc_4JqXq53ATaSBQ",
-    "UCboGC6e3sTTIO9C6lHxifnA",
-    "UCYPbYGqAXm8gaYGVY-ANVXA",
-    "UCJ6EMs_13PLDvRSHi-XqRwQ",
-    "UCsee8KxP3-rJr03f266dtbQ",
-    "UCYOWVkZwBVSxzYQfK_khVYg"
-  ],
-  "channelsWithoutAcceptedMusic": [
-    "UCUSjRkF72RR1E8Rl4SWtVsQ",
-    "UC5CGdoxqbma-pqkAHPjkq9w",
-    "UCdwDeWJ4aJ9RAURZERmWquA"
-  ],
+  "channelsWithoutVideos": [],
+  "channelsWithoutAcceptedMusic": [],
   "allIndexedChannelsVisible": true,
   "publishedFeedVideoCount": 7047,
   "publishedShortVideoCount": 0
