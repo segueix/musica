@@ -8093,7 +8093,7 @@ function renderStyleRadioHeader(category) {
     pageTitle.querySelector('[data-style-share]')?.addEventListener('click', () => shareStyleRadio(category));
 }
 
-// Compartir un estil (2026-10-24): un enllaç curt (compartir/estil/pop.html) amb el text «Escolta Pop a Segueix!»;
+// Compartir un estil (2026-10-24): un enllaç curt (musica.segueix.cat/escolta/pop) amb el text «Escolta Pop a Segueix!»;
 // qui l'obre hi té la ràdio de l'estil amb els seus artistes de sempre. No porta cap cançó: no cal un enllaç llarg.
 async function shareStyleRadio(style) {
     const codecs = SegueixApp.utils.shareCodecs;

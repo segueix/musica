@@ -196,8 +196,8 @@
     }
 
     // ---------- Estils: enllaç curt «Escolta Pop a Segueix!» (2026-10-24) ----------
-    // Un estil no porta cap cançó a l'enllaç: compartir/estil/<slug>.html (scripts/generar_pagines_compartir.js) té el
-    // títol de la previsualització i redirigeix a l'app amb ?escolta=<estil>, que hi engega la ràdio d'aquell estil amb
+    // Un estil no porta cap cançó a l'enllaç: escolta/<slug> (escolta/<slug>.html, scripts/generar_pagines_compartir.js;
+    // WhatsApp sempre mostra l'adreça, per això és curta i llegible) té el títol de la previsualització i redirigeix a l'app amb ?escolta=<estil>, que hi engega la ràdio d'aquell estil amb
     // «Els meus de sempre» del qui l'obre (shell-nav.js, openFromUrl()).
     function styleShareTitle(style) {
         const clean = String(style || '')
@@ -210,7 +210,7 @@
         const clean = String(style || '').trim();
         const slug = radioShareSlug(clean);
         if (!slug) return SHARE_BASE_URL;
-        return `${SHARE_BASE_URL}compartir/estil/${slug}.html`;
+        return `${SHARE_BASE_URL}escolta/${slug}`;
     }
 
     app.utils.shareCodecs = {

@@ -9,7 +9,7 @@
 //
 // Comprova:
 //   1) A la vista de Pop, al costat de «Ràdio», hi ha «Comparteix»: envia «Escolta Pop a Segueix!» i l'enllaç curt
-//      https://musica.segueix.cat/compartir/estil/pop.html (sense cap cançó). Sense Web Share, el copia.
+//      https://musica.segueix.cat/escolta/pop (sense cap cançó). Sense Web Share, el copia.
 //   2) Obrir l'app amb ?escolta=Pop (on porta la pàgina de l'estil) engega la ràdio de Pop amb «Els meus de sempre»,
 //      treu el paràmetre de l'adreça i no canvia el mode desat de qui l'obre.
 
@@ -25,7 +25,7 @@ try {
 }
 const ROOT = path.resolve(__dirname, '..', '..');
 const PORT = Number(process.env.COMPARTIR_ESTIL_PORT || 8157);
-const CHROMIUM_PATH = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
+const CHROMIUM_PATH = process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1243/chrome-linux64/chrome';
 const MIME = {
     '.html': 'text/html; charset=utf-8',
     '.js': 'application/javascript; charset=utf-8',
@@ -117,13 +117,13 @@ async function shareButton(browser, width, height, label, share) {
             `${label}: comparteix «Escolta Pop a Segueix!» amb l'enllaç curt`,
             sent.shared.length === 1 &&
                 sent.shared[0].text === 'Escolta Pop a Segueix!' &&
-                sent.shared[0].url === 'https://musica.segueix.cat/compartir/estil/pop.html',
+                sent.shared[0].url === 'https://musica.segueix.cat/escolta/pop',
             sent.shared
         );
     } else {
         ok(
             `${label}: sense Web Share, copia el text i l'enllaç`,
-            sent.copied[0] === 'Escolta Pop a Segueix! https://musica.segueix.cat/compartir/estil/pop.html' &&
+            sent.copied[0] === 'Escolta Pop a Segueix! https://musica.segueix.cat/escolta/pop' &&
                 /copiat/.test(sent.toast),
             sent
         );

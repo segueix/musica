@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { loadScript } from './setup.js';
 
-// Compartir un estil (2026-10-24): enllaç curt compartir/estil/<slug>.html amb «Escolta Pop a Segueix!»; en obrir-lo,
+// Compartir un estil (2026-10-24): enllaç curt escolta/<slug> (escolta/<slug>.html) amb «Escolta Pop a Segueix!»; en obrir-lo,
 // l'app hi engega la ràdio de l'estil amb «Els meus de sempre» de qui l'obre. L'enllaç no porta cap cançó.
 const codecs = loadScript('js/utils/share-codecs.js').SegueixApp.utils.shareCodecs;
 const { renderStyle } = require('../scripts/generar_pagines_compartir.js');
@@ -13,9 +13,9 @@ describe('compartir un estil', () => {
     it('el text és «Escolta <estil> a Segueix!» i l’enllaç, curt', () => {
         expect(codecs.styleShareTitle('Pop')).toBe('Escolta Pop a Segueix!');
         expect(codecs.styleShareTitle("Cançó d'autor")).toBe("Escolta Cançó d'autor a Segueix!");
-        expect(codecs.buildStyleShareUrl('Pop')).toBe('https://musica.segueix.cat/compartir/estil/pop.html');
+        expect(codecs.buildStyleShareUrl('Pop')).toBe('https://musica.segueix.cat/escolta/pop');
         expect(codecs.buildStyleShareUrl('Rap / Hip-hop')).toBe(
-            'https://musica.segueix.cat/compartir/estil/rap-hip-hop.html'
+            'https://musica.segueix.cat/escolta/rap-hip-hop'
         );
         expect(codecs.buildStyleShareUrl('Pop')).not.toContain('importData');
     });
@@ -28,8 +28,11 @@ describe('compartir un estil', () => {
         });
         expect(html).toContain('<meta property="og:title" content="Escolta Cançó d&#39;autor a Segueix!">');
         expect(html).toContain('location.replace("https://musica.segueix.cat/?escolta=Can%C3%A7%C3%B3%20d\'autor")');
-        expect(html).toContain('og:url" content="https://musica.segueix.cat/compartir/estil/canco-d-autor.html"');
+        expect(html).toContain('og:url" content="https://musica.segueix.cat/escolta/canco-d-autor"');
         expect(readFileSync('compartir/estil/pop.html', 'utf8')).toContain('?escolta=Pop');
+        // L'adreça curta: GitHub Pages serveix escolta/pop.html a musica.segueix.cat/escolta/pop
+        expect(readFileSync('escolta/pop.html', 'utf8')).toContain('?escolta=Pop');
+        expect(readFileSync('escolta/rap-hip-hop.html', 'utf8')).toContain('og:title" content="Escolta Rap / Hip-hop a Segueix!"');
     });
 
     it('la vista d’un estil porta «Comparteix» al costat de «Ràdio»', () => {

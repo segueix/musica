@@ -76,8 +76,10 @@ function renderRadio({ slug, title, description, baseUrl = BASE }) {
 }
 // Pàgina d'un estil (2026-10-24): «Escolta Pop a Segueix!» a la previsualització i, en obrir-la, l'app amb
 // ?escolta=Pop, que hi engega la ràdio de l'estil amb «Els meus de sempre» de qui l'obre. L'enllaç no porta cançons.
+// L'adreça que es comparteix és la curta, escolta/pop (GitHub Pages serveix escolta/pop.html sense l'extensió);
+// compartir/estil/pop.html es manté per als enllaços que ja s'han enviat.
 function renderStyle({ slug, style, title, baseUrl = BASE }) {
-    const url = `${baseUrl}compartir/estil/${slug}.html`;
+    const url = `${baseUrl}escolta/${slug}`;
     const image = `${baseUrl}img/compartir.png`;
     const description = `Una ràdio de ${style} en català amb els teus artistes de sempre, a Segueix Música.`;
     const target = `${baseUrl}?escolta=${encodeURIComponent(style)}`;
@@ -106,17 +108,22 @@ function renderStyle({ slug, style, title, baseUrl = BASE }) {
 <script>location.replace(${safeTarget});</script>
 </body></html>\n`;
 }
-function generateStyles(out, baseUrl = BASE) {
+function generateStyles(out, baseUrl = BASE, listenDir = path.join(path.dirname(out), 'escolta')) {
     const codecs = shareCodecs();
     let styles = [];
     try { styles = require(path.join(__dirname, '..', 'js/music-categories.js')).CATEGORY_GROUPS.map(group => group.label); } catch { /* sense estils */ }
     const dir = path.join(out, 'estil');
     fs.mkdirSync(dir, { recursive: true });
+    // Només se suprimeix la carpeta generada per aquest script.
+    fs.rmSync(listenDir, { recursive: true, force: true });
+    fs.mkdirSync(listenDir, { recursive: true });
     let count = 0;
     for (const style of styles) {
         const slug = codecs.radioShareSlug(style);
         if (!slug) continue;
-        fs.writeFileSync(path.join(dir, `${slug}.html`), renderStyle({ slug, style, title: codecs.styleShareTitle(style), baseUrl }));
+        const html = renderStyle({ slug, style, title: codecs.styleShareTitle(style), baseUrl });
+        fs.writeFileSync(path.join(dir, `${slug}.html`), html);
+        fs.writeFileSync(path.join(listenDir, `${slug}.html`), html);
         count++;
     }
     return count;
@@ -194,7 +201,7 @@ function generate(root, options = {}) {
         songs++;
     }
     const radios = generateRadios(root, out, channels, baseUrl);
-    const styles = generateStyles(out, baseUrl);
+    const styles = generateStyles(out, baseUrl, options.listenDir);
     return { artists: Object.keys(channels).length, songs, radios, styles };
 }
 module.exports = { render, renderRadio, renderStyle, generateStyles, generate };
