@@ -800,7 +800,9 @@
         const pool = searchPool(videos, ARTIST_RADIO_POOL);
         const name = String(options.name || '').trim();
         if (pool.length < 2 || !name) return false;
-        return launchPoolRadio(pool, pickPoolSeed(pool, options), { artist: name, title: `Ràdio ${name}` }, options);
+        // `title`: nom sencer quan no és «Ràdio <nom>» (la de temporada es diu «Ràdio de tardor»)
+        const title = String(options.title || '').trim() || `Ràdio ${name}`;
+        return launchPoolRadio(pool, pickPoolSeed(pool, options), { artist: name, title }, options);
     }
 
     // Ràdio de l'estil (o de la combinació d'estils) d'un artista: la mateixa ràdio d'estil de la resta de l'app
