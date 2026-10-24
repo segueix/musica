@@ -1,0 +1,280 @@
+{
+  "reviewedOn": "2026-10-24",
+  "batch": 16,
+  "selection": {
+    "method": "Els deu grups d'havaneres indexats el 2026-10-21 (docs/revisions/2026-10-21-havaneres-tema.json) eren publicats sense origen. Revisió de fonts públiques: notes de premsa, agendes culturals, webs dels grups i Viquipèdia. No s'infereix l'origen pel nom del grup ni pels títols de les cançons."
+  },
+  "summary": {
+    "reviewed": 10,
+    "applied": 10,
+    "unresolved": 0,
+    "newPlaces": [
+      "Malgrat de Mar",
+      "Castell-Platja d'Aro"
+    ],
+    "totals": {
+      "artists": 545,
+      "channels": 688,
+      "places": 221
+    }
+  },
+  "artists": [
+    {
+      "artistId": "artist:arjau",
+      "name": "Arjau",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114567"
+      ],
+      "places": [
+        "Palafrugell"
+      ],
+      "confidence": "alta",
+      "basis": "Grup palafrugellenc nascut el 1997 com a duet de Jordi Rubau i Jordi Grau.",
+      "sources": [
+        "https://www.vilaweb.cat/noticies/nits-destiu-musicals-al-jardi-del-palau-robert/",
+        "https://es.ara.cat/cultura/musica/mariona-escoda-sergio-dalma-habaneras-grupo-arjau_1_5458129.html"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCg_cSzozOrPF-OKMgWlvh-w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:berganti",
+      "name": "Bergantí",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3117636"
+      ],
+      "places": [
+        "Malgrat de Mar"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de Malgrat de Mar creat la tardor del 1982; Havanerus el presenta com un grup del Maresme, amb el contacte a Malgrat de Mar.",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Grup_Bergant%C3%AD",
+        "https://havanerus.cat/berganti"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UC_G7mnl8-6cNBYPakcWGBJQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:cavall-bernat",
+      "name": "Cavall Bernat",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3125800"
+      ],
+      "places": [
+        "Castell-Platja d'Aro"
+      ],
+      "confidence": "alta",
+      "basis": "Fundat a Platja d'Aro (municipi de Castell-Platja d'Aro) el 1965 pel mestre Ortega Monasterio.",
+      "sources": [
+        "https://surtdecasa.cat/emporda/agenda/2018/xiii-cantada-dhavaneres/97945",
+        "https://surtdecasa.cat/emporda/agenda/havaneres-cavall-bernat/54815"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCD_2AZugryBv83F1Ula_X3w"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:els-cremats",
+      "name": "Els Cremats",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114567"
+      ],
+      "places": [
+        "Palafrugell"
+      ],
+      "confidence": "alta",
+      "basis": "Va néixer a la Cantada d'Havaneres de Calella de Palafrugell del 1996, quan l'Ajuntament va proposar als joves del poble de crear un grup per animar les hores prèvies a la cantada.",
+      "sources": [
+        "https://surtdecasa.cat/emporda/musica/els-cremats-el-nou-disc-es-un-bon-resum-daquests-vint-anys"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCaOPnT08yPkgHCxSo56Z5ng"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:els-pescadors-de-l-escala",
+      "name": "Els Pescadors de l’Escala",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3119779"
+      ],
+      "places": [
+        "l'Escala"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de l'Escala fundat el 1964 i integrat originalment per pescadors.",
+      "sources": [
+        "https://ca.wikipedia.org/wiki/Els_Pescadors_de_l%27Escala",
+        "https://ebredigital.cat/?p=107815"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCM0EHoHg-iQnr2hi5tzamLg"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:les-anxovetes",
+      "name": "Les Anxovetes",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "places": [
+        "Girona"
+      ],
+      "confidence": "alta",
+      "basis": "Grup femení d'havaneres creat a Girona a proposta de Tona Gafarot (el 2013 segons el grup; el Smithsonian en dona l'estiu del 2014).",
+      "sources": [
+        "https://surtdecasa.cat/girona/musica/anxovetes-agafem-les-havaneres-i-les-cantem-la-nostra-manera-sense-la-intencio-de-trencar-amb-la-tradicio",
+        "https://festival.si.edu/2018/catalonia/participants"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCq2UolkO1YhWax4NwsHC-cw"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:mar-endins",
+      "name": "Mar Endins",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3128760"
+      ],
+      "places": [
+        "Barcelona"
+      ],
+      "confidence": "alta",
+      "basis": "Francesc Salse el va formar a Barcelona el 1979 amb cantaires de l'Orfeó Santa Tecla; els primers assajos eren a la Cooperativa Obrera de Sants.",
+      "sources": [
+        "https://www.havaneresmarendins.com/nosaltres/",
+        "https://www.havaneresmarendins.com/historia-mar-endins/"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCAUgxOKd6wQwP_aUk54LgmQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:peix-fregit",
+      "name": "Peix Fregit",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114567"
+      ],
+      "places": [
+        "Palafrugell"
+      ],
+      "confidence": "alta",
+      "basis": "Grup de Palafrugell; el compositor palafrugellenc Josep Bastons en va ser el líder durant més de trenta anys.",
+      "sources": [
+        "https://surtdecasa.cat/emporda/agenda/havaneres-peix-fregit/54814",
+        "https://palafrugell.cat/images/business_directory/documents/fons-documentals/fons-personals/josep-bastons/Guia_Fons_Josep_Bastons_2023desembre.pdf"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCuZ3VZ2TMeFeV6pZvG9SueQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:port-bo",
+      "name": "Port Bo",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3114567"
+      ],
+      "places": [
+        "Palafrugell"
+      ],
+      "confidence": "alta",
+      "basis": "Fundat el 1966 a Calella de Palafrugell (municipi de Palafrugell); va impulsar la Cantada d'Havaneres de Calella.",
+      "sources": [
+        "https://surtdecasa.cat/emporda/agenda/2020/concert-daniversari-del-grup-port-bo/154766",
+        "https://surtdecasa.cat/emporda/agenda/2021/concert-anniversari-de-port-bo/177931"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCYRxQ_jB6vat3NkBxIOe4fQ"
+      ],
+      "applied": true
+    },
+    {
+      "artistId": "artist:terra-endins",
+      "name": "Terra Endins",
+      "status": "validated",
+      "relation": "origin",
+      "placeIds": [
+        "geonames:3121456"
+      ],
+      "places": [
+        "Girona"
+      ],
+      "confidence": "alta",
+      "basis": "Grup d'havaneres nascut el 1974 a Girona per actuar a la 8a Cantada d'Havaneres de Calella de Palafrugell.",
+      "sources": [
+        "https://www.grupterraendins.com/",
+        "https://radiopalafrugell.cat/el-grup-terra-endins-celebra-50-anys-una-formacio-que-va-neixer-expressament-per-actuar-a-la-cantada-dhavaneres-de-calella/"
+      ],
+      "reviewedOn": "2026-10-24",
+      "assignmentSource": "manual-review",
+      "locked": true,
+      "channelIds": [
+        "UCYOWVkZwBVSxzYQfK_khVYg"
+      ],
+      "applied": true
+    }
+  ],
+  "channelLinks": [
+    {
+      "channelId": "UCJ-dDO2z5WvGEv9RzhlYkeA",
+      "artistId": "artist:tornaveus",
+      "name": "Tornaveus - Topic",
+      "basis": "El 2026-10-19 l'usuari va demanar sumar les cançons d'aquest canal Tema a la fitxa existent de Tornaveus (data/artistes-musica.json). Es conserva l'assignació documentada el 2026-10-12, sense canvis."
+    }
+  ]
+}

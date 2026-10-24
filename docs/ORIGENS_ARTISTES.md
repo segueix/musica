@@ -170,3 +170,13 @@ Els Bourbons són de Barcelona i la Cobla Mediterrània, de Sabadell. Derbi Juni
 El marcador Q1029506 s’ha identificat com Camilo Sesto (Alcoi), mantenint-lo inactiu. L’arannà queda a Cançó d’autor i Electrònica, per petició de l’usuari.
 
 El registre suma **451 artistes i 539 canals**. Queda **1 artista pendent: Quatre Parets (inactiu)**, perquè manca confirmar-ne la identitat amb un enllaç. **No queda cap artista actiu pendent de localització.** Club Social Carme continua exclòs expressament de la localització i del recompte de pendents.
+
+## Setzè lot: grups d’havaneres (24 d’octubre de 2026)
+
+Els deu grups d’havaneres indexats el 21 d’octubre ([selecció Tema](revisions/2026-10-21-havaneres-tema.json)) es publicaven sense origen i `tests/artist-origin.test.js` fallava. S’han documentat les deu procedències amb fonts públiques (notes de premsa, agendes culturals, webs dels grups i Viquipèdia), sense deduir-les del nom del grup ni dels títols de les cançons. [Decisions i fonts](revisions/2026-10-24-origens-havaneres.json).
+
+Port Bo (fundat el 1966 a Calella de Palafrugell), Peix Fregit, Arjau i Els Cremats queden a Palafrugell; Calella és un nucli del municipi i s’explica al text, com la Gornal de Marina Rossell. Els Pescadors de l’Escala són de l’Escala; Cavall Bernat, de Platja d’Aro (municipi de Castell-Platja d’Aro); Bergantí, de Malgrat de Mar; Les Anxovetes i Terra Endins, de Girona, i Mar Endins, de Barcelona. S’hi afegeixen dos llocs nous amb coordenades de GeoNames via Open-Meteo: Malgrat de Mar i Castell-Platja d’Aro.
+
+El canal Tema de Tornaveus (`UCJ-dDO2z5WvGEv9RzhlYkeA`) es vincula a la fitxa existent de Tornaveus, tal com va demanar l’usuari el 19 d’octubre. No canvia l’assignació documentada el 12 d’octubre.
+
+El registre suma **545 entrades (541 validades i 4 «només enllaç»), 688 canals i 221 llocs**. Tots els canals publicats tenen origen, llevat de Club Social Carme, que conserva l’exclusió expressa. **Quan s’indexi un artista nou, cal afegir-ne l’origen en el mateix canvi**, com amb Lil Guiu o Teuma Thug; si no, aquesta prova falla.

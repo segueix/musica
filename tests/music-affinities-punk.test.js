@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
 import { loadScript } from './setup.js';
+import { expectMovedByUser } from './afinitats-cataleg.js';
 const app = loadScript('js/features/music-affinities.js').SegueixApp;
 const A = app.features.musicAffinities;
 const E = loadScript('js/features/music-selection.js', { SegueixApp: app }).SegueixApp.features.musicSelection;
@@ -35,10 +35,9 @@ describe('afinitats Punk', () => {
     it('conserva els 53 perfils detallats i 70 canals sense duplicar Bestiari', () => {
         expect(profiles).toHaveLength(53);
         const ids = profiles.flatMap(p => p.channelIds);
-        const channels = JSON.parse(readFileSync('js/channels-ca.json', 'utf8')).channels;
         expect(ids).toHaveLength(70);
-        const catalogIds = new Set(channels.filter(c => c.categories.includes('Punk')).map(c => c.id));
-        expect(ids.every(id => catalogIds.has(id))).toBe(true);
+        // Ebri Knight (a Folk i arrel) i Vicky l’Arròs (a Electrònica) ja no són a Punk: decisions de l'usuari
+        expectMovedByUser(expect, profiles, 'Punk');
         const all = A.profiles.flatMap(p => p.channelIds);
         expect(new Set(all).size).toBe(all.length);
         expect(A.profiles.filter(p => p.artist === 'Bestiari')).toHaveLength(1);

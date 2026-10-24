@@ -17,7 +17,10 @@ describe('tocs a les targetes de cançó al mòbil', () => {
     });
 
     it("les files d'una llista desada comencen la reproducció des de la cançó tocada", () => {
-        expect(app).toContain('async function startPlaylistPlayback(playlistId, startIndex = 0)');
+        // Des del 2026-10-23 també rep les opcions de reproducció (segon, historial) com a tercer paràmetre
+        const start = app.indexOf('async function startPlaylistPlayback(playlistId, startIndex = 0');
+        expect(start).toBeGreaterThan(-1);
+        expect(app.slice(start, start + 600)).toMatch(/currentPlaylistIndex =[^;]*startIndex/);
         expect(app).toContain('startPlaylistPlayback(row.dataset.playlistId, Number(row.dataset.videoIndex))');
     });
 
