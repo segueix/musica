@@ -1,0 +1,26 @@
+{
+  "data": "2026-10-24T22:01:58.551Z",
+  "artista": "Marc Parrot",
+  "criteri": "Retirada expressa de tres obres per ordre de l’usuari, incloses les dues gravacions de Juego con fuego. No és una verificació nova de lletres.",
+  "canalId": "UC2Kr7FYctQfq-GK22qPdxig",
+  "retirades": [
+    {
+      "id": "igZ2DU-47Bg",
+      "titol": "Dentro del armario"
+    },
+    {
+      "id": "ZWxvBfwHt4Y",
+      "titol": "Quiero ser silvestre"
+    },
+    {
+      "id": "xne4z4F2zEQ",
+      "titol": "Juego con fuego"
+    },
+    {
+      "id": "LEMHU-ZIBKI",
+      "titol": "Juego con fuego"
+    }
+  ],
+  "regla": "scripts/ocultar_titols_castella.js",
+  "pendentsRetirats": 3
+}

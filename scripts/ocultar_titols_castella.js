@@ -946,6 +946,13 @@ for (const nom of ['Miki Nuñez', 'Miki Núñez', 'Miki Núñez - Topic', 'Miki 
     REGLES[nom] = reglaMiki;
 }
 
+// Baixes explícites de l’editor, 2026-10-25; també regeixen al canal Tema.
+afegeix(['Marc Parrot', 'marcparrotvideo', 'Marc Parrot - Topic', 'Marc Parrot - Tema'], [
+    'Dentro del armario',
+    'Quiero ser silvestre',
+    'Juego con fuego',
+]);
+
 function esCastella(video) {
     const regla = REGLES[video.channelTitle];
     if (!regla) return false;
