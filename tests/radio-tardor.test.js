@@ -66,8 +66,14 @@ describe('ràdio de tardor: targeta d’Inici', () => {
         const block = css.slice(css.indexOf('.pt-season--tardor {'));
         expect(block).toMatch(/url\('\.\.\/img\/fulles-tardor\.svg'\)/);
         expect(block).toMatch(/background-repeat: no-repeat, repeat;/);
-        expect(css).toMatch(/\.pt-season \{[^}]*--season-bg: #dcc09a;/);
-        expect(readFileSync('img/fulles-tardor.svg', 'utf8')).toMatch(/<symbol id="auro"/);
+        expect(css).toMatch(/\.pt-season \{[^}]*--season-bg: #7a5236;/);
+        const svg = readFileSync('img/fulles-tardor.svg', 'utf8');
+        // A5-3: aurons a l'aquarel·la, i la fulla horitzontal una mica inclinada (300°, no 270°)
+        expect(svg).toMatch(/<filter id="aq"/);
+        // Un «--» dins d'un comentari fa l'XML invàlid i el navegador no pinta la imatge
+        for (const comment of svg.match(/<!--[\s\S]*?-->/g) || []) expect(comment.slice(4, -3)).not.toContain('--');
+        expect(svg).toMatch(/rotate\(300\)/);
+        expect(svg).not.toMatch(/rotate\(270\)/);
     });
 
     it('fa una excepció: cançons fora del límit de 21 i de les discografies «Tema», sempre filtrades', () => {

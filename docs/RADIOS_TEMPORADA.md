@@ -38,9 +38,13 @@ grisor i enyor, el vent i Xesco Boix.
 
 ## El fons
 
-Un dibuix de fulles de tardor sobre marró clar (`img/fulles-tardor.svg`, un mosaic de 480 × 480 que es repeteix), **sense
-caràtules**: omple tota la caixa a qualsevol mida (`.pt-season--tardor`, `background-repeat: repeat`). Un vel del mateix
-marró (a l'esquerra a l'ordinador, a baix al mòbil) fa que el text fosc es llegeixi; el botó és marró fosc.
+L'usuari en va triar el dibuix entre quatre composicions, cinc tons de marró i quatre maneres de dibuixar la fulla
+(24/10/2026, «A5-3»): **set aurons grans a l'aquarel·la** (vores irregulars, color que es difumina i nervis clars;
+vermells, taronges i ocres) **sobre cacau (#7a5236)**, i la fulla que sortia horitzontal, una mica inclinada. **Sense
+caràtules.** És `img/fulles-tardor.svg`, un mosaic de 600 × 600 que es repeteix sense talls i omple tota la caixa a
+qualsevol mida (`.pt-season--tardor`: 420 px a l'ordinador, 320 px al mòbil). El genera
+`node scripts/dibuix_fulles_tardor.cjs` (l'auró està dibuixat a mà, meitat i mirall): no l'editis a mà. Un vel del mateix
+cacau (a l'esquerra a l'ordinador, a baix al mòbil) fa que el text crema es llegeixi; el botó és crema amb text marró.
 
 ## Afegir o treure cançons
 

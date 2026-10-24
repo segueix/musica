@@ -119,10 +119,10 @@ async function check(browser, width, height, label) {
     );
     ok(`${label}: al davant d'«Acabades de sortir»`, card.beforeFresh, card);
     ok(
-        `${label}: fons de fulles de tardor sobre marró clar, repetit per tota la caixa, sense caràtules`,
+        `${label}: fons de fulles de tardor sobre cacau, repetit per tota la caixa, sense caràtules`,
         card.leaves &&
             /repeat/.test(card.repeat.split(',').pop()) &&
-            card.color === 'rgb(220, 192, 154)' &&
+            card.color === 'rgb(122, 82, 54)' &&
             card.images === 0 &&
             card.inside,
         card

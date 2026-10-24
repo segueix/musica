@@ -13663,18 +13663,18 @@ body .mq .mq-item.is-active .mq-title {
 
 /* ========== Ràdio de temporada (2026-10-24): «Ràdio de tardor» a Inici, al davant de «ara mateix» ==========
    js/features/season-radio.js. El fons és un dibuix de l'època que omple TOTA la caixa (un mosaic que es repeteix,
-   sense caràtules): la de tardor, fulles sobre marró clar (img/fulles-tardor.svg). El text, fosc, va sobre un vel del
-   mateix marró perquè es llegeixi; el botó, marró fosc. */
+   sense caràtules): la de tardor, aurons grans a l'aquarel·la sobre cacau (img/fulles-tardor.svg, triat per l'usuari:
+   «A5-3»). El text, crema, va sobre un vel del mateix cacau perquè es llegeixi; el botó, crema. */
 .pt-season {
-    --season-bg: #dcc09a;
-    --season-veil: 220, 192, 154;
-    --season-ink: #3b2312;
+    --season-bg: #7a5236;
+    --season-veil: 122, 82, 54;
+    --season-ink: #fbf3e6;
     position: relative;
     display: grid;
     overflow: hidden;
     min-height: 220px;
     padding: 24px 22px 22px;
-    border: 1px solid rgba(74, 42, 20, 0.28);
+    border: 1px solid rgba(20, 10, 4, 0.35);
     border-radius: var(--pt-radius-lg, 16px);
     background-color: var(--season-bg);
     color: var(--season-ink);
@@ -13691,7 +13691,7 @@ body .mq .mq-item.is-active .mq-title {
         url('../img/fulles-tardor.svg');
     background-repeat: no-repeat, repeat;
     background-position: 0 0, 0 0;
-    background-size: 100% 100%, 300px 300px;
+    background-size: 100% 100%, 420px 420px;
 }
 
 .pt-season__body {
@@ -13706,7 +13706,7 @@ body .mq .mq-item.is-active .mq-title {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #9a3412;
+    color: #fdba74;
 }
 
 .pt-season__eyebrow svg {
@@ -13727,14 +13727,14 @@ body .mq .mq-item.is-active .mq-title {
 .pt-season .pt-season__text {
     margin: 0;
     max-width: 48ch;
-    color: #4a2e1a;
+    color: #f1e2cc;
     font-size: 0.9375rem;
     line-height: 1.45;
 }
 
 .pt-season .pt-season__count {
     margin: 0;
-    color: #5c3b22;
+    color: #f1e2cc;
     font-size: 0.8125rem;
     font-weight: 600;
 }
@@ -13747,13 +13747,13 @@ body .mq .mq-item.is-active .mq-title {
 }
 
 .pt-season .pt-season__actions .pt-btn--primary {
-    border-color: #4a2a14;
-    background: #4a2a14;
-    color: #fbf3e6;
+    border-color: #f1e2cc;
+    background: #f1e2cc;
+    color: #3b2312;
 }
 
 .pt-season .pt-season__actions .pt-btn--primary:hover {
-    background: #2f1a0c;
+    background: #fbf3e6;
 }
 
 .pt-season__actions .pt-btn svg {
@@ -13762,7 +13762,7 @@ body .mq .mq-item.is-active .mq-title {
 }
 
 .pt-season button:focus-visible {
-    outline: 2px solid #4a2a14;
+    outline: 2px solid #fbf3e6;
     outline-offset: 3px;
 }
 
@@ -13781,7 +13781,7 @@ body .mq .mq-item.is-active .mq-title {
                 rgba(var(--season-veil), 0) 86%
             ),
             url('../img/fulles-tardor.svg');
-        background-size: 100% 100%, 220px 220px;
+        background-size: 100% 100%, 320px 320px;
     }
 
     .pt-season__actions .pt-btn {
